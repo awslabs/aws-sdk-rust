@@ -113,6 +113,8 @@ impl AbortMultipartUploadInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -507,6 +509,8 @@ impl CompleteMultipartUploadInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -1479,6 +1483,8 @@ impl CopyObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -1800,6 +1806,8 @@ impl CreateBucketInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_disable_access_points(Some(true))
             .set_bucket(self.bucket.clone())
             .build()
@@ -2468,6 +2476,8 @@ impl CreateMultipartUploadInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -2663,6 +2673,8 @@ impl DeleteBucketInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -2842,6 +2854,8 @@ impl DeleteBucketAnalyticsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3036,6 +3050,8 @@ impl DeleteBucketCorsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3212,6 +3228,8 @@ impl DeleteBucketEncryptionInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3388,6 +3406,8 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3592,6 +3612,8 @@ impl DeleteBucketInventoryConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3786,6 +3808,8 @@ impl DeleteBucketLifecycleInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -3975,6 +3999,8 @@ impl DeleteBucketMetricsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -4169,6 +4195,8 @@ impl DeleteBucketOwnershipControlsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -4347,6 +4375,8 @@ impl DeleteBucketPolicyInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -4523,6 +4553,8 @@ impl DeleteBucketReplicationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -4700,6 +4732,8 @@ impl DeleteBucketTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -4876,6 +4910,8 @@ impl DeleteBucketWebsiteInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -5117,6 +5153,8 @@ impl DeleteObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -5305,6 +5343,8 @@ impl DeleteObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -5577,6 +5617,8 @@ impl DeleteObjectsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -5818,6 +5860,8 @@ impl DeleteObjectTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6018,6 +6062,8 @@ impl DeletePublicAccessBlockInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6195,6 +6241,8 @@ impl GetBucketAccelerateConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6371,6 +6419,8 @@ impl GetBucketAclInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6559,6 +6609,8 @@ impl GetBucketAnalyticsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6752,6 +6804,8 @@ impl GetBucketCorsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -6928,6 +6982,8 @@ impl GetBucketEncryptionInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -7103,6 +7159,8 @@ impl GetBucketIntelligentTieringConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -7307,6 +7365,8 @@ impl GetBucketInventoryConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -7502,6 +7562,8 @@ impl GetBucketLifecycleConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -7680,6 +7742,8 @@ impl GetBucketLocationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -7856,6 +7920,8 @@ impl GetBucketLoggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8044,6 +8110,8 @@ impl GetBucketMetricsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8239,6 +8307,8 @@ impl GetBucketNotificationConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8417,6 +8487,8 @@ impl GetBucketOwnershipControlsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8592,6 +8664,8 @@ impl GetBucketPolicyInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8768,6 +8842,8 @@ impl GetBucketPolicyStatusInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -8945,6 +9021,8 @@ impl GetBucketReplicationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -9122,6 +9200,8 @@ impl GetBucketRequestPaymentInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -9299,6 +9379,8 @@ impl GetBucketTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -9475,6 +9557,8 @@ impl GetBucketVersioningInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -9651,6 +9735,8 @@ impl GetBucketWebsiteInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -10138,6 +10224,8 @@ impl GetObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -10385,6 +10473,8 @@ impl GetObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -10683,6 +10773,8 @@ impl GetObjectAclInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -11037,6 +11129,8 @@ impl GetObjectAttributesInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -11278,6 +11372,8 @@ impl GetObjectLegalHoldInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -11480,6 +11576,8 @@ impl GetObjectLockConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -11698,6 +11796,8 @@ impl GetObjectRetentionInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -11941,6 +12041,8 @@ impl GetObjectTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -12168,6 +12270,8 @@ impl GetObjectTorrentInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -12363,6 +12467,8 @@ impl GetPublicAccessBlockInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -12542,6 +12648,8 @@ impl HeadBucketInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -12914,6 +13022,8 @@ impl HeadObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -13134,6 +13244,8 @@ impl ListBucketAnalyticsConfigurationsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -13323,6 +13435,8 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -13523,6 +13637,8 @@ impl ListBucketInventoryConfigurationsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -13725,6 +13841,8 @@ impl ListBucketMetricsConfigurationsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -13881,6 +13999,8 @@ impl ListBucketsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14134,6 +14254,8 @@ impl ListMultipartUploadsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -14428,6 +14550,8 @@ impl ListObjectsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -14739,6 +14863,8 @@ impl ListObjectsV2Input {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -15043,6 +15169,8 @@ impl ListObjectVersionsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -15385,6 +15513,8 @@ impl ListPartsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -15641,6 +15771,8 @@ impl PutBucketAccelerateConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -15985,6 +16117,8 @@ impl PutBucketAclInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -16230,6 +16364,8 @@ impl PutBucketAnalyticsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -16484,6 +16620,8 @@ impl PutBucketCorsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -16748,6 +16886,8 @@ impl PutBucketEncryptionInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -16980,6 +17120,8 @@ impl PutBucketIntelligentTieringConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -17215,6 +17357,8 @@ impl PutBucketInventoryConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -17461,6 +17605,8 @@ impl PutBucketLifecycleConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -17723,6 +17869,8 @@ impl PutBucketLoggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -17964,6 +18112,8 @@ impl PutBucketMetricsConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -18205,6 +18355,8 @@ impl PutBucketNotificationConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -18428,6 +18580,8 @@ impl PutBucketOwnershipControlsInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -18697,6 +18851,8 @@ impl PutBucketPolicyInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -18971,6 +19127,8 @@ impl PutBucketReplicationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -19236,6 +19394,8 @@ impl PutBucketRequestPaymentInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -19494,6 +19654,8 @@ impl PutBucketTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -19768,6 +19930,8 @@ impl PutBucketVersioningInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -20028,6 +20192,8 @@ impl PutBucketWebsiteInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -20842,6 +21008,8 @@ impl PutObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -21042,6 +21210,8 @@ impl PutObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -21449,6 +21619,8 @@ impl PutObjectAclInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -21774,6 +21946,8 @@ impl PutObjectLegalHoldInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -22087,6 +22261,8 @@ impl PutObjectLockConfigurationInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -22401,6 +22577,8 @@ impl PutObjectRetentionInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -22723,6 +22901,8 @@ impl PutObjectTaggingInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -23009,6 +23189,8 @@ impl PutPublicAccessBlockInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -23297,6 +23479,8 @@ impl RestoreObjectInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -23742,6 +23926,8 @@ impl SelectObjectContentInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -24192,6 +24378,8 @@ impl UploadPartInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -24418,6 +24606,8 @@ impl UploadPartInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -25027,6 +25217,8 @@ impl UploadPartCopyInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
@@ -25901,6 +26093,8 @@ impl WriteGetObjectResponseInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
             .set_accelerate(_config.accelerate)
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
             .set_use_object_lambda_endpoint(Some(true))
             .build()
             .map_err(|err| {

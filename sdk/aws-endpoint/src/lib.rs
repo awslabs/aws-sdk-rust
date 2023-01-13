@@ -163,18 +163,29 @@ fn smithy_to_aws(value: &SmithyEndpoint) -> Result<EndpointMetadata, Box<dyn Err
         None => return Ok((None, None)),
         _other => return Err("expected an array for authSchemes".into()),
     };
-    let v4 = auth_schemes
+    let auth_schemes = auth_schemes
         .iter()
         .flat_map(|doc| match doc {
-            Document::Object(map)
-                if map.get("name") == Some(&Document::String("sigv4".to_string())) =>
-            {
-                Some(map)
-            }
+            Document::Object(map) => Some(map),
             _ => None,
         })
-        .next()
-        .ok_or("could not find v4 as an acceptable auth scheme (the SDK does not support Bearer Auth at this time)")?;
+        .map(|it| {
+            let name = match it.get("name") {
+                Some(Document::String(s)) => Some(s.as_str()),
+                _ => None,
+            };
+            (name, it)
+        });
+    let (_, v4) = auth_schemes
+        .clone()
+        .find(|(name, _doc)| name.as_deref() == Some("sigv4"))
+        .ok_or_else(|| {
+            format!(
+                "No auth schemes were supported. The Rust SDK only supports sigv4. \
+                The authentication schemes supported by this endpoint were: {:?}",
+                auth_schemes.flat_map(|(name, _)| name).collect::<Vec<_>>()
+            )
+        })?;
 
     let signing_scope = match v4.get("signingRegion") {
         Some(Document::String(s)) => Some(SigningRegion::from(Region::new(s.clone()))),

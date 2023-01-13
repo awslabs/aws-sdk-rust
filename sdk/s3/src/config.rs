@@ -21,16 +21,18 @@ pub struct Config {
     pub(crate) use_arn_region: std::option::Option<bool>,
     pub(crate) disable_multi_region_access_points: std::option::Option<bool>,
     pub(crate) accelerate: std::option::Option<bool>,
+    pub(crate) use_fips: std::option::Option<bool>,
+    pub(crate) use_dual_stack: std::option::Option<bool>,
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    endpoint_url: Option<String>,
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_provider: aws_credential_types::provider::SharedCredentialsProvider,
-    endpoint_url: Option<String>,
 }
 impl std::fmt::Debug for Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -65,6 +67,10 @@ impl Config {
     /// Return a reference to the timeout configuration contained in this config, if any.
     pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::TimeoutConfig> {
         self.timeout_config.as_ref()
+    }
+    #[allow(dead_code)]
+    pub(crate) fn endpoint_url(&self) -> Option<&str> {
+        self.endpoint_url.as_deref()
     }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
@@ -105,10 +111,6 @@ impl Config {
     ) -> aws_credential_types::provider::SharedCredentialsProvider {
         self.credentials_provider.clone()
     }
-    #[allow(dead_code)]
-    pub(crate) fn endpoint_url(&self) -> Option<&str> {
-        self.endpoint_url.as_deref()
-    }
 }
 /// Builder for creating a `Config`.
 #[derive(Default)]
@@ -117,17 +119,19 @@ pub struct Builder {
     use_arn_region: std::option::Option<bool>,
     disable_multi_region_access_points: std::option::Option<bool>,
     accelerate: std::option::Option<bool>,
+    use_fips: std::option::Option<bool>,
+    use_dual_stack: std::option::Option<bool>,
     endpoint_resolver: Option<
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     >,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    endpoint_url: Option<String>,
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     region: Option<aws_types::region::Region>,
     credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
-    endpoint_url: Option<String>,
 }
 impl Builder {
     /// Constructs a config builder.
@@ -178,6 +182,26 @@ impl Builder {
     /// Enables this client to use S3 Transfer Acceleration endpoints.
     pub fn set_accelerate(&mut self, accelerate: Option<bool>) -> &mut Self {
         self.accelerate = accelerate;
+        self
+    }
+    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
+    pub fn use_fips(mut self, use_fips: impl Into<bool>) -> Self {
+        self.use_fips = Some(use_fips.into());
+        self
+    }
+    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
+    pub fn set_use_fips(&mut self, use_fips: Option<bool>) -> &mut Self {
+        self.use_fips = use_fips;
+        self
+    }
+    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
+    pub fn use_dual_stack(mut self, use_dual_stack: impl Into<bool>) -> Self {
+        self.use_dual_stack = Some(use_dual_stack.into());
+        self
+    }
+    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
+    pub fn set_use_dual_stack(&mut self, use_dual_stack: Option<bool>) -> &mut Self {
+        self.use_dual_stack = use_dual_stack;
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -382,6 +406,68 @@ impl Builder {
         self.timeout_config = timeout_config;
         self
     }
+    /// Overrides the endpoint resolver to use when making requests.
+    ///
+    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
+    ///
+    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
+    /// for `aws_sdk_s3`.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
+    /// use aws_types::region::Region;
+    /// use aws_sdk_s3::config::{Builder, Config};
+    /// use aws_sdk_s3::Endpoint;
+    ///
+    /// let config = aws_sdk_s3::Config::builder()
+    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
+    ///     .build();
+    /// # Ok(())
+    /// # }
+    /// ```
+    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
+    pub fn aws_endpoint_resolver(
+        mut self,
+        endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
+    ) -> Self {
+        self.endpoint_resolver = Some(std::sync::Arc::new(
+            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
+        ) as _);
+        self
+    }
+
+    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
+    /// Sets the endpoint resolver to use when making requests.
+    ///
+    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
+    pub fn set_aws_endpoint_resolver(
+        &mut self,
+        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
+    ) -> &mut Self {
+        self.endpoint_resolver = endpoint_resolver
+            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
+        self
+    }
+    /// Sets the endpoint url used to communicate with this service
+    ///
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn endpoint_url(mut self, endpoint_url: impl Into<String>) -> Self {
+        self.endpoint_url = Some(endpoint_url.into());
+        self
+    }
+
+    /// Sets the endpoint url used to communicate with this service
+    ///
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
+        self.endpoint_url = endpoint_url;
+        self
+    }
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -517,69 +603,6 @@ impl Builder {
         self.credentials_provider = credentials_provider;
         self
     }
-    /// Overrides the endpoint resolver to use when making requests.
-    ///
-    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
-    ///
-    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
-    /// for `aws_sdk_s3`.
-    ///
-    /// # Examples
-    /// ```no_run
-    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-    /// use aws_types::region::Region;
-    /// use aws_sdk_s3::config::{Builder, Config};
-    /// use aws_sdk_s3::Endpoint;
-    ///
-    /// let config = aws_sdk_s3::Config::builder()
-    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
-    ///     .build();
-    /// # Ok(())
-    /// # }
-    /// ```
-    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
-    pub fn aws_endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
-    ) -> Self {
-        self.endpoint_resolver = Some(std::sync::Arc::new(
-            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
-        ) as _);
-        self
-    }
-
-    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
-    /// Sets the endpoint resolver to use when making requests.
-    ///
-    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
-    pub fn set_aws_endpoint_resolver(
-        &mut self,
-        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
-    ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver
-            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
-        self
-    }
-
-    /// Sets the endpoint url used to communicate with this service
-    ///
-    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
-    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
-    /// [`Builder::endpoint_resolver`].
-    pub fn endpoint_url(mut self, endpoint_url: impl Into<String>) -> Self {
-        self.endpoint_url = Some(endpoint_url.into());
-        self
-    }
-
-    /// Sets the endpoint url used to communicate with this service
-    ///
-    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
-    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
-    /// [`Builder::endpoint_resolver`].
-    pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
-        self.endpoint_url = endpoint_url;
-        self
-    }
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
@@ -587,12 +610,15 @@ impl Builder {
             use_arn_region: self.use_arn_region,
             disable_multi_region_access_points: self.disable_multi_region_access_points,
             accelerate: self.accelerate,
+            use_fips: self.use_fips,
+            use_dual_stack: self.use_dual_stack,
             endpoint_resolver: self
                 .endpoint_resolver
                 .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
+            endpoint_url: self.endpoint_url,
             app_name: self.app_name,
             http_connector: self.http_connector,
             region: self.region,
@@ -601,7 +627,6 @@ impl Builder {
                     crate::no_credentials::NoCredentials,
                 )
             }),
-            endpoint_url: self.endpoint_url,
         }
     }
 }

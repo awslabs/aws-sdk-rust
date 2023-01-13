@@ -7091,6 +7091,7 @@ pub struct Unhandled {
     source: Box<dyn std::error::Error + Send + Sync + 'static>,
 }
 impl Unhandled {
+    #[allow(unused)]
     pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self { source }
     }
