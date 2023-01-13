@@ -843,6 +843,67 @@ impl AccessDenied {
     }
 }
 
+/// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TooManyRemoveHeadersInResponseHeadersPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl TooManyRemoveHeadersInResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRemoveHeadersInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRemoveHeadersInResponseHeadersPolicy")?;
+        if let Some(inner_15) = &self.message {
+            {
+                write!(f, ": {}", inner_15)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRemoveHeadersInResponseHeadersPolicy {}
+/// See [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
+pub mod too_many_remove_headers_in_response_headers_policy {
+
+    /// A builder for [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
+        pub fn build(self) -> crate::error::TooManyRemoveHeadersInResponseHeadersPolicy {
+            crate::error::TooManyRemoveHeadersInResponseHeadersPolicy {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyRemoveHeadersInResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
+    pub fn builder() -> crate::error::too_many_remove_headers_in_response_headers_policy::Builder {
+        crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default()
+    }
+}
+
 /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -861,9 +922,9 @@ impl TooManyCustomHeadersInResponseHeadersPolicy {
 impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCustomHeadersInResponseHeadersPolicy")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -925,9 +986,9 @@ impl std::fmt::Display for TooLongCspInResponseHeadersPolicy {
             f,
             "TooLongCspInResponseHeadersPolicy [TooLongCSPInResponseHeadersPolicy]"
         )?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -985,9 +1046,9 @@ impl ResponseHeadersPolicyAlreadyExists {
 impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResponseHeadersPolicyAlreadyExists")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1045,9 +1106,9 @@ impl NoSuchResponseHeadersPolicy {
 impl std::fmt::Display for NoSuchResponseHeadersPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchResponseHeadersPolicy")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1105,9 +1166,9 @@ impl NoSuchRealtimeLogConfig {
 impl std::fmt::Display for NoSuchRealtimeLogConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchRealtimeLogConfig")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1165,9 +1226,9 @@ impl NoSuchPublicKey {
 impl std::fmt::Display for NoSuchPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchPublicKey")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1225,9 +1286,9 @@ impl CannotChangeImmutablePublicKeyFields {
 impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotChangeImmutablePublicKeyFields")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1285,9 +1346,9 @@ impl TooManyQueryStringsInOriginRequestPolicy {
 impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInOriginRequestPolicy")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1345,9 +1406,9 @@ impl TooManyHeadersInOriginRequestPolicy {
 impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInOriginRequestPolicy")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1405,9 +1466,9 @@ impl TooManyCookiesInOriginRequestPolicy {
 impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInOriginRequestPolicy")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1465,9 +1526,9 @@ impl OriginRequestPolicyAlreadyExists {
 impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyAlreadyExists")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1525,9 +1586,9 @@ impl NoSuchOriginRequestPolicy {
 impl std::fmt::Display for NoSuchOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOriginRequestPolicy")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1585,9 +1646,9 @@ impl OriginAccessControlAlreadyExists {
 impl std::fmt::Display for OriginAccessControlAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginAccessControlAlreadyExists")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1645,9 +1706,9 @@ impl NoSuchOriginAccessControl {
 impl std::fmt::Display for NoSuchOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOriginAccessControl")?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1705,9 +1766,9 @@ impl TooManyPublicKeysInKeyGroup {
 impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeysInKeyGroup")?;
-        if let Some(inner_29) = &self.message {
+        if let Some(inner_30) = &self.message {
             {
-                write!(f, ": {}", inner_29)?;
+                write!(f, ": {}", inner_30)?;
             }
         }
         Ok(())
@@ -1765,9 +1826,9 @@ impl NoSuchResource {
 impl std::fmt::Display for NoSuchResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchResource")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -1825,9 +1886,9 @@ impl KeyGroupAlreadyExists {
 impl std::fmt::Display for KeyGroupAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeyGroupAlreadyExists")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -1885,9 +1946,9 @@ impl UnsupportedOperation {
 impl std::fmt::Display for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperation")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -1945,9 +2006,9 @@ impl NoSuchFunctionExists {
 impl std::fmt::Display for NoSuchFunctionExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFunctionExists")?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -2005,9 +2066,9 @@ impl FunctionSizeLimitExceeded {
 impl std::fmt::Display for FunctionSizeLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionSizeLimitExceeded")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2065,9 +2126,9 @@ impl TooManyFieldLevelEncryptionFieldPatterns {
 impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionFieldPatterns")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2125,9 +2186,9 @@ impl TooManyFieldLevelEncryptionEncryptionEntities {
 impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionEncryptionEntities")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -2185,9 +2246,9 @@ impl NoSuchFieldLevelEncryptionProfile {
 impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionProfile")?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2245,9 +2306,9 @@ impl FieldLevelEncryptionProfileSizeExceeded {
 impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileSizeExceeded")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2305,9 +2366,9 @@ impl FieldLevelEncryptionProfileAlreadyExists {
 impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileAlreadyExists")?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2365,9 +2426,9 @@ impl TooManyFieldLevelEncryptionQueryArgProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionQueryArgProfiles")?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2425,9 +2486,9 @@ impl TooManyFieldLevelEncryptionContentTypeProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionContentTypeProfiles")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2486,9 +2547,9 @@ impl QueryArgProfileEmpty {
 impl std::fmt::Display for QueryArgProfileEmpty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryArgProfileEmpty")?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2546,9 +2607,9 @@ impl NoSuchFieldLevelEncryptionConfig {
 impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionConfig")?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2606,9 +2667,9 @@ impl TrustedKeyGroupDoesNotExist {
 impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrustedKeyGroupDoesNotExist")?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2666,9 +2727,9 @@ impl TooManyQueryStringParameters {
 impl std::fmt::Display for TooManyQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringParameters")?;
-        if let Some(inner_45) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2726,9 +2787,9 @@ impl TooManyOrigins {
 impl std::fmt::Display for TooManyOrigins {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOrigins")?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
@@ -2786,9 +2847,9 @@ impl TooManyOriginGroupsPerDistribution {
 impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginGroupsPerDistribution")?;
-        if let Some(inner_47) = &self.message {
+        if let Some(inner_48) = &self.message {
             {
-                write!(f, ": {}", inner_47)?;
+                write!(f, ": {}", inner_48)?;
             }
         }
         Ok(())
@@ -2846,9 +2907,9 @@ impl TooManyOriginCustomHeaders {
 impl std::fmt::Display for TooManyOriginCustomHeaders {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginCustomHeaders")?;
-        if let Some(inner_48) = &self.message {
+        if let Some(inner_49) = &self.message {
             {
-                write!(f, ": {}", inner_48)?;
+                write!(f, ": {}", inner_49)?;
             }
         }
         Ok(())
@@ -2906,9 +2967,9 @@ impl TooManyLambdaFunctionAssociations {
 impl std::fmt::Display for TooManyLambdaFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyLambdaFunctionAssociations")?;
-        if let Some(inner_49) = &self.message {
+        if let Some(inner_50) = &self.message {
             {
-                write!(f, ": {}", inner_49)?;
+                write!(f, ": {}", inner_50)?;
             }
         }
         Ok(())
@@ -2966,9 +3027,9 @@ impl TooManyKeyGroupsAssociatedToDistribution {
 impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroupsAssociatedToDistribution")?;
-        if let Some(inner_50) = &self.message {
+        if let Some(inner_51) = &self.message {
             {
-                write!(f, ": {}", inner_50)?;
+                write!(f, ": {}", inner_51)?;
             }
         }
         Ok(())
@@ -3026,9 +3087,9 @@ impl TooManyHeadersInForwardedValues {
 impl std::fmt::Display for TooManyHeadersInForwardedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInForwardedValues")?;
-        if let Some(inner_51) = &self.message {
+        if let Some(inner_52) = &self.message {
             {
-                write!(f, ": {}", inner_51)?;
+                write!(f, ": {}", inner_52)?;
             }
         }
         Ok(())
@@ -3086,9 +3147,9 @@ impl TooManyFunctionAssociations {
 impl std::fmt::Display for TooManyFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctionAssociations")?;
-        if let Some(inner_52) = &self.message {
+        if let Some(inner_53) = &self.message {
             {
-                write!(f, ": {}", inner_52)?;
+                write!(f, ": {}", inner_53)?;
             }
         }
         Ok(())
@@ -3149,9 +3210,9 @@ impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
             f,
             "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
         )?;
-        if let Some(inner_53) = &self.message {
+        if let Some(inner_54) = &self.message {
             {
-                write!(f, ": {}", inner_53)?;
+                write!(f, ": {}", inner_54)?;
             }
         }
         Ok(())
@@ -3209,9 +3270,9 @@ impl TooManyDistributionsWithLambdaAssociations {
 impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithLambdaAssociations")?;
-        if let Some(inner_54) = &self.message {
+        if let Some(inner_55) = &self.message {
             {
-                write!(f, ": {}", inner_54)?;
+                write!(f, ": {}", inner_55)?;
             }
         }
         Ok(())
@@ -3269,9 +3330,9 @@ impl TooManyDistributionsWithFunctionAssociations {
 impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithFunctionAssociations")?;
-        if let Some(inner_55) = &self.message {
+        if let Some(inner_56) = &self.message {
             {
-                write!(f, ": {}", inner_55)?;
+                write!(f, ": {}", inner_56)?;
             }
         }
         Ok(())
@@ -3330,9 +3391,9 @@ impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
 impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToResponseHeadersPolicy")?;
-        if let Some(inner_56) = &self.message {
+        if let Some(inner_57) = &self.message {
             {
-                write!(f, ": {}", inner_56)?;
+                write!(f, ": {}", inner_57)?;
             }
         }
         Ok(())
@@ -3392,9 +3453,9 @@ impl TooManyDistributionsAssociatedToOriginRequestPolicy {
 impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToOriginRequestPolicy")?;
-        if let Some(inner_57) = &self.message {
+        if let Some(inner_58) = &self.message {
             {
-                write!(f, ": {}", inner_57)?;
+                write!(f, ": {}", inner_58)?;
             }
         }
         Ok(())
@@ -3453,9 +3514,9 @@ impl TooManyDistributionsAssociatedToKeyGroup {
 impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToKeyGroup")?;
-        if let Some(inner_58) = &self.message {
+        if let Some(inner_59) = &self.message {
             {
-                write!(f, ": {}", inner_58)?;
+                write!(f, ": {}", inner_59)?;
             }
         }
         Ok(())
@@ -3516,9 +3577,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionC
             f,
             "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
         )?;
-        if let Some(inner_59) = &self.message {
+        if let Some(inner_60) = &self.message {
             {
-                write!(f, ": {}", inner_59)?;
+                write!(f, ": {}", inner_60)?;
             }
         }
         Ok(())
@@ -3580,9 +3641,9 @@ impl TooManyDistributionsAssociatedToCachePolicy {
 impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToCachePolicy")?;
-        if let Some(inner_60) = &self.message {
+        if let Some(inner_61) = &self.message {
             {
-                write!(f, ": {}", inner_60)?;
+                write!(f, ": {}", inner_61)?;
             }
         }
         Ok(())
@@ -3640,9 +3701,9 @@ impl TooManyDistributionCnamEs {
 impl std::fmt::Display for TooManyDistributionCnamEs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionCnamEs [TooManyDistributionCNAMEs]")?;
-        if let Some(inner_61) = &self.message {
+        if let Some(inner_62) = &self.message {
             {
-                write!(f, ": {}", inner_61)?;
+                write!(f, ": {}", inner_62)?;
             }
         }
         Ok(())
@@ -3700,9 +3761,9 @@ impl TooManyCookieNamesInWhiteList {
 impl std::fmt::Display for TooManyCookieNamesInWhiteList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookieNamesInWhiteList")?;
-        if let Some(inner_62) = &self.message {
+        if let Some(inner_63) = &self.message {
             {
-                write!(f, ": {}", inner_62)?;
+                write!(f, ": {}", inner_63)?;
             }
         }
         Ok(())
@@ -3760,9 +3821,9 @@ impl TooManyCertificates {
 impl std::fmt::Display for TooManyCertificates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCertificates")?;
-        if let Some(inner_63) = &self.message {
+        if let Some(inner_64) = &self.message {
             {
-                write!(f, ": {}", inner_63)?;
+                write!(f, ": {}", inner_64)?;
             }
         }
         Ok(())
@@ -3820,9 +3881,9 @@ impl TooManyCacheBehaviors {
 impl std::fmt::Display for TooManyCacheBehaviors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCacheBehaviors")?;
-        if let Some(inner_64) = &self.message {
+        if let Some(inner_65) = &self.message {
             {
-                write!(f, ": {}", inner_64)?;
+                write!(f, ": {}", inner_65)?;
             }
         }
         Ok(())
@@ -3880,9 +3941,9 @@ impl RealtimeLogConfigOwnerMismatch {
 impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigOwnerMismatch")?;
-        if let Some(inner_65) = &self.message {
+        if let Some(inner_66) = &self.message {
             {
-                write!(f, ": {}", inner_65)?;
+                write!(f, ": {}", inner_66)?;
             }
         }
         Ok(())
@@ -3923,7 +3984,7 @@ impl RealtimeLogConfigOwnerMismatch {
     }
 }
 
-/// <p>No origin exists with the specified <code>Origin Id</code>. </p>
+/// <p>No origin exists with the specified <code>Origin Id</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOrigin {
@@ -3940,9 +4001,9 @@ impl NoSuchOrigin {
 impl std::fmt::Display for NoSuchOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOrigin")?;
-        if let Some(inner_66) = &self.message {
+        if let Some(inner_67) = &self.message {
             {
-                write!(f, ": {}", inner_66)?;
+                write!(f, ": {}", inner_67)?;
             }
         }
         Ok(())
@@ -4000,9 +4061,9 @@ impl NoSuchDistribution {
 impl std::fmt::Display for NoSuchDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchDistribution")?;
-        if let Some(inner_67) = &self.message {
+        if let Some(inner_68) = &self.message {
             {
-                write!(f, ": {}", inner_67)?;
+                write!(f, ": {}", inner_68)?;
             }
         }
         Ok(())
@@ -4060,9 +4121,9 @@ impl NoSuchCachePolicy {
 impl std::fmt::Display for NoSuchCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCachePolicy")?;
-        if let Some(inner_68) = &self.message {
+        if let Some(inner_69) = &self.message {
             {
-                write!(f, ": {}", inner_68)?;
+                write!(f, ": {}", inner_69)?;
             }
         }
         Ok(())
@@ -4120,9 +4181,9 @@ impl InvalidWebAclId {
 impl std::fmt::Display for InvalidWebAclId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidWebAclId [InvalidWebACLId]")?;
-        if let Some(inner_69) = &self.message {
+        if let Some(inner_70) = &self.message {
             {
-                write!(f, ": {}", inner_69)?;
+                write!(f, ": {}", inner_70)?;
             }
         }
         Ok(())
@@ -4180,9 +4241,9 @@ impl InvalidViewerCertificate {
 impl std::fmt::Display for InvalidViewerCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidViewerCertificate")?;
-        if let Some(inner_70) = &self.message {
+        if let Some(inner_71) = &self.message {
             {
-                write!(f, ": {}", inner_70)?;
+                write!(f, ": {}", inner_71)?;
             }
         }
         Ok(())
@@ -4240,9 +4301,9 @@ impl InvalidTtlOrder {
 impl std::fmt::Display for InvalidTtlOrder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTtlOrder [InvalidTTLOrder]")?;
-        if let Some(inner_71) = &self.message {
+        if let Some(inner_72) = &self.message {
             {
-                write!(f, ": {}", inner_71)?;
+                write!(f, ": {}", inner_72)?;
             }
         }
         Ok(())
@@ -4300,9 +4361,9 @@ impl InvalidResponseCode {
 impl std::fmt::Display for InvalidResponseCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResponseCode")?;
-        if let Some(inner_72) = &self.message {
+        if let Some(inner_73) = &self.message {
             {
-                write!(f, ": {}", inner_72)?;
+                write!(f, ": {}", inner_73)?;
             }
         }
         Ok(())
@@ -4360,9 +4421,9 @@ impl InvalidRequiredProtocol {
 impl std::fmt::Display for InvalidRequiredProtocol {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequiredProtocol")?;
-        if let Some(inner_73) = &self.message {
+        if let Some(inner_74) = &self.message {
             {
-                write!(f, ": {}", inner_73)?;
+                write!(f, ": {}", inner_74)?;
             }
         }
         Ok(())
@@ -4420,9 +4481,9 @@ impl InvalidRelativePath {
 impl std::fmt::Display for InvalidRelativePath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRelativePath")?;
-        if let Some(inner_74) = &self.message {
+        if let Some(inner_75) = &self.message {
             {
-                write!(f, ": {}", inner_74)?;
+                write!(f, ": {}", inner_75)?;
             }
         }
         Ok(())
@@ -4480,9 +4541,9 @@ impl InvalidQueryStringParameters {
 impl std::fmt::Display for InvalidQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStringParameters")?;
-        if let Some(inner_75) = &self.message {
+        if let Some(inner_76) = &self.message {
             {
-                write!(f, ": {}", inner_75)?;
+                write!(f, ": {}", inner_76)?;
             }
         }
         Ok(())
@@ -4540,9 +4601,9 @@ impl InvalidOriginReadTimeout {
 impl std::fmt::Display for InvalidOriginReadTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginReadTimeout")?;
-        if let Some(inner_76) = &self.message {
+        if let Some(inner_77) = &self.message {
             {
-                write!(f, ": {}", inner_76)?;
+                write!(f, ": {}", inner_77)?;
             }
         }
         Ok(())
@@ -4600,9 +4661,9 @@ impl InvalidOriginKeepaliveTimeout {
 impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginKeepaliveTimeout")?;
-        if let Some(inner_77) = &self.message {
+        if let Some(inner_78) = &self.message {
             {
-                write!(f, ": {}", inner_77)?;
+                write!(f, ": {}", inner_78)?;
             }
         }
         Ok(())
@@ -4660,9 +4721,9 @@ impl InvalidMinimumProtocolVersion {
 impl std::fmt::Display for InvalidMinimumProtocolVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMinimumProtocolVersion")?;
-        if let Some(inner_78) = &self.message {
+        if let Some(inner_79) = &self.message {
             {
-                write!(f, ": {}", inner_78)?;
+                write!(f, ": {}", inner_79)?;
             }
         }
         Ok(())
@@ -4720,9 +4781,9 @@ impl InvalidLocationCode {
 impl std::fmt::Display for InvalidLocationCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLocationCode")?;
-        if let Some(inner_79) = &self.message {
+        if let Some(inner_80) = &self.message {
             {
-                write!(f, ": {}", inner_79)?;
+                write!(f, ": {}", inner_80)?;
             }
         }
         Ok(())
@@ -4780,9 +4841,9 @@ impl InvalidLambdaFunctionAssociation {
 impl std::fmt::Display for InvalidLambdaFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLambdaFunctionAssociation")?;
-        if let Some(inner_80) = &self.message {
+        if let Some(inner_81) = &self.message {
             {
-                write!(f, ": {}", inner_80)?;
+                write!(f, ": {}", inner_81)?;
             }
         }
         Ok(())
@@ -4840,9 +4901,9 @@ impl InvalidHeadersForS3Origin {
 impl std::fmt::Display for InvalidHeadersForS3Origin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHeadersForS3Origin")?;
-        if let Some(inner_81) = &self.message {
+        if let Some(inner_82) = &self.message {
             {
-                write!(f, ": {}", inner_81)?;
+                write!(f, ": {}", inner_82)?;
             }
         }
         Ok(())
@@ -4900,9 +4961,9 @@ impl InvalidGeoRestrictionParameter {
 impl std::fmt::Display for InvalidGeoRestrictionParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGeoRestrictionParameter")?;
-        if let Some(inner_82) = &self.message {
+        if let Some(inner_83) = &self.message {
             {
-                write!(f, ": {}", inner_82)?;
+                write!(f, ": {}", inner_83)?;
             }
         }
         Ok(())
@@ -4960,9 +5021,9 @@ impl InvalidFunctionAssociation {
 impl std::fmt::Display for InvalidFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFunctionAssociation")?;
-        if let Some(inner_83) = &self.message {
+        if let Some(inner_84) = &self.message {
             {
-                write!(f, ": {}", inner_83)?;
+                write!(f, ": {}", inner_84)?;
             }
         }
         Ok(())
@@ -5020,9 +5081,9 @@ impl InvalidForwardCookies {
 impl std::fmt::Display for InvalidForwardCookies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidForwardCookies")?;
-        if let Some(inner_84) = &self.message {
+        if let Some(inner_85) = &self.message {
             {
-                write!(f, ": {}", inner_84)?;
+                write!(f, ": {}", inner_85)?;
             }
         }
         Ok(())
@@ -5080,9 +5141,9 @@ impl InvalidErrorCode {
 impl std::fmt::Display for InvalidErrorCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidErrorCode")?;
-        if let Some(inner_85) = &self.message {
+        if let Some(inner_86) = &self.message {
             {
-                write!(f, ": {}", inner_85)?;
+                write!(f, ": {}", inner_86)?;
             }
         }
         Ok(())
@@ -5120,66 +5181,6 @@ impl InvalidErrorCode {
     /// Creates a new builder-style object to manufacture [`InvalidErrorCode`](crate::error::InvalidErrorCode).
     pub fn builder() -> crate::error::invalid_error_code::Builder {
         crate::error::invalid_error_code::Builder::default()
-    }
-}
-
-/// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDomainNameForOriginAccessControl {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl InvalidDomainNameForOriginAccessControl {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidDomainNameForOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDomainNameForOriginAccessControl")?;
-        if let Some(inner_86) = &self.message {
-            {
-                write!(f, ": {}", inner_86)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidDomainNameForOriginAccessControl {}
-/// See [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
-pub mod invalid_domain_name_for_origin_access_control {
-
-    /// A builder for [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
-        pub fn build(self) -> crate::error::InvalidDomainNameForOriginAccessControl {
-            crate::error::InvalidDomainNameForOriginAccessControl {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidDomainNameForOriginAccessControl {
-    /// Creates a new builder-style object to manufacture [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
-    pub fn builder() -> crate::error::invalid_domain_name_for_origin_access_control::Builder {
-        crate::error::invalid_domain_name_for_origin_access_control::Builder::default()
     }
 }
 
@@ -5243,66 +5244,6 @@ impl InvalidDefaultRootObject {
     }
 }
 
-/// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IllegalOriginAccessConfiguration {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl IllegalOriginAccessConfiguration {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalOriginAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IllegalOriginAccessConfiguration")?;
-        if let Some(inner_88) = &self.message {
-            {
-                write!(f, ": {}", inner_88)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalOriginAccessConfiguration {}
-/// See [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
-pub mod illegal_origin_access_configuration {
-
-    /// A builder for [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
-        pub fn build(self) -> crate::error::IllegalOriginAccessConfiguration {
-            crate::error::IllegalOriginAccessConfiguration {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IllegalOriginAccessConfiguration {
-    /// Creates a new builder-style object to manufacture [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
-    pub fn builder() -> crate::error::illegal_origin_access_configuration::Builder {
-        crate::error::illegal_origin_access_configuration::Builder::default()
-    }
-}
-
 /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5323,9 +5264,9 @@ impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCache
             f,
             "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
         )?;
-        if let Some(inner_89) = &self.message {
+        if let Some(inner_88) = &self.message {
             {
-                write!(f, ": {}", inner_89)?;
+                write!(f, ": {}", inner_88)?;
             }
         }
         Ok(())
@@ -5370,6 +5311,306 @@ impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     }
 }
 
+/// <p>A continuous deployment policy for this staging distribution already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StagingDistributionInUse {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl StagingDistributionInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StagingDistributionInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StagingDistributionInUse")?;
+        if let Some(inner_89) = &self.message {
+            {
+                write!(f, ": {}", inner_89)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StagingDistributionInUse {}
+/// See [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
+pub mod staging_distribution_in_use {
+
+    /// A builder for [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
+        pub fn build(self) -> crate::error::StagingDistributionInUse {
+            crate::error::StagingDistributionInUse {
+                message: self.message,
+            }
+        }
+    }
+}
+impl StagingDistributionInUse {
+    /// Creates a new builder-style object to manufacture [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
+    pub fn builder() -> crate::error::staging_distribution_in_use::Builder {
+        crate::error::staging_distribution_in_use::Builder::default()
+    }
+}
+
+/// <p>The continuous deployment policy doesn't exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NoSuchContinuousDeploymentPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl NoSuchContinuousDeploymentPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchContinuousDeploymentPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchContinuousDeploymentPolicy")?;
+        if let Some(inner_90) = &self.message {
+            {
+                write!(f, ": {}", inner_90)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchContinuousDeploymentPolicy {}
+/// See [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
+pub mod no_such_continuous_deployment_policy {
+
+    /// A builder for [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
+        pub fn build(self) -> crate::error::NoSuchContinuousDeploymentPolicy {
+            crate::error::NoSuchContinuousDeploymentPolicy {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoSuchContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
+    pub fn builder() -> crate::error::no_such_continuous_deployment_policy::Builder {
+        crate::error::no_such_continuous_deployment_policy::Builder::default()
+    }
+}
+
+/// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidDomainNameForOriginAccessControl {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl InvalidDomainNameForOriginAccessControl {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidDomainNameForOriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidDomainNameForOriginAccessControl")?;
+        if let Some(inner_91) = &self.message {
+            {
+                write!(f, ": {}", inner_91)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidDomainNameForOriginAccessControl {}
+/// See [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
+pub mod invalid_domain_name_for_origin_access_control {
+
+    /// A builder for [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
+        pub fn build(self) -> crate::error::InvalidDomainNameForOriginAccessControl {
+            crate::error::InvalidDomainNameForOriginAccessControl {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidDomainNameForOriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
+    pub fn builder() -> crate::error::invalid_domain_name_for_origin_access_control::Builder {
+        crate::error::invalid_domain_name_for_origin_access_control::Builder::default()
+    }
+}
+
+/// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IllegalOriginAccessConfiguration {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl IllegalOriginAccessConfiguration {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalOriginAccessConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalOriginAccessConfiguration")?;
+        if let Some(inner_92) = &self.message {
+            {
+                write!(f, ": {}", inner_92)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalOriginAccessConfiguration {}
+/// See [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
+pub mod illegal_origin_access_configuration {
+
+    /// A builder for [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
+        pub fn build(self) -> crate::error::IllegalOriginAccessConfiguration {
+            crate::error::IllegalOriginAccessConfiguration {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IllegalOriginAccessConfiguration {
+    /// Creates a new builder-style object to manufacture [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
+    pub fn builder() -> crate::error::illegal_origin_access_configuration::Builder {
+        crate::error::illegal_origin_access_configuration::Builder::default()
+    }
+}
+
+/// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ContinuousDeploymentPolicyInUse {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ContinuousDeploymentPolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ContinuousDeploymentPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ContinuousDeploymentPolicyInUse")?;
+        if let Some(inner_93) = &self.message {
+            {
+                write!(f, ": {}", inner_93)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ContinuousDeploymentPolicyInUse {}
+/// See [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
+pub mod continuous_deployment_policy_in_use {
+
+    /// A builder for [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
+        pub fn build(self) -> crate::error::ContinuousDeploymentPolicyInUse {
+            crate::error::ContinuousDeploymentPolicyInUse {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ContinuousDeploymentPolicyInUse {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
+    pub fn builder() -> crate::error::continuous_deployment_policy_in_use::Builder {
+        crate::error::continuous_deployment_policy_in_use::Builder::default()
+    }
+}
+
 /// <p>The specified origin access identity does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5387,9 +5628,9 @@ impl NoSuchCloudFrontOriginAccessIdentity {
 impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCloudFrontOriginAccessIdentity")?;
-        if let Some(inner_90) = &self.message {
+        if let Some(inner_94) = &self.message {
             {
-                write!(f, ": {}", inner_90)?;
+                write!(f, ": {}", inner_94)?;
             }
         }
         Ok(())
@@ -5447,9 +5688,9 @@ impl TooManyQueryStringsInCachePolicy {
 impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInCachePolicy")?;
-        if let Some(inner_91) = &self.message {
+        if let Some(inner_95) = &self.message {
             {
-                write!(f, ": {}", inner_91)?;
+                write!(f, ": {}", inner_95)?;
             }
         }
         Ok(())
@@ -5507,9 +5748,9 @@ impl TooManyHeadersInCachePolicy {
 impl std::fmt::Display for TooManyHeadersInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInCachePolicy")?;
-        if let Some(inner_92) = &self.message {
+        if let Some(inner_96) = &self.message {
             {
-                write!(f, ": {}", inner_92)?;
+                write!(f, ": {}", inner_96)?;
             }
         }
         Ok(())
@@ -5567,9 +5808,9 @@ impl TooManyCookiesInCachePolicy {
 impl std::fmt::Display for TooManyCookiesInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInCachePolicy")?;
-        if let Some(inner_93) = &self.message {
+        if let Some(inner_97) = &self.message {
             {
-                write!(f, ": {}", inner_93)?;
+                write!(f, ": {}", inner_97)?;
             }
         }
         Ok(())
@@ -5627,9 +5868,9 @@ impl CachePolicyAlreadyExists {
 impl std::fmt::Display for CachePolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyAlreadyExists")?;
-        if let Some(inner_94) = &self.message {
+        if let Some(inner_98) = &self.message {
             {
-                write!(f, ": {}", inner_94)?;
+                write!(f, ": {}", inner_98)?;
             }
         }
         Ok(())
@@ -5687,9 +5928,9 @@ impl InvalidTagging {
 impl std::fmt::Display for InvalidTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagging")?;
-        if let Some(inner_95) = &self.message {
+        if let Some(inner_99) = &self.message {
             {
-                write!(f, ": {}", inner_95)?;
+                write!(f, ": {}", inner_99)?;
             }
         }
         Ok(())
@@ -5747,9 +5988,9 @@ impl TestFunctionFailed {
 impl std::fmt::Display for TestFunctionFailed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TestFunctionFailed")?;
-        if let Some(inner_96) = &self.message {
+        if let Some(inner_100) = &self.message {
             {
-                write!(f, ": {}", inner_96)?;
+                write!(f, ": {}", inner_100)?;
             }
         }
         Ok(())
@@ -5807,9 +6048,9 @@ impl NoSuchMonitoringSubscription {
 impl std::fmt::Display for NoSuchMonitoringSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchMonitoringSubscription")?;
-        if let Some(inner_97) = &self.message {
+        if let Some(inner_101) = &self.message {
             {
-                write!(f, ": {}", inner_97)?;
+                write!(f, ": {}", inner_101)?;
             }
         }
         Ok(())
@@ -5867,9 +6108,9 @@ impl NoSuchInvalidation {
 impl std::fmt::Display for NoSuchInvalidation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchInvalidation")?;
-        if let Some(inner_98) = &self.message {
+        if let Some(inner_102) = &self.message {
             {
-                write!(f, ": {}", inner_98)?;
+                write!(f, ": {}", inner_102)?;
             }
         }
         Ok(())
@@ -5927,9 +6168,9 @@ impl StreamingDistributionNotDisabled {
 impl std::fmt::Display for StreamingDistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionNotDisabled")?;
-        if let Some(inner_99) = &self.message {
+        if let Some(inner_103) = &self.message {
             {
-                write!(f, ": {}", inner_99)?;
+                write!(f, ": {}", inner_103)?;
             }
         }
         Ok(())
@@ -5970,7 +6211,7 @@ impl StreamingDistributionNotDisabled {
     }
 }
 
-/// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution. </p>
+/// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyInUse {
@@ -5987,9 +6228,9 @@ impl ResponseHeadersPolicyInUse {
 impl std::fmt::Display for ResponseHeadersPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResponseHeadersPolicyInUse")?;
-        if let Some(inner_100) = &self.message {
+        if let Some(inner_104) = &self.message {
             {
-                write!(f, ": {}", inner_100)?;
+                write!(f, ": {}", inner_104)?;
             }
         }
         Ok(())
@@ -6047,9 +6288,9 @@ impl IllegalDelete {
 impl std::fmt::Display for IllegalDelete {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalDelete")?;
-        if let Some(inner_101) = &self.message {
+        if let Some(inner_105) = &self.message {
             {
-                write!(f, ": {}", inner_101)?;
+                write!(f, ": {}", inner_105)?;
             }
         }
         Ok(())
@@ -6107,9 +6348,9 @@ impl RealtimeLogConfigInUse {
 impl std::fmt::Display for RealtimeLogConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigInUse")?;
-        if let Some(inner_102) = &self.message {
+        if let Some(inner_106) = &self.message {
             {
-                write!(f, ": {}", inner_102)?;
+                write!(f, ": {}", inner_106)?;
             }
         }
         Ok(())
@@ -6150,7 +6391,7 @@ impl RealtimeLogConfigInUse {
     }
 }
 
-/// <p>The specified public key is in use. </p>
+/// <p>The specified public key is in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyInUse {
@@ -6167,9 +6408,9 @@ impl PublicKeyInUse {
 impl std::fmt::Display for PublicKeyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyInUse")?;
-        if let Some(inner_103) = &self.message {
+        if let Some(inner_107) = &self.message {
             {
-                write!(f, ": {}", inner_103)?;
+                write!(f, ": {}", inner_107)?;
             }
         }
         Ok(())
@@ -6227,9 +6468,9 @@ impl OriginRequestPolicyInUse {
 impl std::fmt::Display for OriginRequestPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyInUse")?;
-        if let Some(inner_104) = &self.message {
+        if let Some(inner_108) = &self.message {
             {
-                write!(f, ": {}", inner_104)?;
+                write!(f, ": {}", inner_108)?;
             }
         }
         Ok(())
@@ -6287,9 +6528,9 @@ impl OriginAccessControlInUse {
 impl std::fmt::Display for OriginAccessControlInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginAccessControlInUse")?;
-        if let Some(inner_105) = &self.message {
+        if let Some(inner_109) = &self.message {
             {
-                write!(f, ": {}", inner_105)?;
+                write!(f, ": {}", inner_109)?;
             }
         }
         Ok(())
@@ -6347,9 +6588,9 @@ impl ResourceInUse {
 impl std::fmt::Display for ResourceInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUse")?;
-        if let Some(inner_106) = &self.message {
+        if let Some(inner_110) = &self.message {
             {
-                write!(f, ": {}", inner_106)?;
+                write!(f, ": {}", inner_110)?;
             }
         }
         Ok(())
@@ -6390,7 +6631,7 @@ impl ResourceInUse {
     }
 }
 
-/// <p>Cannot delete the function because it’s attached to one or more cache behaviors.</p>
+/// <p>Cannot delete the function because it's attached to one or more cache behaviors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionInUse {
@@ -6407,9 +6648,9 @@ impl FunctionInUse {
 impl std::fmt::Display for FunctionInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionInUse")?;
-        if let Some(inner_107) = &self.message {
+        if let Some(inner_111) = &self.message {
             {
-                write!(f, ": {}", inner_107)?;
+                write!(f, ": {}", inner_111)?;
             }
         }
         Ok(())
@@ -6467,9 +6708,9 @@ impl FieldLevelEncryptionProfileInUse {
 impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileInUse")?;
-        if let Some(inner_108) = &self.message {
+        if let Some(inner_112) = &self.message {
             {
-                write!(f, ": {}", inner_108)?;
+                write!(f, ": {}", inner_112)?;
             }
         }
         Ok(())
@@ -6527,9 +6768,9 @@ impl FieldLevelEncryptionConfigInUse {
 impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigInUse")?;
-        if let Some(inner_109) = &self.message {
+        if let Some(inner_113) = &self.message {
             {
-                write!(f, ": {}", inner_109)?;
+                write!(f, ": {}", inner_113)?;
             }
         }
         Ok(())
@@ -6587,9 +6828,9 @@ impl DistributionNotDisabled {
 impl std::fmt::Display for DistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionNotDisabled")?;
-        if let Some(inner_110) = &self.message {
+        if let Some(inner_114) = &self.message {
             {
-                write!(f, ": {}", inner_110)?;
+                write!(f, ": {}", inner_114)?;
             }
         }
         Ok(())
@@ -6647,9 +6888,9 @@ impl CloudFrontOriginAccessIdentityInUse {
 impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityInUse")?;
-        if let Some(inner_111) = &self.message {
+        if let Some(inner_115) = &self.message {
             {
-                write!(f, ": {}", inner_111)?;
+                write!(f, ": {}", inner_115)?;
             }
         }
         Ok(())
@@ -6707,9 +6948,9 @@ impl CachePolicyInUse {
 impl std::fmt::Display for CachePolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyInUse")?;
-        if let Some(inner_112) = &self.message {
+        if let Some(inner_116) = &self.message {
             {
-                write!(f, ": {}", inner_112)?;
+                write!(f, ": {}", inner_116)?;
             }
         }
         Ok(())
@@ -6767,9 +7008,9 @@ impl TooManyStreamingDistributions {
 impl std::fmt::Display for TooManyStreamingDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyStreamingDistributions")?;
-        if let Some(inner_113) = &self.message {
+        if let Some(inner_117) = &self.message {
             {
-                write!(f, ": {}", inner_113)?;
+                write!(f, ": {}", inner_117)?;
             }
         }
         Ok(())
@@ -6827,9 +7068,9 @@ impl StreamingDistributionAlreadyExists {
 impl std::fmt::Display for StreamingDistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionAlreadyExists")?;
-        if let Some(inner_114) = &self.message {
+        if let Some(inner_118) = &self.message {
             {
-                write!(f, ": {}", inner_114)?;
+                write!(f, ": {}", inner_118)?;
             }
         }
         Ok(())
@@ -6887,9 +7128,9 @@ impl InvalidOrigin {
 impl std::fmt::Display for InvalidOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOrigin")?;
-        if let Some(inner_115) = &self.message {
+        if let Some(inner_119) = &self.message {
             {
-                write!(f, ": {}", inner_115)?;
+                write!(f, ": {}", inner_119)?;
             }
         }
         Ok(())
@@ -6948,9 +7189,9 @@ impl TooManyResponseHeadersPolicies {
 impl std::fmt::Display for TooManyResponseHeadersPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyResponseHeadersPolicies")?;
-        if let Some(inner_116) = &self.message {
+        if let Some(inner_120) = &self.message {
             {
-                write!(f, ": {}", inner_116)?;
+                write!(f, ": {}", inner_120)?;
             }
         }
         Ok(())
@@ -7008,9 +7249,9 @@ impl TooManyRealtimeLogConfigs {
 impl std::fmt::Display for TooManyRealtimeLogConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRealtimeLogConfigs")?;
-        if let Some(inner_117) = &self.message {
+        if let Some(inner_121) = &self.message {
             {
-                write!(f, ": {}", inner_117)?;
+                write!(f, ": {}", inner_121)?;
             }
         }
         Ok(())
@@ -7068,9 +7309,9 @@ impl RealtimeLogConfigAlreadyExists {
 impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigAlreadyExists")?;
-        if let Some(inner_118) = &self.message {
+        if let Some(inner_122) = &self.message {
             {
-                write!(f, ": {}", inner_118)?;
+                write!(f, ": {}", inner_122)?;
             }
         }
         Ok(())
@@ -7128,9 +7369,9 @@ impl TooManyPublicKeys {
 impl std::fmt::Display for TooManyPublicKeys {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeys")?;
-        if let Some(inner_119) = &self.message {
+        if let Some(inner_123) = &self.message {
             {
-                write!(f, ": {}", inner_119)?;
+                write!(f, ": {}", inner_123)?;
             }
         }
         Ok(())
@@ -7188,9 +7429,9 @@ impl PublicKeyAlreadyExists {
 impl std::fmt::Display for PublicKeyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyAlreadyExists")?;
-        if let Some(inner_120) = &self.message {
+        if let Some(inner_124) = &self.message {
             {
-                write!(f, ": {}", inner_120)?;
+                write!(f, ": {}", inner_124)?;
             }
         }
         Ok(())
@@ -7248,9 +7489,9 @@ impl TooManyOriginRequestPolicies {
 impl std::fmt::Display for TooManyOriginRequestPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginRequestPolicies")?;
-        if let Some(inner_121) = &self.message {
+        if let Some(inner_125) = &self.message {
             {
-                write!(f, ": {}", inner_121)?;
+                write!(f, ": {}", inner_125)?;
             }
         }
         Ok(())
@@ -7309,9 +7550,9 @@ impl TooManyOriginAccessControls {
 impl std::fmt::Display for TooManyOriginAccessControls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginAccessControls")?;
-        if let Some(inner_122) = &self.message {
+        if let Some(inner_126) = &self.message {
             {
-                write!(f, ": {}", inner_122)?;
+                write!(f, ": {}", inner_126)?;
             }
         }
         Ok(())
@@ -7369,9 +7610,9 @@ impl MonitoringSubscriptionAlreadyExists {
 impl std::fmt::Display for MonitoringSubscriptionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MonitoringSubscriptionAlreadyExists")?;
-        if let Some(inner_123) = &self.message {
+        if let Some(inner_127) = &self.message {
             {
-                write!(f, ": {}", inner_123)?;
+                write!(f, ": {}", inner_127)?;
             }
         }
         Ok(())
@@ -7429,9 +7670,9 @@ impl TooManyKeyGroups {
 impl std::fmt::Display for TooManyKeyGroups {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroups")?;
-        if let Some(inner_124) = &self.message {
+        if let Some(inner_128) = &self.message {
             {
-                write!(f, ": {}", inner_124)?;
+                write!(f, ": {}", inner_128)?;
             }
         }
         Ok(())
@@ -7489,9 +7730,9 @@ impl TooManyInvalidationsInProgress {
 impl std::fmt::Display for TooManyInvalidationsInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyInvalidationsInProgress")?;
-        if let Some(inner_125) = &self.message {
+        if let Some(inner_129) = &self.message {
             {
-                write!(f, ": {}", inner_125)?;
+                write!(f, ": {}", inner_129)?;
             }
         }
         Ok(())
@@ -7549,9 +7790,9 @@ impl BatchTooLarge {
 impl std::fmt::Display for BatchTooLarge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchTooLarge")?;
-        if let Some(inner_126) = &self.message {
+        if let Some(inner_130) = &self.message {
             {
-                write!(f, ": {}", inner_126)?;
+                write!(f, ": {}", inner_130)?;
             }
         }
         Ok(())
@@ -7609,9 +7850,9 @@ impl TooManyFunctions {
 impl std::fmt::Display for TooManyFunctions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctions")?;
-        if let Some(inner_127) = &self.message {
+        if let Some(inner_131) = &self.message {
             {
-                write!(f, ": {}", inner_127)?;
+                write!(f, ": {}", inner_131)?;
             }
         }
         Ok(())
@@ -7669,9 +7910,9 @@ impl FunctionAlreadyExists {
 impl std::fmt::Display for FunctionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionAlreadyExists")?;
-        if let Some(inner_128) = &self.message {
+        if let Some(inner_132) = &self.message {
             {
-                write!(f, ": {}", inner_128)?;
+                write!(f, ": {}", inner_132)?;
             }
         }
         Ok(())
@@ -7729,9 +7970,9 @@ impl TooManyFieldLevelEncryptionProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionProfiles")?;
-        if let Some(inner_129) = &self.message {
+        if let Some(inner_133) = &self.message {
             {
-                write!(f, ": {}", inner_129)?;
+                write!(f, ": {}", inner_133)?;
             }
         }
         Ok(())
@@ -7789,9 +8030,9 @@ impl TooManyFieldLevelEncryptionConfigs {
 impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionConfigs")?;
-        if let Some(inner_130) = &self.message {
+        if let Some(inner_134) = &self.message {
             {
-                write!(f, ": {}", inner_130)?;
+                write!(f, ": {}", inner_134)?;
             }
         }
         Ok(())
@@ -7849,9 +8090,9 @@ impl FieldLevelEncryptionConfigAlreadyExists {
 impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigAlreadyExists")?;
-        if let Some(inner_131) = &self.message {
+        if let Some(inner_135) = &self.message {
             {
-                write!(f, ": {}", inner_131)?;
+                write!(f, ": {}", inner_135)?;
             }
         }
         Ok(())
@@ -7909,9 +8150,9 @@ impl TooManyDistributions {
 impl std::fmt::Display for TooManyDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributions")?;
-        if let Some(inner_132) = &self.message {
+        if let Some(inner_136) = &self.message {
             {
-                write!(f, ": {}", inner_132)?;
+                write!(f, ": {}", inner_136)?;
             }
         }
         Ok(())
@@ -7969,9 +8210,9 @@ impl InvalidProtocolSettings {
 impl std::fmt::Display for InvalidProtocolSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidProtocolSettings")?;
-        if let Some(inner_133) = &self.message {
+        if let Some(inner_137) = &self.message {
             {
-                write!(f, ": {}", inner_133)?;
+                write!(f, ": {}", inner_137)?;
             }
         }
         Ok(())
@@ -8029,9 +8270,9 @@ impl DistributionAlreadyExists {
 impl std::fmt::Display for DistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionAlreadyExists")?;
-        if let Some(inner_134) = &self.message {
+        if let Some(inner_138) = &self.message {
             {
-                write!(f, ": {}", inner_134)?;
+                write!(f, ": {}", inner_138)?;
             }
         }
         Ok(())
@@ -8090,9 +8331,9 @@ impl TooManyDistributionsAssociatedToOriginAccessControl {
 impl std::fmt::Display for TooManyDistributionsAssociatedToOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToOriginAccessControl")?;
-        if let Some(inner_135) = &self.message {
+        if let Some(inner_139) = &self.message {
             {
-                write!(f, ": {}", inner_135)?;
+                write!(f, ": {}", inner_139)?;
             }
         }
         Ok(())
@@ -8134,6 +8375,126 @@ impl TooManyDistributionsAssociatedToOriginAccessControl {
     }
 }
 
+/// <p>You have reached the maximum number of continuous deployment policies for this Amazon Web Services account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TooManyContinuousDeploymentPolicies {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl TooManyContinuousDeploymentPolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyContinuousDeploymentPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyContinuousDeploymentPolicies")?;
+        if let Some(inner_140) = &self.message {
+            {
+                write!(f, ": {}", inner_140)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyContinuousDeploymentPolicies {}
+/// See [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
+pub mod too_many_continuous_deployment_policies {
+
+    /// A builder for [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
+        pub fn build(self) -> crate::error::TooManyContinuousDeploymentPolicies {
+            crate::error::TooManyContinuousDeploymentPolicies {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyContinuousDeploymentPolicies {
+    /// Creates a new builder-style object to manufacture [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
+    pub fn builder() -> crate::error::too_many_continuous_deployment_policies::Builder {
+        crate::error::too_many_continuous_deployment_policies::Builder::default()
+    }
+}
+
+/// <p>A continuous deployment policy with this configuration already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ContinuousDeploymentPolicyAlreadyExists {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ContinuousDeploymentPolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ContinuousDeploymentPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ContinuousDeploymentPolicyAlreadyExists")?;
+        if let Some(inner_141) = &self.message {
+            {
+                write!(f, ": {}", inner_141)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ContinuousDeploymentPolicyAlreadyExists {}
+/// See [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
+pub mod continuous_deployment_policy_already_exists {
+
+    /// A builder for [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
+        pub fn build(self) -> crate::error::ContinuousDeploymentPolicyAlreadyExists {
+            crate::error::ContinuousDeploymentPolicyAlreadyExists {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ContinuousDeploymentPolicyAlreadyExists {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
+    pub fn builder() -> crate::error::continuous_deployment_policy_already_exists::Builder {
+        crate::error::continuous_deployment_policy_already_exists::Builder::default()
+    }
+}
+
 /// <p>Processing your request would cause you to exceed the maximum number of origin access identities allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8151,9 +8512,9 @@ impl TooManyCloudFrontOriginAccessIdentities {
 impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCloudFrontOriginAccessIdentities")?;
-        if let Some(inner_136) = &self.message {
+        if let Some(inner_142) = &self.message {
             {
-                write!(f, ": {}", inner_136)?;
+                write!(f, ": {}", inner_142)?;
             }
         }
         Ok(())
@@ -8211,9 +8572,9 @@ impl CloudFrontOriginAccessIdentityAlreadyExists {
 impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityAlreadyExists")?;
-        if let Some(inner_137) = &self.message {
+        if let Some(inner_143) = &self.message {
             {
-                write!(f, ": {}", inner_137)?;
+                write!(f, ": {}", inner_143)?;
             }
         }
         Ok(())
@@ -8271,9 +8632,9 @@ impl TooManyCachePolicies {
 impl std::fmt::Display for TooManyCachePolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCachePolicies")?;
-        if let Some(inner_138) = &self.message {
+        if let Some(inner_144) = &self.message {
             {
-                write!(f, ": {}", inner_138)?;
+                write!(f, ": {}", inner_144)?;
             }
         }
         Ok(())
@@ -8450,6 +8811,1033 @@ impl std::error::Error for AssociateAliasError {
             AssociateAliasErrorKind::NoSuchDistribution(_inner) => Some(_inner),
             AssociateAliasErrorKind::TooManyDistributionCnamEs(_inner) => Some(_inner),
             AssociateAliasErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CopyDistribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CopyDistributionError {
+    /// Kind of error that occurred.
+    pub kind: CopyDistributionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopyDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDistributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CopyDistribution` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CopyDistributionErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The CNAME specified is already defined for CloudFront.</p>
+    CnameAlreadyExists(crate::error::CnameAlreadyExists),
+    /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
+    DistributionAlreadyExists(crate::error::DistributionAlreadyExists),
+    /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
+    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
+        crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
+    ),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The default root object file name is too big or contains an invalid character.</p>
+    InvalidDefaultRootObject(crate::error::InvalidDefaultRootObject),
+    /// <p>An invalid error code was specified.</p>
+    InvalidErrorCode(crate::error::InvalidErrorCode),
+    /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
+    InvalidForwardCookies(crate::error::InvalidForwardCookies),
+    /// <p>A CloudFront function association is invalid.</p>
+    InvalidFunctionAssociation(crate::error::InvalidFunctionAssociation),
+    /// <p>The specified geo restriction parameter is not valid.</p>
+    InvalidGeoRestrictionParameter(crate::error::InvalidGeoRestrictionParameter),
+    /// <p>The headers specified are not valid for an Amazon S3 origin.</p>
+    InvalidHeadersForS3Origin(crate::error::InvalidHeadersForS3Origin),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The specified Lambda@Edge function association is invalid.</p>
+    InvalidLambdaFunctionAssociation(crate::error::InvalidLambdaFunctionAssociation),
+    /// <p>The location code specified is not valid.</p>
+    InvalidLocationCode(crate::error::InvalidLocationCode),
+    /// <p>The minimum protocol version specified is not valid.</p>
+    InvalidMinimumProtocolVersion(crate::error::InvalidMinimumProtocolVersion),
+    /// <p>The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.</p>
+    InvalidOrigin(crate::error::InvalidOrigin),
+    /// <p>The origin access control is not valid.</p>
+    InvalidOriginAccessControl(crate::error::InvalidOriginAccessControl),
+    /// <p>The origin access identity is not valid or doesn't exist.</p>
+    InvalidOriginAccessIdentity(crate::error::InvalidOriginAccessIdentity),
+    /// <p>The keep alive timeout specified for the origin is not valid.</p>
+    InvalidOriginKeepaliveTimeout(crate::error::InvalidOriginKeepaliveTimeout),
+    /// <p>The read timeout specified for the origin is not valid.</p>
+    InvalidOriginReadTimeout(crate::error::InvalidOriginReadTimeout),
+    /// <p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support Server Name Indication (SNI).</p>
+    InvalidProtocolSettings(crate::error::InvalidProtocolSettings),
+    /// <p>The query string parameters specified are not valid.</p>
+    InvalidQueryStringParameters(crate::error::InvalidQueryStringParameters),
+    /// <p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>
+    InvalidRelativePath(crate::error::InvalidRelativePath),
+    /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>
+    InvalidRequiredProtocol(crate::error::InvalidRequiredProtocol),
+    /// <p>A response code is not valid.</p>
+    InvalidResponseCode(crate::error::InvalidResponseCode),
+    /// <p>The TTL order specified is not valid.</p>
+    InvalidTtlOrder(crate::error::InvalidTtlOrder),
+    /// <p>A viewer certificate specified is not valid.</p>
+    InvalidViewerCertificate(crate::error::InvalidViewerCertificate),
+    /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+    InvalidWebAclId(crate::error::InvalidWebAclId),
+    /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
+    MissingBody(crate::error::MissingBody),
+    /// <p>The cache policy does not exist.</p>
+    NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
+    /// <p>The specified distribution does not exist.</p>
+    NoSuchDistribution(crate::error::NoSuchDistribution),
+    /// <p>The specified configuration for field-level encryption doesn't exist.</p>
+    NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
+    NoSuchOrigin(crate::error::NoSuchOrigin),
+    /// <p>The origin request policy does not exist.</p>
+    NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
+    /// <p>The real-time log configuration does not exist.</p>
+    NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
+    RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
+    /// <p>You cannot create more cache behaviors for the distribution.</p>
+    TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
+    /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
+    TooManyCertificates(crate::error::TooManyCertificates),
+    /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
+    TooManyCookieNamesInWhiteList(crate::error::TooManyCookieNamesInWhiteList),
+    /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
+    TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
+    /// <p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>
+    TooManyDistributions(crate::error::TooManyDistributions),
+    /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToCachePolicy(
+        crate::error::TooManyDistributionsAssociatedToCachePolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
+    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
+        crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig,
+    ),
+    /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToKeyGroup(
+        crate::error::TooManyDistributionsAssociatedToKeyGroup,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToOriginRequestPolicy(
+        crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
+    ),
+    /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsWithFunctionAssociations(
+        crate::error::TooManyDistributionsWithFunctionAssociations,
+    ),
+    /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
+    TooManyDistributionsWithLambdaAssociations(
+        crate::error::TooManyDistributionsWithLambdaAssociations,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
+    TooManyDistributionsWithSingleFunctionArn(
+        crate::error::TooManyDistributionsWithSingleFunctionArn,
+    ),
+    /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyFunctionAssociations(crate::error::TooManyFunctionAssociations),
+    /// <p>Your request contains too many headers in forwarded values.</p>
+    TooManyHeadersInForwardedValues(crate::error::TooManyHeadersInForwardedValues),
+    /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyKeyGroupsAssociatedToDistribution(
+        crate::error::TooManyKeyGroupsAssociatedToDistribution,
+    ),
+    /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
+    TooManyLambdaFunctionAssociations(crate::error::TooManyLambdaFunctionAssociations),
+    /// <p>Your request contains too many origin custom headers.</p>
+    TooManyOriginCustomHeaders(crate::error::TooManyOriginCustomHeaders),
+    /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
+    TooManyOriginGroupsPerDistribution(crate::error::TooManyOriginGroupsPerDistribution),
+    /// <p>You cannot create more origins for the distribution.</p>
+    TooManyOrigins(crate::error::TooManyOrigins),
+    /// <p>Your request contains too many query string parameters.</p>
+    TooManyQueryStringParameters(crate::error::TooManyQueryStringParameters),
+    /// <p>Your request contains more trusted signers than are allowed per distribution.</p>
+    TooManyTrustedSigners(crate::error::TooManyTrustedSigners),
+    /// <p>The specified key group does not exist.</p>
+    TrustedKeyGroupDoesNotExist(crate::error::TrustedKeyGroupDoesNotExist),
+    /// <p>One or more of your trusted signers don't exist.</p>
+    TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CopyDistributionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CopyDistributionErrorKind::AccessDenied(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::CnameAlreadyExists(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::DistributionAlreadyExists(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InconsistentQuantities(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidArgument(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidDefaultRootObject(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidErrorCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidForwardCookies(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidFunctionAssociation(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidGeoRestrictionParameter(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidHeadersForS3Origin(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidIfMatchVersion(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidLambdaFunctionAssociation(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidLocationCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidMinimumProtocolVersion(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidOrigin(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidOriginAccessControl(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidOriginAccessIdentity(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidOriginReadTimeout(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidProtocolSettings(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidQueryStringParameters(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidRelativePath(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidRequiredProtocol(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidResponseCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidTtlOrder(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidViewerCertificate(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::InvalidWebAclId(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::MissingBody(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchOrigin(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::PreconditionFailed(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyCacheBehaviors(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyCertificates(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyCookieNamesInWhiteList(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionCnamEs(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributions(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyHeadersInForwardedValues(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyLambdaFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyOriginCustomHeaders(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyOrigins(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyQueryStringParameters(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TooManyTrustedSigners(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::TrustedSignerDoesNotExist(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyDistributionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CopyDistributionError {
+    fn code(&self) -> Option<&str> {
+        CopyDistributionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CopyDistributionError {
+    /// Creates a new `CopyDistributionError`.
+    pub fn new(kind: CopyDistributionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CopyDistributionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CopyDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CopyDistributionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CopyDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::AccessDenied(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::CnameAlreadyExists`.
+    pub fn is_cname_already_exists(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::CnameAlreadyExists(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::DistributionAlreadyExists`.
+    pub fn is_distribution_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::DistributionAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
+    pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::InvalidArgument(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidDefaultRootObject`.
+    pub fn is_invalid_default_root_object(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidDefaultRootObject(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidErrorCode`.
+    pub fn is_invalid_error_code(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::InvalidErrorCode(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidForwardCookies`.
+    pub fn is_invalid_forward_cookies(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidForwardCookies(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidFunctionAssociation`.
+    pub fn is_invalid_function_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidFunctionAssociation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidGeoRestrictionParameter`.
+    pub fn is_invalid_geo_restriction_parameter(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidGeoRestrictionParameter(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidHeadersForS3Origin`.
+    pub fn is_invalid_headers_for_s3_origin(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidHeadersForS3Origin(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidLambdaFunctionAssociation`.
+    pub fn is_invalid_lambda_function_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidLambdaFunctionAssociation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidLocationCode`.
+    pub fn is_invalid_location_code(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidLocationCode(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidMinimumProtocolVersion`.
+    pub fn is_invalid_minimum_protocol_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidMinimumProtocolVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidOrigin`.
+    pub fn is_invalid_origin(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::InvalidOrigin(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidOriginAccessControl`.
+    pub fn is_invalid_origin_access_control(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidOriginAccessControl(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidOriginAccessIdentity`.
+    pub fn is_invalid_origin_access_identity(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidOriginAccessIdentity(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout`.
+    pub fn is_invalid_origin_keepalive_timeout(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidOriginReadTimeout`.
+    pub fn is_invalid_origin_read_timeout(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidOriginReadTimeout(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidProtocolSettings`.
+    pub fn is_invalid_protocol_settings(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidProtocolSettings(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidQueryStringParameters`.
+    pub fn is_invalid_query_string_parameters(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidQueryStringParameters(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidRelativePath`.
+    pub fn is_invalid_relative_path(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidRelativePath(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidRequiredProtocol`.
+    pub fn is_invalid_required_protocol(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidRequiredProtocol(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidResponseCode`.
+    pub fn is_invalid_response_code(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidResponseCode(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidTtlOrder`.
+    pub fn is_invalid_ttl_order(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::InvalidTtlOrder(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidViewerCertificate`.
+    pub fn is_invalid_viewer_certificate(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::InvalidViewerCertificate(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::InvalidWebAclId`.
+    pub fn is_invalid_web_acl_id(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::InvalidWebAclId(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::MissingBody`.
+    pub fn is_missing_body(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::MissingBody(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchCachePolicy`.
+    pub fn is_no_such_cache_policy(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::NoSuchCachePolicy(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchDistribution`.
+    pub fn is_no_such_distribution(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::NoSuchDistribution(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    pub fn is_no_such_field_level_encryption_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchOrigin`.
+    pub fn is_no_such_origin(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::NoSuchOrigin(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchOriginRequestPolicy`.
+    pub fn is_no_such_origin_request_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::NoSuchOriginRequestPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchRealtimeLogConfig`.
+    pub fn is_no_such_realtime_log_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::NoSuchRealtimeLogConfig(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::PreconditionFailed(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch`.
+    pub fn is_realtime_log_config_owner_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyCacheBehaviors`.
+    pub fn is_too_many_cache_behaviors(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyCacheBehaviors(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyCertificates`.
+    pub fn is_too_many_certificates(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyCertificates(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyCookieNamesInWhiteList`.
+    pub fn is_too_many_cookie_names_in_white_list(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyCookieNamesInWhiteList(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionCnamEs`.
+    pub fn is_too_many_distribution_cnam_es(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionCnamEs(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributions`.
+    pub fn is_too_many_distributions(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributions(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
+    pub fn is_too_many_distributions_associated_to_cache_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
+    pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
+    pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
+    pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
+    pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations`.
+    pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations`.
+    pub fn is_too_many_distributions_with_lambda_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn`.
+    pub fn is_too_many_distributions_with_single_function_arn(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyFunctionAssociations`.
+    pub fn is_too_many_function_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyFunctionAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyHeadersInForwardedValues`.
+    pub fn is_too_many_headers_in_forwarded_values(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyHeadersInForwardedValues(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
+    pub fn is_too_many_key_groups_associated_to_distribution(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyLambdaFunctionAssociations`.
+    pub fn is_too_many_lambda_function_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyLambdaFunctionAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyOriginCustomHeaders`.
+    pub fn is_too_many_origin_custom_headers(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyOriginCustomHeaders(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution`.
+    pub fn is_too_many_origin_groups_per_distribution(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyOrigins`.
+    pub fn is_too_many_origins(&self) -> bool {
+        matches!(&self.kind, CopyDistributionErrorKind::TooManyOrigins(_))
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyQueryStringParameters`.
+    pub fn is_too_many_query_string_parameters(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyQueryStringParameters(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TooManyTrustedSigners`.
+    pub fn is_too_many_trusted_signers(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TooManyTrustedSigners(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist`.
+    pub fn is_trusted_key_group_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyDistributionErrorKind::TrustedSignerDoesNotExist`.
+    pub fn is_trusted_signer_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDistributionErrorKind::TrustedSignerDoesNotExist(_)
+        )
+    }
+}
+impl std::error::Error for CopyDistributionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CopyDistributionErrorKind::AccessDenied(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::CnameAlreadyExists(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::DistributionAlreadyExists(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InconsistentQuantities(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidArgument(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidDefaultRootObject(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidErrorCode(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidForwardCookies(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidFunctionAssociation(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidGeoRestrictionParameter(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidHeadersForS3Origin(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidIfMatchVersion(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidLambdaFunctionAssociation(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidLocationCode(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidMinimumProtocolVersion(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidOrigin(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidOriginAccessControl(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidOriginAccessIdentity(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidOriginReadTimeout(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidProtocolSettings(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidQueryStringParameters(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidRelativePath(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidRequiredProtocol(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidResponseCode(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidTtlOrder(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidViewerCertificate(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::InvalidWebAclId(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::MissingBody(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchDistribution(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchOrigin(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::PreconditionFailed(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyCacheBehaviors(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyCertificates(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyCookieNamesInWhiteList(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionCnamEs(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributions(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyHeadersInForwardedValues(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyLambdaFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyOriginCustomHeaders(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyOrigins(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyQueryStringParameters(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TooManyTrustedSigners(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::TrustedSignerDoesNotExist(_inner) =>
+            Some(_inner)
+            ,
+            CopyDistributionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8819,6 +10207,194 @@ impl std::error::Error for CreateCloudFrontOriginAccessIdentityError {
     }
 }
 
+/// Error type for the `CreateContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateContinuousDeploymentPolicyError {
+    /// Kind of error that occurred.
+    pub kind: CreateContinuousDeploymentPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateContinuousDeploymentPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateContinuousDeploymentPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>A continuous deployment policy with this configuration already exists.</p>
+    ContinuousDeploymentPolicyAlreadyExists(crate::error::ContinuousDeploymentPolicyAlreadyExists),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>A continuous deployment policy for this staging distribution already exists.</p>
+    StagingDistributionInUse(crate::error::StagingDistributionInUse),
+    /// <p>You have reached the maximum number of continuous deployment policies for this Amazon Web Services account.</p>
+    TooManyContinuousDeploymentPolicies(crate::error::TooManyContinuousDeploymentPolicies),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateContinuousDeploymentPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateContinuousDeploymentPolicyError {
+    fn code(&self) -> Option<&str> {
+        CreateContinuousDeploymentPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateContinuousDeploymentPolicyError {
+    /// Creates a new `CreateContinuousDeploymentPolicyError`.
+    pub fn new(
+        kind: CreateContinuousDeploymentPolicyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateContinuousDeploymentPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateContinuousDeploymentPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists`.
+    pub fn is_continuous_deployment_policy_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse`.
+    pub fn is_staging_distribution_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies`.
+    pub fn is_too_many_continuous_deployment_policies(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies(_)
+        )
+    }
+}
+impl std::error::Error for CreateContinuousDeploymentPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists(
+                _inner,
+            ) => Some(_inner),
+            CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_inner) => {
+                Some(_inner)
+            }
+            CreateContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => Some(_inner),
+            CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_inner) => {
+                Some(_inner)
+            }
+            CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies(
+                _inner,
+            ) => Some(_inner),
+            CreateContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateDistribution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8844,6 +10420,8 @@ pub enum CreateDistributionErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The CNAME specified is already defined for CloudFront.</p>
     CnameAlreadyExists(crate::error::CnameAlreadyExists),
+    /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+    ContinuousDeploymentPolicyInUse(crate::error::ContinuousDeploymentPolicyInUse),
     /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
     DistributionAlreadyExists(crate::error::DistributionAlreadyExists),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
@@ -8906,9 +10484,11 @@ pub enum CreateDistributionErrorKind {
     MissingBody(crate::error::MissingBody),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
-    /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
     NoSuchOrigin(crate::error::NoSuchOrigin),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
@@ -9009,6 +10589,9 @@ impl std::fmt::Display for CreateDistributionError {
             CreateDistributionErrorKind::CnameAlreadyExists(_inner) =>
             _inner.fmt(f)
             ,
+            CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
+            _inner.fmt(f)
+            ,
             CreateDistributionErrorKind::DistributionAlreadyExists(_inner) =>
             _inner.fmt(f)
             ,
@@ -9097,6 +10680,9 @@ impl std::fmt::Display for CreateDistributionError {
             _inner.fmt(f)
             ,
             CreateDistributionErrorKind::NoSuchCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
             _inner.fmt(f)
             ,
             CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
@@ -9257,6 +10843,13 @@ impl CreateDistributionError {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::CnameAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse`.
+    pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDistributionErrorKind::DistributionAlreadyExists`.
@@ -9446,6 +11039,13 @@ impl CreateDistributionError {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NoSuchCachePolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
@@ -9671,6 +11271,9 @@ impl std::error::Error for CreateDistributionError {
             CreateDistributionErrorKind::CnameAlreadyExists(_inner) =>
             Some(_inner)
             ,
+            CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
+            Some(_inner)
+            ,
             CreateDistributionErrorKind::DistributionAlreadyExists(_inner) =>
             Some(_inner)
             ,
@@ -9759,6 +11362,9 @@ impl std::error::Error for CreateDistributionError {
             Some(_inner)
             ,
             CreateDistributionErrorKind::NoSuchCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
             Some(_inner)
             ,
             CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
@@ -9888,6 +11494,8 @@ pub enum CreateDistributionWithTagsErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The CNAME specified is already defined for CloudFront.</p>
     CnameAlreadyExists(crate::error::CnameAlreadyExists),
+    /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+    ContinuousDeploymentPolicyInUse(crate::error::ContinuousDeploymentPolicyInUse),
     /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
     DistributionAlreadyExists(crate::error::DistributionAlreadyExists),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
@@ -9950,9 +11558,11 @@ pub enum CreateDistributionWithTagsErrorKind {
     MissingBody(crate::error::MissingBody),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
-    /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
     NoSuchOrigin(crate::error::NoSuchOrigin),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
@@ -10048,6 +11658,9 @@ impl std::fmt::Display for CreateDistributionWithTagsError {
             CreateDistributionWithTagsErrorKind::CnameAlreadyExists(_inner) =>
             _inner.fmt(f)
             ,
+            CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
+            _inner.fmt(f)
+            ,
             CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(_inner) =>
             _inner.fmt(f)
             ,
@@ -10136,6 +11749,9 @@ impl std::fmt::Display for CreateDistributionWithTagsError {
             _inner.fmt(f)
             ,
             CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
             _inner.fmt(f)
             ,
             CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
@@ -10300,6 +11916,13 @@ impl CreateDistributionWithTagsError {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::CnameAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse`.
+    pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::DistributionAlreadyExists`.
@@ -10507,6 +12130,13 @@ impl CreateDistributionWithTagsError {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig`.
@@ -10720,6 +12350,9 @@ impl std::error::Error for CreateDistributionWithTagsError {
             CreateDistributionWithTagsErrorKind::CnameAlreadyExists(_inner) =>
             Some(_inner)
             ,
+            CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
+            Some(_inner)
+            ,
             CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(_inner) =>
             Some(_inner)
             ,
@@ -10808,6 +12441,9 @@ impl std::error::Error for CreateDistributionWithTagsError {
             Some(_inner)
             ,
             CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
             Some(_inner)
             ,
             CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
@@ -12632,6 +14268,11 @@ pub enum CreateResponseHeadersPolicyErrorKind {
     TooManyCustomHeadersInResponseHeadersPolicy(
         crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
     ),
+    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyRemoveHeadersInResponseHeadersPolicy(
+        crate::error::TooManyRemoveHeadersInResponseHeadersPolicy,
+    ),
     /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
@@ -12658,6 +14299,9 @@ impl std::fmt::Display for CreateResponseHeadersPolicyError {
                 _inner.fmt(f)
             }
             CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(
                 _inner,
             ) => _inner.fmt(f),
             CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(_inner) => {
@@ -12763,6 +14407,13 @@ impl CreateResponseHeadersPolicyError {
             CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy`.
+    pub fn is_too_many_remove_headers_in_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies`.
     pub fn is_too_many_response_headers_policies(&self) -> bool {
         matches!(
@@ -12784,6 +14435,9 @@ impl std::error::Error for CreateResponseHeadersPolicyError {
                 Some(_inner)
             }
             CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => Some(_inner),
+            CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(
                 _inner,
             ) => Some(_inner),
             CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(_inner) => {
@@ -13686,6 +15340,190 @@ impl std::error::Error for DeleteCloudFrontOriginAccessIdentityError {
     }
 }
 
+/// Error type for the `DeleteContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteContinuousDeploymentPolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteContinuousDeploymentPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteContinuousDeploymentPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteContinuousDeploymentPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+    ContinuousDeploymentPolicyInUse(crate::error::ContinuousDeploymentPolicyInUse),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteContinuousDeploymentPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed(_inner) => _inner.fmt(f),
+            DeleteContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteContinuousDeploymentPolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteContinuousDeploymentPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteContinuousDeploymentPolicyError {
+    /// Creates a new `DeleteContinuousDeploymentPolicyError`.
+    pub fn new(
+        kind: DeleteContinuousDeploymentPolicyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteContinuousDeploymentPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteContinuousDeploymentPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse`.
+    pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed(_)
+        )
+    }
+}
+impl std::error::Error for DeleteContinuousDeploymentPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse(_inner) => {
+                Some(_inner)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => Some(_inner),
+            DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_inner) => {
+                Some(_inner)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                Some(_inner)
+            }
+            DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed(_inner) => Some(_inner),
+            DeleteContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeleteDistribution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14202,7 +16040,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionErrorKind {
-    /// <p>Cannot delete the function because it’s attached to one or more cache behaviors.</p>
+    /// <p>Cannot delete the function because it's attached to one or more cache behaviors.</p>
     FunctionInUse(crate::error::FunctionInUse),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
@@ -14960,7 +16798,7 @@ pub enum DeletePublicKeyErrorKind {
     NoSuchPublicKey(crate::error::NoSuchPublicKey),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// <p>The specified public key is in use. </p>
+    /// <p>The specified public key is in use.</p>
     PublicKeyInUse(crate::error::PublicKeyInUse),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -15249,7 +17087,7 @@ pub enum DeleteResponseHeadersPolicyErrorKind {
     NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution. </p>
+    /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution.</p>
     ResponseHeadersPolicyInUse(crate::error::ResponseHeadersPolicyInUse),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -16183,6 +18021,270 @@ impl std::error::Error for GetCloudFrontOriginAccessIdentityConfigError {
             GetCloudFrontOriginAccessIdentityConfigErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
+        }
+    }
+}
+
+/// Error type for the `GetContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetContinuousDeploymentPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContinuousDeploymentPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContinuousDeploymentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetContinuousDeploymentPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetContinuousDeploymentPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            GetContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetContinuousDeploymentPolicyError {
+    fn code(&self) -> Option<&str> {
+        GetContinuousDeploymentPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetContinuousDeploymentPolicyError {
+    /// Creates a new `GetContinuousDeploymentPolicyError`.
+    pub fn new(
+        kind: GetContinuousDeploymentPolicyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetContinuousDeploymentPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetContinuousDeploymentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetContinuousDeploymentPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetContinuousDeploymentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetContinuousDeploymentPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContinuousDeploymentPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
+}
+impl std::error::Error for GetContinuousDeploymentPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                Some(_inner)
+            }
+            GetContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetContinuousDeploymentPolicyConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyConfigError {
+    /// Kind of error that occurred.
+    pub kind: GetContinuousDeploymentPolicyConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContinuousDeploymentPolicyConfigError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetContinuousDeploymentPolicyConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetContinuousDeploymentPolicyConfigErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetContinuousDeploymentPolicyConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetContinuousDeploymentPolicyConfigError {
+    fn code(&self) -> Option<&str> {
+        GetContinuousDeploymentPolicyConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetContinuousDeploymentPolicyConfigError {
+    /// Creates a new `GetContinuousDeploymentPolicyConfigError`.
+    pub fn new(
+        kind: GetContinuousDeploymentPolicyConfigErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetContinuousDeploymentPolicyConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetContinuousDeploymentPolicyConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
+}
+impl std::error::Error for GetContinuousDeploymentPolicyConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied(_inner) => Some(_inner),
+            GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy(
+                _inner,
+            ) => Some(_inner),
+            GetContinuousDeploymentPolicyConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19264,6 +21366,149 @@ impl std::error::Error for ListConflictingAliasesError {
             ListConflictingAliasesErrorKind::InvalidArgument(_inner) => Some(_inner),
             ListConflictingAliasesErrorKind::NoSuchDistribution(_inner) => Some(_inner),
             ListConflictingAliasesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListContinuousDeploymentPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListContinuousDeploymentPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListContinuousDeploymentPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListContinuousDeploymentPoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListContinuousDeploymentPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListContinuousDeploymentPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListContinuousDeploymentPoliciesErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListContinuousDeploymentPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListContinuousDeploymentPoliciesErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            ListContinuousDeploymentPoliciesErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            ListContinuousDeploymentPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListContinuousDeploymentPoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListContinuousDeploymentPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListContinuousDeploymentPoliciesError {
+    /// Creates a new `ListContinuousDeploymentPoliciesError`.
+    pub fn new(
+        kind: ListContinuousDeploymentPoliciesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListContinuousDeploymentPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListContinuousDeploymentPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListContinuousDeploymentPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListContinuousDeploymentPoliciesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListContinuousDeploymentPoliciesErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContinuousDeploymentPoliciesErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContinuousDeploymentPoliciesErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContinuousDeploymentPoliciesErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
+}
+impl std::error::Error for ListContinuousDeploymentPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListContinuousDeploymentPoliciesErrorKind::AccessDenied(_inner) => Some(_inner),
+            ListContinuousDeploymentPoliciesErrorKind::InvalidArgument(_inner) => Some(_inner),
+            ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                Some(_inner)
+            }
+            ListContinuousDeploymentPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22585,6 +24830,205 @@ impl std::error::Error for UpdateCloudFrontOriginAccessIdentityError {
     }
 }
 
+/// Error type for the `UpdateContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateContinuousDeploymentPolicyError {
+    /// Kind of error that occurred.
+    pub kind: UpdateContinuousDeploymentPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateContinuousDeploymentPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateContinuousDeploymentPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateContinuousDeploymentPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    /// <p>A continuous deployment policy for this staging distribution already exists.</p>
+    StagingDistributionInUse(crate::error::StagingDistributionInUse),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateContinuousDeploymentPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed(_inner) => _inner.fmt(f),
+            UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateContinuousDeploymentPolicyError {
+    fn code(&self) -> Option<&str> {
+        UpdateContinuousDeploymentPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateContinuousDeploymentPolicyError {
+    /// Creates a new `UpdateContinuousDeploymentPolicyError`.
+    pub fn new(
+        kind: UpdateContinuousDeploymentPolicyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateContinuousDeploymentPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateContinuousDeploymentPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateContinuousDeploymentPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse`.
+    pub fn is_staging_distribution_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_)
+        )
+    }
+}
+impl std::error::Error for UpdateContinuousDeploymentPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateContinuousDeploymentPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities(_inner) => {
+                Some(_inner)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument(_inner) => Some(_inner),
+            UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion(_inner) => {
+                Some(_inner)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy(_inner) => {
+                Some(_inner)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed(_inner) => Some(_inner),
+            UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse(_inner) => {
+                Some(_inner)
+            }
+            UpdateContinuousDeploymentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateDistribution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22610,6 +25054,8 @@ pub enum UpdateDistributionErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The CNAME specified is already defined for CloudFront.</p>
     CnameAlreadyExists(crate::error::CnameAlreadyExists),
+    /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
+    ContinuousDeploymentPolicyInUse(crate::error::ContinuousDeploymentPolicyInUse),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
         crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
@@ -22670,11 +25116,13 @@ pub enum UpdateDistributionErrorKind {
     MissingBody(crate::error::MissingBody),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
+    /// <p>The continuous deployment policy doesn't exist.</p>
+    NoSuchContinuousDeploymentPolicy(crate::error::NoSuchContinuousDeploymentPolicy),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
-    /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
     NoSuchOrigin(crate::error::NoSuchOrigin),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
@@ -22686,6 +25134,8 @@ pub enum UpdateDistributionErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
+    /// <p>A continuous deployment policy for this staging distribution already exists.</p>
+    StagingDistributionInUse(crate::error::StagingDistributionInUse),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
     /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
@@ -22768,6 +25218,9 @@ impl std::fmt::Display for UpdateDistributionError {
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::CnameAlreadyExists(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
@@ -22857,6 +25310,9 @@ impl std::fmt::Display for UpdateDistributionError {
             UpdateDistributionErrorKind::NoSuchCachePolicy(_inner) =>
             _inner.fmt(f)
             ,
+            UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
             UpdateDistributionErrorKind::NoSuchDistribution(_inner) =>
             _inner.fmt(f)
             ,
@@ -22879,6 +25335,9 @@ impl std::fmt::Display for UpdateDistributionError {
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionErrorKind::StagingDistributionInUse(_inner) =>
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::TooManyCacheBehaviors(_inner) =>
@@ -23015,6 +25474,13 @@ impl UpdateDistributionError {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::CnameAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse`.
+    pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_)
         )
     }
     /// Returns `true` if the error kind is `UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
@@ -23199,6 +25665,13 @@ impl UpdateDistributionError {
             UpdateDistributionErrorKind::NoSuchCachePolicy(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy`.
+    pub fn is_no_such_continuous_deployment_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
@@ -23250,6 +25723,13 @@ impl UpdateDistributionError {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::StagingDistributionInUse`.
+    pub fn is_staging_distribution_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionErrorKind::StagingDistributionInUse(_)
         )
     }
     /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyCacheBehaviors`.
@@ -23422,6 +25902,9 @@ impl std::error::Error for UpdateDistributionError {
             UpdateDistributionErrorKind::CnameAlreadyExists(_inner) =>
             Some(_inner)
             ,
+            UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse(_inner) =>
+            Some(_inner)
+            ,
             UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
             Some(_inner)
             ,
@@ -23509,6 +25992,9 @@ impl std::error::Error for UpdateDistributionError {
             UpdateDistributionErrorKind::NoSuchCachePolicy(_inner) =>
             Some(_inner)
             ,
+            UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy(_inner) =>
+            Some(_inner)
+            ,
             UpdateDistributionErrorKind::NoSuchDistribution(_inner) =>
             Some(_inner)
             ,
@@ -23531,6 +26017,9 @@ impl std::error::Error for UpdateDistributionError {
             Some(_inner)
             ,
             UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionErrorKind::StagingDistributionInUse(_inner) =>
             Some(_inner)
             ,
             UpdateDistributionErrorKind::TooManyCacheBehaviors(_inner) =>
@@ -23603,6 +26092,1022 @@ impl std::error::Error for UpdateDistributionError {
             Some(_inner)
             ,
             UpdateDistributionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
+        }
+    }
+}
+
+/// Error type for the `UpdateDistributionWithStagingConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDistributionWithStagingConfigError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDistributionWithStagingConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDistributionWithStagingConfigError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDistributionWithStagingConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateDistributionWithStagingConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDistributionWithStagingConfigErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The CNAME specified is already defined for CloudFront.</p>
+    CnameAlreadyExists(crate::error::CnameAlreadyExists),
+    /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
+    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
+        crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
+    ),
+    /// <p>The update contains modifications that are not allowed.</p>
+    IllegalUpdate(crate::error::IllegalUpdate),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The default root object file name is too big or contains an invalid character.</p>
+    InvalidDefaultRootObject(crate::error::InvalidDefaultRootObject),
+    /// <p>An invalid error code was specified.</p>
+    InvalidErrorCode(crate::error::InvalidErrorCode),
+    /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
+    InvalidForwardCookies(crate::error::InvalidForwardCookies),
+    /// <p>A CloudFront function association is invalid.</p>
+    InvalidFunctionAssociation(crate::error::InvalidFunctionAssociation),
+    /// <p>The specified geo restriction parameter is not valid.</p>
+    InvalidGeoRestrictionParameter(crate::error::InvalidGeoRestrictionParameter),
+    /// <p>The headers specified are not valid for an Amazon S3 origin.</p>
+    InvalidHeadersForS3Origin(crate::error::InvalidHeadersForS3Origin),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The specified Lambda@Edge function association is invalid.</p>
+    InvalidLambdaFunctionAssociation(crate::error::InvalidLambdaFunctionAssociation),
+    /// <p>The location code specified is not valid.</p>
+    InvalidLocationCode(crate::error::InvalidLocationCode),
+    /// <p>The minimum protocol version specified is not valid.</p>
+    InvalidMinimumProtocolVersion(crate::error::InvalidMinimumProtocolVersion),
+    /// <p>The origin access control is not valid.</p>
+    InvalidOriginAccessControl(crate::error::InvalidOriginAccessControl),
+    /// <p>The origin access identity is not valid or doesn't exist.</p>
+    InvalidOriginAccessIdentity(crate::error::InvalidOriginAccessIdentity),
+    /// <p>The keep alive timeout specified for the origin is not valid.</p>
+    InvalidOriginKeepaliveTimeout(crate::error::InvalidOriginKeepaliveTimeout),
+    /// <p>The read timeout specified for the origin is not valid.</p>
+    InvalidOriginReadTimeout(crate::error::InvalidOriginReadTimeout),
+    /// <p>The query string parameters specified are not valid.</p>
+    InvalidQueryStringParameters(crate::error::InvalidQueryStringParameters),
+    /// <p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>
+    InvalidRelativePath(crate::error::InvalidRelativePath),
+    /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>
+    InvalidRequiredProtocol(crate::error::InvalidRequiredProtocol),
+    /// <p>A response code is not valid.</p>
+    InvalidResponseCode(crate::error::InvalidResponseCode),
+    /// <p>The TTL order specified is not valid.</p>
+    InvalidTtlOrder(crate::error::InvalidTtlOrder),
+    /// <p>A viewer certificate specified is not valid.</p>
+    InvalidViewerCertificate(crate::error::InvalidViewerCertificate),
+    /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+    InvalidWebAclId(crate::error::InvalidWebAclId),
+    /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
+    MissingBody(crate::error::MissingBody),
+    /// <p>The cache policy does not exist.</p>
+    NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
+    /// <p>The specified distribution does not exist.</p>
+    NoSuchDistribution(crate::error::NoSuchDistribution),
+    /// <p>The specified configuration for field-level encryption doesn't exist.</p>
+    NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
+    /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
+    NoSuchOrigin(crate::error::NoSuchOrigin),
+    /// <p>The origin request policy does not exist.</p>
+    NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
+    /// <p>The real-time log configuration does not exist.</p>
+    NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
+    RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
+    /// <p>You cannot create more cache behaviors for the distribution.</p>
+    TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
+    /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
+    TooManyCertificates(crate::error::TooManyCertificates),
+    /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
+    TooManyCookieNamesInWhiteList(crate::error::TooManyCookieNamesInWhiteList),
+    /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
+    TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
+    /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToCachePolicy(
+        crate::error::TooManyDistributionsAssociatedToCachePolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
+    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
+        crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig,
+    ),
+    /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToKeyGroup(
+        crate::error::TooManyDistributionsAssociatedToKeyGroup,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToOriginRequestPolicy(
+        crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
+    ),
+    /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsWithFunctionAssociations(
+        crate::error::TooManyDistributionsWithFunctionAssociations,
+    ),
+    /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
+    TooManyDistributionsWithLambdaAssociations(
+        crate::error::TooManyDistributionsWithLambdaAssociations,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
+    TooManyDistributionsWithSingleFunctionArn(
+        crate::error::TooManyDistributionsWithSingleFunctionArn,
+    ),
+    /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyFunctionAssociations(crate::error::TooManyFunctionAssociations),
+    /// <p>Your request contains too many headers in forwarded values.</p>
+    TooManyHeadersInForwardedValues(crate::error::TooManyHeadersInForwardedValues),
+    /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyKeyGroupsAssociatedToDistribution(
+        crate::error::TooManyKeyGroupsAssociatedToDistribution,
+    ),
+    /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
+    TooManyLambdaFunctionAssociations(crate::error::TooManyLambdaFunctionAssociations),
+    /// <p>Your request contains too many origin custom headers.</p>
+    TooManyOriginCustomHeaders(crate::error::TooManyOriginCustomHeaders),
+    /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
+    TooManyOriginGroupsPerDistribution(crate::error::TooManyOriginGroupsPerDistribution),
+    /// <p>You cannot create more origins for the distribution.</p>
+    TooManyOrigins(crate::error::TooManyOrigins),
+    /// <p>Your request contains too many query string parameters.</p>
+    TooManyQueryStringParameters(crate::error::TooManyQueryStringParameters),
+    /// <p>Your request contains more trusted signers than are allowed per distribution.</p>
+    TooManyTrustedSigners(crate::error::TooManyTrustedSigners),
+    /// <p>The specified key group does not exist.</p>
+    TrustedKeyGroupDoesNotExist(crate::error::TrustedKeyGroupDoesNotExist),
+    /// <p>One or more of your trusted signers don't exist.</p>
+    TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateDistributionWithStagingConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDistributionWithStagingConfigErrorKind::AccessDenied(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidArgument(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::MissingBody(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDistributionWithStagingConfigError {
+    fn code(&self) -> Option<&str> {
+        UpdateDistributionWithStagingConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDistributionWithStagingConfigError {
+    /// Creates a new `UpdateDistributionWithStagingConfigError`.
+    pub fn new(
+        kind: UpdateDistributionWithStagingConfigErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDistributionWithStagingConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDistributionWithStagingConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDistributionWithStagingConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDistributionWithStagingConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists`.
+    pub fn is_cname_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
+    pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate`.
+    pub fn is_illegal_update(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject`.
+    pub fn is_invalid_default_root_object(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode`.
+    pub fn is_invalid_error_code(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies`.
+    pub fn is_invalid_forward_cookies(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation`.
+    pub fn is_invalid_function_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter`.
+    pub fn is_invalid_geo_restriction_parameter(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin`.
+    pub fn is_invalid_headers_for_s3_origin(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation`.
+    pub fn is_invalid_lambda_function_association(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode`.
+    pub fn is_invalid_location_code(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion`.
+    pub fn is_invalid_minimum_protocol_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl`.
+    pub fn is_invalid_origin_access_control(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity`.
+    pub fn is_invalid_origin_access_identity(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout`.
+    pub fn is_invalid_origin_keepalive_timeout(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout`.
+    pub fn is_invalid_origin_read_timeout(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters`.
+    pub fn is_invalid_query_string_parameters(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath`.
+    pub fn is_invalid_relative_path(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol`.
+    pub fn is_invalid_required_protocol(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode`.
+    pub fn is_invalid_response_code(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder`.
+    pub fn is_invalid_ttl_order(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate`.
+    pub fn is_invalid_viewer_certificate(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId`.
+    pub fn is_invalid_web_acl_id(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::MissingBody`.
+    pub fn is_missing_body(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::MissingBody(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy`.
+    pub fn is_no_such_cache_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution`.
+    pub fn is_no_such_distribution(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    pub fn is_no_such_field_level_encryption_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin`.
+    pub fn is_no_such_origin(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy`.
+    pub fn is_no_such_origin_request_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig`.
+    pub fn is_no_such_realtime_log_config(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch`.
+    pub fn is_realtime_log_config_owner_mismatch(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors`.
+    pub fn is_too_many_cache_behaviors(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates`.
+    pub fn is_too_many_certificates(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList`.
+    pub fn is_too_many_cookie_names_in_white_list(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs`.
+    pub fn is_too_many_distribution_cnam_es(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
+    pub fn is_too_many_distributions_associated_to_cache_policy(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
+    pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
+    pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
+    pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
+    pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations`.
+    pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations`.
+    pub fn is_too_many_distributions_with_lambda_associations(&self) -> bool {
+        matches!(&self.kind, UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn`.
+    pub fn is_too_many_distributions_with_single_function_arn(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations`.
+    pub fn is_too_many_function_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues`.
+    pub fn is_too_many_headers_in_forwarded_values(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
+    pub fn is_too_many_key_groups_associated_to_distribution(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations`.
+    pub fn is_too_many_lambda_function_associations(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders`.
+    pub fn is_too_many_origin_custom_headers(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution`.
+    pub fn is_too_many_origin_groups_per_distribution(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins`.
+    pub fn is_too_many_origins(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters`.
+    pub fn is_too_many_query_string_parameters(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners`.
+    pub fn is_too_many_trusted_signers(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist`.
+    pub fn is_trusted_key_group_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist`.
+    pub fn is_trusted_signer_does_not_exist(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDistributionWithStagingConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDistributionWithStagingConfigErrorKind::AccessDenied(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidArgument(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::MissingBody(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionWithStagingConfigErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
         }
@@ -25251,6 +28756,11 @@ pub enum UpdateResponseHeadersPolicyErrorKind {
     TooManyCustomHeadersInResponseHeadersPolicy(
         crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
     ),
+    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyRemoveHeadersInResponseHeadersPolicy(
+        crate::error::TooManyRemoveHeadersInResponseHeadersPolicy,
+    ),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -25280,6 +28790,9 @@ impl std::fmt::Display for UpdateResponseHeadersPolicyError {
                 _inner.fmt(f)
             }
             UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(
                 _inner,
             ) => _inner.fmt(f),
             UpdateResponseHeadersPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -25410,6 +28923,13 @@ impl UpdateResponseHeadersPolicyError {
             UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy`.
+    pub fn is_too_many_remove_headers_in_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(_)
+        )
+    }
 }
 impl std::error::Error for UpdateResponseHeadersPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -25430,6 +28950,9 @@ impl std::error::Error for UpdateResponseHeadersPolicyError {
                 Some(_inner)
             }
             UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy(
                 _inner,
             ) => Some(_inner),
             UpdateResponseHeadersPolicyErrorKind::Unhandled(_inner) => Some(_inner),

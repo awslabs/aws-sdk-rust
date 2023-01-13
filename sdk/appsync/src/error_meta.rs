@@ -331,6 +331,9 @@ where
 impl From<crate::error::CreateResolverError> for Error {
     fn from(err: crate::error::CreateResolverError) -> Self {
         match err.kind {
+            crate::error::CreateResolverErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
             crate::error::CreateResolverErrorKind::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
@@ -627,6 +630,9 @@ where
 impl From<crate::error::DeleteResolverError> for Error {
     fn from(err: crate::error::DeleteResolverError) -> Self {
         match err.kind {
+            crate::error::DeleteResolverErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
             crate::error::DeleteResolverErrorKind::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
@@ -714,6 +720,37 @@ impl From<crate::error::DisassociateApiError> for Error {
                 Error::NotFoundException(inner)
             }
             crate::error::DisassociateApiErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EvaluateCodeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::EvaluateCodeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EvaluateCodeError> for Error {
+    fn from(err: crate::error::EvaluateCodeError) -> Self {
+        match err.kind {
+            crate::error::EvaluateCodeErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::EvaluateCodeErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::EvaluateCodeErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::EvaluateCodeErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1824,6 +1861,9 @@ where
 impl From<crate::error::UpdateResolverError> for Error {
     fn from(err: crate::error::UpdateResolverError) -> Self {
         match err.kind {
+            crate::error::UpdateResolverErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
             crate::error::UpdateResolverErrorKind::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }

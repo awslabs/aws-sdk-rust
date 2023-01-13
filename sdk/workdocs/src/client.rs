@@ -263,6 +263,19 @@ impl Client {
     pub fn delete_document(&self) -> fluent_builders::DeleteDocument {
         fluent_builders::DeleteDocument::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteDocumentVersion`](crate::client::fluent_builders::DeleteDocumentVersion) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::set_document_id): <p>The ID of a document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DeleteDocumentVersion::set_version_id): <p>The version ID of a document.</p>
+    ///   - [`delete_prior_versions(bool)`](crate::client::fluent_builders::DeleteDocumentVersion::delete_prior_versions) / [`set_delete_prior_versions(bool)`](crate::client::fluent_builders::DeleteDocumentVersion::set_delete_prior_versions): <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+    /// - On success, responds with [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDocumentVersionError>`](crate::error::DeleteDocumentVersionError)
+    pub fn delete_document_version(&self) -> fluent_builders::DeleteDocumentVersion {
+        fluent_builders::DeleteDocumentVersion::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteFolder`](crate::client::fluent_builders::DeleteFolder) operation.
     ///
     /// - The fluent builder is configurable:
@@ -459,7 +472,7 @@ impl Client {
     ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_organization_id): <p>The ID of the organization.</p>
     ///   - [`user_ids(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::user_ids) / [`set_user_ids(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_user_ids): <p>The IDs of the users.</p>
-    ///   - [`query(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::query) / [`set_query(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_query): <p>A query to filter users by user name.</p>
+    ///   - [`query(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::query) / [`set_query(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_query): <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>  <ul>   <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>   <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>   <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>   <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>  </ul>
     ///   - [`include(UserFilterType)`](crate::client::fluent_builders::DescribeUsers::include) / [`set_include(Option<UserFilterType>)`](crate::client::fluent_builders::DescribeUsers::set_include): <p>The state of the users. Specify "ALL" to include inactive users.</p>
     ///   - [`order(OrderType)`](crate::client::fluent_builders::DescribeUsers::order) / [`set_order(Option<OrderType>)`](crate::client::fluent_builders::DescribeUsers::set_order): <p>The order for the results.</p>
     ///   - [`sort(UserSortType)`](crate::client::fluent_builders::DescribeUsers::sort) / [`set_sort(Option<UserSortType>)`](crate::client::fluent_builders::DescribeUsers::set_sort): <p>The sorting criteria.</p>
@@ -612,6 +625,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<RemoveResourcePermissionError>`](crate::error::RemoveResourcePermissionError)
     pub fn remove_resource_permission(&self) -> fluent_builders::RemoveResourcePermission {
         fluent_builders::RemoveResourcePermission::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RestoreDocumentVersions`](crate::client::fluent_builders::RestoreDocumentVersions) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::RestoreDocumentVersions::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::RestoreDocumentVersions::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDocumentVersions::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::RestoreDocumentVersions::set_document_id): <p>The ID of the document.</p>
+    /// - On success, responds with [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput)
+
+    /// - On failure, responds with [`SdkError<RestoreDocumentVersionsError>`](crate::error::RestoreDocumentVersionsError)
+    pub fn restore_document_versions(&self) -> fluent_builders::RestoreDocumentVersions {
+        fluent_builders::RestoreDocumentVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateDocument`](crate::client::fluent_builders::UpdateDocument) operation.
     ///
@@ -1451,7 +1475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNotificationSubscription`.
     ///
     /// <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotificationSubscription {
         handle: std::sync::Arc<super::Handle>,
@@ -2124,6 +2148,112 @@ pub mod fluent_builders {
         /// <p>The ID of the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_document_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteDocumentVersion`.
+    ///
+    /// <p>Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code> parameter to delete prior versions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteDocumentVersion {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_document_version_input::Builder,
+    }
+    impl DeleteDocumentVersion {
+        /// Creates a new `DeleteDocumentVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteDocumentVersion,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDocumentVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(input.into());
+            self
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn set_authentication_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_token(input);
+            self
+        }
+        /// <p>The ID of a document.</p>
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(input.into());
+            self
+        }
+        /// <p>The ID of a document.</p>
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_document_id(input);
+            self
+        }
+        /// <p>The version ID of a document.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
+            self
+        }
+        /// <p>The version ID of a document.</p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
+            self
+        }
+        /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+        pub fn delete_prior_versions(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_prior_versions(input);
+            self
+        }
+        /// <p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>
+        pub fn set_delete_prior_versions(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_delete_prior_versions(input);
             self
         }
     }
@@ -3706,12 +3836,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_ids(input);
             self
         }
-        /// <p>A query to filter users by user name.</p>
+        /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+        /// <ul>
+        /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+        /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+        /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+        /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+        /// </ul>
         pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query(input.into());
             self
         }
-        /// <p>A query to filter users by user name.</p>
+        /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+        /// <ul>
+        /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+        /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+        /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+        /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+        /// </ul>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_query(input);
             self
@@ -4867,6 +5009,92 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PrincipalType>,
         ) -> Self {
             self.inner = self.inner.set_principal_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RestoreDocumentVersions`.
+    ///
+    /// <p>Recovers a deleted version of an Amazon WorkDocs document.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RestoreDocumentVersions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::restore_document_versions_input::Builder,
+    }
+    impl RestoreDocumentVersions {
+        /// Creates a new `RestoreDocumentVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RestoreDocumentVersions,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVersionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreDocumentVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVersionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(input.into());
+            self
+        }
+        /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+        pub fn set_authentication_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_token(input);
+            self
+        }
+        /// <p>The ID of the document.</p>
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(input.into());
+            self
+        }
+        /// <p>The ID of the document.</p>
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_document_id(input);
             self
         }
     }

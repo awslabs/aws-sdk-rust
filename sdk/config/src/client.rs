@@ -394,6 +394,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigRules::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigRules::set_config_rule_names): <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConfigRules::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    ///   - [`filters(DescribeConfigRulesFilters)`](crate::client::fluent_builders::DescribeConfigRules::filters) / [`set_filters(Option<DescribeConfigRulesFilters>)`](crate::client::fluent_builders::DescribeConfigRules::set_filters): <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
     /// - On success, responds with [`DescribeConfigRulesOutput`](crate::output::DescribeConfigRulesOutput) with field(s):
     ///   - [`config_rules(Option<Vec<ConfigRule>>)`](crate::output::DescribeConfigRulesOutput::config_rules): <p>The details about your Config rules.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeConfigRulesOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -782,6 +783,7 @@ impl Client {
     ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_resource_id): <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     ///   - [`compliance_types(Vec<ComplianceType>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::compliance_types) / [`set_compliance_types(Option<Vec<ComplianceType>>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_compliance_types): <p>Filters the results by compliance.</p>  <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    ///   - [`resource_evaluation_id(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::resource_evaluation_id) / [`set_resource_evaluation_id(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_resource_evaluation_id): <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>   <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>  </note>
     /// - On success, responds with [`GetComplianceDetailsByResourceOutput`](crate::output::GetComplianceDetailsByResourceOutput) with field(s):
     ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::GetComplianceDetailsByResourceOutput::evaluation_results): <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetComplianceDetailsByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -938,6 +940,22 @@ impl Client {
     pub fn get_resource_config_history(&self) -> fluent_builders::GetResourceConfigHistory {
         fluent_builders::GetResourceConfigHistory::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetResourceEvaluationSummary`](crate::client::fluent_builders::GetResourceEvaluationSummary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_evaluation_id(impl Into<String>)`](crate::client::fluent_builders::GetResourceEvaluationSummary::resource_evaluation_id) / [`set_resource_evaluation_id(Option<String>)`](crate::client::fluent_builders::GetResourceEvaluationSummary::set_resource_evaluation_id): <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    /// - On success, responds with [`GetResourceEvaluationSummaryOutput`](crate::output::GetResourceEvaluationSummaryOutput) with field(s):
+    ///   - [`resource_evaluation_id(Option<String>)`](crate::output::GetResourceEvaluationSummaryOutput::resource_evaluation_id): <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    ///   - [`evaluation_mode(Option<EvaluationMode>)`](crate::output::GetResourceEvaluationSummaryOutput::evaluation_mode): <p>Lists results of the mode that you requested to retrieve the resource evaluation summary. The valid values are Detective or Proactive.</p>
+    ///   - [`evaluation_status(Option<EvaluationStatus>)`](crate::output::GetResourceEvaluationSummaryOutput::evaluation_status): <p>Returns an <code>EvaluationStatus</code> object.</p>
+    ///   - [`evaluation_start_timestamp(Option<DateTime>)`](crate::output::GetResourceEvaluationSummaryOutput::evaluation_start_timestamp): <p>The start timestamp when Config rule starts evaluating compliance for the provided resource details.</p>
+    ///   - [`compliance(Option<ComplianceType>)`](crate::output::GetResourceEvaluationSummaryOutput::compliance): <p>The compliance status of the resource evaluation summary.</p>
+    ///   - [`evaluation_context(Option<EvaluationContext>)`](crate::output::GetResourceEvaluationSummaryOutput::evaluation_context): <p>Returns an <code>EvaluationContext</code> object.</p>
+    ///   - [`resource_details(Option<ResourceDetails>)`](crate::output::GetResourceEvaluationSummaryOutput::resource_details): <p>Returns a <code>ResourceDetails</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetResourceEvaluationSummaryError>`](crate::error::GetResourceEvaluationSummaryError)
+    pub fn get_resource_evaluation_summary(&self) -> fluent_builders::GetResourceEvaluationSummary {
+        fluent_builders::GetResourceEvaluationSummary::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetStoredQuery`](crate::client::fluent_builders::GetStoredQuery) operation.
     ///
     /// - The fluent builder is configurable:
@@ -971,8 +989,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`filters(ConformancePackComplianceScoresFilters)`](crate::client::fluent_builders::ListConformancePackComplianceScores::filters) / [`set_filters(Option<ConformancePackComplianceScoresFilters>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_filters): <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListConformancePackComplianceScores::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_sort_order): <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>  <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
-    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListConformancePackComplianceScores::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_sort_by): <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>  <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListConformancePackComplianceScores::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_sort_order): <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>  <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>  <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListConformancePackComplianceScores::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_sort_by): <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>  <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListConformancePackComplianceScores::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_limit): <p>The maximum number of conformance pack compliance scores returned on each page.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConformancePackComplianceScores::set_next_token): <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
     /// - On success, responds with [`ListConformancePackComplianceScoresOutput`](crate::output::ListConformancePackComplianceScoresOutput) with field(s):
@@ -1000,6 +1018,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::error::ListDiscoveredResourcesError)
     pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources {
         fluent_builders::ListDiscoveredResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListResourceEvaluations`](crate::client::fluent_builders::ListResourceEvaluations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceEvaluations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(ResourceEvaluationFilters)`](crate::client::fluent_builders::ListResourceEvaluations::filters) / [`set_filters(Option<ResourceEvaluationFilters>)`](crate::client::fluent_builders::ListResourceEvaluations::set_filters): <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListResourceEvaluations::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListResourceEvaluations::set_limit): <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceEvaluations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceEvaluations::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`ListResourceEvaluationsOutput`](crate::output::ListResourceEvaluationsOutput) with field(s):
+    ///   - [`resource_evaluations(Option<Vec<ResourceEvaluation>>)`](crate::output::ListResourceEvaluationsOutput::resource_evaluations): <p>Returns a <code>ResourceEvaluations</code> object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceEvaluationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<ListResourceEvaluationsError>`](crate::error::ListResourceEvaluationsError)
+    pub fn list_resource_evaluations(&self) -> fluent_builders::ListResourceEvaluations {
+        fluent_builders::ListResourceEvaluations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStoredQueries`](crate::client::fluent_builders::ListStoredQueries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStoredQueries::into_paginator).
@@ -1078,8 +1110,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_name): <p>The unique name of the conformance pack you want to deploy.</p>
-    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
+    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
     ///   - [`delivery_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_bucket) / [`set_delivery_s3_bucket(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_bucket): <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`delivery_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_key_prefix) / [`set_delivery_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_key_prefix): <p>The prefix for the Amazon S3 bucket. </p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`conformance_pack_input_parameters(Vec<ConformancePackInputParameter>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_input_parameters) / [`set_conformance_pack_input_parameters(Option<Vec<ConformancePackInputParameter>>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_input_parameters): <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
@@ -1279,6 +1311,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<StartRemediationExecutionError>`](crate::error::StartRemediationExecutionError)
     pub fn start_remediation_execution(&self) -> fluent_builders::StartRemediationExecution {
         fluent_builders::StartRemediationExecution::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartResourceEvaluation`](crate::client::fluent_builders::StartResourceEvaluation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_details(ResourceDetails)`](crate::client::fluent_builders::StartResourceEvaluation::resource_details) / [`set_resource_details(Option<ResourceDetails>)`](crate::client::fluent_builders::StartResourceEvaluation::set_resource_details): <p>Returns a <code>ResourceDetails</code> object.</p>
+    ///   - [`evaluation_context(EvaluationContext)`](crate::client::fluent_builders::StartResourceEvaluation::evaluation_context) / [`set_evaluation_context(Option<EvaluationContext>)`](crate::client::fluent_builders::StartResourceEvaluation::set_evaluation_context): <p>Returns an <code>EvaluationContext</code> object.</p>
+    ///   - [`evaluation_mode(EvaluationMode)`](crate::client::fluent_builders::StartResourceEvaluation::evaluation_mode) / [`set_evaluation_mode(Option<EvaluationMode>)`](crate::client::fluent_builders::StartResourceEvaluation::set_evaluation_mode): <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+    ///   - [`evaluation_timeout(i32)`](crate::client::fluent_builders::StartResourceEvaluation::evaluation_timeout) / [`set_evaluation_timeout(i32)`](crate::client::fluent_builders::StartResourceEvaluation::set_evaluation_timeout): <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartResourceEvaluation::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartResourceEvaluation::set_client_token): <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>   <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>  </note>
+    /// - On success, responds with [`StartResourceEvaluationOutput`](crate::output::StartResourceEvaluationOutput) with field(s):
+    ///   - [`resource_evaluation_id(Option<String>)`](crate::output::StartResourceEvaluationOutput::resource_evaluation_id): <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
+    /// - On failure, responds with [`SdkError<StartResourceEvaluationError>`](crate::error::StartResourceEvaluationError)
+    pub fn start_resource_evaluation(&self) -> fluent_builders::StartResourceEvaluation {
+        fluent_builders::StartResourceEvaluation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopConfigurationRecorder`](crate::client::fluent_builders::StopConfigurationRecorder) operation.
     ///
@@ -2069,7 +2115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOrganizationConfigRule`.
     ///
     /// <p>Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization. </p>
-    /// <p>Only a master account and a delegated administrator account can delete an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>Only a management account and a delegated administrator account can delete an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule while it is in this state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConfigRule {
@@ -2150,7 +2196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOrganizationConformancePack`.
     ///
     /// <p>Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization. </p>
-    /// <p> Only a master account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p> Only a management account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConformancePack {
@@ -3652,6 +3698,19 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+        pub fn filters(mut self, input: crate::model::DescribeConfigRulesFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::DescribeConfigRulesFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -6425,7 +6484,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceDetailsByResource`.
     ///
-    /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with each rule.</p>
+    /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with each rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetailsByResource {
         handle: std::sync::Arc<super::Handle>,
@@ -6541,6 +6600,23 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+        /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+        /// </note>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_evaluation_id(input.into());
+            self
+        }
+        /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+        /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+        /// </note>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_evaluation_id(input);
             self
         }
     }
@@ -7629,6 +7705,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetResourceEvaluationSummary`.
+    ///
+    /// <p>Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that were run. The results indicate which evaluation context was used to evaluate the rules, which resource details were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration of the proactive rules. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourceEvaluationSummary {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_resource_evaluation_summary_input::Builder,
+    }
+    impl GetResourceEvaluationSummary {
+        /// Creates a new `GetResourceEvaluationSummary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetResourceEvaluationSummary,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourceEvaluationSummaryOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+        pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_evaluation_id(input.into());
+            self
+        }
+        /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+        pub fn set_resource_evaluation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_evaluation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetStoredQuery`.
     ///
     /// <p>Returns the details of a specific stored query.</p>
@@ -7839,7 +7991,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConformancePackComplianceScores`.
     ///
-    /// <p>Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your conformance packs.</p> <note>
+    /// <p>Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.</p> <note>
     /// <p>Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7933,13 +8085,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+        /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
-        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.</p>
+        /// <p>You can sort conformance pack compliance scores by the numerical value of the compliance score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and first when sorting by descending order.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -7948,13 +8102,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
         pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
-        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance score.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
@@ -8112,6 +8266,108 @@ pub mod fluent_builders {
         /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn set_include_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_deleted_resources(input);
+            self
+        }
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResourceEvaluations`.
+    ///
+    /// <p>Returns a list of proactive resource evaluations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListResourceEvaluations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_resource_evaluations_input::Builder,
+    }
+    impl ListResourceEvaluations {
+        /// Creates a new `ListResourceEvaluations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListResourceEvaluations,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResourceEvaluationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceEvaluationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceEvaluationsPaginator {
+            crate::paginator::ListResourceEvaluationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+        pub fn filters(mut self, input: crate::model::ResourceEvaluationFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ResourceEvaluationFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
+            self
+        }
+        /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -8740,9 +8996,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConformancePack`.
     ///
-    /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across Amazon Web Services Organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across an organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     /// <p>This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service-linked role is created only when the role does not exist in your account. </p> <note>
-    /// <p>You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code> or <code>TemplateSSMDocumentDetails</code> parameters.</p>
+    /// <p>You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or <code>TemplateSSMDocumentDetails</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConformancePack {
@@ -8816,14 +9072,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conformance_pack_name(input);
             self
         }
-        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_s3_uri(input.into());
             self
         }
-        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -8834,14 +9090,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -9197,11 +9453,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutOrganizationConfigRule`.
     ///
     /// <p>Adds or updates an Config rule for your entire organization to evaluate if your Amazon Web Services resources comply with your desired configurations. For information on how many organization Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
-    /// <p> Only a master account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
-    /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with <code>GetRole</code> action.</p>
+    /// <p> Only a management account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
+    /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with <code>GetRole</code> action.</p>
     /// <p>To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p>There are two types of rules: Config Custom Rules and Config Managed Rules. You can use <code>PutOrganizationConfigRule</code> to create both Config custom rules and Config managed rules.</p>
-    /// <p>Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first need to create an Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.</p>
+    /// <p>Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first need to create an Lambda function in the management account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.</p>
     /// <p>Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the <code>RuleIdentifier</code> key.</p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>Make sure to specify one of either <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy rules, <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or <code>OrganizationManagedRuleMetadata</code> for managed rules.</p>
@@ -9352,8 +9608,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutOrganizationConformancePack`.
     ///
     /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
-    /// <p>Only a master account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
-    /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <note>
+    /// <p>Only a management account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
+    /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
     /// <p>Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated. You cannot update a conformance pack while it is in this state.</p>
@@ -9628,6 +9884,8 @@ pub mod fluent_builders {
     ///
     /// <p>A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specific resource with a specific Config rule. </p> <note>
     /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
+    /// </note> <note>
+    /// <p>To place an exception on an Amazon Web Services resource, ensure remediation is set as manual remediation.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationExceptions {
@@ -10579,6 +10837,134 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
         ) -> Self {
             self.inner = self.inner.set_resource_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartResourceEvaluation`.
+    ///
+    /// <p>Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation context. It runs an execution against the resource details with all of the Config rules in your account that match with the specified proactive mode and resource type.</p> <note>
+    /// <p>Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartResourceEvaluation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_resource_evaluation_input::Builder,
+    }
+    impl StartResourceEvaluation {
+        /// Creates a new `StartResourceEvaluation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartResourceEvaluation,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartResourceEvaluationOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Returns a <code>ResourceDetails</code> object.</p>
+        pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
+            self.inner = self.inner.resource_details(input);
+            self
+        }
+        /// <p>Returns a <code>ResourceDetails</code> object.</p>
+        pub fn set_resource_details(
+            mut self,
+            input: std::option::Option<crate::model::ResourceDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_details(input);
+            self
+        }
+        /// <p>Returns an <code>EvaluationContext</code> object.</p>
+        pub fn evaluation_context(mut self, input: crate::model::EvaluationContext) -> Self {
+            self.inner = self.inner.evaluation_context(input);
+            self
+        }
+        /// <p>Returns an <code>EvaluationContext</code> object.</p>
+        pub fn set_evaluation_context(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationContext>,
+        ) -> Self {
+            self.inner = self.inner.set_evaluation_context(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+        pub fn evaluation_mode(mut self, input: crate::model::EvaluationMode) -> Self {
+            self.inner = self.inner.evaluation_mode(input);
+            self
+        }
+        /// <p>The mode of an evaluation. The valid value for this API is <code>Proactive</code>.</p>
+        pub fn set_evaluation_mode(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationMode>,
+        ) -> Self {
+            self.inner = self.inner.set_evaluation_mode(input);
+            self
+        }
+        /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+        pub fn evaluation_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.evaluation_timeout(input);
+            self
+        }
+        /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
+        pub fn set_evaluation_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_evaluation_timeout(input);
+            self
+        }
+        /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+        /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+        /// </note>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+        /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
+        /// </note>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }

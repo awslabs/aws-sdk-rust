@@ -1121,7 +1121,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "channels" => {
                                 builder = builder.set_channels(
-                                    crate::json_deser::deser_set_com_amazonaws_codeguruprofiler_channels(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_codeguruprofiler_channels(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1795,7 +1795,7 @@ where
 }
 
 #[allow(non_snake_case)]
-pub(crate) fn deser_set_com_amazonaws_codeguruprofiler_channels<'a, I>(
+pub(crate) fn deser_list_com_amazonaws_codeguruprofiler_channels<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::Channel>>,
@@ -2464,7 +2464,7 @@ where
                             }
                             "eventPublishers" => {
                                 builder = builder.set_event_publishers(
-                                    crate::json_deser::deser_set_com_amazonaws_codeguruprofiler_event_publishers(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_codeguruprofiler_event_publishers(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2929,7 +2929,7 @@ where
 }
 
 #[allow(non_snake_case)]
-pub(crate) fn deser_set_com_amazonaws_codeguruprofiler_event_publishers<'a, I>(
+pub(crate) fn deser_list_com_amazonaws_codeguruprofiler_event_publishers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EventPublisher>>,

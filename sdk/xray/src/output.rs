@@ -235,6 +235,57 @@ impl PutTelemetryRecordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutResourcePolicyOutput {
+    /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
+    #[doc(hidden)]
+    pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+}
+impl PutResourcePolicyOutput {
+    /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.resource_policy.as_ref()
+    }
+}
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+pub mod put_resource_policy_output {
+
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+    }
+    impl Builder {
+        /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
+        pub fn resource_policy(mut self, input: crate::model::ResourcePolicy) -> Self {
+            self.resource_policy = Some(input);
+            self
+        }
+        /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePolicy>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+        pub fn build(self) -> crate::output::PutResourcePolicyOutput {
+            crate::output::PutResourcePolicyOutput {
+                resource_policy: self.resource_policy,
+            }
+        }
+    }
+}
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEncryptionConfigOutput {
     /// <p>The new encryption configuration.</p>
     #[doc(hidden)]
@@ -356,6 +407,83 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourcePoliciesOutput {
+    /// <p>The list of resource policies in the target Amazon Web Services account.</p>
+    #[doc(hidden)]
+    pub resource_policies: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
+    /// <p>Pagination token. Not currently supported.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourcePoliciesOutput {
+    /// <p>The list of resource policies in the target Amazon Web Services account.</p>
+    pub fn resource_policies(&self) -> std::option::Option<&[crate::model::ResourcePolicy]> {
+        self.resource_policies.as_deref()
+    }
+    /// <p>Pagination token. Not currently supported.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
+pub mod list_resource_policies_output {
+
+    /// A builder for [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policies:
+            std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `resource_policies`.
+        ///
+        /// To override the contents of this collection use [`set_resource_policies`](Self::set_resource_policies).
+        ///
+        /// <p>The list of resource policies in the target Amazon Web Services account.</p>
+        pub fn resource_policies(mut self, input: crate::model::ResourcePolicy) -> Self {
+            let mut v = self.resource_policies.unwrap_or_default();
+            v.push(input);
+            self.resource_policies = Some(v);
+            self
+        }
+        /// <p>The list of resource policies in the target Amazon Web Services account.</p>
+        pub fn set_resource_policies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
+        ) -> Self {
+            self.resource_policies = input;
+            self
+        }
+        /// <p>Pagination token. Not currently supported.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Pagination token. Not currently supported.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
+        pub fn build(self) -> crate::output::ListResourcePoliciesOutput {
+            crate::output::ListResourcePoliciesOutput {
+                resource_policies: self.resource_policies,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListResourcePoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
+    pub fn builder() -> crate::output::list_resource_policies_output::Builder {
+        crate::output::list_resource_policies_output::Builder::default()
     }
 }
 
@@ -1682,6 +1810,30 @@ impl DeleteSamplingRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
     pub fn builder() -> crate::output::delete_sampling_rule_output::Builder {
         crate::output::delete_sampling_rule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteResourcePolicyOutput {}
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+pub mod delete_resource_policy_output {
+
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+        pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
+            crate::output::DeleteResourcePolicyOutput {}
+        }
+    }
+}
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
     }
 }
 

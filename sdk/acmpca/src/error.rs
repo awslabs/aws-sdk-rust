@@ -660,7 +660,7 @@ impl RequestAlreadyProcessedException {
     }
 }
 
-/// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
+/// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
@@ -840,7 +840,7 @@ impl LockoutPreventedException {
     }
 }
 
-/// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+/// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
@@ -1169,7 +1169,7 @@ pub enum CreateCertificateAuthorityErrorKind {
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
+    /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1508,7 +1508,7 @@ pub enum CreatePermissionErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
+    /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The designated permission has already been given to the user.</p>
     PermissionAlreadyExistsException(crate::error::PermissionAlreadyExistsException),
@@ -3231,7 +3231,7 @@ pub enum IssueCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
+    /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The certificate signing request is invalid.</p>
     MalformedCsrException(crate::error::MalformedCsrException),
@@ -3390,7 +3390,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListCertificateAuthoritie
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCertificateAuthoritiesErrorKind {
-    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -3504,7 +3504,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListPermissionsError {
 pub enum ListPermissionsErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
@@ -4074,7 +4074,7 @@ pub enum RevokeCertificateErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
+    /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Your request has already been completed.</p>
     RequestAlreadyProcessedException(crate::error::RequestAlreadyProcessedException),

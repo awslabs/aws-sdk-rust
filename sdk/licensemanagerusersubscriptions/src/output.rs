@@ -2,6 +2,63 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateIdentityProviderSettingsOutput {
+    /// <p>Describes an identity provider.</p>
+    #[doc(hidden)]
+    pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
+}
+impl UpdateIdentityProviderSettingsOutput {
+    /// <p>Describes an identity provider.</p>
+    pub fn identity_provider_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
+        self.identity_provider_summary.as_ref()
+    }
+}
+/// See [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+pub mod update_identity_provider_settings_output {
+
+    /// A builder for [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identity_provider_summary:
+            std::option::Option<crate::model::IdentityProviderSummary>,
+    }
+    impl Builder {
+        /// <p>Describes an identity provider.</p>
+        pub fn identity_provider_summary(
+            mut self,
+            input: crate::model::IdentityProviderSummary,
+        ) -> Self {
+            self.identity_provider_summary = Some(input);
+            self
+        }
+        /// <p>Describes an identity provider.</p>
+        pub fn set_identity_provider_summary(
+            mut self,
+            input: std::option::Option<crate::model::IdentityProviderSummary>,
+        ) -> Self {
+            self.identity_provider_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+        pub fn build(self) -> crate::output::UpdateIdentityProviderSettingsOutput {
+            crate::output::UpdateIdentityProviderSettingsOutput {
+                identity_provider_summary: self.identity_provider_summary,
+            }
+        }
+    }
+}
+impl UpdateIdentityProviderSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+    pub fn builder() -> crate::output::update_identity_provider_settings_output::Builder {
+        crate::output::update_identity_provider_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
     #[doc(hidden)]

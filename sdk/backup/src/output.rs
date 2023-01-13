@@ -277,7 +277,7 @@ pub struct UpdateFrameworkOutput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
     pub framework_arn: std::option::Option<std::string::String>,
-    /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -290,7 +290,7 @@ impl UpdateFrameworkOutput {
     pub fn framework_arn(&self) -> std::option::Option<&str> {
         self.framework_arn.as_deref()
     }
-    /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
@@ -332,12 +332,12 @@ pub mod update_framework_output {
             self.framework_arn = input;
             self
         }
-        /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+        /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+        /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -695,6 +695,9 @@ pub struct StartCopyJobOutput {
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
+    #[doc(hidden)]
+    pub is_parent: bool,
 }
 impl StartCopyJobOutput {
     /// <p>Uniquely identifies a copy job.</p>
@@ -705,6 +708,10 @@ impl StartCopyJobOutput {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
 }
 /// See [`StartCopyJobOutput`](crate::output::StartCopyJobOutput).
 pub mod start_copy_job_output {
@@ -714,6 +721,7 @@ pub mod start_copy_job_output {
     pub struct Builder {
         pub(crate) copy_job_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) is_parent: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Uniquely identifies a copy job.</p>
@@ -739,11 +747,22 @@ pub mod start_copy_job_output {
             self.creation_date = input;
             self
         }
+        /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
+        pub fn is_parent(mut self, input: bool) -> Self {
+            self.is_parent = Some(input);
+            self
+        }
+        /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
+        pub fn set_is_parent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_parent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartCopyJobOutput`](crate::output::StartCopyJobOutput).
         pub fn build(self) -> crate::output::StartCopyJobOutput {
             crate::output::StartCopyJobOutput {
                 copy_job_id: self.copy_job_id,
                 creation_date: self.creation_date,
+                is_parent: self.is_parent.unwrap_or_default(),
             }
         }
     }
@@ -768,6 +787,9 @@ pub struct StartBackupJobOutput {
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
+    #[doc(hidden)]
+    pub is_parent: bool,
 }
 impl StartBackupJobOutput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -782,6 +804,10 @@ impl StartBackupJobOutput {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
 }
 /// See [`StartBackupJobOutput`](crate::output::StartBackupJobOutput).
 pub mod start_backup_job_output {
@@ -792,6 +818,7 @@ pub mod start_backup_job_output {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) is_parent: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -833,12 +860,23 @@ pub mod start_backup_job_output {
             self.creation_date = input;
             self
         }
+        /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
+        pub fn is_parent(mut self, input: bool) -> Self {
+            self.is_parent = Some(input);
+            self
+        }
+        /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
+        pub fn set_is_parent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_parent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartBackupJobOutput`](crate::output::StartBackupJobOutput).
         pub fn build(self) -> crate::output::StartBackupJobOutput {
             crate::output::StartBackupJobOutput {
                 backup_job_id: self.backup_job_id,
                 recovery_point_arn: self.recovery_point_arn,
                 creation_date: self.creation_date,
+                is_parent: self.is_parent.unwrap_or_default(),
             }
         }
     }
@@ -1343,6 +1381,83 @@ impl ListRecoveryPointsByResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListRecoveryPointsByLegalHoldOutput {
+    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    #[doc(hidden)]
+    pub recovery_points: std::option::Option<std::vec::Vec<crate::model::RecoveryPointMember>>,
+    /// <p>This return is the next item following a partial list of returned resources.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecoveryPointsByLegalHoldOutput {
+    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    pub fn recovery_points(&self) -> std::option::Option<&[crate::model::RecoveryPointMember]> {
+        self.recovery_points.as_deref()
+    }
+    /// <p>This return is the next item following a partial list of returned resources.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput).
+pub mod list_recovery_points_by_legal_hold_output {
+
+    /// A builder for [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recovery_points:
+            std::option::Option<std::vec::Vec<crate::model::RecoveryPointMember>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `recovery_points`.
+        ///
+        /// To override the contents of this collection use [`set_recovery_points`](Self::set_recovery_points).
+        ///
+        /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+        pub fn recovery_points(mut self, input: crate::model::RecoveryPointMember) -> Self {
+            let mut v = self.recovery_points.unwrap_or_default();
+            v.push(input);
+            self.recovery_points = Some(v);
+            self
+        }
+        /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+        pub fn set_recovery_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecoveryPointMember>>,
+        ) -> Self {
+            self.recovery_points = input;
+            self
+        }
+        /// <p>This return is the next item following a partial list of returned resources.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>This return is the next item following a partial list of returned resources.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput).
+        pub fn build(self) -> crate::output::ListRecoveryPointsByLegalHoldOutput {
+            crate::output::ListRecoveryPointsByLegalHoldOutput {
+                recovery_points: self.recovery_points,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRecoveryPointsByLegalHoldOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput).
+    pub fn builder() -> crate::output::list_recovery_points_by_legal_hold_output::Builder {
+        crate::output::list_recovery_points_by_legal_hold_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
@@ -1493,6 +1608,82 @@ impl ListProtectedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedResourcesOutput`](crate::output::ListProtectedResourcesOutput).
     pub fn builder() -> crate::output::list_protected_resources_output::Builder {
         crate::output::list_protected_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListLegalHoldsOutput {
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>This is an array of returned legal holds, both active and previous.</p>
+    #[doc(hidden)]
+    pub legal_holds: std::option::Option<std::vec::Vec<crate::model::LegalHold>>,
+}
+impl ListLegalHoldsOutput {
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>This is an array of returned legal holds, both active and previous.</p>
+    pub fn legal_holds(&self) -> std::option::Option<&[crate::model::LegalHold]> {
+        self.legal_holds.as_deref()
+    }
+}
+/// See [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput).
+pub mod list_legal_holds_output {
+
+    /// A builder for [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) legal_holds: std::option::Option<std::vec::Vec<crate::model::LegalHold>>,
+    }
+    impl Builder {
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `legal_holds`.
+        ///
+        /// To override the contents of this collection use [`set_legal_holds`](Self::set_legal_holds).
+        ///
+        /// <p>This is an array of returned legal holds, both active and previous.</p>
+        pub fn legal_holds(mut self, input: crate::model::LegalHold) -> Self {
+            let mut v = self.legal_holds.unwrap_or_default();
+            v.push(input);
+            self.legal_holds = Some(v);
+            self
+        }
+        /// <p>This is an array of returned legal holds, both active and previous.</p>
+        pub fn set_legal_holds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LegalHold>>,
+        ) -> Self {
+            self.legal_holds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput).
+        pub fn build(self) -> crate::output::ListLegalHoldsOutput {
+            crate::output::ListLegalHoldsOutput {
+                next_token: self.next_token,
+                legal_holds: self.legal_holds,
+            }
+        }
+    }
+}
+impl ListLegalHoldsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput).
+    pub fn builder() -> crate::output::list_legal_holds_output::Builder {
+        crate::output::list_legal_holds_output::Builder::default()
     }
 }
 
@@ -2366,6 +2557,255 @@ impl GetRecoveryPointRestoreMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetLegalHoldOutput {
+    /// <p>This is the string title of the legal hold.</p>
+    #[doc(hidden)]
+    pub title: std::option::Option<std::string::String>,
+    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::LegalHoldStatus>,
+    /// <p>This is the returned string description of the legal hold.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>String describing the reason for removing the legal hold.</p>
+    #[doc(hidden)]
+    pub cancel_description: std::option::Option<std::string::String>,
+    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    #[doc(hidden)]
+    pub legal_hold_id: std::option::Option<std::string::String>,
+    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
+    pub legal_hold_arn: std::option::Option<std::string::String>,
+    /// <p>Time in number format when legal hold was created.</p>
+    #[doc(hidden)]
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time in number when legal hold was cancelled.</p>
+    #[doc(hidden)]
+    pub cancellation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    #[doc(hidden)]
+    pub retain_record_until: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    #[doc(hidden)]
+    pub recovery_point_selection: std::option::Option<crate::model::RecoveryPointSelection>,
+}
+impl GetLegalHoldOutput {
+    /// <p>This is the string title of the legal hold.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LegalHoldStatus> {
+        self.status.as_ref()
+    }
+    /// <p>This is the returned string description of the legal hold.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>String describing the reason for removing the legal hold.</p>
+    pub fn cancel_description(&self) -> std::option::Option<&str> {
+        self.cancel_description.as_deref()
+    }
+    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    pub fn legal_hold_id(&self) -> std::option::Option<&str> {
+        self.legal_hold_id.as_deref()
+    }
+    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn legal_hold_arn(&self) -> std::option::Option<&str> {
+        self.legal_hold_arn.as_deref()
+    }
+    /// <p>Time in number format when legal hold was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Time in number when legal hold was cancelled.</p>
+    pub fn cancellation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.cancellation_date.as_ref()
+    }
+    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    pub fn retain_record_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.retain_record_until.as_ref()
+    }
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    pub fn recovery_point_selection(
+        &self,
+    ) -> std::option::Option<&crate::model::RecoveryPointSelection> {
+        self.recovery_point_selection.as_ref()
+    }
+}
+/// See [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput).
+pub mod get_legal_hold_output {
+
+    /// A builder for [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) title: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::LegalHoldStatus>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cancel_description: std::option::Option<std::string::String>,
+        pub(crate) legal_hold_id: std::option::Option<std::string::String>,
+        pub(crate) legal_hold_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) cancellation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) retain_record_until: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) recovery_point_selection:
+            std::option::Option<crate::model::RecoveryPointSelection>,
+    }
+    impl Builder {
+        /// <p>This is the string title of the legal hold.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
+            self
+        }
+        /// <p>This is the string title of the legal hold.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
+            self
+        }
+        /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+        pub fn status(mut self, input: crate::model::LegalHoldStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LegalHoldStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>This is the returned string description of the legal hold.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>This is the returned string description of the legal hold.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>String describing the reason for removing the legal hold.</p>
+        pub fn cancel_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cancel_description = Some(input.into());
+            self
+        }
+        /// <p>String describing the reason for removing the legal hold.</p>
+        pub fn set_cancel_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cancel_description = input;
+            self
+        }
+        /// <p>This is the returned ID associated with a specified legal hold.</p>
+        pub fn legal_hold_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.legal_hold_id = Some(input.into());
+            self
+        }
+        /// <p>This is the returned ID associated with a specified legal hold.</p>
+        pub fn set_legal_hold_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.legal_hold_id = input;
+            self
+        }
+        /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+        pub fn legal_hold_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.legal_hold_arn = Some(input.into());
+            self
+        }
+        /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+        pub fn set_legal_hold_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.legal_hold_arn = input;
+            self
+        }
+        /// <p>Time in number format when legal hold was created.</p>
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date = Some(input);
+            self
+        }
+        /// <p>Time in number format when legal hold was created.</p>
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>Time in number when legal hold was cancelled.</p>
+        pub fn cancellation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.cancellation_date = Some(input);
+            self
+        }
+        /// <p>Time in number when legal hold was cancelled.</p>
+        pub fn set_cancellation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.cancellation_date = input;
+            self
+        }
+        /// <p>This is the date and time until which the legal hold record will be retained.</p>
+        pub fn retain_record_until(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.retain_record_until = Some(input);
+            self
+        }
+        /// <p>This is the date and time until which the legal hold record will be retained.</p>
+        pub fn set_retain_record_until(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.retain_record_until = input;
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn recovery_point_selection(
+            mut self,
+            input: crate::model::RecoveryPointSelection,
+        ) -> Self {
+            self.recovery_point_selection = Some(input);
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn set_recovery_point_selection(
+            mut self,
+            input: std::option::Option<crate::model::RecoveryPointSelection>,
+        ) -> Self {
+            self.recovery_point_selection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput).
+        pub fn build(self) -> crate::output::GetLegalHoldOutput {
+            crate::output::GetLegalHoldOutput {
+                title: self.title,
+                status: self.status,
+                description: self.description,
+                cancel_description: self.cancel_description,
+                legal_hold_id: self.legal_hold_id,
+                legal_hold_arn: self.legal_hold_arn,
+                creation_date: self.creation_date,
+                cancellation_date: self.cancellation_date,
+                retain_record_until: self.retain_record_until,
+                recovery_point_selection: self.recovery_point_selection,
+            }
+        }
+    }
+}
+impl GetLegalHoldOutput {
+    /// Creates a new builder-style object to manufacture [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput).
+    pub fn builder() -> crate::output::get_legal_hold_output::Builder {
+        crate::output::get_legal_hold_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackupVaultNotificationsOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
@@ -3116,6 +3556,30 @@ impl ExportBackupPlanTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisassociateRecoveryPointFromParentOutput {}
+/// See [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput).
+pub mod disassociate_recovery_point_from_parent_output {
+
+    /// A builder for [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput).
+        pub fn build(self) -> crate::output::DisassociateRecoveryPointFromParentOutput {
+            crate::output::DisassociateRecoveryPointFromParentOutput {}
+        }
+    }
+}
+impl DisassociateRecoveryPointFromParentOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput).
+    pub fn builder() -> crate::output::disassociate_recovery_point_from_parent_output::Builder {
+        crate::output::disassociate_recovery_point_from_parent_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateRecoveryPointOutput {}
 /// See [`DisassociateRecoveryPointOutput`](crate::output::DisassociateRecoveryPointOutput).
 pub mod disassociate_recovery_point_output {
@@ -3686,6 +4150,8 @@ pub struct DescribeRecoveryPointOutput {
     /// <p>A status code specifying the state of the recovery point.</p>
     /// <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
     /// <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p> <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.</p>
+    /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecoveryPointStatus>,
     /// <p>A status message explaining the reason for the recovery point deletion failure.</p>
@@ -3720,6 +4186,15 @@ pub struct DescribeRecoveryPointOutput {
     /// <p>The date and time that a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This is an ARN that uniquely identifies a parent (composite) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
+    pub parent_recovery_point_arn: std::option::Option<std::string::String>,
+    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    #[doc(hidden)]
+    pub composite_member_identifier: std::option::Option<std::string::String>,
+    /// <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
+    #[doc(hidden)]
+    pub is_parent: bool,
 }
 impl DescribeRecoveryPointOutput {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -3757,6 +4232,8 @@ impl DescribeRecoveryPointOutput {
     /// <p>A status code specifying the state of the recovery point.</p>
     /// <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
     /// <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p> <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.</p>
+    /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RecoveryPointStatus> {
         self.status.as_ref()
     }
@@ -3802,6 +4279,18 @@ impl DescribeRecoveryPointOutput {
     pub fn last_restore_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_restore_time.as_ref()
     }
+    /// <p>This is an ARN that uniquely identifies a parent (composite) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn parent_recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.parent_recovery_point_arn.as_deref()
+    }
+    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    pub fn composite_member_identifier(&self) -> std::option::Option<&str> {
+        self.composite_member_identifier.as_deref()
+    }
+    /// <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
 }
 /// See [`DescribeRecoveryPointOutput`](crate::output::DescribeRecoveryPointOutput).
 pub mod describe_recovery_point_output {
@@ -3828,6 +4317,9 @@ pub mod describe_recovery_point_output {
         pub(crate) is_encrypted: std::option::Option<bool>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) parent_recovery_point_arn: std::option::Option<std::string::String>,
+        pub(crate) composite_member_identifier: std::option::Option<std::string::String>,
+        pub(crate) is_parent: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -3931,6 +4423,8 @@ pub mod describe_recovery_point_output {
         /// <p>A status code specifying the state of the recovery point.</p>
         /// <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
         /// <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+        /// <p> <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.</p>
+        /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
         pub fn status(mut self, input: crate::model::RecoveryPointStatus) -> Self {
             self.status = Some(input);
             self
@@ -3938,6 +4432,8 @@ pub mod describe_recovery_point_output {
         /// <p>A status code specifying the state of the recovery point.</p>
         /// <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
         /// <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+        /// <p> <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.</p>
+        /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointStatus>,
@@ -4073,6 +4569,45 @@ pub mod describe_recovery_point_output {
             self.last_restore_time = input;
             self
         }
+        /// <p>This is an ARN that uniquely identifies a parent (composite) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        pub fn parent_recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_recovery_point_arn = Some(input.into());
+            self
+        }
+        /// <p>This is an ARN that uniquely identifies a parent (composite) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        pub fn set_parent_recovery_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_recovery_point_arn = input;
+            self
+        }
+        /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+        pub fn composite_member_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.composite_member_identifier = Some(input.into());
+            self
+        }
+        /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+        pub fn set_composite_member_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.composite_member_identifier = input;
+            self
+        }
+        /// <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
+        pub fn is_parent(mut self, input: bool) -> Self {
+            self.is_parent = Some(input);
+            self
+        }
+        /// <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
+        pub fn set_is_parent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_parent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRecoveryPointOutput`](crate::output::DescribeRecoveryPointOutput).
         pub fn build(self) -> crate::output::DescribeRecoveryPointOutput {
             crate::output::DescribeRecoveryPointOutput {
@@ -4095,6 +4630,9 @@ pub mod describe_recovery_point_output {
                 is_encrypted: self.is_encrypted.unwrap_or_default(),
                 storage_class: self.storage_class,
                 last_restore_time: self.last_restore_time,
+                parent_recovery_point_arn: self.parent_recovery_point_arn,
+                composite_member_identifier: self.composite_member_identifier,
+                is_parent: self.is_parent.unwrap_or_default(),
             }
         }
     }
@@ -4305,7 +4843,7 @@ pub struct DescribeFrameworkOutput {
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     #[doc(hidden)]
     pub framework_controls: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
-    /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
@@ -4342,7 +4880,7 @@ impl DescribeFrameworkOutput {
     pub fn framework_controls(&self) -> std::option::Option<&[crate::model::FrameworkControl]> {
         self.framework_controls.as_deref()
     }
-    /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
@@ -4441,12 +4979,12 @@ pub mod describe_framework_output {
             self.framework_controls = input;
             self
         }
-        /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+        /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+        /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4895,6 +5433,19 @@ pub struct DescribeBackupJobOutput {
     /// <p>Represents the actual backup type selected for a backup job. For example, if a successful Windows Volume Shadow Copy Service (VSS) backup was taken, <code>BackupType</code> returns <code>"WindowsVSS"</code>. If <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
     #[doc(hidden)]
     pub backup_type: std::option::Option<std::string::String>,
+    /// <p>This returns the parent (composite) resource backup job ID.</p>
+    #[doc(hidden)]
+    pub parent_job_id: std::option::Option<std::string::String>,
+    /// <p>This returns the boolean value that a backup job is a parent (composite) job.</p>
+    #[doc(hidden)]
+    pub is_parent: bool,
+    /// <p>This returns the number of child (nested) backup jobs.</p>
+    #[doc(hidden)]
+    pub number_of_child_jobs: std::option::Option<i64>,
+    /// <p>This returns the statistics of the included child (nested) backup jobs.</p>
+    #[doc(hidden)]
+    pub child_jobs_in_state:
+        std::option::Option<std::collections::HashMap<crate::model::BackupJobState, i64>>,
 }
 impl DescribeBackupJobOutput {
     /// <p>Returns the account ID that owns the backup job.</p>
@@ -4980,6 +5531,24 @@ impl DescribeBackupJobOutput {
     pub fn backup_type(&self) -> std::option::Option<&str> {
         self.backup_type.as_deref()
     }
+    /// <p>This returns the parent (composite) resource backup job ID.</p>
+    pub fn parent_job_id(&self) -> std::option::Option<&str> {
+        self.parent_job_id.as_deref()
+    }
+    /// <p>This returns the boolean value that a backup job is a parent (composite) job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
+    /// <p>This returns the number of child (nested) backup jobs.</p>
+    pub fn number_of_child_jobs(&self) -> std::option::Option<i64> {
+        self.number_of_child_jobs
+    }
+    /// <p>This returns the statistics of the included child (nested) backup jobs.</p>
+    pub fn child_jobs_in_state(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::BackupJobState, i64>> {
+        self.child_jobs_in_state.as_ref()
+    }
 }
 /// See [`DescribeBackupJobOutput`](crate::output::DescribeBackupJobOutput).
 pub mod describe_backup_job_output {
@@ -5009,6 +5578,11 @@ pub mod describe_backup_job_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) backup_type: std::option::Option<std::string::String>,
+        pub(crate) parent_job_id: std::option::Option<std::string::String>,
+        pub(crate) is_parent: std::option::Option<bool>,
+        pub(crate) number_of_child_jobs: std::option::Option<i64>,
+        pub(crate) child_jobs_in_state:
+            std::option::Option<std::collections::HashMap<crate::model::BackupJobState, i64>>,
     }
     impl Builder {
         /// <p>Returns the account ID that owns the backup job.</p>
@@ -5262,6 +5836,60 @@ pub mod describe_backup_job_output {
             self.backup_type = input;
             self
         }
+        /// <p>This returns the parent (composite) resource backup job ID.</p>
+        pub fn parent_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_job_id = Some(input.into());
+            self
+        }
+        /// <p>This returns the parent (composite) resource backup job ID.</p>
+        pub fn set_parent_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_job_id = input;
+            self
+        }
+        /// <p>This returns the boolean value that a backup job is a parent (composite) job.</p>
+        pub fn is_parent(mut self, input: bool) -> Self {
+            self.is_parent = Some(input);
+            self
+        }
+        /// <p>This returns the boolean value that a backup job is a parent (composite) job.</p>
+        pub fn set_is_parent(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_parent = input;
+            self
+        }
+        /// <p>This returns the number of child (nested) backup jobs.</p>
+        pub fn number_of_child_jobs(mut self, input: i64) -> Self {
+            self.number_of_child_jobs = Some(input);
+            self
+        }
+        /// <p>This returns the number of child (nested) backup jobs.</p>
+        pub fn set_number_of_child_jobs(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_child_jobs = input;
+            self
+        }
+        /// Adds a key-value pair to `child_jobs_in_state`.
+        ///
+        /// To override the contents of this collection use [`set_child_jobs_in_state`](Self::set_child_jobs_in_state).
+        ///
+        /// <p>This returns the statistics of the included child (nested) backup jobs.</p>
+        pub fn child_jobs_in_state(mut self, k: crate::model::BackupJobState, v: i64) -> Self {
+            let mut hash_map = self.child_jobs_in_state.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.child_jobs_in_state = Some(hash_map);
+            self
+        }
+        /// <p>This returns the statistics of the included child (nested) backup jobs.</p>
+        pub fn set_child_jobs_in_state(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<crate::model::BackupJobState, i64>,
+            >,
+        ) -> Self {
+            self.child_jobs_in_state = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBackupJobOutput`](crate::output::DescribeBackupJobOutput).
         pub fn build(self) -> crate::output::DescribeBackupJobOutput {
             crate::output::DescribeBackupJobOutput {
@@ -5285,6 +5913,10 @@ pub mod describe_backup_job_output {
                 start_by: self.start_by,
                 backup_options: self.backup_options,
                 backup_type: self.backup_type,
+                parent_job_id: self.parent_job_id,
+                is_parent: self.is_parent.unwrap_or_default(),
+                number_of_child_jobs: self.number_of_child_jobs,
+                child_jobs_in_state: self.child_jobs_in_state,
             }
         }
     }
@@ -5700,6 +6332,189 @@ impl CreateReportPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateLegalHoldOutput {
+    /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+    #[doc(hidden)]
+    pub title: std::option::Option<std::string::String>,
+    /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::LegalHoldStatus>,
+    /// <p>This is the returned string description of the legal hold.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+    #[doc(hidden)]
+    pub legal_hold_id: std::option::Option<std::string::String>,
+    /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+    #[doc(hidden)]
+    pub legal_hold_arn: std::option::Option<std::string::String>,
+    /// <p>Time in number format when legal hold was created.</p>
+    #[doc(hidden)]
+    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    #[doc(hidden)]
+    pub recovery_point_selection: std::option::Option<crate::model::RecoveryPointSelection>,
+}
+impl CreateLegalHoldOutput {
+    /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LegalHoldStatus> {
+        self.status.as_ref()
+    }
+    /// <p>This is the returned string description of the legal hold.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+    pub fn legal_hold_id(&self) -> std::option::Option<&str> {
+        self.legal_hold_id.as_deref()
+    }
+    /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+    pub fn legal_hold_arn(&self) -> std::option::Option<&str> {
+        self.legal_hold_arn.as_deref()
+    }
+    /// <p>Time in number format when legal hold was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date.as_ref()
+    }
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    pub fn recovery_point_selection(
+        &self,
+    ) -> std::option::Option<&crate::model::RecoveryPointSelection> {
+        self.recovery_point_selection.as_ref()
+    }
+}
+/// See [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput).
+pub mod create_legal_hold_output {
+
+    /// A builder for [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) title: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::LegalHoldStatus>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) legal_hold_id: std::option::Option<std::string::String>,
+        pub(crate) legal_hold_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) recovery_point_selection:
+            std::option::Option<crate::model::RecoveryPointSelection>,
+    }
+    impl Builder {
+        /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.title = Some(input.into());
+            self
+        }
+        /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.title = input;
+            self
+        }
+        /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+        pub fn status(mut self, input: crate::model::LegalHoldStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LegalHoldStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>This is the returned string description of the legal hold.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>This is the returned string description of the legal hold.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+        pub fn legal_hold_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.legal_hold_id = Some(input.into());
+            self
+        }
+        /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+        pub fn set_legal_hold_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.legal_hold_id = input;
+            self
+        }
+        /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+        pub fn legal_hold_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.legal_hold_arn = Some(input.into());
+            self
+        }
+        /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+        pub fn set_legal_hold_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.legal_hold_arn = input;
+            self
+        }
+        /// <p>Time in number format when legal hold was created.</p>
+        pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date = Some(input);
+            self
+        }
+        /// <p>Time in number format when legal hold was created.</p>
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn recovery_point_selection(
+            mut self,
+            input: crate::model::RecoveryPointSelection,
+        ) -> Self {
+            self.recovery_point_selection = Some(input);
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn set_recovery_point_selection(
+            mut self,
+            input: std::option::Option<crate::model::RecoveryPointSelection>,
+        ) -> Self {
+            self.recovery_point_selection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput).
+        pub fn build(self) -> crate::output::CreateLegalHoldOutput {
+            crate::output::CreateLegalHoldOutput {
+                title: self.title,
+                status: self.status,
+                description: self.description,
+                legal_hold_id: self.legal_hold_id,
+                legal_hold_arn: self.legal_hold_arn,
+                creation_date: self.creation_date,
+                recovery_point_selection: self.recovery_point_selection,
+            }
+        }
+    }
+}
+impl CreateLegalHoldOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput).
+    pub fn builder() -> crate::output::create_legal_hold_output::Builder {
+        crate::output::create_legal_hold_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFrameworkOutput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
@@ -6103,5 +6918,29 @@ impl CreateBackupPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupPlanOutput`](crate::output::CreateBackupPlanOutput).
     pub fn builder() -> crate::output::create_backup_plan_output::Builder {
         crate::output::create_backup_plan_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelLegalHoldOutput {}
+/// See [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput).
+pub mod cancel_legal_hold_output {
+
+    /// A builder for [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput).
+        pub fn build(self) -> crate::output::CancelLegalHoldOutput {
+            crate::output::CancelLegalHoldOutput {}
+        }
+    }
+}
+impl CancelLegalHoldOutput {
+    /// Creates a new builder-style object to manufacture [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput).
+    pub fn builder() -> crate::output::cancel_legal_hold_output::Builder {
+        crate::output::cancel_legal_hold_output::Builder::default()
     }
 }

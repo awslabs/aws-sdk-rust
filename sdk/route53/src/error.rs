@@ -3263,6 +3263,7 @@ impl NoSuchCloudWatchLogsLogGroup {
 /// <li> <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p> </li>
 /// <li> <p>The resource policy hasn't finished propagating yet.</p> </li>
 /// <li> <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
+/// <li> <p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5741,6 +5742,7 @@ pub enum CreateQueryLoggingConfigErrorKind {
     /// <li> <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p> </li>
     /// <li> <p>The resource policy hasn't finished propagating yet.</p> </li>
     /// <li> <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
+    /// <li> <p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
     /// </ul>
     InsufficientCloudWatchLogsResourcePolicy(
         crate::error::InsufficientCloudWatchLogsResourcePolicy,

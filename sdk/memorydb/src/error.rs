@@ -1803,6 +1803,186 @@ impl TagQuotaPerResourceExceeded {
     }
 }
 
+/// <p>The requested node offering does not exist. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodesOfferingNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ReservedNodesOfferingNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodesOfferingNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodesOfferingNotFoundFault")?;
+        if let Some(inner_31) = &self.message {
+            {
+                write!(f, ": {}", inner_31)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodesOfferingNotFoundFault {}
+/// See [`ReservedNodesOfferingNotFoundFault`](crate::error::ReservedNodesOfferingNotFoundFault).
+pub mod reserved_nodes_offering_not_found_fault {
+
+    /// A builder for [`ReservedNodesOfferingNotFoundFault`](crate::error::ReservedNodesOfferingNotFoundFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodesOfferingNotFoundFault`](crate::error::ReservedNodesOfferingNotFoundFault).
+        pub fn build(self) -> crate::error::ReservedNodesOfferingNotFoundFault {
+            crate::error::ReservedNodesOfferingNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodesOfferingNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodesOfferingNotFoundFault`](crate::error::ReservedNodesOfferingNotFoundFault).
+    pub fn builder() -> crate::error::reserved_nodes_offering_not_found_fault::Builder {
+        crate::error::reserved_nodes_offering_not_found_fault::Builder::default()
+    }
+}
+
+/// <p>The request cannot be processed because it would exceed the user's node quota.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeQuotaExceededFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ReservedNodeQuotaExceededFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeQuotaExceededFault")?;
+        if let Some(inner_32) = &self.message {
+            {
+                write!(f, ": {}", inner_32)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeQuotaExceededFault {}
+/// See [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+pub mod reserved_node_quota_exceeded_fault {
+
+    /// A builder for [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+        pub fn build(self) -> crate::error::ReservedNodeQuotaExceededFault {
+            crate::error::ReservedNodeQuotaExceededFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+    pub fn builder() -> crate::error::reserved_node_quota_exceeded_fault::Builder {
+        crate::error::reserved_node_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// <p>You already have a reservation with the given identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeAlreadyExistsFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ReservedNodeAlreadyExistsFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeAlreadyExistsFault")?;
+        if let Some(inner_33) = &self.message {
+            {
+                write!(f, ": {}", inner_33)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeAlreadyExistsFault {}
+/// See [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+pub mod reserved_node_already_exists_fault {
+
+    /// A builder for [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ReservedNodeAlreadyExistsFault {
+            crate::error::ReservedNodeAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+    pub fn builder() -> crate::error::reserved_node_already_exists_fault::Builder {
+        crate::error::reserved_node_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1820,9 +2000,9 @@ impl TestFailoverNotAvailableFault {
 impl std::fmt::Display for TestFailoverNotAvailableFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TestFailoverNotAvailableFault")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -1880,9 +2060,9 @@ impl ShardNotFoundFault {
 impl std::fmt::Display for ShardNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ShardNotFoundFault")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -1943,9 +2123,9 @@ impl std::fmt::Display for ApiCallRateForCustomerExceededFault {
             f,
             "ApiCallRateForCustomerExceededFault [APICallRateForCustomerExceededFault]"
         )?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -1986,6 +2166,66 @@ impl ApiCallRateForCustomerExceededFault {
     }
 }
 
+/// <p>The requested node does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ReservedNodeNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeNotFoundFault")?;
+        if let Some(inner_37) = &self.message {
+            {
+                write!(f, ": {}", inner_37)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeNotFoundFault {}
+/// See [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+pub mod reserved_node_not_found_fault {
+
+    /// A builder for [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+        pub fn build(self) -> crate::error::ReservedNodeNotFoundFault {
+            crate::error::ReservedNodeNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+    pub fn builder() -> crate::error::reserved_node_not_found_fault::Builder {
+        crate::error::reserved_node_not_found_fault::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2003,9 +2243,9 @@ impl SubnetGroupInUseFault {
 impl std::fmt::Display for SubnetGroupInUseFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetGroupInUseFault")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2063,9 +2303,9 @@ impl InvalidSnapshotStateFault {
 impl std::fmt::Display for InvalidSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnapshotStateFault")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2123,9 +2363,9 @@ impl SnapshotAlreadyExistsFault {
 impl std::fmt::Display for SnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotAlreadyExistsFault")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2183,9 +2423,9 @@ impl UserQuotaExceededFault {
 impl std::fmt::Display for UserQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserQuotaExceededFault")?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2243,9 +2483,9 @@ impl UserAlreadyExistsFault {
 impl std::fmt::Display for UserAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserAlreadyExistsFault")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2303,9 +2543,9 @@ impl SubnetGroupQuotaExceededFault {
 impl std::fmt::Display for SubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetGroupQuotaExceededFault")?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2363,9 +2603,9 @@ impl SubnetGroupAlreadyExistsFault {
 impl std::fmt::Display for SubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetGroupAlreadyExistsFault")?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2423,9 +2663,9 @@ impl SnapshotQuotaExceededFault {
 impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2483,9 +2723,9 @@ impl ParameterGroupQuotaExceededFault {
 impl std::fmt::Display for ParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterGroupQuotaExceededFault")?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2543,9 +2783,9 @@ impl ParameterGroupAlreadyExistsFault {
 impl std::fmt::Display for ParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterGroupAlreadyExistsFault")?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
@@ -2603,9 +2843,9 @@ impl InvalidCredentialsException {
 impl std::fmt::Display for InvalidCredentialsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCredentialsException")?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_48) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_48)?;
             }
         }
         Ok(())
@@ -2663,9 +2903,9 @@ impl InsufficientClusterCapacityFault {
 impl std::fmt::Display for InsufficientClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientClusterCapacityFault")?;
-        if let Some(inner_45) = &self.message {
+        if let Some(inner_49) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_49)?;
             }
         }
         Ok(())
@@ -2723,9 +2963,9 @@ impl ClusterAlreadyExistsFault {
 impl std::fmt::Display for ClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterAlreadyExistsFault")?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_50) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_50)?;
             }
         }
         Ok(())
@@ -2783,9 +3023,9 @@ impl AclQuotaExceededFault {
 impl std::fmt::Display for AclQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AclQuotaExceededFault [ACLQuotaExceededFault]")?;
-        if let Some(inner_47) = &self.message {
+        if let Some(inner_51) = &self.message {
             {
-                write!(f, ": {}", inner_47)?;
+                write!(f, ": {}", inner_51)?;
             }
         }
         Ok(())
@@ -2843,9 +3083,9 @@ impl AclAlreadyExistsFault {
 impl std::fmt::Display for AclAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AclAlreadyExistsFault [ACLAlreadyExistsFault]")?;
-        if let Some(inner_48) = &self.message {
+        if let Some(inner_52) = &self.message {
             {
-                write!(f, ": {}", inner_48)?;
+                write!(f, ": {}", inner_52)?;
             }
         }
         Ok(())
@@ -2903,9 +3143,9 @@ impl ServiceUpdateNotFoundFault {
 impl std::fmt::Display for ServiceUpdateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUpdateNotFoundFault")?;
-        if let Some(inner_49) = &self.message {
+        if let Some(inner_53) = &self.message {
             {
-                write!(f, ": {}", inner_49)?;
+                write!(f, ": {}", inner_53)?;
             }
         }
         Ok(())
@@ -6049,6 +6289,321 @@ impl std::error::Error for DescribeParametersError {
     }
 }
 
+/// Error type for the `DescribeReservedNodes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReservedNodesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeReservedNodesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedNodesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeReservedNodesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeReservedNodes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReservedNodesErrorKind {
+    /// <p></p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p></p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The requested node does not exist.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p></p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeReservedNodesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReservedNodesErrorKind::InvalidParameterCombinationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeReservedNodesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeReservedNodesError {
+    fn code(&self) -> Option<&str> {
+        DescribeReservedNodesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReservedNodesError {
+    /// Creates a new `DescribeReservedNodesError`.
+    pub fn new(kind: DescribeReservedNodesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeReservedNodesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReservedNodesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeReservedNodesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReservedNodesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault`.
+    pub fn is_reserved_node_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReservedNodesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReservedNodesErrorKind::InvalidParameterCombinationException(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault(_inner) => Some(_inner),
+            DescribeReservedNodesErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
+            DescribeReservedNodesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeReservedNodesOfferings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReservedNodesOfferingsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeReservedNodesOfferingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedNodesOfferingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeReservedNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeReservedNodesOfferings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReservedNodesOfferingsErrorKind {
+    /// <p></p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p></p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The requested node offering does not exist. </p>
+    ReservedNodesOfferingNotFoundFault(crate::error::ReservedNodesOfferingNotFoundFault),
+    /// <p></p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeReservedNodesOfferingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodesOfferingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeReservedNodesOfferingsError {
+    fn code(&self) -> Option<&str> {
+        DescribeReservedNodesOfferingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReservedNodesOfferingsError {
+    /// Creates a new `DescribeReservedNodesOfferingsError`.
+    pub fn new(
+        kind: DescribeReservedNodesOfferingsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeReservedNodesOfferingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReservedNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeReservedNodesOfferingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReservedNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault`.
+    pub fn is_reserved_nodes_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReservedNodesOfferingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException(
+                _inner,
+            ) => Some(_inner),
+            DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodesOfferingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeServiceUpdates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7068,6 +7623,217 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::SubnetGroupNotFoundFault(_inner) => Some(_inner),
             ListTagsErrorKind::UserNotFoundFault(_inner) => Some(_inner),
             ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PurchaseReservedNodesOffering` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PurchaseReservedNodesOfferingError {
+    /// Kind of error that occurred.
+    pub kind: PurchaseReservedNodesOfferingErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PurchaseReservedNodesOfferingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PurchaseReservedNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PurchaseReservedNodesOffering` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PurchaseReservedNodesOfferingErrorKind {
+    /// <p></p>
+    InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p></p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>You already have a reservation with the given identifier.</p>
+    ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
+    /// <p>The request cannot be processed because it would exceed the user's node quota.</p>
+    ReservedNodeQuotaExceededFault(crate::error::ReservedNodeQuotaExceededFault),
+    /// <p>The requested node offering does not exist. </p>
+    ReservedNodesOfferingNotFoundFault(crate::error::ReservedNodesOfferingNotFoundFault),
+    /// <p></p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
+    /// <p></p>
+    TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PurchaseReservedNodesOfferingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException(
+                _inner,
+            ) => _inner.fmt(f),
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            PurchaseReservedNodesOfferingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PurchaseReservedNodesOfferingError {
+    fn code(&self) -> Option<&str> {
+        PurchaseReservedNodesOfferingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PurchaseReservedNodesOfferingError {
+    /// Creates a new `PurchaseReservedNodesOfferingError`.
+    pub fn new(
+        kind: PurchaseReservedNodesOfferingErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PurchaseReservedNodesOfferingError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PurchaseReservedNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PurchaseReservedNodesOfferingError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PurchaseReservedNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault`.
+    pub fn is_reserved_node_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault`.
+    pub fn is_reserved_node_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault`.
+    pub fn is_reserved_nodes_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded`.
+    pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded(_)
+        )
+    }
+}
+impl std::error::Error for PurchaseReservedNodesOfferingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException(
+                _inner,
+            ) => Some(_inner),
+            PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded(_inner) => {
+                Some(_inner)
+            }
+            PurchaseReservedNodesOfferingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

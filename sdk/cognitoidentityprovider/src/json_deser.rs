@@ -6269,6 +6269,19 @@ where
                                     crate::json_deser::deser_structure_crate_model_user_pool_policy_type(tokens)?
                                 );
                             }
+                            "DeletionProtection" => {
+                                builder = builder.set_deletion_protection(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DeletionProtectionType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "LambdaConfig" => {
                                 builder = builder.set_lambda_config(
                                     crate::json_deser::deser_structure_crate_model_lambda_config_type(tokens)?

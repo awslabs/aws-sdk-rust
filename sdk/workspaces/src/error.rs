@@ -2061,6 +2061,174 @@ impl std::error::Error for CreateIpGroupError {
     }
 }
 
+/// Error type for the `CreateStandbyWorkspaces` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateStandbyWorkspacesError {
+    /// Kind of error that occurred.
+    pub kind: CreateStandbyWorkspacesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateStandbyWorkspacesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateStandbyWorkspacesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateStandbyWorkspaces` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateStandbyWorkspacesErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
+    /// <p>Your resource limits have been exceeded.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateStandbyWorkspacesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateStandbyWorkspacesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateStandbyWorkspacesErrorKind::OperationNotSupportedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateStandbyWorkspacesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateStandbyWorkspacesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateStandbyWorkspacesError {
+    fn code(&self) -> Option<&str> {
+        CreateStandbyWorkspacesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateStandbyWorkspacesError {
+    /// Creates a new `CreateStandbyWorkspacesError`.
+    pub fn new(kind: CreateStandbyWorkspacesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateStandbyWorkspacesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateStandbyWorkspacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateStandbyWorkspacesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateStandbyWorkspacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateStandbyWorkspacesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStandbyWorkspacesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateStandbyWorkspacesErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStandbyWorkspacesErrorKind::OperationNotSupportedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateStandbyWorkspacesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStandbyWorkspacesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateStandbyWorkspacesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateStandbyWorkspacesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            CreateStandbyWorkspacesErrorKind::OperationNotSupportedException(_inner) => {
+                Some(_inner)
+            }
+            CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateStandbyWorkspacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateStandbyWorkspacesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `CreateTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7149,6 +7317,172 @@ impl std::error::Error for ModifyAccountError {
     }
 }
 
+/// Error type for the `ModifyCertificateBasedAuthProperties` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifyCertificateBasedAuthPropertiesError {
+    /// Kind of error that occurred.
+    pub kind: ModifyCertificateBasedAuthPropertiesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyCertificateBasedAuthPropertiesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ModifyCertificateBasedAuthProperties` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifyCertificateBasedAuthPropertiesErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ModifyCertificateBasedAuthPropertiesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException(
+                _inner,
+            ) => _inner.fmt(f),
+            ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException(
+                _inner,
+            ) => _inner.fmt(f),
+            ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ModifyCertificateBasedAuthPropertiesError {
+    fn code(&self) -> Option<&str> {
+        ModifyCertificateBasedAuthPropertiesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifyCertificateBasedAuthPropertiesError {
+    /// Creates a new `ModifyCertificateBasedAuthPropertiesError`.
+    pub fn new(
+        kind: ModifyCertificateBasedAuthPropertiesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ModifyCertificateBasedAuthPropertiesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ModifyCertificateBasedAuthPropertiesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ModifyCertificateBasedAuthPropertiesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException(
+                _inner,
+            ) => Some(_inner),
+            ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException(
+                _inner,
+            ) => Some(_inner),
+            ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ModifyCertificateBasedAuthPropertiesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ModifyClientProperties` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8103,6 +8437,8 @@ pub enum ModifyWorkspaceStateErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The state of the resource is not valid for this operation.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ///
@@ -8120,6 +8456,7 @@ impl std::fmt::Display for ModifyWorkspaceStateError {
         match &self.kind {
             ModifyWorkspaceStateErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
             ModifyWorkspaceStateErrorKind::InvalidResourceStateException(_inner) => _inner.fmt(f),
+            ModifyWorkspaceStateErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
             ModifyWorkspaceStateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ModifyWorkspaceStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -8193,6 +8530,13 @@ impl ModifyWorkspaceStateError {
             ModifyWorkspaceStateErrorKind::InvalidResourceStateException(_)
         )
     }
+    /// Returns `true` if the error kind is `ModifyWorkspaceStateErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyWorkspaceStateErrorKind::OperationNotSupportedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ModifyWorkspaceStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -8206,6 +8550,7 @@ impl std::error::Error for ModifyWorkspaceStateError {
         match &self.kind {
             ModifyWorkspaceStateErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
             ModifyWorkspaceStateErrorKind::InvalidResourceStateException(_inner) => Some(_inner),
+            ModifyWorkspaceStateErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
             ModifyWorkspaceStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ModifyWorkspaceStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -8233,6 +8578,8 @@ impl aws_smithy_http::result::CreateUnhandledError for RebootWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootWorkspacesErrorKind {
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8246,6 +8593,7 @@ pub enum RebootWorkspacesErrorKind {
 impl std::fmt::Display for RebootWorkspacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RebootWorkspacesErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
             RebootWorkspacesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8300,10 +8648,18 @@ impl RebootWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RebootWorkspacesErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootWorkspacesErrorKind::OperationNotSupportedException(_)
+        )
+    }
 }
 impl std::error::Error for RebootWorkspacesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RebootWorkspacesErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
             RebootWorkspacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8330,6 +8686,8 @@ impl aws_smithy_http::result::CreateUnhandledError for RebuildWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebuildWorkspacesErrorKind {
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -8343,6 +8701,7 @@ pub enum RebuildWorkspacesErrorKind {
 impl std::fmt::Display for RebuildWorkspacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RebuildWorkspacesErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
             RebuildWorkspacesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8397,10 +8756,18 @@ impl RebuildWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RebuildWorkspacesErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebuildWorkspacesErrorKind::OperationNotSupportedException(_)
+        )
+    }
 }
 impl std::error::Error for RebuildWorkspacesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RebuildWorkspacesErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
             RebuildWorkspacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
@@ -8648,6 +9015,8 @@ pub enum RestoreWorkspaceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ///
@@ -8665,6 +9034,7 @@ impl std::fmt::Display for RestoreWorkspaceError {
         match &self.kind {
             RestoreWorkspaceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RestoreWorkspaceErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            RestoreWorkspaceErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
             RestoreWorkspaceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             RestoreWorkspaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -8734,6 +9104,13 @@ impl RestoreWorkspaceError {
             RestoreWorkspaceErrorKind::InvalidParameterValuesException(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreWorkspaceErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreWorkspaceErrorKind::OperationNotSupportedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -8747,6 +9124,7 @@ impl std::error::Error for RestoreWorkspaceError {
         match &self.kind {
             RestoreWorkspaceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RestoreWorkspaceErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            RestoreWorkspaceErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
             RestoreWorkspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestoreWorkspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -9712,6 +10090,8 @@ pub enum UpdateWorkspaceBundleErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
@@ -9733,6 +10113,7 @@ impl std::fmt::Display for UpdateWorkspaceBundleError {
             UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateWorkspaceBundleErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
             UpdateWorkspaceBundleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateWorkspaceBundleErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
             UpdateWorkspaceBundleErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -9807,6 +10188,13 @@ impl UpdateWorkspaceBundleError {
             UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWorkspaceBundleErrorKind::OperationNotSupportedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -9827,6 +10215,7 @@ impl std::error::Error for UpdateWorkspaceBundleError {
         match &self.kind {
             UpdateWorkspaceBundleErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            UpdateWorkspaceBundleErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
             UpdateWorkspaceBundleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorkspaceBundleErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             UpdateWorkspaceBundleErrorKind::Unhandled(_inner) => Some(_inner),

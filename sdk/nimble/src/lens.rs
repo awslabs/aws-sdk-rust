@@ -49,6 +49,16 @@ pub(crate) fn reflens_structure_crate_output_list_streaming_images_output_next_t
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_streaming_session_backups_output_next_token(
+    input: &crate::output::ListStreamingSessionBackupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_streaming_sessions_output_next_token(
     input: &crate::output::ListStreamingSessionsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -133,6 +143,16 @@ pub(crate) fn lens_structure_crate_output_list_streaming_images_output_streaming
     input: crate::output::ListStreamingImagesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::StreamingImage>> {
     let input = match input.streaming_images {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_streaming_session_backups_output_streaming_session_backups(
+    input: crate::output::ListStreamingSessionBackupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::StreamingSessionBackup>> {
+    let input = match input.streaming_session_backups {
         None => return None,
         Some(t) => t,
     };

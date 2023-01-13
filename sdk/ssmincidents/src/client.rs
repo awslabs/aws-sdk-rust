@@ -95,7 +95,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`regions(HashMap<String, RegionMapInputValue>)`](crate::client::fluent_builders::CreateReplicationSet::regions) / [`set_regions(Option<HashMap<String, RegionMapInputValue>>)`](crate::client::fluent_builders::CreateReplicationSet::set_regions): <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateReplicationSet::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateReplicationSet::set_client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReplicationSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReplicationSet::set_tags): <p>A list of tags to add to the replication set.</p>
     /// - On success, responds with [`CreateReplicationSetOutput`](crate::output::CreateReplicationSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateReplicationSetOutput::arn): <p>The Amazon Resource Name (ARN) of the replication set. </p>
     /// - On failure, responds with [`SdkError<CreateReplicationSetError>`](crate::error::CreateReplicationSetError)
@@ -110,9 +111,10 @@ impl Client {
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateResponsePlan::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateResponsePlan::set_display_name): <p>The long format of the response plan name. This field can contain spaces.</p>
     ///   - [`incident_template(IncidentTemplate)`](crate::client::fluent_builders::CreateResponsePlan::incident_template) / [`set_incident_template(Option<IncidentTemplate>)`](crate::client::fluent_builders::CreateResponsePlan::set_incident_template): <p>Details used to create an incident when using this response plan.</p>
     ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::CreateResponsePlan::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::CreateResponsePlan::set_chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::CreateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::CreateResponsePlan::set_engagements): <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::CreateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::CreateResponsePlan::set_engagements): <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::CreateResponsePlan::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::CreateResponsePlan::set_actions): <p>The actions that the response plan starts at the beginning of an incident.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResponsePlan::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResponsePlan::set_tags): <p>A list of tags that you are adding to the response plan.</p>
+    ///   - [`integrations(Vec<Integration>)`](crate::client::fluent_builders::CreateResponsePlan::integrations) / [`set_integrations(Option<Vec<Integration>>)`](crate::client::fluent_builders::CreateResponsePlan::set_integrations): <p>Information about third-party services integrated into the response plan.</p>
     /// - On success, responds with [`CreateResponsePlanOutput`](crate::output::CreateResponsePlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateResponsePlanOutput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On failure, responds with [`SdkError<CreateResponsePlanError>`](crate::error::CreateResponsePlanError)
@@ -127,6 +129,7 @@ impl Client {
     ///   - [`event_time(DateTime)`](crate::client::fluent_builders::CreateTimelineEvent::event_time) / [`set_event_time(Option<DateTime>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_time): <p>The time that the event occurred.</p>
     ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_type): <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
     ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_data): <p>A short description of the event.</p>
+    ///   - [`event_references(Vec<EventReference>)`](crate::client::fluent_builders::CreateTimelineEvent::event_references) / [`set_event_references(Option<Vec<EventReference>>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_references): <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
     /// - On success, responds with [`CreateTimelineEventOutput`](crate::output::CreateTimelineEventOutput) with field(s):
     ///   - [`incident_record_arn(Option<String>)`](crate::output::CreateTimelineEventOutput::incident_record_arn): <p>The ARN of the incident record that you added the event to.</p>
     ///   - [`event_id(Option<String>)`](crate::output::CreateTimelineEventOutput::event_id): <p>The ID of the event for easy reference later. </p>
@@ -211,7 +214,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourcePolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourcePolicies::set_max_results): <p>The maximum number of resource policies to display per page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourcePolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourcePolicies::set_max_results): <p>The maximum number of resource policies to display for each page of results.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput) with field(s):
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::output::GetResourcePoliciesOutput::resource_policies): <p>Details about the resource policy attached to the response plan.</p>
@@ -230,8 +233,9 @@ impl Client {
     ///   - [`display_name(Option<String>)`](crate::output::GetResponsePlanOutput::display_name): <p>The long format name of the response plan. Can contain spaces.</p>
     ///   - [`incident_template(Option<IncidentTemplate>)`](crate::output::GetResponsePlanOutput::incident_template): <p>Details used to create the incident when using this response plan.</p>
     ///   - [`chat_channel(Option<ChatChannel>)`](crate::output::GetResponsePlanOutput::chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    ///   - [`engagements(Option<Vec<String>>)`](crate::output::GetResponsePlanOutput::engagements): <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    ///   - [`engagements(Option<Vec<String>>)`](crate::output::GetResponsePlanOutput::engagements): <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     ///   - [`actions(Option<Vec<Action>>)`](crate::output::GetResponsePlanOutput::actions): <p>The actions that this response plan takes at the beginning of the incident.</p>
+    ///   - [`integrations(Option<Vec<Integration>>)`](crate::output::GetResponsePlanOutput::integrations): <p>Information about third-party services integrated into the Incident Manager response plan.</p>
     /// - On failure, responds with [`SdkError<GetResponsePlanError>`](crate::error::GetResponsePlanError)
     pub fn get_response_plan(&self) -> fluent_builders::GetResponsePlan {
         fluent_builders::GetResponsePlan::new(self.handle.clone())
@@ -331,7 +335,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
     ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>Details of the resource policy.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`policy_id(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_id): <p>The ID of the resource policy.</p>
@@ -358,7 +362,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags that you are adding to the response plan.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to add to the response plan.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -369,7 +373,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The name of the tag you're removing from the response plan.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The name of the tag to remove from the response plan.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -379,9 +383,9 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateDeletionProtection`](crate::client::fluent_builders::UpdateDeletionProtection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    ///   - [`deletion_protected(bool)`](crate::client::fluent_builders::UpdateDeletionProtection::deletion_protected) / [`set_deletion_protected(Option<bool>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_deletion_protected): <p>Details if deletion protection is enabled or disabled in your account.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_arn): <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
+    ///   - [`deletion_protected(bool)`](crate::client::fluent_builders::UpdateDeletionProtection::deletion_protected) / [`set_deletion_protected(Option<bool>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_deletion_protected): <p>Specifies if deletion protection is turned on or off in your account. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`UpdateDeletionProtectionOutput`](crate::output::UpdateDeletionProtectionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDeletionProtectionError>`](crate::error::UpdateDeletionProtectionError)
@@ -422,7 +426,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationSet::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationSet::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
     ///   - [`actions(Vec<UpdateReplicationSetAction>)`](crate::client::fluent_builders::UpdateReplicationSet::actions) / [`set_actions(Option<Vec<UpdateReplicationSetAction>>)`](crate::client::fluent_builders::UpdateReplicationSet::set_actions): <p>An action to add or delete a Region.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateReplicationSet::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateReplicationSet::set_client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`UpdateReplicationSetOutput`](crate::output::UpdateReplicationSetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateReplicationSetError>`](crate::error::UpdateReplicationSetError)
@@ -441,9 +445,10 @@ impl Client {
     ///   - [`incident_template_dedupe_string(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_dedupe_string) / [`set_incident_template_dedupe_string(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_dedupe_string): <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     ///   - [`incident_template_notification_targets(Vec<NotificationTargetItem>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_notification_targets) / [`set_incident_template_notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_notification_targets): <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::UpdateResponsePlan::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::UpdateResponsePlan::set_chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>  <p>Use the empty structure to remove the chat channel from the response plan.</p>
-    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::UpdateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_engagements): <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::UpdateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_engagements): <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::UpdateResponsePlan::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_actions): <p>The actions that this response plan takes at the beginning of an incident.</p>
-    ///   - [`incident_template_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_tags) / [`set_incident_template_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_tags): <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    ///   - [`incident_template_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_tags) / [`set_incident_template_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_tags): <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    ///   - [`integrations(Vec<Integration>)`](crate::client::fluent_builders::UpdateResponsePlan::integrations) / [`set_integrations(Option<Vec<Integration>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_integrations): <p>Information about third-party services integrated into the response plan.</p>
     /// - On success, responds with [`UpdateResponsePlanOutput`](crate::output::UpdateResponsePlanOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResponsePlanError>`](crate::error::UpdateResponsePlanError)
@@ -459,6 +464,7 @@ impl Client {
     ///   - [`event_time(DateTime)`](crate::client::fluent_builders::UpdateTimelineEvent::event_time) / [`set_event_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_time): <p>The time that the event occurred.</p>
     ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_type): <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
     ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_data): <p>A short description of the event.</p>
+    ///   - [`event_references(Vec<EventReference>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_references) / [`set_event_references(Option<Vec<EventReference>>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_references): <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>   <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>  </important>
     /// - On success, responds with [`UpdateTimelineEventOutput`](crate::output::UpdateTimelineEventOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTimelineEventError>`](crate::error::UpdateTimelineEventError)
@@ -558,14 +564,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_regions(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to add to the replication set.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of tags to add to the replication set.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -687,12 +716,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_channel(input);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-        pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.engagements(input);
+        /// Appends an item to `engagements`.
+        ///
+        /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
+        ///
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+        pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagements(input.into());
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -738,6 +771,23 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// Appends an item to `integrations`.
+        ///
+        /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+        ///
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn integrations(mut self, input: crate::model::Integration) -> Self {
+            self.inner = self.inner.integrations(input);
+            self
+        }
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Integration>>,
+        ) -> Self {
+            self.inner = self.inner.set_integrations(input);
             self
         }
     }
@@ -857,6 +907,23 @@ pub mod fluent_builders {
         /// <p>A short description of the event.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_data(input);
+            self
+        }
+        /// Appends an item to `eventReferences`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            self.inner = self.inner.event_references(input);
+            self
+        }
+        /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.inner = self.inner.set_event_references(input);
             self
         }
     }
@@ -1472,12 +1539,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The maximum number of resource policies to display per page of results.</p>
+        /// <p>The maximum number of resource policies to display for each page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resource policies to display per page of results.</p>
+        /// <p>The maximum number of resource policies to display for each page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2302,7 +2369,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting up cross-account functionality</a>.</p>
+    /// <p>Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html">Cross-Region and cross-account incident management</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -2362,12 +2429,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan to add the resource policy to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2611,7 +2678,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you are adding to the response plan.</p>
+        /// <p>A list of tags to add to the response plan.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2620,7 +2687,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags that you are adding to the response plan.</p>
+        /// <p>A list of tags to add to the response plan.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2707,12 +2774,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The name of the tag you're removing from the response plan.</p>
+        /// <p>The name of the tag to remove from the response plan.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The name of the tag you're removing from the response plan.</p>
+        /// <p>The name of the tag to remove from the response plan.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2783,32 +2850,32 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+        /// <p>Specifies if deletion protection is turned on or off in your account. </p>
         pub fn deletion_protected(mut self, input: bool) -> Self {
             self.inner = self.inner.deletion_protected(input);
             self
         }
-        /// <p>Details if deletion protection is enabled or disabled in your account.</p>
+        /// <p>Specifies if deletion protection is turned on or off in your account. </p>
         pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deletion_protected(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3176,12 +3243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3382,12 +3449,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_channel(input);
             self
         }
-        /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
-        pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.engagements(input);
+        /// Appends an item to `engagements`.
+        ///
+        /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
+        ///
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+        pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagements(input.into());
             self
         }
-        /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+        /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3416,7 +3487,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
         ///
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
         pub fn incident_template_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3425,7 +3496,7 @@ pub mod fluent_builders {
             self.inner = self.inner.incident_template_tags(k.into(), v.into());
             self
         }
-        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
         pub fn set_incident_template_tags(
             mut self,
             input: std::option::Option<
@@ -3433,6 +3504,23 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_incident_template_tags(input);
+            self
+        }
+        /// Appends an item to `integrations`.
+        ///
+        /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+        ///
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn integrations(mut self, input: crate::model::Integration) -> Self {
+            self.inner = self.inner.integrations(input);
+            self
+        }
+        /// <p>Information about third-party services integrated into the response plan.</p>
+        pub fn set_integrations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Integration>>,
+        ) -> Self {
+            self.inner = self.inner.set_integrations(input);
             self
         }
     }
@@ -3562,6 +3650,27 @@ pub mod fluent_builders {
         /// <p>A short description of the event.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_data(input);
+            self
+        }
+        /// Appends an item to `eventReferences`.
+        ///
+        /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
+        ///
+        /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+        /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+        /// </important>
+        pub fn event_references(mut self, input: crate::model::EventReference) -> Self {
+            self.inner = self.inner.event_references(input);
+            self
+        }
+        /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an Amazon Web Services resource involved in the incident or in some way associated with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the resource. You can also specify a related item. As an example, you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the resource. You could also specify a Amazon CloudWatch metric for that table. The metric is the related item.</p> <important>
+        /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes them and enters only new references.</p>
+        /// </important>
+        pub fn set_event_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventReference>>,
+        ) -> Self {
+            self.inner = self.inner.set_event_references(input);
             self
         }
     }

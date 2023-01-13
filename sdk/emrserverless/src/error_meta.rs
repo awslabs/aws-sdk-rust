@@ -90,6 +90,9 @@ impl From<crate::error::CreateApplicationError> for Error {
             crate::error::CreateApplicationErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::error::CreateApplicationErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::error::CreateApplicationErrorKind::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }

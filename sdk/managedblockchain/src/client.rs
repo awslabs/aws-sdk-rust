@@ -91,10 +91,22 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`CreateAccessor`](crate::client::fluent_builders::CreateAccessor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessor::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAccessor::set_client_request_token): <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.</p>
+    ///   - [`accessor_type(AccessorType)`](crate::client::fluent_builders::CreateAccessor::accessor_type) / [`set_accessor_type(Option<AccessorType>)`](crate::client::fluent_builders::CreateAccessor::set_accessor_type): <p>The type of accessor.</p> <note>   <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>  </note>
+    /// - On success, responds with [`CreateAccessorOutput`](crate::output::CreateAccessorOutput) with field(s):
+    ///   - [`accessor_id(Option<String>)`](crate::output::CreateAccessorOutput::accessor_id): <p>The unique identifier of the accessor.</p>
+    ///   - [`billing_token(Option<String>)`](crate::output::CreateAccessorOutput::billing_token): <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessorError>`](crate::error::CreateAccessorError)
+    pub fn create_accessor(&self) -> fluent_builders::CreateAccessor {
+        fluent_builders::CreateAccessor::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateMember`](crate::client::fluent_builders::CreateMember) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMember::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMember::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMember::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMember::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
     ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::CreateMember::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::CreateMember::set_invitation_id): <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
     ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateMember::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateMember::set_network_id): <p>The unique identifier of the network in which the member is created.</p>
     ///   - [`member_configuration(MemberConfiguration)`](crate::client::fluent_builders::CreateMember::member_configuration) / [`set_member_configuration(Option<MemberConfiguration>)`](crate::client::fluent_builders::CreateMember::set_member_configuration): <p>Member configuration parameters.</p>
@@ -107,7 +119,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateNetwork`](crate::client::fluent_builders::CreateNetwork) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_client_request_token): <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_name): <p>The name of the network.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_description): <p>An optional description for the network.</p>
     ///   - [`framework(Framework)`](crate::client::fluent_builders::CreateNetwork::framework) / [`set_framework(Option<Framework>)`](crate::client::fluent_builders::CreateNetwork::set_framework): <p>The blockchain framework that the network uses.</p>
@@ -126,8 +138,8 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateNode`](crate::client::fluent_builders::CreateNode) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNode::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNode::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateNode::set_network_id): <p>The unique identifier of the network for the node.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNode::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNode::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
+    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateNode::set_network_id): <p>The unique identifier of the network for the node.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-goerli</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
     ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateNode::set_member_id): <p>The unique identifier of the member that owns this node.</p>  <p>Applies only to Hyperledger Fabric.</p>
     ///   - [`node_configuration(NodeConfiguration)`](crate::client::fluent_builders::CreateNode::node_configuration) / [`set_node_configuration(Option<NodeConfiguration>)`](crate::client::fluent_builders::CreateNode::set_node_configuration): <p>The properties of a node configuration.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateNode::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNode::set_tags): <p>Tags to assign to the node. Each tag consists of a key and optional value.</p>  <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
@@ -140,9 +152,9 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateProposal`](crate::client::fluent_builders::CreateProposal) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
     ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_network_id): <p> The unique identifier of the network for which the proposal is made.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_member_id): <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
+    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_member_id): <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.</p>
     ///   - [`actions(ProposalActions)`](crate::client::fluent_builders::CreateProposal::actions) / [`set_actions(Option<ProposalActions>)`](crate::client::fluent_builders::CreateProposal::set_actions): <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_description): <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProposal::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProposal::set_tags): <p>Tags to assign to the proposal. Each tag consists of a key and optional value.</p>  <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation inherits the tags added to the proposal.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
@@ -151,6 +163,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateProposalError>`](crate::error::CreateProposalError)
     pub fn create_proposal(&self) -> fluent_builders::CreateProposal {
         fluent_builders::CreateProposal::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteAccessor`](crate::client::fluent_builders::DeleteAccessor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`accessor_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessor::accessor_id) / [`set_accessor_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessor::set_accessor_id): <p>The unique identifier of the accessor.</p>
+    /// - On success, responds with [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessorError>`](crate::error::DeleteAccessorError)
+    pub fn delete_accessor(&self) -> fluent_builders::DeleteAccessor {
+        fluent_builders::DeleteAccessor::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
     ///
@@ -166,7 +188,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteNode`](crate::client::fluent_builders::DeleteNode) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_network_id): <p>The unique identifier of the network that the node is on.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
+    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_network_id): <p>The unique identifier of the network that the node is on.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-goerli</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
     ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_member_id): <p>The unique identifier of the member that owns this node.</p>  <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_node_id): <p>The unique identifier of the node.</p>
     /// - On success, responds with [`DeleteNodeOutput`](crate::output::DeleteNodeOutput)
@@ -174,6 +196,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteNodeError>`](crate::error::DeleteNodeError)
     pub fn delete_node(&self) -> fluent_builders::DeleteNode {
         fluent_builders::DeleteNode::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetAccessor`](crate::client::fluent_builders::GetAccessor) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`accessor_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessor::accessor_id) / [`set_accessor_id(Option<String>)`](crate::client::fluent_builders::GetAccessor::set_accessor_id): <p>The unique identifier of the accessor.</p>
+    /// - On success, responds with [`GetAccessorOutput`](crate::output::GetAccessorOutput) with field(s):
+    ///   - [`accessor(Option<Accessor>)`](crate::output::GetAccessorOutput::accessor): <p>The properties of the accessor.</p>
+    /// - On failure, responds with [`SdkError<GetAccessorError>`](crate::error::GetAccessorError)
+    pub fn get_accessor(&self) -> fluent_builders::GetAccessor {
+        fluent_builders::GetAccessor::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
     ///
@@ -219,6 +251,19 @@ impl Client {
     pub fn get_proposal(&self) -> fluent_builders::GetProposal {
         fluent_builders::GetProposal::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAccessors`](crate::client::fluent_builders::ListAccessors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessors::set_max_results): <p> The maximum number of accessors to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessors::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// - On success, responds with [`ListAccessorsOutput`](crate::output::ListAccessorsOutput) with field(s):
+    ///   - [`accessors(Option<Vec<AccessorSummary>>)`](crate::output::ListAccessorsOutput::accessors): <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccessorsOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
+    /// - On failure, responds with [`SdkError<ListAccessorsError>`](crate::error::ListAccessorsError)
+    pub fn list_accessors(&self) -> fluent_builders::ListAccessors {
+        fluent_builders::ListAccessors::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     ///
@@ -239,7 +284,7 @@ impl Client {
     ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::ListMembers::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::ListMembers::set_network_id): <p>The unique identifier of the network for which to list members.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListMembers::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListMembers::set_name): <p>The optional name of the member to list.</p>
     ///   - [`status(MemberStatus)`](crate::client::fluent_builders::ListMembers::status) / [`set_status(Option<MemberStatus>)`](crate::client::fluent_builders::ListMembers::set_status): <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-    ///   - [`is_owned(bool)`](crate::client::fluent_builders::ListMembers::is_owned) / [`set_is_owned(Option<bool>)`](crate::client::fluent_builders::ListMembers::set_is_owned): <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
+    ///   - [`is_owned(bool)`](crate::client::fluent_builders::ListMembers::is_owned) / [`set_is_owned(Option<bool>)`](crate::client::fluent_builders::ListMembers::set_is_owned): <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of members to return in the request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
@@ -313,7 +358,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags assigned to the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -333,7 +378,7 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
@@ -344,7 +389,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
@@ -398,6 +443,102 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `CreateAccessor`.
+    ///
+    /// <important>
+    /// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
+    /// </important>
+    /// <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has the information required for token based access to your Ethereum nodes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateAccessor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_accessor_input::Builder,
+    }
+    impl CreateAccessor {
+        /// Creates a new `CreateAccessor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateAccessor,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateAccessorError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAccessorOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAccessorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The type of accessor.</p> <note>
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// </note>
+        pub fn accessor_type(mut self, input: crate::model::AccessorType) -> Self {
+            self.inner = self.inner.accessor_type(input);
+            self
+        }
+        /// <p>The type of accessor.</p> <note>
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// </note>
+        pub fn set_accessor_type(
+            mut self,
+            input: std::option::Option<crate::model::AccessorType>,
+        ) -> Self {
+            self.inner = self.inner.set_accessor_type(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateMember`.
     ///
     /// <p>Creates a member within a Managed Blockchain network.</p>
@@ -461,12 +602,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -574,12 +715,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -766,12 +907,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -783,6 +924,7 @@ pub mod fluent_builders {
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
         /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
         /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
         /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
@@ -794,6 +936,7 @@ pub mod fluent_builders {
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
         /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
         /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
         /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
@@ -917,12 +1060,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -940,12 +1083,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
+        /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.</p>
         pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_id(input.into());
             self
         }
-        /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
+        /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.</p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_id(input);
             self
@@ -1001,9 +1144,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteAccessor`.
+    ///
+    /// <important>
+    /// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
+    /// </important>
+    /// <p>Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or HTTP requests. However, WebSocket connections that were initiated while the accessor was in the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAccessor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_accessor_input::Builder,
+    }
+    impl DeleteAccessor {
+        /// Creates a new `DeleteAccessor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteAccessor,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAccessorError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAccessorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAccessorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn accessor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accessor_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_accessor_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteMember`.
     ///
-    /// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the AWS account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted also.</p>
+    /// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the Amazon Web Services account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the network is deleted also.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMember {
@@ -1087,7 +1306,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNode`.
     ///
-    /// <p>Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.</p>
+    /// <p>Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNode {
@@ -1152,6 +1371,7 @@ pub mod fluent_builders {
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
         /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
         /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
         /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
@@ -1163,6 +1383,7 @@ pub mod fluent_builders {
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
         /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
         /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
         /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
@@ -1190,6 +1411,82 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the node.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_node_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetAccessor`.
+    ///
+    /// <important>
+    /// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
+    /// </important>
+    /// <p>Returns detailed information about an accessor. An accessor object is a container that has the information required for token based access to your Ethereum nodes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetAccessor {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_accessor_input::Builder,
+    }
+    impl GetAccessor {
+        /// Creates a new `GetAccessor`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetAccessor,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetAccessorError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAccessorOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetAccessorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn accessor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accessor_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the accessor.</p>
+        pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_accessor_id(input);
             self
         }
     }
@@ -1531,9 +1828,101 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAccessors`.
+    ///
+    /// <important>
+    /// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
+    /// </important>
+    /// <p>Returns a list of the accessors and their properties. Accessor objects are containers that have the information required for token based access to your Ethereum nodes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAccessors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_accessors_input::Builder,
+    }
+    impl ListAccessors {
+        /// Creates a new `ListAccessors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListAccessors,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListAccessorsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAccessorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAccessorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccessorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccessorsPaginator {
+            crate::paginator::ListAccessorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The maximum number of accessors to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> The maximum number of accessors to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Returns a list of all invitations for the current AWS account.</p>
+    /// <p>Returns a list of all invitations for the current Amazon Web Services account.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations {
@@ -1723,12 +2112,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn is_owned(mut self, input: bool) -> Self {
             self.inner = self.inner.is_owned(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_owned(input);
             self
@@ -1756,7 +2145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNetworks`.
     ///
-    /// <p>Returns information about the networks in which the current AWS account participates.</p>
+    /// <p>Returns information about the networks in which the current Amazon Web Services account participates.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworks {
@@ -2277,12 +2666,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2290,7 +2679,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectInvitation`.
     ///
-    /// <p>Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has received an invitation to create a member and join a network.</p>
+    /// <p>Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services account that has received an invitation to create a member and join a network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation {
@@ -2430,12 +2819,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2527,12 +2916,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2769,7 +3158,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `VoteOnProposal`.
     ///
-    /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.</p>
+    /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the action.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VoteOnProposal {

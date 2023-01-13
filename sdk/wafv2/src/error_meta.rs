@@ -353,6 +353,9 @@ impl From<crate::error::CreateWebACLError> for Error {
             crate::error::CreateWebACLErrorKind::WafDuplicateItemException(inner) => {
                 Error::WafDuplicateItemException(inner)
             }
+            crate::error::CreateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
+                inner,
+            ) => Error::WafExpiredManagedRuleGroupVersionException(inner),
             crate::error::CreateWebACLErrorKind::WafInternalErrorException(inner) => {
                 Error::WafInternalErrorException(inner)
             }

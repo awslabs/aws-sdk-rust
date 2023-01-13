@@ -797,6 +797,37 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlowDefinition {
     }
 }
 
+/// Operation shape for `CreateHub`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_hub`](crate::client::Client::create_hub).
+///
+/// See [`crate::client::fluent_builders::CreateHub`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateHub {
+    _private: (),
+}
+impl CreateHub {
+    /// Creates a new builder-style object to manufacture [`CreateHubInput`](crate::input::CreateHubInput).
+    pub fn builder() -> crate::input::create_hub_input::Builder {
+        crate::input::create_hub_input::Builder::default()
+    }
+    /// Creates a new `CreateHub` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateHub {
+    type Output = std::result::Result<crate::output::CreateHubOutput, crate::error::CreateHubError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_hub_error(response)
+        } else {
+            crate::operation_deser::parse_create_hub_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateHumanTaskUi`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -931,6 +962,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImageVersion {
     }
 }
 
+/// Operation shape for `CreateInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_inference_experiment`](crate::client::Client::create_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::CreateInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateInferenceExperiment {
+    _private: (),
+}
+impl CreateInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`CreateInferenceExperimentInput`](crate::input::CreateInferenceExperimentInput).
+    pub fn builder() -> crate::input::create_inference_experiment_input::Builder {
+        crate::input::create_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `CreateInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::CreateInferenceExperimentOutput,
+        crate::error::CreateInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_create_inference_experiment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateInferenceRecommendationsJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1061,6 +1126,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModelBiasJobDefini
             crate::operation_deser::parse_create_model_bias_job_definition_error(response)
         } else {
             crate::operation_deser::parse_create_model_bias_job_definition_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateModelCard`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_model_card`](crate::client::Client::create_model_card).
+///
+/// See [`crate::client::fluent_builders::CreateModelCard`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateModelCard {
+    _private: (),
+}
+impl CreateModelCard {
+    /// Creates a new builder-style object to manufacture [`CreateModelCardInput`](crate::input::CreateModelCardInput).
+    pub fn builder() -> crate::input::create_model_card_input::Builder {
+        crate::input::create_model_card_input::Builder::default()
+    }
+    /// Creates a new `CreateModelCard` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateModelCard {
+    type Output = std::result::Result<
+        crate::output::CreateModelCardOutput,
+        crate::error::CreateModelCardError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_card_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_card_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateModelCardExportJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_model_card_export_job`](crate::client::Client::create_model_card_export_job).
+///
+/// See [`crate::client::fluent_builders::CreateModelCardExportJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateModelCardExportJob {
+    _private: (),
+}
+impl CreateModelCardExportJob {
+    /// Creates a new builder-style object to manufacture [`CreateModelCardExportJobInput`](crate::input::CreateModelCardExportJobInput).
+    pub fn builder() -> crate::input::create_model_card_export_job_input::Builder {
+        crate::input::create_model_card_export_job_input::Builder::default()
+    }
+    /// Creates a new `CreateModelCardExportJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateModelCardExportJob {
+    type Output = std::result::Result<
+        crate::output::CreateModelCardExportJobOutput,
+        crate::error::CreateModelCardExportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_model_card_export_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_model_card_export_job_response(response)
         }
     }
 }
@@ -1469,6 +1602,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
             crate::operation_deser::parse_create_project_error(response)
         } else {
             crate::operation_deser::parse_create_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateSpace`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_space`](crate::client::Client::create_space).
+///
+/// See [`crate::client::fluent_builders::CreateSpace`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateSpace {
+    _private: (),
+}
+impl CreateSpace {
+    /// Creates a new builder-style object to manufacture [`CreateSpaceInput`](crate::input::CreateSpaceInput).
+    pub fn builder() -> crate::input::create_space_input::Builder {
+        crate::input::create_space_input::Builder::default()
+    }
+    /// Creates a new `CreateSpace` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSpace {
+    type Output =
+        std::result::Result<crate::output::CreateSpaceOutput, crate::error::CreateSpaceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_space_error(response)
+        } else {
+            crate::operation_deser::parse_create_space_response(response)
         }
     }
 }
@@ -2340,6 +2505,71 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlowDefinition {
     }
 }
 
+/// Operation shape for `DeleteHub`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_hub`](crate::client::Client::delete_hub).
+///
+/// See [`crate::client::fluent_builders::DeleteHub`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteHub {
+    _private: (),
+}
+impl DeleteHub {
+    /// Creates a new builder-style object to manufacture [`DeleteHubInput`](crate::input::DeleteHubInput).
+    pub fn builder() -> crate::input::delete_hub_input::Builder {
+        crate::input::delete_hub_input::Builder::default()
+    }
+    /// Creates a new `DeleteHub` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteHub {
+    type Output = std::result::Result<crate::output::DeleteHubOutput, crate::error::DeleteHubError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_hub_error(response)
+        } else {
+            crate::operation_deser::parse_delete_hub_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteHubContent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_hub_content`](crate::client::Client::delete_hub_content).
+///
+/// See [`crate::client::fluent_builders::DeleteHubContent`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteHubContent {
+    _private: (),
+}
+impl DeleteHubContent {
+    /// Creates a new builder-style object to manufacture [`DeleteHubContentInput`](crate::input::DeleteHubContentInput).
+    pub fn builder() -> crate::input::delete_hub_content_input::Builder {
+        crate::input::delete_hub_content_input::Builder::default()
+    }
+    /// Creates a new `DeleteHubContent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteHubContent {
+    type Output = std::result::Result<
+        crate::output::DeleteHubContentOutput,
+        crate::error::DeleteHubContentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_hub_content_error(response)
+        } else {
+            crate::operation_deser::parse_delete_hub_content_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteHumanTaskUi`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2440,6 +2670,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImageVersion {
     }
 }
 
+/// Operation shape for `DeleteInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_inference_experiment`](crate::client::Client::delete_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::DeleteInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteInferenceExperiment {
+    _private: (),
+}
+impl DeleteInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentInput`](crate::input::DeleteInferenceExperimentInput).
+    pub fn builder() -> crate::input::delete_inference_experiment_input::Builder {
+        crate::input::delete_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `DeleteInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::DeleteInferenceExperimentOutput,
+        crate::error::DeleteInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_delete_inference_experiment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteModel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2502,6 +2766,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModelBiasJobDefini
             crate::operation_deser::parse_delete_model_bias_job_definition_error(response)
         } else {
             crate::operation_deser::parse_delete_model_bias_job_definition_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteModelCard`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_model_card`](crate::client::Client::delete_model_card).
+///
+/// See [`crate::client::fluent_builders::DeleteModelCard`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteModelCard {
+    _private: (),
+}
+impl DeleteModelCard {
+    /// Creates a new builder-style object to manufacture [`DeleteModelCardInput`](crate::input::DeleteModelCardInput).
+    pub fn builder() -> crate::input::delete_model_card_input::Builder {
+        crate::input::delete_model_card_input::Builder::default()
+    }
+    /// Creates a new `DeleteModelCard` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteModelCard {
+    type Output = std::result::Result<
+        crate::output::DeleteModelCardOutput,
+        crate::error::DeleteModelCardError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_model_card_error(response)
+        } else {
+            crate::operation_deser::parse_delete_model_card_response(response)
         }
     }
 }
@@ -2842,6 +3140,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             crate::operation_deser::parse_delete_project_error(response)
         } else {
             crate::operation_deser::parse_delete_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteSpace`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_space`](crate::client::Client::delete_space).
+///
+/// See [`crate::client::fluent_builders::DeleteSpace`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteSpace {
+    _private: (),
+}
+impl DeleteSpace {
+    /// Creates a new builder-style object to manufacture [`DeleteSpaceInput`](crate::input::DeleteSpaceInput).
+    pub fn builder() -> crate::input::delete_space_input::Builder {
+        crate::input::delete_space_input::Builder::default()
+    }
+    /// Creates a new `DeleteSpace` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSpace {
+    type Output =
+        std::result::Result<crate::output::DeleteSpaceOutput, crate::error::DeleteSpaceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_space_error(response)
+        } else {
+            crate::operation_deser::parse_delete_space_response(response)
         }
     }
 }
@@ -3818,6 +4148,72 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlowDefinition {
     }
 }
 
+/// Operation shape for `DescribeHub`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_hub`](crate::client::Client::describe_hub).
+///
+/// See [`crate::client::fluent_builders::DescribeHub`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeHub {
+    _private: (),
+}
+impl DescribeHub {
+    /// Creates a new builder-style object to manufacture [`DescribeHubInput`](crate::input::DescribeHubInput).
+    pub fn builder() -> crate::input::describe_hub_input::Builder {
+        crate::input::describe_hub_input::Builder::default()
+    }
+    /// Creates a new `DescribeHub` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeHub {
+    type Output =
+        std::result::Result<crate::output::DescribeHubOutput, crate::error::DescribeHubError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_hub_error(response)
+        } else {
+            crate::operation_deser::parse_describe_hub_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeHubContent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_hub_content`](crate::client::Client::describe_hub_content).
+///
+/// See [`crate::client::fluent_builders::DescribeHubContent`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeHubContent {
+    _private: (),
+}
+impl DescribeHubContent {
+    /// Creates a new builder-style object to manufacture [`DescribeHubContentInput`](crate::input::DescribeHubContentInput).
+    pub fn builder() -> crate::input::describe_hub_content_input::Builder {
+        crate::input::describe_hub_content_input::Builder::default()
+    }
+    /// Creates a new `DescribeHubContent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeHubContent {
+    type Output = std::result::Result<
+        crate::output::DescribeHubContentOutput,
+        crate::error::DescribeHubContentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_hub_content_error(response)
+        } else {
+            crate::operation_deser::parse_describe_hub_content_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeHumanTaskUi`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3948,6 +4344,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageVersion {
             crate::operation_deser::parse_describe_image_version_error(response)
         } else {
             crate::operation_deser::parse_describe_image_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_inference_experiment`](crate::client::Client::describe_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::DescribeInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeInferenceExperiment {
+    _private: (),
+}
+impl DescribeInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceExperimentInput`](crate::input::DescribeInferenceExperimentInput).
+    pub fn builder() -> crate::input::describe_inference_experiment_input::Builder {
+        crate::input::describe_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `DescribeInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::DescribeInferenceExperimentOutput,
+        crate::error::DescribeInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_describe_inference_experiment_response(response)
         }
     }
 }
@@ -4116,6 +4546,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeModelBiasJobDefi
             crate::operation_deser::parse_describe_model_bias_job_definition_error(response)
         } else {
             crate::operation_deser::parse_describe_model_bias_job_definition_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeModelCard`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_model_card`](crate::client::Client::describe_model_card).
+///
+/// See [`crate::client::fluent_builders::DescribeModelCard`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeModelCard {
+    _private: (),
+}
+impl DescribeModelCard {
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardInput`](crate::input::DescribeModelCardInput).
+    pub fn builder() -> crate::input::describe_model_card_input::Builder {
+        crate::input::describe_model_card_input::Builder::default()
+    }
+    /// Creates a new `DescribeModelCard` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeModelCard {
+    type Output = std::result::Result<
+        crate::output::DescribeModelCardOutput,
+        crate::error::DescribeModelCardError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_card_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_card_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeModelCardExportJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_model_card_export_job`](crate::client::Client::describe_model_card_export_job).
+///
+/// See [`crate::client::fluent_builders::DescribeModelCardExportJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeModelCardExportJob {
+    _private: (),
+}
+impl DescribeModelCardExportJob {
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobInput`](crate::input::DescribeModelCardExportJobInput).
+    pub fn builder() -> crate::input::describe_model_card_export_job_input::Builder {
+        crate::input::describe_model_card_export_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeModelCardExportJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeModelCardExportJob {
+    type Output = std::result::Result<
+        crate::output::DescribeModelCardExportJobOutput,
+        crate::error::DescribeModelCardExportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_card_export_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_card_export_job_response(response)
         }
     }
 }
@@ -4534,6 +5032,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
             crate::operation_deser::parse_describe_project_error(response)
         } else {
             crate::operation_deser::parse_describe_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeSpace`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_space`](crate::client::Client::describe_space).
+///
+/// See [`crate::client::fluent_builders::DescribeSpace`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeSpace {
+    _private: (),
+}
+impl DescribeSpace {
+    /// Creates a new builder-style object to manufacture [`DescribeSpaceInput`](crate::input::DescribeSpaceInput).
+    pub fn builder() -> crate::input::describe_space_input::Builder {
+        crate::input::describe_space_input::Builder::default()
+    }
+    /// Creates a new `DescribeSpace` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSpace {
+    type Output =
+        std::result::Result<crate::output::DescribeSpaceOutput, crate::error::DescribeSpaceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_space_error(response)
+        } else {
+            crate::operation_deser::parse_describe_space_response(response)
         }
     }
 }
@@ -5122,6 +5652,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSearchSuggestions {
     }
 }
 
+/// Operation shape for `ImportHubContent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_hub_content`](crate::client::Client::import_hub_content).
+///
+/// See [`crate::client::fluent_builders::ImportHubContent`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ImportHubContent {
+    _private: (),
+}
+impl ImportHubContent {
+    /// Creates a new builder-style object to manufacture [`ImportHubContentInput`](crate::input::ImportHubContentInput).
+    pub fn builder() -> crate::input::import_hub_content_input::Builder {
+        crate::input::import_hub_content_input::Builder::default()
+    }
+    /// Creates a new `ImportHubContent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportHubContent {
+    type Output = std::result::Result<
+        crate::output::ImportHubContentOutput,
+        crate::error::ImportHubContentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_hub_content_error(response)
+        } else {
+            crate::operation_deser::parse_import_hub_content_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListActions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5182,6 +5746,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlgorithms {
             crate::operation_deser::parse_list_algorithms_error(response)
         } else {
             crate::operation_deser::parse_list_algorithms_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListAliases`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_aliases`](crate::client::Client::list_aliases).
+///
+/// See [`crate::client::fluent_builders::ListAliases`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListAliases {
+    _private: (),
+}
+impl ListAliases {
+    /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput).
+    pub fn builder() -> crate::input::list_aliases_input::Builder {
+        crate::input::list_aliases_input::Builder::default()
+    }
+    /// Creates a new `ListAliases` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
+    type Output =
+        std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_aliases_error(response)
+        } else {
+            crate::operation_deser::parse_list_aliases_response(response)
         }
     }
 }
@@ -5851,6 +6447,105 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlowDefinitions {
     }
 }
 
+/// Operation shape for `ListHubContents`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_hub_contents`](crate::client::Client::list_hub_contents).
+///
+/// See [`crate::client::fluent_builders::ListHubContents`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListHubContents {
+    _private: (),
+}
+impl ListHubContents {
+    /// Creates a new builder-style object to manufacture [`ListHubContentsInput`](crate::input::ListHubContentsInput).
+    pub fn builder() -> crate::input::list_hub_contents_input::Builder {
+        crate::input::list_hub_contents_input::Builder::default()
+    }
+    /// Creates a new `ListHubContents` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListHubContents {
+    type Output = std::result::Result<
+        crate::output::ListHubContentsOutput,
+        crate::error::ListHubContentsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_hub_contents_error(response)
+        } else {
+            crate::operation_deser::parse_list_hub_contents_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListHubContentVersions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_hub_content_versions`](crate::client::Client::list_hub_content_versions).
+///
+/// See [`crate::client::fluent_builders::ListHubContentVersions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListHubContentVersions {
+    _private: (),
+}
+impl ListHubContentVersions {
+    /// Creates a new builder-style object to manufacture [`ListHubContentVersionsInput`](crate::input::ListHubContentVersionsInput).
+    pub fn builder() -> crate::input::list_hub_content_versions_input::Builder {
+        crate::input::list_hub_content_versions_input::Builder::default()
+    }
+    /// Creates a new `ListHubContentVersions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListHubContentVersions {
+    type Output = std::result::Result<
+        crate::output::ListHubContentVersionsOutput,
+        crate::error::ListHubContentVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_hub_content_versions_error(response)
+        } else {
+            crate::operation_deser::parse_list_hub_content_versions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListHubs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_hubs`](crate::client::Client::list_hubs).
+///
+/// See [`crate::client::fluent_builders::ListHubs`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListHubs {
+    _private: (),
+}
+impl ListHubs {
+    /// Creates a new builder-style object to manufacture [`ListHubsInput`](crate::input::ListHubsInput).
+    pub fn builder() -> crate::input::list_hubs_input::Builder {
+        crate::input::list_hubs_input::Builder::default()
+    }
+    /// Creates a new `ListHubs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListHubs {
+    type Output = std::result::Result<crate::output::ListHubsOutput, crate::error::ListHubsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_hubs_error(response)
+        } else {
+            crate::operation_deser::parse_list_hubs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListHumanTaskUis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5985,6 +6680,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImageVersions {
     }
 }
 
+/// Operation shape for `ListInferenceExperiments`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_inference_experiments`](crate::client::Client::list_inference_experiments).
+///
+/// See [`crate::client::fluent_builders::ListInferenceExperiments`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListInferenceExperiments {
+    _private: (),
+}
+impl ListInferenceExperiments {
+    /// Creates a new builder-style object to manufacture [`ListInferenceExperimentsInput`](crate::input::ListInferenceExperimentsInput).
+    pub fn builder() -> crate::input::list_inference_experiments_input::Builder {
+        crate::input::list_inference_experiments_input::Builder::default()
+    }
+    /// Creates a new `ListInferenceExperiments` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListInferenceExperiments {
+    type Output = std::result::Result<
+        crate::output::ListInferenceExperimentsOutput,
+        crate::error::ListInferenceExperimentsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_inference_experiments_error(response)
+        } else {
+            crate::operation_deser::parse_list_inference_experiments_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListInferenceRecommendationsJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -6015,6 +6744,42 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceRecommendat
             crate::operation_deser::parse_list_inference_recommendations_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_inference_recommendations_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListInferenceRecommendationsJobSteps`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_inference_recommendations_job_steps`](crate::client::Client::list_inference_recommendations_job_steps).
+///
+/// See [`crate::client::fluent_builders::ListInferenceRecommendationsJobSteps`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobSteps {
+    _private: (),
+}
+impl ListInferenceRecommendationsJobSteps {
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsInput`](crate::input::ListInferenceRecommendationsJobStepsInput).
+    pub fn builder() -> crate::input::list_inference_recommendations_job_steps_input::Builder {
+        crate::input::list_inference_recommendations_job_steps_input::Builder::default()
+    }
+    /// Creates a new `ListInferenceRecommendationsJobSteps` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListInferenceRecommendationsJobSteps {
+    type Output = std::result::Result<
+        crate::output::ListInferenceRecommendationsJobStepsOutput,
+        crate::error::ListInferenceRecommendationsJobStepsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_inference_recommendations_job_steps_error(response)
+        } else {
+            crate::operation_deser::parse_list_inference_recommendations_job_steps_response(
+                response,
+            )
         }
     }
 }
@@ -6151,6 +6916,106 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelBiasJobDefiniti
             crate::operation_deser::parse_list_model_bias_job_definitions_error(response)
         } else {
             crate::operation_deser::parse_list_model_bias_job_definitions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListModelCardExportJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_model_card_export_jobs`](crate::client::Client::list_model_card_export_jobs).
+///
+/// See [`crate::client::fluent_builders::ListModelCardExportJobs`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListModelCardExportJobs {
+    _private: (),
+}
+impl ListModelCardExportJobs {
+    /// Creates a new builder-style object to manufacture [`ListModelCardExportJobsInput`](crate::input::ListModelCardExportJobsInput).
+    pub fn builder() -> crate::input::list_model_card_export_jobs_input::Builder {
+        crate::input::list_model_card_export_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListModelCardExportJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListModelCardExportJobs {
+    type Output = std::result::Result<
+        crate::output::ListModelCardExportJobsOutput,
+        crate::error::ListModelCardExportJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_card_export_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_card_export_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListModelCards`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_model_cards`](crate::client::Client::list_model_cards).
+///
+/// See [`crate::client::fluent_builders::ListModelCards`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListModelCards {
+    _private: (),
+}
+impl ListModelCards {
+    /// Creates a new builder-style object to manufacture [`ListModelCardsInput`](crate::input::ListModelCardsInput).
+    pub fn builder() -> crate::input::list_model_cards_input::Builder {
+        crate::input::list_model_cards_input::Builder::default()
+    }
+    /// Creates a new `ListModelCards` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListModelCards {
+    type Output =
+        std::result::Result<crate::output::ListModelCardsOutput, crate::error::ListModelCardsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_cards_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_cards_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListModelCardVersions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_model_card_versions`](crate::client::Client::list_model_card_versions).
+///
+/// See [`crate::client::fluent_builders::ListModelCardVersions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListModelCardVersions {
+    _private: (),
+}
+impl ListModelCardVersions {
+    /// Creates a new builder-style object to manufacture [`ListModelCardVersionsInput`](crate::input::ListModelCardVersionsInput).
+    pub fn builder() -> crate::input::list_model_card_versions_input::Builder {
+        crate::input::list_model_card_versions_input::Builder::default()
+    }
+    /// Creates a new `ListModelCardVersions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListModelCardVersions {
+    type Output = std::result::Result<
+        crate::output::ListModelCardVersionsOutput,
+        crate::error::ListModelCardVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_card_versions_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_card_versions_response(response)
         }
     }
 }
@@ -6355,6 +7220,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModels {
             crate::operation_deser::parse_list_models_error(response)
         } else {
             crate::operation_deser::parse_list_models_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMonitoringAlertHistory`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_monitoring_alert_history`](crate::client::Client::list_monitoring_alert_history).
+///
+/// See [`crate::client::fluent_builders::ListMonitoringAlertHistory`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListMonitoringAlertHistory {
+    _private: (),
+}
+impl ListMonitoringAlertHistory {
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertHistoryInput`](crate::input::ListMonitoringAlertHistoryInput).
+    pub fn builder() -> crate::input::list_monitoring_alert_history_input::Builder {
+        crate::input::list_monitoring_alert_history_input::Builder::default()
+    }
+    /// Creates a new `ListMonitoringAlertHistory` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMonitoringAlertHistory {
+    type Output = std::result::Result<
+        crate::output::ListMonitoringAlertHistoryOutput,
+        crate::error::ListMonitoringAlertHistoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitoring_alert_history_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitoring_alert_history_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMonitoringAlerts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_monitoring_alerts`](crate::client::Client::list_monitoring_alerts).
+///
+/// See [`crate::client::fluent_builders::ListMonitoringAlerts`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListMonitoringAlerts {
+    _private: (),
+}
+impl ListMonitoringAlerts {
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsInput`](crate::input::ListMonitoringAlertsInput).
+    pub fn builder() -> crate::input::list_monitoring_alerts_input::Builder {
+        crate::input::list_monitoring_alerts_input::Builder::default()
+    }
+    /// Creates a new `ListMonitoringAlerts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMonitoringAlerts {
+    type Output = std::result::Result<
+        crate::output::ListMonitoringAlertsOutput,
+        crate::error::ListMonitoringAlertsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitoring_alerts_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitoring_alerts_response(response)
         }
     }
 }
@@ -6693,6 +7626,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             crate::operation_deser::parse_list_projects_error(response)
         } else {
             crate::operation_deser::parse_list_projects_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSpaces`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_spaces`](crate::client::Client::list_spaces).
+///
+/// See [`crate::client::fluent_builders::ListSpaces`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListSpaces {
+    _private: (),
+}
+impl ListSpaces {
+    /// Creates a new builder-style object to manufacture [`ListSpacesInput`](crate::input::ListSpacesInput).
+    pub fn builder() -> crate::input::list_spaces_input::Builder {
+        crate::input::list_spaces_input::Builder::default()
+    }
+    /// Creates a new `ListSpaces` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSpaces {
+    type Output =
+        std::result::Result<crate::output::ListSpacesOutput, crate::error::ListSpacesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_spaces_error(response)
+        } else {
+            crate::operation_deser::parse_list_spaces_response(response)
         }
     }
 }
@@ -7402,6 +8367,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEdgeDeploymentStage
     }
 }
 
+/// Operation shape for `StartInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_inference_experiment`](crate::client::Client::start_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::StartInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartInferenceExperiment {
+    _private: (),
+}
+impl StartInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`StartInferenceExperimentInput`](crate::input::StartInferenceExperimentInput).
+    pub fn builder() -> crate::input::start_inference_experiment_input::Builder {
+        crate::input::start_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `StartInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::StartInferenceExperimentOutput,
+        crate::error::StartInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_start_inference_experiment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartMonitoringSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -7668,6 +8667,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopHyperParameterTuning
             crate::operation_deser::parse_stop_hyper_parameter_tuning_job_error(response)
         } else {
             crate::operation_deser::parse_stop_hyper_parameter_tuning_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_inference_experiment`](crate::client::Client::stop_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::StopInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StopInferenceExperiment {
+    _private: (),
+}
+impl StopInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`StopInferenceExperimentInput`](crate::input::StopInferenceExperimentInput).
+    pub fn builder() -> crate::input::stop_inference_experiment_input::Builder {
+        crate::input::stop_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `StopInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::StopInferenceExperimentOutput,
+        crate::error::StopInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_stop_inference_experiment_response(response)
         }
     }
 }
@@ -8374,6 +9407,37 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFeatureMetadata {
     }
 }
 
+/// Operation shape for `UpdateHub`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_hub`](crate::client::Client::update_hub).
+///
+/// See [`crate::client::fluent_builders::UpdateHub`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateHub {
+    _private: (),
+}
+impl UpdateHub {
+    /// Creates a new builder-style object to manufacture [`UpdateHubInput`](crate::input::UpdateHubInput).
+    pub fn builder() -> crate::input::update_hub_input::Builder {
+        crate::input::update_hub_input::Builder::default()
+    }
+    /// Creates a new `UpdateHub` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateHub {
+    type Output = std::result::Result<crate::output::UpdateHubOutput, crate::error::UpdateHubError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_hub_error(response)
+        } else {
+            crate::operation_deser::parse_update_hub_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateImage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -8402,6 +9466,108 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateImage {
             crate::operation_deser::parse_update_image_error(response)
         } else {
             crate::operation_deser::parse_update_image_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateImageVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_image_version`](crate::client::Client::update_image_version).
+///
+/// See [`crate::client::fluent_builders::UpdateImageVersion`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateImageVersion {
+    _private: (),
+}
+impl UpdateImageVersion {
+    /// Creates a new builder-style object to manufacture [`UpdateImageVersionInput`](crate::input::UpdateImageVersionInput).
+    pub fn builder() -> crate::input::update_image_version_input::Builder {
+        crate::input::update_image_version_input::Builder::default()
+    }
+    /// Creates a new `UpdateImageVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateImageVersion {
+    type Output = std::result::Result<
+        crate::output::UpdateImageVersionOutput,
+        crate::error::UpdateImageVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_image_version_error(response)
+        } else {
+            crate::operation_deser::parse_update_image_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateInferenceExperiment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_inference_experiment`](crate::client::Client::update_inference_experiment).
+///
+/// See [`crate::client::fluent_builders::UpdateInferenceExperiment`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateInferenceExperiment {
+    _private: (),
+}
+impl UpdateInferenceExperiment {
+    /// Creates a new builder-style object to manufacture [`UpdateInferenceExperimentInput`](crate::input::UpdateInferenceExperimentInput).
+    pub fn builder() -> crate::input::update_inference_experiment_input::Builder {
+        crate::input::update_inference_experiment_input::Builder::default()
+    }
+    /// Creates a new `UpdateInferenceExperiment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateInferenceExperiment {
+    type Output = std::result::Result<
+        crate::output::UpdateInferenceExperimentOutput,
+        crate::error::UpdateInferenceExperimentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_inference_experiment_error(response)
+        } else {
+            crate::operation_deser::parse_update_inference_experiment_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateModelCard`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_model_card`](crate::client::Client::update_model_card).
+///
+/// See [`crate::client::fluent_builders::UpdateModelCard`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateModelCard {
+    _private: (),
+}
+impl UpdateModelCard {
+    /// Creates a new builder-style object to manufacture [`UpdateModelCardInput`](crate::input::UpdateModelCardInput).
+    pub fn builder() -> crate::input::update_model_card_input::Builder {
+        crate::input::update_model_card_input::Builder::default()
+    }
+    /// Creates a new `UpdateModelCard` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateModelCard {
+    type Output = std::result::Result<
+        crate::output::UpdateModelCardOutput,
+        crate::error::UpdateModelCardError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_model_card_error(response)
+        } else {
+            crate::operation_deser::parse_update_model_card_response(response)
         }
     }
 }
@@ -8436,6 +9602,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateModelPackage {
             crate::operation_deser::parse_update_model_package_error(response)
         } else {
             crate::operation_deser::parse_update_model_package_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateMonitoringAlert`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_monitoring_alert`](crate::client::Client::update_monitoring_alert).
+///
+/// See [`crate::client::fluent_builders::UpdateMonitoringAlert`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateMonitoringAlert {
+    _private: (),
+}
+impl UpdateMonitoringAlert {
+    /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertInput`](crate::input::UpdateMonitoringAlertInput).
+    pub fn builder() -> crate::input::update_monitoring_alert_input::Builder {
+        crate::input::update_monitoring_alert_input::Builder::default()
+    }
+    /// Creates a new `UpdateMonitoringAlert` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMonitoringAlert {
+    type Output = std::result::Result<
+        crate::output::UpdateMonitoringAlertOutput,
+        crate::error::UpdateMonitoringAlertError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_monitoring_alert_error(response)
+        } else {
+            crate::operation_deser::parse_update_monitoring_alert_response(response)
         }
     }
 }
@@ -8638,6 +9838,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
             crate::operation_deser::parse_update_project_error(response)
         } else {
             crate::operation_deser::parse_update_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSpace`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_space`](crate::client::Client::update_space).
+///
+/// See [`crate::client::fluent_builders::UpdateSpace`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateSpace {
+    _private: (),
+}
+impl UpdateSpace {
+    /// Creates a new builder-style object to manufacture [`UpdateSpaceInput`](crate::input::UpdateSpaceInput).
+    pub fn builder() -> crate::input::update_space_input::Builder {
+        crate::input::update_space_input::Builder::default()
+    }
+    /// Creates a new `UpdateSpace` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSpace {
+    type Output =
+        std::result::Result<crate::output::UpdateSpaceOutput, crate::error::UpdateSpaceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_space_error(response)
+        } else {
+            crate::operation_deser::parse_update_space_response(response)
         }
     }
 }

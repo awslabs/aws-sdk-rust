@@ -4129,6 +4129,10 @@ pub struct DirectoryConfig {
     /// <p>The time the directory configuration was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    #[doc(hidden)]
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::model::CertificateBasedAuthProperties>,
 }
 impl DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -4151,6 +4155,12 @@ impl DirectoryConfig {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+        self.certificate_based_auth_properties.as_ref()
+    }
 }
 /// See [`DirectoryConfig`](crate::model::DirectoryConfig).
 pub mod directory_config {
@@ -4164,6 +4174,8 @@ pub mod directory_config {
         pub(crate) service_account_credentials:
             std::option::Option<crate::model::ServiceAccountCredentials>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) certificate_based_auth_properties:
+            std::option::Option<crate::model::CertificateBasedAuthProperties>,
     }
     impl Builder {
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -4232,6 +4244,22 @@ pub mod directory_config {
             self.created_time = input;
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.certificate_based_auth_properties = Some(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.certificate_based_auth_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DirectoryConfig`](crate::model::DirectoryConfig).
         pub fn build(self) -> crate::model::DirectoryConfig {
             crate::model::DirectoryConfig {
@@ -4240,6 +4268,7 @@ pub mod directory_config {
                     .organizational_unit_distinguished_names,
                 service_account_credentials: self.service_account_credentials,
                 created_time: self.created_time,
+                certificate_based_auth_properties: self.certificate_based_auth_properties,
             }
         }
     }
@@ -4248,6 +4277,180 @@ impl DirectoryConfig {
     /// Creates a new builder-style object to manufacture [`DirectoryConfig`](crate::model::DirectoryConfig).
     pub fn builder() -> crate::model::directory_config::Builder {
         crate::model::directory_config::Builder::default()
+    }
+}
+
+/// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CertificateBasedAuthProperties {
+    /// <p>The status of the certificate-based authentication properties.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CertificateBasedAuthStatus>,
+    /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
+    #[doc(hidden)]
+    pub certificate_authority_arn: std::option::Option<std::string::String>,
+}
+impl CertificateBasedAuthProperties {
+    /// <p>The status of the certificate-based authentication properties.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateBasedAuthStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+}
+/// See [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+pub mod certificate_based_auth_properties {
+
+    /// A builder for [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::CertificateBasedAuthStatus>,
+        pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the certificate-based authentication properties.</p>
+        pub fn status(mut self, input: crate::model::CertificateBasedAuthStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the certificate-based authentication properties.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
+        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_authority_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
+        pub fn set_certificate_authority_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_authority_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+        pub fn build(self) -> crate::model::CertificateBasedAuthProperties {
+            crate::model::CertificateBasedAuthProperties {
+                status: self.status,
+                certificate_authority_arn: self.certificate_authority_arn,
+            }
+        }
+    }
+}
+impl CertificateBasedAuthProperties {
+    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
+        crate::model::certificate_based_auth_properties::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CertificateBasedAuthStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let certificatebasedauthstatus = unimplemented!();
+/// match certificatebasedauthstatus {
+///     CertificateBasedAuthStatus::Disabled => { /* ... */ },
+///     CertificateBasedAuthStatus::Enabled => { /* ... */ },
+///     CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `certificatebasedauthstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CertificateBasedAuthStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CertificateBasedAuthStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CertificateBasedAuthStatus::NewFeature` is defined.
+/// Specifically, when `certificatebasedauthstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CertificateBasedAuthStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateBasedAuthStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    EnabledNoDirectoryLoginFallback,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CertificateBasedAuthStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => CertificateBasedAuthStatus::Disabled,
+            "ENABLED" => CertificateBasedAuthStatus::Enabled,
+            "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK" => {
+                CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback
+            }
+            other => CertificateBasedAuthStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for CertificateBasedAuthStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateBasedAuthStatus::from(s))
+    }
+}
+impl CertificateBasedAuthStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateBasedAuthStatus::Disabled => "DISABLED",
+            CertificateBasedAuthStatus::Enabled => "ENABLED",
+            CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback => {
+                "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"
+            }
+            CertificateBasedAuthStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED", "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"]
+    }
+}
+impl AsRef<str> for CertificateBasedAuthStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5914,6 +6117,7 @@ impl EntitledApplication {
 /// # let authenticationtype = unimplemented!();
 /// match authenticationtype {
 ///     AuthenticationType::Api => { /* ... */ },
+///     AuthenticationType::AwsAd => { /* ... */ },
 ///     AuthenticationType::Saml => { /* ... */ },
 ///     AuthenticationType::Userpool => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -5952,6 +6156,8 @@ pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Api,
     #[allow(missing_docs)] // documentation missing in model
+    AwsAd,
+    #[allow(missing_docs)] // documentation missing in model
     Saml,
     #[allow(missing_docs)] // documentation missing in model
     Userpool,
@@ -5962,6 +6168,7 @@ impl std::convert::From<&str> for AuthenticationType {
     fn from(s: &str) -> Self {
         match s {
             "API" => AuthenticationType::Api,
+            "AWS_AD" => AuthenticationType::AwsAd,
             "SAML" => AuthenticationType::Saml,
             "USERPOOL" => AuthenticationType::Userpool,
             other => {
@@ -5982,6 +6189,7 @@ impl AuthenticationType {
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationType::Api => "API",
+            AuthenticationType::AwsAd => "AWS_AD",
             AuthenticationType::Saml => "SAML",
             AuthenticationType::Userpool => "USERPOOL",
             AuthenticationType::Unknown(value) => value.as_str(),
@@ -5989,7 +6197,7 @@ impl AuthenticationType {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API", "SAML", "USERPOOL"]
+        &["API", "AWS_AD", "SAML", "USERPOOL"]
     }
 }
 impl AsRef<str> for AuthenticationType {

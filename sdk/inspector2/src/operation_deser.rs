@@ -59,6 +59,10 @@ pub fn parse_associate_member_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMemberError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_associate_member_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::AssociateMemberError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -185,6 +189,10 @@ pub fn parse_batch_get_account_status_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAccountStatusError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_batch_get_account_status_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::BatchGetAccountStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -297,6 +305,10 @@ pub fn parse_batch_get_free_trial_info_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetFreeTrialInfoError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_batch_get_free_trial_info_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::BatchGetFreeTrialInfoError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -426,6 +438,10 @@ pub fn parse_cancel_findings_report_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelFindingsReportError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_cancel_findings_report_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::CancelFindingsReportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -570,6 +586,10 @@ pub fn parse_create_filter_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFilterError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_create_filter_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::CreateFilterError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -696,6 +716,10 @@ pub fn parse_create_findings_report_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFindingsReportError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_create_findings_report_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::CreateFindingsReportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -822,6 +846,10 @@ pub fn parse_delete_filter_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFilterError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_delete_filter_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DeleteFilterError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -938,6 +966,10 @@ pub fn parse_describe_organization_configuration_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_organization_configuration_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeOrganizationConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1066,6 +1098,10 @@ pub fn parse_disable_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_disable_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DisableError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1215,6 +1251,10 @@ pub fn parse_disable_delegated_admin_account_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableDelegatedAdminAccountError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_disable_delegated_admin_account_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DisableDelegatedAdminAccountError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1328,6 +1368,10 @@ pub fn parse_disassociate_member_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMemberError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_disassociate_member_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DisassociateMemberError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1454,6 +1498,10 @@ pub fn parse_enable_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_enable_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::EnableError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1603,6 +1651,10 @@ pub fn parse_enable_delegated_admin_account_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableDelegatedAdminAccountError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_enable_delegated_admin_account_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::EnableDelegatedAdminAccountError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1713,6 +1765,10 @@ pub fn parse_get_configuration_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_configuration_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1827,6 +1883,10 @@ pub fn parse_get_delegated_admin_account_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDelegatedAdminAccountError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_delegated_admin_account_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetDelegatedAdminAccountError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -1960,6 +2020,10 @@ pub fn parse_get_findings_report_status_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingsReportStatusError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_findings_report_status_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetFindingsReportStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2086,6 +2150,10 @@ pub fn parse_get_member_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMemberError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_member_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetMemberError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2199,6 +2267,10 @@ pub fn parse_list_account_permissions_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccountPermissionsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_account_permissions_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListAccountPermissionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2291,6 +2363,10 @@ pub fn parse_list_coverage_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCoverageError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_coverage_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListCoverageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2387,6 +2463,10 @@ pub fn parse_list_coverage_statistics_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCoverageStatisticsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_coverage_statistics_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListCoverageStatisticsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2503,6 +2583,10 @@ pub fn parse_list_delegated_admin_accounts_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdminAccountsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_delegated_admin_accounts_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListDelegatedAdminAccountsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2612,6 +2696,10 @@ pub fn parse_list_filters_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFiltersError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_filters_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListFiltersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2708,6 +2796,10 @@ pub fn parse_list_finding_aggregations_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFindingAggregationsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_finding_aggregations_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListFindingAggregationsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2800,6 +2892,10 @@ pub fn parse_list_findings_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFindingsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_findings_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListFindingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -2906,6 +3002,10 @@ pub fn parse_list_members_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMembersError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_members_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListMembersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3015,6 +3115,10 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListTagsForResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3124,6 +3228,10 @@ pub fn parse_list_usage_totals_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsageTotalsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_usage_totals_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListUsageTotalsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3247,6 +3355,10 @@ pub fn parse_tag_resource_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_tag_resource_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3348,6 +3460,10 @@ pub fn parse_untag_resource_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_untag_resource_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3452,6 +3568,10 @@ pub fn parse_update_configuration_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_update_configuration_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UpdateConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3573,6 +3693,10 @@ pub fn parse_update_filter_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFilterError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_update_filter_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UpdateFilterError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -3685,6 +3809,10 @@ pub fn parse_update_organization_configuration_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_update_organization_configuration_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UpdateOrganizationConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     output.build()
                 };
                 if tmp.message.is_none() {

@@ -227,6 +227,43 @@ impl From<crate::error::CreateVpcConnectorError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcIngressConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcIngressConnectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVpcIngressConnectionError> for Error {
+    fn from(err: crate::error::CreateVpcIngressConnectionError) -> Self {
+        match err.kind {
+            crate::error::CreateVpcIngressConnectionErrorKind::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::CreateVpcIngressConnectionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateVpcIngressConnectionErrorKind::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::error::CreateVpcIngressConnectionErrorKind::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateVpcIngressConnectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DeleteAutoScalingConfigurationError, R>>
     for Error
@@ -387,6 +424,43 @@ impl From<crate::error::DeleteVpcConnectorError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcIngressConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcIngressConnectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVpcIngressConnectionError> for Error {
+    fn from(err: crate::error::DeleteVpcIngressConnectionError) -> Self {
+        match err.kind {
+            crate::error::DeleteVpcIngressConnectionErrorKind::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::DeleteVpcIngressConnectionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteVpcIngressConnectionErrorKind::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::error::DeleteVpcIngressConnectionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteVpcIngressConnectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DescribeAutoScalingConfigurationError, R>>
     for Error
@@ -542,6 +616,40 @@ impl From<crate::error::DescribeVpcConnectorError> for Error {
                 Error::ResourceNotFoundException(inner)
             }
             crate::error::DescribeVpcConnectorErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcIngressConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcIngressConnectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVpcIngressConnectionError> for Error {
+    fn from(err: crate::error::DescribeVpcIngressConnectionError) -> Self {
+        match err.kind {
+            crate::error::DescribeVpcIngressConnectionErrorKind::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::DescribeVpcIngressConnectionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeVpcIngressConnectionErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeVpcIngressConnectionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -797,6 +905,37 @@ impl From<crate::error::ListVpcConnectorsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVpcIngressConnectionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListVpcIngressConnectionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListVpcIngressConnectionsError> for Error {
+    fn from(err: crate::error::ListVpcIngressConnectionsError) -> Self {
+        match err.kind {
+            crate::error::ListVpcIngressConnectionsErrorKind::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::ListVpcIngressConnectionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListVpcIngressConnectionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::PauseServiceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -993,6 +1132,43 @@ impl From<crate::error::UpdateServiceError> for Error {
                 Error::ResourceNotFoundException(inner)
             }
             crate::error::UpdateServiceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVpcIngressConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateVpcIngressConnectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateVpcIngressConnectionError> for Error {
+    fn from(err: crate::error::UpdateVpcIngressConnectionError) -> Self {
+        match err.kind {
+            crate::error::UpdateVpcIngressConnectionErrorKind::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::UpdateVpcIngressConnectionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UpdateVpcIngressConnectionErrorKind::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::error::UpdateVpcIngressConnectionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateVpcIngressConnectionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

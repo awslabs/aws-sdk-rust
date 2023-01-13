@@ -17,19 +17,19 @@ pub enum Error {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
     ExecutionLimitExceeded(crate::error::ExecutionLimitExceeded),
-    /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
+    /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// <p>The provided Amazon States Language definition is invalid.</p>
+    /// <p>The provided Amazon States Language definition is not valid.</p>
     InvalidDefinition(crate::error::InvalidDefinition),
-    /// <p>The provided JSON input data is invalid.</p>
+    /// <p>The provided JSON input data is not valid.</p>
     InvalidExecutionInput(crate::error::InvalidExecutionInput),
     /// <p></p>
     InvalidLoggingConfiguration(crate::error::InvalidLoggingConfiguration),
-    /// <p>The provided name is invalid.</p>
+    /// <p>The provided name is not valid.</p>
     InvalidName(crate::error::InvalidName),
-    /// <p>The provided JSON output data is invalid.</p>
+    /// <p>The provided JSON output data is not valid.</p>
     InvalidOutput(crate::error::InvalidOutput),
-    /// <p>The provided token is invalid.</p>
+    /// <p>The provided token is not valid.</p>
     InvalidToken(crate::error::InvalidToken),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::error::InvalidTracingConfiguration),
@@ -51,8 +51,10 @@ pub enum Error {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
+    ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     ///
@@ -90,6 +92,7 @@ impl std::fmt::Display for Error {
             Error::TaskDoesNotExist(inner) => inner.fmt(f),
             Error::TaskTimedOut(inner) => inner.fmt(f),
             Error::TooManyTags(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -219,6 +222,9 @@ impl From<crate::error::DeleteStateMachineError> for Error {
             crate::error::DeleteStateMachineErrorKind::InvalidArn(inner) => {
                 Error::InvalidArn(inner)
             }
+            crate::error::DeleteStateMachineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -276,6 +282,32 @@ impl From<crate::error::DescribeExecutionError> for Error {
             }
             crate::error::DescribeExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMapRunError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeMapRunError> for Error {
+    fn from(err: crate::error::DescribeMapRunError) -> Self {
+        match err.kind {
+            crate::error::DescribeMapRunErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::DescribeMapRunErrorKind::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::error::DescribeMapRunErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -454,13 +486,46 @@ impl From<crate::error::ListExecutionsError> for Error {
             crate::error::ListExecutionsErrorKind::InvalidToken(inner) => {
                 Error::InvalidToken(inner)
             }
+            crate::error::ListExecutionsErrorKind::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
             crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist(inner) => {
                 Error::StateMachineDoesNotExist(inner)
             }
             crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => {
                 Error::StateMachineTypeNotSupported(inner)
             }
+            crate::error::ListExecutionsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::ListExecutionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMapRunsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMapRunsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListMapRunsError> for Error {
+    fn from(err: crate::error::ListMapRunsError) -> Self {
+        match err.kind {
+            crate::error::ListMapRunsErrorKind::ExecutionDoesNotExist(inner) => {
+                Error::ExecutionDoesNotExist(inner)
+            }
+            crate::error::ListMapRunsErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::ListMapRunsErrorKind::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::error::ListMapRunsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -654,6 +719,9 @@ impl From<crate::error::StartExecutionError> for Error {
             crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => {
                 Error::StateMachineDoesNotExist(inner)
             }
+            crate::error::StartExecutionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::StartExecutionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -722,6 +790,9 @@ impl From<crate::error::StopExecutionError> for Error {
                 Error::ExecutionDoesNotExist(inner)
             }
             crate::error::StopExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::StopExecutionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::error::StopExecutionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
@@ -781,6 +852,35 @@ impl From<crate::error::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateMapRunError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateMapRunError> for Error {
+    fn from(err: crate::error::UpdateMapRunError) -> Self {
+        match err.kind {
+            crate::error::UpdateMapRunErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::error::UpdateMapRunErrorKind::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::error::UpdateMapRunErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateMapRunErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -819,6 +919,9 @@ impl From<crate::error::UpdateStateMachineError> for Error {
             }
             crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
                 Error::StateMachineDoesNotExist(inner)
+            }
+            crate::error::UpdateStateMachineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))

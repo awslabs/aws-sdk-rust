@@ -649,6 +649,10 @@ pub struct ProvisioningArtifactDetail {
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     #[doc(hidden)]
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
+    #[doc(hidden)]
+    pub source_revision: std::option::Option<std::string::String>,
 }
 impl ProvisioningArtifactDetail {
     /// <p>The identifier of the provisioning artifact.</p>
@@ -684,6 +688,11 @@ impl ProvisioningArtifactDetail {
     pub fn guidance(&self) -> std::option::Option<&crate::model::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
+    /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+    /// <p>This field only exists for Repo-Synced products. </p>
+    pub fn source_revision(&self) -> std::option::Option<&str> {
+        self.source_revision.as_deref()
+    }
 }
 /// See [`ProvisioningArtifactDetail`](crate::model::ProvisioningArtifactDetail).
 pub mod provisioning_artifact_detail {
@@ -698,6 +707,7 @@ pub mod provisioning_artifact_detail {
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) active: std::option::Option<bool>,
         pub(crate) guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
+        pub(crate) source_revision: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the provisioning artifact.</p>
@@ -789,6 +799,21 @@ pub mod provisioning_artifact_detail {
             self.guidance = input;
             self
         }
+        /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+        /// <p>This field only exists for Repo-Synced products. </p>
+        pub fn source_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_revision = Some(input.into());
+            self
+        }
+        /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+        /// <p>This field only exists for Repo-Synced products. </p>
+        pub fn set_source_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_revision = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProvisioningArtifactDetail`](crate::model::ProvisioningArtifactDetail).
         pub fn build(self) -> crate::model::ProvisioningArtifactDetail {
             crate::model::ProvisioningArtifactDetail {
@@ -799,6 +824,7 @@ pub mod provisioning_artifact_detail {
                 created_time: self.created_time,
                 active: self.active,
                 guidance: self.guidance,
+                source_revision: self.source_revision,
             }
         }
     }
@@ -2355,6 +2381,9 @@ pub struct ProductViewDetail {
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
+    #[doc(hidden)]
+    pub source_connection: std::option::Option<crate::model::SourceConnectionDetail>,
 }
 impl ProductViewDetail {
     /// <p>Summary information about the product view.</p>
@@ -2378,6 +2407,10 @@ impl ProductViewDetail {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
+    /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
+    pub fn source_connection(&self) -> std::option::Option<&crate::model::SourceConnectionDetail> {
+        self.source_connection.as_ref()
+    }
 }
 /// See [`ProductViewDetail`](crate::model::ProductViewDetail).
 pub mod product_view_detail {
@@ -2389,6 +2422,7 @@ pub mod product_view_detail {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) product_arn: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) source_connection: std::option::Option<crate::model::SourceConnectionDetail>,
     }
     impl Builder {
         /// <p>Summary information about the product view.</p>
@@ -2447,6 +2481,19 @@ pub mod product_view_detail {
             self.created_time = input;
             self
         }
+        /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
+        pub fn source_connection(mut self, input: crate::model::SourceConnectionDetail) -> Self {
+            self.source_connection = Some(input);
+            self
+        }
+        /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
+        pub fn set_source_connection(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnectionDetail>,
+        ) -> Self {
+            self.source_connection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProductViewDetail`](crate::model::ProductViewDetail).
         pub fn build(self) -> crate::model::ProductViewDetail {
             crate::model::ProductViewDetail {
@@ -2454,6 +2501,7 @@ pub mod product_view_detail {
                 status: self.status,
                 product_arn: self.product_arn,
                 created_time: self.created_time,
+                source_connection: self.source_connection,
             }
         }
     }
@@ -2462,6 +2510,618 @@ impl ProductViewDetail {
     /// Creates a new builder-style object to manufacture [`ProductViewDetail`](crate::model::ProductViewDetail).
     pub fn builder() -> crate::model::product_view_detail::Builder {
         crate::model::product_view_detail::Builder::default()
+    }
+}
+
+/// <p>Provides details about the configured <code>SourceConnection</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceConnectionDetail {
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::SourceType>,
+    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    #[doc(hidden)]
+    pub connection_parameters: std::option::Option<crate::model::SourceConnectionParameters>,
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+    /// <ul>
+    /// <li> <p> <code>LastSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub last_sync: std::option::Option<crate::model::LastSync>,
+}
+impl SourceConnectionDetail {
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The connection details based on the connection <code>Type</code>.</p>
+    pub fn connection_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceConnectionParameters> {
+        self.connection_parameters.as_ref()
+    }
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+    /// <ul>
+    /// <li> <p> <code>LastSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// </ul>
+    pub fn last_sync(&self) -> std::option::Option<&crate::model::LastSync> {
+        self.last_sync.as_ref()
+    }
+}
+/// See [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
+pub mod source_connection_detail {
+
+    /// A builder for [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::SourceType>,
+        pub(crate) connection_parameters:
+            std::option::Option<crate::model::SourceConnectionParameters>,
+        pub(crate) last_sync: std::option::Option<crate::model::LastSync>,
+    }
+    impl Builder {
+        /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+        pub fn r#type(mut self, input: crate::model::SourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The connection details based on the connection <code>Type</code>.</p>
+        pub fn connection_parameters(
+            mut self,
+            input: crate::model::SourceConnectionParameters,
+        ) -> Self {
+            self.connection_parameters = Some(input);
+            self
+        }
+        /// <p>The connection details based on the connection <code>Type</code>.</p>
+        pub fn set_connection_parameters(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnectionParameters>,
+        ) -> Self {
+            self.connection_parameters = input;
+            self
+        }
+        /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+        /// <ul>
+        /// <li> <p> <code>LastSyncTime</code> </p> </li>
+        /// <li> <p> <code>LastSyncStatus</code> </p> </li>
+        /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+        /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+        /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+        /// </ul>
+        pub fn last_sync(mut self, input: crate::model::LastSync) -> Self {
+            self.last_sync = Some(input);
+            self
+        }
+        /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+        /// <ul>
+        /// <li> <p> <code>LastSyncTime</code> </p> </li>
+        /// <li> <p> <code>LastSyncStatus</code> </p> </li>
+        /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+        /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+        /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+        /// </ul>
+        pub fn set_last_sync(mut self, input: std::option::Option<crate::model::LastSync>) -> Self {
+            self.last_sync = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
+        pub fn build(self) -> crate::model::SourceConnectionDetail {
+            crate::model::SourceConnectionDetail {
+                r#type: self.r#type,
+                connection_parameters: self.connection_parameters,
+                last_sync: self.last_sync,
+            }
+        }
+    }
+}
+impl SourceConnectionDetail {
+    /// Creates a new builder-style object to manufacture [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
+    pub fn builder() -> crate::model::source_connection_detail::Builder {
+        crate::model::source_connection_detail::Builder::default()
+    }
+}
+
+/// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
+/// <ul>
+/// <li> <p> <code>LastSyncTime</code> </p> </li>
+/// <li> <p> <code>LastSyncStatus</code> </p> </li>
+/// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
+/// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
+/// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LastSync {
+    /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
+    #[doc(hidden)]
+    pub last_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
+    #[doc(hidden)]
+    pub last_sync_status: std::option::Option<crate::model::LastSyncStatus>,
+    /// <p>The sync's status message. </p>
+    #[doc(hidden)]
+    pub last_sync_status_message: std::option::Option<std::string::String>,
+    /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
+    #[doc(hidden)]
+    pub last_successful_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
+    #[doc(hidden)]
+    pub last_successful_sync_provisioning_artifact_id: std::option::Option<std::string::String>,
+}
+impl LastSync {
+    /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
+    pub fn last_sync_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_sync_time.as_ref()
+    }
+    /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
+    pub fn last_sync_status(&self) -> std::option::Option<&crate::model::LastSyncStatus> {
+        self.last_sync_status.as_ref()
+    }
+    /// <p>The sync's status message. </p>
+    pub fn last_sync_status_message(&self) -> std::option::Option<&str> {
+        self.last_sync_status_message.as_deref()
+    }
+    /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
+    pub fn last_successful_sync_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_successful_sync_time.as_ref()
+    }
+    /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
+    pub fn last_successful_sync_provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.last_successful_sync_provisioning_artifact_id
+            .as_deref()
+    }
+}
+/// See [`LastSync`](crate::model::LastSync).
+pub mod last_sync {
+
+    /// A builder for [`LastSync`](crate::model::LastSync).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) last_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_sync_status: std::option::Option<crate::model::LastSyncStatus>,
+        pub(crate) last_sync_status_message: std::option::Option<std::string::String>,
+        pub(crate) last_successful_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_successful_sync_provisioning_artifact_id:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
+        pub fn last_sync_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_sync_time = Some(input);
+            self
+        }
+        /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
+        pub fn set_last_sync_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_sync_time = input;
+            self
+        }
+        /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
+        pub fn last_sync_status(mut self, input: crate::model::LastSyncStatus) -> Self {
+            self.last_sync_status = Some(input);
+            self
+        }
+        /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
+        pub fn set_last_sync_status(
+            mut self,
+            input: std::option::Option<crate::model::LastSyncStatus>,
+        ) -> Self {
+            self.last_sync_status = input;
+            self
+        }
+        /// <p>The sync's status message. </p>
+        pub fn last_sync_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_sync_status_message = Some(input.into());
+            self
+        }
+        /// <p>The sync's status message. </p>
+        pub fn set_last_sync_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_sync_status_message = input;
+            self
+        }
+        /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
+        pub fn last_successful_sync_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_successful_sync_time = Some(input);
+            self
+        }
+        /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
+        pub fn set_last_successful_sync_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_successful_sync_time = input;
+            self
+        }
+        /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
+        pub fn last_successful_sync_provisioning_artifact_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.last_successful_sync_provisioning_artifact_id = Some(input.into());
+            self
+        }
+        /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
+        pub fn set_last_successful_sync_provisioning_artifact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_successful_sync_provisioning_artifact_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LastSync`](crate::model::LastSync).
+        pub fn build(self) -> crate::model::LastSync {
+            crate::model::LastSync {
+                last_sync_time: self.last_sync_time,
+                last_sync_status: self.last_sync_status,
+                last_sync_status_message: self.last_sync_status_message,
+                last_successful_sync_time: self.last_successful_sync_time,
+                last_successful_sync_provisioning_artifact_id: self
+                    .last_successful_sync_provisioning_artifact_id,
+            }
+        }
+    }
+}
+impl LastSync {
+    /// Creates a new builder-style object to manufacture [`LastSync`](crate::model::LastSync).
+    pub fn builder() -> crate::model::last_sync::Builder {
+        crate::model::last_sync::Builder::default()
+    }
+}
+
+/// When writing a match expression against `LastSyncStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let lastsyncstatus = unimplemented!();
+/// match lastsyncstatus {
+///     LastSyncStatus::Failed => { /* ... */ },
+///     LastSyncStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `lastsyncstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LastSyncStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LastSyncStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LastSyncStatus::NewFeature` is defined.
+/// Specifically, when `lastsyncstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LastSyncStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LastSyncStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for LastSyncStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => LastSyncStatus::Failed,
+            "SUCCEEDED" => LastSyncStatus::Succeeded,
+            other => LastSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for LastSyncStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LastSyncStatus::from(s))
+    }
+}
+impl LastSyncStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LastSyncStatus::Failed => "FAILED",
+            LastSyncStatus::Succeeded => "SUCCEEDED",
+            LastSyncStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for LastSyncStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides connection details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceConnectionParameters {
+    /// <p>Provides <code>ConnectionType</code> details.</p>
+    #[doc(hidden)]
+    pub code_star: std::option::Option<crate::model::CodeStarParameters>,
+}
+impl SourceConnectionParameters {
+    /// <p>Provides <code>ConnectionType</code> details.</p>
+    pub fn code_star(&self) -> std::option::Option<&crate::model::CodeStarParameters> {
+        self.code_star.as_ref()
+    }
+}
+/// See [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
+pub mod source_connection_parameters {
+
+    /// A builder for [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code_star: std::option::Option<crate::model::CodeStarParameters>,
+    }
+    impl Builder {
+        /// <p>Provides <code>ConnectionType</code> details.</p>
+        pub fn code_star(mut self, input: crate::model::CodeStarParameters) -> Self {
+            self.code_star = Some(input);
+            self
+        }
+        /// <p>Provides <code>ConnectionType</code> details.</p>
+        pub fn set_code_star(
+            mut self,
+            input: std::option::Option<crate::model::CodeStarParameters>,
+        ) -> Self {
+            self.code_star = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
+        pub fn build(self) -> crate::model::SourceConnectionParameters {
+            crate::model::SourceConnectionParameters {
+                code_star: self.code_star,
+            }
+        }
+    }
+}
+impl SourceConnectionParameters {
+    /// Creates a new builder-style object to manufacture [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
+    pub fn builder() -> crate::model::source_connection_parameters::Builder {
+        crate::model::source_connection_parameters::Builder::default()
+    }
+}
+
+/// <p>The subtype containing details about the Codestar connection <code>Type</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CodeStarParameters {
+    /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+    #[doc(hidden)]
+    pub connection_arn: std::option::Option<std::string::String>,
+    /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
+    /// <p>The specific branch where the artifact resides. </p>
+    #[doc(hidden)]
+    pub branch: std::option::Option<std::string::String>,
+    /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+    #[doc(hidden)]
+    pub artifact_path: std::option::Option<std::string::String>,
+}
+impl CodeStarParameters {
+    /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p>The specific branch where the artifact resides. </p>
+    pub fn branch(&self) -> std::option::Option<&str> {
+        self.branch.as_deref()
+    }
+    /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+    pub fn artifact_path(&self) -> std::option::Option<&str> {
+        self.artifact_path.as_deref()
+    }
+}
+/// See [`CodeStarParameters`](crate::model::CodeStarParameters).
+pub mod code_star_parameters {
+
+    /// A builder for [`CodeStarParameters`](crate::model::CodeStarParameters).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connection_arn: std::option::Option<std::string::String>,
+        pub(crate) repository: std::option::Option<std::string::String>,
+        pub(crate) branch: std::option::Option<std::string::String>,
+        pub(crate) artifact_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_arn = Some(input.into());
+            self
+        }
+        /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+        pub fn set_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_arn = input;
+            self
+        }
+        /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository = Some(input.into());
+            self
+        }
+        /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository = input;
+            self
+        }
+        /// <p>The specific branch where the artifact resides. </p>
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.branch = Some(input.into());
+            self
+        }
+        /// <p>The specific branch where the artifact resides. </p>
+        pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch = input;
+            self
+        }
+        /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+        pub fn artifact_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.artifact_path = Some(input.into());
+            self
+        }
+        /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+        pub fn set_artifact_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.artifact_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CodeStarParameters`](crate::model::CodeStarParameters).
+        pub fn build(self) -> crate::model::CodeStarParameters {
+            crate::model::CodeStarParameters {
+                connection_arn: self.connection_arn,
+                repository: self.repository,
+                branch: self.branch,
+                artifact_path: self.artifact_path,
+            }
+        }
+    }
+}
+impl CodeStarParameters {
+    /// Creates a new builder-style object to manufacture [`CodeStarParameters`](crate::model::CodeStarParameters).
+    pub fn builder() -> crate::model::code_star_parameters::Builder {
+        crate::model::code_star_parameters::Builder::default()
+    }
+}
+
+/// When writing a match expression against `SourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sourcetype = unimplemented!();
+/// match sourcetype {
+///     SourceType::Codestar => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SourceType::NewFeature` is defined.
+/// Specifically, when `sourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Codestar,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CODESTAR" => SourceType::Codestar,
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SourceType::from(s))
+    }
+}
+impl SourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SourceType::Codestar => "CODESTAR",
+            SourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CODESTAR"]
+    }
+}
+impl AsRef<str> for SourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2799,6 +3459,82 @@ impl ProductType {
 impl AsRef<str> for ProductType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceConnection {
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::SourceType>,
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
+    #[doc(hidden)]
+    pub connection_parameters: std::option::Option<crate::model::SourceConnectionParameters>,
+}
+impl SourceConnection {
+    /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The connection details based on the connection <code>Type</code>. </p>
+    pub fn connection_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceConnectionParameters> {
+        self.connection_parameters.as_ref()
+    }
+}
+/// See [`SourceConnection`](crate::model::SourceConnection).
+pub mod source_connection {
+
+    /// A builder for [`SourceConnection`](crate::model::SourceConnection).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::SourceType>,
+        pub(crate) connection_parameters:
+            std::option::Option<crate::model::SourceConnectionParameters>,
+    }
+    impl Builder {
+        /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+        pub fn r#type(mut self, input: crate::model::SourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The connection details based on the connection <code>Type</code>. </p>
+        pub fn connection_parameters(
+            mut self,
+            input: crate::model::SourceConnectionParameters,
+        ) -> Self {
+            self.connection_parameters = Some(input);
+            self
+        }
+        /// <p>The connection details based on the connection <code>Type</code>. </p>
+        pub fn set_connection_parameters(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnectionParameters>,
+        ) -> Self {
+            self.connection_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceConnection`](crate::model::SourceConnection).
+        pub fn build(self) -> crate::model::SourceConnection {
+            crate::model::SourceConnection {
+                r#type: self.r#type,
+                connection_parameters: self.connection_parameters,
+            }
+        }
+    }
+}
+impl SourceConnection {
+    /// Creates a new builder-style object to manufacture [`SourceConnection`](crate::model::SourceConnection).
+    pub fn builder() -> crate::model::source_connection::Builder {
+        crate::model::source_connection::Builder::default()
     }
 }
 
@@ -6512,19 +7248,19 @@ impl AsRef<str> for ProvisionedProductPlanType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
-    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
 impl Principal {
-    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
-    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
@@ -6539,12 +7275,12 @@ pub mod principal {
         pub(crate) principal_type: std::option::Option<crate::model::PrincipalType>,
     }
     impl Builder {
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the principal (IAM user, role, or group).</p>
+        /// <p>The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6552,12 +7288,12 @@ pub mod principal {
             self.principal_arn = input;
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
             self.principal_type = Some(input);
             self
         }
-        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+        /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -6594,6 +7330,7 @@ impl Principal {
 /// # let principaltype = unimplemented!();
 /// match principaltype {
 ///     PrincipalType::Iam => { /* ... */ },
+///     PrincipalType::IamPattern => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -6629,6 +7366,8 @@ impl Principal {
 pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
+    #[allow(missing_docs)] // documentation missing in model
+    IamPattern,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -6636,6 +7375,7 @@ impl std::convert::From<&str> for PrincipalType {
     fn from(s: &str) -> Self {
         match s {
             "IAM" => PrincipalType::Iam,
+            "IAM_PATTERN" => PrincipalType::IamPattern,
             other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -6652,12 +7392,13 @@ impl PrincipalType {
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Iam => "IAM",
+            PrincipalType::IamPattern => "IAM_PATTERN",
             PrincipalType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM"]
+        &["IAM", "IAM_PATTERN"]
     }
 }
 impl AsRef<str> for PrincipalType {
@@ -8767,7 +9508,7 @@ pub struct ProvisionedProductPlanDetails {
     /// <p>The status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
-    /// <p>The time when the plan was last updated.</p>
+    /// <p>The UTC time stamp when the plan was last updated.</p>
     #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
@@ -8825,7 +9566,7 @@ impl ProvisionedProductPlanDetails {
     pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanStatus> {
         self.status.as_ref()
     }
-    /// <p>The time when the plan was last updated.</p>
+    /// <p>The UTC time stamp when the plan was last updated.</p>
     pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
@@ -8990,12 +9731,12 @@ pub mod provisioned_product_plan_details {
             self.status = input;
             self
         }
-        /// <p>The time when the plan was last updated.</p>
+        /// <p>The UTC time stamp when the plan was last updated.</p>
         pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_time = Some(input);
             self
         }
-        /// <p>The time when the plan was last updated.</p>
+        /// <p>The UTC time stamp when the plan was last updated.</p>
         pub fn set_updated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9669,7 +10410,7 @@ impl ShareError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortfolioShareDetail {
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
     /// <p>1. An external account.</p>
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
@@ -9685,9 +10426,12 @@ pub struct PortfolioShareDetail {
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
     #[doc(hidden)]
     pub share_tag_options: bool,
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    #[doc(hidden)]
+    pub share_principals: bool,
 }
 impl PortfolioShareDetail {
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
     /// <p>1. An external account.</p>
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
@@ -9707,6 +10451,10 @@ impl PortfolioShareDetail {
     pub fn share_tag_options(&self) -> bool {
         self.share_tag_options
     }
+    /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+    pub fn share_principals(&self) -> bool {
+        self.share_principals
+    }
 }
 /// See [`PortfolioShareDetail`](crate::model::PortfolioShareDetail).
 pub mod portfolio_share_detail {
@@ -9718,9 +10466,10 @@ pub mod portfolio_share_detail {
         pub(crate) r#type: std::option::Option<crate::model::DescribePortfolioShareType>,
         pub(crate) accepted: std::option::Option<bool>,
         pub(crate) share_tag_options: std::option::Option<bool>,
+        pub(crate) share_principals: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
+        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
         /// <p>1. An external account.</p>
         /// <p>2. An organziation member account.</p>
         /// <p>3. An organzational unit (OU).</p>
@@ -9729,7 +10478,7 @@ pub mod portfolio_share_detail {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
+        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
         /// <p>1. An external account.</p>
         /// <p>2. An organziation member account.</p>
         /// <p>3. An organzational unit (OU).</p>
@@ -9771,6 +10520,16 @@ pub mod portfolio_share_detail {
             self.share_tag_options = input;
             self
         }
+        /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+        pub fn share_principals(mut self, input: bool) -> Self {
+            self.share_principals = Some(input);
+            self
+        }
+        /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
+        pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
+            self.share_principals = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PortfolioShareDetail`](crate::model::PortfolioShareDetail).
         pub fn build(self) -> crate::model::PortfolioShareDetail {
             crate::model::PortfolioShareDetail {
@@ -9778,6 +10537,7 @@ pub mod portfolio_share_detail {
                 r#type: self.r#type,
                 accepted: self.accepted.unwrap_or_default(),
                 share_tag_options: self.share_tag_options.unwrap_or_default(),
+                share_principals: self.share_principals.unwrap_or_default(),
             }
         }
     }
@@ -10004,7 +10764,7 @@ pub struct ProvisioningArtifactProperties {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     #[doc(hidden)]
@@ -10018,7 +10778,7 @@ pub struct ProvisioningArtifactProperties {
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
-    /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
     #[doc(hidden)]
     pub disable_template_validation: bool,
 }
@@ -10032,7 +10792,7 @@ impl ProvisioningArtifactProperties {
         self.description.as_deref()
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     pub fn info(
@@ -10050,7 +10810,7 @@ impl ProvisioningArtifactProperties {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
-    /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
     pub fn disable_template_validation(&self) -> bool {
         self.disable_template_validation
     }
@@ -10095,7 +10855,7 @@ pub mod provisioning_artifact_properties {
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
         /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
         /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn info(
@@ -10109,7 +10869,7 @@ pub mod provisioning_artifact_properties {
             self
         }
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
         /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
         /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn set_info(
@@ -10144,12 +10904,12 @@ pub mod provisioning_artifact_properties {
             self.r#type = input;
             self
         }
-        /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+        /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
         pub fn disable_template_validation(mut self, input: bool) -> Self {
             self.disable_template_validation = Some(input);
             self
         }
-        /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+        /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
         pub fn set_disable_template_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_template_validation = input;
             self

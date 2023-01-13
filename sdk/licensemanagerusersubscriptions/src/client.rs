@@ -192,6 +192,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::RegisterIdentityProvider::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
     ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::RegisterIdentityProvider::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_product): <p>The name of the user-based subscription product.</p>
+    ///   - [`settings(Settings)`](crate::client::fluent_builders::RegisterIdentityProvider::settings) / [`set_settings(Option<Settings>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_settings): <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     /// - On success, responds with [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput) with field(s):
     ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::output::RegisterIdentityProviderOutput::identity_provider_summary): <p>Metadata that describes the results of an identity provider operation.</p>
     /// - On failure, responds with [`SdkError<RegisterIdentityProviderError>`](crate::error::RegisterIdentityProviderError)
@@ -224,6 +225,20 @@ impl Client {
     pub fn stop_product_subscription(&self) -> fluent_builders::StopProductSubscription {
         fluent_builders::StopProductSubscription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateIdentityProviderSettings`](crate::client::fluent_builders::UpdateIdentityProviderSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_identity_provider): <p>Details about an identity provider.</p>
+    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_product): <p>The name of the user-based subscription product.</p>
+    ///   - [`update_settings(UpdateSettings)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::update_settings) / [`set_update_settings(Option<UpdateSettings>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_update_settings): <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>  <ul>   <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>   <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>   <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput) with field(s):
+    ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::output::UpdateIdentityProviderSettingsOutput::identity_provider_summary): <p>Describes an identity provider.</p>
+    /// - On failure, responds with [`SdkError<UpdateIdentityProviderSettingsError>`](crate::error::UpdateIdentityProviderSettingsError)
+    pub fn update_identity_provider_settings(
+        &self,
+    ) -> fluent_builders::UpdateIdentityProviderSettings {
+        fluent_builders::UpdateIdentityProviderSettings::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
 
@@ -234,7 +249,9 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AssociateUser`.
     ///
-    /// <p>Associates the user to an EC2 instance to utilize user-based subscriptions.</p>
+    /// <p>Associates the user to an EC2 instance to utilize user-based subscriptions.</p> <note>
+    /// <p>Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateUser {
         handle: std::sync::Arc<super::Handle>,
@@ -1068,10 +1085,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product(input);
             self
         }
+        /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+        pub fn settings(mut self, input: crate::model::Settings) -> Self {
+            self.inner = self.inner.settings(input);
+            self
+        }
+        /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+        pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
+            self.inner = self.inner.set_settings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartProductSubscription`.
     ///
-    /// <p>Starts a product subscription for a user with the specified identity provider.</p>
+    /// <p>Starts a product subscription for a user with the specified identity provider.</p> <note>
+    /// <p>Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartProductSubscription {
         handle: std::sync::Arc<super::Handle>,
@@ -1278,6 +1307,115 @@ pub mod fluent_builders {
         /// <p>The domain name of the user.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateIdentityProviderSettings`.
+    ///
+    /// <p>Updates additional product configuration settings for the registered identity provider.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateIdentityProviderSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_identity_provider_settings_input::Builder,
+    }
+    impl UpdateIdentityProviderSettings {
+        /// Creates a new `UpdateIdentityProviderSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateIdentityProviderSettings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateIdentityProviderSettingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateIdentityProviderSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateIdentityProviderSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Details about an identity provider.</p>
+        pub fn identity_provider(mut self, input: crate::model::IdentityProvider) -> Self {
+            self.inner = self.inner.identity_provider(input);
+            self
+        }
+        /// <p>Details about an identity provider.</p>
+        pub fn set_identity_provider(
+            mut self,
+            input: std::option::Option<crate::model::IdentityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_identity_provider(input);
+            self
+        }
+        /// <p>The name of the user-based subscription product.</p>
+        pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product(input.into());
+            self
+        }
+        /// <p>The name of the user-based subscription product.</p>
+        pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_product(input);
+            self
+        }
+        /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+        /// <ul>
+        /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+        /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+        /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+        /// </ul>
+        pub fn update_settings(mut self, input: crate::model::UpdateSettings) -> Self {
+            self.inner = self.inner.update_settings(input);
+            self
+        }
+        /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+        /// <ul>
+        /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+        /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+        /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+        /// </ul>
+        pub fn set_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::UpdateSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_update_settings(input);
             self
         }
     }

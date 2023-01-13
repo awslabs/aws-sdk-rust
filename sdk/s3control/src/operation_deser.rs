@@ -1363,6 +1363,42 @@ pub fn parse_get_multi_region_access_point_policy_status_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_routes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointRoutesOutput,
+    crate::error::GetMultiRegionAccessPointRoutesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMultiRegionAccessPointRoutesError::unhandled)?;
+    Err(crate::error::GetMultiRegionAccessPointRoutesError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_routes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointRoutesOutput,
+    crate::error::GetMultiRegionAccessPointRoutesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_multi_region_access_point_routes_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_multi_region_access_point_routes(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetMultiRegionAccessPointRoutesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_public_access_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2125,6 +2161,34 @@ pub fn parse_put_storage_lens_configuration_tagging_response(
         #[allow(unused_mut)]
         let mut output =
             crate::output::put_storage_lens_configuration_tagging_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_submit_multi_region_access_point_routes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SubmitMultiRegionAccessPointRoutesOutput,
+    crate::error::SubmitMultiRegionAccessPointRoutesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SubmitMultiRegionAccessPointRoutesError::unhandled)?;
+    Err(crate::error::SubmitMultiRegionAccessPointRoutesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_submit_multi_region_access_point_routes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SubmitMultiRegionAccessPointRoutesOutput,
+    crate::error::SubmitMultiRegionAccessPointRoutesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::submit_multi_region_access_point_routes_output::Builder::default();
         let _ = response;
         output.build()
     })

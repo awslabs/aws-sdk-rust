@@ -602,7 +602,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
     #[doc(hidden)]
     pub throughput: i64,
-    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
     #[doc(hidden)]
     pub optimized_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
@@ -631,7 +631,7 @@ impl ReplicationConfigurationReplicatedDisk {
     pub fn throughput(&self) -> i64 {
         self.throughput
     }
-    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
     pub fn optimized_staging_disk_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
@@ -715,7 +715,7 @@ pub mod replication_configuration_replicated_disk {
             self.throughput = input;
             self
         }
-        /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+        /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
         pub fn optimized_staging_disk_type(
             mut self,
             input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
@@ -723,7 +723,7 @@ pub mod replication_configuration_replicated_disk {
             self.optimized_staging_disk_type = Some(input);
             self
         }
-        /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+        /// <p>When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it is constantly updated by the service. This is a read-only field.</p>
         pub fn set_optimized_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -1203,6 +1203,554 @@ impl LaunchDisposition {
 impl AsRef<str> for LaunchDisposition {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SourceServer {
+    /// <p>The ID of the Source Server.</p>
+    #[doc(hidden)]
+    pub source_server_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Source Server.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the Source Server.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    #[doc(hidden)]
+    pub recovery_instance_id: std::option::Option<std::string::String>,
+    /// <p>The status of the last recovery launch of this Source Server.</p>
+    #[doc(hidden)]
+    pub last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
+    /// <p>The Data Replication Info of the Source Server.</p>
+    #[doc(hidden)]
+    pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+    /// <p>The lifecycle information of this Source Server.</p>
+    #[doc(hidden)]
+    pub life_cycle: std::option::Option<crate::model::LifeCycle>,
+    /// <p>The source properties of the Source Server.</p>
+    #[doc(hidden)]
+    pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>The staging area of the source server.</p>
+    #[doc(hidden)]
+    pub staging_area: std::option::Option<crate::model::StagingArea>,
+    /// <p>Source cloud properties of the Source Server.</p>
+    #[doc(hidden)]
+    pub source_cloud_properties: std::option::Option<crate::model::SourceCloudProperties>,
+    /// <p>Replication direction of the Source Server.</p>
+    #[doc(hidden)]
+    pub replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    #[doc(hidden)]
+    pub reversed_direction_source_server_arn: std::option::Option<std::string::String>,
+}
+impl SourceServer {
+    /// <p>The ID of the Source Server.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>The ARN of the Source Server.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags associated with the Source Server.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
+        self.recovery_instance_id.as_deref()
+    }
+    /// <p>The status of the last recovery launch of this Source Server.</p>
+    pub fn last_launch_result(&self) -> std::option::Option<&crate::model::LastLaunchResult> {
+        self.last_launch_result.as_ref()
+    }
+    /// <p>The Data Replication Info of the Source Server.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>The lifecycle information of this Source Server.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>The source properties of the Source Server.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+    /// <p>The staging area of the source server.</p>
+    pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
+        self.staging_area.as_ref()
+    }
+    /// <p>Source cloud properties of the Source Server.</p>
+    pub fn source_cloud_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceCloudProperties> {
+        self.source_cloud_properties.as_ref()
+    }
+    /// <p>Replication direction of the Source Server.</p>
+    pub fn replication_direction(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationDirection> {
+        self.replication_direction.as_ref()
+    }
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    pub fn reversed_direction_source_server_arn(&self) -> std::option::Option<&str> {
+        self.reversed_direction_source_server_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for SourceServer {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SourceServer");
+        formatter.field("source_server_id", &self.source_server_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("recovery_instance_id", &self.recovery_instance_id);
+        formatter.field("last_launch_result", &self.last_launch_result);
+        formatter.field("data_replication_info", &self.data_replication_info);
+        formatter.field("life_cycle", &self.life_cycle);
+        formatter.field("source_properties", &self.source_properties);
+        formatter.field("staging_area", &self.staging_area);
+        formatter.field("source_cloud_properties", &self.source_cloud_properties);
+        formatter.field("replication_direction", &self.replication_direction);
+        formatter.field(
+            "reversed_direction_source_server_arn",
+            &self.reversed_direction_source_server_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`SourceServer`](crate::model::SourceServer).
+pub mod source_server {
+
+    /// A builder for [`SourceServer`](crate::model::SourceServer).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
+        pub(crate) last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
+        pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
+        pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
+        pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
+        pub(crate) source_cloud_properties:
+            std::option::Option<crate::model::SourceCloudProperties>,
+        pub(crate) replication_direction: std::option::Option<crate::model::ReplicationDirection>,
+        pub(crate) reversed_direction_source_server_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Source Server.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Source Server.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// <p>The ARN of the Source Server.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Source Server.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the Source Server.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the Source Server.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recovery_instance_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+        pub fn set_recovery_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recovery_instance_id = input;
+            self
+        }
+        /// <p>The status of the last recovery launch of this Source Server.</p>
+        pub fn last_launch_result(mut self, input: crate::model::LastLaunchResult) -> Self {
+            self.last_launch_result = Some(input);
+            self
+        }
+        /// <p>The status of the last recovery launch of this Source Server.</p>
+        pub fn set_last_launch_result(
+            mut self,
+            input: std::option::Option<crate::model::LastLaunchResult>,
+        ) -> Self {
+            self.last_launch_result = input;
+            self
+        }
+        /// <p>The Data Replication Info of the Source Server.</p>
+        pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
+            self.data_replication_info = Some(input);
+            self
+        }
+        /// <p>The Data Replication Info of the Source Server.</p>
+        pub fn set_data_replication_info(
+            mut self,
+            input: std::option::Option<crate::model::DataReplicationInfo>,
+        ) -> Self {
+            self.data_replication_info = input;
+            self
+        }
+        /// <p>The lifecycle information of this Source Server.</p>
+        pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
+            self.life_cycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle information of this Source Server.</p>
+        pub fn set_life_cycle(
+            mut self,
+            input: std::option::Option<crate::model::LifeCycle>,
+        ) -> Self {
+            self.life_cycle = input;
+            self
+        }
+        /// <p>The source properties of the Source Server.</p>
+        pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
+            self.source_properties = Some(input);
+            self
+        }
+        /// <p>The source properties of the Source Server.</p>
+        pub fn set_source_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceProperties>,
+        ) -> Self {
+            self.source_properties = input;
+            self
+        }
+        /// <p>The staging area of the source server.</p>
+        pub fn staging_area(mut self, input: crate::model::StagingArea) -> Self {
+            self.staging_area = Some(input);
+            self
+        }
+        /// <p>The staging area of the source server.</p>
+        pub fn set_staging_area(
+            mut self,
+            input: std::option::Option<crate::model::StagingArea>,
+        ) -> Self {
+            self.staging_area = input;
+            self
+        }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn source_cloud_properties(
+            mut self,
+            input: crate::model::SourceCloudProperties,
+        ) -> Self {
+            self.source_cloud_properties = Some(input);
+            self
+        }
+        /// <p>Source cloud properties of the Source Server.</p>
+        pub fn set_source_cloud_properties(
+            mut self,
+            input: std::option::Option<crate::model::SourceCloudProperties>,
+        ) -> Self {
+            self.source_cloud_properties = input;
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn replication_direction(mut self, input: crate::model::ReplicationDirection) -> Self {
+            self.replication_direction = Some(input);
+            self
+        }
+        /// <p>Replication direction of the Source Server.</p>
+        pub fn set_replication_direction(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationDirection>,
+        ) -> Self {
+            self.replication_direction = input;
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn reversed_direction_source_server_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = Some(input.into());
+            self
+        }
+        /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+        pub fn set_reversed_direction_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reversed_direction_source_server_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceServer`](crate::model::SourceServer).
+        pub fn build(self) -> crate::model::SourceServer {
+            crate::model::SourceServer {
+                source_server_id: self.source_server_id,
+                arn: self.arn,
+                tags: self.tags,
+                recovery_instance_id: self.recovery_instance_id,
+                last_launch_result: self.last_launch_result,
+                data_replication_info: self.data_replication_info,
+                life_cycle: self.life_cycle,
+                source_properties: self.source_properties,
+                staging_area: self.staging_area,
+                source_cloud_properties: self.source_cloud_properties,
+                replication_direction: self.replication_direction,
+                reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_server_id", &self.source_server_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("recovery_instance_id", &self.recovery_instance_id);
+            formatter.field("last_launch_result", &self.last_launch_result);
+            formatter.field("data_replication_info", &self.data_replication_info);
+            formatter.field("life_cycle", &self.life_cycle);
+            formatter.field("source_properties", &self.source_properties);
+            formatter.field("staging_area", &self.staging_area);
+            formatter.field("source_cloud_properties", &self.source_cloud_properties);
+            formatter.field("replication_direction", &self.replication_direction);
+            formatter.field(
+                "reversed_direction_source_server_arn",
+                &self.reversed_direction_source_server_arn,
+            );
+            formatter.finish()
+        }
+    }
+}
+impl SourceServer {
+    /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
+    pub fn builder() -> crate::model::source_server::Builder {
+        crate::model::source_server::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ReplicationDirection`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let replicationdirection = unimplemented!();
+/// match replicationdirection {
+///     ReplicationDirection::Failback => { /* ... */ },
+///     ReplicationDirection::Failover => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `replicationdirection` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReplicationDirection::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReplicationDirection::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReplicationDirection::NewFeature` is defined.
+/// Specifically, when `replicationdirection` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReplicationDirection::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>Replication direction designates if this is a failover replication, or a failback replication. When a DRS agent is installed on an instance, the replication direction is failover. In cases where a recovery launch was made in the recovery location and a new recovery instance was created, and then a failback replication was initiated from that recovery instance back to the origin location, then the replication direction will be failback.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationDirection {
+    #[allow(missing_docs)] // documentation missing in model
+    Failback,
+    #[allow(missing_docs)] // documentation missing in model
+    Failover,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ReplicationDirection {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILBACK" => ReplicationDirection::Failback,
+            "FAILOVER" => ReplicationDirection::Failover,
+            other => {
+                ReplicationDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for ReplicationDirection {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationDirection::from(s))
+    }
+}
+impl ReplicationDirection {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationDirection::Failback => "FAILBACK",
+            ReplicationDirection::Failover => "FAILOVER",
+            ReplicationDirection::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILBACK", "FAILOVER"]
+    }
+}
+impl AsRef<str> for ReplicationDirection {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Properties of the cloud environment where this Source Server originated from.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceCloudProperties {
+    /// <p>AWS Account ID for an EC2-originated Source Server.</p>
+    #[doc(hidden)]
+    pub origin_account_id: std::option::Option<std::string::String>,
+    /// <p>AWS Region for an EC2-originated Source Server.</p>
+    #[doc(hidden)]
+    pub origin_region: std::option::Option<std::string::String>,
+    /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+    #[doc(hidden)]
+    pub origin_availability_zone: std::option::Option<std::string::String>,
+}
+impl SourceCloudProperties {
+    /// <p>AWS Account ID for an EC2-originated Source Server.</p>
+    pub fn origin_account_id(&self) -> std::option::Option<&str> {
+        self.origin_account_id.as_deref()
+    }
+    /// <p>AWS Region for an EC2-originated Source Server.</p>
+    pub fn origin_region(&self) -> std::option::Option<&str> {
+        self.origin_region.as_deref()
+    }
+    /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+    pub fn origin_availability_zone(&self) -> std::option::Option<&str> {
+        self.origin_availability_zone.as_deref()
+    }
+}
+/// See [`SourceCloudProperties`](crate::model::SourceCloudProperties).
+pub mod source_cloud_properties {
+
+    /// A builder for [`SourceCloudProperties`](crate::model::SourceCloudProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_account_id: std::option::Option<std::string::String>,
+        pub(crate) origin_region: std::option::Option<std::string::String>,
+        pub(crate) origin_availability_zone: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>AWS Account ID for an EC2-originated Source Server.</p>
+        pub fn origin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.origin_account_id = Some(input.into());
+            self
+        }
+        /// <p>AWS Account ID for an EC2-originated Source Server.</p>
+        pub fn set_origin_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.origin_account_id = input;
+            self
+        }
+        /// <p>AWS Region for an EC2-originated Source Server.</p>
+        pub fn origin_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.origin_region = Some(input.into());
+            self
+        }
+        /// <p>AWS Region for an EC2-originated Source Server.</p>
+        pub fn set_origin_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.origin_region = input;
+            self
+        }
+        /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+        pub fn origin_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.origin_availability_zone = Some(input.into());
+            self
+        }
+        /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
+        pub fn set_origin_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.origin_availability_zone = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceCloudProperties`](crate::model::SourceCloudProperties).
+        pub fn build(self) -> crate::model::SourceCloudProperties {
+            crate::model::SourceCloudProperties {
+                origin_account_id: self.origin_account_id,
+                origin_region: self.origin_region,
+                origin_availability_zone: self.origin_availability_zone,
+            }
+        }
+    }
+}
+impl SourceCloudProperties {
+    /// Creates a new builder-style object to manufacture [`SourceCloudProperties`](crate::model::SourceCloudProperties).
+    pub fn builder() -> crate::model::source_cloud_properties::Builder {
+        crate::model::source_cloud_properties::Builder::default()
     }
 }
 
@@ -4839,278 +5387,6 @@ impl StartRecoveryRequestSourceServer {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SourceServer {
-    /// <p>The ID of the Source Server.</p>
-    #[doc(hidden)]
-    pub source_server_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Source Server.</p>
-    #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The tags associated with the Source Server.</p>
-    #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-    #[doc(hidden)]
-    pub recovery_instance_id: std::option::Option<std::string::String>,
-    /// <p>The status of the last recovery launch of this Source Server.</p>
-    #[doc(hidden)]
-    pub last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
-    /// <p>The Data Replication Info of the Source Server.</p>
-    #[doc(hidden)]
-    pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
-    /// <p>The lifecycle information of this Source Server.</p>
-    #[doc(hidden)]
-    pub life_cycle: std::option::Option<crate::model::LifeCycle>,
-    /// <p>The source properties of the Source Server.</p>
-    #[doc(hidden)]
-    pub source_properties: std::option::Option<crate::model::SourceProperties>,
-    /// <p>The staging area of the source server.</p>
-    #[doc(hidden)]
-    pub staging_area: std::option::Option<crate::model::StagingArea>,
-}
-impl SourceServer {
-    /// <p>The ID of the Source Server.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
-        self.source_server_id.as_deref()
-    }
-    /// <p>The ARN of the Source Server.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The tags associated with the Source Server.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.tags.as_ref()
-    }
-    /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-    pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
-        self.recovery_instance_id.as_deref()
-    }
-    /// <p>The status of the last recovery launch of this Source Server.</p>
-    pub fn last_launch_result(&self) -> std::option::Option<&crate::model::LastLaunchResult> {
-        self.last_launch_result.as_ref()
-    }
-    /// <p>The Data Replication Info of the Source Server.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
-        self.data_replication_info.as_ref()
-    }
-    /// <p>The lifecycle information of this Source Server.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
-        self.life_cycle.as_ref()
-    }
-    /// <p>The source properties of the Source Server.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
-        self.source_properties.as_ref()
-    }
-    /// <p>The staging area of the source server.</p>
-    pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
-        self.staging_area.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceServer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceServer");
-        formatter.field("source_server_id", &self.source_server_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &"*** Sensitive Data Redacted ***");
-        formatter.field("recovery_instance_id", &self.recovery_instance_id);
-        formatter.field("last_launch_result", &self.last_launch_result);
-        formatter.field("data_replication_info", &self.data_replication_info);
-        formatter.field("life_cycle", &self.life_cycle);
-        formatter.field("source_properties", &self.source_properties);
-        formatter.field("staging_area", &self.staging_area);
-        formatter.finish()
-    }
-}
-/// See [`SourceServer`](crate::model::SourceServer).
-pub mod source_server {
-
-    /// A builder for [`SourceServer`](crate::model::SourceServer).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
-    pub struct Builder {
-        pub(crate) source_server_id: std::option::Option<std::string::String>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
-        pub(crate) last_launch_result: std::option::Option<crate::model::LastLaunchResult>,
-        pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
-        pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
-        pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
-        pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
-    }
-    impl Builder {
-        /// <p>The ID of the Source Server.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.source_server_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
-        }
-        /// <p>The ARN of the Source Server.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the Source Server.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags associated with the Source Server.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        /// <p>The tags associated with the Source Server.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.recovery_instance_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-        pub fn set_recovery_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_instance_id = input;
-            self
-        }
-        /// <p>The status of the last recovery launch of this Source Server.</p>
-        pub fn last_launch_result(mut self, input: crate::model::LastLaunchResult) -> Self {
-            self.last_launch_result = Some(input);
-            self
-        }
-        /// <p>The status of the last recovery launch of this Source Server.</p>
-        pub fn set_last_launch_result(
-            mut self,
-            input: std::option::Option<crate::model::LastLaunchResult>,
-        ) -> Self {
-            self.last_launch_result = input;
-            self
-        }
-        /// <p>The Data Replication Info of the Source Server.</p>
-        pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
-            self.data_replication_info = Some(input);
-            self
-        }
-        /// <p>The Data Replication Info of the Source Server.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
-        }
-        /// <p>The lifecycle information of this Source Server.</p>
-        pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
-            self.life_cycle = Some(input);
-            self
-        }
-        /// <p>The lifecycle information of this Source Server.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
-        }
-        /// <p>The source properties of the Source Server.</p>
-        pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
-            self.source_properties = Some(input);
-            self
-        }
-        /// <p>The source properties of the Source Server.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
-        }
-        /// <p>The staging area of the source server.</p>
-        pub fn staging_area(mut self, input: crate::model::StagingArea) -> Self {
-            self.staging_area = Some(input);
-            self
-        }
-        /// <p>The staging area of the source server.</p>
-        pub fn set_staging_area(
-            mut self,
-            input: std::option::Option<crate::model::StagingArea>,
-        ) -> Self {
-            self.staging_area = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SourceServer`](crate::model::SourceServer).
-        pub fn build(self) -> crate::model::SourceServer {
-            crate::model::SourceServer {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                tags: self.tags,
-                recovery_instance_id: self.recovery_instance_id,
-                last_launch_result: self.last_launch_result,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                staging_area: self.staging_area,
-            }
-        }
-    }
-    impl std::fmt::Debug for Builder {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            let mut formatter = f.debug_struct("Builder");
-            formatter.field("source_server_id", &self.source_server_id);
-            formatter.field("arn", &self.arn);
-            formatter.field("tags", &"*** Sensitive Data Redacted ***");
-            formatter.field("recovery_instance_id", &self.recovery_instance_id);
-            formatter.field("last_launch_result", &self.last_launch_result);
-            formatter.field("data_replication_info", &self.data_replication_info);
-            formatter.field("life_cycle", &self.life_cycle);
-            formatter.field("source_properties", &self.source_properties);
-            formatter.field("staging_area", &self.staging_area);
-            formatter.finish()
-        }
-    }
-}
-impl SourceServer {
-    /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
-    pub fn builder() -> crate::model::source_server::Builder {
-        crate::model::source_server::Builder::default()
-    }
-}
-
 /// <p>A set of filters by which to return Source Servers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5796,6 +6072,9 @@ pub struct RecoveryInstance {
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
     #[doc(hidden)]
     pub is_drill: std::option::Option<bool>,
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    #[doc(hidden)]
+    pub origin_environment: std::option::Option<crate::model::OriginEnvironment>,
 }
 impl RecoveryInstance {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -5853,6 +6132,10 @@ impl RecoveryInstance {
     pub fn is_drill(&self) -> std::option::Option<bool> {
         self.is_drill
     }
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+    pub fn origin_environment(&self) -> std::option::Option<&crate::model::OriginEnvironment> {
+        self.origin_environment.as_ref()
+    }
 }
 impl std::fmt::Debug for RecoveryInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5875,6 +6158,7 @@ impl std::fmt::Debug for RecoveryInstance {
             &self.point_in_time_snapshot_date_time,
         );
         formatter.field("is_drill", &self.is_drill);
+        formatter.field("origin_environment", &self.origin_environment);
         formatter.finish()
     }
 }
@@ -5900,6 +6184,7 @@ pub mod recovery_instance {
             std::option::Option<crate::model::RecoveryInstanceProperties>,
         pub(crate) point_in_time_snapshot_date_time: std::option::Option<std::string::String>,
         pub(crate) is_drill: std::option::Option<bool>,
+        pub(crate) origin_environment: std::option::Option<crate::model::OriginEnvironment>,
     }
     impl Builder {
         /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -6070,6 +6355,19 @@ pub mod recovery_instance {
             self.is_drill = input;
             self
         }
+        /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+        pub fn origin_environment(mut self, input: crate::model::OriginEnvironment) -> Self {
+            self.origin_environment = Some(input);
+            self
+        }
+        /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from. </p>
+        pub fn set_origin_environment(
+            mut self,
+            input: std::option::Option<crate::model::OriginEnvironment>,
+        ) -> Self {
+            self.origin_environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecoveryInstance`](crate::model::RecoveryInstance).
         pub fn build(self) -> crate::model::RecoveryInstance {
             crate::model::RecoveryInstance {
@@ -6085,6 +6383,7 @@ pub mod recovery_instance {
                 recovery_instance_properties: self.recovery_instance_properties,
                 point_in_time_snapshot_date_time: self.point_in_time_snapshot_date_time,
                 is_drill: self.is_drill,
+                origin_environment: self.origin_environment,
             }
         }
     }
@@ -6109,6 +6408,7 @@ pub mod recovery_instance {
                 &self.point_in_time_snapshot_date_time,
             );
             formatter.field("is_drill", &self.is_drill);
+            formatter.field("origin_environment", &self.origin_environment);
             formatter.finish()
         }
     }
@@ -6117,6 +6417,98 @@ impl RecoveryInstance {
     /// Creates a new builder-style object to manufacture [`RecoveryInstance`](crate::model::RecoveryInstance).
     pub fn builder() -> crate::model::recovery_instance::Builder {
         crate::model::recovery_instance::Builder::default()
+    }
+}
+
+/// When writing a match expression against `OriginEnvironment`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originenvironment = unimplemented!();
+/// match originenvironment {
+///     OriginEnvironment::Aws => { /* ... */ },
+///     OriginEnvironment::OnPremises => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originenvironment` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginEnvironment::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginEnvironment::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginEnvironment::NewFeature` is defined.
+/// Specifically, when `originenvironment` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginEnvironment::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginEnvironment {
+    #[allow(missing_docs)] // documentation missing in model
+    Aws,
+    #[allow(missing_docs)] // documentation missing in model
+    OnPremises,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for OriginEnvironment {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS" => OriginEnvironment::Aws,
+            "ON_PREMISES" => OriginEnvironment::OnPremises,
+            other => {
+                OriginEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for OriginEnvironment {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginEnvironment::from(s))
+    }
+}
+impl OriginEnvironment {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginEnvironment::Aws => "AWS",
+            OriginEnvironment::OnPremises => "ON_PREMISES",
+            OriginEnvironment::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AWS", "ON_PREMISES"]
+    }
+}
+impl AsRef<str> for OriginEnvironment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6689,12 +7081,24 @@ impl RecoveryInstanceDataReplicationError {
 /// match failbackreplicationerror {
 ///     FailbackReplicationError::AgentNotSeen => { /* ... */ },
 ///     FailbackReplicationError::FailbackClientNotSeen => { /* ... */ },
+///     FailbackReplicationError::FailedGettingReplicationState => { /* ... */ },
+///     FailbackReplicationError::FailedToAttachStagingDisks => { /* ... */ },
+///     FailbackReplicationError::FailedToAuthenticateWithService => { /* ... */ },
+///     FailbackReplicationError::FailedToBootReplicationServer => { /* ... */ },
 ///     FailbackReplicationError::FailedToConfigureReplicationSoftware => { /* ... */ },
+///     FailbackReplicationError::FailedToConnectAgentToReplicationServer => { /* ... */ },
+///     FailbackReplicationError::FailedToCreateSecurityGroup => { /* ... */ },
+///     FailbackReplicationError::FailedToCreateStagingDisks => { /* ... */ },
+///     FailbackReplicationError::FailedToDownloadReplicationSoftware => { /* ... */ },
 ///     FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => { /* ... */ },
 ///     FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication => { /* ... */ },
 ///     FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => { /* ... */ },
+///     FailbackReplicationError::FailedToLaunchReplicationServer => { /* ... */ },
 ///     FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => { /* ... */ },
+///     FailbackReplicationError::FailedToPairReplicationServerWithAgent => { /* ... */ },
+///     FailbackReplicationError::FailedToStartDataTransfer => { /* ... */ },
 ///     FailbackReplicationError::NotConverging => { /* ... */ },
+///     FailbackReplicationError::SnapshotsFailure => { /* ... */ },
 ///     FailbackReplicationError::UnstableNetwork => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -6734,7 +7138,23 @@ pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
     FailbackClientNotSeen,
     #[allow(missing_docs)] // documentation missing in model
+    FailedGettingReplicationState,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToAttachStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToAuthenticateWithService,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToBootReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToConfigureReplicationSoftware,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToConnectAgentToReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToCreateSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToCreateStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToDownloadReplicationSoftware,
     #[allow(missing_docs)] // documentation missing in model
     FailedToDownloadReplicationSoftwareToFailbackClient,
     #[allow(missing_docs)] // documentation missing in model
@@ -6742,9 +7162,17 @@ pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
     FailedToEstablishRecoveryInstanceCommunication,
     #[allow(missing_docs)] // documentation missing in model
+    FailedToLaunchReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToPairAgentWithReplicationSoftware,
     #[allow(missing_docs)] // documentation missing in model
+    FailedToPairReplicationServerWithAgent,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedToStartDataTransfer,
+    #[allow(missing_docs)] // documentation missing in model
     NotConverging,
+    #[allow(missing_docs)] // documentation missing in model
+    SnapshotsFailure,
     #[allow(missing_docs)] // documentation missing in model
     UnstableNetwork,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -6755,8 +7183,32 @@ impl std::convert::From<&str> for FailbackReplicationError {
         match s {
             "AGENT_NOT_SEEN" => FailbackReplicationError::AgentNotSeen,
             "FAILBACK_CLIENT_NOT_SEEN" => FailbackReplicationError::FailbackClientNotSeen,
+            "FAILED_GETTING_REPLICATION_STATE" => {
+                FailbackReplicationError::FailedGettingReplicationState
+            }
+            "FAILED_TO_ATTACH_STAGING_DISKS" => {
+                FailbackReplicationError::FailedToAttachStagingDisks
+            }
+            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => {
+                FailbackReplicationError::FailedToAuthenticateWithService
+            }
+            "FAILED_TO_BOOT_REPLICATION_SERVER" => {
+                FailbackReplicationError::FailedToBootReplicationServer
+            }
             "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE" => {
                 FailbackReplicationError::FailedToConfigureReplicationSoftware
+            }
+            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => {
+                FailbackReplicationError::FailedToConnectAgentToReplicationServer
+            }
+            "FAILED_TO_CREATE_SECURITY_GROUP" => {
+                FailbackReplicationError::FailedToCreateSecurityGroup
+            }
+            "FAILED_TO_CREATE_STAGING_DISKS" => {
+                FailbackReplicationError::FailedToCreateStagingDisks
+            }
+            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => {
+                FailbackReplicationError::FailedToDownloadReplicationSoftware
             }
             "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => {
                 FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient
@@ -6767,10 +7219,18 @@ impl std::convert::From<&str> for FailbackReplicationError {
             "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => {
                 FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication
             }
+            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => {
+                FailbackReplicationError::FailedToLaunchReplicationServer
+            }
             "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => {
                 FailbackReplicationError::FailedToPairAgentWithReplicationSoftware
             }
+            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => {
+                FailbackReplicationError::FailedToPairReplicationServerWithAgent
+            }
+            "FAILED_TO_START_DATA_TRANSFER" => FailbackReplicationError::FailedToStartDataTransfer,
             "NOT_CONVERGING" => FailbackReplicationError::NotConverging,
+            "SNAPSHOTS_FAILURE" => FailbackReplicationError::SnapshotsFailure,
             "UNSTABLE_NETWORK" => FailbackReplicationError::UnstableNetwork,
             other => FailbackReplicationError::Unknown(crate::types::UnknownVariantValue(
                 other.to_owned(),
@@ -6791,8 +7251,32 @@ impl FailbackReplicationError {
         match self {
             FailbackReplicationError::AgentNotSeen => "AGENT_NOT_SEEN",
             FailbackReplicationError::FailbackClientNotSeen => "FAILBACK_CLIENT_NOT_SEEN",
+            FailbackReplicationError::FailedGettingReplicationState => {
+                "FAILED_GETTING_REPLICATION_STATE"
+            }
+            FailbackReplicationError::FailedToAttachStagingDisks => {
+                "FAILED_TO_ATTACH_STAGING_DISKS"
+            }
+            FailbackReplicationError::FailedToAuthenticateWithService => {
+                "FAILED_TO_AUTHENTICATE_WITH_SERVICE"
+            }
+            FailbackReplicationError::FailedToBootReplicationServer => {
+                "FAILED_TO_BOOT_REPLICATION_SERVER"
+            }
             FailbackReplicationError::FailedToConfigureReplicationSoftware => {
                 "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE"
+            }
+            FailbackReplicationError::FailedToConnectAgentToReplicationServer => {
+                "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
+            }
+            FailbackReplicationError::FailedToCreateSecurityGroup => {
+                "FAILED_TO_CREATE_SECURITY_GROUP"
+            }
+            FailbackReplicationError::FailedToCreateStagingDisks => {
+                "FAILED_TO_CREATE_STAGING_DISKS"
+            }
+            FailbackReplicationError::FailedToDownloadReplicationSoftware => {
+                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"
             }
             FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => {
                 "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT"
@@ -6803,10 +7287,18 @@ impl FailbackReplicationError {
             FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => {
                 "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION"
             }
+            FailbackReplicationError::FailedToLaunchReplicationServer => {
+                "FAILED_TO_LAUNCH_REPLICATION_SERVER"
+            }
             FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => {
                 "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE"
             }
+            FailbackReplicationError::FailedToPairReplicationServerWithAgent => {
+                "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
+            }
+            FailbackReplicationError::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
             FailbackReplicationError::NotConverging => "NOT_CONVERGING",
+            FailbackReplicationError::SnapshotsFailure => "SNAPSHOTS_FAILURE",
             FailbackReplicationError::UnstableNetwork => "UNSTABLE_NETWORK",
             FailbackReplicationError::Unknown(value) => value.as_str(),
         }
@@ -6816,12 +7308,24 @@ impl FailbackReplicationError {
         &[
             "AGENT_NOT_SEEN",
             "FAILBACK_CLIENT_NOT_SEEN",
+            "FAILED_GETTING_REPLICATION_STATE",
+            "FAILED_TO_ATTACH_STAGING_DISKS",
+            "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
+            "FAILED_TO_BOOT_REPLICATION_SERVER",
             "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE",
+            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
+            "FAILED_TO_CREATE_SECURITY_GROUP",
+            "FAILED_TO_CREATE_STAGING_DISKS",
+            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
             "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
             "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
             "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+            "FAILED_TO_LAUNCH_REPLICATION_SERVER",
             "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
+            "FAILED_TO_START_DATA_TRANSFER",
             "NOT_CONVERGING",
+            "SNAPSHOTS_FAILURE",
             "UNSTABLE_NETWORK",
         ]
     }
@@ -7138,13 +7642,24 @@ impl AsRef<str> for RecoveryInstanceDataReplicationInitiationStepStatus {
 /// ```text
 /// # let recoveryinstancedatareplicationinitiationstepname = unimplemented!();
 /// match recoveryinstancedatareplicationinitiationstepname {
+///     RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => { /* ... */ },
 ///     RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => { /* ... */ },
+///     RecoveryInstanceDataReplicationInitiationStepName::Wait => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -7179,9 +7694,23 @@ impl AsRef<str> for RecoveryInstanceDataReplicationInitiationStepStatus {
 )]
 pub enum RecoveryInstanceDataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
+    AttachStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
+    AuthenticateWithService,
+    #[allow(missing_docs)] // documentation missing in model
+    BootReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     CompleteVolumeMapping,
     #[allow(missing_docs)] // documentation missing in model
     ConfigureReplicationSoftware,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectAgentToReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateStagingDisks,
+    #[allow(missing_docs)] // documentation missing in model
+    DownloadReplicationSoftware,
     #[allow(missing_docs)] // documentation missing in model
     DownloadReplicationSoftwareToFailbackClient,
     #[allow(missing_docs)] // documentation missing in model
@@ -7189,22 +7718,41 @@ pub enum RecoveryInstanceDataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
     EstablishRecoveryInstanceCommunication,
     #[allow(missing_docs)] // documentation missing in model
+    LaunchReplicationServer,
+    #[allow(missing_docs)] // documentation missing in model
     LinkFailbackClientWithRecoveryInstance,
     #[allow(missing_docs)] // documentation missing in model
     PairAgentWithReplicationSoftware,
+    #[allow(missing_docs)] // documentation missing in model
+    PairReplicationServerWithAgent,
+    #[allow(missing_docs)] // documentation missing in model
+    StartDataTransfer,
+    #[allow(missing_docs)] // documentation missing in model
+    Wait,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecoveryInstanceDataReplicationInitiationStepName {
     fn from(s: &str) -> Self {
         match s {
+            "ATTACH_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks,
+            "AUTHENTICATE_WITH_SERVICE" => RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService,
+            "BOOT_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer,
             "COMPLETE_VOLUME_MAPPING" => RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping,
             "CONFIGURE_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware,
+            "CONNECT_AGENT_TO_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer,
+            "CREATE_SECURITY_GROUP" => RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup,
+            "CREATE_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks,
+            "DOWNLOAD_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware,
             "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient,
             "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication,
             "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication,
+            "LAUNCH_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer,
             "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE" => RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance,
             "PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware,
+            "PAIR_REPLICATION_SERVER_WITH_AGENT" => RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent,
+            "START_DATA_TRANSFER" => RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer,
+            "WAIT" => RecoveryInstanceDataReplicationInitiationStepName::Wait,
             other => RecoveryInstanceDataReplicationInitiationStepName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
@@ -7220,26 +7768,48 @@ impl RecoveryInstanceDataReplicationInitiationStepName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
+            RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
+            RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
             RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => "COMPLETE_VOLUME_MAPPING",
             RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => "CONFIGURE_REPLICATION_SOFTWARE",
+            RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
+            RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
+            RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
+            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
             RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
             RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
             RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+            RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
             RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE",
             RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+            RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
+            RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
+            RecoveryInstanceDataReplicationInitiationStepName::Wait => "WAIT",
             RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ATTACH_STAGING_DISKS",
+            "AUTHENTICATE_WITH_SERVICE",
+            "BOOT_REPLICATION_SERVER",
             "COMPLETE_VOLUME_MAPPING",
             "CONFIGURE_REPLICATION_SOFTWARE",
+            "CONNECT_AGENT_TO_REPLICATION_SERVER",
+            "CREATE_SECURITY_GROUP",
+            "CREATE_STAGING_DISKS",
+            "DOWNLOAD_REPLICATION_SOFTWARE",
             "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
             "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
             "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+            "LAUNCH_REPLICATION_SERVER",
             "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE",
             "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+            "PAIR_REPLICATION_SERVER_WITH_AGENT",
+            "START_DATA_TRANSFER",
+            "WAIT",
         ]
     }
 }
@@ -7267,7 +7837,9 @@ impl AsRef<str> for RecoveryInstanceDataReplicationInitiationStepName {
 ///     RecoveryInstanceDataReplicationState::Disconnected => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::InitialSync => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::Initiating => { /* ... */ },
+///     RecoveryInstanceDataReplicationState::NotStarted => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::Paused => { /* ... */ },
+///     RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::Rescan => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::Stalled => { /* ... */ },
 ///     RecoveryInstanceDataReplicationState::Stopped => { /* ... */ },
@@ -7317,7 +7889,11 @@ pub enum RecoveryInstanceDataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Initiating,
     #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationStateNotAvailable,
     #[allow(missing_docs)] // documentation missing in model
     Rescan,
     #[allow(missing_docs)] // documentation missing in model
@@ -7336,7 +7912,11 @@ impl std::convert::From<&str> for RecoveryInstanceDataReplicationState {
             "DISCONNECTED" => RecoveryInstanceDataReplicationState::Disconnected,
             "INITIAL_SYNC" => RecoveryInstanceDataReplicationState::InitialSync,
             "INITIATING" => RecoveryInstanceDataReplicationState::Initiating,
+            "NOT_STARTED" => RecoveryInstanceDataReplicationState::NotStarted,
             "PAUSED" => RecoveryInstanceDataReplicationState::Paused,
+            "REPLICATION_STATE_NOT_AVAILABLE" => {
+                RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable
+            }
             "RESCAN" => RecoveryInstanceDataReplicationState::Rescan,
             "STALLED" => RecoveryInstanceDataReplicationState::Stalled,
             "STOPPED" => RecoveryInstanceDataReplicationState::Stopped,
@@ -7363,7 +7943,11 @@ impl RecoveryInstanceDataReplicationState {
             RecoveryInstanceDataReplicationState::Disconnected => "DISCONNECTED",
             RecoveryInstanceDataReplicationState::InitialSync => "INITIAL_SYNC",
             RecoveryInstanceDataReplicationState::Initiating => "INITIATING",
+            RecoveryInstanceDataReplicationState::NotStarted => "NOT_STARTED",
             RecoveryInstanceDataReplicationState::Paused => "PAUSED",
+            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => {
+                "REPLICATION_STATE_NOT_AVAILABLE"
+            }
             RecoveryInstanceDataReplicationState::Rescan => "RESCAN",
             RecoveryInstanceDataReplicationState::Stalled => "STALLED",
             RecoveryInstanceDataReplicationState::Stopped => "STOPPED",
@@ -7379,7 +7963,9 @@ impl RecoveryInstanceDataReplicationState {
             "DISCONNECTED",
             "INITIAL_SYNC",
             "INITIATING",
+            "NOT_STARTED",
             "PAUSED",
+            "REPLICATION_STATE_NOT_AVAILABLE",
             "RESCAN",
             "STALLED",
             "STOPPED",
@@ -7548,6 +8134,9 @@ pub struct RecoveryInstanceFailback {
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
     #[doc(hidden)]
     pub elapsed_replication_duration: std::option::Option<std::string::String>,
+    /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
+    #[doc(hidden)]
+    pub failback_launch_type: std::option::Option<crate::model::FailbackLaunchType>,
 }
 impl RecoveryInstanceFailback {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
@@ -7587,6 +8176,10 @@ impl RecoveryInstanceFailback {
     pub fn elapsed_replication_duration(&self) -> std::option::Option<&str> {
         self.elapsed_replication_duration.as_deref()
     }
+    /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
+    pub fn failback_launch_type(&self) -> std::option::Option<&crate::model::FailbackLaunchType> {
+        self.failback_launch_type.as_ref()
+    }
 }
 /// See [`RecoveryInstanceFailback`](crate::model::RecoveryInstanceFailback).
 pub mod recovery_instance_failback {
@@ -7604,6 +8197,7 @@ pub mod recovery_instance_failback {
         pub(crate) failback_to_original_server: std::option::Option<bool>,
         pub(crate) first_byte_date_time: std::option::Option<std::string::String>,
         pub(crate) elapsed_replication_duration: std::option::Option<std::string::String>,
+        pub(crate) failback_launch_type: std::option::Option<crate::model::FailbackLaunchType>,
     }
     impl Builder {
         /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
@@ -7729,6 +8323,19 @@ pub mod recovery_instance_failback {
             self.elapsed_replication_duration = input;
             self
         }
+        /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
+        pub fn failback_launch_type(mut self, input: crate::model::FailbackLaunchType) -> Self {
+            self.failback_launch_type = Some(input);
+            self
+        }
+        /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
+        pub fn set_failback_launch_type(
+            mut self,
+            input: std::option::Option<crate::model::FailbackLaunchType>,
+        ) -> Self {
+            self.failback_launch_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecoveryInstanceFailback`](crate::model::RecoveryInstanceFailback).
         pub fn build(self) -> crate::model::RecoveryInstanceFailback {
             crate::model::RecoveryInstanceFailback {
@@ -7742,6 +8349,7 @@ pub mod recovery_instance_failback {
                 failback_to_original_server: self.failback_to_original_server,
                 first_byte_date_time: self.first_byte_date_time,
                 elapsed_replication_duration: self.elapsed_replication_duration,
+                failback_launch_type: self.failback_launch_type,
             }
         }
     }
@@ -7750,6 +8358,98 @@ impl RecoveryInstanceFailback {
     /// Creates a new builder-style object to manufacture [`RecoveryInstanceFailback`](crate::model::RecoveryInstanceFailback).
     pub fn builder() -> crate::model::recovery_instance_failback::Builder {
         crate::model::recovery_instance_failback::Builder::default()
+    }
+}
+
+/// When writing a match expression against `FailbackLaunchType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let failbacklaunchtype = unimplemented!();
+/// match failbacklaunchtype {
+///     FailbackLaunchType::Drill => { /* ... */ },
+///     FailbackLaunchType::Recovery => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `failbacklaunchtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FailbackLaunchType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FailbackLaunchType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FailbackLaunchType::NewFeature` is defined.
+/// Specifically, when `failbacklaunchtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FailbackLaunchType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FailbackLaunchType {
+    #[allow(missing_docs)] // documentation missing in model
+    Drill,
+    #[allow(missing_docs)] // documentation missing in model
+    Recovery,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for FailbackLaunchType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DRILL" => FailbackLaunchType::Drill,
+            "RECOVERY" => FailbackLaunchType::Recovery,
+            other => {
+                FailbackLaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for FailbackLaunchType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FailbackLaunchType::from(s))
+    }
+}
+impl FailbackLaunchType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FailbackLaunchType::Drill => "DRILL",
+            FailbackLaunchType::Recovery => "RECOVERY",
+            FailbackLaunchType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DRILL", "RECOVERY"]
+    }
+}
+impl AsRef<str> for FailbackLaunchType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7768,6 +8468,8 @@ impl RecoveryInstanceFailback {
 ///     FailbackState::FailbackCompleted => { /* ... */ },
 ///     FailbackState::FailbackError => { /* ... */ },
 ///     FailbackState::FailbackInProgress => { /* ... */ },
+///     FailbackState::FailbackLaunchStateNotAvailable => { /* ... */ },
+///     FailbackState::FailbackNotReadyForLaunch => { /* ... */ },
 ///     FailbackState::FailbackNotStarted => { /* ... */ },
 ///     FailbackState::FailbackReadyForLaunch => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -7810,6 +8512,10 @@ pub enum FailbackState {
     #[allow(missing_docs)] // documentation missing in model
     FailbackInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    FailbackLaunchStateNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    FailbackNotReadyForLaunch,
+    #[allow(missing_docs)] // documentation missing in model
     FailbackNotStarted,
     #[allow(missing_docs)] // documentation missing in model
     FailbackReadyForLaunch,
@@ -7822,6 +8528,8 @@ impl std::convert::From<&str> for FailbackState {
             "FAILBACK_COMPLETED" => FailbackState::FailbackCompleted,
             "FAILBACK_ERROR" => FailbackState::FailbackError,
             "FAILBACK_IN_PROGRESS" => FailbackState::FailbackInProgress,
+            "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE" => FailbackState::FailbackLaunchStateNotAvailable,
+            "FAILBACK_NOT_READY_FOR_LAUNCH" => FailbackState::FailbackNotReadyForLaunch,
             "FAILBACK_NOT_STARTED" => FailbackState::FailbackNotStarted,
             "FAILBACK_READY_FOR_LAUNCH" => FailbackState::FailbackReadyForLaunch,
             other => FailbackState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -7842,6 +8550,8 @@ impl FailbackState {
             FailbackState::FailbackCompleted => "FAILBACK_COMPLETED",
             FailbackState::FailbackError => "FAILBACK_ERROR",
             FailbackState::FailbackInProgress => "FAILBACK_IN_PROGRESS",
+            FailbackState::FailbackLaunchStateNotAvailable => "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE",
+            FailbackState::FailbackNotReadyForLaunch => "FAILBACK_NOT_READY_FOR_LAUNCH",
             FailbackState::FailbackNotStarted => "FAILBACK_NOT_STARTED",
             FailbackState::FailbackReadyForLaunch => "FAILBACK_READY_FOR_LAUNCH",
             FailbackState::Unknown(value) => value.as_str(),
@@ -7853,6 +8563,8 @@ impl FailbackState {
             "FAILBACK_COMPLETED",
             "FAILBACK_ERROR",
             "FAILBACK_IN_PROGRESS",
+            "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE",
+            "FAILBACK_NOT_READY_FOR_LAUNCH",
             "FAILBACK_NOT_STARTED",
             "FAILBACK_READY_FOR_LAUNCH",
         ]

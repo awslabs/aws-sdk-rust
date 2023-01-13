@@ -49,6 +49,16 @@ pub(crate) fn reflens_structure_crate_output_list_services_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_services_by_namespace_output_next_token(
+    input: &crate::output::ListServicesByNamespaceOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_task_definition_families_output_next_token(
     input: &crate::output::ListTaskDefinitionFamiliesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -121,6 +131,16 @@ pub(crate) fn lens_structure_crate_output_list_container_instances_output_contai
 
 pub(crate) fn lens_structure_crate_output_list_services_output_service_arns(
     input: crate::output::ListServicesOutput,
+) -> std::option::Option<std::vec::Vec<std::string::String>> {
+    let input = match input.service_arns {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_services_by_namespace_output_service_arns(
+    input: crate::output::ListServicesByNamespaceOutput,
 ) -> std::option::Option<std::vec::Vec<std::string::String>> {
     let input = match input.service_arns {
         None => return None,

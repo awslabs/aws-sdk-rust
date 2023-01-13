@@ -249,6 +249,16 @@ pub(crate) fn reflens_structure_crate_output_list_routing_profiles_output_next_t
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_rules_output_next_token(
+    input: &crate::output::ListRulesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_security_keys_output_next_token(
     input: &crate::output::ListSecurityKeysOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -281,6 +291,16 @@ pub(crate) fn reflens_structure_crate_output_list_security_profiles_output_next_
 
 pub(crate) fn reflens_structure_crate_output_list_task_templates_output_next_token(
     input: &crate::output::ListTaskTemplatesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_traffic_distribution_groups_output_next_token(
+    input: &crate::output::ListTrafficDistributionGroupsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -599,6 +619,16 @@ pub(crate) fn lens_structure_crate_output_list_routing_profiles_output_routing_p
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_rules_output_rule_summary_list(
+    input: crate::output::ListRulesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RuleSummary>> {
+    let input = match input.rule_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_security_keys_output_security_keys(
     input: crate::output::ListSecurityKeysOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::SecurityKey>> {
@@ -633,6 +663,16 @@ pub(crate) fn lens_structure_crate_output_list_task_templates_output_task_templa
     input: crate::output::ListTaskTemplatesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>> {
     let input = match input.task_templates {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_traffic_distribution_groups_output_traffic_distribution_group_summary_list(
+    input: crate::output::ListTrafficDistributionGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TrafficDistributionGroupSummary>> {
+    let input = match input.traffic_distribution_group_summary_list {
         None => return None,
         Some(t) => t,
     };

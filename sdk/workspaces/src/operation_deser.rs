@@ -982,6 +982,140 @@ pub fn parse_create_ip_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_standby_workspaces_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateStandbyWorkspacesOutput,
+    crate::error::CreateStandbyWorkspacesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateStandbyWorkspacesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateStandbyWorkspacesError {
+            meta: generic,
+            kind: crate::error::CreateStandbyWorkspacesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::CreateStandbyWorkspacesError {
+            meta: generic,
+            kind: crate::error::CreateStandbyWorkspacesErrorKind::InvalidParameterValuesException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_values_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OperationNotSupportedException" => crate::error::CreateStandbyWorkspacesError {
+            meta: generic,
+            kind: crate::error::CreateStandbyWorkspacesErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceLimitExceededException" => crate::error::CreateStandbyWorkspacesError {
+            meta: generic,
+            kind: crate::error::CreateStandbyWorkspacesErrorKind::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateStandbyWorkspacesError {
+            meta: generic,
+            kind: crate::error::CreateStandbyWorkspacesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateStandbyWorkspacesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_standby_workspaces_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateStandbyWorkspacesOutput,
+    crate::error::CreateStandbyWorkspacesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_standby_workspaces_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_standby_workspaces(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateStandbyWorkspacesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
@@ -4492,6 +4626,100 @@ pub fn parse_modify_account_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_certificate_based_auth_properties_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCertificateBasedAuthPropertiesOutput,
+    crate::error::ModifyCertificateBasedAuthPropertiesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ModifyCertificateBasedAuthPropertiesError { meta: generic, kind: crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValuesException" => crate::error::ModifyCertificateBasedAuthPropertiesError { meta: generic, kind: crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::InvalidParameterValuesException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_values_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotSupportedException" => crate::error::ModifyCertificateBasedAuthPropertiesError { meta: generic, kind: crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::OperationNotSupportedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::ModifyCertificateBasedAuthPropertiesError { meta: generic, kind: crate::error::ModifyCertificateBasedAuthPropertiesErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyCertificateBasedAuthPropertiesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ModifyCertificateBasedAuthPropertiesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_certificate_based_auth_properties_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCertificateBasedAuthPropertiesOutput,
+    crate::error::ModifyCertificateBasedAuthPropertiesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::modify_certificate_based_auth_properties_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_client_properties_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5138,6 +5366,24 @@ pub fn parse_modify_workspace_state_error(
                 tmp
             }),
         },
+        "OperationNotSupportedException" => crate::error::ModifyWorkspaceStateError {
+            meta: generic,
+            kind: crate::error::ModifyWorkspaceStateErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyWorkspaceStateError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::ModifyWorkspaceStateError {
             meta: generic,
             kind: crate::error::ModifyWorkspaceStateErrorKind::ResourceNotFoundException({
@@ -5181,7 +5427,33 @@ pub fn parse_reboot_workspaces_error(
 {
     let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RebootWorkspacesError::unhandled)?;
-    Err(crate::error::RebootWorkspacesError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RebootWorkspacesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OperationNotSupportedException" => crate::error::RebootWorkspacesError {
+            meta: generic,
+            kind: crate::error::RebootWorkspacesErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RebootWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RebootWorkspacesError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -5209,7 +5481,33 @@ pub fn parse_rebuild_workspaces_error(
 {
     let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RebuildWorkspacesError::unhandled)?;
-    Err(crate::error::RebuildWorkspacesError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RebuildWorkspacesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OperationNotSupportedException" => crate::error::RebuildWorkspacesError {
+            meta: generic,
+            kind: crate::error::RebuildWorkspacesErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RebuildWorkspacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RebuildWorkspacesError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -5422,6 +5720,24 @@ pub fn parse_restore_workspace_error(
                         crate::error::invalid_parameter_values_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreWorkspaceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotSupportedException" => crate::error::RestoreWorkspaceError {
+            meta: generic,
+            kind: crate::error::RestoreWorkspaceErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreWorkspaceError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {
@@ -6040,6 +6356,24 @@ pub fn parse_update_workspace_bundle_error(
                         crate::error::invalid_parameter_values_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWorkspaceBundleError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotSupportedException" => crate::error::UpdateWorkspaceBundleError {
+            meta: generic,
+            kind: crate::error::UpdateWorkspaceBundleErrorKind::OperationNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWorkspaceBundleError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {

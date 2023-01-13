@@ -297,6 +297,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGameSessionQueue {
     }
 }
 
+/// Operation shape for `CreateLocation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_location`](crate::client::Client::create_location).
+///
+/// See [`crate::client::fluent_builders::CreateLocation`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateLocation {
+    _private: (),
+}
+impl CreateLocation {
+    /// Creates a new builder-style object to manufacture [`CreateLocationInput`](crate::input::CreateLocationInput).
+    pub fn builder() -> crate::input::create_location_input::Builder {
+        crate::input::create_location_input::Builder::default()
+    }
+    /// Creates a new `CreateLocation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLocation {
+    type Output =
+        std::result::Result<crate::output::CreateLocationOutput, crate::error::CreateLocationError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_location_error(response)
+        } else {
+            crate::operation_deser::parse_create_location_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateMatchmakingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -731,6 +763,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGameSessionQueue {
     }
 }
 
+/// Operation shape for `DeleteLocation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_location`](crate::client::Client::delete_location).
+///
+/// See [`crate::client::fluent_builders::DeleteLocation`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteLocation {
+    _private: (),
+}
+impl DeleteLocation {
+    /// Creates a new builder-style object to manufacture [`DeleteLocationInput`](crate::input::DeleteLocationInput).
+    pub fn builder() -> crate::input::delete_location_input::Builder {
+        crate::input::delete_location_input::Builder::default()
+    }
+    /// Creates a new `DeleteLocation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLocation {
+    type Output =
+        std::result::Result<crate::output::DeleteLocationOutput, crate::error::DeleteLocationError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_location_error(response)
+        } else {
+            crate::operation_deser::parse_delete_location_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteMatchmakingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -933,6 +997,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcPeeringConnecti
     }
 }
 
+/// Operation shape for `DeregisterCompute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`deregister_compute`](crate::client::Client::deregister_compute).
+///
+/// See [`crate::client::fluent_builders::DeregisterCompute`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeregisterCompute {
+    _private: (),
+}
+impl DeregisterCompute {
+    /// Creates a new builder-style object to manufacture [`DeregisterComputeInput`](crate::input::DeregisterComputeInput).
+    pub fn builder() -> crate::input::deregister_compute_input::Builder {
+        crate::input::deregister_compute_input::Builder::default()
+    }
+    /// Creates a new `DeregisterCompute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeregisterCompute {
+    type Output = std::result::Result<
+        crate::output::DeregisterComputeOutput,
+        crate::error::DeregisterComputeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deregister_compute_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_compute_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeregisterGameServer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1027,6 +1125,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBuild {
             crate::operation_deser::parse_describe_build_error(response)
         } else {
             crate::operation_deser::parse_describe_build_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeCompute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_compute`](crate::client::Client::describe_compute).
+///
+/// See [`crate::client::fluent_builders::DescribeCompute`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeCompute {
+    _private: (),
+}
+impl DescribeCompute {
+    /// Creates a new builder-style object to manufacture [`DescribeComputeInput`](crate::input::DescribeComputeInput).
+    pub fn builder() -> crate::input::describe_compute_input::Builder {
+        crate::input::describe_compute_input::Builder::default()
+    }
+    /// Creates a new `DescribeCompute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeCompute {
+    type Output = std::result::Result<
+        crate::output::DescribeComputeOutput,
+        crate::error::DescribeComputeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_compute_error(response)
+        } else {
+            crate::operation_deser::parse_describe_compute_response(response)
         }
     }
 }
@@ -1913,6 +2045,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcPeeringConnec
     }
 }
 
+/// Operation shape for `GetComputeAccess`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_compute_access`](crate::client::Client::get_compute_access).
+///
+/// See [`crate::client::fluent_builders::GetComputeAccess`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetComputeAccess {
+    _private: (),
+}
+impl GetComputeAccess {
+    /// Creates a new builder-style object to manufacture [`GetComputeAccessInput`](crate::input::GetComputeAccessInput).
+    pub fn builder() -> crate::input::get_compute_access_input::Builder {
+        crate::input::get_compute_access_input::Builder::default()
+    }
+    /// Creates a new `GetComputeAccess` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetComputeAccess {
+    type Output = std::result::Result<
+        crate::output::GetComputeAccessOutput,
+        crate::error::GetComputeAccessError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_compute_access_error(response)
+        } else {
+            crate::operation_deser::parse_get_compute_access_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetComputeAuthToken`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_compute_auth_token`](crate::client::Client::get_compute_auth_token).
+///
+/// See [`crate::client::fluent_builders::GetComputeAuthToken`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetComputeAuthToken {
+    _private: (),
+}
+impl GetComputeAuthToken {
+    /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenInput`](crate::input::GetComputeAuthTokenInput).
+    pub fn builder() -> crate::input::get_compute_auth_token_input::Builder {
+        crate::input::get_compute_auth_token_input::Builder::default()
+    }
+    /// Creates a new `GetComputeAuthToken` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetComputeAuthToken {
+    type Output = std::result::Result<
+        crate::output::GetComputeAuthTokenOutput,
+        crate::error::GetComputeAuthTokenError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_compute_auth_token_error(response)
+        } else {
+            crate::operation_deser::parse_get_compute_auth_token_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetGameSessionLogUrl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2045,6 +2245,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuilds {
     }
 }
 
+/// Operation shape for `ListCompute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_compute`](crate::client::Client::list_compute).
+///
+/// See [`crate::client::fluent_builders::ListCompute`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListCompute {
+    _private: (),
+}
+impl ListCompute {
+    /// Creates a new builder-style object to manufacture [`ListComputeInput`](crate::input::ListComputeInput).
+    pub fn builder() -> crate::input::list_compute_input::Builder {
+        crate::input::list_compute_input::Builder::default()
+    }
+    /// Creates a new `ListCompute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCompute {
+    type Output =
+        std::result::Result<crate::output::ListComputeOutput, crate::error::ListComputeError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_compute_error(response)
+        } else {
+            crate::operation_deser::parse_list_compute_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListFleets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2145,6 +2377,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGameServers {
     }
 }
 
+/// Operation shape for `ListLocations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_locations`](crate::client::Client::list_locations).
+///
+/// See [`crate::client::fluent_builders::ListLocations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListLocations {
+    _private: (),
+}
+impl ListLocations {
+    /// Creates a new builder-style object to manufacture [`ListLocationsInput`](crate::input::ListLocationsInput).
+    pub fn builder() -> crate::input::list_locations_input::Builder {
+        crate::input::list_locations_input::Builder::default()
+    }
+    /// Creates a new `ListLocations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLocations {
+    type Output =
+        std::result::Result<crate::output::ListLocationsOutput, crate::error::ListLocationsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_locations_error(response)
+        } else {
+            crate::operation_deser::parse_list_locations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListScripts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2241,6 +2505,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScalingPolicy {
             crate::operation_deser::parse_put_scaling_policy_error(response)
         } else {
             crate::operation_deser::parse_put_scaling_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RegisterCompute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`register_compute`](crate::client::Client::register_compute).
+///
+/// See [`crate::client::fluent_builders::RegisterCompute`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RegisterCompute {
+    _private: (),
+}
+impl RegisterCompute {
+    /// Creates a new builder-style object to manufacture [`RegisterComputeInput`](crate::input::RegisterComputeInput).
+    pub fn builder() -> crate::input::register_compute_input::Builder {
+        crate::input::register_compute_input::Builder::default()
+    }
+    /// Creates a new `RegisterCompute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RegisterCompute {
+    type Output = std::result::Result<
+        crate::output::RegisterComputeOutput,
+        crate::error::RegisterComputeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_compute_error(response)
+        } else {
+            crate::operation_deser::parse_register_compute_response(response)
         }
     }
 }

@@ -228,6 +228,90 @@ impl InternalServerException {
     }
 }
 
+/// <p>The specified retention rule lock request can't be completed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The reason for the exception.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::model::ConflictExceptionReason>,
+}
+impl ConflictException {
+    /// <p>The reason for the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ConflictExceptionReason> {
+        self.reason.as_ref()
+    }
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::ConflictExceptionReason>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The reason for the exception.</p>
+        pub fn reason(mut self, input: crate::model::ConflictExceptionReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        /// <p>The reason for the exception.</p>
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::ConflictExceptionReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+                reason: self.reason,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>The request would cause a service quota for the number of tags per resource to be exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -256,9 +340,9 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -459,6 +543,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleErrorKind {
+    /// <p>The specified retention rule lock request can't be completed.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
@@ -478,6 +564,7 @@ pub enum DeleteRuleErrorKind {
 impl std::fmt::Display for DeleteRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteRuleErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -535,6 +622,10 @@ impl DeleteRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRuleErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `DeleteRuleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::InternalServerException(_))
@@ -554,6 +645,7 @@ impl DeleteRuleError {
 impl std::error::Error for DeleteRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteRuleErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteRuleErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteRuleErrorKind::ValidationException(_inner) => Some(_inner),
@@ -926,6 +1018,135 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `LockRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct LockRuleError {
+    /// Kind of error that occurred.
+    pub kind: LockRuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for LockRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: LockRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `LockRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum LockRuleErrorKind {
+    /// <p>The specified retention rule lock request can't be completed.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service could not respond to the request due to an internal problem.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>One or more of the parameters in the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for LockRuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            LockRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            LockRuleErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            LockRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            LockRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            LockRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for LockRuleError {
+    fn code(&self) -> Option<&str> {
+        LockRuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl LockRuleError {
+    /// Creates a new `LockRuleError`.
+    pub fn new(kind: LockRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `LockRuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: LockRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `LockRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: LockRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `LockRuleErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, LockRuleErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `LockRuleErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, LockRuleErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `LockRuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, LockRuleErrorKind::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `LockRuleErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, LockRuleErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for LockRuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            LockRuleErrorKind::ConflictException(_inner) => Some(_inner),
+            LockRuleErrorKind::InternalServerException(_inner) => Some(_inner),
+            LockRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            LockRuleErrorKind::ValidationException(_inner) => Some(_inner),
+            LockRuleErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1057,6 +1278,138 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UnlockRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UnlockRuleError {
+    /// Kind of error that occurred.
+    pub kind: UnlockRuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UnlockRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UnlockRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UnlockRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UnlockRuleErrorKind {
+    /// <p>The specified retention rule lock request can't be completed.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service could not respond to the request due to an internal problem.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>One or more of the parameters in the request is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UnlockRuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UnlockRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UnlockRuleErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UnlockRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UnlockRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UnlockRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UnlockRuleError {
+    fn code(&self) -> Option<&str> {
+        UnlockRuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UnlockRuleError {
+    /// Creates a new `UnlockRuleError`.
+    pub fn new(kind: UnlockRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UnlockRuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UnlockRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UnlockRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UnlockRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UnlockRuleErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UnlockRuleErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UnlockRuleErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, UnlockRuleErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `UnlockRuleErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UnlockRuleErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UnlockRuleErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UnlockRuleErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UnlockRuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UnlockRuleErrorKind::ConflictException(_inner) => Some(_inner),
+            UnlockRuleErrorKind::InternalServerException(_inner) => Some(_inner),
+            UnlockRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UnlockRuleErrorKind::ValidationException(_inner) => Some(_inner),
+            UnlockRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1209,6 +1562,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleErrorKind {
+    /// <p>The specified retention rule lock request can't be completed.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
@@ -1228,6 +1583,7 @@ pub enum UpdateRuleErrorKind {
 impl std::fmt::Display for UpdateRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateRuleErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateRuleErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1285,6 +1641,10 @@ impl UpdateRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRuleErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `UpdateRuleErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateRuleErrorKind::InternalServerException(_))
@@ -1304,6 +1664,7 @@ impl UpdateRuleError {
 impl std::error::Error for UpdateRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateRuleErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateRuleErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRuleErrorKind::ValidationException(_inner) => Some(_inner),

@@ -94,9 +94,9 @@ impl Client {
     /// Constructs a fluent builder for the [`AcceptInboundConnection`](crate::client::fluent_builders::AcceptInboundConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::AcceptInboundConnection::set_connection_id): <p>The ID of the inbound connection you want to accept.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::AcceptInboundConnection::set_connection_id): <p>The ID of the inbound connection to accept.</p>
     /// - On success, responds with [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput) with field(s):
-    ///   - [`connection(Option<InboundConnection>)`](crate::output::AcceptInboundConnectionOutput::connection): <p>The <code> <code>InboundConnection</code> </code> of the accepted inbound connection. </p>
+    ///   - [`connection(Option<InboundConnection>)`](crate::output::AcceptInboundConnectionOutput::connection): <p>Information about the accepted inbound connection.</p>
     /// - On failure, responds with [`SdkError<AcceptInboundConnectionError>`](crate::error::AcceptInboundConnectionError)
     pub fn accept_inbound_connection(&self) -> fluent_builders::AcceptInboundConnection {
         fluent_builders::AcceptInboundConnection::new(self.handle.clone())
@@ -104,8 +104,8 @@ impl Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::AddTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::AddTags::set_arn): <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
-    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tag_list): <p>List of <code>Tag</code> to add to the domain. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::AddTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::AddTags::set_arn): <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
+    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tag_list): <p>List of resource tags.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
 
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
@@ -116,19 +116,30 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::AssociatePackage::set_package_id): <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociatePackage::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociatePackage::set_domain_name): <p>The name of the domain to associate the package with.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociatePackage::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociatePackage::set_domain_name): <p>Name of the domain to associate the package with.</p>
     /// - On success, responds with [`AssociatePackageOutput`](crate::output::AssociatePackageOutput) with field(s):
-    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::AssociatePackageOutput::domain_package_details): <p> <code>DomainPackageDetails</code> </p>
+    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::AssociatePackageOutput::domain_package_details): <p>Information about a package that is associated with a domain.</p>
     /// - On failure, responds with [`SdkError<AssociatePackageError>`](crate::error::AssociatePackageError)
     pub fn associate_package(&self) -> fluent_builders::AssociatePackage {
         fluent_builders::AssociatePackage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AuthorizeVpcEndpointAccess`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain to provide access to.</p>
+    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess::set_account): <p>The Amazon Web Services account ID to grant access to.</p>
+    /// - On success, responds with [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput) with field(s):
+    ///   - [`authorized_principal(Option<AuthorizedPrincipal>)`](crate::output::AuthorizeVpcEndpointAccessOutput::authorized_principal): <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeVpcEndpointAccessError>`](crate::error::AuthorizeVpcEndpointAccessError)
+    pub fn authorize_vpc_endpoint_access(&self) -> fluent_builders::AuthorizeVpcEndpointAccess {
+        fluent_builders::AuthorizeVpcEndpointAccess::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CancelServiceSoftwareUpdate`](crate::client::fluent_builders::CancelServiceSoftwareUpdate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CancelServiceSoftwareUpdate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CancelServiceSoftwareUpdate::set_domain_name): <p>The name of the domain that you want to stop the latest service software update on.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CancelServiceSoftwareUpdate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CancelServiceSoftwareUpdate::set_domain_name): <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
     /// - On success, responds with [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput) with field(s):
-    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::CancelServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the OpenSearch service software update.</p>
+    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::CancelServiceSoftwareUpdateOutput::service_software_options): <p>Container for the state of your domain relative to the latest service software.</p>
     /// - On failure, responds with [`SdkError<CancelServiceSoftwareUpdateError>`](crate::error::CancelServiceSoftwareUpdateError)
     pub fn cancel_service_software_update(&self) -> fluent_builders::CancelServiceSoftwareUpdate {
         fluent_builders::CancelServiceSoftwareUpdate::new(self.handle.clone())
@@ -136,22 +147,22 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_engine_version): <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
-    ///   - [`cluster_config(ClusterConfig)`](crate::client::fluent_builders::CreateDomain::cluster_config) / [`set_cluster_config(Option<ClusterConfig>)`](crate::client::fluent_builders::CreateDomain::set_cluster_config): <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
-    ///   - [`ebs_options(EbsOptions)`](crate::client::fluent_builders::CreateDomain::ebs_options) / [`set_ebs_options(Option<EbsOptions>)`](crate::client::fluent_builders::CreateDomain::set_ebs_options): <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
-    ///   - [`access_policies(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::access_policies) / [`set_access_policies(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_access_policies): <p>IAM access policy as a JSON-formatted string.</p>
-    ///   - [`snapshot_options(SnapshotOptions)`](crate::client::fluent_builders::CreateDomain::snapshot_options) / [`set_snapshot_options(Option<SnapshotOptions>)`](crate::client::fluent_builders::CreateDomain::set_snapshot_options): <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
-    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::CreateDomain::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::CreateDomain::set_vpc_options): <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
-    ///   - [`cognito_options(CognitoOptions)`](crate::client::fluent_builders::CreateDomain::cognito_options) / [`set_cognito_options(Option<CognitoOptions>)`](crate::client::fluent_builders::CreateDomain::set_cognito_options): <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
-    ///   - [`encryption_at_rest_options(EncryptionAtRestOptions)`](crate::client::fluent_builders::CreateDomain::encryption_at_rest_options) / [`set_encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::client::fluent_builders::CreateDomain::set_encryption_at_rest_options): <p>Options for encryption of data at rest.</p>
-    ///   - [`node_to_node_encryption_options(NodeToNodeEncryptionOptions)`](crate::client::fluent_builders::CreateDomain::node_to_node_encryption_options) / [`set_node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::client::fluent_builders::CreateDomain::set_node_to_node_encryption_options): <p>Node-to-node encryption options.</p>
-    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::CreateDomain::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDomain::set_advanced_options): <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
-    ///   - [`log_publishing_options(HashMap<LogType, LogPublishingOption>)`](crate::client::fluent_builders::CreateDomain::log_publishing_options) / [`set_log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::client::fluent_builders::CreateDomain::set_log_publishing_options): <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
-    ///   - [`domain_endpoint_options(DomainEndpointOptions)`](crate::client::fluent_builders::CreateDomain::domain_endpoint_options) / [`set_domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::client::fluent_builders::CreateDomain::set_domain_endpoint_options): <p>Options to specify configurations that will be applied to the domain endpoint.</p>
-    ///   - [`advanced_security_options(AdvancedSecurityOptionsInput)`](crate::client::fluent_builders::CreateDomain::advanced_security_options) / [`set_advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::client::fluent_builders::CreateDomain::set_advanced_security_options): <p>Specifies advanced security options.</p>
-    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tag_list): <p>A list of <code>Tag</code> added during domain creation. </p>
-    ///   - [`auto_tune_options(AutoTuneOptionsInput)`](crate::client::fluent_builders::CreateDomain::auto_tune_options) / [`set_auto_tune_options(Option<AutoTuneOptionsInput>)`](crate::client::fluent_builders::CreateDomain::set_auto_tune_options): <p>Specifies Auto-Tune options.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_engine_version): <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
+    ///   - [`cluster_config(ClusterConfig)`](crate::client::fluent_builders::CreateDomain::cluster_config) / [`set_cluster_config(Option<ClusterConfig>)`](crate::client::fluent_builders::CreateDomain::set_cluster_config): <p>Container for the cluster configuration of a domain.</p>
+    ///   - [`ebs_options(EbsOptions)`](crate::client::fluent_builders::CreateDomain::ebs_options) / [`set_ebs_options(Option<EbsOptions>)`](crate::client::fluent_builders::CreateDomain::set_ebs_options): <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
+    ///   - [`access_policies(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::access_policies) / [`set_access_policies(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_access_policies): <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
+    ///   - [`snapshot_options(SnapshotOptions)`](crate::client::fluent_builders::CreateDomain::snapshot_options) / [`set_snapshot_options(Option<SnapshotOptions>)`](crate::client::fluent_builders::CreateDomain::set_snapshot_options): <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::CreateDomain::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::CreateDomain::set_vpc_options): <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
+    ///   - [`cognito_options(CognitoOptions)`](crate::client::fluent_builders::CreateDomain::cognito_options) / [`set_cognito_options(Option<CognitoOptions>)`](crate::client::fluent_builders::CreateDomain::set_cognito_options): <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
+    ///   - [`encryption_at_rest_options(EncryptionAtRestOptions)`](crate::client::fluent_builders::CreateDomain::encryption_at_rest_options) / [`set_encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::client::fluent_builders::CreateDomain::set_encryption_at_rest_options): <p>Key-value pairs to enable encryption at rest.</p>
+    ///   - [`node_to_node_encryption_options(NodeToNodeEncryptionOptions)`](crate::client::fluent_builders::CreateDomain::node_to_node_encryption_options) / [`set_node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::client::fluent_builders::CreateDomain::set_node_to_node_encryption_options): <p>Enables node-to-node encryption.</p>
+    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::CreateDomain::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDomain::set_advanced_options): <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>  <ul>   <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>   <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>   <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>   <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
+    ///   - [`log_publishing_options(HashMap<LogType, LogPublishingOption>)`](crate::client::fluent_builders::CreateDomain::log_publishing_options) / [`set_log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::client::fluent_builders::CreateDomain::set_log_publishing_options): <p>Key-value pairs to configure slow log publishing.</p>
+    ///   - [`domain_endpoint_options(DomainEndpointOptions)`](crate::client::fluent_builders::CreateDomain::domain_endpoint_options) / [`set_domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::client::fluent_builders::CreateDomain::set_domain_endpoint_options): <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
+    ///   - [`advanced_security_options(AdvancedSecurityOptionsInput)`](crate::client::fluent_builders::CreateDomain::advanced_security_options) / [`set_advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::client::fluent_builders::CreateDomain::set_advanced_security_options): <p>Options for fine-grained access control.</p>
+    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tag_list): <p>List of tags to add to the domain upon creation.</p>
+    ///   - [`auto_tune_options(AutoTuneOptionsInput)`](crate::client::fluent_builders::CreateDomain::auto_tune_options) / [`set_auto_tune_options(Option<AutoTuneOptionsInput>)`](crate::client::fluent_builders::CreateDomain::set_auto_tune_options): <p>Options for Auto-Tune.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain_status(Option<DomainStatus>)`](crate::output::CreateDomainOutput::domain_status): <p>The status of the newly created domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
@@ -161,15 +172,15 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateOutboundConnection`](crate::client::fluent_builders::CreateOutboundConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`local_domain_info(DomainInformationContainer)`](crate::client::fluent_builders::CreateOutboundConnection::local_domain_info) / [`set_local_domain_info(Option<DomainInformationContainer>)`](crate::client::fluent_builders::CreateOutboundConnection::set_local_domain_info): <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
-    ///   - [`remote_domain_info(DomainInformationContainer)`](crate::client::fluent_builders::CreateOutboundConnection::remote_domain_info) / [`set_remote_domain_info(Option<DomainInformationContainer>)`](crate::client::fluent_builders::CreateOutboundConnection::set_remote_domain_info): <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
-    ///   - [`connection_alias(impl Into<String>)`](crate::client::fluent_builders::CreateOutboundConnection::connection_alias) / [`set_connection_alias(Option<String>)`](crate::client::fluent_builders::CreateOutboundConnection::set_connection_alias): <p>The connection alias used used by the customer for this cross-cluster connection.</p>
+    ///   - [`local_domain_info(DomainInformationContainer)`](crate::client::fluent_builders::CreateOutboundConnection::local_domain_info) / [`set_local_domain_info(Option<DomainInformationContainer>)`](crate::client::fluent_builders::CreateOutboundConnection::set_local_domain_info): <p>Name and Region of the source (local) domain.</p>
+    ///   - [`remote_domain_info(DomainInformationContainer)`](crate::client::fluent_builders::CreateOutboundConnection::remote_domain_info) / [`set_remote_domain_info(Option<DomainInformationContainer>)`](crate::client::fluent_builders::CreateOutboundConnection::set_remote_domain_info): <p>Name and Region of the destination (remote) domain.</p>
+    ///   - [`connection_alias(impl Into<String>)`](crate::client::fluent_builders::CreateOutboundConnection::connection_alias) / [`set_connection_alias(Option<String>)`](crate::client::fluent_builders::CreateOutboundConnection::set_connection_alias): <p>Name of the connection.</p>
     /// - On success, responds with [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput) with field(s):
-    ///   - [`local_domain_info(Option<DomainInformationContainer>)`](crate::output::CreateOutboundConnectionOutput::local_domain_info): <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
-    ///   - [`remote_domain_info(Option<DomainInformationContainer>)`](crate::output::CreateOutboundConnectionOutput::remote_domain_info): <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
-    ///   - [`connection_alias(Option<String>)`](crate::output::CreateOutboundConnectionOutput::connection_alias): <p>The connection alias provided during the create connection request.</p>
-    ///   - [`connection_status(Option<OutboundConnectionStatus>)`](crate::output::CreateOutboundConnectionOutput::connection_status): <p>The <code> <code>OutboundConnectionStatus</code> </code> for the newly created connection. </p>
-    ///   - [`connection_id(Option<String>)`](crate::output::CreateOutboundConnectionOutput::connection_id): <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
+    ///   - [`local_domain_info(Option<DomainInformationContainer>)`](crate::output::CreateOutboundConnectionOutput::local_domain_info): <p>Information about the source (local) domain.</p>
+    ///   - [`remote_domain_info(Option<DomainInformationContainer>)`](crate::output::CreateOutboundConnectionOutput::remote_domain_info): <p>Information about the destination (remote) domain.</p>
+    ///   - [`connection_alias(Option<String>)`](crate::output::CreateOutboundConnectionOutput::connection_alias): <p>Name of the connection.</p>
+    ///   - [`connection_status(Option<OutboundConnectionStatus>)`](crate::output::CreateOutboundConnectionOutput::connection_status): <p>The status of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::CreateOutboundConnectionOutput::connection_id): <p>The unique identifier for the created outbound connection, which is used for subsequent operations on the connection.</p>
     /// - On failure, responds with [`SdkError<CreateOutboundConnectionError>`](crate::error::CreateOutboundConnectionError)
     pub fn create_outbound_connection(&self) -> fluent_builders::CreateOutboundConnection {
         fluent_builders::CreateOutboundConnection::new(self.handle.clone())
@@ -177,15 +188,27 @@ impl Client {
     /// Constructs a fluent builder for the [`CreatePackage`](crate::client::fluent_builders::CreatePackage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_name(impl Into<String>)`](crate::client::fluent_builders::CreatePackage::package_name) / [`set_package_name(Option<String>)`](crate::client::fluent_builders::CreatePackage::set_package_name): <p>Unique identifier for the package.</p>
-    ///   - [`package_type(PackageType)`](crate::client::fluent_builders::CreatePackage::package_type) / [`set_package_type(Option<PackageType>)`](crate::client::fluent_builders::CreatePackage::set_package_type): <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    ///   - [`package_name(impl Into<String>)`](crate::client::fluent_builders::CreatePackage::package_name) / [`set_package_name(Option<String>)`](crate::client::fluent_builders::CreatePackage::set_package_name): <p>Unique name for the package.</p>
+    ///   - [`package_type(PackageType)`](crate::client::fluent_builders::CreatePackage::package_type) / [`set_package_type(Option<PackageType>)`](crate::client::fluent_builders::CreatePackage::set_package_type): <p>Type of package.</p>
     ///   - [`package_description(impl Into<String>)`](crate::client::fluent_builders::CreatePackage::package_description) / [`set_package_description(Option<String>)`](crate::client::fluent_builders::CreatePackage::set_package_description): <p>Description of the package.</p>
-    ///   - [`package_source(PackageSource)`](crate::client::fluent_builders::CreatePackage::package_source) / [`set_package_source(Option<PackageSource>)`](crate::client::fluent_builders::CreatePackage::set_package_source): <p>The Amazon S3 location from which to import the package. </p>
+    ///   - [`package_source(PackageSource)`](crate::client::fluent_builders::CreatePackage::package_source) / [`set_package_source(Option<PackageSource>)`](crate::client::fluent_builders::CreatePackage::set_package_source): <p>The Amazon S3 location from which to import the package.</p>
     /// - On success, responds with [`CreatePackageOutput`](crate::output::CreatePackageOutput) with field(s):
-    ///   - [`package_details(Option<PackageDetails>)`](crate::output::CreatePackageOutput::package_details): <p>Information about the package. </p>
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::CreatePackageOutput::package_details): <p>Basic information about an OpenSearch Service package.</p>
     /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::error::CreatePackageError)
     pub fn create_package(&self) -> fluent_builders::CreatePackage {
         fluent_builders::CreatePackage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateVpcEndpoint`](crate::client::fluent_builders::CreateVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_arn(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::domain_arn) / [`set_domain_arn(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_domain_arn): <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::CreateVpcEndpoint::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_vpc_options): <p>Options to specify the subnets and security groups for the endpoint.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    /// - On success, responds with [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::CreateVpcEndpointOutput::vpc_endpoint): <p>Information about the newly created VPC endpoint.</p>
+    /// - On failure, responds with [`SdkError<CreateVpcEndpointError>`](crate::error::CreateVpcEndpointError)
+    pub fn create_vpc_endpoint(&self) -> fluent_builders::CreateVpcEndpoint {
+        fluent_builders::CreateVpcEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
@@ -202,7 +225,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::DeleteInboundConnection::set_connection_id): <p>The ID of the inbound connection to permanently delete.</p>
     /// - On success, responds with [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput) with field(s):
-    ///   - [`connection(Option<InboundConnection>)`](crate::output::DeleteInboundConnectionOutput::connection): <p>The <code> <code>InboundConnection</code> </code> of the deleted inbound connection. </p>
+    ///   - [`connection(Option<InboundConnection>)`](crate::output::DeleteInboundConnectionOutput::connection): <p>The deleted inbound connection.</p>
     /// - On failure, responds with [`SdkError<DeleteInboundConnectionError>`](crate::error::DeleteInboundConnectionError)
     pub fn delete_inbound_connection(&self) -> fluent_builders::DeleteInboundConnection {
         fluent_builders::DeleteInboundConnection::new(self.handle.clone())
@@ -212,7 +235,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::DeleteOutboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::DeleteOutboundConnection::set_connection_id): <p>The ID of the outbound connection you want to permanently delete.</p>
     /// - On success, responds with [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput) with field(s):
-    ///   - [`connection(Option<OutboundConnection>)`](crate::output::DeleteOutboundConnectionOutput::connection): <p>The <code> <code>OutboundConnection</code> </code> of the deleted outbound connection. </p>
+    ///   - [`connection(Option<OutboundConnection>)`](crate::output::DeleteOutboundConnectionOutput::connection): <p>The deleted inbound connection.</p>
     /// - On failure, responds with [`SdkError<DeleteOutboundConnectionError>`](crate::error::DeleteOutboundConnectionError)
     pub fn delete_outbound_connection(&self) -> fluent_builders::DeleteOutboundConnection {
         fluent_builders::DeleteOutboundConnection::new(self.handle.clone())
@@ -220,19 +243,29 @@ impl Client {
     /// Constructs a fluent builder for the [`DeletePackage`](crate::client::fluent_builders::DeletePackage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::DeletePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::DeletePackage::set_package_id): <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
+    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::DeletePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::DeletePackage::set_package_id): <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     /// - On success, responds with [`DeletePackageOutput`](crate::output::DeletePackageOutput) with field(s):
-    ///   - [`package_details(Option<PackageDetails>)`](crate::output::DeletePackageOutput::package_details): <p> <code>PackageDetails</code> </p>
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::DeletePackageOutput::package_details): <p> Information about the deleted package.</p>
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::error::DeletePackageError)
     pub fn delete_package(&self) -> fluent_builders::DeletePackage {
         fluent_builders::DeletePackage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::client::fluent_builders::DeleteVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::set_vpc_endpoint_id): <p>The unique identifier of the endpoint.</p>
+    /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint_summary(Option<VpcEndpointSummary>)`](crate::output::DeleteVpcEndpointOutput::vpc_endpoint_summary): <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::error::DeleteVpcEndpointError)
+    pub fn delete_vpc_endpoint(&self) -> fluent_builders::DeleteVpcEndpoint {
+        fluent_builders::DeleteVpcEndpoint::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_name): <p>The name of the domain for which you want information.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_name): <p>The name of the domain that you want information about.</p>
     /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
-    ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::domain_status): <p>The current status of the domain.</p>
+    ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::domain_status): <p>List that contains the status of each specified OpenSearch Service domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain {
         fluent_builders::DescribeDomain::new(self.handle.clone())
@@ -241,12 +274,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainAutoTunes::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_domain_name): <p>The domain name for which you want Auto-Tune action details.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDomainAutoTunes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_next_token): <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_domain_name): <p>Name of the domain that you want Auto-Tune details about.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDomainAutoTunes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDomainAutoTunes::set_next_token): <p>If your initial <code>DescribeDomainAutoTunes</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeDomainAutoTunes</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput) with field(s):
-    ///   - [`auto_tunes(Option<Vec<AutoTune>>)`](crate::output::DescribeDomainAutoTunesOutput::auto_tunes): <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeDomainAutoTunesOutput::next_token): <p>An identifier to allow retrieval of paginated results.</p>
+    ///   - [`auto_tunes(Option<Vec<AutoTune>>)`](crate::output::DescribeDomainAutoTunesOutput::auto_tunes): <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDomainAutoTunesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::error::DescribeDomainAutoTunesError)
     pub fn describe_domain_auto_tunes(&self) -> fluent_builders::DescribeDomainAutoTunes {
         fluent_builders::DescribeDomainAutoTunes::new(self.handle.clone())
@@ -254,10 +287,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeDomainChangeProgress`](crate::client::fluent_builders::DescribeDomainChangeProgress) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_domain_name): <p>The domain you want to get the progress information about.</p>
-    ///   - [`change_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::change_id) / [`set_change_id(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_change_id): <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_domain_name): <p>The name of the domain to get progress information for.</p>
+    ///   - [`change_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::change_id) / [`set_change_id(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_change_id): <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
     /// - On success, responds with [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput) with field(s):
-    ///   - [`change_progress_status(Option<ChangeProgressStatusDetails>)`](crate::output::DescribeDomainChangeProgressOutput::change_progress_status): <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    ///   - [`change_progress_status(Option<ChangeProgressStatusDetails>)`](crate::output::DescribeDomainChangeProgressOutput::change_progress_status): <p>Container for information about the stages of a configuration change happening on a domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainChangeProgressError>`](crate::error::DescribeDomainChangeProgressError)
     pub fn describe_domain_change_progress(&self) -> fluent_builders::DescribeDomainChangeProgress {
         fluent_builders::DescribeDomainChangeProgress::new(self.handle.clone())
@@ -265,9 +298,9 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeDomainConfig`](crate::client::fluent_builders::DescribeDomainConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainConfig::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainConfig::set_domain_name): <p>The domain you want to get information about.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainConfig::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainConfig::set_domain_name): <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
     /// - On success, responds with [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput) with field(s):
-    ///   - [`domain_config(Option<DomainConfig>)`](crate::output::DescribeDomainConfigOutput::domain_config): <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request. </p>
+    ///   - [`domain_config(Option<DomainConfig>)`](crate::output::DescribeDomainConfigOutput::domain_config): <p>Container for the configuration of the OpenSearch Service domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainConfigError>`](crate::error::DescribeDomainConfigError)
     pub fn describe_domain_config(&self) -> fluent_builders::DescribeDomainConfig {
         fluent_builders::DescribeDomainConfig::new(self.handle.clone())
@@ -275,9 +308,9 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeDomains`](crate::client::fluent_builders::DescribeDomains) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_names(Vec<String>)`](crate::client::fluent_builders::DescribeDomains::domain_names) / [`set_domain_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDomains::set_domain_names): <p>The domains for which you want information.</p>
+    ///   - [`domain_names(Vec<String>)`](crate::client::fluent_builders::DescribeDomains::domain_names) / [`set_domain_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDomains::set_domain_names): <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
     /// - On success, responds with [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput) with field(s):
-    ///   - [`domain_status_list(Option<Vec<DomainStatus>>)`](crate::output::DescribeDomainsOutput::domain_status_list): <p>The status of the domains requested in the <code>DescribeDomains</code> request. </p>
+    ///   - [`domain_status_list(Option<Vec<DomainStatus>>)`](crate::output::DescribeDomainsOutput::domain_status_list): <p>The status of the requested domains.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainsError>`](crate::error::DescribeDomainsError)
     pub fn describe_domains(&self) -> fluent_builders::DescribeDomains {
         fluent_builders::DescribeDomains::new(self.handle.clone())
@@ -286,12 +319,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeInboundConnections::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeInboundConnections::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeInboundConnections::set_filters): <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p> <ul>   <li>connection-id</li>   <li>local-domain-info.domain-name</li>   <li>local-domain-info.owner-id</li>   <li>local-domain-info.region</li>   <li>remote-domain-info.domain-name</li>  </ul>  <p></p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeInboundConnections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeInboundConnections::set_max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeInboundConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeInboundConnections::set_next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeInboundConnections::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeInboundConnections::set_filters): <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeInboundConnections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeInboundConnections::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeInboundConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeInboundConnections::set_next_token): <p>If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput) with field(s):
-    ///   - [`connections(Option<Vec<InboundConnection>>)`](crate::output::DescribeInboundConnectionsOutput::connections): <p>A list of <code> <code>InboundConnection</code> </code> matching the specified filter criteria. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeInboundConnectionsOutput::next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    ///   - [`connections(Option<Vec<InboundConnection>>)`](crate::output::DescribeInboundConnectionsOutput::connections): <p>List of inbound connections.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInboundConnectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeInboundConnectionsError>`](crate::error::DescribeInboundConnectionsError)
     pub fn describe_inbound_connections(&self) -> fluent_builders::DescribeInboundConnections {
         fluent_builders::DescribeInboundConnections::new(self.handle.clone())
@@ -299,11 +332,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeInstanceTypeLimits`](crate::client::fluent_builders::DescribeInstanceTypeLimits) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_domain_name): <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
-    ///   - [`instance_type(OpenSearchPartitionInstanceType)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::instance_type) / [`set_instance_type(Option<OpenSearchPartitionInstanceType>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_instance_type): <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_engine_version): <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_domain_name): <p>The name of the domain. Only specify if you need the limits for an existing domain.</p>
+    ///   - [`instance_type(OpenSearchPartitionInstanceType)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::instance_type) / [`set_instance_type(Option<OpenSearchPartitionInstanceType>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_instance_type): <p>The OpenSearch Service instance type for which you need limit information.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::DescribeInstanceTypeLimits::set_engine_version): <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     /// - On success, responds with [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput) with field(s):
-    ///   - [`limits_by_role(Option<HashMap<String, Limits>>)`](crate::output::DescribeInstanceTypeLimitsOutput::limits_by_role): <p> The role of a given instance and all applicable limits. The role performed by a given OpenSearch instance can be one of the following: </p> <ul>   <li>data: If the given InstanceType is used as a data node</li>   <li>master: If the given InstanceType is used as a master node</li>   <li>ultra_warm: If the given InstanceType is used as a warm node</li>  </ul>  <p></p>
+    ///   - [`limits_by_role(Option<HashMap<String, Limits>>)`](crate::output::DescribeInstanceTypeLimitsOutput::limits_by_role): <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceTypeLimitsError>`](crate::error::DescribeInstanceTypeLimitsError)
     pub fn describe_instance_type_limits(&self) -> fluent_builders::DescribeInstanceTypeLimits {
         fluent_builders::DescribeInstanceTypeLimits::new(self.handle.clone())
@@ -312,12 +345,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOutboundConnections::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeOutboundConnections::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeOutboundConnections::set_filters): <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p> <ul>   <li>connection-id</li>   <li>remote-domain-info.domain-name</li>   <li>remote-domain-info.owner-id</li>   <li>remote-domain-info.region</li>   <li>local-domain-info.domain-name</li>  </ul>  <p></p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeOutboundConnections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeOutboundConnections::set_max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOutboundConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOutboundConnections::set_next_token): <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeOutboundConnections::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeOutboundConnections::set_filters): <p>List of filter names and values that you can use for requests.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeOutboundConnections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeOutboundConnections::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOutboundConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOutboundConnections::set_next_token): <p>If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput) with field(s):
-    ///   - [`connections(Option<Vec<OutboundConnection>>)`](crate::output::DescribeOutboundConnectionsOutput::connections): <p>A list of <code> <code>OutboundConnection</code> </code> matching the specified filter criteria. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeOutboundConnectionsOutput::next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    ///   - [`connections(Option<Vec<OutboundConnection>>)`](crate::output::DescribeOutboundConnectionsOutput::connections): <p>List of outbound connections that match the filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOutboundConnectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeOutboundConnectionsError>`](crate::error::DescribeOutboundConnectionsError)
     pub fn describe_outbound_connections(&self) -> fluent_builders::DescribeOutboundConnections {
         fluent_builders::DescribeOutboundConnections::new(self.handle.clone())
@@ -326,12 +359,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePackages::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<DescribePackagesFilter>)`](crate::client::fluent_builders::DescribePackages::filters) / [`set_filters(Option<Vec<DescribePackagesFilter>>)`](crate::client::fluent_builders::DescribePackages::set_filters): <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribePackages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribePackages::set_max_results): <p>Limits results to a maximum number of packages.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribePackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribePackages::set_next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    ///   - [`filters(Vec<DescribePackagesFilter>)`](crate::client::fluent_builders::DescribePackages::filters) / [`set_filters(Option<Vec<DescribePackagesFilter>>)`](crate::client::fluent_builders::DescribePackages::set_filters): <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribePackages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribePackages::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribePackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribePackages::set_next_token): <p>If your initial <code>DescribePackageFilters</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribePackageFilters</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribePackagesOutput`](crate::output::DescribePackagesOutput) with field(s):
-    ///   - [`package_details_list(Option<Vec<PackageDetails>>)`](crate::output::DescribePackagesOutput::package_details_list): <p>List of <code>PackageDetails</code> objects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribePackagesOutput::next_token): (undocumented)
+    ///   - [`package_details_list(Option<Vec<PackageDetails>>)`](crate::output::DescribePackagesOutput::package_details_list): <p>Basic information about a package.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePackagesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribePackagesError>`](crate::error::DescribePackagesError)
     pub fn describe_packages(&self) -> fluent_builders::DescribePackages {
         fluent_builders::DescribePackages::new(self.handle.clone())
@@ -340,12 +373,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reserved_instance_offering_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::reserved_instance_offering_id) / [`set_reserved_instance_offering_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_reserved_instance_offering_id): <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_next_token): <p>Provides an identifier to allow retrieval of paginated results. </p>
+    ///   - [`reserved_instance_offering_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::reserved_instance_offering_id) / [`set_reserved_instance_offering_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_reserved_instance_offering_id): <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::set_next_token): <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedInstanceOfferingsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
-    ///   - [`reserved_instance_offerings(Option<Vec<ReservedInstanceOffering>>)`](crate::output::DescribeReservedInstanceOfferingsOutput::reserved_instance_offerings): <p>List of reserved OpenSearch instance offerings</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedInstanceOfferingsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    ///   - [`reserved_instance_offerings(Option<Vec<ReservedInstanceOffering>>)`](crate::output::DescribeReservedInstanceOfferingsOutput::reserved_instance_offerings): <p>List of Reserved Instance offerings.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstanceOfferingsError>`](crate::error::DescribeReservedInstanceOfferingsError)
     pub fn describe_reserved_instance_offerings(
         &self,
@@ -356,23 +389,34 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedInstances::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reserved_instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstances::reserved_instance_id) / [`set_reserved_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstances::set_reserved_instance_id): <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstances::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstances::set_max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstances::set_next_token): <p>Provides an identifier to allow retrieval of paginated results. </p>
+    ///   - [`reserved_instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstances::reserved_instance_id) / [`set_reserved_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstances::set_reserved_instance_id): <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstances::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReservedInstances::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReservedInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReservedInstances::set_next_token): <p>If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedInstancesOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
-    ///   - [`reserved_instances(Option<Vec<ReservedInstance>>)`](crate::output::DescribeReservedInstancesOutput::reserved_instances): <p>List of reserved OpenSearch instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedInstancesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    ///   - [`reserved_instances(Option<Vec<ReservedInstance>>)`](crate::output::DescribeReservedInstancesOutput::reserved_instances): <p>List of Reserved Instances in the current Region.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstancesError>`](crate::error::DescribeReservedInstancesError)
     pub fn describe_reserved_instances(&self) -> fluent_builders::DescribeReservedInstances {
         fluent_builders::DescribeReservedInstances::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeVpcEndpoints`](crate::client::fluent_builders::DescribeVpcEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_ids(Vec<String>)`](crate::client::fluent_builders::DescribeVpcEndpoints::vpc_endpoint_ids) / [`set_vpc_endpoint_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeVpcEndpoints::set_vpc_endpoint_ids): <p>The unique identifiers of the endpoints to get information about.</p>
+    /// - On success, responds with [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput) with field(s):
+    ///   - [`vpc_endpoints(Option<Vec<VpcEndpoint>>)`](crate::output::DescribeVpcEndpointsOutput::vpc_endpoints): <p>Information about each requested VPC endpoint.</p>
+    ///   - [`vpc_endpoint_errors(Option<Vec<VpcEndpointError>>)`](crate::output::DescribeVpcEndpointsOutput::vpc_endpoint_errors): <p>Any errors associated with the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcEndpointsError>`](crate::error::DescribeVpcEndpointsError)
+    pub fn describe_vpc_endpoints(&self) -> fluent_builders::DescribeVpcEndpoints {
+        fluent_builders::DescribeVpcEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DissociatePackage`](crate::client::fluent_builders::DissociatePackage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::DissociatePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::DissociatePackage::set_package_id): <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DissociatePackage::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DissociatePackage::set_domain_name): <p>The name of the domain to associate the package with.</p>
+    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::DissociatePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::DissociatePackage::set_package_id): <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DissociatePackage::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DissociatePackage::set_domain_name): <p>Name of the domain to dissociate the package from.</p>
     /// - On success, responds with [`DissociatePackageOutput`](crate::output::DissociatePackageOutput) with field(s):
-    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::DissociatePackageOutput::domain_package_details): <p> <code>DomainPackageDetails</code> </p>
+    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::DissociatePackageOutput::domain_package_details): <p> Information about a package that has been dissociated from the domain.</p>
     /// - On failure, responds with [`SdkError<DissociatePackageError>`](crate::error::DissociatePackageError)
     pub fn dissociate_package(&self) -> fluent_builders::DissociatePackage {
         fluent_builders::DissociatePackage::new(self.handle.clone())
@@ -380,9 +424,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetCompatibleVersions`](crate::client::fluent_builders::GetCompatibleVersions) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetCompatibleVersions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetCompatibleVersions::set_domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetCompatibleVersions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetCompatibleVersions::set_domain_name): <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
     /// - On success, responds with [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput) with field(s):
-    ///   - [`compatible_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::output::GetCompatibleVersionsOutput::compatible_versions): <p> A map of compatible OpenSearch versions returned as part of the <code> <code>GetCompatibleVersions</code> </code> operation. </p>
+    ///   - [`compatible_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::output::GetCompatibleVersionsOutput::compatible_versions): <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleVersionsError>`](crate::error::GetCompatibleVersionsError)
     pub fn get_compatible_versions(&self) -> fluent_builders::GetCompatibleVersions {
         fluent_builders::GetCompatibleVersions::new(self.handle.clone())
@@ -391,13 +435,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetPackageVersionHistory::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::set_package_id): <p>Returns an audit history of package versions.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPackageVersionHistory::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetPackageVersionHistory::set_max_results): <p>Limits results to a maximum number of package versions.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::set_next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::set_package_id): <p>The unique identifier of the package.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPackageVersionHistory::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetPackageVersionHistory::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPackageVersionHistory::set_next_token): <p>If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns results in the next page. </p>
     /// - On success, responds with [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput) with field(s):
-    ///   - [`package_id(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::package_id): (undocumented)
-    ///   - [`package_version_history_list(Option<Vec<PackageVersionHistory>>)`](crate::output::GetPackageVersionHistoryOutput::package_version_history_list): <p>List of <code>PackageVersionHistory</code> objects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::next_token): (undocumented)
+    ///   - [`package_id(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::package_id): <p>The unique identifier of the package.</p>
+    ///   - [`package_version_history_list(Option<Vec<PackageVersionHistory>>)`](crate::output::GetPackageVersionHistoryOutput::package_version_history_list): <p>A list of package versions, along with their creation time and commit message.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::error::GetPackageVersionHistoryError)
     pub fn get_package_version_history(&self) -> fluent_builders::GetPackageVersionHistory {
         fluent_builders::GetPackageVersionHistory::new(self.handle.clone())
@@ -406,12 +450,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUpgradeHistory::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeHistory::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetUpgradeHistory::set_domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUpgradeHistory::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetUpgradeHistory::set_max_results): <p> Set this value to limit the number of results returned. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUpgradeHistory::set_next_token): <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeHistory::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetUpgradeHistory::set_domain_name): <p>The name of an existing domain.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUpgradeHistory::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetUpgradeHistory::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUpgradeHistory::set_next_token): <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput) with field(s):
-    ///   - [`upgrade_histories(Option<Vec<UpgradeHistory>>)`](crate::output::GetUpgradeHistoryOutput::upgrade_histories): <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetUpgradeHistoryOutput::next_token): <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    ///   - [`upgrade_histories(Option<Vec<UpgradeHistory>>)`](crate::output::GetUpgradeHistoryOutput::upgrade_histories): <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetUpgradeHistoryOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<GetUpgradeHistoryError>`](crate::error::GetUpgradeHistoryError)
     pub fn get_upgrade_history(&self) -> fluent_builders::GetUpgradeHistory {
         fluent_builders::GetUpgradeHistory::new(self.handle.clone())
@@ -419,11 +463,11 @@ impl Client {
     /// Constructs a fluent builder for the [`GetUpgradeStatus`](crate::client::fluent_builders::GetUpgradeStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeStatus::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetUpgradeStatus::set_domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetUpgradeStatus::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetUpgradeStatus::set_domain_name): <p>The domain of the domain to get upgrade status information for.</p>
     /// - On success, responds with [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput) with field(s):
-    ///   - [`upgrade_step(Option<UpgradeStep>)`](crate::output::GetUpgradeStatusOutput::upgrade_step): <p> One of three steps an upgrade or upgrade eligibility check goes through: </p> <ul>   <li>PreUpgradeCheck</li>   <li>Snapshot</li>   <li>Upgrade</li>  </ul>  <p></p>
-    ///   - [`step_status(Option<UpgradeStatus>)`](crate::output::GetUpgradeStatusOutput::step_status): <p> One of four statuses an upgrade have, returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p> <ul>   <li>In Progress</li>   <li>Succeeded</li>   <li>Succeeded with Issues</li>   <li>Failed</li>  </ul>  <p></p>
-    ///   - [`upgrade_name(Option<String>)`](crate::output::GetUpgradeStatusOutput::upgrade_name): <p>A string that briefly describes the update.</p>
+    ///   - [`upgrade_step(Option<UpgradeStep>)`](crate::output::GetUpgradeStatusOutput::upgrade_step): <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
+    ///   - [`step_status(Option<UpgradeStatus>)`](crate::output::GetUpgradeStatusOutput::step_status): <p>The status of the current step that an upgrade is on.</p>
+    ///   - [`upgrade_name(Option<String>)`](crate::output::GetUpgradeStatusOutput::upgrade_name): <p>A string that describes the update.</p>
     /// - On failure, responds with [`SdkError<GetUpgradeStatusError>`](crate::error::GetUpgradeStatusError)
     pub fn get_upgrade_status(&self) -> fluent_builders::GetUpgradeStatus {
         fluent_builders::GetUpgradeStatus::new(self.handle.clone())
@@ -431,9 +475,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListDomainNames::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListDomainNames::set_engine_type): <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListDomainNames::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListDomainNames::set_engine_type): <p>Filters the output by domain engine type.</p>
     /// - On success, responds with [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput) with field(s):
-    ///   - [`domain_names(Option<Vec<DomainInfo>>)`](crate::output::ListDomainNamesOutput::domain_names): <p>List of domain names and respective engine types.</p>
+    ///   - [`domain_names(Option<Vec<DomainInfo>>)`](crate::output::ListDomainNamesOutput::domain_names): <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
     /// - On failure, responds with [`SdkError<ListDomainNamesError>`](crate::error::ListDomainNamesError)
     pub fn list_domain_names(&self) -> fluent_builders::ListDomainNames {
         fluent_builders::ListDomainNames::new(self.handle.clone())
@@ -442,12 +486,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomainsForPackage::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::ListDomainsForPackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::ListDomainsForPackage::set_package_id): <p>The package for which to list associated domains.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomainsForPackage::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDomainsForPackage::set_max_results): <p>Limits the results to a maximum number of domains.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainsForPackage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainsForPackage::set_next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::ListDomainsForPackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::ListDomainsForPackage::set_package_id): <p>The unique identifier of the package for which to list associated domains.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomainsForPackage::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDomainsForPackage::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainsForPackage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainsForPackage::set_next_token): <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput) with field(s):
-    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListDomainsForPackageOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsForPackageOutput::next_token): (undocumented)
+    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListDomainsForPackageOutput::domain_package_details_list): <p>Information about all domains associated with a package.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsForPackageOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::error::ListDomainsForPackageError)
     pub fn list_domains_for_package(&self) -> fluent_builders::ListDomainsForPackage {
         fluent_builders::ListDomainsForPackage::new(self.handle.clone())
@@ -456,13 +500,13 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceTypeDetails::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_engine_version): (undocumented)
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstanceTypeDetails::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_max_results): <p> Set this value to limit the number of results returned. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_next_token): <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_engine_version): <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_domain_name): <p>Name of the domain to list instance type details for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstanceTypeDetails::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstanceTypeDetails::set_next_token): <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput) with field(s):
-    ///   - [`instance_type_details(Option<Vec<InstanceTypeDetails>>)`](crate::output::ListInstanceTypeDetailsOutput::instance_type_details): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::output::ListInstanceTypeDetailsOutput::next_token): <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    ///   - [`instance_type_details(Option<Vec<InstanceTypeDetails>>)`](crate::output::ListInstanceTypeDetailsOutput::instance_type_details): <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstanceTypeDetailsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListInstanceTypeDetailsError>`](crate::error::ListInstanceTypeDetailsError)
     pub fn list_instance_type_details(&self) -> fluent_builders::ListInstanceTypeDetails {
         fluent_builders::ListInstanceTypeDetails::new(self.handle.clone())
@@ -472,11 +516,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListPackagesForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListPackagesForDomain::set_domain_name): <p>The name of the domain for which you want to list associated packages.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackagesForDomain::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPackagesForDomain::set_max_results): <p>Limits results to a maximum number of packages.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackagesForDomain::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackagesForDomain::set_next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackagesForDomain::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPackagesForDomain::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackagesForDomain::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackagesForDomain::set_next_token): <p>If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput) with field(s):
-    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListPackagesForDomainOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPackagesForDomainOutput::next_token): <p>Pagination token to supply to the next call to get the next page of results.</p>
+    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListPackagesForDomainOutput::domain_package_details_list): <p>List of all packages associated with a domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagesForDomainOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListPackagesForDomainError>`](crate::error::ListPackagesForDomainError)
     pub fn list_packages_for_domain(&self) -> fluent_builders::ListPackagesForDomain {
         fluent_builders::ListPackagesForDomain::new(self.handle.clone())
@@ -484,9 +528,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_arn): <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_arn): <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
-    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tag_list): <p>List of <code>Tag</code> for the requested domain. </p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tag_list): <p>List of resource tags associated with the specified domain.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags {
         fluent_builders::ListTags::new(self.handle.clone())
@@ -495,23 +539,58 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVersions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListVersions::set_max_results): <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVersions::set_next_token): <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVersions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListVersions::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVersions::set_next_token): <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
     /// - On success, responds with [`ListVersionsOutput`](crate::output::ListVersionsOutput) with field(s):
-    ///   - [`versions(Option<Vec<String>>)`](crate::output::ListVersionsOutput::versions): <p>List of supported OpenSearch versions. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListVersionsOutput::next_token): <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+    ///   - [`versions(Option<Vec<String>>)`](crate::output::ListVersionsOutput::versions): <p>A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVersionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListVersionsError>`](crate::error::ListVersionsError)
     pub fn list_versions(&self) -> fluent_builders::ListVersions {
         fluent_builders::ListVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListVpcEndpointAccess`](crate::client::fluent_builders::ListVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointAccess::set_next_token): <p>If your initial <code>ListVpcEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpointAccess</code> operations, which returns results in the next page.</p>
+    /// - On success, responds with [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput) with field(s):
+    ///   - [`authorized_principal_list(Option<Vec<AuthorizedPrincipal>>)`](crate::output::ListVpcEndpointAccessOutput::authorized_principal_list): <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointAccessOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointAccessError>`](crate::error::ListVpcEndpointAccessError)
+    pub fn list_vpc_endpoint_access(&self) -> fluent_builders::ListVpcEndpointAccess {
+        fluent_builders::ListVpcEndpointAccess::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListVpcEndpoints`](crate::client::fluent_builders::ListVpcEndpoints) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpoints::set_next_token): <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page.</p>
+    /// - On success, responds with [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput) with field(s):
+    ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::output::ListVpcEndpointsOutput::vpc_endpoint_summary_list): <p>Information about each endpoint.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointsError>`](crate::error::ListVpcEndpointsError)
+    pub fn list_vpc_endpoints(&self) -> fluent_builders::ListVpcEndpoints {
+        fluent_builders::ListVpcEndpoints::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListVpcEndpointsForDomain`](crate::client::fluent_builders::ListVpcEndpointsForDomain) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::set_domain_name): <p>The name of the domain to list associated VPC endpoints for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpointsForDomain::set_next_token): <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
+    /// - On success, responds with [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput) with field(s):
+    ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::output::ListVpcEndpointsForDomainOutput::vpc_endpoint_summary_list): <p>Information about each endpoint associated with the domain.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointsForDomainOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<ListVpcEndpointsForDomainError>`](crate::error::ListVpcEndpointsForDomainError)
+    pub fn list_vpc_endpoints_for_domain(&self) -> fluent_builders::ListVpcEndpointsForDomain {
+        fluent_builders::ListVpcEndpointsForDomain::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PurchaseReservedInstanceOffering`](crate::client::fluent_builders::PurchaseReservedInstanceOffering) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reserved_instance_offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::reserved_instance_offering_id) / [`set_reserved_instance_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::set_reserved_instance_offering_id): <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
+    ///   - [`reserved_instance_offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::reserved_instance_offering_id) / [`set_reserved_instance_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::set_reserved_instance_offering_id): <p>The ID of the Reserved Instance offering to purchase.</p>
     ///   - [`reservation_name(impl Into<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::reservation_name) / [`set_reservation_name(Option<String>)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::set_reservation_name): <p>A customer-specified identifier to track this reservation.</p>
     ///   - [`instance_count(i32)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::instance_count) / [`set_instance_count(i32)`](crate::client::fluent_builders::PurchaseReservedInstanceOffering::set_instance_count): <p>The number of OpenSearch instances to reserve.</p>
     /// - On success, responds with [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput) with field(s):
-    ///   - [`reserved_instance_id(Option<String>)`](crate::output::PurchaseReservedInstanceOfferingOutput::reserved_instance_id): <p>Details of the reserved OpenSearch instance which was purchased.</p>
+    ///   - [`reserved_instance_id(Option<String>)`](crate::output::PurchaseReservedInstanceOfferingOutput::reserved_instance_id): <p>The ID of the Reserved Instance offering that was purchased.</p>
     ///   - [`reservation_name(Option<String>)`](crate::output::PurchaseReservedInstanceOfferingOutput::reservation_name): <p>The customer-specified identifier used to track this reservation.</p>
     /// - On failure, responds with [`SdkError<PurchaseReservedInstanceOfferingError>`](crate::error::PurchaseReservedInstanceOfferingError)
     pub fn purchase_reserved_instance_offering(
@@ -522,9 +601,9 @@ impl Client {
     /// Constructs a fluent builder for the [`RejectInboundConnection`](crate::client::fluent_builders::RejectInboundConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::RejectInboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::RejectInboundConnection::set_connection_id): <p>The ID of the inbound connection to reject.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::RejectInboundConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::RejectInboundConnection::set_connection_id): <p>The unique identifier of the inbound connection to reject.</p>
     /// - On success, responds with [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput) with field(s):
-    ///   - [`connection(Option<InboundConnection>)`](crate::output::RejectInboundConnectionOutput::connection): <p>The <code> <code>InboundConnection</code> </code> of the rejected inbound connection. </p>
+    ///   - [`connection(Option<InboundConnection>)`](crate::output::RejectInboundConnectionOutput::connection): <p>Contains details about the rejected inbound connection.</p>
     /// - On failure, responds with [`SdkError<RejectInboundConnectionError>`](crate::error::RejectInboundConnectionError)
     pub fn reject_inbound_connection(&self) -> fluent_builders::RejectInboundConnection {
         fluent_builders::RejectInboundConnection::new(self.handle.clone())
@@ -532,20 +611,31 @@ impl Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_arn): <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTags::set_tag_keys): <p>The <code>TagKey</code> list you want to remove from the domain. </p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_arn): <p>The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTags::set_tag_keys): <p>The list of tag keys to remove from the domain.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
 
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RevokeVpcEndpointAccess`](crate::client::fluent_builders::RevokeVpcEndpointAccess) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::set_domain_name): <p>The name of the OpenSearch Service domain.</p>
+    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::RevokeVpcEndpointAccess::set_account): <p>The account ID to revoke access from.</p>
+    /// - On success, responds with [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeVpcEndpointAccessError>`](crate::error::RevokeVpcEndpointAccessError)
+    pub fn revoke_vpc_endpoint_access(&self) -> fluent_builders::RevokeVpcEndpointAccess {
+        fluent_builders::RevokeVpcEndpointAccess::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartServiceSoftwareUpdate`](crate::client::fluent_builders::StartServiceSoftwareUpdate) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::StartServiceSoftwareUpdate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::StartServiceSoftwareUpdate::set_domain_name): <p>The name of the domain that you want to update to the latest service software.</p>
     /// - On success, responds with [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput) with field(s):
-    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::StartServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the OpenSearch service software update.</p>
+    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::StartServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the OpenSearch Service software update.</p>
     /// - On failure, responds with [`SdkError<StartServiceSoftwareUpdateError>`](crate::error::StartServiceSoftwareUpdateError)
     pub fn start_service_software_update(&self) -> fluent_builders::StartServiceSoftwareUpdate {
         fluent_builders::StartServiceSoftwareUpdate::new(self.handle.clone())
@@ -553,24 +643,24 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateDomainConfig`](crate::client::fluent_builders::UpdateDomainConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainConfig::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainConfig::set_domain_name): <p>The name of the domain you're updating.</p>
-    ///   - [`cluster_config(ClusterConfig)`](crate::client::fluent_builders::UpdateDomainConfig::cluster_config) / [`set_cluster_config(Option<ClusterConfig>)`](crate::client::fluent_builders::UpdateDomainConfig::set_cluster_config): <p>The type and number of instances to instantiate for the domain cluster.</p>
-    ///   - [`ebs_options(EbsOptions)`](crate::client::fluent_builders::UpdateDomainConfig::ebs_options) / [`set_ebs_options(Option<EbsOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_ebs_options): <p>Specify the type and size of the EBS volume to use.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainConfig::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainConfig::set_domain_name): <p>The name of the domain that you're updating.</p>
+    ///   - [`cluster_config(ClusterConfig)`](crate::client::fluent_builders::UpdateDomainConfig::cluster_config) / [`set_cluster_config(Option<ClusterConfig>)`](crate::client::fluent_builders::UpdateDomainConfig::set_cluster_config): <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
+    ///   - [`ebs_options(EbsOptions)`](crate::client::fluent_builders::UpdateDomainConfig::ebs_options) / [`set_ebs_options(Option<EbsOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_ebs_options): <p>The type and size of the EBS volume to attach to instances in the domain.</p>
     ///   - [`snapshot_options(SnapshotOptions)`](crate::client::fluent_builders::UpdateDomainConfig::snapshot_options) / [`set_snapshot_options(Option<SnapshotOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_snapshot_options): <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
-    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::UpdateDomainConfig::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_vpc_options): <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
-    ///   - [`cognito_options(CognitoOptions)`](crate::client::fluent_builders::UpdateDomainConfig::cognito_options) / [`set_cognito_options(Option<CognitoOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_cognito_options): <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
-    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::UpdateDomainConfig::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateDomainConfig::set_advanced_options): <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
-    ///   - [`access_policies(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainConfig::access_policies) / [`set_access_policies(Option<String>)`](crate::client::fluent_builders::UpdateDomainConfig::set_access_policies): <p>IAM access policy as a JSON-formatted string.</p>
-    ///   - [`log_publishing_options(HashMap<LogType, LogPublishingOption>)`](crate::client::fluent_builders::UpdateDomainConfig::log_publishing_options) / [`set_log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::client::fluent_builders::UpdateDomainConfig::set_log_publishing_options): <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
-    ///   - [`encryption_at_rest_options(EncryptionAtRestOptions)`](crate::client::fluent_builders::UpdateDomainConfig::encryption_at_rest_options) / [`set_encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_encryption_at_rest_options): <p>Specifies encryption of data at rest options.</p>
-    ///   - [`domain_endpoint_options(DomainEndpointOptions)`](crate::client::fluent_builders::UpdateDomainConfig::domain_endpoint_options) / [`set_domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_domain_endpoint_options): <p>Options to specify configuration that will be applied to the domain endpoint.</p>
-    ///   - [`node_to_node_encryption_options(NodeToNodeEncryptionOptions)`](crate::client::fluent_builders::UpdateDomainConfig::node_to_node_encryption_options) / [`set_node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_node_to_node_encryption_options): <p>Specifies node-to-node encryption options.</p>
-    ///   - [`advanced_security_options(AdvancedSecurityOptionsInput)`](crate::client::fluent_builders::UpdateDomainConfig::advanced_security_options) / [`set_advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::client::fluent_builders::UpdateDomainConfig::set_advanced_security_options): <p>Specifies advanced security options.</p>
-    ///   - [`auto_tune_options(AutoTuneOptions)`](crate::client::fluent_builders::UpdateDomainConfig::auto_tune_options) / [`set_auto_tune_options(Option<AutoTuneOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_auto_tune_options): <p>Specifies Auto-Tune options.</p>
-    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateDomainConfig::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::UpdateDomainConfig::set_dry_run): <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::UpdateDomainConfig::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_vpc_options): <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
+    ///   - [`cognito_options(CognitoOptions)`](crate::client::fluent_builders::UpdateDomainConfig::cognito_options) / [`set_cognito_options(Option<CognitoOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_cognito_options): <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
+    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::UpdateDomainConfig::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateDomainConfig::set_advanced_options): <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>  <ul>   <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>   <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>   <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>   <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
+    ///   - [`access_policies(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainConfig::access_policies) / [`set_access_policies(Option<String>)`](crate::client::fluent_builders::UpdateDomainConfig::set_access_policies): <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
+    ///   - [`log_publishing_options(HashMap<LogType, LogPublishingOption>)`](crate::client::fluent_builders::UpdateDomainConfig::log_publishing_options) / [`set_log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::client::fluent_builders::UpdateDomainConfig::set_log_publishing_options): <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+    ///   - [`encryption_at_rest_options(EncryptionAtRestOptions)`](crate::client::fluent_builders::UpdateDomainConfig::encryption_at_rest_options) / [`set_encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_encryption_at_rest_options): <p>Encryption at rest options for the domain.</p>
+    ///   - [`domain_endpoint_options(DomainEndpointOptions)`](crate::client::fluent_builders::UpdateDomainConfig::domain_endpoint_options) / [`set_domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_domain_endpoint_options): <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
+    ///   - [`node_to_node_encryption_options(NodeToNodeEncryptionOptions)`](crate::client::fluent_builders::UpdateDomainConfig::node_to_node_encryption_options) / [`set_node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_node_to_node_encryption_options): <p>Node-To-Node Encryption options for the domain.</p>
+    ///   - [`advanced_security_options(AdvancedSecurityOptionsInput)`](crate::client::fluent_builders::UpdateDomainConfig::advanced_security_options) / [`set_advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::client::fluent_builders::UpdateDomainConfig::set_advanced_security_options): <p>Options for fine-grained access control.</p>
+    ///   - [`auto_tune_options(AutoTuneOptions)`](crate::client::fluent_builders::UpdateDomainConfig::auto_tune_options) / [`set_auto_tune_options(Option<AutoTuneOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_auto_tune_options): <p>Options for Auto-Tune.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateDomainConfig::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::UpdateDomainConfig::set_dry_run): <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
     /// - On success, responds with [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput) with field(s):
     ///   - [`domain_config(Option<DomainConfig>)`](crate::output::UpdateDomainConfigOutput::domain_config): <p>The status of the updated domain.</p>
-    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::UpdateDomainConfigOutput::dry_run_results): <p>Contains result of DryRun. </p>
+    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::UpdateDomainConfigOutput::dry_run_results): <p>Results of a dry run performed in an update domain request.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainConfigError>`](crate::error::UpdateDomainConfigError)
     pub fn update_domain_config(&self) -> fluent_builders::UpdateDomainConfig {
         fluent_builders::UpdateDomainConfig::new(self.handle.clone())
@@ -579,29 +669,40 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::UpdatePackage::set_package_id): <p>The unique identifier for the package.</p>
-    ///   - [`package_source(PackageSource)`](crate::client::fluent_builders::UpdatePackage::package_source) / [`set_package_source(Option<PackageSource>)`](crate::client::fluent_builders::UpdatePackage::set_package_source): <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
+    ///   - [`package_source(PackageSource)`](crate::client::fluent_builders::UpdatePackage::package_source) / [`set_package_source(Option<PackageSource>)`](crate::client::fluent_builders::UpdatePackage::set_package_source): <p>Amazon S3 bucket and key for the package.</p>
     ///   - [`package_description(impl Into<String>)`](crate::client::fluent_builders::UpdatePackage::package_description) / [`set_package_description(Option<String>)`](crate::client::fluent_builders::UpdatePackage::set_package_description): <p>A new description of the package.</p>
-    ///   - [`commit_message(impl Into<String>)`](crate::client::fluent_builders::UpdatePackage::commit_message) / [`set_commit_message(Option<String>)`](crate::client::fluent_builders::UpdatePackage::set_commit_message): <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
+    ///   - [`commit_message(impl Into<String>)`](crate::client::fluent_builders::UpdatePackage::commit_message) / [`set_commit_message(Option<String>)`](crate::client::fluent_builders::UpdatePackage::set_commit_message): <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     /// - On success, responds with [`UpdatePackageOutput`](crate::output::UpdatePackageOutput) with field(s):
-    ///   - [`package_details(Option<PackageDetails>)`](crate::output::UpdatePackageOutput::package_details): <p>Information about the package. </p>
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::UpdatePackageOutput::package_details): <p>Information about a package.</p>
     /// - On failure, responds with [`SdkError<UpdatePackageError>`](crate::error::UpdatePackageError)
     pub fn update_package(&self) -> fluent_builders::UpdatePackage {
         fluent_builders::UpdatePackage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateVpcEndpoint`](crate::client::fluent_builders::UpdateVpcEndpoint) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_vpc_endpoint_id): <p>The unique identifier of the endpoint.</p>
+    ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::UpdateVpcEndpoint::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_vpc_options): <p>The security groups and/or subnets to add, remove, or modify.</p>
+    /// - On success, responds with [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput) with field(s):
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::UpdateVpcEndpointOutput::vpc_endpoint): <p>The endpoint to be updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVpcEndpointError>`](crate::error::UpdateVpcEndpointError)
+    pub fn update_vpc_endpoint(&self) -> fluent_builders::UpdateVpcEndpoint {
+        fluent_builders::UpdateVpcEndpoint::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpgradeDomain`](crate::client::fluent_builders::UpgradeDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpgradeDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpgradeDomain::set_domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
-    ///   - [`target_version(impl Into<String>)`](crate::client::fluent_builders::UpgradeDomain::target_version) / [`set_target_version(Option<String>)`](crate::client::fluent_builders::UpgradeDomain::set_target_version): <p>The version of OpenSearch you intend to upgrade the domain to.</p>
-    ///   - [`perform_check_only(bool)`](crate::client::fluent_builders::UpgradeDomain::perform_check_only) / [`set_perform_check_only(Option<bool>)`](crate::client::fluent_builders::UpgradeDomain::set_perform_check_only): <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
-    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::UpgradeDomain::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpgradeDomain::set_advanced_options): <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>  <ul>   <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>   <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>  </ul>  <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpgradeDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpgradeDomain::set_domain_name): <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
+    ///   - [`target_version(impl Into<String>)`](crate::client::fluent_builders::UpgradeDomain::target_version) / [`set_target_version(Option<String>)`](crate::client::fluent_builders::UpgradeDomain::set_target_version): <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
+    ///   - [`perform_check_only(bool)`](crate::client::fluent_builders::UpgradeDomain::perform_check_only) / [`set_perform_check_only(Option<bool>)`](crate::client::fluent_builders::UpgradeDomain::set_perform_check_only): <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
+    ///   - [`advanced_options(HashMap<String, String>)`](crate::client::fluent_builders::UpgradeDomain::advanced_options) / [`set_advanced_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpgradeDomain::set_advanced_options): <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     /// - On success, responds with [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput) with field(s):
-    ///   - [`upgrade_id(Option<String>)`](crate::output::UpgradeDomainOutput::upgrade_id): (undocumented)
-    ///   - [`domain_name(Option<String>)`](crate::output::UpgradeDomainOutput::domain_name): <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
-    ///   - [`target_version(Option<String>)`](crate::output::UpgradeDomainOutput::target_version): <p>The version of OpenSearch that you intend to upgrade the domain to.</p>
-    ///   - [`perform_check_only(Option<bool>)`](crate::output::UpgradeDomainOutput::perform_check_only): <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
-    ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::output::UpgradeDomainOutput::advanced_options): <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>  <ul>   <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>   <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>  </ul>  <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
-    ///   - [`change_progress_details(Option<ChangeProgressDetails>)`](crate::output::UpgradeDomainOutput::change_progress_details): <p>Specifies change details of the domain configuration change.</p>
+    ///   - [`upgrade_id(Option<String>)`](crate::output::UpgradeDomainOutput::upgrade_id): <p>The unique identifier of the domain upgrade.</p>
+    ///   - [`domain_name(Option<String>)`](crate::output::UpgradeDomainOutput::domain_name): <p>The name of the domain that was upgraded.</p>
+    ///   - [`target_version(Option<String>)`](crate::output::UpgradeDomainOutput::target_version): <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
+    ///   - [`perform_check_only(Option<bool>)`](crate::output::UpgradeDomainOutput::perform_check_only): <p>When true, indicates that an upgrade eligibility check was performed.</p>
+    ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::output::UpgradeDomainOutput::advanced_options): <p>The advanced options configuration for the domain.</p>
+    ///   - [`change_progress_details(Option<ChangeProgressDetails>)`](crate::output::UpgradeDomainOutput::change_progress_details): <p>Container for information about a configuration change happening on a domain.</p>
     /// - On failure, responds with [`SdkError<UpgradeDomainError>`](crate::error::UpgradeDomainError)
     pub fn upgrade_domain(&self) -> fluent_builders::UpgradeDomain {
         fluent_builders::UpgradeDomain::new(self.handle.clone())
@@ -616,7 +717,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AcceptInboundConnection`.
     ///
-    /// <p>Allows the remote domain owner to accept an inbound cross-cluster connection request.</p>
+    /// <p>Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInboundConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -676,12 +777,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the inbound connection you want to accept.</p>
+        /// <p>The ID of the inbound connection to accept.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_id(input.into());
             self
         }
-        /// <p>The ID of the inbound connection you want to accept.</p>
+        /// <p>The ID of the inbound connection to accept.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -692,7 +793,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs. An domain can have up to 10 tags. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging" target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information. </p>
+    /// <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs. An domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"> Tagging Amazon OpenSearch Service domains</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags {
         handle: std::sync::Arc<super::Handle>,
@@ -752,12 +853,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+        /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+        /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -766,12 +867,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>List of <code>Tag</code> to add to the domain. </p>
+        /// <p>List of resource tags.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tag_list(input);
             self
         }
-        /// <p>List of <code>Tag</code> to add to the domain. </p>
+        /// <p>List of resource tags.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -782,7 +883,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociatePackage`.
     ///
-    /// <p>Associates a package with an Amazon OpenSearch Service domain.</p>
+    /// <p>Associates a package with an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePackage {
         handle: std::sync::Arc<super::Handle>,
@@ -852,20 +953,103 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>The name of the domain to associate the package with.</p>
+        /// <p>Name of the domain to associate the package with.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the domain to associate the package with.</p>
+        /// <p>Name of the domain to associate the package with.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `AuthorizeVpcEndpointAccess`.
+    ///
+    /// <p>Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AuthorizeVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::authorize_vpc_endpoint_access_input::Builder,
+    }
+    impl AuthorizeVpcEndpointAccess {
+        /// Creates a new `AuthorizeVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AuthorizeVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AuthorizeVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID to grant access to.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID to grant access to.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CancelServiceSoftwareUpdate`.
     ///
-    /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state. </p>
+    /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the domain's <code>UpdateStatus</code> is <code>PENDING_UPDATE</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software updates in Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServiceSoftwareUpdate {
         handle: std::sync::Arc<super::Handle>,
@@ -925,12 +1109,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+        /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+        /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -938,7 +1122,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a new Amazon OpenSearch Service domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html" target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in the <i>Amazon OpenSearch Service Developer Guide</i>. </p>
+    /// <p>Creates an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -998,22 +1182,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
+        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
+        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1021,12 +1205,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
+        /// <p>Container for the cluster configuration of a domain.</p>
         pub fn cluster_config(mut self, input: crate::model::ClusterConfig) -> Self {
             self.inner = self.inner.cluster_config(input);
             self
         }
-        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
+        /// <p>Container for the cluster configuration of a domain.</p>
         pub fn set_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ClusterConfig>,
@@ -1034,12 +1218,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_config(input);
             self
         }
-        /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
+        /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
         pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
             self.inner = self.inner.ebs_options(input);
             self
         }
-        /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
+        /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,
@@ -1047,12 +1231,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ebs_options(input);
             self
         }
-        /// <p>IAM access policy as a JSON-formatted string.</p>
+        /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
         pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_policies(input.into());
             self
         }
-        /// <p>IAM access policy as a JSON-formatted string.</p>
+        /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1060,12 +1244,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_policies(input);
             self
         }
-        /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
+        /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
         pub fn snapshot_options(mut self, input: crate::model::SnapshotOptions) -> Self {
             self.inner = self.inner.snapshot_options(input);
             self
         }
-        /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
+        /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptions>,
@@ -1073,12 +1257,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
         pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
             self.inner = self.inner.vpc_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -1086,12 +1270,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
         pub fn cognito_options(mut self, input: crate::model::CognitoOptions) -> Self {
             self.inner = self.inner.cognito_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -1099,7 +1283,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cognito_options(input);
             self
         }
-        /// <p>Options for encryption of data at rest.</p>
+        /// <p>Key-value pairs to enable encryption at rest.</p>
         pub fn encryption_at_rest_options(
             mut self,
             input: crate::model::EncryptionAtRestOptions,
@@ -1107,7 +1291,7 @@ pub mod fluent_builders {
             self.inner = self.inner.encryption_at_rest_options(input);
             self
         }
-        /// <p>Options for encryption of data at rest.</p>
+        /// <p>Key-value pairs to enable encryption at rest.</p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptions>,
@@ -1115,7 +1299,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_at_rest_options(input);
             self
         }
-        /// <p>Node-to-node encryption options.</p>
+        /// <p>Enables node-to-node encryption.</p>
         pub fn node_to_node_encryption_options(
             mut self,
             input: crate::model::NodeToNodeEncryptionOptions,
@@ -1123,7 +1307,7 @@ pub mod fluent_builders {
             self.inner = self.inner.node_to_node_encryption_options(input);
             self
         }
-        /// <p>Node-to-node encryption options.</p>
+        /// <p>Enables node-to-node encryption.</p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
@@ -1135,7 +1319,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
+        /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+        /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+        /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+        /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -1144,7 +1335,14 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
+        /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+        /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+        /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+        /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -1158,7 +1356,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
         ///
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+        /// <p>Key-value pairs to configure slow log publishing.</p>
         pub fn log_publishing_options(
             mut self,
             k: crate::model::LogType,
@@ -1167,7 +1365,7 @@ pub mod fluent_builders {
             self.inner = self.inner.log_publishing_options(k, v);
             self
         }
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+        /// <p>Key-value pairs to configure slow log publishing.</p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -1177,7 +1375,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_publishing_options(input);
             self
         }
-        /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
+        /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
         pub fn domain_endpoint_options(
             mut self,
             input: crate::model::DomainEndpointOptions,
@@ -1185,7 +1383,7 @@ pub mod fluent_builders {
             self.inner = self.inner.domain_endpoint_options(input);
             self
         }
-        /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
+        /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -1193,7 +1391,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_endpoint_options(input);
             self
         }
-        /// <p>Specifies advanced security options.</p>
+        /// <p>Options for fine-grained access control.</p>
         pub fn advanced_security_options(
             mut self,
             input: crate::model::AdvancedSecurityOptionsInput,
@@ -1201,7 +1399,7 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_security_options(input);
             self
         }
-        /// <p>Specifies advanced security options.</p>
+        /// <p>Options for fine-grained access control.</p>
         pub fn set_advanced_security_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
@@ -1213,12 +1411,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>A list of <code>Tag</code> added during domain creation. </p>
+        /// <p>List of tags to add to the domain upon creation.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tag_list(input);
             self
         }
-        /// <p>A list of <code>Tag</code> added during domain creation. </p>
+        /// <p>List of tags to add to the domain upon creation.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1226,12 +1424,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_list(input);
             self
         }
-        /// <p>Specifies Auto-Tune options.</p>
+        /// <p>Options for Auto-Tune.</p>
         pub fn auto_tune_options(mut self, input: crate::model::AutoTuneOptionsInput) -> Self {
             self.inner = self.inner.auto_tune_options(input);
             self
         }
-        /// <p>Specifies Auto-Tune options.</p>
+        /// <p>Options for Auto-Tune.</p>
         pub fn set_auto_tune_options(
             mut self,
             input: std::option::Option<crate::model::AutoTuneOptionsInput>,
@@ -1242,7 +1440,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateOutboundConnection`.
     ///
-    /// <p>Creates a new cross-cluster connection from a local OpenSearch domain to a remote OpenSearch domain.</p>
+    /// <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch Service domain to a destination domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutboundConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -1302,7 +1500,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+        /// <p>Name and Region of the source (local) domain.</p>
         pub fn local_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -1310,7 +1508,7 @@ pub mod fluent_builders {
             self.inner = self.inner.local_domain_info(input);
             self
         }
-        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+        /// <p>Name and Region of the source (local) domain.</p>
         pub fn set_local_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -1318,7 +1516,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_domain_info(input);
             self
         }
-        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+        /// <p>Name and Region of the destination (remote) domain.</p>
         pub fn remote_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -1326,7 +1524,7 @@ pub mod fluent_builders {
             self.inner = self.inner.remote_domain_info(input);
             self
         }
-        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+        /// <p>Name and Region of the destination (remote) domain.</p>
         pub fn set_remote_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -1334,12 +1532,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remote_domain_info(input);
             self
         }
-        /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
+        /// <p>Name of the connection.</p>
         pub fn connection_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_alias(input.into());
             self
         }
-        /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
+        /// <p>Name of the connection.</p>
         pub fn set_connection_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1350,7 +1548,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePackage`.
     ///
-    /// <p>Create a package for use with Amazon OpenSearch Service domains.</p>
+    /// <p>Creates a package for use with Amazon OpenSearch Service domains. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackage {
         handle: std::sync::Arc<super::Handle>,
@@ -1410,22 +1608,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique identifier for the package.</p>
+        /// <p>Unique name for the package.</p>
         pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_name(input.into());
             self
         }
-        /// <p>Unique identifier for the package.</p>
+        /// <p>Unique name for the package.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_name(input);
             self
         }
-        /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+        /// <p>Type of package.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
             self.inner = self.inner.package_type(input);
             self
         }
-        /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+        /// <p>Type of package.</p>
         pub fn set_package_type(
             mut self,
             input: std::option::Option<crate::model::PackageType>,
@@ -1446,12 +1644,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_description(input);
             self
         }
-        /// <p>The Amazon S3 location from which to import the package. </p>
+        /// <p>The Amazon S3 location from which to import the package.</p>
         pub fn package_source(mut self, input: crate::model::PackageSource) -> Self {
             self.inner = self.inner.package_source(input);
             self
         }
-        /// <p>The Amazon S3 location from which to import the package. </p>
+        /// <p>The Amazon S3 location from which to import the package.</p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -1460,9 +1658,105 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateVpcEndpoint`.
+    ///
+    /// <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_vpc_endpoint_input::Builder,
+    }
+    impl CreateVpcEndpoint {
+        /// Creates a new `CreateVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_arn(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
+            self
+        }
+        /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_options(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Permanently deletes the specified domain and all of its data. Once a domain is deleted, it cannot be recovered. </p>
+    /// <p>Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover a domain after you delete it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -1535,7 +1829,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInboundConnection`.
     ///
-    /// <p>Allows the remote domain owner to delete an existing inbound cross-cluster connection.</p>
+    /// <p>Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInboundConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -1611,7 +1905,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOutboundConnection`.
     ///
-    /// <p>Allows the local domain owner to delete an existing outbound cross-cluster connection.</p>
+    /// <p>Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutboundConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -1687,7 +1981,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
-    /// <p>Deletes the package.</p>
+    /// <p>Deletes an Amazon OpenSearch Service package. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage {
         handle: std::sync::Arc<super::Handle>,
@@ -1747,20 +2041,96 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
+        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
+        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteVpcEndpoint`.
+    ///
+    /// <p>Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_vpc_endpoint_input::Builder,
+    }
+    impl DeleteVpcEndpoint {
+        /// Creates a new `DeleteVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
-    /// <p>Returns domain configuration information about the specified domain, including the domain ID, domain endpoint, and domain ARN. </p>
+    /// <p>Describes the domain configuration for the specified Amazon OpenSearch Service domain, including the domain ID, domain service endpoint, and domain ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -1820,12 +2190,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the domain for which you want information.</p>
+        /// <p>The name of the domain that you want information about.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the domain for which you want information.</p>
+        /// <p>The name of the domain that you want information about.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -1833,7 +2203,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainAutoTunes`.
     ///
-    /// <p>Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action type, description, severity, and scheduled date. </p>
+    /// <p>Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainAutoTunes {
         handle: std::sync::Arc<super::Handle>,
@@ -1899,32 +2269,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeDomainAutoTunesPaginator {
             crate::paginator::DescribeDomainAutoTunesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The domain name for which you want Auto-Tune action details.</p>
+        /// <p>Name of the domain that you want Auto-Tune details about.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name for which you want Auto-Tune action details.</p>
+        /// <p>Name of the domain that you want Auto-Tune details about.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
+        /// <p>If your initial <code>DescribeDomainAutoTunes</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeDomainAutoTunes</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
+        /// <p>If your initial <code>DescribeDomainAutoTunes</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeDomainAutoTunes</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1932,7 +2302,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainChangeProgress`.
     ///
-    /// <p>Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.</p>
+    /// <p>Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making configuration changes in Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainChangeProgress {
         handle: std::sync::Arc<super::Handle>,
@@ -1992,22 +2362,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The domain you want to get the progress information about.</p>
+        /// <p>The name of the domain to get progress information for.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain you want to get the progress information about.</p>
+        /// <p>The name of the domain to get progress information for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
         pub fn change_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_id(input.into());
             self
         }
-        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
         pub fn set_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_change_id(input);
             self
@@ -2015,7 +2385,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainConfig`.
     ///
-    /// <p>Provides cluster configuration information about the specified domain, such as the state, creation date, update version, and update date for cluster options. </p>
+    /// <p>Returns the configuration of an Amazon OpenSearch Service domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -2075,12 +2445,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The domain you want to get information about.</p>
+        /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain you want to get information about.</p>
+        /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -2088,7 +2458,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomains`.
     ///
-    /// <p>Returns domain configuration information about the specified domains, including the domain ID, domain endpoint, and domain ARN. </p>
+    /// <p>Returns domain configuration information about the specified Amazon OpenSearch Service domains.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomains {
         handle: std::sync::Arc<super::Handle>,
@@ -2152,12 +2522,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
-        /// <p>The domains for which you want information.</p>
+        /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
         pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_names(input.into());
             self
         }
-        /// <p>The domains for which you want information.</p>
+        /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
         pub fn set_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2168,7 +2538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInboundConnections`.
     ///
-    /// <p>Lists all the inbound cross-cluster connections for a remote domain.</p>
+    /// <p>Lists all the inbound cross-cluster search connections for a destination (remote) Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundConnections {
         handle: std::sync::Arc<super::Handle>,
@@ -2238,28 +2608,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p>
-        /// <ul>
-        /// <li>connection-id</li>
-        /// <li>local-domain-info.domain-name</li>
-        /// <li>local-domain-info.owner-id</li>
-        /// <li>local-domain-info.region</li>
-        /// <li>remote-domain-info.domain-name</li>
-        /// </ul>
-        /// <p></p>
+        /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p>
-        /// <ul>
-        /// <li>connection-id</li>
-        /// <li>local-domain-info.domain-name</li>
-        /// <li>local-domain-info.owner-id</li>
-        /// <li>local-domain-info.region</li>
-        /// <li>remote-domain-info.domain-name</li>
-        /// </ul>
-        /// <p></p>
+        /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2267,22 +2621,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
+        /// <p>If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
+        /// <p>If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2290,7 +2644,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceTypeLimits`.
     ///
-    /// <p> Describe the limits for a given instance type and OpenSearch or Elasticsearch version. When modifying an existing domain, specify the <code> <code>DomainName</code> </code> to see which limits you can modify. </p>
+    /// <p>Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceTypeLimits {
         handle: std::sync::Arc<super::Handle>,
@@ -2350,17 +2704,17 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
+        /// <p>The name of the domain. Only specify if you need the limits for an existing domain.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
+        /// <p>The name of the domain. Only specify if you need the limits for an existing domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
+        /// <p>The OpenSearch Service instance type for which you need limit information.</p>
         pub fn instance_type(
             mut self,
             input: crate::model::OpenSearchPartitionInstanceType,
@@ -2368,7 +2722,7 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_type(input);
             self
         }
-        /// <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
+        /// <p>The OpenSearch Service instance type for which you need limit information.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
@@ -2376,12 +2730,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
+        /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
+        /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2392,7 +2746,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOutboundConnections`.
     ///
-    /// <p>Lists all the outbound cross-cluster connections for a local domain.</p>
+    /// <p>Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOutboundConnections {
         handle: std::sync::Arc<super::Handle>,
@@ -2462,28 +2816,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p>
-        /// <ul>
-        /// <li>connection-id</li>
-        /// <li>remote-domain-info.domain-name</li>
-        /// <li>remote-domain-info.owner-id</li>
-        /// <li>remote-domain-info.region</li>
-        /// <li>local-domain-info.domain-name</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>List of filter names and values that you can use for requests.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p>
-        /// <ul>
-        /// <li>connection-id</li>
-        /// <li>remote-domain-info.domain-name</li>
-        /// <li>remote-domain-info.owner-id</li>
-        /// <li>remote-domain-info.region</li>
-        /// <li>local-domain-info.domain-name</li>
-        /// </ul>
-        /// <p></p>
+        /// <p>List of filter names and values that you can use for requests.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2491,22 +2829,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
+        /// <p>If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
+        /// <p>If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2514,7 +2852,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePackages`.
     ///
-    /// <p>Describes all packages available to Amazon OpenSearch Service domains. Includes options for filtering, limiting the number of results, and pagination. </p>
+    /// <p>Describes all packages available to OpenSearch Service. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackages {
         handle: std::sync::Arc<super::Handle>,
@@ -2584,12 +2922,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
         pub fn filters(mut self, input: crate::model::DescribePackagesFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
@@ -2597,22 +2935,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Limits results to a maximum number of packages.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Limits results to a maximum number of packages.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>DescribePackageFilters</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribePackageFilters</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>DescribePackageFilters</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribePackageFilters</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2620,7 +2958,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReservedInstanceOfferings`.
     ///
-    /// <p>Lists available reserved OpenSearch instance offerings.</p>
+    /// <p>Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstanceOfferings {
         handle: std::sync::Arc<super::Handle>,
@@ -2691,7 +3029,7 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
+        /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
         pub fn reserved_instance_offering_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2699,7 +3037,7 @@ pub mod fluent_builders {
             self.inner = self.inner.reserved_instance_offering_id(input.into());
             self
         }
-        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
+        /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
         pub fn set_reserved_instance_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2707,22 +3045,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reserved_instance_offering_id(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2730,7 +3068,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReservedInstances`.
     ///
-    /// <p>Returns information about reserved OpenSearch instances for this account.</p>
+    /// <p>Describes the Amazon OpenSearch Service instances that you have reserved in a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -2796,12 +3134,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeReservedInstancesPaginator {
             crate::paginator::DescribeReservedInstancesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
+        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</p>
         pub fn reserved_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reserved_instance_id(input.into());
             self
         }
-        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
+        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</p>
         pub fn set_reserved_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2809,30 +3147,110 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reserved_instance_id(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        /// <p>If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        /// <p>If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeVpcEndpoints`.
+    ///
+    /// <p>Describes one or more Amazon OpenSearch Service-managed VPC endpoints.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeVpcEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_vpc_endpoints_input::Builder,
+    }
+    impl DescribeVpcEndpoints {
+        /// Creates a new `DescribeVpcEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeVpcEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVpcEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `VpcEndpointIds`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
+        ///
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_ids(input.into());
+            self
+        }
+        /// <p>The unique identifiers of the endpoints to get information about.</p>
+        pub fn set_vpc_endpoint_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DissociatePackage`.
     ///
-    /// <p>Dissociates a package from the Amazon OpenSearch Service domain.</p>
+    /// <p>Removes a package from the specified Amazon OpenSearch Service domain. The package can't be in use with any OpenSearch index for the dissociation to succeed. The package is still available in OpenSearch Service for association later. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociatePackage {
         handle: std::sync::Arc<super::Handle>,
@@ -2892,22 +3310,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+        /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+        /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>The name of the domain to associate the package with.</p>
+        /// <p>Name of the domain to dissociate the package from.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the domain to associate the package with.</p>
+        /// <p>Name of the domain to dissociate the package from.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -2915,7 +3333,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCompatibleVersions`.
     ///
-    /// <p> Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can optionally pass a <code> <code>DomainName</code> </code> to get all upgrade-compatible versions of OpenSearch/Elasticsearch for that specific domain. </p>
+    /// <p>Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleVersions {
         handle: std::sync::Arc<super::Handle>,
@@ -2975,12 +3393,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -2988,7 +3406,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionHistory`.
     ///
-    /// <p>Returns a list of package versions, along with their creation time and commit message.</p>
+    /// <p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionHistory {
         handle: std::sync::Arc<super::Handle>,
@@ -3054,32 +3472,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetPackageVersionHistoryPaginator {
             crate::paginator::GetPackageVersionHistoryPaginator::new(self.handle, self.inner)
         }
-        /// <p>Returns an audit history of package versions.</p>
+        /// <p>The unique identifier of the package.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>Returns an audit history of package versions.</p>
+        /// <p>The unique identifier of the package.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>Limits results to a maximum number of package versions.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Limits results to a maximum number of package versions.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns results in the next page. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns results in the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3087,7 +3505,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUpgradeHistory`.
     ///
-    /// <p>Retrieves the complete history of the last 10 upgrades performed on the domain.</p>
+    /// <p>Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch Service domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeHistory {
         handle: std::sync::Arc<super::Handle>,
@@ -3153,32 +3571,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetUpgradeHistoryPaginator {
             crate::paginator::GetUpgradeHistoryPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The name of an existing domain.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The name of an existing domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p> Set this value to limit the number of results returned. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Set this value to limit the number of results returned. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3186,7 +3604,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUpgradeStatus`.
     ///
-    /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check performed on the domain. </p>
+    /// <p>Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch Service domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -3246,12 +3664,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The domain of the domain to get upgrade status information for.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>The domain of the domain to get upgrade status information for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -3259,7 +3677,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomainNames`.
     ///
-    /// <p>Returns the names of all domains owned by the current user's account.</p>
+    /// <p>Returns the names of all Amazon OpenSearch Service domains owned by the current user in the active Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainNames {
         handle: std::sync::Arc<super::Handle>,
@@ -3319,12 +3737,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+        /// <p>Filters the output by domain engine type.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.inner = self.inner.engine_type(input);
             self
         }
-        /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+        /// <p>Filters the output by domain engine type.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -3335,7 +3753,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomainsForPackage`.
     ///
-    /// <p>Lists all Amazon OpenSearch Service domains associated with the package.</p>
+    /// <p>Lists all Amazon OpenSearch Service domains associated with a given package. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainsForPackage {
         handle: std::sync::Arc<super::Handle>,
@@ -3401,32 +3819,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDomainsForPackagePaginator {
             crate::paginator::ListDomainsForPackagePaginator::new(self.handle, self.inner)
         }
-        /// <p>The package for which to list associated domains.</p>
+        /// <p>The unique identifier of the package for which to list associated domains.</p>
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>The package for which to list associated domains.</p>
+        /// <p>The unique identifier of the package for which to list associated domains.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>Limits the results to a maximum number of domains.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Limits the results to a maximum number of domains.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3434,6 +3852,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstanceTypeDetails`.
     ///
+    /// <p>Lists all instance types and available features for a given OpenSearch or Elasticsearch version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceTypeDetails {
         handle: std::sync::Arc<super::Handle>,
@@ -3499,12 +3918,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListInstanceTypeDetailsPaginator {
             crate::paginator::ListInstanceTypeDetailsPaginator::new(self.handle, self.inner)
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.engine_version(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3512,32 +3931,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the domain to list instance type details for.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the domain to list instance type details for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p> Set this value to limit the number of results returned. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Set this value to limit the number of results returned. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3545,7 +3964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPackagesForDomain`.
     ///
-    /// <p>Lists all packages associated with the Amazon OpenSearch Service domain.</p>
+    /// <p>Lists all packages associated with an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagesForDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -3621,22 +4040,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>Limits results to a maximum number of packages.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Limits results to a maximum number of packages.</p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        /// <p>If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3644,7 +4063,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Returns all tags for the given domain.</p>
+    /// <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags {
         handle: std::sync::Arc<super::Handle>,
@@ -3704,12 +4123,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
+        /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
+        /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3717,7 +4136,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListVersions`.
     ///
-    /// <p>List all supported versions of OpenSearch and Elasticsearch.</p>
+    /// <p>Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVersions {
         handle: std::sync::Arc<super::Handle>,
@@ -3783,22 +4202,261 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListVersionsPaginator {
             crate::paginator::ListVersionsPaginator::new(self.handle, self.inner)
         }
-        /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
+        /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListVpcEndpointAccess`.
+    ///
+    /// <p>Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoint_access_input::Builder,
+    }
+    impl ListVpcEndpointAccess {
+        /// Creates a new `ListVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>If your initial <code>ListVpcEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpointAccess</code> operations, which returns results in the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListVpcEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpointAccess</code> operations, which returns results in the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListVpcEndpoints`.
+    ///
+    /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon Web Services account and Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpoints {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoints_input::Builder,
+    }
+    impl ListVpcEndpoints {
+        /// Creates a new `ListVpcEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpoints,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListVpcEndpointsForDomain`.
+    ///
+    /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcEndpointsForDomain {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_endpoints_for_domain_input::Builder,
+    }
+    impl ListVpcEndpointsForDomain {
+        /// Creates a new `ListVpcEndpointsForDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcEndpointsForDomain,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcEndpointsForDomainOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the domain to list associated VPC endpoints for.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the domain to list associated VPC endpoints for.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3806,7 +4464,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PurchaseReservedInstanceOffering`.
     ///
-    /// <p>Allows you to purchase reserved OpenSearch instances.</p>
+    /// <p>Allows you to purchase Amazon OpenSearch Service Reserved Instances.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedInstanceOffering {
         handle: std::sync::Arc<super::Handle>,
@@ -3866,7 +4524,7 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
+        /// <p>The ID of the Reserved Instance offering to purchase.</p>
         pub fn reserved_instance_offering_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3874,7 +4532,7 @@ pub mod fluent_builders {
             self.inner = self.inner.reserved_instance_offering_id(input.into());
             self
         }
-        /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
+        /// <p>The ID of the Reserved Instance offering to purchase.</p>
         pub fn set_reserved_instance_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3908,7 +4566,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectInboundConnection`.
     ///
-    /// <p>Allows the remote domain owner to reject an inbound cross-cluster connection request.</p>
+    /// <p>Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInboundConnection {
         handle: std::sync::Arc<super::Handle>,
@@ -3968,12 +4626,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the inbound connection to reject.</p>
+        /// <p>The unique identifier of the inbound connection to reject.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_id(input.into());
             self
         }
-        /// <p>The ID of the inbound connection to reject.</p>
+        /// <p>The unique identifier of the inbound connection to reject.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3984,7 +4642,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
-    /// <p>Removes the specified set of tags from the given domain.</p>
+    /// <p>Removes the specified set of tags from an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"> Tagging Amazon OpenSearch Service domains</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags {
         handle: std::sync::Arc<super::Handle>,
@@ -4044,12 +4702,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -4058,12 +4716,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The <code>TagKey</code> list you want to remove from the domain. </p>
+        /// <p>The list of tag keys to remove from the domain.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The <code>TagKey</code> list you want to remove from the domain. </p>
+        /// <p>The list of tag keys to remove from the domain.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4072,9 +4730,92 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RevokeVpcEndpointAccess`.
+    ///
+    /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RevokeVpcEndpointAccess {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::revoke_vpc_endpoint_access_input::Builder,
+    }
+    impl RevokeVpcEndpointAccess {
+        /// Creates a new `RevokeVpcEndpointAccess`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RevokeVpcEndpointAccess,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RevokeVpcEndpointAccessOutput,
+            aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the OpenSearch Service domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
+            self
+        }
+        /// <p>The account ID to revoke access from.</p>
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartServiceSoftwareUpdate`.
     ///
-    /// <p>Schedules a service software update for an Amazon OpenSearch Service domain.</p>
+    /// <p>Schedules a service software update for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software updates in Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartServiceSoftwareUpdate {
         handle: std::sync::Arc<super::Handle>,
@@ -4147,7 +4888,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDomainConfig`.
     ///
-    /// <p>Modifies the cluster configuration of the specified domain, such as setting the instance type and the number of instances. </p>
+    /// <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainConfig {
         handle: std::sync::Arc<super::Handle>,
@@ -4207,22 +4948,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the domain you're updating.</p>
+        /// <p>The name of the domain that you're updating.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the domain you're updating.</p>
+        /// <p>The name of the domain that you're updating.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The type and number of instances to instantiate for the domain cluster.</p>
+        /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
         pub fn cluster_config(mut self, input: crate::model::ClusterConfig) -> Self {
             self.inner = self.inner.cluster_config(input);
             self
         }
-        /// <p>The type and number of instances to instantiate for the domain cluster.</p>
+        /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
         pub fn set_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ClusterConfig>,
@@ -4230,12 +4971,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_config(input);
             self
         }
-        /// <p>Specify the type and size of the EBS volume to use.</p>
+        /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
         pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
             self.inner = self.inner.ebs_options(input);
             self
         }
-        /// <p>Specify the type and size of the EBS volume to use.</p>
+        /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,
@@ -4256,12 +4997,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
         pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
             self.inner = self.inner.vpc_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -4269,12 +5010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
         pub fn cognito_options(mut self, input: crate::model::CognitoOptions) -> Self {
             self.inner = self.inner.cognito_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -4286,7 +5027,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
+        /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+        /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+        /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+        /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -4295,7 +5043,14 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
+        /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+        /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+        /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+        /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -4305,12 +5060,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_advanced_options(input);
             self
         }
-        /// <p>IAM access policy as a JSON-formatted string.</p>
+        /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
         pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_policies(input.into());
             self
         }
-        /// <p>IAM access policy as a JSON-formatted string.</p>
+        /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4322,7 +5077,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
         ///
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+        /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
         pub fn log_publishing_options(
             mut self,
             k: crate::model::LogType,
@@ -4331,7 +5086,7 @@ pub mod fluent_builders {
             self.inner = self.inner.log_publishing_options(k, v);
             self
         }
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
+        /// <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -4341,7 +5096,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_publishing_options(input);
             self
         }
-        /// <p>Specifies encryption of data at rest options.</p>
+        /// <p>Encryption at rest options for the domain.</p>
         pub fn encryption_at_rest_options(
             mut self,
             input: crate::model::EncryptionAtRestOptions,
@@ -4349,7 +5104,7 @@ pub mod fluent_builders {
             self.inner = self.inner.encryption_at_rest_options(input);
             self
         }
-        /// <p>Specifies encryption of data at rest options.</p>
+        /// <p>Encryption at rest options for the domain.</p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptions>,
@@ -4357,7 +5112,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_at_rest_options(input);
             self
         }
-        /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+        /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
         pub fn domain_endpoint_options(
             mut self,
             input: crate::model::DomainEndpointOptions,
@@ -4365,7 +5120,7 @@ pub mod fluent_builders {
             self.inner = self.inner.domain_endpoint_options(input);
             self
         }
-        /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+        /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -4373,7 +5128,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_endpoint_options(input);
             self
         }
-        /// <p>Specifies node-to-node encryption options.</p>
+        /// <p>Node-To-Node Encryption options for the domain.</p>
         pub fn node_to_node_encryption_options(
             mut self,
             input: crate::model::NodeToNodeEncryptionOptions,
@@ -4381,7 +5136,7 @@ pub mod fluent_builders {
             self.inner = self.inner.node_to_node_encryption_options(input);
             self
         }
-        /// <p>Specifies node-to-node encryption options.</p>
+        /// <p>Node-To-Node Encryption options for the domain.</p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
@@ -4389,7 +5144,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_node_to_node_encryption_options(input);
             self
         }
-        /// <p>Specifies advanced security options.</p>
+        /// <p>Options for fine-grained access control.</p>
         pub fn advanced_security_options(
             mut self,
             input: crate::model::AdvancedSecurityOptionsInput,
@@ -4397,7 +5152,7 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_security_options(input);
             self
         }
-        /// <p>Specifies advanced security options.</p>
+        /// <p>Options for fine-grained access control.</p>
         pub fn set_advanced_security_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
@@ -4405,12 +5160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_advanced_security_options(input);
             self
         }
-        /// <p>Specifies Auto-Tune options.</p>
+        /// <p>Options for Auto-Tune.</p>
         pub fn auto_tune_options(mut self, input: crate::model::AutoTuneOptions) -> Self {
             self.inner = self.inner.auto_tune_options(input);
             self
         }
-        /// <p>Specifies Auto-Tune options.</p>
+        /// <p>Options for Auto-Tune.</p>
         pub fn set_auto_tune_options(
             mut self,
             input: std::option::Option<crate::model::AutoTuneOptions>,
@@ -4418,12 +5173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_tune_options(input);
             self
         }
-        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -4431,7 +5186,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePackage`.
     ///
-    /// <p>Updates a package for use with Amazon OpenSearch Service domains.</p>
+    /// <p>Updates a package for use with Amazon OpenSearch Service domains. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackage {
         handle: std::sync::Arc<super::Handle>,
@@ -4501,12 +5256,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
+        /// <p>Amazon S3 bucket and key for the package.</p>
         pub fn package_source(mut self, input: crate::model::PackageSource) -> Self {
             self.inner = self.inner.package_source(input);
             self
         }
-        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
+        /// <p>Amazon S3 bucket and key for the package.</p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -4527,12 +5282,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_description(input);
             self
         }
-        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
+        /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
         pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.commit_message(input.into());
             self
         }
-        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
+        /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4541,9 +5296,98 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateVpcEndpoint`.
+    ///
+    /// <p>Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateVpcEndpoint {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_vpc_endpoint_input::Builder,
+    }
+    impl UpdateVpcEndpoint {
+        /// Creates a new `UpdateVpcEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateVpcEndpoint,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateVpcEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the endpoint.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_endpoint_id(input);
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
+            self
+        }
+        /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+        pub fn set_vpc_options(
+            mut self,
+            input: std::option::Option<crate::model::VpcOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_options(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpgradeDomain`.
     ///
-    /// <p>Allows you to either upgrade your domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch. </p>
+    /// <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -4603,22 +5447,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
+        /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
         pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_version(input.into());
             self
         }
-        /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
+        /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4626,12 +5470,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_version(input);
             self
         }
-        /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
+        /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
         pub fn perform_check_only(mut self, input: bool) -> Self {
             self.inner = self.inner.perform_check_only(input);
             self
         }
-        /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
+        /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_check_only(input);
             self
@@ -4640,12 +5484,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
-        /// <ul>
-        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>
-        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
-        /// </ul>
-        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+        /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -4654,12 +5493,7 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
-        /// <ul>
-        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>
-        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
-        /// </ul>
-        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+        /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<

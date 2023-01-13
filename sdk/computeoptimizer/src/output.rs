@@ -591,6 +591,12 @@ pub struct GetEffectiveRecommendationPreferencesOutput {
     #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
+    pub external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
 }
 impl GetEffectiveRecommendationPreferencesOutput {
     /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>
@@ -602,6 +608,15 @@ impl GetEffectiveRecommendationPreferencesOutput {
     ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
         self.enhanced_infrastructure_metrics.as_ref()
     }
+    /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn external_metrics_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalMetricsPreference> {
+        self.external_metrics_preference.as_ref()
+    }
 }
 /// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
 pub mod get_effective_recommendation_preferences_output {
@@ -611,6 +626,8 @@ pub mod get_effective_recommendation_preferences_output {
     pub struct Builder {
         pub(crate) enhanced_infrastructure_metrics:
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        pub(crate) external_metrics_preference:
+            std::option::Option<crate::model::ExternalMetricsPreference>,
     }
     impl Builder {
         /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>
@@ -635,10 +652,33 @@ pub mod get_effective_recommendation_preferences_output {
             self.enhanced_infrastructure_metrics = input;
             self
         }
+        /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
+        /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
+        /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn external_metrics_preference(
+            mut self,
+            input: crate::model::ExternalMetricsPreference,
+        ) -> Self {
+            self.external_metrics_preference = Some(input);
+            self
+        }
+        /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
+        /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
+        /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_external_metrics_preference(
+            mut self,
+            input: std::option::Option<crate::model::ExternalMetricsPreference>,
+        ) -> Self {
+            self.external_metrics_preference = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::GetEffectiveRecommendationPreferencesOutput {
             crate::output::GetEffectiveRecommendationPreferencesOutput {
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+                external_metrics_preference: self.external_metrics_preference,
             }
         }
     }
@@ -647,6 +687,188 @@ impl GetEffectiveRecommendationPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
     pub fn builder() -> crate::output::get_effective_recommendation_preferences_output::Builder {
         crate::output::get_effective_recommendation_preferences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetEcsServiceRecommendationsOutput {
+    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub ecs_service_recommendations:
+        std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendation>>,
+    /// <p> An array of objects that describe errors of the request. </p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+}
+impl GetEcsServiceRecommendationsOutput {
+    /// <p> The token to advance to the next page of ECS service recommendations. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> An array of objects that describe the ECS service recommendations. </p>
+    pub fn ecs_service_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceRecommendation]> {
+        self.ecs_service_recommendations.as_deref()
+    }
+    /// <p> An array of objects that describe errors of the request. </p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
+        self.errors.as_deref()
+    }
+}
+/// See [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+pub mod get_ecs_service_recommendations_output {
+
+    /// A builder for [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ecs_service_recommendations:
+            std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendation>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    }
+    impl Builder {
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> The token to advance to the next page of ECS service recommendations. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ecs_service_recommendations`.
+        ///
+        /// To override the contents of this collection use [`set_ecs_service_recommendations`](Self::set_ecs_service_recommendations).
+        ///
+        /// <p> An array of objects that describe the ECS service recommendations. </p>
+        pub fn ecs_service_recommendations(
+            mut self,
+            input: crate::model::EcsServiceRecommendation,
+        ) -> Self {
+            let mut v = self.ecs_service_recommendations.unwrap_or_default();
+            v.push(input);
+            self.ecs_service_recommendations = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe the ECS service recommendations. </p>
+        pub fn set_ecs_service_recommendations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendation>>,
+        ) -> Self {
+            self.ecs_service_recommendations = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p> An array of objects that describe errors of the request. </p>
+        pub fn errors(mut self, input: crate::model::GetRecommendationError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p> An array of objects that describe errors of the request. </p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+        pub fn build(self) -> crate::output::GetEcsServiceRecommendationsOutput {
+            crate::output::GetEcsServiceRecommendationsOutput {
+                next_token: self.next_token,
+                ecs_service_recommendations: self.ecs_service_recommendations,
+                errors: self.errors,
+            }
+        }
+    }
+}
+impl GetEcsServiceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+    pub fn builder() -> crate::output::get_ecs_service_recommendations_output::Builder {
+        crate::output::get_ecs_service_recommendations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetEcsServiceRecommendationProjectedMetricsOutput {
+    /// <p> An array of objects that describes the projected metrics. </p>
+    #[doc(hidden)]
+    pub recommended_option_projected_metrics: std::option::Option<
+        std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>,
+    >,
+}
+impl GetEcsServiceRecommendationProjectedMetricsOutput {
+    /// <p> An array of objects that describes the projected metrics. </p>
+    pub fn recommended_option_projected_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::EcsServiceRecommendedOptionProjectedMetric]> {
+        self.recommended_option_projected_metrics.as_deref()
+    }
+}
+/// See [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+pub mod get_ecs_service_recommendation_projected_metrics_output {
+
+    /// A builder for [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommended_option_projected_metrics: std::option::Option<
+            std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>,
+        >,
+    }
+    impl Builder {
+        /// Appends an item to `recommended_option_projected_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_recommended_option_projected_metrics`](Self::set_recommended_option_projected_metrics).
+        ///
+        /// <p> An array of objects that describes the projected metrics. </p>
+        pub fn recommended_option_projected_metrics(
+            mut self,
+            input: crate::model::EcsServiceRecommendedOptionProjectedMetric,
+        ) -> Self {
+            let mut v = self
+                .recommended_option_projected_metrics
+                .unwrap_or_default();
+            v.push(input);
+            self.recommended_option_projected_metrics = Some(v);
+            self
+        }
+        /// <p> An array of objects that describes the projected metrics. </p>
+        pub fn set_recommended_option_projected_metrics(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>,
+            >,
+        ) -> Self {
+            self.recommended_option_projected_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+        pub fn build(self) -> crate::output::GetEcsServiceRecommendationProjectedMetricsOutput {
+            crate::output::GetEcsServiceRecommendationProjectedMetricsOutput {
+                recommended_option_projected_metrics: self.recommended_option_projected_metrics,
+            }
+        }
+    }
+}
+impl GetEcsServiceRecommendationProjectedMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+    pub fn builder(
+    ) -> crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder {
+        crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default()
     }
 }
 
@@ -1143,6 +1365,80 @@ impl ExportLambdaFunctionRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
     pub fn builder() -> crate::output::export_lambda_function_recommendations_output::Builder {
         crate::output::export_lambda_function_recommendations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExportEcsServiceRecommendationsOutput {
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    #[doc(hidden)]
+    pub s3_destination: std::option::Option<crate::model::S3Destination>,
+}
+impl ExportEcsServiceRecommendationsOutput {
+    /// <p> The identification number of the export job. </p>
+    /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+}
+/// See [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+pub mod export_ecs_service_recommendations_output {
+
+    /// A builder for [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+    }
+    impl Builder {
+        /// <p> The identification number of the export job. </p>
+        /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p> The identification number of the export job. </p>
+        /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+        pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
+            self.s3_destination = Some(input);
+            self
+        }
+        /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+        pub fn set_s3_destination(
+            mut self,
+            input: std::option::Option<crate::model::S3Destination>,
+        ) -> Self {
+            self.s3_destination = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+        pub fn build(self) -> crate::output::ExportEcsServiceRecommendationsOutput {
+            crate::output::ExportEcsServiceRecommendationsOutput {
+                job_id: self.job_id,
+                s3_destination: self.s3_destination,
+            }
+        }
+    }
+}
+impl ExportEcsServiceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+    pub fn builder() -> crate::output::export_ecs_service_recommendations_output::Builder {
+        crate::output::export_ecs_service_recommendations_output::Builder::default()
     }
 }
 

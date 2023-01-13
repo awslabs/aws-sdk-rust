@@ -7,7 +7,7 @@ pub struct ServiceChange {
     /// <p>A description for the service.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfigChange>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
@@ -19,7 +19,7 @@ impl ServiceChange {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_config(&self) -> std::option::Option<&crate::model::DnsConfigChange> {
         self.dns_config.as_ref()
     }
@@ -49,12 +49,12 @@ pub mod service_change {
             self.description = input;
             self
         }
-        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn dns_config(mut self, input: crate::model::DnsConfigChange) -> Self {
             self.dns_config = Some(input);
             self
         }
-        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfigChange>,
@@ -95,14 +95,14 @@ impl ServiceChange {
 /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important>
 /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
 /// </important>
-/// <p>Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+/// <p>Health checks are basic Route&nbsp;53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
 /// <p>Note the following about configuring health checks.</p>
 /// <dl>
 /// <dt>
 /// A and AAAA records
 /// </dt>
 /// <dd>
-/// <p>If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </p>
+/// <p>If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address is unhealthy, Route&nbsp;53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </p>
 /// </dd>
 /// <dt>
 /// CNAME records
@@ -114,78 +114,78 @@ impl ServiceChange {
 /// Request interval
 /// </dt>
 /// <dd>
-/// <p>A Route 53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all.</p>
+/// <p>A Route&nbsp;53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all.</p>
 /// </dd>
 /// <dt>
 /// Health checking regions
 /// </dt>
 /// <dd>
-/// <p>Health checkers perform checks from all Route 53 health-checking Regions. For a list of the current Regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p>
+/// <p>Health checkers perform checks from all Route&nbsp;53 health-checking Regions. For a list of the current Regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p>
 /// </dd>
 /// <dt>
 /// Alias records
 /// </dt>
 /// <dd>
-/// <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route 53 alias record. Note the following:</p>
+/// <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route&nbsp;53 alias record. Note the following:</p>
 /// <ul>
-/// <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li>
-/// <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li>
+/// <li> <p>Route&nbsp;53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li>
+/// <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route&nbsp;53 doesn't create the health check.</p> </li>
 /// </ul>
 /// </dd>
 /// <dt>
 /// Charges for health checks
 /// </dt>
 /// <dd>
-/// <p>Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+/// <p>Health checks are basic Route&nbsp;53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
 /// </dd>
 /// </dl>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckConfig {
-    /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is healthy.</p> <important>
+    /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p> <important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
     /// </important>
     /// <p>You can create the following types of health checks:</p>
     /// <ul>
-    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
+    /// <li> <p> <b>HTTP</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
+    /// <li> <p> <b>HTTPS</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
     /// <p>If you specify HTTPS for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
     /// </important> </li>
-    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
+    /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HealthCheckType>,
-    /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
+    /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
     #[doc(hidden)]
     pub resource_path: std::option::Option<std::string::String>,
-    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub failure_threshold: std::option::Option<i32>,
 }
 impl HealthCheckConfig {
-    /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is healthy.</p> <important>
+    /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p> <important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
     /// </important>
     /// <p>You can create the following types of health checks:</p>
     /// <ul>
-    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
+    /// <li> <p> <b>HTTP</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
+    /// <li> <p> <b>HTTPS</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
     /// <p>If you specify HTTPS for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
     /// </important> </li>
-    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
+    /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::HealthCheckType> {
         self.r#type.as_ref()
     }
-    /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
+    /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
     pub fn resource_path(&self) -> std::option::Option<&str> {
         self.resource_path.as_deref()
     }
-    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub fn failure_threshold(&self) -> std::option::Option<i32> {
         self.failure_threshold
     }
@@ -201,34 +201,34 @@ pub mod health_check_config {
         pub(crate) failure_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is healthy.</p> <important>
+        /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p> <important>
         /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
         /// </important>
         /// <p>You can create the following types of health checks:</p>
         /// <ul>
-        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
+        /// <li> <p> <b>HTTP</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
+        /// <li> <p> <b>HTTPS</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
         /// <p>If you specify HTTPS for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
         /// </important> </li>
-        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
+        /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::HealthCheckType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is healthy.</p> <important>
+        /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p> <important>
         /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
         /// </important>
         /// <p>You can create the following types of health checks:</p>
         /// <ul>
-        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
+        /// <li> <p> <b>HTTP</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
+        /// <li> <p> <b>HTTPS</b>: Route&nbsp;53 tries to establish a TCP connection. If successful, Route&nbsp;53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
         /// <p>If you specify HTTPS for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
         /// </important> </li>
-        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
+        /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::HealthCheckType>,
@@ -236,13 +236,13 @@ pub mod health_check_config {
             self.r#type = input;
             self
         }
-        /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
+        /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
         /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
         pub fn resource_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_path = Some(input.into());
             self
         }
-        /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
+        /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
         /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
         pub fn set_resource_path(
             mut self,
@@ -251,12 +251,12 @@ pub mod health_check_config {
             self.resource_path = input;
             self
         }
-        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         pub fn failure_threshold(mut self, input: i32) -> Self {
             self.failure_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_threshold = input;
             self
@@ -373,16 +373,16 @@ impl AsRef<str> for HealthCheckType {
     }
 }
 
-/// <p>A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you register an instance.</p>
+/// <p>A complex type that contains information about changes to the Route&nbsp;53 DNS records that Cloud Map creates when you register an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsConfigChange {
-    /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
     pub dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
 }
 impl DnsConfigChange {
-    /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.dns_records.as_deref()
     }
@@ -400,14 +400,14 @@ pub mod dns_config_change {
         ///
         /// To override the contents of this collection use [`set_dns_records`](Self::set_dns_records).
         ///
-        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
         pub fn dns_records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
             v.push(input);
             self.dns_records = Some(v);
             self
         }
-        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to create when you register an instance.</p>
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -430,11 +430,11 @@ impl DnsConfigChange {
     }
 }
 
-/// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+/// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsRecord {
-    /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
+    /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
     /// <ul>
     /// <li> <p> <b> <code>A</code> </b> </p> </li>
     /// <li> <p> <b> <code>AAAA</code> </b> </p> </li>
@@ -442,7 +442,7 @@ pub struct DnsRecord {
     /// <li> <p> <b> <code>SRV</code> </b> </p> </li>
     /// <li> <p> <b> <code>CNAME</code> </b> </p> </li>
     /// </ul>
-    /// <p>If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
+    /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
     /// <p>You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
     /// <p>The following values are supported:</p>
     /// <dl>
@@ -450,19 +450,19 @@ pub struct DnsRecord {
     /// A
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
+    /// <p>Route&nbsp;53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
     /// </dd>
     /// <dt>
     /// AAAA
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
+    /// <p>Route&nbsp;53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
     /// </dd>
     /// <dt>
     /// CNAME
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
+    /// <p>Route&nbsp;53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
     /// <ul>
     /// <li> <p>You specify the domain name that you want to route traffic to when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#cloudmap-RegisterInstance-request-Attributes">Attributes</a> in the topic <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p> </li>
     /// <li> <p>You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.</p> </li>
@@ -473,7 +473,7 @@ pub struct DnsRecord {
     /// SRV
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
+    /// <p>Route&nbsp;53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
     /// <p> <code>priority weight port service-hostname</code> </p>
     /// <p>Note the following about the values:</p>
     /// <ul>
@@ -496,13 +496,13 @@ pub struct DnsRecord {
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RecordType>,
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
-    /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
+    /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
     #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
 }
 impl DnsRecord {
-    /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
+    /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
     /// <ul>
     /// <li> <p> <b> <code>A</code> </b> </p> </li>
     /// <li> <p> <b> <code>AAAA</code> </b> </p> </li>
@@ -510,7 +510,7 @@ impl DnsRecord {
     /// <li> <p> <b> <code>SRV</code> </b> </p> </li>
     /// <li> <p> <b> <code>CNAME</code> </b> </p> </li>
     /// </ul>
-    /// <p>If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
+    /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
     /// <p>You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
     /// <p>The following values are supported:</p>
     /// <dl>
@@ -518,19 +518,19 @@ impl DnsRecord {
     /// A
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
+    /// <p>Route&nbsp;53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
     /// </dd>
     /// <dt>
     /// AAAA
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
+    /// <p>Route&nbsp;53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
     /// </dd>
     /// <dt>
     /// CNAME
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
+    /// <p>Route&nbsp;53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
     /// <ul>
     /// <li> <p>You specify the domain name that you want to route traffic to when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#cloudmap-RegisterInstance-request-Attributes">Attributes</a> in the topic <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p> </li>
     /// <li> <p>You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.</p> </li>
@@ -541,7 +541,7 @@ impl DnsRecord {
     /// SRV
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
+    /// <p>Route&nbsp;53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
     /// <p> <code>priority weight port service-hostname</code> </p>
     /// <p>Note the following about the values:</p>
     /// <ul>
@@ -565,7 +565,7 @@ impl DnsRecord {
         self.r#type.as_ref()
     }
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
-    /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
+    /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
@@ -581,7 +581,7 @@ pub mod dns_record {
         pub(crate) ttl: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
+        /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
         /// <ul>
         /// <li> <p> <b> <code>A</code> </b> </p> </li>
         /// <li> <p> <b> <code>AAAA</code> </b> </p> </li>
@@ -589,7 +589,7 @@ pub mod dns_record {
         /// <li> <p> <b> <code>SRV</code> </b> </p> </li>
         /// <li> <p> <b> <code>CNAME</code> </b> </p> </li>
         /// </ul>
-        /// <p>If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
+        /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
         /// <p>You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
         /// <p>The following values are supported:</p>
         /// <dl>
@@ -597,19 +597,19 @@ pub mod dns_record {
         /// A
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
+        /// <p>Route&nbsp;53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
         /// </dd>
         /// <dt>
         /// AAAA
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
+        /// <p>Route&nbsp;53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
         /// </dd>
         /// <dt>
         /// CNAME
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
+        /// <p>Route&nbsp;53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
         /// <ul>
         /// <li> <p>You specify the domain name that you want to route traffic to when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#cloudmap-RegisterInstance-request-Attributes">Attributes</a> in the topic <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p> </li>
         /// <li> <p>You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.</p> </li>
@@ -620,7 +620,7 @@ pub mod dns_record {
         /// SRV
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
+        /// <p>Route&nbsp;53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
         /// <p> <code>priority weight port service-hostname</code> </p>
         /// <p>Note the following about the values:</p>
         /// <ul>
@@ -644,7 +644,7 @@ pub mod dns_record {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
+        /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
         /// <ul>
         /// <li> <p> <b> <code>A</code> </b> </p> </li>
         /// <li> <p> <b> <code>AAAA</code> </b> </p> </li>
@@ -652,7 +652,7 @@ pub mod dns_record {
         /// <li> <p> <b> <code>SRV</code> </b> </p> </li>
         /// <li> <p> <b> <code>CNAME</code> </b> </p> </li>
         /// </ul>
-        /// <p>If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
+        /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p>
         /// <p>You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
         /// <p>The following values are supported:</p>
         /// <dl>
@@ -660,19 +660,19 @@ pub mod dns_record {
         /// A
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
+        /// <p>Route&nbsp;53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
         /// </dd>
         /// <dt>
         /// AAAA
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
+        /// <p>Route&nbsp;53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
         /// </dd>
         /// <dt>
         /// CNAME
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
+        /// <p>Route&nbsp;53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
         /// <ul>
         /// <li> <p>You specify the domain name that you want to route traffic to when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#cloudmap-RegisterInstance-request-Attributes">Attributes</a> in the topic <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p> </li>
         /// <li> <p>You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.</p> </li>
@@ -683,7 +683,7 @@ pub mod dns_record {
         /// SRV
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
+        /// <p>Route&nbsp;53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the following values:</p>
         /// <p> <code>priority weight port service-hostname</code> </p>
         /// <p>Note the following about the values:</p>
         /// <ul>
@@ -708,14 +708,14 @@ pub mod dns_record {
             self
         }
         /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
-        /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
+        /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
         /// </note>
         pub fn ttl(mut self, input: i64) -> Self {
             self.ttl = Some(input);
             self
         }
         /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
-        /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
+        /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
         /// </note>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
@@ -1490,7 +1490,7 @@ pub struct ServiceSummary {
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
-    /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfig>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
@@ -1554,7 +1554,7 @@ impl ServiceSummary {
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_config(&self) -> std::option::Option<&crate::model::DnsConfig> {
         self.dns_config.as_ref()
     }
@@ -1698,12 +1698,12 @@ pub mod service_summary {
             self.instance_count = input;
             self
         }
-        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn dns_config(mut self, input: crate::model::DnsConfig) -> Self {
             self.dns_config = Some(input);
             self
         }
-        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -1884,15 +1884,18 @@ impl HealthCheckCustomConfig {
     }
 }
 
-/// <p>A complex type that contains information about the Amazon Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+/// <p>A complex type that contains information about the Amazon Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+/// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsConfig {
+    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
-    /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
+    /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
     /// </note>
     /// <p>You can specify the following values:</p>
@@ -1901,34 +1904,35 @@ pub struct DnsConfig {
     /// MULTIVALUE
     /// </dt>
     /// <dd>
-    /// <p>If you define a health check for the service and the health check is healthy, Route 53 returns the applicable value for up to eight instances.</p>
-    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route 53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
-    /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
-    /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>If you define a health check for the service and the health check is healthy, Route&nbsp;53 returns the applicable value for up to eight instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route&nbsp;53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
+    /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// WEIGHTED
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
-    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route 53 responds to DNS queries as if all of the instances were healthy.</p>
-    /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
-    /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>Route&nbsp;53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route&nbsp;53 responds to DNS queries as if all of the instances were healthy.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
+    /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub routing_policy: std::option::Option<crate::model::RoutingPolicy>,
-    /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
     pub dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
 }
 impl DnsConfig {
+    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn namespace_id(&self) -> std::option::Option<&str> {
         self.namespace_id.as_deref()
     }
-    /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
+    /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
     /// </note>
     /// <p>You can specify the following values:</p>
@@ -1937,25 +1941,25 @@ impl DnsConfig {
     /// MULTIVALUE
     /// </dt>
     /// <dd>
-    /// <p>If you define a health check for the service and the health check is healthy, Route 53 returns the applicable value for up to eight instances.</p>
-    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route 53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
-    /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
-    /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>If you define a health check for the service and the health check is healthy, Route&nbsp;53 returns the applicable value for up to eight instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route&nbsp;53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
+    /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// WEIGHTED
     /// </dt>
     /// <dd>
-    /// <p>Route 53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
-    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route 53 responds to DNS queries as if all of the instances were healthy.</p>
-    /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
-    /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+    /// <p>Route&nbsp;53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route&nbsp;53 responds to DNS queries as if all of the instances were healthy.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
+    /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
     pub fn routing_policy(&self) -> std::option::Option<&crate::model::RoutingPolicy> {
         self.routing_policy.as_ref()
     }
-    /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.dns_records.as_deref()
     }
@@ -1971,6 +1975,7 @@ pub mod dns_config {
         pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
     }
     impl Builder {
+        /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
         /// <p>The ID of the namespace to use for DNS configuration.</p>
         #[deprecated(
             note = "Top level attribute in request should be used to reference namespace-id"
@@ -1979,6 +1984,7 @@ pub mod dns_config {
             self.namespace_id = Some(input.into());
             self
         }
+        /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
         /// <p>The ID of the namespace to use for DNS configuration.</p>
         #[deprecated(
             note = "Top level attribute in request should be used to reference namespace-id"
@@ -1987,7 +1993,7 @@ pub mod dns_config {
             self.namespace_id = input;
             self
         }
-        /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
+        /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
         /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
         /// </note>
         /// <p>You can specify the following values:</p>
@@ -1996,26 +2002,26 @@ pub mod dns_config {
         /// MULTIVALUE
         /// </dt>
         /// <dd>
-        /// <p>If you define a health check for the service and the health check is healthy, Route 53 returns the applicable value for up to eight instances.</p>
-        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route 53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
-        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
-        /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>If you define a health check for the service and the health check is healthy, Route&nbsp;53 returns the applicable value for up to eight instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route&nbsp;53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
+        /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
+        /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         /// </dd>
         /// <dt>
         /// WEIGHTED
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
-        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route 53 responds to DNS queries as if all of the instances were healthy.</p>
-        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
-        /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>Route&nbsp;53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route&nbsp;53 responds to DNS queries as if all of the instances were healthy.</p>
+        /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
+        /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         /// </dd>
         /// </dl>
         pub fn routing_policy(mut self, input: crate::model::RoutingPolicy) -> Self {
             self.routing_policy = Some(input);
             self
         }
-        /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
+        /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
         /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
         /// </note>
         /// <p>You can specify the following values:</p>
@@ -2024,19 +2030,19 @@ pub mod dns_config {
         /// MULTIVALUE
         /// </dt>
         /// <dd>
-        /// <p>If you define a health check for the service and the health check is healthy, Route 53 returns the applicable value for up to eight instances.</p>
-        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route 53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
-        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
-        /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>If you define a health check for the service and the health check is healthy, Route&nbsp;53 returns the applicable value for up to eight instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route&nbsp;53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
+        /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
+        /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         /// </dd>
         /// <dt>
         /// WEIGHTED
         /// </dt>
         /// <dd>
-        /// <p>Route 53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
-        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route 53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route 53 responds to DNS queries as if all of the instances were healthy.</p>
-        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
-        /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// <p>Route&nbsp;53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route&nbsp;53 responds to DNS queries as if all of the instances were healthy.</p>
+        /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
+        /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
         /// </dd>
         /// </dl>
         pub fn set_routing_policy(
@@ -2050,14 +2056,14 @@ pub mod dns_config {
         ///
         /// To override the contents of this collection use [`set_dns_records`](Self::set_dns_records).
         ///
-        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
         pub fn dns_records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
             v.push(input);
             self.dns_records = Some(v);
             self
         }
-        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to create when you register an instance.</p>
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -2280,8 +2286,6 @@ pub struct ServiceFilter {
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
-    /// <li> <p> <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want <code>ListServices</code> to return a list of services for.</p> </li>
-    /// <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterCondition>,
@@ -2298,8 +2302,6 @@ impl ServiceFilter {
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
-    /// <li> <p> <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want <code>ListServices</code> to return a list of services for.</p> </li>
-    /// <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
     /// </ul>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
         self.condition.as_ref()
@@ -2351,8 +2353,6 @@ pub mod service_filter {
         /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
         /// <ul>
         /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
-        /// <li> <p> <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want <code>ListServices</code> to return a list of services for.</p> </li>
-        /// <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
         /// </ul>
         pub fn condition(mut self, input: crate::model::FilterCondition) -> Self {
             self.condition = Some(input);
@@ -2361,8 +2361,6 @@ pub mod service_filter {
         /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
         /// <ul>
         /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
-        /// <li> <p> <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want <code>ListServices</code> to return a list of services for.</p> </li>
-        /// <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
         /// </ul>
         pub fn set_condition(
             mut self,
@@ -2400,6 +2398,7 @@ impl ServiceFilter {
 /// ```text
 /// # let filtercondition = unimplemented!();
 /// match filtercondition {
+///     FilterCondition::BeginsWith => { /* ... */ },
 ///     FilterCondition::Between => { /* ... */ },
 ///     FilterCondition::Eq => { /* ... */ },
 ///     FilterCondition::In => { /* ... */ },
@@ -2437,6 +2436,8 @@ impl ServiceFilter {
 )]
 pub enum FilterCondition {
     #[allow(missing_docs)] // documentation missing in model
+    BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
     #[allow(missing_docs)] // documentation missing in model
     Eq,
@@ -2448,6 +2449,7 @@ pub enum FilterCondition {
 impl std::convert::From<&str> for FilterCondition {
     fn from(s: &str) -> Self {
         match s {
+            "BEGINS_WITH" => FilterCondition::BeginsWith,
             "BETWEEN" => FilterCondition::Between,
             "EQ" => FilterCondition::Eq,
             "IN" => FilterCondition::In,
@@ -2466,6 +2468,7 @@ impl FilterCondition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FilterCondition::BeginsWith => "BEGINS_WITH",
             FilterCondition::Between => "BETWEEN",
             FilterCondition::Eq => "EQ",
             FilterCondition::In => "IN",
@@ -2474,7 +2477,7 @@ impl FilterCondition {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BETWEEN", "EQ", "IN"]
+        &["BEGINS_WITH", "BETWEEN", "EQ", "IN"]
     }
 }
 impl AsRef<str> for FilterCondition {
@@ -3064,7 +3067,7 @@ pub struct NamespaceSummary {
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone that has the same name as the namespace.</p>
+    /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the namespace, either public or private.</p>
@@ -3092,7 +3095,7 @@ impl NamespaceSummary {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone that has the same name as the namespace.</p>
+    /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3153,12 +3156,12 @@ pub mod namespace_summary {
             self.arn = input;
             self
         }
-        /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone that has the same name as the namespace.</p>
+        /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone that has the same name as the namespace.</p>
+        /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3245,7 +3248,7 @@ impl NamespaceSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceProperties {
-    /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
     pub dns_properties: std::option::Option<crate::model::DnsProperties>,
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
@@ -3253,7 +3256,7 @@ pub struct NamespaceProperties {
     pub http_properties: std::option::Option<crate::model::HttpProperties>,
 }
 impl NamespaceProperties {
-    /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     pub fn dns_properties(&self) -> std::option::Option<&crate::model::DnsProperties> {
         self.dns_properties.as_ref()
     }
@@ -3272,12 +3275,12 @@ pub mod namespace_properties {
         pub(crate) http_properties: std::option::Option<crate::model::HttpProperties>,
     }
     impl Builder {
-        /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+        /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
         pub fn dns_properties(mut self, input: crate::model::DnsProperties) -> Self {
             self.dns_properties = Some(input);
             self
         }
-        /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+        /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::DnsProperties>,
@@ -3362,11 +3365,11 @@ impl HttpProperties {
     }
 }
 
-/// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+/// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsProperties {
-    /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
@@ -3374,7 +3377,7 @@ pub struct DnsProperties {
     pub soa: std::option::Option<crate::model::Soa>,
 }
 impl DnsProperties {
-    /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+    /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
@@ -3393,12 +3396,12 @@ pub mod dns_properties {
         pub(crate) soa: std::option::Option<crate::model::Soa>,
     }
     impl Builder {
-        /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+        /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hosted_zone_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
+        /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3577,68 +3580,54 @@ impl AsRef<str> for NamespaceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NamespaceFilter {
-    /// <p>Specify <code>TYPE</code>.</p>
+    /// <p>Specify the namespaces that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::NamespaceFilterName>,
-    /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p>
-    /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+    /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid values for <code>condition</code> include:</p>
-    /// <dl>
-    /// <dt>
-    /// EQ
-    /// </dt>
-    /// <dd>
-    /// <p>When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.</p>
-    /// </dd>
-    /// <dt>
-    /// IN
-    /// </dt>
-    /// <dd>
-    /// <p>When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces, or both. </p>
-    /// </dd>
-    /// <dt>
-    /// BETWEEN
-    /// </dt>
-    /// <dd>
-    /// <p> Not applicable</p>
-    /// </dd>
-    /// </dl>
+    /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub condition: std::option::Option<crate::model::FilterCondition>,
 }
 impl NamespaceFilter {
-    /// <p>Specify <code>TYPE</code>.</p>
+    /// <p>Specify the namespaces that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+    /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
+    /// </ul>
     pub fn name(&self) -> std::option::Option<&crate::model::NamespaceFilterName> {
         self.name.as_ref()
     }
-    /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p>
-    /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+    /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+    /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+    /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
+    /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid values for <code>condition</code> include:</p>
-    /// <dl>
-    /// <dt>
-    /// EQ
-    /// </dt>
-    /// <dd>
-    /// <p>When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.</p>
-    /// </dd>
-    /// <dt>
-    /// IN
-    /// </dt>
-    /// <dd>
-    /// <p>When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces, or both. </p>
-    /// </dd>
-    /// <dt>
-    /// BETWEEN
-    /// </dt>
-    /// <dd>
-    /// <p> Not applicable</p>
-    /// </dd>
-    /// </dl>
+    /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
+    /// </ul>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
         self.condition.as_ref()
     }
@@ -3654,12 +3643,22 @@ pub mod namespace_filter {
         pub(crate) condition: std::option::Option<crate::model::FilterCondition>,
     }
     impl Builder {
-        /// <p>Specify <code>TYPE</code>.</p>
+        /// <p>Specify the namespaces that you want to get using one of the following.</p>
+        /// <ul>
+        /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+        /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+        /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
+        /// </ul>
         pub fn name(mut self, input: crate::model::NamespaceFilterName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>Specify <code>TYPE</code>.</p>
+        /// <p>Specify the namespaces that you want to get using one of the following.</p>
+        /// <ul>
+        /// <li> <p> <code>TYPE</code>: Gets the namespaces of the specified type.</p> </li>
+        /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
+        /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
+        /// </ul>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::NamespaceFilterName>,
@@ -3671,16 +3670,24 @@ pub mod namespace_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p>
-        /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+        /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
+        /// <ul>
+        /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+        /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+        /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
+        /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p>
-        /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+        /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
+        /// <ul>
+        /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
+        /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
+        /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
+        /// </ul>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3688,52 +3695,20 @@ pub mod namespace_filter {
             self.values = input;
             self
         }
-        /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid values for <code>condition</code> include:</p>
-        /// <dl>
-        /// <dt>
-        /// EQ
-        /// </dt>
-        /// <dd>
-        /// <p>When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.</p>
-        /// </dd>
-        /// <dt>
-        /// IN
-        /// </dt>
-        /// <dd>
-        /// <p>When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces, or both. </p>
-        /// </dd>
-        /// <dt>
-        /// BETWEEN
-        /// </dt>
-        /// <dd>
-        /// <p> Not applicable</p>
-        /// </dd>
-        /// </dl>
+        /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
+        /// <ul>
+        /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+        /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
+        /// </ul>
         pub fn condition(mut self, input: crate::model::FilterCondition) -> Self {
             self.condition = Some(input);
             self
         }
-        /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid values for <code>condition</code> include:</p>
-        /// <dl>
-        /// <dt>
-        /// EQ
-        /// </dt>
-        /// <dd>
-        /// <p>When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.</p>
-        /// </dd>
-        /// <dt>
-        /// IN
-        /// </dt>
-        /// <dd>
-        /// <p>When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces, or both. </p>
-        /// </dd>
-        /// <dt>
-        /// BETWEEN
-        /// </dt>
-        /// <dd>
-        /// <p> Not applicable</p>
-        /// </dd>
-        /// </dl>
+        /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
+        /// <ul>
+        /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+        /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
+        /// </ul>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::FilterCondition>,
@@ -3770,6 +3745,8 @@ impl NamespaceFilter {
 /// ```text
 /// # let namespacefiltername = unimplemented!();
 /// match namespacefiltername {
+///     NamespaceFilterName::HttpName => { /* ... */ },
+///     NamespaceFilterName::Name => { /* ... */ },
 ///     NamespaceFilterName::Type => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -3805,6 +3782,10 @@ impl NamespaceFilter {
 )]
 pub enum NamespaceFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    HttpName,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
     Type,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -3812,6 +3793,8 @@ pub enum NamespaceFilterName {
 impl std::convert::From<&str> for NamespaceFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "HTTP_NAME" => NamespaceFilterName::HttpName,
+            "NAME" => NamespaceFilterName::Name,
             "TYPE" => NamespaceFilterName::Type,
             other => {
                 NamespaceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
@@ -3830,13 +3813,15 @@ impl NamespaceFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            NamespaceFilterName::HttpName => "HTTP_NAME",
+            NamespaceFilterName::Name => "NAME",
             NamespaceFilterName::Type => "TYPE",
             NamespaceFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TYPE"]
+        &["HTTP_NAME", "NAME", "TYPE"]
     }
 }
 impl AsRef<str> for NamespaceFilterName {
@@ -3881,25 +3866,25 @@ pub struct InstanceSummary {
     /// AWS_INSTANCE_CNAME
     /// </dt>
     /// <dd>
-    /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
+    /// <p>For a <code>CNAME</code> record, the domain name that Route&nbsp;53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV4
     /// </dt>
     /// <dd>
-    /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+    /// <p>For an <code>A</code> record, the IPv4 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV6
     /// </dt>
     /// <dd>
-    /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+    /// <p>For an <code>AAAA</code> record, the IPv6 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_PORT
     /// </dt>
     /// <dd>
-    /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+    /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
@@ -3940,25 +3925,25 @@ impl InstanceSummary {
     /// AWS_INSTANCE_CNAME
     /// </dt>
     /// <dd>
-    /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
+    /// <p>For a <code>CNAME</code> record, the domain name that Route&nbsp;53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV4
     /// </dt>
     /// <dd>
-    /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+    /// <p>For an <code>A</code> record, the IPv4 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV6
     /// </dt>
     /// <dd>
-    /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+    /// <p>For an <code>AAAA</code> record, the IPv6 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_PORT
     /// </dt>
     /// <dd>
-    /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+    /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
     /// </dd>
     /// </dl>
     pub fn attributes(
@@ -4023,25 +4008,25 @@ pub mod instance_summary {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>For a <code>CNAME</code> record, the domain name that Route&nbsp;53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>For an <code>A</code> record, the IPv4 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+        /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
         /// </dd>
         /// </dl>
         pub fn attributes(
@@ -4083,25 +4068,25 @@ pub mod instance_summary {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>For a <code>CNAME</code> record, the domain name that Route&nbsp;53 returns in response to DNS queries (for example, <code>example.com</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>For an <code>A</code> record, the IPv4 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route&nbsp;53 returns in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+        /// <p>For an <code>SRV</code> record, the value that Route&nbsp;53 returns for the port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route&nbsp;53 sends requests to.</p>
         /// </dd>
         /// </dl>
         pub fn set_attributes(
@@ -4151,7 +4136,9 @@ pub struct Service {
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
-    /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
+    /// </important>
     #[doc(hidden)]
     pub dns_config: std::option::Option<crate::model::DnsConfig>,
     /// <p>Describes the systems that can be used to discover the service instances.</p>
@@ -4178,7 +4165,7 @@ pub struct Service {
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ServiceType>,
     /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
     #[doc(hidden)]
     pub health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
@@ -4218,7 +4205,9 @@ impl Service {
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
+    /// </important>
     pub fn dns_config(&self) -> std::option::Option<&crate::model::DnsConfig> {
         self.dns_config.as_ref()
     }
@@ -4247,7 +4236,7 @@ impl Service {
         self.r#type.as_ref()
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
     pub fn health_check_config(&self) -> std::option::Option<&crate::model::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
@@ -4349,12 +4338,16 @@ pub mod service {
             self.instance_count = input;
             self
         }
-        /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+        /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
+        /// </important>
         pub fn dns_config(mut self, input: crate::model::DnsConfig) -> Self {
             self.dns_config = Some(input);
             self
         }
-        /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
+        /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+        /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
+        /// </important>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -4413,13 +4406,13 @@ pub mod service {
             self
         }
         /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-        /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+        /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
         pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
             self.health_check_config = Some(input);
             self
         }
         /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-        /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+        /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
         pub fn set_health_check_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfig>,
@@ -5555,14 +5548,16 @@ pub struct Instance {
     /// <ul>
     /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
     /// <li> <p>For each attribute, the applicable value.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+    /// </note>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+    /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
@@ -5588,30 +5583,30 @@ pub struct Instance {
     /// AWS_INSTANCE_CNAME
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+    /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV4
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+    /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV6
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+    /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_PORT
     /// </dt>
     /// <dd>
-    /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-    /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+    /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
     #[doc(hidden)]
@@ -5639,14 +5634,16 @@ impl Instance {
     /// <ul>
     /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
     /// <li> <p>For each attribute, the applicable value.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+    /// </note>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+    /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
@@ -5672,30 +5669,30 @@ impl Instance {
     /// AWS_INSTANCE_CNAME
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+    /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV4
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+    /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_IPV6
     /// </dt>
     /// <dd>
-    /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+    /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
     /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
     /// </dd>
     /// <dt>
     /// AWS_INSTANCE_PORT
     /// </dt>
     /// <dd>
-    /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-    /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+    /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
     pub fn attributes(
@@ -5765,14 +5762,16 @@ pub mod instance {
         /// <ul>
         /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
         /// <li> <p>For each attribute, the applicable value.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
         /// <dt>
         /// AWS_ALIAS_DNS_NAME
         /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
         /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
@@ -5798,30 +5797,30 @@ pub mod instance {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
         /// </dd>
         /// </dl>
         pub fn attributes(
@@ -5838,14 +5837,16 @@ pub mod instance {
         /// <ul>
         /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
         /// <li> <p>For each attribute, the applicable value.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
+        /// </note>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
         /// <dt>
         /// AWS_ALIAS_DNS_NAME
         /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
         /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
@@ -5871,30 +5872,30 @@ pub mod instance {
         /// AWS_INSTANCE_CNAME
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV4
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_IPV6
         /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route&nbsp;53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
         /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
         /// <dt>
         /// AWS_INSTANCE_PORT
         /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
         /// </dd>
         /// </dl>
         pub fn set_attributes(

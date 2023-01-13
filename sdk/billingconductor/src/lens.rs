@@ -39,6 +39,16 @@ pub(crate) fn reflens_structure_crate_output_list_custom_line_items_output_next_
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_custom_line_item_versions_output_next_token(
+    input: &crate::output::ListCustomLineItemVersionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_pricing_plans_output_next_token(
     input: &crate::output::ListPricingPlansOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -123,6 +133,16 @@ pub(crate) fn lens_structure_crate_output_list_custom_line_items_output_custom_l
     input: crate::output::ListCustomLineItemsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>> {
     let input = match input.custom_line_items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_custom_line_item_versions_output_custom_line_item_versions(
+    input: crate::output::ListCustomLineItemVersionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>> {
+    let input = match input.custom_line_item_versions {
         None => return None,
         Some(t) => t,
     };

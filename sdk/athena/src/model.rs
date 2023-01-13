@@ -115,6 +115,19 @@ pub struct WorkGroupConfigurationUpdates {
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+    /// <p>Removes content encryption configuration for a workgroup.</p>
+    #[doc(hidden)]
+    pub remove_customer_content_encryption_configuration: std::option::Option<bool>,
+    /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
+    #[doc(hidden)]
+    pub additional_configuration: std::option::Option<std::string::String>,
+    /// <p>Contains the ARN of the execution role for the workgroup</p>
+    #[doc(hidden)]
+    pub execution_role: std::option::Option<std::string::String>,
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    #[doc(hidden)]
+    pub customer_content_encryption_configuration:
+        std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
 }
 impl WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -147,6 +160,24 @@ impl WorkGroupConfigurationUpdates {
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
     }
+    /// <p>Removes content encryption configuration for a workgroup.</p>
+    pub fn remove_customer_content_encryption_configuration(&self) -> std::option::Option<bool> {
+        self.remove_customer_content_encryption_configuration
+    }
+    /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
+    pub fn additional_configuration(&self) -> std::option::Option<&str> {
+        self.additional_configuration.as_deref()
+    }
+    /// <p>Contains the ARN of the execution role for the workgroup</p>
+    pub fn execution_role(&self) -> std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    pub fn customer_content_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerContentEncryptionConfiguration> {
+        self.customer_content_encryption_configuration.as_ref()
+    }
 }
 /// See [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
 pub mod work_group_configuration_updates {
@@ -162,6 +193,11 @@ pub mod work_group_configuration_updates {
         pub(crate) remove_bytes_scanned_cutoff_per_query: std::option::Option<bool>,
         pub(crate) requester_pays_enabled: std::option::Option<bool>,
         pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
+        pub(crate) remove_customer_content_encryption_configuration: std::option::Option<bool>,
+        pub(crate) additional_configuration: std::option::Option<std::string::String>,
+        pub(crate) execution_role: std::option::Option<std::string::String>,
+        pub(crate) customer_content_encryption_configuration:
+            std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
     }
     impl Builder {
         /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -255,6 +291,61 @@ pub mod work_group_configuration_updates {
             self.engine_version = input;
             self
         }
+        /// <p>Removes content encryption configuration for a workgroup.</p>
+        pub fn remove_customer_content_encryption_configuration(mut self, input: bool) -> Self {
+            self.remove_customer_content_encryption_configuration = Some(input);
+            self
+        }
+        /// <p>Removes content encryption configuration for a workgroup.</p>
+        pub fn set_remove_customer_content_encryption_configuration(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.remove_customer_content_encryption_configuration = input;
+            self
+        }
+        /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
+        pub fn additional_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.additional_configuration = Some(input.into());
+            self
+        }
+        /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
+        pub fn set_additional_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.additional_configuration = input;
+            self
+        }
+        /// <p>Contains the ARN of the execution role for the workgroup</p>
+        pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role = Some(input.into());
+            self
+        }
+        /// <p>Contains the ARN of the execution role for the workgroup</p>
+        pub fn set_execution_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role = input;
+            self
+        }
+        /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn customer_content_encryption_configuration(
+            mut self,
+            input: crate::model::CustomerContentEncryptionConfiguration,
+        ) -> Self {
+            self.customer_content_encryption_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn set_customer_content_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
+        ) -> Self {
+            self.customer_content_encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
         pub fn build(self) -> crate::model::WorkGroupConfigurationUpdates {
             crate::model::WorkGroupConfigurationUpdates {
@@ -265,6 +356,12 @@ pub mod work_group_configuration_updates {
                 remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query,
                 requester_pays_enabled: self.requester_pays_enabled,
                 engine_version: self.engine_version,
+                remove_customer_content_encryption_configuration: self
+                    .remove_customer_content_encryption_configuration,
+                additional_configuration: self.additional_configuration,
+                execution_role: self.execution_role,
+                customer_content_encryption_configuration: self
+                    .customer_content_encryption_configuration,
             }
         }
     }
@@ -276,7 +373,55 @@ impl WorkGroupConfigurationUpdates {
     }
 }
 
-/// <p>The Athena engine version for running queries.</p>
+/// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CustomerContentEncryptionConfiguration {
+    /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+    #[doc(hidden)]
+    pub kms_key: std::option::Option<std::string::String>,
+}
+impl CustomerContentEncryptionConfiguration {
+    /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+}
+/// See [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
+pub mod customer_content_encryption_configuration {
+
+    /// A builder for [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key = Some(input.into());
+            self
+        }
+        /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
+        pub fn build(self) -> crate::model::CustomerContentEncryptionConfiguration {
+            crate::model::CustomerContentEncryptionConfiguration {
+                kms_key: self.kms_key,
+            }
+        }
+    }
+}
+impl CustomerContentEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
+    pub fn builder() -> crate::model::customer_content_encryption_configuration::Builder {
+        crate::model::customer_content_encryption_configuration::Builder::default()
+    }
+}
+
+/// <p>The Athena engine version for running queries, or the PySpark engine version for running sessions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineVersion {
@@ -863,6 +1008,177 @@ impl AsRef<str> for EncryptionOption {
     }
 }
 
+/// When writing a match expression against `ThrottleReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let throttlereason = unimplemented!();
+/// match throttlereason {
+///     ThrottleReason::ConcurrentQueryLimitExceeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `throttlereason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ThrottleReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ThrottleReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ThrottleReason::NewFeature` is defined.
+/// Specifically, when `throttlereason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ThrottleReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
+/// limit.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ThrottleReason {
+    #[allow(missing_docs)] // documentation missing in model
+    ConcurrentQueryLimitExceeded,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ThrottleReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONCURRENT_QUERY_LIMIT_EXCEEDED" => ThrottleReason::ConcurrentQueryLimitExceeded,
+            other => ThrottleReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ThrottleReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ThrottleReason::from(s))
+    }
+}
+impl ThrottleReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ThrottleReason::ConcurrentQueryLimitExceeded => "CONCURRENT_QUERY_LIMIT_EXCEEDED",
+            ThrottleReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CONCURRENT_QUERY_LIMIT_EXCEEDED"]
+    }
+}
+impl AsRef<str> for ThrottleReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `NotebookType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let notebooktype = unimplemented!();
+/// match notebooktype {
+///     NotebookType::Ipynb => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `notebooktype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NotebookType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NotebookType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NotebookType::NewFeature` is defined.
+/// Specifically, when `notebooktype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NotebookType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NotebookType {
+    #[allow(missing_docs)] // documentation missing in model
+    Ipynb,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for NotebookType {
+    fn from(s: &str) -> Self {
+        match s {
+            "IPYNB" => NotebookType::Ipynb,
+            other => NotebookType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for NotebookType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NotebookType::from(s))
+    }
+}
+impl NotebookType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NotebookType::Ipynb => "IPYNB",
+            NotebookType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["IPYNB"]
+    }
+}
+impl AsRef<str> for NotebookType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `DataCatalogType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -958,6 +1274,135 @@ impl AsRef<str> for DataCatalogType {
     }
 }
 
+/// When writing a match expression against `SessionState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sessionstate = unimplemented!();
+/// match sessionstate {
+///     SessionState::Busy => { /* ... */ },
+///     SessionState::Created => { /* ... */ },
+///     SessionState::Creating => { /* ... */ },
+///     SessionState::Degraded => { /* ... */ },
+///     SessionState::Failed => { /* ... */ },
+///     SessionState::Idle => { /* ... */ },
+///     SessionState::Terminated => { /* ... */ },
+///     SessionState::Terminating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sessionstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SessionState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SessionState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SessionState::NewFeature` is defined.
+/// Specifically, when `sessionstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SessionState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SessionState {
+    #[allow(missing_docs)] // documentation missing in model
+    Busy,
+    #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Degraded,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Idle,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminated,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SessionState {
+    fn from(s: &str) -> Self {
+        match s {
+            "BUSY" => SessionState::Busy,
+            "CREATED" => SessionState::Created,
+            "CREATING" => SessionState::Creating,
+            "DEGRADED" => SessionState::Degraded,
+            "FAILED" => SessionState::Failed,
+            "IDLE" => SessionState::Idle,
+            "TERMINATED" => SessionState::Terminated,
+            "TERMINATING" => SessionState::Terminating,
+            other => SessionState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SessionState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SessionState::from(s))
+    }
+}
+impl SessionState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SessionState::Busy => "BUSY",
+            SessionState::Created => "CREATED",
+            SessionState::Creating => "CREATING",
+            SessionState::Degraded => "DEGRADED",
+            SessionState::Failed => "FAILED",
+            SessionState::Idle => "IDLE",
+            SessionState::Terminated => "TERMINATED",
+            SessionState::Terminating => "TERMINATING",
+            SessionState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BUSY",
+            "CREATED",
+            "CREATING",
+            "DEGRADED",
+            "FAILED",
+            "IDLE",
+            "TERMINATED",
+            "TERMINATING",
+        ]
+    }
+}
+impl AsRef<str> for SessionState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1025,7 +1470,7 @@ impl Tag {
     }
 }
 
-/// When writing a match expression against `ThrottleReason`, it is important to ensure
+/// When writing a match expression against `CalculationExecutionState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
 /// variant in a current version of SDK, your code should continue to work when you
@@ -1035,32 +1480,38 @@ impl Tag {
 /// Here is an example of how you can make a match expression forward-compatible:
 ///
 /// ```text
-/// # let throttlereason = unimplemented!();
-/// match throttlereason {
-///     ThrottleReason::ConcurrentQueryLimitExceeded => { /* ... */ },
+/// # let calculationexecutionstate = unimplemented!();
+/// match calculationexecutionstate {
+///     CalculationExecutionState::Canceled => { /* ... */ },
+///     CalculationExecutionState::Canceling => { /* ... */ },
+///     CalculationExecutionState::Completed => { /* ... */ },
+///     CalculationExecutionState::Created => { /* ... */ },
+///     CalculationExecutionState::Creating => { /* ... */ },
+///     CalculationExecutionState::Failed => { /* ... */ },
+///     CalculationExecutionState::Queued => { /* ... */ },
+///     CalculationExecutionState::Running => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
 /// ```
-/// The above code demonstrates that when `throttlereason` represents
+/// The above code demonstrates that when `calculationexecutionstate` represents
 /// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ThrottleReason::NewFeature`
+/// even though the enum does not contain a variant `CalculationExecutionState::NewFeature`
 /// in the current version of SDK. The reason is that the variable `other`,
 /// created by the `@` operator, is bound to
-/// `ThrottleReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// `CalculationExecutionState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
 /// and calling `as_str` on it yields `"NewFeature"`.
 /// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ThrottleReason::NewFeature` is defined.
-/// Specifically, when `throttlereason` represents `NewFeature`,
+/// version of SDK where the variant `CalculationExecutionState::NewFeature` is defined.
+/// Specifically, when `calculationexecutionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ThrottleReason::NewFeature` also yielding `"NewFeature"`.
+/// calling `as_str` on `CalculationExecutionState::NewFeature` also yielding `"NewFeature"`.
 ///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
-/// limit.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1071,43 +1522,337 @@ impl Tag {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum ThrottleReason {
+pub enum CalculationExecutionState {
     #[allow(missing_docs)] // documentation missing in model
-    ConcurrentQueryLimitExceeded,
+    Canceled,
+    #[allow(missing_docs)] // documentation missing in model
+    Canceling,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Queued,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThrottleReason {
+impl std::convert::From<&str> for CalculationExecutionState {
     fn from(s: &str) -> Self {
         match s {
-            "CONCURRENT_QUERY_LIMIT_EXCEEDED" => ThrottleReason::ConcurrentQueryLimitExceeded,
-            other => ThrottleReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "CANCELED" => CalculationExecutionState::Canceled,
+            "CANCELING" => CalculationExecutionState::Canceling,
+            "COMPLETED" => CalculationExecutionState::Completed,
+            "CREATED" => CalculationExecutionState::Created,
+            "CREATING" => CalculationExecutionState::Creating,
+            "FAILED" => CalculationExecutionState::Failed,
+            "QUEUED" => CalculationExecutionState::Queued,
+            "RUNNING" => CalculationExecutionState::Running,
+            other => CalculationExecutionState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
-impl std::str::FromStr for ThrottleReason {
+impl std::str::FromStr for CalculationExecutionState {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThrottleReason::from(s))
+        Ok(CalculationExecutionState::from(s))
     }
 }
-impl ThrottleReason {
+impl CalculationExecutionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ThrottleReason::ConcurrentQueryLimitExceeded => "CONCURRENT_QUERY_LIMIT_EXCEEDED",
-            ThrottleReason::Unknown(value) => value.as_str(),
+            CalculationExecutionState::Canceled => "CANCELED",
+            CalculationExecutionState::Canceling => "CANCELING",
+            CalculationExecutionState::Completed => "COMPLETED",
+            CalculationExecutionState::Created => "CREATED",
+            CalculationExecutionState::Creating => "CREATING",
+            CalculationExecutionState::Failed => "FAILED",
+            CalculationExecutionState::Queued => "QUEUED",
+            CalculationExecutionState::Running => "RUNNING",
+            CalculationExecutionState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONCURRENT_QUERY_LIMIT_EXCEEDED"]
+        &[
+            "CANCELED",
+            "CANCELING",
+            "COMPLETED",
+            "CREATED",
+            "CREATING",
+            "FAILED",
+            "QUEUED",
+            "RUNNING",
+        ]
     }
 }
-impl AsRef<str> for ThrottleReason {
+impl AsRef<str> for CalculationExecutionState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EngineConfiguration {
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    #[doc(hidden)]
+    pub coordinator_dpu_size: i32,
+    /// <p>The maximum number of DPUs that can run concurrently.</p>
+    #[doc(hidden)]
+    pub max_concurrent_dpus: i32,
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    #[doc(hidden)]
+    pub default_executor_dpu_size: i32,
+    /// <p>Contains additional notebook engine <code>MAP
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    #[doc(hidden)]
+    pub additional_configs:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl EngineConfiguration {
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    pub fn coordinator_dpu_size(&self) -> i32 {
+        self.coordinator_dpu_size
+    }
+    /// <p>The maximum number of DPUs that can run concurrently.</p>
+    pub fn max_concurrent_dpus(&self) -> i32 {
+        self.max_concurrent_dpus
+    }
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    pub fn default_executor_dpu_size(&self) -> i32 {
+        self.default_executor_dpu_size
+    }
+    /// <p>Contains additional notebook engine <code>MAP
+    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+    pub fn additional_configs(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_configs.as_ref()
+    }
+}
+/// See [`EngineConfiguration`](crate::model::EngineConfiguration).
+pub mod engine_configuration {
+
+    /// A builder for [`EngineConfiguration`](crate::model::EngineConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) coordinator_dpu_size: std::option::Option<i32>,
+        pub(crate) max_concurrent_dpus: std::option::Option<i32>,
+        pub(crate) default_executor_dpu_size: std::option::Option<i32>,
+        pub(crate) additional_configs: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+        pub fn coordinator_dpu_size(mut self, input: i32) -> Self {
+            self.coordinator_dpu_size = Some(input);
+            self
+        }
+        /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+        pub fn set_coordinator_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.coordinator_dpu_size = input;
+            self
+        }
+        /// <p>The maximum number of DPUs that can run concurrently.</p>
+        pub fn max_concurrent_dpus(mut self, input: i32) -> Self {
+            self.max_concurrent_dpus = Some(input);
+            self
+        }
+        /// <p>The maximum number of DPUs that can run concurrently.</p>
+        pub fn set_max_concurrent_dpus(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrent_dpus = input;
+            self
+        }
+        /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+        pub fn default_executor_dpu_size(mut self, input: i32) -> Self {
+            self.default_executor_dpu_size = Some(input);
+            self
+        }
+        /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+        pub fn set_default_executor_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.default_executor_dpu_size = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_configs`.
+        ///
+        /// To override the contents of this collection use [`set_additional_configs`](Self::set_additional_configs).
+        ///
+        /// <p>Contains additional notebook engine <code>MAP
+        /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+        pub fn additional_configs(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_configs.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_configs = Some(hash_map);
+            self
+        }
+        /// <p>Contains additional notebook engine <code>MAP
+        /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of the Amazon S3 URI.</p>
+        pub fn set_additional_configs(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_configs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EngineConfiguration`](crate::model::EngineConfiguration).
+        pub fn build(self) -> crate::model::EngineConfiguration {
+            crate::model::EngineConfiguration {
+                coordinator_dpu_size: self.coordinator_dpu_size.unwrap_or_default(),
+                max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or_default(),
+                default_executor_dpu_size: self.default_executor_dpu_size.unwrap_or_default(),
+                additional_configs: self.additional_configs,
+            }
+        }
+    }
+}
+impl EngineConfiguration {
+    /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::model::EngineConfiguration).
+    pub fn builder() -> crate::model::engine_configuration::Builder {
+        crate::model::engine_configuration::Builder::default()
+    }
+}
+
+/// <p>Specifies the query result reuse behavior for the query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResultReuseConfiguration {
+    /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+    #[doc(hidden)]
+    pub result_reuse_by_age_configuration:
+        std::option::Option<crate::model::ResultReuseByAgeConfiguration>,
+}
+impl ResultReuseConfiguration {
+    /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+    pub fn result_reuse_by_age_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ResultReuseByAgeConfiguration> {
+        self.result_reuse_by_age_configuration.as_ref()
+    }
+}
+/// See [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
+pub mod result_reuse_configuration {
+
+    /// A builder for [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_reuse_by_age_configuration:
+            std::option::Option<crate::model::ResultReuseByAgeConfiguration>,
+    }
+    impl Builder {
+        /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+        pub fn result_reuse_by_age_configuration(
+            mut self,
+            input: crate::model::ResultReuseByAgeConfiguration,
+        ) -> Self {
+            self.result_reuse_by_age_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+        pub fn set_result_reuse_by_age_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ResultReuseByAgeConfiguration>,
+        ) -> Self {
+            self.result_reuse_by_age_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
+        pub fn build(self) -> crate::model::ResultReuseConfiguration {
+            crate::model::ResultReuseConfiguration {
+                result_reuse_by_age_configuration: self.result_reuse_by_age_configuration,
+            }
+        }
+    }
+}
+impl ResultReuseConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
+    pub fn builder() -> crate::model::result_reuse_configuration::Builder {
+        crate::model::result_reuse_configuration::Builder::default()
+    }
+}
+
+/// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResultReuseByAgeConfiguration {
+    /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
+    #[doc(hidden)]
+    pub enabled: bool,
+    /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
+    #[doc(hidden)]
+    pub max_age_in_minutes: std::option::Option<i32>,
+}
+impl ResultReuseByAgeConfiguration {
+    /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
+    pub fn max_age_in_minutes(&self) -> std::option::Option<i32> {
+        self.max_age_in_minutes
+    }
+}
+/// See [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
+pub mod result_reuse_by_age_configuration {
+
+    /// A builder for [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) max_age_in_minutes: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
+        pub fn max_age_in_minutes(mut self, input: i32) -> Self {
+            self.max_age_in_minutes = Some(input);
+            self
+        }
+        /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
+        pub fn set_max_age_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_age_in_minutes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
+        pub fn build(self) -> crate::model::ResultReuseByAgeConfiguration {
+            crate::model::ResultReuseByAgeConfiguration {
+                enabled: self.enabled.unwrap_or_default(),
+                max_age_in_minutes: self.max_age_in_minutes,
+            }
+        }
+    }
+}
+impl ResultReuseByAgeConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
+    pub fn builder() -> crate::model::result_reuse_by_age_configuration::Builder {
+        crate::model::result_reuse_by_age_configuration::Builder::default()
     }
 }
 
@@ -1302,6 +2047,54 @@ impl QueryExecutionContext {
     /// Creates a new builder-style object to manufacture [`QueryExecutionContext`](crate::model::QueryExecutionContext).
     pub fn builder() -> crate::model::query_execution_context::Builder {
         crate::model::query_execution_context::Builder::default()
+    }
+}
+
+/// <p>Contains configuration information for the calculation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CalculationConfiguration {
+    /// <p>A string that contains the code for the calculation.</p>
+    #[doc(hidden)]
+    pub code_block: std::option::Option<std::string::String>,
+}
+impl CalculationConfiguration {
+    /// <p>A string that contains the code for the calculation.</p>
+    pub fn code_block(&self) -> std::option::Option<&str> {
+        self.code_block.as_deref()
+    }
+}
+/// See [`CalculationConfiguration`](crate::model::CalculationConfiguration).
+pub mod calculation_configuration {
+
+    /// A builder for [`CalculationConfiguration`](crate::model::CalculationConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code_block: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A string that contains the code for the calculation.</p>
+        pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_block = Some(input.into());
+            self
+        }
+        /// <p>A string that contains the code for the calculation.</p>
+        pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_block = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculationConfiguration`](crate::model::CalculationConfiguration).
+        pub fn build(self) -> crate::model::CalculationConfiguration {
+            crate::model::CalculationConfiguration {
+                code_block: self.code_block,
+            }
+        }
+    }
+}
+impl CalculationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CalculationConfiguration`](crate::model::CalculationConfiguration).
+    pub fn builder() -> crate::model::calculation_configuration::Builder {
+        crate::model::calculation_configuration::Builder::default()
     }
 }
 
@@ -1731,6 +2524,329 @@ impl Column {
     }
 }
 
+/// <p>Contains summary information about a notebook session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SessionSummary {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The session description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
+    #[doc(hidden)]
+    pub engine_version: std::option::Option<crate::model::EngineVersion>,
+    /// <p>The notebook version.</p>
+    #[doc(hidden)]
+    pub notebook_version: std::option::Option<std::string::String>,
+    /// <p>Contains information about the session status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::SessionStatus>,
+}
+impl SessionSummary {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The session description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
+        self.engine_version.as_ref()
+    }
+    /// <p>The notebook version.</p>
+    pub fn notebook_version(&self) -> std::option::Option<&str> {
+        self.notebook_version.as_deref()
+    }
+    /// <p>Contains information about the session status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SessionStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`SessionSummary`](crate::model::SessionSummary).
+pub mod session_summary {
+
+    /// A builder for [`SessionSummary`](crate::model::SessionSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
+        pub(crate) notebook_version: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::SessionStatus>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
+        pub fn engine_version(mut self, input: crate::model::EngineVersion) -> Self {
+            self.engine_version = Some(input);
+            self
+        }
+        /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<crate::model::EngineVersion>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>The notebook version.</p>
+        pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_version = Some(input.into());
+            self
+        }
+        /// <p>The notebook version.</p>
+        pub fn set_notebook_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.notebook_version = input;
+            self
+        }
+        /// <p>Contains information about the session status.</p>
+        pub fn status(mut self, input: crate::model::SessionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the session status.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SessionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionSummary`](crate::model::SessionSummary).
+        pub fn build(self) -> crate::model::SessionSummary {
+            crate::model::SessionSummary {
+                session_id: self.session_id,
+                description: self.description,
+                engine_version: self.engine_version,
+                notebook_version: self.notebook_version,
+                status: self.status,
+            }
+        }
+    }
+}
+impl SessionSummary {
+    /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
+    pub fn builder() -> crate::model::session_summary::Builder {
+        crate::model::session_summary::Builder::default()
+    }
+}
+
+/// <p>Contains information about the status of a notebook session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SessionStatus {
+    /// <p>The date and time that the session started.</p>
+    #[doc(hidden)]
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The most recent date and time that the session was modified.</p>
+    #[doc(hidden)]
+    pub last_modified_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the session ended.</p>
+    #[doc(hidden)]
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
+    #[doc(hidden)]
+    pub idle_since_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::SessionState>,
+    /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
+    #[doc(hidden)]
+    pub state_change_reason: std::option::Option<std::string::String>,
+}
+impl SessionStatus {
+    /// <p>The date and time that the session started.</p>
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date_time.as_ref()
+    }
+    /// <p>The most recent date and time that the session was modified.</p>
+    pub fn last_modified_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_date_time.as_ref()
+    }
+    /// <p>The date and time that the session ended.</p>
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_date_time.as_ref()
+    }
+    /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
+    pub fn idle_since_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.idle_since_date_time.as_ref()
+    }
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
+    pub fn state_change_reason(&self) -> std::option::Option<&str> {
+        self.state_change_reason.as_deref()
+    }
+}
+/// See [`SessionStatus`](crate::model::SessionStatus).
+pub mod session_status {
+
+    /// A builder for [`SessionStatus`](crate::model::SessionStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) idle_since_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::SessionState>,
+        pub(crate) state_change_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The date and time that the session started.</p>
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the session started.</p>
+        pub fn set_start_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date_time = input;
+            self
+        }
+        /// <p>The most recent date and time that the session was modified.</p>
+        pub fn last_modified_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_date_time = Some(input);
+            self
+        }
+        /// <p>The most recent date and time that the session was modified.</p>
+        pub fn set_last_modified_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_date_time = input;
+            self
+        }
+        /// <p>The date and time that the session ended.</p>
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the session ended.</p>
+        pub fn set_end_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_date_time = input;
+            self
+        }
+        /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
+        pub fn idle_since_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.idle_since_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
+        pub fn set_idle_since_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.idle_since_date_time = input;
+            self
+        }
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn state(mut self, input: crate::model::SessionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the session. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
+        pub fn state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_change_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
+        pub fn set_state_change_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_change_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionStatus`](crate::model::SessionStatus).
+        pub fn build(self) -> crate::model::SessionStatus {
+            crate::model::SessionStatus {
+                start_date_time: self.start_date_time,
+                last_modified_date_time: self.last_modified_date_time,
+                end_date_time: self.end_date_time,
+                idle_since_date_time: self.idle_since_date_time,
+                state: self.state,
+                state_change_reason: self.state_change_reason,
+            }
+        }
+    }
+}
+impl SessionStatus {
+    /// Creates a new builder-style object to manufacture [`SessionStatus`](crate::model::SessionStatus).
+    pub fn builder() -> crate::model::session_status::Builder {
+        crate::model::session_status::Builder::default()
+    }
+}
+
 /// <p>The name and last modified time of the prepared statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1801,6 +2917,656 @@ impl PreparedStatementSummary {
     /// Creates a new builder-style object to manufacture [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
     pub fn builder() -> crate::model::prepared_statement_summary::Builder {
         crate::model::prepared_statement_summary::Builder::default()
+    }
+}
+
+/// <p>Contains the notebook session ID and notebook session creation time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotebookSessionSummary {
+    /// <p>The notebook session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>The time when the notebook session was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl NotebookSessionSummary {
+    /// <p>The notebook session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The time when the notebook session was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+}
+/// See [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
+pub mod notebook_session_summary {
+
+    /// A builder for [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The notebook session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The notebook session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>The time when the notebook session was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time when the notebook session was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
+        pub fn build(self) -> crate::model::NotebookSessionSummary {
+            crate::model::NotebookSessionSummary {
+                session_id: self.session_id,
+                creation_time: self.creation_time,
+            }
+        }
+    }
+}
+impl NotebookSessionSummary {
+    /// Creates a new builder-style object to manufacture [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
+    pub fn builder() -> crate::model::notebook_session_summary::Builder {
+        crate::model::notebook_session_summary::Builder::default()
+    }
+}
+
+/// <p>Contains metadata for notebook, including the notebook name, ID, workgroup, and time created.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotebookMetadata {
+    /// <p>The notebook ID.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+    /// <p>The name of the notebook.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>The time when the notebook was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::NotebookType>,
+    /// <p>The time when the notebook was last modified.</p>
+    #[doc(hidden)]
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl NotebookMetadata {
+    /// <p>The notebook ID.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+    /// <p>The name of the notebook.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The time when the notebook was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NotebookType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time when the notebook was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+/// See [`NotebookMetadata`](crate::model::NotebookMetadata).
+pub mod notebook_metadata {
+
+    /// A builder for [`NotebookMetadata`](crate::model::NotebookMetadata).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) r#type: std::option::Option<crate::model::NotebookType>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The notebook ID.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The notebook ID.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// <p>The name of the notebook.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the notebook.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>The time when the notebook was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time when the notebook was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn r#type(mut self, input: crate::model::NotebookType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NotebookType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The time when the notebook was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time when the notebook was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotebookMetadata`](crate::model::NotebookMetadata).
+        pub fn build(self) -> crate::model::NotebookMetadata {
+            crate::model::NotebookMetadata {
+                notebook_id: self.notebook_id,
+                name: self.name,
+                work_group: self.work_group,
+                creation_time: self.creation_time,
+                r#type: self.r#type,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl NotebookMetadata {
+    /// Creates a new builder-style object to manufacture [`NotebookMetadata`](crate::model::NotebookMetadata).
+    pub fn builder() -> crate::model::notebook_metadata::Builder {
+        crate::model::notebook_metadata::Builder::default()
+    }
+}
+
+/// <p>A string for searching notebook names.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct FilterDefinition {
+    /// <p>The name of the notebook to search for.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl FilterDefinition {
+    /// <p>The name of the notebook to search for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`FilterDefinition`](crate::model::FilterDefinition).
+pub mod filter_definition {
+
+    /// A builder for [`FilterDefinition`](crate::model::FilterDefinition).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the notebook to search for.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the notebook to search for.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterDefinition`](crate::model::FilterDefinition).
+        pub fn build(self) -> crate::model::FilterDefinition {
+            crate::model::FilterDefinition { name: self.name }
+        }
+    }
+}
+impl FilterDefinition {
+    /// Creates a new builder-style object to manufacture [`FilterDefinition`](crate::model::FilterDefinition).
+    pub fn builder() -> crate::model::filter_definition::Builder {
+        crate::model::filter_definition::Builder::default()
+    }
+}
+
+/// <p>Contains summary information about an executor.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExecutorsSummary {
+    /// <p>The UUID of the executor.</p>
+    #[doc(hidden)]
+    pub executor_id: std::option::Option<std::string::String>,
+    /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
+    #[doc(hidden)]
+    pub executor_type: std::option::Option<crate::model::ExecutorType>,
+    /// <p>The date and time that the executor started.</p>
+    #[doc(hidden)]
+    pub start_date_time: std::option::Option<i64>,
+    /// <p>The date and time that the executor was terminated.</p>
+    #[doc(hidden)]
+    pub termination_date_time: std::option::Option<i64>,
+    /// <p>The processing state of the executor. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    #[doc(hidden)]
+    pub executor_state: std::option::Option<crate::model::ExecutorState>,
+    /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
+    #[doc(hidden)]
+    pub executor_size: std::option::Option<i64>,
+}
+impl ExecutorsSummary {
+    /// <p>The UUID of the executor.</p>
+    pub fn executor_id(&self) -> std::option::Option<&str> {
+        self.executor_id.as_deref()
+    }
+    /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
+    pub fn executor_type(&self) -> std::option::Option<&crate::model::ExecutorType> {
+        self.executor_type.as_ref()
+    }
+    /// <p>The date and time that the executor started.</p>
+    pub fn start_date_time(&self) -> std::option::Option<i64> {
+        self.start_date_time
+    }
+    /// <p>The date and time that the executor was terminated.</p>
+    pub fn termination_date_time(&self) -> std::option::Option<i64> {
+        self.termination_date_time
+    }
+    /// <p>The processing state of the executor. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    pub fn executor_state(&self) -> std::option::Option<&crate::model::ExecutorState> {
+        self.executor_state.as_ref()
+    }
+    /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
+    pub fn executor_size(&self) -> std::option::Option<i64> {
+        self.executor_size
+    }
+}
+/// See [`ExecutorsSummary`](crate::model::ExecutorsSummary).
+pub mod executors_summary {
+
+    /// A builder for [`ExecutorsSummary`](crate::model::ExecutorsSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) executor_id: std::option::Option<std::string::String>,
+        pub(crate) executor_type: std::option::Option<crate::model::ExecutorType>,
+        pub(crate) start_date_time: std::option::Option<i64>,
+        pub(crate) termination_date_time: std::option::Option<i64>,
+        pub(crate) executor_state: std::option::Option<crate::model::ExecutorState>,
+        pub(crate) executor_size: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The UUID of the executor.</p>
+        pub fn executor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.executor_id = Some(input.into());
+            self
+        }
+        /// <p>The UUID of the executor.</p>
+        pub fn set_executor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executor_id = input;
+            self
+        }
+        /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
+        pub fn executor_type(mut self, input: crate::model::ExecutorType) -> Self {
+            self.executor_type = Some(input);
+            self
+        }
+        /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
+        pub fn set_executor_type(
+            mut self,
+            input: std::option::Option<crate::model::ExecutorType>,
+        ) -> Self {
+            self.executor_type = input;
+            self
+        }
+        /// <p>The date and time that the executor started.</p>
+        pub fn start_date_time(mut self, input: i64) -> Self {
+            self.start_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the executor started.</p>
+        pub fn set_start_date_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.start_date_time = input;
+            self
+        }
+        /// <p>The date and time that the executor was terminated.</p>
+        pub fn termination_date_time(mut self, input: i64) -> Self {
+            self.termination_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the executor was terminated.</p>
+        pub fn set_termination_date_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.termination_date_time = input;
+            self
+        }
+        /// <p>The processing state of the executor. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn executor_state(mut self, input: crate::model::ExecutorState) -> Self {
+            self.executor_state = Some(input);
+            self
+        }
+        /// <p>The processing state of the executor. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn set_executor_state(
+            mut self,
+            input: std::option::Option<crate::model::ExecutorState>,
+        ) -> Self {
+            self.executor_state = input;
+            self
+        }
+        /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
+        pub fn executor_size(mut self, input: i64) -> Self {
+            self.executor_size = Some(input);
+            self
+        }
+        /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
+        pub fn set_executor_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.executor_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExecutorsSummary`](crate::model::ExecutorsSummary).
+        pub fn build(self) -> crate::model::ExecutorsSummary {
+            crate::model::ExecutorsSummary {
+                executor_id: self.executor_id,
+                executor_type: self.executor_type,
+                start_date_time: self.start_date_time,
+                termination_date_time: self.termination_date_time,
+                executor_state: self.executor_state,
+                executor_size: self.executor_size,
+            }
+        }
+    }
+}
+impl ExecutorsSummary {
+    /// Creates a new builder-style object to manufacture [`ExecutorsSummary`](crate::model::ExecutorsSummary).
+    pub fn builder() -> crate::model::executors_summary::Builder {
+        crate::model::executors_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ExecutorState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let executorstate = unimplemented!();
+/// match executorstate {
+///     ExecutorState::Created => { /* ... */ },
+///     ExecutorState::Creating => { /* ... */ },
+///     ExecutorState::Failed => { /* ... */ },
+///     ExecutorState::Registered => { /* ... */ },
+///     ExecutorState::Terminated => { /* ... */ },
+///     ExecutorState::Terminating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `executorstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExecutorState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExecutorState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExecutorState::NewFeature` is defined.
+/// Specifically, when `executorstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExecutorState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutorState {
+    #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Registered,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminated,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ExecutorState {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED" => ExecutorState::Created,
+            "CREATING" => ExecutorState::Creating,
+            "FAILED" => ExecutorState::Failed,
+            "REGISTERED" => ExecutorState::Registered,
+            "TERMINATED" => ExecutorState::Terminated,
+            "TERMINATING" => ExecutorState::Terminating,
+            other => ExecutorState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ExecutorState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutorState::from(s))
+    }
+}
+impl ExecutorState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutorState::Created => "CREATED",
+            ExecutorState::Creating => "CREATING",
+            ExecutorState::Failed => "FAILED",
+            ExecutorState::Registered => "REGISTERED",
+            ExecutorState::Terminated => "TERMINATED",
+            ExecutorState::Terminating => "TERMINATING",
+            ExecutorState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CREATED",
+            "CREATING",
+            "FAILED",
+            "REGISTERED",
+            "TERMINATED",
+            "TERMINATING",
+        ]
+    }
+}
+impl AsRef<str> for ExecutorState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ExecutorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let executortype = unimplemented!();
+/// match executortype {
+///     ExecutorType::Coordinator => { /* ... */ },
+///     ExecutorType::Gateway => { /* ... */ },
+///     ExecutorType::Worker => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `executortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExecutorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExecutorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExecutorType::NewFeature` is defined.
+/// Specifically, when `executortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExecutorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutorType {
+    #[allow(missing_docs)] // documentation missing in model
+    Coordinator,
+    #[allow(missing_docs)] // documentation missing in model
+    Gateway,
+    #[allow(missing_docs)] // documentation missing in model
+    Worker,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ExecutorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "COORDINATOR" => ExecutorType::Coordinator,
+            "GATEWAY" => ExecutorType::Gateway,
+            "WORKER" => ExecutorType::Worker,
+            other => ExecutorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ExecutorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutorType::from(s))
+    }
+}
+impl ExecutorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutorType::Coordinator => "COORDINATOR",
+            ExecutorType::Gateway => "GATEWAY",
+            ExecutorType::Worker => "WORKER",
+            ExecutorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["COORDINATOR", "GATEWAY", "WORKER"]
+    }
+}
+impl AsRef<str> for ExecutorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1981,6 +3747,326 @@ impl Database {
     }
 }
 
+/// <p>Summary information for a notebook calculation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CalculationSummary {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+    /// <p>A description of the calculation.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Contains information about the status of the calculation.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CalculationStatus>,
+}
+impl CalculationSummary {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+    /// <p>A description of the calculation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Contains information about the status of the calculation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CalculationStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`CalculationSummary`](crate::model::CalculationSummary).
+pub mod calculation_summary {
+
+    /// A builder for [`CalculationSummary`](crate::model::CalculationSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CalculationStatus>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Contains information about the status of the calculation.</p>
+        pub fn status(mut self, input: crate::model::CalculationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Contains information about the status of the calculation.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CalculationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculationSummary`](crate::model::CalculationSummary).
+        pub fn build(self) -> crate::model::CalculationSummary {
+            crate::model::CalculationSummary {
+                calculation_execution_id: self.calculation_execution_id,
+                description: self.description,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CalculationSummary {
+    /// Creates a new builder-style object to manufacture [`CalculationSummary`](crate::model::CalculationSummary).
+    pub fn builder() -> crate::model::calculation_summary::Builder {
+        crate::model::calculation_summary::Builder::default()
+    }
+}
+
+/// <p>Contains information about the status of a notebook calculation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CalculationStatus {
+    /// <p>The date and time the calculation was submitted for processing.</p>
+    #[doc(hidden)]
+    pub submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time the calculation completed processing.</p>
+    #[doc(hidden)]
+    pub completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The state of the calculation execution. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::CalculationExecutionState>,
+    /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
+    #[doc(hidden)]
+    pub state_change_reason: std::option::Option<std::string::String>,
+}
+impl CalculationStatus {
+    /// <p>The date and time the calculation was submitted for processing.</p>
+    pub fn submission_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.submission_date_time.as_ref()
+    }
+    /// <p>The date and time the calculation completed processing.</p>
+    pub fn completion_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completion_date_time.as_ref()
+    }
+    /// <p>The state of the calculation execution. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CalculationExecutionState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
+    pub fn state_change_reason(&self) -> std::option::Option<&str> {
+        self.state_change_reason.as_deref()
+    }
+}
+/// See [`CalculationStatus`](crate::model::CalculationStatus).
+pub mod calculation_status {
+
+    /// A builder for [`CalculationStatus`](crate::model::CalculationStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::CalculationExecutionState>,
+        pub(crate) state_change_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The date and time the calculation was submitted for processing.</p>
+        pub fn submission_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.submission_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time the calculation was submitted for processing.</p>
+        pub fn set_submission_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.submission_date_time = input;
+            self
+        }
+        /// <p>The date and time the calculation completed processing.</p>
+        pub fn completion_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completion_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time the calculation completed processing.</p>
+        pub fn set_completion_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completion_date_time = input;
+            self
+        }
+        /// <p>The state of the calculation execution. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn state(mut self, input: crate::model::CalculationExecutionState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the calculation execution. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CalculationExecutionState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
+        pub fn state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_change_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
+        pub fn set_state_change_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_change_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculationStatus`](crate::model::CalculationStatus).
+        pub fn build(self) -> crate::model::CalculationStatus {
+            crate::model::CalculationStatus {
+                submission_date_time: self.submission_date_time,
+                completion_date_time: self.completion_date_time,
+                state: self.state,
+                state_change_reason: self.state_change_reason,
+            }
+        }
+    }
+}
+impl CalculationStatus {
+    /// Creates a new builder-style object to manufacture [`CalculationStatus`](crate::model::CalculationStatus).
+    pub fn builder() -> crate::model::calculation_status::Builder {
+        crate::model::calculation_status::Builder::default()
+    }
+}
+
+/// <p>Contains the application runtime IDs and their supported DPU sizes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ApplicationDpuSizes {
+    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    #[doc(hidden)]
+    pub application_runtime_id: std::option::Option<std::string::String>,
+    /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    #[doc(hidden)]
+    pub supported_dpu_sizes: std::option::Option<std::vec::Vec<i32>>,
+}
+impl ApplicationDpuSizes {
+    /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+    pub fn application_runtime_id(&self) -> std::option::Option<&str> {
+        self.application_runtime_id.as_deref()
+    }
+    /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    pub fn supported_dpu_sizes(&self) -> std::option::Option<&[i32]> {
+        self.supported_dpu_sizes.as_deref()
+    }
+}
+/// See [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
+pub mod application_dpu_sizes {
+
+    /// A builder for [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_runtime_id: std::option::Option<std::string::String>,
+        pub(crate) supported_dpu_sizes: std::option::Option<std::vec::Vec<i32>>,
+    }
+    impl Builder {
+        /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+        pub fn application_runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_runtime_id = Some(input.into());
+            self
+        }
+        /// <p>The name of the supported application runtime (for example, <code>Jupyter 1.0</code>).</p>
+        pub fn set_application_runtime_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_runtime_id = input;
+            self
+        }
+        /// Appends an item to `supported_dpu_sizes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_dpu_sizes`](Self::set_supported_dpu_sizes).
+        ///
+        /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+        pub fn supported_dpu_sizes(mut self, input: i32) -> Self {
+            let mut v = self.supported_dpu_sizes.unwrap_or_default();
+            v.push(input);
+            self.supported_dpu_sizes = Some(v);
+            self
+        }
+        /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+        pub fn set_supported_dpu_sizes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.supported_dpu_sizes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
+        pub fn build(self) -> crate::model::ApplicationDpuSizes {
+            crate::model::ApplicationDpuSizes {
+                application_runtime_id: self.application_runtime_id,
+                supported_dpu_sizes: self.supported_dpu_sizes,
+            }
+        }
+    }
+}
+impl ApplicationDpuSizes {
+    /// Creates a new builder-style object to manufacture [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
+    pub fn builder() -> crate::model::application_dpu_sizes::Builder {
+        crate::model::application_dpu_sizes::Builder::default()
+    }
+}
+
 /// <p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <code>WorkGroup$Configuration</code>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2136,6 +4222,16 @@ pub struct WorkGroupConfiguration {
     /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+    /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
+    #[doc(hidden)]
+    pub additional_configuration: std::option::Option<std::string::String>,
+    /// <p>Role used in a notebook session for accessing the user's resources.</p>
+    #[doc(hidden)]
+    pub execution_role: std::option::Option<std::string::String>,
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    #[doc(hidden)]
+    pub customer_content_encryption_configuration:
+        std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
 }
 impl WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
@@ -2162,6 +4258,20 @@ impl WorkGroupConfiguration {
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
     }
+    /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
+    pub fn additional_configuration(&self) -> std::option::Option<&str> {
+        self.additional_configuration.as_deref()
+    }
+    /// <p>Role used in a notebook session for accessing the user's resources.</p>
+    pub fn execution_role(&self) -> std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    pub fn customer_content_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerContentEncryptionConfiguration> {
+        self.customer_content_encryption_configuration.as_ref()
+    }
 }
 /// See [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
 pub mod work_group_configuration {
@@ -2175,6 +4285,10 @@ pub mod work_group_configuration {
         pub(crate) bytes_scanned_cutoff_per_query: std::option::Option<i64>,
         pub(crate) requester_pays_enabled: std::option::Option<bool>,
         pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
+        pub(crate) additional_configuration: std::option::Option<std::string::String>,
+        pub(crate) execution_role: std::option::Option<std::string::String>,
+        pub(crate) customer_content_encryption_configuration:
+            std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
@@ -2252,6 +4366,48 @@ pub mod work_group_configuration {
             self.engine_version = input;
             self
         }
+        /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
+        pub fn additional_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.additional_configuration = Some(input.into());
+            self
+        }
+        /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
+        pub fn set_additional_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.additional_configuration = input;
+            self
+        }
+        /// <p>Role used in a notebook session for accessing the user's resources.</p>
+        pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role = Some(input.into());
+            self
+        }
+        /// <p>Role used in a notebook session for accessing the user's resources.</p>
+        pub fn set_execution_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role = input;
+            self
+        }
+        /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn customer_content_encryption_configuration(
+            mut self,
+            input: crate::model::CustomerContentEncryptionConfiguration,
+        ) -> Self {
+            self.customer_content_encryption_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+        pub fn set_customer_content_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CustomerContentEncryptionConfiguration>,
+        ) -> Self {
+            self.customer_content_encryption_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
         pub fn build(self) -> crate::model::WorkGroupConfiguration {
             crate::model::WorkGroupConfiguration {
@@ -2261,6 +4417,10 @@ pub mod work_group_configuration {
                 bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query,
                 requester_pays_enabled: self.requester_pays_enabled,
                 engine_version: self.engine_version,
+                additional_configuration: self.additional_configuration,
+                execution_role: self.execution_role,
+                customer_content_encryption_configuration: self
+                    .customer_content_encryption_configuration,
             }
         }
     }
@@ -2269,6 +4429,174 @@ impl WorkGroupConfiguration {
     /// Creates a new builder-style object to manufacture [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
     pub fn builder() -> crate::model::work_group_configuration::Builder {
         crate::model::work_group_configuration::Builder::default()
+    }
+}
+
+/// <p>Contains statistics for a notebook session.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SessionStatistics {
+    /// <p>The data processing unit execution time for a session in milliseconds.</p>
+    #[doc(hidden)]
+    pub dpu_execution_in_millis: std::option::Option<i64>,
+}
+impl SessionStatistics {
+    /// <p>The data processing unit execution time for a session in milliseconds.</p>
+    pub fn dpu_execution_in_millis(&self) -> std::option::Option<i64> {
+        self.dpu_execution_in_millis
+    }
+}
+/// See [`SessionStatistics`](crate::model::SessionStatistics).
+pub mod session_statistics {
+
+    /// A builder for [`SessionStatistics`](crate::model::SessionStatistics).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dpu_execution_in_millis: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The data processing unit execution time for a session in milliseconds.</p>
+        pub fn dpu_execution_in_millis(mut self, input: i64) -> Self {
+            self.dpu_execution_in_millis = Some(input);
+            self
+        }
+        /// <p>The data processing unit execution time for a session in milliseconds.</p>
+        pub fn set_dpu_execution_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.dpu_execution_in_millis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionStatistics`](crate::model::SessionStatistics).
+        pub fn build(self) -> crate::model::SessionStatistics {
+            crate::model::SessionStatistics {
+                dpu_execution_in_millis: self.dpu_execution_in_millis,
+            }
+        }
+    }
+}
+impl SessionStatistics {
+    /// Creates a new builder-style object to manufacture [`SessionStatistics`](crate::model::SessionStatistics).
+    pub fn builder() -> crate::model::session_statistics::Builder {
+        crate::model::session_statistics::Builder::default()
+    }
+}
+
+/// <p>Contains session configuration information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SessionConfiguration {
+    /// <p>The ARN of the execution role used for the session.</p>
+    #[doc(hidden)]
+    pub execution_role: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location that stores information for the notebook.</p>
+    #[doc(hidden)]
+    pub working_directory: std::option::Option<std::string::String>,
+    /// <p>The idle timeout in seconds for the session.</p>
+    #[doc(hidden)]
+    pub idle_timeout_seconds: std::option::Option<i64>,
+    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+}
+impl SessionConfiguration {
+    /// <p>The ARN of the execution role used for the session.</p>
+    pub fn execution_role(&self) -> std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>The Amazon S3 location that stores information for the notebook.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub fn idle_timeout_seconds(&self) -> std::option::Option<i64> {
+        self.idle_timeout_seconds
+    }
+    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+}
+/// See [`SessionConfiguration`](crate::model::SessionConfiguration).
+pub mod session_configuration {
+
+    /// A builder for [`SessionConfiguration`](crate::model::SessionConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) execution_role: std::option::Option<std::string::String>,
+        pub(crate) working_directory: std::option::Option<std::string::String>,
+        pub(crate) idle_timeout_seconds: std::option::Option<i64>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
+    }
+    impl Builder {
+        /// <p>The ARN of the execution role used for the session.</p>
+        pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the execution role used for the session.</p>
+        pub fn set_execution_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role = input;
+            self
+        }
+        /// <p>The Amazon S3 location that stores information for the notebook.</p>
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.working_directory = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location that stores information for the notebook.</p>
+        pub fn set_working_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.working_directory = input;
+            self
+        }
+        /// <p>The idle timeout in seconds for the session.</p>
+        pub fn idle_timeout_seconds(mut self, input: i64) -> Self {
+            self.idle_timeout_seconds = Some(input);
+            self
+        }
+        /// <p>The idle timeout in seconds for the session.</p>
+        pub fn set_idle_timeout_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.idle_timeout_seconds = input;
+            self
+        }
+        /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
+            self.encryption_configuration = Some(input);
+            self
+        }
+        /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SessionConfiguration`](crate::model::SessionConfiguration).
+        pub fn build(self) -> crate::model::SessionConfiguration {
+            crate::model::SessionConfiguration {
+                execution_role: self.execution_role,
+                working_directory: self.working_directory,
+                idle_timeout_seconds: self.idle_timeout_seconds,
+                encryption_configuration: self.encryption_configuration,
+            }
+        }
+    }
+}
+impl SessionConfiguration {
+    /// Creates a new builder-style object to manufacture [`SessionConfiguration`](crate::model::SessionConfiguration).
+    pub fn builder() -> crate::model::session_configuration::Builder {
+        crate::model::session_configuration::Builder::default()
     }
 }
 
@@ -3518,6 +5846,9 @@ pub struct QueryExecution {
     /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     #[doc(hidden)]
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
+    /// <p>Specifies the query result reuse behavior that was used for the query.</p>
+    #[doc(hidden)]
+    pub result_reuse_configuration: std::option::Option<crate::model::ResultReuseConfiguration>,
     /// <p>The database in which the query execution occurred.</p>
     #[doc(hidden)]
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
@@ -3553,6 +5884,12 @@ impl QueryExecution {
     /// <p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
         self.result_configuration.as_ref()
+    }
+    /// <p>Specifies the query result reuse behavior that was used for the query.</p>
+    pub fn result_reuse_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ResultReuseConfiguration> {
+        self.result_reuse_configuration.as_ref()
     }
     /// <p>The database in which the query execution occurred.</p>
     pub fn query_execution_context(
@@ -3591,6 +5928,8 @@ pub mod query_execution {
         pub(crate) query: std::option::Option<std::string::String>,
         pub(crate) statement_type: std::option::Option<crate::model::StatementType>,
         pub(crate) result_configuration: std::option::Option<crate::model::ResultConfiguration>,
+        pub(crate) result_reuse_configuration:
+            std::option::Option<crate::model::ResultReuseConfiguration>,
         pub(crate) query_execution_context:
             std::option::Option<crate::model::QueryExecutionContext>,
         pub(crate) status: std::option::Option<crate::model::QueryExecutionStatus>,
@@ -3647,6 +5986,22 @@ pub mod query_execution {
             input: std::option::Option<crate::model::ResultConfiguration>,
         ) -> Self {
             self.result_configuration = input;
+            self
+        }
+        /// <p>Specifies the query result reuse behavior that was used for the query.</p>
+        pub fn result_reuse_configuration(
+            mut self,
+            input: crate::model::ResultReuseConfiguration,
+        ) -> Self {
+            self.result_reuse_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies the query result reuse behavior that was used for the query.</p>
+        pub fn set_result_reuse_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ResultReuseConfiguration>,
+        ) -> Self {
+            self.result_reuse_configuration = input;
             self
         }
         /// <p>The database in which the query execution occurred.</p>
@@ -3740,6 +6095,7 @@ pub mod query_execution {
                 query: self.query,
                 statement_type: self.statement_type,
                 result_configuration: self.result_configuration,
+                result_reuse_configuration: self.result_reuse_configuration,
                 query_execution_context: self.query_execution_context,
                 status: self.status,
                 statistics: self.statistics,
@@ -3782,6 +6138,9 @@ pub struct QueryExecutionStatistics {
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
     #[doc(hidden)]
     pub service_processing_time_in_millis: std::option::Option<i64>,
+    /// <p>Contains information about whether previous query results were reused for the query.</p>
+    #[doc(hidden)]
+    pub result_reuse_information: std::option::Option<crate::model::ResultReuseInformation>,
 }
 impl QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query took to execute.</p>
@@ -3812,6 +6171,12 @@ impl QueryExecutionStatistics {
     pub fn service_processing_time_in_millis(&self) -> std::option::Option<i64> {
         self.service_processing_time_in_millis
     }
+    /// <p>Contains information about whether previous query results were reused for the query.</p>
+    pub fn result_reuse_information(
+        &self,
+    ) -> std::option::Option<&crate::model::ResultReuseInformation> {
+        self.result_reuse_information.as_ref()
+    }
 }
 /// See [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
 pub mod query_execution_statistics {
@@ -3826,6 +6191,8 @@ pub mod query_execution_statistics {
         pub(crate) query_queue_time_in_millis: std::option::Option<i64>,
         pub(crate) query_planning_time_in_millis: std::option::Option<i64>,
         pub(crate) service_processing_time_in_millis: std::option::Option<i64>,
+        pub(crate) result_reuse_information:
+            std::option::Option<crate::model::ResultReuseInformation>,
     }
     impl Builder {
         /// <p>The number of milliseconds that the query took to execute.</p>
@@ -3913,6 +6280,22 @@ pub mod query_execution_statistics {
             self.service_processing_time_in_millis = input;
             self
         }
+        /// <p>Contains information about whether previous query results were reused for the query.</p>
+        pub fn result_reuse_information(
+            mut self,
+            input: crate::model::ResultReuseInformation,
+        ) -> Self {
+            self.result_reuse_information = Some(input);
+            self
+        }
+        /// <p>Contains information about whether previous query results were reused for the query.</p>
+        pub fn set_result_reuse_information(
+            mut self,
+            input: std::option::Option<crate::model::ResultReuseInformation>,
+        ) -> Self {
+            self.result_reuse_information = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
         pub fn build(self) -> crate::model::QueryExecutionStatistics {
             crate::model::QueryExecutionStatistics {
@@ -3923,6 +6306,7 @@ pub mod query_execution_statistics {
                 query_queue_time_in_millis: self.query_queue_time_in_millis,
                 query_planning_time_in_millis: self.query_planning_time_in_millis,
                 service_processing_time_in_millis: self.service_processing_time_in_millis,
+                result_reuse_information: self.result_reuse_information,
             }
         }
     }
@@ -3931,6 +6315,54 @@ impl QueryExecutionStatistics {
     /// Creates a new builder-style object to manufacture [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
     pub fn builder() -> crate::model::query_execution_statistics::Builder {
         crate::model::query_execution_statistics::Builder::default()
+    }
+}
+
+/// <p>Contains information about whether the result of a previous query was reused.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResultReuseInformation {
+    /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+    #[doc(hidden)]
+    pub reused_previous_result: bool,
+}
+impl ResultReuseInformation {
+    /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+    pub fn reused_previous_result(&self) -> bool {
+        self.reused_previous_result
+    }
+}
+/// See [`ResultReuseInformation`](crate::model::ResultReuseInformation).
+pub mod result_reuse_information {
+
+    /// A builder for [`ResultReuseInformation`](crate::model::ResultReuseInformation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reused_previous_result: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+        pub fn reused_previous_result(mut self, input: bool) -> Self {
+            self.reused_previous_result = Some(input);
+            self
+        }
+        /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+        pub fn set_reused_previous_result(mut self, input: std::option::Option<bool>) -> Self {
+            self.reused_previous_result = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResultReuseInformation`](crate::model::ResultReuseInformation).
+        pub fn build(self) -> crate::model::ResultReuseInformation {
+            crate::model::ResultReuseInformation {
+                reused_previous_result: self.reused_previous_result.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ResultReuseInformation {
+    /// Creates a new builder-style object to manufacture [`ResultReuseInformation`](crate::model::ResultReuseInformation).
+    pub fn builder() -> crate::model::result_reuse_information::Builder {
+        crate::model::result_reuse_information::Builder::default()
     }
 }
 
@@ -4863,6 +7295,187 @@ impl DataCatalog {
     /// Creates a new builder-style object to manufacture [`DataCatalog`](crate::model::DataCatalog).
     pub fn builder() -> crate::model::data_catalog::Builder {
         crate::model::data_catalog::Builder::default()
+    }
+}
+
+/// <p>Contains statistics for a notebook calculation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CalculationStatistics {
+    /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
+    #[doc(hidden)]
+    pub dpu_execution_in_millis: std::option::Option<i64>,
+    /// <p>The progress of the calculation.</p>
+    #[doc(hidden)]
+    pub progress: std::option::Option<std::string::String>,
+}
+impl CalculationStatistics {
+    /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
+    pub fn dpu_execution_in_millis(&self) -> std::option::Option<i64> {
+        self.dpu_execution_in_millis
+    }
+    /// <p>The progress of the calculation.</p>
+    pub fn progress(&self) -> std::option::Option<&str> {
+        self.progress.as_deref()
+    }
+}
+/// See [`CalculationStatistics`](crate::model::CalculationStatistics).
+pub mod calculation_statistics {
+
+    /// A builder for [`CalculationStatistics`](crate::model::CalculationStatistics).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dpu_execution_in_millis: std::option::Option<i64>,
+        pub(crate) progress: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
+        pub fn dpu_execution_in_millis(mut self, input: i64) -> Self {
+            self.dpu_execution_in_millis = Some(input);
+            self
+        }
+        /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
+        pub fn set_dpu_execution_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.dpu_execution_in_millis = input;
+            self
+        }
+        /// <p>The progress of the calculation.</p>
+        pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.progress = Some(input.into());
+            self
+        }
+        /// <p>The progress of the calculation.</p>
+        pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.progress = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculationStatistics`](crate::model::CalculationStatistics).
+        pub fn build(self) -> crate::model::CalculationStatistics {
+            crate::model::CalculationStatistics {
+                dpu_execution_in_millis: self.dpu_execution_in_millis,
+                progress: self.progress,
+            }
+        }
+    }
+}
+impl CalculationStatistics {
+    /// Creates a new builder-style object to manufacture [`CalculationStatistics`](crate::model::CalculationStatistics).
+    pub fn builder() -> crate::model::calculation_statistics::Builder {
+        crate::model::calculation_statistics::Builder::default()
+    }
+}
+
+/// <p>Contains information about an application-specific calculation result.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CalculationResult {
+    /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
+    #[doc(hidden)]
+    pub std_out_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
+    #[doc(hidden)]
+    pub std_error_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location of the folder for the calculation results.</p>
+    #[doc(hidden)]
+    pub result_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The data format of the calculation result.</p>
+    #[doc(hidden)]
+    pub result_type: std::option::Option<std::string::String>,
+}
+impl CalculationResult {
+    /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
+    pub fn std_out_s3_uri(&self) -> std::option::Option<&str> {
+        self.std_out_s3_uri.as_deref()
+    }
+    /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
+    pub fn std_error_s3_uri(&self) -> std::option::Option<&str> {
+        self.std_error_s3_uri.as_deref()
+    }
+    /// <p>The Amazon S3 location of the folder for the calculation results.</p>
+    pub fn result_s3_uri(&self) -> std::option::Option<&str> {
+        self.result_s3_uri.as_deref()
+    }
+    /// <p>The data format of the calculation result.</p>
+    pub fn result_type(&self) -> std::option::Option<&str> {
+        self.result_type.as_deref()
+    }
+}
+/// See [`CalculationResult`](crate::model::CalculationResult).
+pub mod calculation_result {
+
+    /// A builder for [`CalculationResult`](crate::model::CalculationResult).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) std_out_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) std_error_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) result_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) result_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
+        pub fn std_out_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.std_out_s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
+        pub fn set_std_out_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.std_out_s3_uri = input;
+            self
+        }
+        /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
+        pub fn std_error_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.std_error_s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
+        pub fn set_std_error_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.std_error_s3_uri = input;
+            self
+        }
+        /// <p>The Amazon S3 location of the folder for the calculation results.</p>
+        pub fn result_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 location of the folder for the calculation results.</p>
+        pub fn set_result_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.result_s3_uri = input;
+            self
+        }
+        /// <p>The data format of the calculation result.</p>
+        pub fn result_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_type = Some(input.into());
+            self
+        }
+        /// <p>The data format of the calculation result.</p>
+        pub fn set_result_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculationResult`](crate::model::CalculationResult).
+        pub fn build(self) -> crate::model::CalculationResult {
+            crate::model::CalculationResult {
+                std_out_s3_uri: self.std_out_s3_uri,
+                std_error_s3_uri: self.std_error_s3_uri,
+                result_s3_uri: self.result_s3_uri,
+                result_type: self.result_type,
+            }
+        }
+    }
+}
+impl CalculationResult {
+    /// Creates a new builder-style object to manufacture [`CalculationResult`](crate::model::CalculationResult).
+    pub fn builder() -> crate::model::calculation_result::Builder {
+        crate::model::calculation_result::Builder::default()
     }
 }
 

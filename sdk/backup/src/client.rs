@@ -91,6 +91,18 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`CancelLegalHold`](crate::client::fluent_builders::CancelLegalHold) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`legal_hold_id(impl Into<String>)`](crate::client::fluent_builders::CancelLegalHold::legal_hold_id) / [`set_legal_hold_id(Option<String>)`](crate::client::fluent_builders::CancelLegalHold::set_legal_hold_id): <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    ///   - [`cancel_description(impl Into<String>)`](crate::client::fluent_builders::CancelLegalHold::cancel_description) / [`set_cancel_description(Option<String>)`](crate::client::fluent_builders::CancelLegalHold::set_cancel_description): <p>String describing the reason for removing the legal hold.</p>
+    ///   - [`retain_record_in_days(i64)`](crate::client::fluent_builders::CancelLegalHold::retain_record_in_days) / [`set_retain_record_in_days(Option<i64>)`](crate::client::fluent_builders::CancelLegalHold::set_retain_record_in_days): <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// - On success, responds with [`CancelLegalHoldOutput`](crate::output::CancelLegalHoldOutput)
+
+    /// - On failure, responds with [`SdkError<CancelLegalHoldError>`](crate::error::CancelLegalHoldError)
+    pub fn cancel_legal_hold(&self) -> fluent_builders::CancelLegalHold {
+        fluent_builders::CancelLegalHold::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateBackupPlan`](crate::client::fluent_builders::CreateBackupPlan) operation.
     ///
     /// - The fluent builder is configurable:
@@ -150,6 +162,26 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateFrameworkError>`](crate::error::CreateFrameworkError)
     pub fn create_framework(&self) -> fluent_builders::CreateFramework {
         fluent_builders::CreateFramework::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateLegalHold`](crate::client::fluent_builders::CreateLegalHold) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::CreateLegalHold::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::CreateLegalHold::set_title): <p>This is the string title of the legal hold.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLegalHold::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLegalHold::set_description): <p>This is the string description of the legal hold.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateLegalHold::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateLegalHold::set_idempotency_token): <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    ///   - [`recovery_point_selection(RecoveryPointSelection)`](crate::client::fluent_builders::CreateLegalHold::recovery_point_selection) / [`set_recovery_point_selection(Option<RecoveryPointSelection>)`](crate::client::fluent_builders::CreateLegalHold::set_recovery_point_selection): <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLegalHold::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLegalHold::set_tags): <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
+    /// - On success, responds with [`CreateLegalHoldOutput`](crate::output::CreateLegalHoldOutput) with field(s):
+    ///   - [`title(Option<String>)`](crate::output::CreateLegalHoldOutput::title): <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+    ///   - [`status(Option<LegalHoldStatus>)`](crate::output::CreateLegalHoldOutput::status): <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateLegalHoldOutput::description): <p>This is the returned string description of the legal hold.</p>
+    ///   - [`legal_hold_id(Option<String>)`](crate::output::CreateLegalHoldOutput::legal_hold_id): <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+    ///   - [`legal_hold_arn(Option<String>)`](crate::output::CreateLegalHoldOutput::legal_hold_arn): <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateLegalHoldOutput::creation_date): <p>Time in number format when legal hold was created.</p>
+    ///   - [`recovery_point_selection(Option<RecoveryPointSelection>)`](crate::output::CreateLegalHoldOutput::recovery_point_selection): <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// - On failure, responds with [`SdkError<CreateLegalHoldError>`](crate::error::CreateLegalHoldError)
+    pub fn create_legal_hold(&self) -> fluent_builders::CreateLegalHold {
+        fluent_builders::CreateLegalHold::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateReportPlan`](crate::client::fluent_builders::CreateReportPlan) operation.
     ///
@@ -294,6 +326,10 @@ impl Client {
     ///   - [`start_by(Option<DateTime>)`](crate::output::DescribeBackupJobOutput::start_by): <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`backup_options(Option<HashMap<String, String>>)`](crate::output::DescribeBackupJobOutput::backup_options): <p>Represents the options specified as part of backup plan or on-demand backup job.</p>
     ///   - [`backup_type(Option<String>)`](crate::output::DescribeBackupJobOutput::backup_type): <p>Represents the actual backup type selected for a backup job. For example, if a successful Windows Volume Shadow Copy Service (VSS) backup was taken, <code>BackupType</code> returns <code>"WindowsVSS"</code>. If <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
+    ///   - [`parent_job_id(Option<String>)`](crate::output::DescribeBackupJobOutput::parent_job_id): <p>This returns the parent (composite) resource backup job ID.</p>
+    ///   - [`is_parent(bool)`](crate::output::DescribeBackupJobOutput::is_parent): <p>This returns the boolean value that a backup job is a parent (composite) job.</p>
+    ///   - [`number_of_child_jobs(Option<i64>)`](crate::output::DescribeBackupJobOutput::number_of_child_jobs): <p>This returns the number of child (nested) backup jobs.</p>
+    ///   - [`child_jobs_in_state(Option<HashMap<BackupJobState, i64>>)`](crate::output::DescribeBackupJobOutput::child_jobs_in_state): <p>This returns the statistics of the included child (nested) backup jobs.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupJobError>`](crate::error::DescribeBackupJobError)
     pub fn describe_backup_job(&self) -> fluent_builders::DescribeBackupJob {
         fluent_builders::DescribeBackupJob::new(self.handle.clone())
@@ -336,7 +372,7 @@ impl Client {
     ///   - [`framework_arn(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     ///   - [`framework_description(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_description): <p>An optional description of the framework.</p>
     ///   - [`framework_controls(Option<Vec<FrameworkControl>>)`](crate::output::DescribeFrameworkOutput::framework_controls): <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeFrameworkOutput::creation_time): <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeFrameworkOutput::creation_time): <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     ///   - [`deployment_status(Option<String>)`](crate::output::DescribeFrameworkOutput::deployment_status): <p>The deployment status of a framework. The statuses are:</p>  <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
     ///   - [`framework_status(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_status): <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>  <ul>   <li> <p> <code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p> </li>   <li> <p> <code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p> </li>   <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>   <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>  </ul>
     ///   - [`idempotency_token(Option<String>)`](crate::output::DescribeFrameworkOutput::idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -381,7 +417,7 @@ impl Client {
     ///   - [`resource_type(Option<String>)`](crate::output::DescribeRecoveryPointOutput::resource_type): <p>The type of Amazon Web Services resource to save as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     ///   - [`created_by(Option<RecoveryPointCreator>)`](crate::output::DescribeRecoveryPointOutput::created_by): <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
     ///   - [`iam_role_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    ///   - [`status(Option<RecoveryPointStatus>)`](crate::output::DescribeRecoveryPointOutput::status): <p>A status code specifying the state of the recovery point.</p>  <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>  <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    ///   - [`status(Option<RecoveryPointStatus>)`](crate::output::DescribeRecoveryPointOutput::status): <p>A status code specifying the state of the recovery point.</p>  <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>  <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>  <p> <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.</p>  <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
     ///   - [`status_message(Option<String>)`](crate::output::DescribeRecoveryPointOutput::status_message): <p>A status message explaining the reason for the recovery point deletion failure.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::creation_date): <p>The date and time that a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`completion_date(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::completion_date): <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -392,6 +428,9 @@ impl Client {
     ///   - [`is_encrypted(bool)`](crate::output::DescribeRecoveryPointOutput::is_encrypted): <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
     ///   - [`storage_class(Option<StorageClass>)`](crate::output::DescribeRecoveryPointOutput::storage_class): <p>Specifies the storage class of the recovery point. Valid values are <code>WARM</code> or <code>COLD</code>.</p>
     ///   - [`last_restore_time(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::last_restore_time): <p>The date and time that a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`parent_recovery_point_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::parent_recovery_point_arn): <p>This is an ARN that uniquely identifies a parent (composite) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`composite_member_identifier(Option<String>)`](crate::output::DescribeRecoveryPointOutput::composite_member_identifier): <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    ///   - [`is_parent(bool)`](crate::output::DescribeRecoveryPointOutput::is_parent): <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
     /// - On failure, responds with [`SdkError<DescribeRecoveryPointError>`](crate::error::DescribeRecoveryPointError)
     pub fn describe_recovery_point(&self) -> fluent_builders::DescribeRecoveryPoint {
         fluent_builders::DescribeRecoveryPoint::new(self.handle.clone())
@@ -459,6 +498,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<DisassociateRecoveryPointError>`](crate::error::DisassociateRecoveryPointError)
     pub fn disassociate_recovery_point(&self) -> fluent_builders::DisassociateRecoveryPoint {
         fluent_builders::DisassociateRecoveryPoint::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DisassociateRecoveryPointFromParent`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent::set_backup_vault_name): <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent::set_recovery_point_arn): <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
+    /// - On success, responds with [`DisassociateRecoveryPointFromParentOutput`](crate::output::DisassociateRecoveryPointFromParentOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateRecoveryPointFromParentError>`](crate::error::DisassociateRecoveryPointFromParentError)
+    pub fn disassociate_recovery_point_from_parent(
+        &self,
+    ) -> fluent_builders::DisassociateRecoveryPointFromParent {
+        fluent_builders::DisassociateRecoveryPointFromParent::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportBackupPlanTemplate`](crate::client::fluent_builders::ExportBackupPlanTemplate) operation.
     ///
@@ -549,6 +601,25 @@ impl Client {
     pub fn get_backup_vault_notifications(&self) -> fluent_builders::GetBackupVaultNotifications {
         fluent_builders::GetBackupVaultNotifications::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetLegalHold`](crate::client::fluent_builders::GetLegalHold) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`legal_hold_id(impl Into<String>)`](crate::client::fluent_builders::GetLegalHold::legal_hold_id) / [`set_legal_hold_id(Option<String>)`](crate::client::fluent_builders::GetLegalHold::set_legal_hold_id): <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// - On success, responds with [`GetLegalHoldOutput`](crate::output::GetLegalHoldOutput) with field(s):
+    ///   - [`title(Option<String>)`](crate::output::GetLegalHoldOutput::title): <p>This is the string title of the legal hold.</p>
+    ///   - [`status(Option<LegalHoldStatus>)`](crate::output::GetLegalHoldOutput::status): <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetLegalHoldOutput::description): <p>This is the returned string description of the legal hold.</p>
+    ///   - [`cancel_description(Option<String>)`](crate::output::GetLegalHoldOutput::cancel_description): <p>String describing the reason for removing the legal hold.</p>
+    ///   - [`legal_hold_id(Option<String>)`](crate::output::GetLegalHoldOutput::legal_hold_id): <p>This is the returned ID associated with a specified legal hold.</p>
+    ///   - [`legal_hold_arn(Option<String>)`](crate::output::GetLegalHoldOutput::legal_hold_arn): <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetLegalHoldOutput::creation_date): <p>Time in number format when legal hold was created.</p>
+    ///   - [`cancellation_date(Option<DateTime>)`](crate::output::GetLegalHoldOutput::cancellation_date): <p>Time in number when legal hold was cancelled.</p>
+    ///   - [`retain_record_until(Option<DateTime>)`](crate::output::GetLegalHoldOutput::retain_record_until): <p>This is the date and time until which the legal hold record will be retained.</p>
+    ///   - [`recovery_point_selection(Option<RecoveryPointSelection>)`](crate::output::GetLegalHoldOutput::recovery_point_selection): <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// - On failure, responds with [`SdkError<GetLegalHoldError>`](crate::error::GetLegalHoldError)
+    pub fn get_legal_hold(&self) -> fluent_builders::GetLegalHold {
+        fluent_builders::GetLegalHold::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetRecoveryPointRestoreMetadata`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata) operation.
     ///
     /// - The fluent builder is configurable:
@@ -589,6 +660,7 @@ impl Client {
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>  <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     ///   - [`by_complete_after(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_complete_after): <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     ///   - [`by_complete_before(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_complete_before): <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    ///   - [`by_parent_job_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_parent_job_id) / [`set_by_parent_job_id(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_parent_job_id): <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     /// - On success, responds with [`ListBackupJobsOutput`](crate::output::ListBackupJobsOutput) with field(s):
     ///   - [`backup_jobs(Option<Vec<BackupJob>>)`](crate::output::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBackupJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -679,6 +751,7 @@ impl Client {
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     ///   - [`by_complete_before(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_complete_before): <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     ///   - [`by_complete_after(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_complete_after): <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    ///   - [`by_parent_job_id(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_parent_job_id) / [`set_by_parent_job_id(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_parent_job_id): <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     /// - On success, responds with [`ListCopyJobsOutput`](crate::output::ListCopyJobsOutput) with field(s):
     ///   - [`copy_jobs(Option<Vec<CopyJob>>)`](crate::output::ListCopyJobsOutput::copy_jobs): <p>An array of structures containing metadata about your copy jobs returned in JSON format. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCopyJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
@@ -698,6 +771,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListFrameworksError>`](crate::error::ListFrameworksError)
     pub fn list_frameworks(&self) -> fluent_builders::ListFrameworks {
         fluent_builders::ListFrameworks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListLegalHolds`](crate::client::fluent_builders::ListLegalHolds) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLegalHolds::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLegalHolds::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLegalHolds::set_next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLegalHolds::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLegalHolds::set_max_results): <p>The maximum number of resource list items to be returned.</p>
+    /// - On success, responds with [`ListLegalHoldsOutput`](crate::output::ListLegalHoldsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListLegalHoldsOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`legal_holds(Option<Vec<LegalHold>>)`](crate::output::ListLegalHoldsOutput::legal_holds): <p>This is an array of returned legal holds, both active and previous.</p>
+    /// - On failure, responds with [`SdkError<ListLegalHoldsError>`](crate::error::ListLegalHoldsError)
+    pub fn list_legal_holds(&self) -> fluent_builders::ListLegalHolds {
+        fluent_builders::ListLegalHolds::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProtectedResources`](crate::client::fluent_builders::ListProtectedResources) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProtectedResources::into_paginator).
@@ -724,6 +810,7 @@ impl Client {
     ///   - [`by_backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_backup_plan_id) / [`set_by_backup_plan_id(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_backup_plan_id): <p>Returns only recovery points that match the specified backup plan ID.</p>
     ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_created_before): <p>Returns only recovery points that were created before the specified timestamp.</p>
     ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_created_after): <p>Returns only recovery points that were created after the specified timestamp.</p>
+    ///   - [`by_parent_recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_parent_recovery_point_arn) / [`set_by_parent_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_parent_recovery_point_arn): <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`ListRecoveryPointsByBackupVaultOutput`](crate::output::ListRecoveryPointsByBackupVaultOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryPointsByBackupVaultOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     ///   - [`recovery_points(Option<Vec<RecoveryPointByBackupVault>>)`](crate::output::ListRecoveryPointsByBackupVaultOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
@@ -732,6 +819,22 @@ impl Client {
         &self,
     ) -> fluent_builders::ListRecoveryPointsByBackupVault {
         fluent_builders::ListRecoveryPointsByBackupVault::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListRecoveryPointsByLegalHold`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`legal_hold_id(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::legal_hold_id) / [`set_legal_hold_id(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::set_legal_hold_id): <p>This is the ID of the legal hold.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::set_next_token): <p>This is the next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold::set_max_results): <p>This is the maximum number of resource list items to be returned.</p>
+    /// - On success, responds with [`ListRecoveryPointsByLegalHoldOutput`](crate::output::ListRecoveryPointsByLegalHoldOutput) with field(s):
+    ///   - [`recovery_points(Option<Vec<RecoveryPointMember>>)`](crate::output::ListRecoveryPointsByLegalHoldOutput::recovery_points): <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryPointsByLegalHoldOutput::next_token): <p>This return is the next item following a partial list of returned resources.</p>
+    /// - On failure, responds with [`SdkError<ListRecoveryPointsByLegalHoldError>`](crate::error::ListRecoveryPointsByLegalHoldError)
+    pub fn list_recovery_points_by_legal_hold(
+        &self,
+    ) -> fluent_builders::ListRecoveryPointsByLegalHold {
+        fluent_builders::ListRecoveryPointsByLegalHold::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRecoveryPointsByResource`](crate::client::fluent_builders::ListRecoveryPointsByResource) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByResource::into_paginator).
@@ -843,7 +946,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    ///   - [`backup_vault_events(Vec<BackupVaultEvent>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_events) / [`set_backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>  <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>  <p>The following events are supported:</p>  <ul>   <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>   <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>   <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>   <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>  </ul> <note>   <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>  </note>
+    ///   - [`backup_vault_events(Vec<BackupVaultEvent>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_events) / [`set_backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>  <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>  <p>The following events are supported:</p>  <ul>   <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>   <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>   <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>   <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>  </ul> <note>   <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>  </note>
     /// - On success, responds with [`PutBackupVaultNotificationsOutput`](crate::output::PutBackupVaultNotificationsOutput)
 
     /// - On failure, responds with [`SdkError<PutBackupVaultNotificationsError>`](crate::error::PutBackupVaultNotificationsError)
@@ -857,7 +960,7 @@ impl Client {
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    ///   - [`start_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::start_window_minutes) / [`set_start_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_start_window_minutes): <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+    ///   - [`start_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::start_window_minutes) / [`set_start_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_start_window_minutes): <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p>
     ///   - [`complete_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::complete_window_minutes) / [`set_complete_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_complete_window_minutes): <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
     ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartBackupJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartBackupJob::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     ///   - [`recovery_point_tags(HashMap<String, String>)`](crate::client::fluent_builders::StartBackupJob::recovery_point_tags) / [`set_recovery_point_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBackupJob::set_recovery_point_tags): <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
@@ -866,6 +969,7 @@ impl Client {
     ///   - [`backup_job_id(Option<String>)`](crate::output::StartBackupJobOutput::backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
     ///   - [`recovery_point_arn(Option<String>)`](crate::output::StartBackupJobOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::StartBackupJobOutput::creation_date): <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`is_parent(bool)`](crate::output::StartBackupJobOutput::is_parent): <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
     /// - On failure, responds with [`SdkError<StartBackupJobError>`](crate::error::StartBackupJobError)
     pub fn start_backup_job(&self) -> fluent_builders::StartBackupJob {
         fluent_builders::StartBackupJob::new(self.handle.clone())
@@ -882,6 +986,7 @@ impl Client {
     /// - On success, responds with [`StartCopyJobOutput`](crate::output::StartCopyJobOutput) with field(s):
     ///   - [`copy_job_id(Option<String>)`](crate::output::StartCopyJobOutput::copy_job_id): <p>Uniquely identifies a copy job.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::StartCopyJobOutput::creation_date): <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`is_parent(bool)`](crate::output::StartCopyJobOutput::is_parent): <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
     /// - On failure, responds with [`SdkError<StartCopyJobError>`](crate::error::StartCopyJobError)
     pub fn start_copy_job(&self) -> fluent_builders::StartCopyJob {
         fluent_builders::StartCopyJob::new(self.handle.clone())
@@ -902,7 +1007,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     ///   - [`metadata(HashMap<String, String>)`](crate::client::fluent_builders::StartRestoreJob::metadata) / [`set_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartRestoreJob::set_metadata): <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>  <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>  <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>  <ul>   <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>   <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>   <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>   <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>   <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>   <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>   <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>  </ul>
-    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_resource_type): <p>Starts a job to restore a recovery point for one of the following resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     /// - On success, responds with [`StartRestoreJobOutput`](crate::output::StartRestoreJobOutput) with field(s):
@@ -968,7 +1073,7 @@ impl Client {
     /// - On success, responds with [`UpdateFrameworkOutput`](crate::output::UpdateFrameworkOutput) with field(s):
     ///   - [`framework_name(Option<String>)`](crate::output::UpdateFrameworkOutput::framework_name): <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     ///   - [`framework_arn(Option<String>)`](crate::output::UpdateFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateFrameworkOutput::creation_time): <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateFrameworkOutput::creation_time): <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     /// - On failure, responds with [`SdkError<UpdateFrameworkError>`](crate::error::UpdateFrameworkError)
     pub fn update_framework(&self) -> fluent_builders::UpdateFramework {
         fluent_builders::UpdateFramework::new(self.handle.clone())
@@ -1033,6 +1138,105 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `CancelLegalHold`.
+    ///
+    /// <p>This action removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelLegalHold {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::cancel_legal_hold_input::Builder,
+    }
+    impl CancelLegalHold {
+        /// Creates a new `CancelLegalHold`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CancelLegalHold,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CancelLegalHoldError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelLegalHoldOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelLegalHoldError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+        pub fn legal_hold_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.legal_hold_id(input.into());
+            self
+        }
+        /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+        pub fn set_legal_hold_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_legal_hold_id(input);
+            self
+        }
+        /// <p>String describing the reason for removing the legal hold.</p>
+        pub fn cancel_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cancel_description(input.into());
+            self
+        }
+        /// <p>String describing the reason for removing the legal hold.</p>
+        pub fn set_cancel_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_cancel_description(input);
+            self
+        }
+        /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+        pub fn retain_record_in_days(mut self, input: i64) -> Self {
+            self.inner = self.inner.retain_record_in_days(input);
+            self
+        }
+        /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+        pub fn set_retain_record_in_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_retain_record_in_days(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateBackupPlan`.
     ///
     /// <p>Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains information that Backup uses to schedule tasks that create recovery points for resources.</p>
@@ -1520,6 +1724,141 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_framework_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLegalHold`.
+    ///
+    /// <p>This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLegalHold {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_legal_hold_input::Builder,
+    }
+    impl CreateLegalHold {
+        /// Creates a new `CreateLegalHold`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateLegalHold,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateLegalHoldError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLegalHoldOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLegalHoldError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>This is the string title of the legal hold.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
+            self
+        }
+        /// <p>This is the string title of the legal hold.</p>
+        pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_title(input);
+            self
+        }
+        /// <p>This is the string description of the legal hold.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>This is the string description of the legal hold.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
+            self
+        }
+        /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+        pub fn set_idempotency_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_idempotency_token(input);
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn recovery_point_selection(
+            mut self,
+            input: crate::model::RecoveryPointSelection,
+        ) -> Self {
+            self.inner = self.inner.recovery_point_selection(input);
+            self
+        }
+        /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+        pub fn set_recovery_point_selection(
+            mut self,
+            input: std::option::Option<crate::model::RecoveryPointSelection>,
+        ) -> Self {
+            self.inner = self.inner.set_recovery_point_selection(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2233,6 +2572,9 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the recovery point specified by a recovery point ID.</p>
     /// <p>If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous backup and stops future continuous backup.</p>
+    /// <p>When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.</p>
+    /// <p> <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting"> Troubleshooting manual deletions</a>.</p>
+    /// <p>If the user or role is deleted or the permission within the role is removed, the deletion will not be successful and will enter an <code>EXPIRED</code> state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryPoint {
         handle: std::sync::Arc<super::Handle>,
@@ -3302,6 +3644,99 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateRecoveryPointFromParent`.
+    ///
+    /// <p>This action to a specific child (nested) recovery point removes the relationship between the specified recovery point and its parent (composite) recovery point.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateRecoveryPointFromParent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_recovery_point_from_parent_input::Builder,
+    }
+    impl DisassociateRecoveryPointFromParent {
+        /// Creates a new `DisassociateRecoveryPointFromParent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DisassociateRecoveryPointFromParent,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateRecoveryPointFromParentError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateRecoveryPointFromParentOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateRecoveryPointFromParentError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+        pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(input.into());
+            self
+        }
+        /// <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backup_vault_name(input);
+            self
+        }
+        /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
+        pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(input.into());
+            self
+        }
+        /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
+        pub fn set_recovery_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recovery_point_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ExportBackupPlanTemplate`.
     ///
     /// <p>Returns the backup plan that is specified by the plan ID as a backup template.</p>
@@ -3854,6 +4289,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetLegalHold`.
+    ///
+    /// <p>This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format, in addition to metadata.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetLegalHold {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_legal_hold_input::Builder,
+    }
+    impl GetLegalHold {
+        /// Creates a new `GetLegalHold`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetLegalHold,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetLegalHoldError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLegalHoldOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLegalHoldError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+        pub fn legal_hold_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.legal_hold_id(input.into());
+            self
+        }
+        /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+        pub fn set_legal_hold_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_legal_hold_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetRecoveryPointRestoreMetadata`.
     ///
     /// <p>Returns a set of metadata key-value pairs that were used to create the backup.</p>
@@ -4239,6 +4750,19 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_complete_before(input);
+            self
+        }
+        /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+        pub fn by_parent_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_parent_job_id(input.into());
+            self
+        }
+        /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+        pub fn set_by_parent_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_by_parent_job_id(input);
             self
         }
     }
@@ -4956,6 +5480,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_complete_after(input);
             self
         }
+        /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+        pub fn by_parent_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_parent_job_id(input.into());
+            self
+        }
+        /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+        pub fn set_by_parent_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_by_parent_job_id(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListFrameworks`.
     ///
@@ -5043,6 +5580,95 @@ pub mod fluent_builders {
         /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListLegalHolds`.
+    ///
+    /// <p>This action returns metadata about active and previous legal holds.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListLegalHolds {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_legal_holds_input::Builder,
+    }
+    impl ListLegalHolds {
+        /// Creates a new `ListLegalHolds`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListLegalHolds,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLegalHoldsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLegalHoldsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLegalHoldsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLegalHoldsPaginator {
+            crate::paginator::ListLegalHoldsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of resource list items to be returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of resource list items to be returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -5303,6 +5929,124 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_by_created_after(input);
+            self
+        }
+        /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
+        pub fn by_parent_recovery_point_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.by_parent_recovery_point_arn(input.into());
+            self
+        }
+        /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
+        pub fn set_by_parent_recovery_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_by_parent_recovery_point_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListRecoveryPointsByLegalHold`.
+    ///
+    /// <p>This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListRecoveryPointsByLegalHold {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_recovery_points_by_legal_hold_input::Builder,
+    }
+    impl ListRecoveryPointsByLegalHold {
+        /// Creates a new `ListRecoveryPointsByLegalHold`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListRecoveryPointsByLegalHold,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRecoveryPointsByLegalHoldOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRecoveryPointsByLegalHoldError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecoveryPointsByLegalHoldPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecoveryPointsByLegalHoldPaginator {
+            crate::paginator::ListRecoveryPointsByLegalHoldPaginator::new(self.handle, self.inner)
+        }
+        /// <p>This is the ID of the legal hold.</p>
+        pub fn legal_hold_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.legal_hold_id(input.into());
+            self
+        }
+        /// <p>This is the ID of the legal hold.</p>
+        pub fn set_legal_hold_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_legal_hold_id(input);
+            self
+        }
+        /// <p>This is the next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>This is the next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>This is the maximum number of resource list items to be returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>This is the maximum number of resource list items to be returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -6216,7 +6960,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
         /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
+        /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
         /// </note>
         pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
             self.inner = self.inner.backup_vault_events(input);
@@ -6231,7 +6975,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
         /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
+        /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
         /// </note>
         pub fn set_backup_vault_events(
             mut self,
@@ -6349,12 +7093,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p>
         pub fn start_window_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.start_window_minutes(input);
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at least 60 minutes to avoid errors.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_window_minutes(input);
             self
@@ -6790,12 +7534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -6858,6 +7602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBackupJob`.
     ///
     /// <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
+    /// <p>This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBackupJob {
         handle: std::sync::Arc<super::Handle>,

@@ -78,6 +78,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-south-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.ap-south-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-south-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-southeast-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "api.ecr.ap-southeast-1.amazonaws.com",
@@ -177,6 +188,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "eu-central-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.eu-central-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-2")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "eu-north-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "api.ecr.eu-north-1.amazonaws.com",
@@ -195,6 +217,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("eu-south-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "eu-south-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.eu-south-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-south-2")
                         .build(),
                 },
             )

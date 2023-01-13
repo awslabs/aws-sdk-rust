@@ -6158,6 +6158,168 @@ impl std::error::Error for UpdateSecurityError {
     }
 }
 
+/// Error type for the `UpdateStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateStorageError {
+    /// Kind of error that occurred.
+    pub kind: UpdateStorageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateStorageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateStorageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateStorage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateStorageErrorKind {
+    /// <p>Returns information about an error.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Returns information about an error.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Returns information about an error.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Returns information about an error.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Returns information about an error.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Returns information about an error.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>Returns information about an error.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateStorageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateStorageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateStorageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateStorageError {
+    fn code(&self) -> Option<&str> {
+        UpdateStorageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateStorageError {
+    /// Creates a new `UpdateStorageError`.
+    pub fn new(kind: UpdateStorageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateStorageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateStorageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateStorageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateStorageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStorageErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStorageErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStorageErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStorageErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStorageErrorKind::UnauthorizedException(_))
+    }
+}
+impl std::error::Error for UpdateStorageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateStorageErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateStorageErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 ///
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
 ///

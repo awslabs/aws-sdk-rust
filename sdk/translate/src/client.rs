@@ -99,7 +99,7 @@ impl Client {
     ///   - [`parallel_data_config(ParallelDataConfig)`](crate::client::fluent_builders::CreateParallelData::parallel_data_config) / [`set_parallel_data_config(Option<ParallelDataConfig>)`](crate::client::fluent_builders::CreateParallelData::set_parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
     ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::CreateParallelData::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::CreateParallelData::set_encryption_key): <p>The encryption key used to encrypt this object.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateParallelData::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateParallelData::set_client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateParallelData::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateParallelData::set_tags): (undocumented)
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateParallelData::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateParallelData::set_tags): <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
     /// - On success, responds with [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateParallelDataOutput::name): <p>The custom name that you assigned to the parallel data resource.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::CreateParallelDataOutput::status): <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
@@ -172,7 +172,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportTerminology::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportTerminology::set_description): <p>The description of the custom terminology being imported.</p>
     ///   - [`terminology_data(TerminologyData)`](crate::client::fluent_builders::ImportTerminology::terminology_data) / [`set_terminology_data(Option<TerminologyData>)`](crate::client::fluent_builders::ImportTerminology::set_terminology_data): <p>The terminology data for the custom terminology being imported.</p>
     ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::ImportTerminology::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::ImportTerminology::set_encryption_key): <p>The encryption key for the custom terminology being imported.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportTerminology::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportTerminology::set_tags): (undocumented)
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportTerminology::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportTerminology::set_tags): <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
     /// - On success, responds with [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput) with field(s):
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::ImportTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being imported.</p>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::ImportTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
@@ -211,9 +211,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): (undocumented)
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying. </p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): (undocumented)
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -251,13 +251,13 @@ impl Client {
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_job_name): <p>The name of the batch translation job to be performed.</p>
     ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_input_data_config): <p>Specifies the format and location of the input documents for the translation job.</p>
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_output_data_config): <p>Specifies the S3 folder to which your job output will be saved. </p>
-    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
-    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_source_language_code): <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
-    ///   - [`target_language_codes(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::target_language_codes) / [`set_target_language_codes(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_target_language_codes): <p>The language code of the output language.</p>
-    ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_terminology_names): <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>  <p>This parameter accepts only one custom terminology resource.</p>  <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>  <p>For more information, see <code>how-custom-terminology</code>.</p>
-    ///   - [`parallel_data_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::parallel_data_names) / [`set_parallel_data_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_parallel_data_names): <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>  <p>This parameter accepts only one parallel data resource.</p> <note>   <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>  </note>  <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>  <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
+    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_source_language_code): <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    ///   - [`target_language_codes(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::target_language_codes) / [`set_target_language_codes(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_target_language_codes): <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>  <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_terminology_names): <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>  <p>This parameter accepts only one custom terminology resource.</p>  <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>  <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
+    ///   - [`parallel_data_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::parallel_data_names) / [`set_parallel_data_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_parallel_data_names): <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>  <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>  <p>This parameter accepts only one parallel data resource.</p> <note>   <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>  </note>  <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_client_token): <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
-    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::StartTextTranslationJob::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::StartTextTranslationJob::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
+    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::StartTextTranslationJob::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::StartTextTranslationJob::set_settings): <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     /// - On success, responds with [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartTextTranslationJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTextTranslationJobOutput::job_status): <p>The status of the job. Possible values include:</p>  <ul>   <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>   <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>   <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>   <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>   <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>   <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>  </ul>
@@ -279,8 +279,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): (undocumented)
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): (undocumented)
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -290,9 +290,9 @@ impl Client {
     /// Constructs a fluent builder for the [`TranslateText`](crate::client::fluent_builders::TranslateText) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::TranslateText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::TranslateText::set_text): <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::TranslateText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::TranslateText::set_text): <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
     ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::TranslateText::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::TranslateText::set_terminology_names): <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>   <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>  </note>
+    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>   <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>  </note>
     ///   - [`target_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::target_language_code) / [`set_target_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_target_language_code): <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
     ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::TranslateText::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::TranslateText::set_settings): <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     /// - On success, responds with [`TranslateTextOutput`](crate::output::TranslateTextOutput) with field(s):
@@ -308,8 +308,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): (undocumented)
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): (undocumented)
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource. </p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -462,12 +462,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -987,12 +987,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1194,6 +1194,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
+    /// <p>Lists all tags associated with a given Amazon Translate resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1253,12 +1254,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1457,10 +1458,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTextTranslationJob`.
     ///
-    /// <p>Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of text across multiple documents at once. For more information, see <code>async</code>.</p>
-    /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p> <note>
-    /// <p>Amazon Translate does not support batch translation of multiple source languages at once.</p>
-    /// </note>
+    /// <p>Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text across multiple documents at once. For batch translation, you can input documents with different source languages (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch translation translates each input document into each of the target languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.</p>
+    /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTextTranslationJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1556,12 +1555,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1569,14 +1568,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
+        /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_language_code(input.into());
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
+        /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1588,12 +1585,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
         ///
-        /// <p>The language code of the output language.</p>
+        /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
+        /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_language_codes(input.into());
             self
         }
-        /// <p>The language code of the output language.</p>
+        /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
+        /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         pub fn set_target_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1607,16 +1606,18 @@ pub mod fluent_builders {
         ///
         /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
         /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
-        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.terminology_names(input.into());
             self
         }
         /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
+        /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
         /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
-        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1628,22 +1629,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
+        /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
         /// <p>This parameter accepts only one parallel data resource.</p> <note>
         /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
         /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
-        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parallel_data_names(input.into());
             self
         }
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
+        /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
         /// <p>This parameter accepts only one parallel data resource.</p> <note>
         /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
         /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
-        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1661,12 +1664,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -1752,6 +1755,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
+    /// <p>Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1811,12 +1815,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1825,12 +1829,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1841,7 +1845,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TranslateText`.
     ///
-    /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <code>what-is-languages</code>.</p>
+    /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TranslateText {
         handle: std::sync::Arc<super::Handle>,
@@ -1901,12 +1905,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -1928,7 +1932,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminology_names(input);
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
         /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
         /// </note>
@@ -1936,7 +1940,7 @@ pub mod fluent_builders {
             self.inner = self.inner.source_language_code(input.into());
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
         /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
         /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
         /// </note>
@@ -1976,6 +1980,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
+    /// <p>Removes a specific tag associated with an Amazon Translate resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2035,12 +2040,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2049,12 +2054,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

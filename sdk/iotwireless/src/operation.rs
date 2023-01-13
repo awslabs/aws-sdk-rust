@@ -1634,6 +1634,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPositionConfiguration
     }
 }
 
+/// Operation shape for `GetPositionEstimate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_position_estimate`](crate::client::Client::get_position_estimate).
+///
+/// See [`crate::client::fluent_builders::GetPositionEstimate`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetPositionEstimate {
+    _private: (),
+}
+impl GetPositionEstimate {
+    /// Creates a new builder-style object to manufacture [`GetPositionEstimateInput`](crate::input::GetPositionEstimateInput).
+    pub fn builder() -> crate::input::get_position_estimate_input::Builder {
+        crate::input::get_position_estimate_input::Builder::default()
+    }
+    /// Creates a new `GetPositionEstimate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetPositionEstimate {
+    type Output = std::result::Result<
+        crate::output::GetPositionEstimateOutput,
+        crate::error::GetPositionEstimateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_position_estimate_error(response)
+        } else {
+            crate::operation_deser::parse_get_position_estimate_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetResourceEventConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1698,6 +1732,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceLogLevel {
             crate::operation_deser::parse_get_resource_log_level_error(response)
         } else {
             crate::operation_deser::parse_get_resource_log_level_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetResourcePosition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resource_position`](crate::client::Client::get_resource_position).
+///
+/// See [`crate::client::fluent_builders::GetResourcePosition`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetResourcePosition {
+    _private: (),
+}
+impl GetResourcePosition {
+    /// Creates a new builder-style object to manufacture [`GetResourcePositionInput`](crate::input::GetResourcePositionInput).
+    pub fn builder() -> crate::input::get_resource_position_input::Builder {
+        crate::input::get_resource_position_input::Builder::default()
+    }
+    /// Creates a new `GetResourcePosition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResourcePosition {
+    type Output = std::result::Result<
+        crate::output::GetResourcePositionOutput,
+        crate::error::GetResourcePositionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_position_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_position_response(response)
         }
     }
 }
@@ -3300,6 +3368,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceEventConfi
             crate::operation_deser::parse_update_resource_event_configuration_error(response)
         } else {
             crate::operation_deser::parse_update_resource_event_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateResourcePosition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_resource_position`](crate::client::Client::update_resource_position).
+///
+/// See [`crate::client::fluent_builders::UpdateResourcePosition`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateResourcePosition {
+    _private: (),
+}
+impl UpdateResourcePosition {
+    /// Creates a new builder-style object to manufacture [`UpdateResourcePositionInput`](crate::input::UpdateResourcePositionInput).
+    pub fn builder() -> crate::input::update_resource_position_input::Builder {
+        crate::input::update_resource_position_input::Builder::default()
+    }
+    /// Creates a new `UpdateResourcePosition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateResourcePosition {
+    type Output = std::result::Result<
+        crate::output::UpdateResourcePositionOutput,
+        crate::error::UpdateResourcePositionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_resource_position_error(response)
+        } else {
+            crate::operation_deser::parse_update_resource_position_response(response)
         }
     }
 }

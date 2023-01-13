@@ -1230,6 +1230,7 @@ pub mod create_app_input {
         pub(crate) app_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) resource_spec: std::option::Option<crate::model::ResourceSpec>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The domain ID.</p>
@@ -1242,12 +1243,12 @@ pub mod create_app_input {
             self.domain_id = input;
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_profile_name = Some(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1311,6 +1312,16 @@ pub mod create_app_input {
             self.resource_spec = input;
             self
         }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppInput`](crate::input::CreateAppInput).
         pub fn build(
             self,
@@ -1323,6 +1334,7 @@ pub mod create_app_input {
                 app_name: self.app_name,
                 tags: self.tags,
                 resource_spec: self.resource_spec,
+                space_name: self.space_name,
             })
         }
     }
@@ -3413,6 +3425,7 @@ pub mod create_domain_input {
         pub(crate) app_security_group_management:
             std::option::Option<crate::model::AppSecurityGroupManagement>,
         pub(crate) domain_settings: std::option::Option<crate::model::DomainSettings>,
+        pub(crate) default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
     }
     impl Builder {
         /// <p>A name for the domain.</p>
@@ -3581,6 +3594,19 @@ pub mod create_domain_input {
             self.domain_settings = input;
             self
         }
+        /// <p>The default settings used to create a space.</p>
+        pub fn default_space_settings(mut self, input: crate::model::DefaultSpaceSettings) -> Self {
+            self.default_space_settings = Some(input);
+            self
+        }
+        /// <p>The default settings used to create a space.</p>
+        pub fn set_default_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSpaceSettings>,
+        ) -> Self {
+            self.default_space_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDomainInput`](crate::input::CreateDomainInput).
         pub fn build(
             self,
@@ -3598,6 +3624,7 @@ pub mod create_domain_input {
                 kms_key_id: self.kms_key_id,
                 app_security_group_management: self.app_security_group_management,
                 domain_settings: self.domain_settings,
+                default_space_settings: self.default_space_settings,
             })
         }
     }
@@ -4588,6 +4615,8 @@ pub mod create_endpoint_config_input {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
         pub(crate) explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+        pub(crate) shadow_production_variants:
+            std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
     }
     impl Builder {
         /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
@@ -4607,14 +4636,14 @@ pub mod create_endpoint_config_input {
         ///
         /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
         ///
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn production_variants(mut self, input: crate::model::ProductionVariant) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
             v.push(input);
             self.production_variants = Some(v);
             self
         }
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn set_production_variants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
@@ -4714,6 +4743,28 @@ pub mod create_endpoint_config_input {
             self.explainer_config = input;
             self
         }
+        /// Appends an item to `shadow_production_variants`.
+        ///
+        /// To override the contents of this collection use [`set_shadow_production_variants`](Self::set_shadow_production_variants).
+        ///
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+        pub fn shadow_production_variants(
+            mut self,
+            input: crate::model::ProductionVariant,
+        ) -> Self {
+            let mut v = self.shadow_production_variants.unwrap_or_default();
+            v.push(input);
+            self.shadow_production_variants = Some(v);
+            self
+        }
+        /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+        pub fn set_shadow_production_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
+        ) -> Self {
+            self.shadow_production_variants = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEndpointConfigInput`](crate::input::CreateEndpointConfigInput).
         pub fn build(
             self,
@@ -4729,6 +4780,7 @@ pub mod create_endpoint_config_input {
                 kms_key_id: self.kms_key_id,
                 async_inference_config: self.async_inference_config,
                 explainer_config: self.explainer_config,
+                shadow_production_variants: self.shadow_production_variants,
             })
         }
     }
@@ -5182,6 +5234,7 @@ pub mod create_feature_group_input {
         /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
         /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
         /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+        /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
@@ -5193,6 +5246,7 @@ pub mod create_feature_group_input {
         /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
         /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
         /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+        /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn set_offline_store_config(
@@ -5627,6 +5681,236 @@ impl CreateFlowDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowDefinitionInput`](crate::input::CreateFlowDefinitionInput).
     pub fn builder() -> crate::input::create_flow_definition_input::Builder {
         crate::input::create_flow_definition_input::Builder::default()
+    }
+}
+
+/// See [`CreateHubInput`](crate::input::CreateHubInput).
+pub mod create_hub_input {
+
+    /// A builder for [`CreateHubInput`](crate::input::CreateHubInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_description: std::option::Option<std::string::String>,
+        pub(crate) hub_display_name: std::option::Option<std::string::String>,
+        pub(crate) hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) s3_storage_config: std::option::Option<crate::model::HubS3StorageConfig>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to create.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to create.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the hub.</p>
+        pub fn set_hub_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_description = input;
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn set_hub_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_display_name = input;
+            self
+        }
+        /// Appends an item to `hub_search_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.hub_search_keywords.unwrap_or_default();
+            v.push(input.into());
+            self.hub_search_keywords = Some(v);
+            self
+        }
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn set_hub_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.hub_search_keywords = input;
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn s3_storage_config(mut self, input: crate::model::HubS3StorageConfig) -> Self {
+            self.s3_storage_config = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 storage configuration for the hub.</p>
+        pub fn set_s3_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::HubS3StorageConfig>,
+        ) -> Self {
+            self.s3_storage_config = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Any tags to associate with the hub.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Any tags to associate with the hub.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateHubInput`](crate::input::CreateHubInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateHubInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::CreateHubInput {
+                hub_name: self.hub_name,
+                hub_description: self.hub_description,
+                hub_display_name: self.hub_display_name,
+                hub_search_keywords: self.hub_search_keywords,
+                s3_storage_config: self.s3_storage_config,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateHubInput {
+    /// Consumes the builder and constructs an Operation<[`CreateHub`](crate::operation::CreateHub)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateHub,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateHubInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateHubInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateHub",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_hub(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateHub::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "CreateHub",
+                    "sagemaker",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateHubInput`](crate::input::CreateHubInput).
+    pub fn builder() -> crate::input::create_hub_input::Builder {
+        crate::input::create_hub_input::Builder::default()
     }
 }
 
@@ -6124,12 +6408,12 @@ pub mod create_image_input {
             self.image_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -6292,6 +6576,14 @@ pub mod create_image_version_input {
         pub(crate) base_image: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_name: std::option::Option<std::string::String>,
+        pub(crate) aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
+        pub(crate) ml_framework: std::option::Option<std::string::String>,
+        pub(crate) programming_lang: std::option::Option<std::string::String>,
+        pub(crate) processor: std::option::Option<crate::model::Processor>,
+        pub(crate) horovod: std::option::Option<bool>,
+        pub(crate) release_notes: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
@@ -6340,6 +6632,137 @@ pub mod create_image_version_input {
             self.image_name = input;
             self
         }
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>A list of aliases created with the image version.</p>
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.aliases.unwrap_or_default();
+            v.push(input.into());
+            self.aliases = Some(v);
+            self
+        }
+        /// <p>A list of aliases created with the image version.</p>
+        pub fn set_aliases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.aliases = input;
+            self
+        }
+        /// <p>The stability of the image version, specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn vendor_guidance(mut self, input: crate::model::VendorGuidance) -> Self {
+            self.vendor_guidance = Some(input);
+            self
+        }
+        /// <p>The stability of the image version, specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn set_vendor_guidance(
+            mut self,
+            input: std::option::Option<crate::model::VendorGuidance>,
+        ) -> Self {
+            self.vendor_guidance = input;
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ml_framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ml_framework = input;
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.programming_lang = Some(input.into());
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn set_programming_lang(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.programming_lang = input;
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn processor(mut self, input: crate::model::Processor) -> Self {
+            self.processor = Some(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn set_processor(
+            mut self,
+            input: std::option::Option<crate::model::Processor>,
+        ) -> Self {
+            self.processor = input;
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn horovod(mut self, input: bool) -> Self {
+            self.horovod = Some(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+            self.horovod = input;
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_notes = Some(input.into());
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_notes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::input::CreateImageVersionInput).
         pub fn build(
             self,
@@ -6351,6 +6774,14 @@ pub mod create_image_version_input {
                 base_image: self.base_image,
                 client_token: self.client_token,
                 image_name: self.image_name,
+                aliases: self.aliases,
+                vendor_guidance: self.vendor_guidance,
+                job_type: self.job_type,
+                ml_framework: self.ml_framework,
+                programming_lang: self.programming_lang,
+                processor: self.processor,
+                horovod: self.horovod.unwrap_or_default(),
+                release_notes: self.release_notes,
             })
         }
     }
@@ -6470,6 +6901,337 @@ impl CreateImageVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateImageVersionInput`](crate::input::CreateImageVersionInput).
     pub fn builder() -> crate::input::create_image_version_input::Builder {
         crate::input::create_image_version_input::Builder::default()
+    }
+}
+
+/// See [`CreateInferenceExperimentInput`](crate::input::CreateInferenceExperimentInput).
+pub mod create_inference_experiment_input {
+
+    /// A builder for [`CreateInferenceExperimentInput`](crate::input::CreateInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::InferenceExperimentType>,
+        pub(crate) schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_name: std::option::Option<std::string::String>,
+        pub(crate) model_variants:
+            std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        pub(crate) data_storage_config:
+            std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        pub(crate) shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+        pub(crate) kms_key: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name for the inference experiment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name for the inference experiment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+        /// <ul>
+        /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::InferenceExperimentType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+        /// <ul>
+        /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+        /// </ul>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+        pub fn schedule(mut self, input: crate::model::InferenceExperimentSchedule) -> Self {
+            self.schedule = Some(input);
+            self
+        }
+        /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        ) -> Self {
+            self.schedule = input;
+            self
+        }
+        /// <p>A description for the inference experiment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the inference experiment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_name = input;
+            self
+        }
+        /// Appends an item to `model_variants`.
+        ///
+        /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+        pub fn model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            let mut v = self.model_variants.unwrap_or_default();
+            v.push(input);
+            self.model_variants = Some(v);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+        pub fn set_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.model_variants = input;
+            self
+        }
+        /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+        /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+        pub fn data_storage_config(
+            mut self,
+            input: crate::model::InferenceExperimentDataStorageConfig,
+        ) -> Self {
+            self.data_storage_config = Some(input);
+            self
+        }
+        /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+        /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+        pub fn set_data_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        ) -> Self {
+            self.data_storage_config = input;
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn shadow_mode_config(mut self, input: crate::model::ShadowModeConfig) -> Self {
+            self.shadow_mode_config = Some(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn set_shadow_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ShadowModeConfig>,
+        ) -> Self {
+            self.shadow_mode_config = input;
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+        /// <ul>
+        /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+        /// </ul>
+        /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+        /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInferenceExperimentInput`](crate::input::CreateInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateInferenceExperimentInput {
+                name: self.name,
+                r#type: self.r#type,
+                schedule: self.schedule,
+                description: self.description,
+                role_arn: self.role_arn,
+                endpoint_name: self.endpoint_name,
+                model_variants: self.model_variants,
+                data_storage_config: self.data_storage_config,
+                shadow_mode_config: self.shadow_mode_config,
+                kms_key: self.kms_key,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl CreateInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateInferenceExperiment`](crate::operation::CreateInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_inference_experiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateInferenceExperimentInput`](crate::input::CreateInferenceExperimentInput).
+    pub fn builder() -> crate::input::create_inference_experiment_input::Builder {
+        crate::input::create_inference_experiment_input::Builder::default()
     }
 }
 
@@ -7670,6 +8432,434 @@ impl CreateModelBiasJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelBiasJobDefinitionInput`](crate::input::CreateModelBiasJobDefinitionInput).
     pub fn builder() -> crate::input::create_model_bias_job_definition_input::Builder {
         crate::input::create_model_bias_job_definition_input::Builder::default()
+    }
+}
+
+/// See [`CreateModelCardInput`](crate::input::CreateModelCardInput).
+pub mod create_model_card_input {
+
+    /// A builder for [`CreateModelCardInput`](crate::input::CreateModelCardInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) security_config: std::option::Option<crate::model::ModelCardSecurityConfig>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The unique name of the model card.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the model card.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+        pub fn security_config(mut self, input: crate::model::ModelCardSecurityConfig) -> Self {
+            self.security_config = Some(input);
+            self
+        }
+        /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+        pub fn set_security_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSecurityConfig>,
+        ) -> Self {
+            self.security_config = input;
+            self
+        }
+        /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.model_card_status = Some(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.model_card_status = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs used to manage metadata for model cards.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs used to manage metadata for model cards.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateModelCardInput`](crate::input::CreateModelCardInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateModelCardInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::CreateModelCardInput {
+                model_card_name: self.model_card_name,
+                security_config: self.security_config,
+                content: self.content,
+                model_card_status: self.model_card_status,
+                tags: self.tags,
+            })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("model_card_name", &self.model_card_name);
+            formatter.field("security_config", &self.security_config);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("model_card_status", &self.model_card_status);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
+}
+impl CreateModelCardInput {
+    /// Consumes the builder and constructs an Operation<[`CreateModelCard`](crate::operation::CreateModelCard)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateModelCard,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateModelCardInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateModelCardInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateModelCard",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_model_card(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateModelCard::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateModelCard",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateModelCardInput`](crate::input::CreateModelCardInput).
+    pub fn builder() -> crate::input::create_model_card_input::Builder {
+        crate::input::create_model_card_input::Builder::default()
+    }
+}
+
+/// See [`CreateModelCardExportJobInput`](crate::input::CreateModelCardExportJobInput).
+pub mod create_model_card_export_job_input {
+
+    /// A builder for [`CreateModelCardExportJobInput`](crate::input::CreateModelCardExportJobInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_version: std::option::Option<i32>,
+        pub(crate) model_card_export_job_name: std::option::Option<std::string::String>,
+        pub(crate) output_config: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the model card to export.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card to export.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.model_card_version = Some(input);
+            self
+        }
+        /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_card_version = input;
+            self
+        }
+        /// <p>The name of the model card export job.</p>
+        pub fn model_card_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_export_job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card export job.</p>
+        pub fn set_model_card_export_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_name = input;
+            self
+        }
+        /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+        pub fn output_config(mut self, input: crate::model::ModelCardExportOutputConfig) -> Self {
+            self.output_config = Some(input);
+            self
+        }
+        /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+        ) -> Self {
+            self.output_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateModelCardExportJobInput`](crate::input::CreateModelCardExportJobInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateModelCardExportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateModelCardExportJobInput {
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+                model_card_export_job_name: self.model_card_export_job_name,
+                output_config: self.output_config,
+            })
+        }
+    }
+}
+impl CreateModelCardExportJobInput {
+    /// Consumes the builder and constructs an Operation<[`CreateModelCardExportJob`](crate::operation::CreateModelCardExportJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateModelCardExportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateModelCardExportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateModelCardExportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateModelCardExportJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_model_card_export_job(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateModelCardExportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateModelCardExportJob",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateModelCardExportJobInput`](crate::input::CreateModelCardExportJobInput).
+    pub fn builder() -> crate::input::create_model_card_export_job_input::Builder {
+        crate::input::create_model_card_export_job_input::Builder::default()
     }
 }
 
@@ -10036,6 +11226,7 @@ pub mod create_presigned_domain_url_input {
         pub(crate) user_profile_name: std::option::Option<std::string::String>,
         pub(crate) session_expiration_duration_in_seconds: std::option::Option<i32>,
         pub(crate) expires_in_seconds: std::option::Option<i32>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The domain ID.</p>
@@ -10084,6 +11275,16 @@ pub mod create_presigned_domain_url_input {
             self.expires_in_seconds = input;
             self
         }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePresignedDomainUrlInput`](crate::input::CreatePresignedDomainUrlInput).
         pub fn build(
             self,
@@ -10096,6 +11297,7 @@ pub mod create_presigned_domain_url_input {
                 user_profile_name: self.user_profile_name,
                 session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
                 expires_in_seconds: self.expires_in_seconds,
+                space_name: self.space_name,
             })
         }
     }
@@ -10923,6 +12125,199 @@ impl CreateProjectInput {
     }
 }
 
+/// See [`CreateSpaceInput`](crate::input::CreateSpaceInput).
+pub mod create_space_input {
+
+    /// A builder for [`CreateSpaceInput`](crate::input::CreateSpaceInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) space_settings: std::option::Option<crate::model::SpaceSettings>,
+    }
+    impl Builder {
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn space_settings(mut self, input: crate::model::SpaceSettings) -> Self {
+            self.space_settings = Some(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn set_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSettings>,
+        ) -> Self {
+            self.space_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::input::CreateSpaceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateSpaceInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::CreateSpaceInput {
+                domain_id: self.domain_id,
+                space_name: self.space_name,
+                tags: self.tags,
+                space_settings: self.space_settings,
+            })
+        }
+    }
+}
+impl CreateSpaceInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSpace`](crate::operation::CreateSpace)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSpace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateSpaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSpaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateSpace",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_space(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSpace::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSpace",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSpaceInput`](crate::input::CreateSpaceInput).
+    pub fn builder() -> crate::input::create_space_input::Builder {
+        crate::input::create_space_input::Builder::default()
+    }
+}
+
 /// See [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput).
 pub mod create_studio_lifecycle_config_input {
 
@@ -11190,7 +12585,7 @@ pub mod create_training_job_input {
         ///
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
         /// </important>
         pub fn hyper_parameters(
             mut self,
@@ -11204,7 +12599,7 @@ pub mod create_training_job_input {
         }
         /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
         /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-        /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+        /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
         /// </important>
         pub fn set_hyper_parameters(
             mut self,
@@ -11396,12 +12791,12 @@ pub mod create_training_job_input {
             self.checkpoint_config = input;
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
             self.debug_hook_config = Some(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn set_debug_hook_config(
             mut self,
             input: std::option::Option<crate::model::DebugHookConfig>,
@@ -11413,7 +12808,7 @@ pub mod create_training_job_input {
         ///
         /// To override the contents of this collection use [`set_debug_rule_configurations`](Self::set_debug_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn debug_rule_configurations(
             mut self,
             input: crate::model::DebugRuleConfiguration,
@@ -11423,7 +12818,7 @@ pub mod create_training_job_input {
             self.debug_rule_configurations = Some(v);
             self
         }
-        /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
         pub fn set_debug_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
@@ -11431,7 +12826,7 @@ pub mod create_training_job_input {
             self.debug_rule_configurations = input;
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn tensor_board_output_config(
             mut self,
             input: crate::model::TensorBoardOutputConfig,
@@ -11439,7 +12834,7 @@ pub mod create_training_job_input {
             self.tensor_board_output_config = Some(input);
             self
         }
-        /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+        /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
         pub fn set_tensor_board_output_config(
             mut self,
             input: std::option::Option<crate::model::TensorBoardOutputConfig>,
@@ -11470,12 +12865,12 @@ pub mod create_training_job_input {
             self.experiment_config = input;
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
             self.profiler_config = Some(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfig>,
@@ -11487,7 +12882,7 @@ pub mod create_training_job_input {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -11497,7 +12892,7 @@ pub mod create_training_job_input {
             self.profiler_rule_configurations = Some(v);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -11711,6 +13106,7 @@ pub mod create_transform_job_input {
         >,
         pub(crate) transform_input: std::option::Option<crate::model::TransformInput>,
         pub(crate) transform_output: std::option::Option<crate::model::TransformOutput>,
+        pub(crate) data_capture_config: std::option::Option<crate::model::BatchDataCaptureConfig>,
         pub(crate) transform_resources: std::option::Option<crate::model::TransformResources>,
         pub(crate) data_processing: std::option::Option<crate::model::DataProcessing>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11847,6 +13243,19 @@ pub mod create_transform_job_input {
             self.transform_output = input;
             self
         }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn data_capture_config(mut self, input: crate::model::BatchDataCaptureConfig) -> Self {
+            self.data_capture_config = Some(input);
+            self
+        }
+        /// <p>Configuration to control how SageMaker captures inference data.</p>
+        pub fn set_data_capture_config(
+            mut self,
+            input: std::option::Option<crate::model::BatchDataCaptureConfig>,
+        ) -> Self {
+            self.data_capture_config = input;
+            self
+        }
         /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
         pub fn transform_resources(mut self, input: crate::model::TransformResources) -> Self {
             self.transform_resources = Some(input);
@@ -11932,6 +13341,7 @@ pub mod create_transform_job_input {
                 environment: self.environment,
                 transform_input: self.transform_input,
                 transform_output: self.transform_output,
+                data_capture_config: self.data_capture_config,
                 transform_resources: self.transform_resources,
                 data_processing: self.data_processing,
                 tags: self.tags,
@@ -13635,6 +15045,7 @@ pub mod delete_app_input {
         pub(crate) user_profile_name: std::option::Option<std::string::String>,
         pub(crate) app_type: std::option::Option<crate::model::AppType>,
         pub(crate) app_name: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The domain ID.</p>
@@ -13647,12 +15058,12 @@ pub mod delete_app_input {
             self.domain_id = input;
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_profile_name = Some(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13680,6 +15091,16 @@ pub mod delete_app_input {
             self.app_name = input;
             self
         }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppInput`](crate::input::DeleteAppInput).
         pub fn build(
             self,
@@ -13690,6 +15111,7 @@ pub mod delete_app_input {
                 user_profile_name: self.user_profile_name,
                 app_type: self.app_type,
                 app_name: self.app_name,
+                space_name: self.space_name,
             })
         }
     }
@@ -16105,6 +17527,341 @@ impl DeleteFlowDefinitionInput {
     }
 }
 
+/// See [`DeleteHubInput`](crate::input::DeleteHubInput).
+pub mod delete_hub_input {
+
+    /// A builder for [`DeleteHubInput`](crate::input::DeleteHubInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to delete.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to delete.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteHubInput`](crate::input::DeleteHubInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteHubInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DeleteHubInput {
+                hub_name: self.hub_name,
+            })
+        }
+    }
+}
+impl DeleteHubInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteHub`](crate::operation::DeleteHub)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteHub,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteHubInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteHubInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteHub",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_hub(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteHub::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "DeleteHub",
+                    "sagemaker",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteHubInput`](crate::input::DeleteHubInput).
+    pub fn builder() -> crate::input::delete_hub_input::Builder {
+        crate::input::delete_hub_input::Builder::default()
+    }
+}
+
+/// See [`DeleteHubContentInput`](crate::input::DeleteHubContentInput).
+pub mod delete_hub_content_input {
+
+    /// A builder for [`DeleteHubContentInput`](crate::input::DeleteHubContentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) hub_content_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub that you want to delete content in.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub that you want to delete content in.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The type of content that you want to delete from a hub.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of content that you want to delete from a hub.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>The name of the content that you want to delete from a hub.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the content that you want to delete from a hub.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_name = input;
+            self
+        }
+        /// <p>The version of the content that you want to delete from a hub.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the content that you want to delete from a hub.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteHubContentInput`](crate::input::DeleteHubContentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteHubContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteHubContentInput {
+                hub_name: self.hub_name,
+                hub_content_type: self.hub_content_type,
+                hub_content_name: self.hub_content_name,
+                hub_content_version: self.hub_content_version,
+            })
+        }
+    }
+}
+impl DeleteHubContentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteHubContent`](crate::operation::DeleteHubContent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteHubContent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteHubContentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteHubContentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteHubContent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_hub_content(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteHubContent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteHubContent",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteHubContentInput`](crate::input::DeleteHubContentInput).
+    pub fn builder() -> crate::input::delete_hub_content_input::Builder {
+        crate::input::delete_hub_content_input::Builder::default()
+    }
+}
+
 /// See [`DeleteHumanTaskUiInput`](crate::input::DeleteHumanTaskUiInput).
 pub mod delete_human_task_ui_input {
 
@@ -16408,14 +18165,15 @@ pub mod delete_image_version_input {
     pub struct Builder {
         pub(crate) image_name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
+        pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the image.</p>
+        /// <p>The name of the image to delete.</p>
         pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_name = Some(input.into());
             self
         }
-        /// <p>The name of the image.</p>
+        /// <p>The name of the image to delete.</p>
         pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_name = input;
             self
@@ -16430,6 +18188,16 @@ pub mod delete_image_version_input {
             self.version = input;
             self
         }
+        /// <p>The alias of the image to delete.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias of the image to delete.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteImageVersionInput`](crate::input::DeleteImageVersionInput).
         pub fn build(
             self,
@@ -16440,6 +18208,7 @@ pub mod delete_image_version_input {
             Ok(crate::input::DeleteImageVersionInput {
                 image_name: self.image_name,
                 version: self.version,
+                alias: self.alias,
             })
         }
     }
@@ -16556,6 +18325,153 @@ impl DeleteImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageVersionInput`](crate::input::DeleteImageVersionInput).
     pub fn builder() -> crate::input::delete_image_version_input::Builder {
         crate::input::delete_image_version_input::Builder::default()
+    }
+}
+
+/// See [`DeleteInferenceExperimentInput`](crate::input::DeleteInferenceExperimentInput).
+pub mod delete_inference_experiment_input {
+
+    /// A builder for [`DeleteInferenceExperimentInput`](crate::input::DeleteInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the inference experiment you want to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment you want to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteInferenceExperimentInput`](crate::input::DeleteInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteInferenceExperimentInput { name: self.name })
+        }
+    }
+}
+impl DeleteInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteInferenceExperiment`](crate::operation::DeleteInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_inference_experiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentInput`](crate::input::DeleteInferenceExperimentInput).
+    pub fn builder() -> crate::input::delete_inference_experiment_input::Builder {
+        crate::input::delete_inference_experiment_input::Builder::default()
     }
 }
 
@@ -16850,6 +18766,154 @@ impl DeleteModelBiasJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelBiasJobDefinitionInput`](crate::input::DeleteModelBiasJobDefinitionInput).
     pub fn builder() -> crate::input::delete_model_bias_job_definition_input::Builder {
         crate::input::delete_model_bias_job_definition_input::Builder::default()
+    }
+}
+
+/// See [`DeleteModelCardInput`](crate::input::DeleteModelCardInput).
+pub mod delete_model_card_input {
+
+    /// A builder for [`DeleteModelCardInput`](crate::input::DeleteModelCardInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the model card to delete.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card to delete.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteModelCardInput`](crate::input::DeleteModelCardInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteModelCardInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DeleteModelCardInput {
+                model_card_name: self.model_card_name,
+            })
+        }
+    }
+}
+impl DeleteModelCardInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteModelCard`](crate::operation::DeleteModelCard)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteModelCard,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteModelCardInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteModelCardInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteModelCard",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_card(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteModelCard::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteModelCard",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteModelCardInput`](crate::input::DeleteModelCardInput).
+    pub fn builder() -> crate::input::delete_model_card_input::Builder {
+        crate::input::delete_model_card_input::Builder::default()
     }
 }
 
@@ -18370,6 +20434,163 @@ impl DeleteProjectInput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
+    }
+}
+
+/// See [`DeleteSpaceInput`](crate::input::DeleteSpaceInput).
+pub mod delete_space_input {
+
+    /// A builder for [`DeleteSpaceInput`](crate::input::DeleteSpaceInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::input::DeleteSpaceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteSpaceInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DeleteSpaceInput {
+                domain_id: self.domain_id,
+                space_name: self.space_name,
+            })
+        }
+    }
+}
+impl DeleteSpaceInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSpace`](crate::operation::DeleteSpace)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSpace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteSpaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteSpaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteSpace",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_space(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSpace::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSpace",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSpaceInput`](crate::input::DeleteSpaceInput).
+    pub fn builder() -> crate::input::delete_space_input::Builder {
+        crate::input::delete_space_input::Builder::default()
     }
 }
 
@@ -19922,6 +22143,7 @@ pub mod describe_app_input {
         pub(crate) user_profile_name: std::option::Option<std::string::String>,
         pub(crate) app_type: std::option::Option<crate::model::AppType>,
         pub(crate) app_name: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The domain ID.</p>
@@ -19934,12 +22156,12 @@ pub mod describe_app_input {
             self.domain_id = input;
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_profile_name = Some(input.into());
             self
         }
-        /// <p>The user profile name.</p>
+        /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
         pub fn set_user_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19967,6 +22189,16 @@ pub mod describe_app_input {
             self.app_name = input;
             self
         }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppInput`](crate::input::DescribeAppInput).
         pub fn build(
             self,
@@ -19977,6 +22209,7 @@ pub mod describe_app_input {
                 user_profile_name: self.user_profile_name,
                 app_type: self.app_type,
                 app_name: self.app_name,
+                space_name: self.space_name,
             })
         }
     }
@@ -22867,6 +25100,343 @@ impl DescribeFlowDefinitionInput {
     }
 }
 
+/// See [`DescribeHubInput`](crate::input::DescribeHubInput).
+pub mod describe_hub_input {
+
+    /// A builder for [`DescribeHubInput`](crate::input::DescribeHubInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to describe.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to describe.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHubInput`](crate::input::DescribeHubInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeHubInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DescribeHubInput {
+                hub_name: self.hub_name,
+            })
+        }
+    }
+}
+impl DescribeHubInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeHub`](crate::operation::DescribeHub)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeHub,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeHubInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeHubInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeHub",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_hub(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeHub::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeHub",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeHubInput`](crate::input::DescribeHubInput).
+    pub fn builder() -> crate::input::describe_hub_input::Builder {
+        crate::input::describe_hub_input::Builder::default()
+    }
+}
+
+/// See [`DescribeHubContentInput`](crate::input::DescribeHubContentInput).
+pub mod describe_hub_content_input {
+
+    /// A builder for [`DescribeHubContentInput`](crate::input::DescribeHubContentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) hub_content_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub that contains the content to describe.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub that contains the content to describe.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The type of content in the hub.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of content in the hub.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>The name of the content to describe.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the content to describe.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_name = input;
+            self
+        }
+        /// <p>The version of the content to describe.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the content to describe.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeHubContentInput`](crate::input::DescribeHubContentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeHubContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeHubContentInput {
+                hub_name: self.hub_name,
+                hub_content_type: self.hub_content_type,
+                hub_content_name: self.hub_content_name,
+                hub_content_version: self.hub_content_version,
+            })
+        }
+    }
+}
+impl DescribeHubContentInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeHubContent`](crate::operation::DescribeHubContent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeHubContent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeHubContentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeHubContentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeHubContent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_hub_content(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeHubContent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeHubContent",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeHubContentInput`](crate::input::DescribeHubContentInput).
+    pub fn builder() -> crate::input::describe_hub_content_input::Builder {
+        crate::input::describe_hub_content_input::Builder::default()
+    }
+}
+
 /// See [`DescribeHumanTaskUiInput`](crate::input::DescribeHumanTaskUiInput).
 pub mod describe_human_task_ui_input {
 
@@ -23324,6 +25894,7 @@ pub mod describe_image_version_input {
     pub struct Builder {
         pub(crate) image_name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
+        pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the image.</p>
@@ -23346,6 +25917,16 @@ pub mod describe_image_version_input {
             self.version = input;
             self
         }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeImageVersionInput`](crate::input::DescribeImageVersionInput).
         pub fn build(
             self,
@@ -23356,6 +25937,7 @@ pub mod describe_image_version_input {
             Ok(crate::input::DescribeImageVersionInput {
                 image_name: self.image_name,
                 version: self.version,
+                alias: self.alias,
             })
         }
     }
@@ -23474,6 +26056,150 @@ impl DescribeImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageVersionInput`](crate::input::DescribeImageVersionInput).
     pub fn builder() -> crate::input::describe_image_version_input::Builder {
         crate::input::describe_image_version_input::Builder::default()
+    }
+}
+
+/// See [`DescribeInferenceExperimentInput`](crate::input::DescribeInferenceExperimentInput).
+pub mod describe_inference_experiment_input {
+
+    /// A builder for [`DescribeInferenceExperimentInput`](crate::input::DescribeInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the inference experiment to describe.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to describe.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInferenceExperimentInput`](crate::input::DescribeInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeInferenceExperimentInput { name: self.name })
+        }
+    }
+}
+impl DescribeInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeInferenceExperiment`](crate::operation::DescribeInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_inference_experiment(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceExperimentInput`](crate::input::DescribeInferenceExperimentInput).
+    pub fn builder() -> crate::input::describe_inference_experiment_input::Builder {
+        crate::input::describe_inference_experiment_input::Builder::default()
     }
 }
 
@@ -24216,6 +26942,317 @@ impl DescribeModelBiasJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelBiasJobDefinitionInput`](crate::input::DescribeModelBiasJobDefinitionInput).
     pub fn builder() -> crate::input::describe_model_bias_job_definition_input::Builder {
         crate::input::describe_model_bias_job_definition_input::Builder::default()
+    }
+}
+
+/// See [`DescribeModelCardInput`](crate::input::DescribeModelCardInput).
+pub mod describe_model_card_input {
+
+    /// A builder for [`DescribeModelCardInput`](crate::input::DescribeModelCardInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_version: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the model card to describe.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card to describe.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.model_card_version = Some(input);
+            self
+        }
+        /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_card_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeModelCardInput`](crate::input::DescribeModelCardInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeModelCardInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeModelCardInput {
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+            })
+        }
+    }
+}
+impl DescribeModelCardInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeModelCard`](crate::operation::DescribeModelCard)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeModelCard,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeModelCardInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeModelCardInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeModelCard",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_card(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeModelCard::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeModelCard",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardInput`](crate::input::DescribeModelCardInput).
+    pub fn builder() -> crate::input::describe_model_card_input::Builder {
+        crate::input::describe_model_card_input::Builder::default()
+    }
+}
+
+/// See [`DescribeModelCardExportJobInput`](crate::input::DescribeModelCardExportJobInput).
+pub mod describe_model_card_export_job_input {
+
+    /// A builder for [`DescribeModelCardExportJobInput`](crate::input::DescribeModelCardExportJobInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_export_job_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+        pub fn model_card_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_export_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+        pub fn set_model_card_export_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeModelCardExportJobInput`](crate::input::DescribeModelCardExportJobInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeModelCardExportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DescribeModelCardExportJobInput {
+                model_card_export_job_arn: self.model_card_export_job_arn,
+            })
+        }
+    }
+}
+impl DescribeModelCardExportJobInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeModelCardExportJob`](crate::operation::DescribeModelCardExportJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeModelCardExportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeModelCardExportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeModelCardExportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeModelCardExportJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_card_export_job(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeModelCardExportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeModelCardExportJob",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobInput`](crate::input::DescribeModelCardExportJobInput).
+    pub fn builder() -> crate::input::describe_model_card_export_job_input::Builder {
+        crate::input::describe_model_card_export_job_input::Builder::default()
     }
 }
 
@@ -26028,6 +29065,163 @@ impl DescribeProjectInput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput).
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
+    }
+}
+
+/// See [`DescribeSpaceInput`](crate::input::DescribeSpaceInput).
+pub mod describe_space_input {
+
+    /// A builder for [`DescribeSpaceInput`](crate::input::DescribeSpaceInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSpaceInput`](crate::input::DescribeSpaceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeSpaceInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DescribeSpaceInput {
+                domain_id: self.domain_id,
+                space_name: self.space_name,
+            })
+        }
+    }
+}
+impl DescribeSpaceInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeSpace`](crate::operation::DescribeSpace)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSpace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeSpaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeSpaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeSpace",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_space(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSpace::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSpace",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeSpaceInput`](crate::input::DescribeSpaceInput).
+    pub fn builder() -> crate::input::describe_space_input::Builder {
+        crate::input::describe_space_input::Builder::default()
     }
 }
 
@@ -28552,6 +31746,319 @@ impl GetSearchSuggestionsInput {
     }
 }
 
+/// See [`ImportHubContentInput`](crate::input::ImportHubContentInput).
+pub mod import_hub_content_input {
+
+    /// A builder for [`ImportHubContentInput`](crate::input::ImportHubContentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_content_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_version: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) document_schema_version: std::option::Option<std::string::String>,
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_display_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_description: std::option::Option<std::string::String>,
+        pub(crate) hub_content_markdown: std::option::Option<std::string::String>,
+        pub(crate) hub_content_document: std::option::Option<std::string::String>,
+        pub(crate) hub_content_search_keywords:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the hub content to import.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub content to import.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_name = input;
+            self
+        }
+        /// <p>The version of the hub content to import.</p>
+        pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the hub content to import.</p>
+        pub fn set_hub_content_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_version = input;
+            self
+        }
+        /// <p>The type of hub content to import.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of hub content to import.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>The version of the hub content schema to import.</p>
+        pub fn document_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_schema_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the hub content schema to import.</p>
+        pub fn set_document_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_schema_version = input;
+            self
+        }
+        /// <p>The name of the hub to import content into.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to import content into.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The display name of the hub content to import.</p>
+        pub fn hub_content_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the hub content to import.</p>
+        pub fn set_hub_content_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_display_name = input;
+            self
+        }
+        /// <p>A description of the hub content to import.</p>
+        pub fn hub_content_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the hub content to import.</p>
+        pub fn set_hub_content_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_description = input;
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_markdown = Some(input.into());
+            self
+        }
+        /// <p>Markdown files associated with the hub content to import.</p>
+        pub fn set_hub_content_markdown(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_markdown = input;
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn hub_content_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_document = Some(input.into());
+            self
+        }
+        /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+        pub fn set_hub_content_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_document = input;
+            self
+        }
+        /// Appends an item to `hub_content_search_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
+        ///
+        /// <p>The searchable keywords of the hub content.</p>
+        pub fn hub_content_search_keywords(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.hub_content_search_keywords.unwrap_or_default();
+            v.push(input.into());
+            self.hub_content_search_keywords = Some(v);
+            self
+        }
+        /// <p>The searchable keywords of the hub content.</p>
+        pub fn set_hub_content_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.hub_content_search_keywords = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Any tags associated with the hub content.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Any tags associated with the hub content.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportHubContentInput`](crate::input::ImportHubContentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ImportHubContentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ImportHubContentInput {
+                hub_content_name: self.hub_content_name,
+                hub_content_version: self.hub_content_version,
+                hub_content_type: self.hub_content_type,
+                document_schema_version: self.document_schema_version,
+                hub_name: self.hub_name,
+                hub_content_display_name: self.hub_content_display_name,
+                hub_content_description: self.hub_content_description,
+                hub_content_markdown: self.hub_content_markdown,
+                hub_content_document: self.hub_content_document,
+                hub_content_search_keywords: self.hub_content_search_keywords,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl ImportHubContentInput {
+    /// Consumes the builder and constructs an Operation<[`ImportHubContent`](crate::operation::ImportHubContent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportHubContent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportHubContentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportHubContentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ImportHubContent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_hub_content(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportHubContent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportHubContent",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportHubContentInput`](crate::input::ImportHubContentInput).
+    pub fn builder() -> crate::input::import_hub_content_input::Builder {
+        crate::input::import_hub_content_input::Builder::default()
+    }
+}
+
 /// See [`ListActionsInput`](crate::input::ListActionsInput).
 pub mod list_actions_input {
 
@@ -29025,6 +32532,199 @@ impl ListAlgorithmsInput {
     }
 }
 
+/// See [`ListAliasesInput`](crate::input::ListAliasesInput).
+pub mod list_aliases_input {
+
+    /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_name: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<i32>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the image.</p>
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the image.</p>
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_name = input;
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
+            self
+        }
+        /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
+            self
+        }
+        /// <p>The maximum number of aliases to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of aliases to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAliasesInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListAliasesInput {
+                image_name: self.image_name,
+                alias: self.alias,
+                version: self.version,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListAliasesInput {
+    /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAliases,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAliasesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAliasesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListAliases",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_aliases(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAliases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAliases",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput).
+    pub fn builder() -> crate::input::list_aliases_input::Builder {
+        crate::input::list_aliases_input::Builder::default()
+    }
+}
+
 /// See [`ListAppImageConfigsInput`](crate::input::ListAppImageConfigsInput).
 pub mod list_app_image_configs_input {
 
@@ -29303,6 +33003,7 @@ pub mod list_apps_input {
         pub(crate) sort_by: std::option::Option<crate::model::AppSortKey>,
         pub(crate) domain_id_equals: std::option::Option<std::string::String>,
         pub(crate) user_profile_name_equals: std::option::Option<std::string::String>,
+        pub(crate) space_name_equals: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -29361,17 +33062,30 @@ pub mod list_apps_input {
             self.domain_id_equals = input;
             self
         }
-        /// <p>A parameter to search by user profile name.</p>
+        /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
         pub fn user_profile_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_profile_name_equals = Some(input.into());
             self
         }
-        /// <p>A parameter to search by user profile name.</p>
+        /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
         pub fn set_user_profile_name_equals(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.user_profile_name_equals = input;
+            self
+        }
+        /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+        pub fn space_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name_equals = Some(input.into());
+            self
+        }
+        /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+        pub fn set_space_name_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.space_name_equals = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAppsInput`](crate::input::ListAppsInput).
@@ -29386,6 +33100,7 @@ pub mod list_apps_input {
                 sort_by: self.sort_by,
                 domain_id_equals: self.domain_id_equals,
                 user_profile_name_equals: self.user_profile_name_equals,
+                space_name_equals: self.space_name_equals,
             })
         }
     }
@@ -33980,6 +37695,827 @@ impl ListFlowDefinitionsInput {
     }
 }
 
+/// See [`ListHubContentsInput`](crate::input::ListHubContentsInput).
+pub mod list_hub_contents_input {
+
+    /// A builder for [`ListHubContentsInput`](crate::input::ListHubContentsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) max_schema_version: std::option::Option<std::string::String>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sort_by: std::option::Option<crate::model::HubContentSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to list the contents of.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to list the contents of.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The type of hub content to list.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of hub content to list.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>Only list hub content if the name contains the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>Only list hub content if the name contains the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>The upper bound of the hub content schema verion.</p>
+        pub fn max_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_schema_version = Some(input.into());
+            self
+        }
+        /// <p>The upper bound of the hub content schema verion.</p>
+        pub fn set_max_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.max_schema_version = input;
+            self
+        }
+        /// <p>Only list hub content that was created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list hub content that was created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Only list hub content that was created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list hub content that was created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubContentSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::HubContentSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>The maximum amount of hub content to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum amount of hub content to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubContentsInput`](crate::input::ListHubContentsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListHubContentsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListHubContentsInput {
+                hub_name: self.hub_name,
+                hub_content_type: self.hub_content_type,
+                name_contains: self.name_contains,
+                max_schema_version: self.max_schema_version,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListHubContentsInput {
+    /// Consumes the builder and constructs an Operation<[`ListHubContents`](crate::operation::ListHubContents)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListHubContents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListHubContentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListHubContentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListHubContents",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_hub_contents(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListHubContents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListHubContents",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListHubContentsInput`](crate::input::ListHubContentsInput).
+    pub fn builder() -> crate::input::list_hub_contents_input::Builder {
+        crate::input::list_hub_contents_input::Builder::default()
+    }
+}
+
+/// See [`ListHubContentVersionsInput`](crate::input::ListHubContentVersionsInput).
+pub mod list_hub_content_versions_input {
+
+    /// A builder for [`ListHubContentVersionsInput`](crate::input::ListHubContentVersionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_content_type: std::option::Option<crate::model::HubContentType>,
+        pub(crate) hub_content_name: std::option::Option<std::string::String>,
+        pub(crate) min_version: std::option::Option<std::string::String>,
+        pub(crate) max_schema_version: std::option::Option<std::string::String>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sort_by: std::option::Option<crate::model::HubContentSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to list the content versions of.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to list the content versions of.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>The type of hub content to list versions of.</p>
+        pub fn hub_content_type(mut self, input: crate::model::HubContentType) -> Self {
+            self.hub_content_type = Some(input);
+            self
+        }
+        /// <p>The type of hub content to list versions of.</p>
+        pub fn set_hub_content_type(
+            mut self,
+            input: std::option::Option<crate::model::HubContentType>,
+        ) -> Self {
+            self.hub_content_type = input;
+            self
+        }
+        /// <p>The name of the hub content.</p>
+        pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_content_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub content.</p>
+        pub fn set_hub_content_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_content_name = input;
+            self
+        }
+        /// <p>The lower bound of the hub content versions to list.</p>
+        pub fn min_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.min_version = Some(input.into());
+            self
+        }
+        /// <p>The lower bound of the hub content versions to list.</p>
+        pub fn set_min_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.min_version = input;
+            self
+        }
+        /// <p>The upper bound of the hub content schema version.</p>
+        pub fn max_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.max_schema_version = Some(input.into());
+            self
+        }
+        /// <p>The upper bound of the hub content schema version.</p>
+        pub fn set_max_schema_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.max_schema_version = input;
+            self
+        }
+        /// <p>Only list hub content versions that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Only list hub content versions that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list hub content versions that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubContentSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort hub content versions by either name or creation time.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::HubContentSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort hub content versions by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort hub content versions by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>The maximum number of hub content versions to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of hub content versions to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubContentVersionsInput`](crate::input::ListHubContentVersionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListHubContentVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListHubContentVersionsInput {
+                hub_name: self.hub_name,
+                hub_content_type: self.hub_content_type,
+                hub_content_name: self.hub_content_name,
+                min_version: self.min_version,
+                max_schema_version: self.max_schema_version,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListHubContentVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListHubContentVersions`](crate::operation::ListHubContentVersions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListHubContentVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListHubContentVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListHubContentVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListHubContentVersions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_hub_content_versions(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListHubContentVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListHubContentVersions",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListHubContentVersionsInput`](crate::input::ListHubContentVersionsInput).
+    pub fn builder() -> crate::input::list_hub_content_versions_input::Builder {
+        crate::input::list_hub_content_versions_input::Builder::default()
+    }
+}
+
+/// See [`ListHubsInput`](crate::input::ListHubsInput).
+pub mod list_hubs_input {
+
+    /// A builder for [`ListHubsInput`](crate::input::ListHubsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sort_by: std::option::Option<crate::model::HubSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Only list hubs with names that contain the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>Only list hubs with names that contain the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>Only list hubs that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list hubs that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Only list hubs that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list hubs that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Only list hubs that were last modified before the time specified.</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_before = Some(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified before the time specified.</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_before = input;
+            self
+        }
+        /// <p>Only list hubs that were last modified after the time specified.</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_after = Some(input);
+            self
+        }
+        /// <p>Only list hubs that were last modified after the time specified.</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_after = input;
+            self
+        }
+        /// <p>Sort hubs by either name or creation time.</p>
+        pub fn sort_by(mut self, input: crate::model::HubSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort hubs by either name or creation time.</p>
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::HubSortBy>) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort hubs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>The maximum number of hubs to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of hubs to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListHubsInput`](crate::input::ListHubsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListHubsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListHubsInput {
+                name_contains: self.name_contains,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListHubsInput {
+    /// Consumes the builder and constructs an Operation<[`ListHubs`](crate::operation::ListHubs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListHubs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListHubsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListHubsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListHubs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_hubs(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListHubs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListHubs",
+                    "sagemaker",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListHubsInput`](crate::input::ListHubsInput).
+    pub fn builder() -> crate::input::list_hubs_input::Builder {
+        crate::input::list_hubs_input::Builder::default()
+    }
+}
+
 /// See [`ListHumanTaskUisInput`](crate::input::ListHumanTaskUisInput).
 pub mod list_human_task_uis_input {
 
@@ -34988,6 +39524,302 @@ impl ListImageVersionsInput {
     }
 }
 
+/// See [`ListInferenceExperimentsInput`](crate::input::ListInferenceExperimentsInput).
+pub mod list_inference_experiments_input {
+
+    /// A builder for [`ListInferenceExperimentsInput`](crate::input::ListInferenceExperimentsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::InferenceExperimentType>,
+        pub(crate) status_equals: std::option::Option<crate::model::InferenceExperimentStatus>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sort_by: std::option::Option<crate::model::SortInferenceExperimentsBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Selects inference experiments whose names contain this name.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>Selects inference experiments whose names contain this name.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+        pub fn r#type(mut self, input: crate::model::InferenceExperimentType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+        pub fn status_equals(mut self, input: crate::model::InferenceExperimentStatus) -> Self {
+            self.status_equals = Some(input);
+            self
+        }
+        /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentStatus>,
+        ) -> Self {
+            self.status_equals = input;
+            self
+        }
+        /// <p>Selects inference experiments which were created after this timestamp.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created after this timestamp.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Selects inference experiments which were created before this timestamp.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Selects inference experiments which were created before this timestamp.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_after = Some(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_after = input;
+            self
+        }
+        /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_before = Some(input);
+            self
+        }
+        /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_before = input;
+            self
+        }
+        /// <p>The column by which to sort the listed inference experiments.</p>
+        pub fn sort_by(mut self, input: crate::model::SortInferenceExperimentsBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The column by which to sort the listed inference experiments.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SortInferenceExperimentsBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The direction of sorting (ascending or descending).</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The direction of sorting (ascending or descending).</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to select.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to select.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceExperimentsInput`](crate::input::ListInferenceExperimentsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListInferenceExperimentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListInferenceExperimentsInput {
+                name_contains: self.name_contains,
+                r#type: self.r#type,
+                status_equals: self.status_equals,
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListInferenceExperimentsInput {
+    /// Consumes the builder and constructs an Operation<[`ListInferenceExperiments`](crate::operation::ListInferenceExperiments)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceExperiments,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListInferenceExperimentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceExperimentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListInferenceExperiments",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_experiments(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceExperiments::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceExperiments",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListInferenceExperimentsInput`](crate::input::ListInferenceExperimentsInput).
+    pub fn builder() -> crate::input::list_inference_experiments_input::Builder {
+        crate::input::list_inference_experiments_input::Builder::default()
+    }
+}
+
 /// See [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput).
 pub mod list_inference_recommendations_jobs_input {
 
@@ -35267,6 +40099,208 @@ impl ListInferenceRecommendationsJobsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput).
     pub fn builder() -> crate::input::list_inference_recommendations_jobs_input::Builder {
         crate::input::list_inference_recommendations_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListInferenceRecommendationsJobStepsInput`](crate::input::ListInferenceRecommendationsJobStepsInput).
+pub mod list_inference_recommendations_job_steps_input {
+
+    /// A builder for [`ListInferenceRecommendationsJobStepsInput`](crate::input::ListInferenceRecommendationsJobStepsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RecommendationJobStatus>,
+        pub(crate) step_type: std::option::Option<crate::model::RecommendationStepType>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name for the Inference Recommender job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name for the Inference Recommender job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+        pub fn status(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A filter to return details about the specified type of subtask.</p>
+        /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+        pub fn step_type(mut self, input: crate::model::RecommendationStepType) -> Self {
+            self.step_type = Some(input);
+            self
+        }
+        /// <p>A filter to return details about the specified type of subtask.</p>
+        /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+        pub fn set_step_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationStepType>,
+        ) -> Self {
+            self.step_type = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsInput`](crate::input::ListInferenceRecommendationsJobStepsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListInferenceRecommendationsJobStepsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListInferenceRecommendationsJobStepsInput {
+                job_name: self.job_name,
+                status: self.status,
+                step_type: self.step_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListInferenceRecommendationsJobStepsInput {
+    /// Consumes the builder and constructs an Operation<[`ListInferenceRecommendationsJobSteps`](crate::operation::ListInferenceRecommendationsJobSteps)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceRecommendationsJobSteps,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListInferenceRecommendationsJobStepsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceRecommendationsJobStepsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListInferenceRecommendationsJobSteps",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_recommendations_job_steps(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceRecommendationsJobSteps::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceRecommendationsJobSteps",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsInput`](crate::input::ListInferenceRecommendationsJobStepsInput).
+    pub fn builder() -> crate::input::list_inference_recommendations_job_steps_input::Builder {
+        crate::input::list_inference_recommendations_job_steps_input::Builder::default()
     }
 }
 
@@ -36262,6 +41296,785 @@ impl ListModelBiasJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelBiasJobDefinitionsInput`](crate::input::ListModelBiasJobDefinitionsInput).
     pub fn builder() -> crate::input::list_model_bias_job_definitions_input::Builder {
         crate::input::list_model_bias_job_definitions_input::Builder::default()
+    }
+}
+
+/// See [`ListModelCardExportJobsInput`](crate::input::ListModelCardExportJobsInput).
+pub mod list_model_card_export_jobs_input {
+
+    /// A builder for [`ListModelCardExportJobsInput`](crate::input::ListModelCardExportJobsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_version: std::option::Option<i32>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) model_card_export_job_name_contains: std::option::Option<std::string::String>,
+        pub(crate) status_equals: std::option::Option<crate::model::ModelCardExportJobStatus>,
+        pub(crate) sort_by: std::option::Option<crate::model::ModelCardExportJobSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::ModelCardExportJobSortOrder>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>List export jobs for the model card with the specified name.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>List export jobs for the model card with the specified name.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>List export jobs for the model card with the specified version.</p>
+        pub fn model_card_version(mut self, input: i32) -> Self {
+            self.model_card_version = Some(input);
+            self
+        }
+        /// <p>List export jobs for the model card with the specified version.</p>
+        pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_card_version = input;
+            self
+        }
+        /// <p>Only list model card export jobs that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Only list model card export jobs that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list model card export jobs that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Only list model card export jobs with names that contain the specified string.</p>
+        pub fn model_card_export_job_name_contains(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_name_contains = Some(input.into());
+            self
+        }
+        /// <p>Only list model card export jobs with names that contain the specified string.</p>
+        pub fn set_model_card_export_job_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_export_job_name_contains = input;
+            self
+        }
+        /// <p>Only list model card export jobs with the specified status.</p>
+        pub fn status_equals(mut self, input: crate::model::ModelCardExportJobStatus) -> Self {
+            self.status_equals = Some(input);
+            self
+        }
+        /// <p>Only list model card export jobs with the specified status.</p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobStatus>,
+        ) -> Self {
+            self.status_equals = input;
+            self
+        }
+        /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardExportJobSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort model card export jobs by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardExportJobSortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort model card export jobs by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardExportJobSortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of model card export jobs to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of model card export jobs to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardExportJobsInput`](crate::input::ListModelCardExportJobsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListModelCardExportJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListModelCardExportJobsInput {
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                model_card_export_job_name_contains: self.model_card_export_job_name_contains,
+                status_equals: self.status_equals,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListModelCardExportJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListModelCardExportJobs`](crate::operation::ListModelCardExportJobs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListModelCardExportJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListModelCardExportJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListModelCardExportJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListModelCardExportJobs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_model_card_export_jobs(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListModelCardExportJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListModelCardExportJobs",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListModelCardExportJobsInput`](crate::input::ListModelCardExportJobsInput).
+    pub fn builder() -> crate::input::list_model_card_export_jobs_input::Builder {
+        crate::input::list_model_card_export_jobs_input::Builder::default()
+    }
+}
+
+/// See [`ListModelCardsInput`](crate::input::ListModelCardsInput).
+pub mod list_model_cards_input {
+
+    /// A builder for [`ListModelCardsInput`](crate::input::ListModelCardsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) sort_by: std::option::Option<crate::model::ModelCardSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::ModelCardSortOrder>,
+    }
+    impl Builder {
+        /// <p>Only list model cards that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list model cards that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Only list model cards that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list model cards that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>The maximum number of model cards to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of model cards to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Only list model cards with names that contain the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>Only list model cards with names that contain the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>Only list model cards with the specified approval status.</p>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.model_card_status = Some(input);
+            self
+        }
+        /// <p>Only list model cards with the specified approval status.</p>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.model_card_status = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort model cards by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardSortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort model cards by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardsInput`](crate::input::ListModelCardsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListModelCardsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListModelCardsInput {
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                max_results: self.max_results,
+                name_contains: self.name_contains,
+                model_card_status: self.model_card_status,
+                next_token: self.next_token,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            })
+        }
+    }
+}
+impl ListModelCardsInput {
+    /// Consumes the builder and constructs an Operation<[`ListModelCards`](crate::operation::ListModelCards)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListModelCards,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListModelCardsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListModelCardsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListModelCards",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_model_cards(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListModelCards::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListModelCards",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListModelCardsInput`](crate::input::ListModelCardsInput).
+    pub fn builder() -> crate::input::list_model_cards_input::Builder {
+        crate::input::list_model_cards_input::Builder::default()
+    }
+}
+
+/// See [`ListModelCardVersionsInput`](crate::input::ListModelCardVersionsInput).
+pub mod list_model_card_versions_input {
+
+    /// A builder for [`ListModelCardVersionsInput`](crate::input::ListModelCardVersionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) sort_by: std::option::Option<crate::model::ModelCardVersionSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::ModelCardSortOrder>,
+    }
+    impl Builder {
+        /// <p>Only list model card versions that were created after the time specified.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Only list model card versions that were created after the time specified.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Only list model card versions that were created before the time specified.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Only list model card versions that were created before the time specified.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>The maximum number of model card versions to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of model card versions to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>List model card versions for the model card with the specified name.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>List model card versions for the model card with the specified name.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>Only list model card versions with the specified approval status.</p>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.model_card_status = Some(input);
+            self
+        }
+        /// <p>Only list model card versions with the specified approval status.</p>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.model_card_status = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+        pub fn sort_by(mut self, input: crate::model::ModelCardVersionSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardVersionSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Sort model card versions by ascending or descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::ModelCardSortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Sort model card versions by ascending or descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardSortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelCardVersionsInput`](crate::input::ListModelCardVersionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListModelCardVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListModelCardVersionsInput {
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                max_results: self.max_results,
+                model_card_name: self.model_card_name,
+                model_card_status: self.model_card_status,
+                next_token: self.next_token,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            })
+        }
+    }
+}
+impl ListModelCardVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListModelCardVersions`](crate::operation::ListModelCardVersions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListModelCardVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListModelCardVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListModelCardVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListModelCardVersions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_model_card_versions(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListModelCardVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListModelCardVersions",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListModelCardVersionsInput`](crate::input::ListModelCardVersionsInput).
+    pub fn builder() -> crate::input::list_model_card_versions_input::Builder {
+        crate::input::list_model_card_versions_input::Builder::default()
     }
 }
 
@@ -37693,6 +43506,445 @@ impl ListModelsInput {
     /// Creates a new builder-style object to manufacture [`ListModelsInput`](crate::input::ListModelsInput).
     pub fn builder() -> crate::input::list_models_input::Builder {
         crate::input::list_models_input::Builder::default()
+    }
+}
+
+/// See [`ListMonitoringAlertHistoryInput`](crate::input::ListMonitoringAlertHistoryInput).
+pub mod list_monitoring_alert_history_input {
+
+    /// A builder for [`ListMonitoringAlertHistoryInput`](crate::input::ListMonitoringAlertHistoryInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
+        pub(crate) monitoring_alert_name: std::option::Option<std::string::String>,
+        pub(crate) sort_by: std::option::Option<crate::model::MonitoringAlertHistorySortKey>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_equals: std::option::Option<crate::model::MonitoringAlertStatus>,
+    }
+    impl Builder {
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_schedule_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_schedule_name = input;
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_alert_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn set_monitoring_alert_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_alert_name = input;
+            self
+        }
+        /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::MonitoringAlertHistorySortKey) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::MonitoringAlertHistorySortKey>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A filter that returns only alerts created on or before the specified time.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or before the specified time.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>A filter that returns only alerts created on or after the specified time.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>A filter that returns only alerts created on or after the specified time.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>A filter that retrieves only alerts with a specific status.</p>
+        pub fn status_equals(mut self, input: crate::model::MonitoringAlertStatus) -> Self {
+            self.status_equals = Some(input);
+            self
+        }
+        /// <p>A filter that retrieves only alerts with a specific status.</p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::MonitoringAlertStatus>,
+        ) -> Self {
+            self.status_equals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoringAlertHistoryInput`](crate::input::ListMonitoringAlertHistoryInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListMonitoringAlertHistoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListMonitoringAlertHistoryInput {
+                monitoring_schedule_name: self.monitoring_schedule_name,
+                monitoring_alert_name: self.monitoring_alert_name,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+                status_equals: self.status_equals,
+            })
+        }
+    }
+}
+impl ListMonitoringAlertHistoryInput {
+    /// Consumes the builder and constructs an Operation<[`ListMonitoringAlertHistory`](crate::operation::ListMonitoringAlertHistory)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMonitoringAlertHistory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMonitoringAlertHistoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMonitoringAlertHistoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListMonitoringAlertHistory",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_monitoring_alert_history(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMonitoringAlertHistory::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMonitoringAlertHistory",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertHistoryInput`](crate::input::ListMonitoringAlertHistoryInput).
+    pub fn builder() -> crate::input::list_monitoring_alert_history_input::Builder {
+        crate::input::list_monitoring_alert_history_input::Builder::default()
+    }
+}
+
+/// See [`ListMonitoringAlertsInput`](crate::input::ListMonitoringAlertsInput).
+pub mod list_monitoring_alerts_input {
+
+    /// A builder for [`ListMonitoringAlertsInput`](crate::input::ListMonitoringAlertsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_schedule_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_schedule_name = input;
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to display. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoringAlertsInput`](crate::input::ListMonitoringAlertsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListMonitoringAlertsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListMonitoringAlertsInput {
+                monitoring_schedule_name: self.monitoring_schedule_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListMonitoringAlertsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMonitoringAlerts`](crate::operation::ListMonitoringAlerts)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMonitoringAlerts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMonitoringAlertsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMonitoringAlertsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListMonitoringAlerts",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_monitoring_alerts(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMonitoringAlerts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMonitoringAlerts",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsInput`](crate::input::ListMonitoringAlertsInput).
+    pub fn builder() -> crate::input::list_monitoring_alerts_input::Builder {
+        crate::input::list_monitoring_alerts_input::Builder::default()
     }
 }
 
@@ -40330,6 +46582,223 @@ impl ListProjectsInput {
     /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
+    }
+}
+
+/// See [`ListSpacesInput`](crate::input::ListSpacesInput).
+pub mod list_spaces_input {
+
+    /// A builder for [`ListSpacesInput`](crate::input::ListSpacesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) sort_by: std::option::Option<crate::model::SpaceSortKey>,
+        pub(crate) domain_id_equals: std::option::Option<std::string::String>,
+        pub(crate) space_name_contains: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Returns a list up to a specified limit.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Returns a list up to a specified limit.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::SpaceSortKey) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSortKey>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>A parameter to search for the Domain ID.</p>
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id_equals = Some(input.into());
+            self
+        }
+        /// <p>A parameter to search for the Domain ID.</p>
+        pub fn set_domain_id_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.domain_id_equals = input;
+            self
+        }
+        /// <p>A parameter by which to filter the results.</p>
+        pub fn space_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name_contains = Some(input.into());
+            self
+        }
+        /// <p>A parameter by which to filter the results.</p>
+        pub fn set_space_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.space_name_contains = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSpacesInput`](crate::input::ListSpacesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSpacesInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListSpacesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                sort_order: self.sort_order,
+                sort_by: self.sort_by,
+                domain_id_equals: self.domain_id_equals,
+                space_name_contains: self.space_name_contains,
+            })
+        }
+    }
+}
+impl ListSpacesInput {
+    /// Consumes the builder and constructs an Operation<[`ListSpaces`](crate::operation::ListSpaces)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSpaces,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSpacesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSpacesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListSpaces",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_spaces(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSpaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSpaces",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSpacesInput`](crate::input::ListSpacesInput).
+    pub fn builder() -> crate::input::list_spaces_input::Builder {
+        crate::input::list_spaces_input::Builder::default()
     }
 }
 
@@ -44815,6 +51284,153 @@ impl StartEdgeDeploymentStageInput {
     }
 }
 
+/// See [`StartInferenceExperimentInput`](crate::input::StartInferenceExperimentInput).
+pub mod start_inference_experiment_input {
+
+    /// A builder for [`StartInferenceExperimentInput`](crate::input::StartInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the inference experiment to start.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to start.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartInferenceExperimentInput`](crate::input::StartInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartInferenceExperimentInput { name: self.name })
+        }
+    }
+}
+impl StartInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`StartInferenceExperiment`](crate::operation::StartInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.StartInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_inference_experiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartInferenceExperimentInput`](crate::input::StartInferenceExperimentInput).
+    pub fn builder() -> crate::input::start_inference_experiment_input::Builder {
+        crate::input::start_inference_experiment_input::Builder::default()
+    }
+}
+
 /// See [`StartMonitoringScheduleInput`](crate::input::StartMonitoringScheduleInput).
 pub mod start_monitoring_schedule_input {
 
@@ -46128,6 +52744,255 @@ impl StopHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`StopHyperParameterTuningJobInput`](crate::input::StopHyperParameterTuningJobInput).
     pub fn builder() -> crate::input::stop_hyper_parameter_tuning_job_input::Builder {
         crate::input::stop_hyper_parameter_tuning_job_input::Builder::default()
+    }
+}
+
+/// See [`StopInferenceExperimentInput`](crate::input::StopInferenceExperimentInput).
+pub mod stop_inference_experiment_input {
+
+    /// A builder for [`StopInferenceExperimentInput`](crate::input::StopInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) model_variant_actions: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::ModelVariantAction>,
+        >,
+        pub(crate) desired_model_variants:
+            std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        pub(crate) desired_state:
+            std::option::Option<crate::model::InferenceExperimentStopDesiredState>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the inference experiment to stop.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to stop.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Adds a key-value pair to `model_variant_actions`.
+        ///
+        /// To override the contents of this collection use [`set_model_variant_actions`](Self::set_model_variant_actions).
+        ///
+        /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+        /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+        /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+        /// </ul>
+        pub fn model_variant_actions(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::ModelVariantAction,
+        ) -> Self {
+            let mut hash_map = self.model_variant_actions.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.model_variant_actions = Some(hash_map);
+            self
+        }
+        /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+        /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+        /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+        /// </ul>
+        pub fn set_model_variant_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::ModelVariantAction>,
+            >,
+        ) -> Self {
+            self.model_variant_actions = input;
+            self
+        }
+        /// Appends an item to `desired_model_variants`.
+        ///
+        /// To override the contents of this collection use [`set_desired_model_variants`](Self::set_desired_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn desired_model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            let mut v = self.desired_model_variants.unwrap_or_default();
+            v.push(input);
+            self.desired_model_variants = Some(v);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+        pub fn set_desired_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.desired_model_variants = input;
+            self
+        }
+        /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+        /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+        /// </ul>
+        pub fn desired_state(
+            mut self,
+            input: crate::model::InferenceExperimentStopDesiredState,
+        ) -> Self {
+            self.desired_state = Some(input);
+            self
+        }
+        /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+        /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+        /// </ul>
+        pub fn set_desired_state(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentStopDesiredState>,
+        ) -> Self {
+            self.desired_state = input;
+            self
+        }
+        /// <p>The reason for stopping the experiment.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for stopping the experiment.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopInferenceExperimentInput`](crate::input::StopInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StopInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StopInferenceExperimentInput {
+                name: self.name,
+                model_variant_actions: self.model_variant_actions,
+                desired_model_variants: self.desired_model_variants,
+                desired_state: self.desired_state,
+                reason: self.reason,
+            })
+        }
+    }
+}
+impl StopInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`StopInferenceExperiment`](crate::operation::StopInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.StopInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_inference_experiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopInferenceExperimentInput`](crate::input::StopInferenceExperimentInput).
+    pub fn builder() -> crate::input::stop_inference_experiment_input::Builder {
+        crate::input::stop_inference_experiment_input::Builder::default()
     }
 }
 
@@ -48708,6 +55573,9 @@ pub mod update_domain_input {
         pub(crate) default_user_settings: std::option::Option<crate::model::UserSettings>,
         pub(crate) domain_settings_for_update:
             std::option::Option<crate::model::DomainSettingsForUpdate>,
+        pub(crate) default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
+        pub(crate) app_security_group_management:
+            std::option::Option<crate::model::AppSecurityGroupManagement>,
     }
     impl Builder {
         /// <p>The ID of the domain to be updated.</p>
@@ -48749,6 +55617,35 @@ pub mod update_domain_input {
             self.domain_settings_for_update = input;
             self
         }
+        /// <p>The default settings used to create a space within the Domain.</p>
+        pub fn default_space_settings(mut self, input: crate::model::DefaultSpaceSettings) -> Self {
+            self.default_space_settings = Some(input);
+            self
+        }
+        /// <p>The default settings used to create a space within the Domain.</p>
+        pub fn set_default_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::DefaultSpaceSettings>,
+        ) -> Self {
+            self.default_space_settings = input;
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn app_security_group_management(
+            mut self,
+            input: crate::model::AppSecurityGroupManagement,
+        ) -> Self {
+            self.app_security_group_management = Some(input);
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn set_app_security_group_management(
+            mut self,
+            input: std::option::Option<crate::model::AppSecurityGroupManagement>,
+        ) -> Self {
+            self.app_security_group_management = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::input::UpdateDomainInput).
         pub fn build(
             self,
@@ -48758,6 +55655,8 @@ pub mod update_domain_input {
                 domain_id: self.domain_id,
                 default_user_settings: self.default_user_settings,
                 domain_settings_for_update: self.domain_settings_for_update,
+                default_space_settings: self.default_space_settings,
+                app_security_group_management: self.app_security_group_management,
             })
         }
     }
@@ -49848,6 +56747,200 @@ impl UpdateFeatureMetadataInput {
     }
 }
 
+/// See [`UpdateHubInput`](crate::input::UpdateHubInput).
+pub mod update_hub_input {
+
+    /// A builder for [`UpdateHubInput`](crate::input::UpdateHubInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hub_name: std::option::Option<std::string::String>,
+        pub(crate) hub_description: std::option::Option<std::string::String>,
+        pub(crate) hub_display_name: std::option::Option<std::string::String>,
+        pub(crate) hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the hub to update.</p>
+        pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the hub to update.</p>
+        pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_name = input;
+            self
+        }
+        /// <p>A description of the updated hub.</p>
+        pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the updated hub.</p>
+        pub fn set_hub_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_description = input;
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hub_display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the hub.</p>
+        pub fn set_hub_display_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hub_display_name = input;
+            self
+        }
+        /// Appends an item to `hub_search_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
+        ///
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.hub_search_keywords.unwrap_or_default();
+            v.push(input.into());
+            self.hub_search_keywords = Some(v);
+            self
+        }
+        /// <p>The searchable keywords for the hub.</p>
+        pub fn set_hub_search_keywords(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.hub_search_keywords = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateHubInput`](crate::input::UpdateHubInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateHubInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateHubInput {
+                hub_name: self.hub_name,
+                hub_description: self.hub_description,
+                hub_display_name: self.hub_display_name,
+                hub_search_keywords: self.hub_search_keywords,
+            })
+        }
+    }
+}
+impl UpdateHubInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateHub`](crate::operation::UpdateHub)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateHub,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateHubInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateHubInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateHub",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_hub(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateHub::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "UpdateHub",
+                    "sagemaker",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateHubInput`](crate::input::UpdateHubInput).
+    pub fn builder() -> crate::input::update_hub_input::Builder {
+        crate::input::update_hub_input::Builder::default()
+    }
+}
+
 /// See [`UpdateImageInput`](crate::input::UpdateImageInput).
 pub mod update_image_input {
 
@@ -49910,12 +57003,12 @@ pub mod update_image_input {
             self.image_name = input;
             self
         }
-        /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+        /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -50047,6 +57140,775 @@ impl UpdateImageInput {
     /// Creates a new builder-style object to manufacture [`UpdateImageInput`](crate::input::UpdateImageInput).
     pub fn builder() -> crate::input::update_image_input::Builder {
         crate::input::update_image_input::Builder::default()
+    }
+}
+
+/// See [`UpdateImageVersionInput`](crate::input::UpdateImageVersionInput).
+pub mod update_image_version_input {
+
+    /// A builder for [`UpdateImageVersionInput`](crate::input::UpdateImageVersionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_name: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<i32>,
+        pub(crate) aliases_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) aliases_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+        pub(crate) job_type: std::option::Option<crate::model::JobType>,
+        pub(crate) ml_framework: std::option::Option<std::string::String>,
+        pub(crate) programming_lang: std::option::Option<std::string::String>,
+        pub(crate) processor: std::option::Option<crate::model::Processor>,
+        pub(crate) horovod: std::option::Option<bool>,
+        pub(crate) release_notes: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the image.</p>
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the image.</p>
+        pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_name = input;
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias of the image version.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The version of the image.</p>
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
+            self
+        }
+        /// <p>The version of the image.</p>
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Appends an item to `aliases_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_aliases_to_add`](Self::set_aliases_to_add).
+        ///
+        /// <p>A list of aliases to add.</p>
+        pub fn aliases_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.aliases_to_add.unwrap_or_default();
+            v.push(input.into());
+            self.aliases_to_add = Some(v);
+            self
+        }
+        /// <p>A list of aliases to add.</p>
+        pub fn set_aliases_to_add(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.aliases_to_add = input;
+            self
+        }
+        /// Appends an item to `aliases_to_delete`.
+        ///
+        /// To override the contents of this collection use [`set_aliases_to_delete`](Self::set_aliases_to_delete).
+        ///
+        /// <p>A list of aliases to delete.</p>
+        pub fn aliases_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.aliases_to_delete.unwrap_or_default();
+            v.push(input.into());
+            self.aliases_to_delete = Some(v);
+            self
+        }
+        /// <p>A list of aliases to delete.</p>
+        pub fn set_aliases_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.aliases_to_delete = input;
+            self
+        }
+        /// <p>The availability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn vendor_guidance(mut self, input: crate::model::VendorGuidance) -> Self {
+            self.vendor_guidance = Some(input);
+            self
+        }
+        /// <p>The availability of the image version specified by the maintainer.</p>
+        /// <ul>
+        /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+        /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+        /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+        /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+        /// </ul>
+        pub fn set_vendor_guidance(
+            mut self,
+            input: std::option::Option<crate::model::VendorGuidance>,
+        ) -> Self {
+            self.vendor_guidance = input;
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>Indicates SageMaker job type compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+        /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+        /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+        /// </ul>
+        pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ml_framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework vended in the image version.</p>
+        pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ml_framework = input;
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+            self.programming_lang = Some(input.into());
+            self
+        }
+        /// <p>The supported programming language and its version.</p>
+        pub fn set_programming_lang(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.programming_lang = input;
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn processor(mut self, input: crate::model::Processor) -> Self {
+            self.processor = Some(input);
+            self
+        }
+        /// <p>Indicates CPU or GPU compatibility.</p>
+        /// <ul>
+        /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+        /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+        /// </ul>
+        pub fn set_processor(
+            mut self,
+            input: std::option::Option<crate::model::Processor>,
+        ) -> Self {
+            self.processor = input;
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn horovod(mut self, input: bool) -> Self {
+            self.horovod = Some(input);
+            self
+        }
+        /// <p>Indicates Horovod compatibility.</p>
+        pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+            self.horovod = input;
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_notes = Some(input.into());
+            self
+        }
+        /// <p>The maintainer description of the image version.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_notes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::input::UpdateImageVersionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateImageVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateImageVersionInput {
+                image_name: self.image_name,
+                alias: self.alias,
+                version: self.version,
+                aliases_to_add: self.aliases_to_add,
+                aliases_to_delete: self.aliases_to_delete,
+                vendor_guidance: self.vendor_guidance,
+                job_type: self.job_type,
+                ml_framework: self.ml_framework,
+                programming_lang: self.programming_lang,
+                processor: self.processor,
+                horovod: self.horovod.unwrap_or_default(),
+                release_notes: self.release_notes,
+            })
+        }
+    }
+}
+impl UpdateImageVersionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateImageVersion`](crate::operation::UpdateImageVersion)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateImageVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateImageVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateImageVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateImageVersion",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_image_version(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateImageVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateImageVersion",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateImageVersionInput`](crate::input::UpdateImageVersionInput).
+    pub fn builder() -> crate::input::update_image_version_input::Builder {
+        crate::input::update_image_version_input::Builder::default()
+    }
+}
+
+/// See [`UpdateInferenceExperimentInput`](crate::input::UpdateInferenceExperimentInput).
+pub mod update_inference_experiment_input {
+
+    /// A builder for [`UpdateInferenceExperimentInput`](crate::input::UpdateInferenceExperimentInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) model_variants:
+            std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        pub(crate) data_storage_config:
+            std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        pub(crate) shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the inference experiment to be updated.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference experiment to be updated.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+        pub fn schedule(mut self, input: crate::model::InferenceExperimentSchedule) -> Self {
+            self.schedule = Some(input);
+            self
+        }
+        /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentSchedule>,
+        ) -> Self {
+            self.schedule = input;
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the inference experiment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `model_variants`.
+        ///
+        /// To override the contents of this collection use [`set_model_variants`](Self::set_model_variants).
+        ///
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+        pub fn model_variants(mut self, input: crate::model::ModelVariantConfig) -> Self {
+            let mut v = self.model_variants.unwrap_or_default();
+            v.push(input);
+            self.model_variants = Some(v);
+            self
+        }
+        /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+        pub fn set_model_variants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+        ) -> Self {
+            self.model_variants = input;
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn data_storage_config(
+            mut self,
+            input: crate::model::InferenceExperimentDataStorageConfig,
+        ) -> Self {
+            self.data_storage_config = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+        pub fn set_data_storage_config(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+        ) -> Self {
+            self.data_storage_config = input;
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn shadow_mode_config(mut self, input: crate::model::ShadowModeConfig) -> Self {
+            self.shadow_mode_config = Some(input);
+            self
+        }
+        /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+        pub fn set_shadow_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ShadowModeConfig>,
+        ) -> Self {
+            self.shadow_mode_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInferenceExperimentInput`](crate::input::UpdateInferenceExperimentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateInferenceExperimentInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateInferenceExperimentInput {
+                name: self.name,
+                schedule: self.schedule,
+                description: self.description,
+                model_variants: self.model_variants,
+                data_storage_config: self.data_storage_config,
+                shadow_mode_config: self.shadow_mode_config,
+            })
+        }
+    }
+}
+impl UpdateInferenceExperimentInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateInferenceExperiment`](crate::operation::UpdateInferenceExperiment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateInferenceExperiment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateInferenceExperimentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateInferenceExperimentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateInferenceExperiment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_inference_experiment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateInferenceExperiment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateInferenceExperiment",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateInferenceExperimentInput`](crate::input::UpdateInferenceExperimentInput).
+    pub fn builder() -> crate::input::update_inference_experiment_input::Builder {
+        crate::input::update_inference_experiment_input::Builder::default()
+    }
+}
+
+/// See [`UpdateModelCardInput`](crate::input::UpdateModelCardInput).
+pub mod update_model_card_input {
+
+    /// A builder for [`UpdateModelCardInput`](crate::input::UpdateModelCardInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) model_card_name: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+    }
+    impl Builder {
+        /// <p>The name of the model card to update.</p>
+        pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_card_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the model card to update.</p>
+        pub fn set_model_card_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_card_name = input;
+            self
+        }
+        /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+        /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn model_card_status(mut self, input: crate::model::ModelCardStatus) -> Self {
+            self.model_card_status = Some(input);
+            self
+        }
+        /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+        /// <ul>
+        /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+        /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+        /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+        /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+        /// </ul>
+        pub fn set_model_card_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelCardStatus>,
+        ) -> Self {
+            self.model_card_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateModelCardInput`](crate::input::UpdateModelCardInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateModelCardInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateModelCardInput {
+                model_card_name: self.model_card_name,
+                content: self.content,
+                model_card_status: self.model_card_status,
+            })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("model_card_name", &self.model_card_name);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("model_card_status", &self.model_card_status);
+            formatter.finish()
+        }
+    }
+}
+impl UpdateModelCardInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateModelCard`](crate::operation::UpdateModelCard)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateModelCard,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateModelCardInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateModelCardInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateModelCard",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_model_card(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateModelCard::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateModelCard",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateModelCardInput`](crate::input::UpdateModelCardInput).
+    pub fn builder() -> crate::input::update_model_card_input::Builder {
+        crate::input::update_model_card_input::Builder::default()
     }
 }
 
@@ -50314,6 +58176,197 @@ impl UpdateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::input::UpdateModelPackageInput).
     pub fn builder() -> crate::input::update_model_package_input::Builder {
         crate::input::update_model_package_input::Builder::default()
+    }
+}
+
+/// See [`UpdateMonitoringAlertInput`](crate::input::UpdateMonitoringAlertInput).
+pub mod update_monitoring_alert_input {
+
+    /// A builder for [`UpdateMonitoringAlertInput`](crate::input::UpdateMonitoringAlertInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
+        pub(crate) monitoring_alert_name: std::option::Option<std::string::String>,
+        pub(crate) datapoints_to_alert: std::option::Option<i32>,
+        pub(crate) evaluation_period: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_schedule_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring schedule.</p>
+        pub fn set_monitoring_schedule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_schedule_name = input;
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_alert_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a monitoring alert.</p>
+        pub fn set_monitoring_alert_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_alert_name = input;
+            self
+        }
+        /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+        pub fn datapoints_to_alert(mut self, input: i32) -> Self {
+            self.datapoints_to_alert = Some(input);
+            self
+        }
+        /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+        pub fn set_datapoints_to_alert(mut self, input: std::option::Option<i32>) -> Self {
+            self.datapoints_to_alert = input;
+            self
+        }
+        /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+        pub fn evaluation_period(mut self, input: i32) -> Self {
+            self.evaluation_period = Some(input);
+            self
+        }
+        /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+        pub fn set_evaluation_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.evaluation_period = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMonitoringAlertInput`](crate::input::UpdateMonitoringAlertInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateMonitoringAlertInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateMonitoringAlertInput {
+                monitoring_schedule_name: self.monitoring_schedule_name,
+                monitoring_alert_name: self.monitoring_alert_name,
+                datapoints_to_alert: self.datapoints_to_alert,
+                evaluation_period: self.evaluation_period,
+            })
+        }
+    }
+}
+impl UpdateMonitoringAlertInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMonitoringAlert`](crate::operation::UpdateMonitoringAlert)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateMonitoringAlert,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateMonitoringAlertInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateMonitoringAlertInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateMonitoringAlert",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_monitoring_alert(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateMonitoringAlert::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateMonitoringAlert",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertInput`](crate::input::UpdateMonitoringAlertInput).
+    pub fn builder() -> crate::input::update_monitoring_alert_input::Builder {
+        crate::input::update_monitoring_alert_input::Builder::default()
     }
 }
 
@@ -51721,6 +59774,178 @@ impl UpdateProjectInput {
     }
 }
 
+/// See [`UpdateSpaceInput`](crate::input::UpdateSpaceInput).
+pub mod update_space_input {
+
+    /// A builder for [`UpdateSpaceInput`](crate::input::UpdateSpaceInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+        pub(crate) space_name: std::option::Option<std::string::String>,
+        pub(crate) space_settings: std::option::Option<crate::model::SpaceSettings>,
+    }
+    impl Builder {
+        /// <p>The ID of the associated Domain.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the associated Domain.</p>
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.space_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the space.</p>
+        pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.space_name = input;
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn space_settings(mut self, input: crate::model::SpaceSettings) -> Self {
+            self.space_settings = Some(input);
+            self
+        }
+        /// <p>A collection of space settings.</p>
+        pub fn set_space_settings(
+            mut self,
+            input: std::option::Option<crate::model::SpaceSettings>,
+        ) -> Self {
+            self.space_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::input::UpdateSpaceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateSpaceInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateSpaceInput {
+                domain_id: self.domain_id,
+                space_name: self.space_name,
+                space_settings: self.space_settings,
+            })
+        }
+    }
+}
+impl UpdateSpaceInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSpace`](crate::operation::UpdateSpace)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSpace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateSpaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSpaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateSpace",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_space(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSpace::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSpace",
+            "sagemaker",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSpaceInput`](crate::input::UpdateSpaceInput).
+    pub fn builder() -> crate::input::update_space_input::Builder {
+        crate::input::update_space_input::Builder::default()
+    }
+}
+
 /// See [`UpdateTrainingJobInput`](crate::input::UpdateTrainingJobInput).
 pub mod update_training_job_input {
 
@@ -51747,12 +59972,12 @@ pub mod update_training_job_input {
             self.training_job_name = input;
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfigForUpdate) -> Self {
             self.profiler_config = Some(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfigForUpdate>,
@@ -51764,7 +59989,7 @@ pub mod update_training_job_input {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -51774,7 +59999,7 @@ pub mod update_training_job_input {
             self.profiler_rule_configurations = Some(v);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+        /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -53284,10 +61509,10 @@ pub struct UpdateTrainingJobInput {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
     #[doc(hidden)]
     pub training_job_name: std::option::Option<std::string::String>,
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     #[doc(hidden)]
     pub profiler_config: std::option::Option<crate::model::ProfilerConfigForUpdate>,
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -53300,11 +61525,11 @@ impl UpdateTrainingJobInput {
     pub fn training_job_name(&self) -> std::option::Option<&str> {
         self.training_job_name.as_deref()
     }
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfigForUpdate> {
         self.profiler_config.as_ref()
     }
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     pub fn profiler_rule_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
@@ -53313,6 +61538,35 @@ impl UpdateTrainingJobInput {
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfigForUpdate> {
         self.resource_config.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
+    /// <p>A collection of space settings.</p>
+    #[doc(hidden)]
+    pub space_settings: std::option::Option<crate::model::SpaceSettings>,
+}
+impl UpdateSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn space_settings(&self) -> std::option::Option<&crate::model::SpaceSettings> {
+        self.space_settings.as_ref()
     }
 }
 
@@ -53631,6 +61885,42 @@ impl UpdateMonitoringScheduleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateMonitoringAlertInput {
+    /// <p>The name of a monitoring schedule.</p>
+    #[doc(hidden)]
+    pub monitoring_schedule_name: std::option::Option<std::string::String>,
+    /// <p>The name of a monitoring alert.</p>
+    #[doc(hidden)]
+    pub monitoring_alert_name: std::option::Option<std::string::String>,
+    /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    #[doc(hidden)]
+    pub datapoints_to_alert: std::option::Option<i32>,
+    /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    #[doc(hidden)]
+    pub evaluation_period: std::option::Option<i32>,
+}
+impl UpdateMonitoringAlertInput {
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn monitoring_alert_name(&self) -> std::option::Option<&str> {
+        self.monitoring_alert_name.as_deref()
+    }
+    /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    pub fn datapoints_to_alert(&self) -> std::option::Option<i32> {
+        self.datapoints_to_alert
+    }
+    /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    pub fn evaluation_period(&self) -> std::option::Option<i32> {
+        self.evaluation_period
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     #[doc(hidden)]
@@ -53691,6 +61981,233 @@ impl UpdateModelPackageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateModelCardInput {
+    /// <p>The name of the model card to update.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+    /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+}
+impl UpdateModelCardInput {
+    /// <p>The name of the model card to update.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+    /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn model_card_status(&self) -> std::option::Option<&crate::model::ModelCardStatus> {
+        self.model_card_status.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateModelCardInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateModelCardInput");
+        formatter.field("model_card_name", &self.model_card_name);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("model_card_status", &self.model_card_status);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateInferenceExperimentInput {
+    /// <p>The name of the inference experiment to be updated.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+    #[doc(hidden)]
+    pub schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+    /// <p>The description of the inference experiment.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+    #[doc(hidden)]
+    pub model_variants: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    #[doc(hidden)]
+    pub data_storage_config:
+        std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    #[doc(hidden)]
+    pub shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+}
+impl UpdateInferenceExperimentInput {
+    /// <p>The name of the inference experiment to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::InferenceExperimentSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The description of the inference experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+    pub fn model_variants(&self) -> std::option::Option<&[crate::model::ModelVariantConfig]> {
+        self.model_variants.as_deref()
+    }
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    pub fn data_storage_config(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExperimentDataStorageConfig> {
+        self.data_storage_config.as_ref()
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn shadow_mode_config(&self) -> std::option::Option<&crate::model::ShadowModeConfig> {
+        self.shadow_mode_config.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateImageVersionInput {
+    /// <p>The name of the image.</p>
+    #[doc(hidden)]
+    pub image_name: std::option::Option<std::string::String>,
+    /// <p>The alias of the image version.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The version of the image.</p>
+    #[doc(hidden)]
+    pub version: std::option::Option<i32>,
+    /// <p>A list of aliases to add.</p>
+    #[doc(hidden)]
+    pub aliases_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of aliases to delete.</p>
+    #[doc(hidden)]
+    pub aliases_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The availability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
+    /// <p>The machine learning framework vended in the image version.</p>
+    #[doc(hidden)]
+    pub ml_framework: std::option::Option<std::string::String>,
+    /// <p>The supported programming language and its version.</p>
+    #[doc(hidden)]
+    pub programming_lang: std::option::Option<std::string::String>,
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub processor: std::option::Option<crate::model::Processor>,
+    /// <p>Indicates Horovod compatibility.</p>
+    #[doc(hidden)]
+    pub horovod: bool,
+    /// <p>The maintainer description of the image version.</p>
+    #[doc(hidden)]
+    pub release_notes: std::option::Option<std::string::String>,
+}
+impl UpdateImageVersionInput {
+    /// <p>The name of the image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The alias of the image version.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The version of the image.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+    /// <p>A list of aliases to add.</p>
+    pub fn aliases_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases_to_add.as_deref()
+    }
+    /// <p>A list of aliases to delete.</p>
+    pub fn aliases_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases_to_delete.as_deref()
+    }
+    /// <p>The availability of the image version specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn vendor_guidance(&self) -> std::option::Option<&crate::model::VendorGuidance> {
+        self.vendor_guidance.as_ref()
+    }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn ml_framework(&self) -> std::option::Option<&str> {
+        self.ml_framework.as_deref()
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn programming_lang(&self) -> std::option::Option<&str> {
+        self.programming_lang.as_deref()
+    }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn processor(&self) -> std::option::Option<&crate::model::Processor> {
+        self.processor.as_ref()
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn horovod(&self) -> bool {
+        self.horovod
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn release_notes(&self) -> std::option::Option<&str> {
+        self.release_notes.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateImageInput {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
@@ -53705,7 +62222,7 @@ pub struct UpdateImageInput {
     /// <p>The name of the image to update.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
-    /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -53726,9 +62243,45 @@ impl UpdateImageInput {
     pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
-    /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateHubInput {
+    /// <p>The name of the hub to update.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>A description of the updated hub.</p>
+    #[doc(hidden)]
+    pub hub_description: std::option::Option<std::string::String>,
+    /// <p>The display name of the hub.</p>
+    #[doc(hidden)]
+    pub hub_display_name: std::option::Option<std::string::String>,
+    /// <p>The searchable keywords for the hub.</p>
+    #[doc(hidden)]
+    pub hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateHubInput {
+    /// <p>The name of the hub to update.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>A description of the updated hub.</p>
+    pub fn hub_description(&self) -> std::option::Option<&str> {
+        self.hub_description.as_deref()
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn hub_display_name(&self) -> std::option::Option<&str> {
+        self.hub_display_name.as_deref()
+    }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn hub_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.hub_search_keywords.as_deref()
     }
 }
 
@@ -53917,6 +62470,13 @@ pub struct UpdateDomainInput {
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     #[doc(hidden)]
     pub domain_settings_for_update: std::option::Option<crate::model::DomainSettingsForUpdate>,
+    /// <p>The default settings used to create a space within the Domain.</p>
+    #[doc(hidden)]
+    pub default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    #[doc(hidden)]
+    pub app_security_group_management:
+        std::option::Option<crate::model::AppSecurityGroupManagement>,
 }
 impl UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
@@ -53932,6 +62492,18 @@ impl UpdateDomainInput {
         &self,
     ) -> std::option::Option<&crate::model::DomainSettingsForUpdate> {
         self.domain_settings_for_update.as_ref()
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn default_space_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSpaceSettings> {
+        self.default_space_settings.as_ref()
+    }
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    pub fn app_security_group_management(
+        &self,
+    ) -> std::option::Option<&crate::model::AppSecurityGroupManagement> {
+        self.app_security_group_management.as_ref()
     }
 }
 
@@ -54307,6 +62879,78 @@ impl StopInferenceRecommendationsJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopInferenceExperimentInput {
+    /// <p>The name of the inference experiment to stop.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub model_variant_actions: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::ModelVariantAction>,
+    >,
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+    #[doc(hidden)]
+    pub desired_model_variants:
+        std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub desired_state: std::option::Option<crate::model::InferenceExperimentStopDesiredState>,
+    /// <p>The reason for stopping the experiment.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<std::string::String>,
+}
+impl StopInferenceExperimentInput {
+    /// <p>The name of the inference experiment to stop.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>Promote</code> - Promote the shadow variant to a production variant</p> </li>
+    /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
+    /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
+    /// </ul>
+    pub fn model_variant_actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ModelVariantAction>,
+    > {
+        self.model_variant_actions.as_ref()
+    }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
+    pub fn desired_model_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelVariantConfig]> {
+        self.desired_model_variants.as_deref()
+    }
+    /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
+    /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
+    /// </ul>
+    pub fn desired_state(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExperimentStopDesiredState> {
+        self.desired_state.as_ref()
+    }
+    /// <p>The reason for stopping the experiment.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
     #[doc(hidden)]
@@ -54465,6 +63109,21 @@ impl StartMonitoringScheduleInput {
     /// <p>The name of the schedule to start.</p>
     pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartInferenceExperimentInput {
+    /// <p>The name of the inference experiment to start.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl StartInferenceExperimentInput {
+    /// <p>The name of the inference experiment to start.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 
@@ -55461,6 +64120,56 @@ impl ListStageDevicesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSpacesInput {
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns a list up to a specified limit.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::SpaceSortKey>,
+    /// <p>A parameter to search for the Domain ID.</p>
+    #[doc(hidden)]
+    pub domain_id_equals: std::option::Option<std::string::String>,
+    /// <p>A parameter by which to filter the results.</p>
+    #[doc(hidden)]
+    pub space_name_contains: std::option::Option<std::string::String>,
+}
+impl ListSpacesInput {
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns a list up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SpaceSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>A parameter to search for the Domain ID.</p>
+    pub fn domain_id_equals(&self) -> std::option::Option<&str> {
+        self.domain_id_equals.as_deref()
+    }
+    /// <p>A parameter by which to filter the results.</p>
+    pub fn space_name_contains(&self) -> std::option::Option<&str> {
+        self.space_name_contains.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>A filter that returns the projects that were created after a specified time.</p>
     #[doc(hidden)]
@@ -56166,6 +64875,106 @@ impl ListMonitoringExecutionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMonitoringAlertsInput {
+    /// <p>The name of a monitoring schedule.</p>
+    #[doc(hidden)]
+    pub monitoring_schedule_name: std::option::Option<std::string::String>,
+    /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to display. The default is 100.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListMonitoringAlertsInput {
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to display. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListMonitoringAlertHistoryInput {
+    /// <p>The name of a monitoring schedule.</p>
+    #[doc(hidden)]
+    pub monitoring_schedule_name: std::option::Option<std::string::String>,
+    /// <p>The name of a monitoring alert.</p>
+    #[doc(hidden)]
+    pub monitoring_alert_name: std::option::Option<std::string::String>,
+    /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::MonitoringAlertHistorySortKey>,
+    /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to display. The default is 100.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A filter that returns only alerts created on or before the specified time.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A filter that returns only alerts created on or after the specified time.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A filter that retrieves only alerts with a specific status.</p>
+    #[doc(hidden)]
+    pub status_equals: std::option::Option<crate::model::MonitoringAlertStatus>,
+}
+impl ListMonitoringAlertHistoryInput {
+    /// <p>The name of a monitoring schedule.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>The name of a monitoring alert.</p>
+    pub fn monitoring_alert_name(&self) -> std::option::Option<&str> {
+        self.monitoring_alert_name.as_deref()
+    }
+    /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringAlertHistorySortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to display. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns only alerts created on or before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only alerts created on or after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that retrieves only alerts with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::MonitoringAlertStatus> {
+        self.status_equals.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelsInput {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     #[doc(hidden)]
@@ -56527,6 +65336,212 @@ impl ListModelExplainabilityJobDefinitionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardVersionsInput {
+    /// <p>Only list model card versions that were created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list model card versions that were created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The maximum number of model card versions to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>List model card versions for the model card with the specified name.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>Only list model card versions with the specified approval status.</p>
+    #[doc(hidden)]
+    pub model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+    /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ModelCardVersionSortBy>,
+    /// <p>Sort model card versions by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::ModelCardSortOrder>,
+}
+impl ListModelCardVersionsInput {
+    /// <p>Only list model card versions that were created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Only list model card versions that were created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of model card versions to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>List model card versions for the model card with the specified name.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>Only list model card versions with the specified approval status.</p>
+    pub fn model_card_status(&self) -> std::option::Option<&crate::model::ModelCardStatus> {
+        self.model_card_status.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelCardVersionSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort model card versions by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ModelCardSortOrder> {
+        self.sort_order.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardsInput {
+    /// <p>Only list model cards that were created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list model cards that were created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The maximum number of model cards to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Only list model cards with names that contain the specified string.</p>
+    #[doc(hidden)]
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>Only list model cards with the specified approval status.</p>
+    #[doc(hidden)]
+    pub model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+    /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ModelCardSortBy>,
+    /// <p>Sort model cards by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::ModelCardSortOrder>,
+}
+impl ListModelCardsInput {
+    /// <p>Only list model cards that were created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Only list model cards that were created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of model cards to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Only list model cards with names that contain the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>Only list model cards with the specified approval status.</p>
+    pub fn model_card_status(&self) -> std::option::Option<&crate::model::ModelCardStatus> {
+        self.model_card_status.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelCardSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort model cards by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ModelCardSortOrder> {
+        self.sort_order.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListModelCardExportJobsInput {
+    /// <p>List export jobs for the model card with the specified name.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>List export jobs for the model card with the specified version.</p>
+    #[doc(hidden)]
+    pub model_card_version: i32,
+    /// <p>Only list model card export jobs that were created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list model card export jobs that were created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list model card export jobs with names that contain the specified string.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_name_contains: std::option::Option<std::string::String>,
+    /// <p>Only list model card export jobs with the specified status.</p>
+    #[doc(hidden)]
+    pub status_equals: std::option::Option<crate::model::ModelCardExportJobStatus>,
+    /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ModelCardExportJobSortBy>,
+    /// <p>Sort model card export jobs by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::ModelCardExportJobSortOrder>,
+    /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of model card export jobs to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListModelCardExportJobsInput {
+    /// <p>List export jobs for the model card with the specified name.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>List export jobs for the model card with the specified version.</p>
+    pub fn model_card_version(&self) -> i32 {
+        self.model_card_version
+    }
+    /// <p>Only list model card export jobs that were created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Only list model card export jobs that were created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Only list model card export jobs with names that contain the specified string.</p>
+    pub fn model_card_export_job_name_contains(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_name_contains.as_deref()
+    }
+    /// <p>Only list model card export jobs with the specified status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::ModelCardExportJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelCardExportJobSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort model card export jobs by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ModelCardExportJobSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of model card export jobs to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListModelBiasJobDefinitionsInput {
     /// <p>Name of the endpoint to monitor for model bias.</p>
     #[doc(hidden)]
@@ -56785,6 +65800,51 @@ impl ListLabelingJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobStepsInput {
+    /// <p>The name for the Inference Recommender job.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::RecommendationJobStatus>,
+    /// <p>A filter to return details about the specified type of subtask.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    #[doc(hidden)]
+    pub step_type: std::option::Option<crate::model::RecommendationStepType>,
+    /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInferenceRecommendationsJobStepsInput {
+    /// <p>The name for the Inference Recommender job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A filter to return details about the specified type of subtask.</p>
+    /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    pub fn step_type(&self) -> std::option::Option<&crate::model::RecommendationStepType> {
+        self.step_type.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsInput {
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
     #[doc(hidden)]
@@ -56857,6 +65917,91 @@ impl ListInferenceRecommendationsJobsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of recommendations to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListInferenceExperimentsInput {
+    /// <p>Selects inference experiments whose names contain this name.</p>
+    #[doc(hidden)]
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::InferenceExperimentType>,
+    /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+    #[doc(hidden)]
+    pub status_equals: std::option::Option<crate::model::InferenceExperimentStatus>,
+    /// <p>Selects inference experiments which were created after this timestamp.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects inference experiments which were created before this timestamp.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+    #[doc(hidden)]
+    pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+    #[doc(hidden)]
+    pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The column by which to sort the listed inference experiments.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::SortInferenceExperimentsBy>,
+    /// <p>The direction of sorting (ascending or descending).</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to select.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListInferenceExperimentsInput {
+    /// <p>Selects inference experiments whose names contain this name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p> Selects inference experiments of this type. For the possible types of inference experiments, see <code>CreateInferenceExperimentRequest$Type</code>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InferenceExperimentType> {
+        self.r#type.as_ref()
+    }
+    /// <p> Selects inference experiments which are in this status. For the possible statuses, see <code>DescribeInferenceExperimentResponse$Status</code>. </p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::InferenceExperimentStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>Selects inference experiments which were created after this timestamp.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Selects inference experiments which were created before this timestamp.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Selects inference experiments which were last modified after this timestamp.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Selects inference experiments which were last modified before this timestamp.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>The column by which to sort the listed inference experiments.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortInferenceExperimentsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The direction of sorting (ascending or descending).</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p> The response from the last list when returning a list large enough to need tokening. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to select.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -57126,6 +66271,240 @@ impl ListHumanTaskUisInput {
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubsInput {
+    /// <p>Only list hubs with names that contain the specified string.</p>
+    #[doc(hidden)]
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>Only list hubs that were created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list hubs that were created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list hubs that were last modified before the time specified.</p>
+    #[doc(hidden)]
+    pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list hubs that were last modified after the time specified.</p>
+    #[doc(hidden)]
+    pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Sort hubs by either name or creation time.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::HubSortBy>,
+    /// <p>Sort hubs by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>The maximum number of hubs to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubsInput {
+    /// <p>Only list hubs with names that contain the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>Only list hubs that were created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Only list hubs that were created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Only list hubs that were last modified before the time specified.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>Only list hubs that were last modified after the time specified.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Sort hubs by either name or creation time.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::HubSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort hubs by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of hubs to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubContentVersionsInput {
+    /// <p>The name of the hub to list the content versions of.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The type of hub content to list versions of.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>The name of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_name: std::option::Option<std::string::String>,
+    /// <p>The lower bound of the hub content versions to list.</p>
+    #[doc(hidden)]
+    pub min_version: std::option::Option<std::string::String>,
+    /// <p>The upper bound of the hub content schema version.</p>
+    #[doc(hidden)]
+    pub max_schema_version: std::option::Option<std::string::String>,
+    /// <p>Only list hub content versions that were created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list hub content versions that were created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Sort hub content versions by either name or creation time.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::HubContentSortBy>,
+    /// <p>Sort hub content versions by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>The maximum number of hub content versions to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubContentVersionsInput {
+    /// <p>The name of the hub to list the content versions of.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The type of hub content to list versions of.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>The name of the hub content.</p>
+    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+        self.hub_content_name.as_deref()
+    }
+    /// <p>The lower bound of the hub content versions to list.</p>
+    pub fn min_version(&self) -> std::option::Option<&str> {
+        self.min_version.as_deref()
+    }
+    /// <p>The upper bound of the hub content schema version.</p>
+    pub fn max_schema_version(&self) -> std::option::Option<&str> {
+        self.max_schema_version.as_deref()
+    }
+    /// <p>Only list hub content versions that were created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Only list hub content versions that were created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Sort hub content versions by either name or creation time.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::HubContentSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort hub content versions by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of hub content versions to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListHubContentsInput {
+    /// <p>The name of the hub to list the contents of.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The type of hub content to list.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>Only list hub content if the name contains the specified string.</p>
+    #[doc(hidden)]
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>The upper bound of the hub content schema verion.</p>
+    #[doc(hidden)]
+    pub max_schema_version: std::option::Option<std::string::String>,
+    /// <p>Only list hub content that was created before the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Only list hub content that was created after the time specified.</p>
+    #[doc(hidden)]
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Sort hub content versions by either name or creation time.</p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::HubContentSortBy>,
+    /// <p>Sort hubs by ascending or descending order.</p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>The maximum amount of hub content to list.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHubContentsInput {
+    /// <p>The name of the hub to list the contents of.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The type of hub content to list.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>Only list hub content if the name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>The upper bound of the hub content schema verion.</p>
+    pub fn max_schema_version(&self) -> std::option::Option<&str> {
+        self.max_schema_version.as_deref()
+    }
+    /// <p>Only list hub content that was created before the time specified.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Only list hub content that was created after the time specified.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Sort hub content versions by either name or creation time.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::HubContentSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort hubs by ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum amount of hub content to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -58311,9 +67690,12 @@ pub struct ListAppsInput {
     /// <p>A parameter to search for the domain ID.</p>
     #[doc(hidden)]
     pub domain_id_equals: std::option::Option<std::string::String>,
-    /// <p>A parameter to search by user profile name.</p>
+    /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
     #[doc(hidden)]
     pub user_profile_name_equals: std::option::Option<std::string::String>,
+    /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+    #[doc(hidden)]
+    pub space_name_equals: std::option::Option<std::string::String>,
 }
 impl ListAppsInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -58336,9 +67718,13 @@ impl ListAppsInput {
     pub fn domain_id_equals(&self) -> std::option::Option<&str> {
         self.domain_id_equals.as_deref()
     }
-    /// <p>A parameter to search by user profile name.</p>
+    /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
     pub fn user_profile_name_equals(&self) -> std::option::Option<&str> {
         self.user_profile_name_equals.as_deref()
+    }
+    /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
+    pub fn space_name_equals(&self) -> std::option::Option<&str> {
+        self.space_name_equals.as_deref()
     }
 }
 
@@ -58410,6 +67796,49 @@ impl ListAppImageConfigsInput {
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListAliasesInput {
+    /// <p>The name of the image.</p>
+    #[doc(hidden)]
+    pub image_name: std::option::Option<std::string::String>,
+    /// <p>The alias of the image version.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+    #[doc(hidden)]
+    pub version: std::option::Option<i32>,
+    /// <p>The maximum number of aliases to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAliasesInput {
+    /// <p>The name of the image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The alias of the image version.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+    /// <p>The maximum number of aliases to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -58531,6 +67960,91 @@ impl ListActionsInput {
     /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportHubContentInput {
+    /// <p>The name of the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_name: std::option::Option<std::string::String>,
+    /// <p>The version of the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_version: std::option::Option<std::string::String>,
+    /// <p>The type of hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>The version of the hub content schema to import.</p>
+    #[doc(hidden)]
+    pub document_schema_version: std::option::Option<std::string::String>,
+    /// <p>The name of the hub to import content into.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The display name of the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_display_name: std::option::Option<std::string::String>,
+    /// <p>A description of the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_description: std::option::Option<std::string::String>,
+    /// <p>Markdown files associated with the hub content to import.</p>
+    #[doc(hidden)]
+    pub hub_content_markdown: std::option::Option<std::string::String>,
+    /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    #[doc(hidden)]
+    pub hub_content_document: std::option::Option<std::string::String>,
+    /// <p>The searchable keywords of the hub content.</p>
+    #[doc(hidden)]
+    pub hub_content_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Any tags associated with the hub content.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportHubContentInput {
+    /// <p>The name of the hub content to import.</p>
+    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+        self.hub_content_name.as_deref()
+    }
+    /// <p>The version of the hub content to import.</p>
+    pub fn hub_content_version(&self) -> std::option::Option<&str> {
+        self.hub_content_version.as_deref()
+    }
+    /// <p>The type of hub content to import.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>The version of the hub content schema to import.</p>
+    pub fn document_schema_version(&self) -> std::option::Option<&str> {
+        self.document_schema_version.as_deref()
+    }
+    /// <p>The name of the hub to import content into.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The display name of the hub content to import.</p>
+    pub fn hub_content_display_name(&self) -> std::option::Option<&str> {
+        self.hub_content_display_name.as_deref()
+    }
+    /// <p>A description of the hub content to import.</p>
+    pub fn hub_content_description(&self) -> std::option::Option<&str> {
+        self.hub_content_description.as_deref()
+    }
+    /// <p>Markdown files associated with the hub content to import.</p>
+    pub fn hub_content_markdown(&self) -> std::option::Option<&str> {
+        self.hub_content_markdown.as_deref()
+    }
+    /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
+    pub fn hub_content_document(&self) -> std::option::Option<&str> {
+        self.hub_content_document.as_deref()
+    }
+    /// <p>The searchable keywords of the hub content.</p>
+    pub fn hub_content_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.hub_content_search_keywords.as_deref()
+    }
+    /// <p>Any tags associated with the hub content.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
     }
 }
 
@@ -58783,6 +68297,28 @@ impl DescribeStudioLifecycleConfigInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
+}
+impl DescribeSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to describe.</p>
     #[doc(hidden)]
@@ -58965,6 +68501,43 @@ impl DescribeModelExplainabilityJobDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeModelCardExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeModelCardExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+    pub fn model_card_export_job_arn(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_arn.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeModelCardInput {
+    /// <p>The name of the model card to describe.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+    #[doc(hidden)]
+    pub model_card_version: i32,
+}
+impl DescribeModelCardInput {
+    /// <p>The name of the model card to describe.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+    pub fn model_card_version(&self) -> i32 {
+        self.model_card_version
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -59040,6 +68613,21 @@ impl DescribeInferenceRecommendationsJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeInferenceExperimentInput {
+    /// <p>The name of the inference experiment to describe.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl DescribeInferenceExperimentInput {
+    /// <p>The name of the inference experiment to describe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImageVersionInput {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
@@ -59047,6 +68635,9 @@ pub struct DescribeImageVersionInput {
     /// <p>The version of the image. If not specified, the latest version is described.</p>
     #[doc(hidden)]
     pub version: std::option::Option<i32>,
+    /// <p>The alias of the image version.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<std::string::String>,
 }
 impl DescribeImageVersionInput {
     /// <p>The name of the image.</p>
@@ -59056,6 +68647,10 @@ impl DescribeImageVersionInput {
     /// <p>The version of the image. If not specified, the latest version is described.</p>
     pub fn version(&self) -> std::option::Option<i32> {
         self.version
+    }
+    /// <p>The alias of the image version.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
     }
 }
 
@@ -59101,6 +68696,57 @@ impl DescribeHumanTaskUiInput {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
     pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeHubContentInput {
+    /// <p>The name of the hub that contains the content to describe.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The type of content in the hub.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>The name of the content to describe.</p>
+    #[doc(hidden)]
+    pub hub_content_name: std::option::Option<std::string::String>,
+    /// <p>The version of the content to describe.</p>
+    #[doc(hidden)]
+    pub hub_content_version: std::option::Option<std::string::String>,
+}
+impl DescribeHubContentInput {
+    /// <p>The name of the hub that contains the content to describe.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The type of content in the hub.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>The name of the content to describe.</p>
+    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+        self.hub_content_name.as_deref()
+    }
+    /// <p>The version of the content to describe.</p>
+    pub fn hub_content_version(&self) -> std::option::Option<&str> {
+        self.hub_content_version.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeHubInput {
+    /// <p>The name of the hub to describe.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+}
+impl DescribeHubInput {
+    /// <p>The name of the hub to describe.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
     }
 }
 
@@ -59423,7 +69069,7 @@ pub struct DescribeAppInput {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app.</p>
@@ -59432,13 +69078,16 @@ pub struct DescribeAppInput {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
 }
 impl DescribeAppInput {
     /// <p>The domain ID.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
@@ -59449,6 +69098,10 @@ impl DescribeAppInput {
     /// <p>The name of the app.</p>
     pub fn app_name(&self) -> std::option::Option<&str> {
         self.app_name.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
     }
 }
 
@@ -59626,6 +69279,28 @@ impl DeleteStudioLifecycleConfigInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
+}
+impl DeleteSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the project to delete.</p>
     #[doc(hidden)]
@@ -59785,6 +69460,21 @@ impl DeleteModelExplainabilityJobDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteModelCardInput {
+    /// <p>The name of the model card to delete.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+}
+impl DeleteModelCardInput {
+    /// <p>The name of the model card to delete.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition to delete.</p>
     #[doc(hidden)]
@@ -59815,22 +69505,44 @@ impl DeleteModelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteInferenceExperimentInput {
+    /// <p>The name of the inference experiment you want to delete.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteInferenceExperimentInput {
+    /// <p>The name of the inference experiment you want to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImageVersionInput {
-    /// <p>The name of the image.</p>
+    /// <p>The name of the image to delete.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The version to delete.</p>
     #[doc(hidden)]
     pub version: std::option::Option<i32>,
+    /// <p>The alias of the image to delete.</p>
+    #[doc(hidden)]
+    pub alias: std::option::Option<std::string::String>,
 }
 impl DeleteImageVersionInput {
-    /// <p>The name of the image.</p>
+    /// <p>The name of the image to delete.</p>
     pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
     /// <p>The version to delete.</p>
     pub fn version(&self) -> std::option::Option<i32> {
         self.version
+    }
+    /// <p>The alias of the image to delete.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
     }
 }
 
@@ -59861,6 +69573,57 @@ impl DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteHubContentInput {
+    /// <p>The name of the hub that you want to delete content in.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>The type of content that you want to delete from a hub.</p>
+    #[doc(hidden)]
+    pub hub_content_type: std::option::Option<crate::model::HubContentType>,
+    /// <p>The name of the content that you want to delete from a hub.</p>
+    #[doc(hidden)]
+    pub hub_content_name: std::option::Option<std::string::String>,
+    /// <p>The version of the content that you want to delete from a hub.</p>
+    #[doc(hidden)]
+    pub hub_content_version: std::option::Option<std::string::String>,
+}
+impl DeleteHubContentInput {
+    /// <p>The name of the hub that you want to delete content in.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>The type of content that you want to delete from a hub.</p>
+    pub fn hub_content_type(&self) -> std::option::Option<&crate::model::HubContentType> {
+        self.hub_content_type.as_ref()
+    }
+    /// <p>The name of the content that you want to delete from a hub.</p>
+    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+        self.hub_content_name.as_deref()
+    }
+    /// <p>The version of the content that you want to delete from a hub.</p>
+    pub fn hub_content_version(&self) -> std::option::Option<&str> {
+        self.hub_content_version.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteHubInput {
+    /// <p>The name of the hub to delete.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+}
+impl DeleteHubInput {
+    /// <p>The name of the hub to delete.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
     }
 }
 
@@ -60124,7 +69887,7 @@ pub struct DeleteAppInput {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app.</p>
@@ -60133,13 +69896,16 @@ pub struct DeleteAppInput {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub app_name: std::option::Option<std::string::String>,
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
     /// <p>The domain ID.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
@@ -60150,6 +69916,10 @@ impl DeleteAppInput {
     /// <p>The name of the app.</p>
     pub fn app_name(&self) -> std::option::Option<&str> {
         self.app_name.as_deref()
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
     }
 }
 
@@ -60537,6 +70307,9 @@ pub struct CreateTransformJobInput {
     /// <p>Describes the results of the transform job.</p>
     #[doc(hidden)]
     pub transform_output: std::option::Option<crate::model::TransformOutput>,
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    #[doc(hidden)]
+    pub data_capture_config: std::option::Option<crate::model::BatchDataCaptureConfig>,
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     #[doc(hidden)]
     pub transform_resources: std::option::Option<crate::model::TransformResources>,
@@ -60600,6 +70373,12 @@ impl CreateTransformJobInput {
     pub fn transform_output(&self) -> std::option::Option<&crate::model::TransformOutput> {
         self.transform_output.as_ref()
     }
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    pub fn data_capture_config(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchDataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     pub fn transform_resources(&self) -> std::option::Option<&crate::model::TransformResources> {
         self.transform_resources.as_ref()
@@ -60632,7 +70411,7 @@ pub struct CreateTrainingJobInput {
     pub training_job_name: std::option::Option<std::string::String>,
     /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important>
     #[doc(hidden)]
     pub hyper_parameters:
@@ -60681,14 +70460,14 @@ pub struct CreateTrainingJobInput {
     /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     #[doc(hidden)]
     pub checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
-    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     #[doc(hidden)]
     pub debug_hook_config: std::option::Option<crate::model::DebugHookConfig>,
-    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
     #[doc(hidden)]
     pub debug_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::DebugRuleConfiguration>>,
-    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     #[doc(hidden)]
     pub tensor_board_output_config: std::option::Option<crate::model::TensorBoardOutputConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -60699,10 +70478,10 @@ pub struct CreateTrainingJobInput {
     /// </ul>
     #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     #[doc(hidden)]
     pub profiler_config: std::option::Option<crate::model::ProfilerConfig>,
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     #[doc(hidden)]
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -60721,7 +70500,7 @@ impl CreateTrainingJobInput {
     }
     /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
-    /// <p>You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception error for detected credentials, if such user input is found.</p>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important>
     pub fn hyper_parameters(
         &self,
@@ -60787,17 +70566,17 @@ impl CreateTrainingJobInput {
     pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::CheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
-    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(&self) -> std::option::Option<&crate::model::DebugHookConfig> {
         self.debug_hook_config.as_ref()
     }
-    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
     pub fn debug_rule_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::DebugRuleConfiguration]> {
         self.debug_rule_configurations.as_deref()
     }
-    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(
         &self,
     ) -> std::option::Option<&crate::model::TensorBoardOutputConfig> {
@@ -60812,11 +70591,11 @@ impl CreateTrainingJobInput {
     pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
-    /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfig> {
         self.profiler_config.as_ref()
     }
-    /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
     pub fn profiler_rule_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
@@ -60871,6 +70650,42 @@ impl CreateStudioLifecycleConfigInput {
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    #[doc(hidden)]
+    pub domain_id: std::option::Option<std::string::String>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
+    /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A collection of space settings.</p>
+    #[doc(hidden)]
+    pub space_settings: std::option::Option<crate::model::SpaceSettings>,
+}
+impl CreateSpaceInput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
+    }
+    /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn space_settings(&self) -> std::option::Option<&crate::model::SpaceSettings> {
+        self.space_settings.as_ref()
     }
 }
 
@@ -61054,6 +70869,9 @@ pub struct CreatePresignedDomainUrlInput {
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     #[doc(hidden)]
     pub expires_in_seconds: std::option::Option<i32>,
+    /// <p>The name of the space.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
 }
 impl CreatePresignedDomainUrlInput {
     /// <p>The domain ID.</p>
@@ -61071,6 +70889,10 @@ impl CreatePresignedDomainUrlInput {
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     pub fn expires_in_seconds(&self) -> std::option::Option<i32> {
         self.expires_in_seconds
+    }
+    /// <p>The name of the space.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
     }
 }
 
@@ -61734,6 +71556,108 @@ impl CreateModelExplainabilityJobDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateModelCardExportJobInput {
+    /// <p>The name of the model card to export.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+    #[doc(hidden)]
+    pub model_card_version: i32,
+    /// <p>The name of the model card export job.</p>
+    #[doc(hidden)]
+    pub model_card_export_job_name: std::option::Option<std::string::String>,
+    /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+    #[doc(hidden)]
+    pub output_config: std::option::Option<crate::model::ModelCardExportOutputConfig>,
+}
+impl CreateModelCardExportJobInput {
+    /// <p>The name of the model card to export.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
+    pub fn model_card_version(&self) -> i32 {
+        self.model_card_version
+    }
+    /// <p>The name of the model card export job.</p>
+    pub fn model_card_export_job_name(&self) -> std::option::Option<&str> {
+        self.model_card_export_job_name.as_deref()
+    }
+    /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::ModelCardExportOutputConfig> {
+        self.output_config.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateModelCardInput {
+    /// <p>The unique name of the model card.</p>
+    #[doc(hidden)]
+    pub model_card_name: std::option::Option<std::string::String>,
+    /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+    #[doc(hidden)]
+    pub security_config: std::option::Option<crate::model::ModelCardSecurityConfig>,
+    /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+    #[doc(hidden)]
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub model_card_status: std::option::Option<crate::model::ModelCardStatus>,
+    /// <p>Key-value pairs used to manage metadata for model cards.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateModelCardInput {
+    /// <p>The unique name of the model card.</p>
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
+        self.model_card_name.as_deref()
+    }
+    /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
+    pub fn security_config(&self) -> std::option::Option<&crate::model::ModelCardSecurityConfig> {
+        self.security_config.as_ref()
+    }
+    /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn model_card_status(&self) -> std::option::Option<&crate::model::ModelCardStatus> {
+        self.model_card_status.as_ref()
+    }
+    /// <p>Key-value pairs used to manage metadata for model cards.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateModelCardInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateModelCardInput");
+        formatter.field("model_card_name", &self.model_card_name);
+        formatter.field("security_config", &self.security_config);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("model_card_status", &self.model_card_status);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateModelBiasJobDefinitionInput {
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -62113,6 +72037,118 @@ impl CreateInferenceRecommendationsJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateInferenceExperimentInput {
+    /// <p>The name for the inference experiment.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+    /// <ul>
+    /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::InferenceExperimentType>,
+    /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+    #[doc(hidden)]
+    pub schedule: std::option::Option<crate::model::InferenceExperimentSchedule>,
+    /// <p>A description for the inference experiment.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+    #[doc(hidden)]
+    pub endpoint_name: std::option::Option<std::string::String>,
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+    #[doc(hidden)]
+    pub model_variants: std::option::Option<std::vec::Vec<crate::model::ModelVariantConfig>>,
+    /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+    /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+    #[doc(hidden)]
+    pub data_storage_config:
+        std::option::Option<crate::model::InferenceExperimentDataStorageConfig>,
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    #[doc(hidden)]
+    pub shadow_mode_config: std::option::Option<crate::model::ShadowModeConfig>,
+    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+    #[doc(hidden)]
+    pub kms_key: std::option::Option<std::string::String>,
+    /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateInferenceExperimentInput {
+    /// <p>The name for the inference experiment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The type of the inference experiment that you want to run. The following types of experiments are possible: </p>
+    /// <ul>
+    /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InferenceExperimentType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The duration for which you want the inference experiment to run. If you don't specify this field, the experiment automatically starts immediately upon creation and concludes after 7 days. </p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::InferenceExperimentSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>A description for the inference experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
+    pub fn model_variants(&self) -> std::option::Option<&[crate::model::ModelVariantConfig]> {
+        self.model_variants.as_deref()
+    }
+    /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
+    /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
+    pub fn data_storage_config(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExperimentDataStorageConfig> {
+        self.data_storage_config.as_ref()
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn shadow_mode_config(&self) -> std::option::Option<&crate::model::ShadowModeConfig> {
+        self.shadow_mode_config.as_ref()
+    }
+    /// <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. The <code>KmsKey</code> can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>KMS key Alias</p> <p> <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS key Alias</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    /// <p> If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with KMS managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
+    /// <p> The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateImageVersionInput {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
     /// <p> <code>
@@ -62131,6 +72167,45 @@ pub struct CreateImageVersionInput {
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
+    /// <p>A list of aliases created with the image version.</p>
+    #[doc(hidden)]
+    pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The stability of the image version, specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub vendor_guidance: std::option::Option<crate::model::VendorGuidance>,
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub job_type: std::option::Option<crate::model::JobType>,
+    /// <p>The machine learning framework vended in the image version.</p>
+    #[doc(hidden)]
+    pub ml_framework: std::option::Option<std::string::String>,
+    /// <p>The supported programming language and its version.</p>
+    #[doc(hidden)]
+    pub programming_lang: std::option::Option<std::string::String>,
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub processor: std::option::Option<crate::model::Processor>,
+    /// <p>Indicates Horovod compatibility.</p>
+    #[doc(hidden)]
+    pub horovod: bool,
+    /// <p>The maintainer description of the image version.</p>
+    #[doc(hidden)]
+    pub release_notes: std::option::Option<std::string::String>,
 }
 impl CreateImageVersionInput {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
@@ -62153,6 +72228,53 @@ impl CreateImageVersionInput {
     pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
+    /// <p>A list of aliases created with the image version.</p>
+    pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases.as_deref()
+    }
+    /// <p>The stability of the image version, specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// </ul>
+    pub fn vendor_guidance(&self) -> std::option::Option<&crate::model::VendorGuidance> {
+        self.vendor_guidance.as_ref()
+    }
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// </ul>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The machine learning framework vended in the image version.</p>
+    pub fn ml_framework(&self) -> std::option::Option<&str> {
+        self.ml_framework.as_deref()
+    }
+    /// <p>The supported programming language and its version.</p>
+    pub fn programming_lang(&self) -> std::option::Option<&str> {
+        self.programming_lang.as_deref()
+    }
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// </ul>
+    pub fn processor(&self) -> std::option::Option<&crate::model::Processor> {
+        self.processor.as_ref()
+    }
+    /// <p>Indicates Horovod compatibility.</p>
+    pub fn horovod(&self) -> bool {
+        self.horovod
+    }
+    /// <p>The maintainer description of the image version.</p>
+    pub fn release_notes(&self) -> std::option::Option<&str> {
+        self.release_notes.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -62168,7 +72290,7 @@ pub struct CreateImageInput {
     /// <p>The name of the image. Must be unique to your account.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
@@ -62188,7 +72310,7 @@ impl CreateImageInput {
     pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -62300,6 +72422,56 @@ impl CreateHumanTaskUiInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateHubInput {
+    /// <p>The name of the hub to create.</p>
+    #[doc(hidden)]
+    pub hub_name: std::option::Option<std::string::String>,
+    /// <p>A description of the hub.</p>
+    #[doc(hidden)]
+    pub hub_description: std::option::Option<std::string::String>,
+    /// <p>The display name of the hub.</p>
+    #[doc(hidden)]
+    pub hub_display_name: std::option::Option<std::string::String>,
+    /// <p>The searchable keywords for the hub.</p>
+    #[doc(hidden)]
+    pub hub_search_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    #[doc(hidden)]
+    pub s3_storage_config: std::option::Option<crate::model::HubS3StorageConfig>,
+    /// <p>Any tags to associate with the hub.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateHubInput {
+    /// <p>The name of the hub to create.</p>
+    pub fn hub_name(&self) -> std::option::Option<&str> {
+        self.hub_name.as_deref()
+    }
+    /// <p>A description of the hub.</p>
+    pub fn hub_description(&self) -> std::option::Option<&str> {
+        self.hub_description.as_deref()
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn hub_display_name(&self) -> std::option::Option<&str> {
+        self.hub_display_name.as_deref()
+    }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn hub_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.hub_search_keywords.as_deref()
+    }
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    pub fn s3_storage_config(&self) -> std::option::Option<&crate::model::HubS3StorageConfig> {
+        self.s3_storage_config.as_ref()
+    }
+    /// <p>Any tags to associate with the hub.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFlowDefinitionInput {
     /// <p>The name of your flow definition.</p>
     #[doc(hidden)]
@@ -62402,6 +72574,7 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
     /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
     /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+    /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
     #[doc(hidden)]
@@ -62462,6 +72635,7 @@ impl CreateFeatureGroupInput {
     /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
     /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
     /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
+    /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
     pub fn offline_store_config(&self) -> std::option::Option<&crate::model::OfflineStoreConfig> {
@@ -62524,7 +72698,7 @@ pub struct CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
     #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
-    /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     #[doc(hidden)]
     pub production_variants: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
     /// <p>Configuration to control how SageMaker captures inference data.</p>
@@ -62554,13 +72728,17 @@ pub struct CreateEndpointConfigInput {
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
     #[doc(hidden)]
     pub explainer_config: std::option::Option<crate::model::ExplainerConfig>,
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+    #[doc(hidden)]
+    pub shadow_production_variants:
+        std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
 }
 impl CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
     pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
-    /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub fn production_variants(&self) -> std::option::Option<&[crate::model::ProductionVariant]> {
         self.production_variants.as_deref()
     }
@@ -62597,6 +72775,12 @@ impl CreateEndpointConfigInput {
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
     pub fn explainer_config(&self) -> std::option::Option<&crate::model::ExplainerConfig> {
         self.explainer_config.as_ref()
+    }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+    pub fn shadow_production_variants(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductionVariant]> {
+        self.shadow_production_variants.as_deref()
     }
 }
 
@@ -62810,6 +72994,9 @@ pub struct CreateDomainInput {
     /// <p>A collection of <code>Domain</code> settings.</p>
     #[doc(hidden)]
     pub domain_settings: std::option::Option<crate::model::DomainSettings>,
+    /// <p>The default settings used to create a space.</p>
+    #[doc(hidden)]
+    pub default_space_settings: std::option::Option<crate::model::DefaultSpaceSettings>,
 }
 impl CreateDomainInput {
     /// <p>A name for the domain.</p>
@@ -62866,6 +73053,12 @@ impl CreateDomainInput {
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub fn domain_settings(&self) -> std::option::Option<&crate::model::DomainSettings> {
         self.domain_settings.as_ref()
+    }
+    /// <p>The default settings used to create a space.</p>
+    pub fn default_space_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSpaceSettings> {
+        self.default_space_settings.as_ref()
     }
 }
 
@@ -63343,7 +73536,7 @@ pub struct CreateAppInput {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     #[doc(hidden)]
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of app.</p>
@@ -63360,13 +73553,16 @@ pub struct CreateAppInput {
     /// </note>
     #[doc(hidden)]
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    #[doc(hidden)]
+    pub space_name: std::option::Option<std::string::String>,
 }
 impl CreateAppInput {
     /// <p>The domain ID.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The user profile name.</p>
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
@@ -63387,6 +73583,10 @@ impl CreateAppInput {
     /// </note>
     pub fn resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
         self.resource_spec.as_ref()
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(&self) -> std::option::Option<&str> {
+        self.space_name.as_deref()
     }
 }
 

@@ -584,7 +584,7 @@ pub struct UpdateStageOutput {
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
     #[doc(hidden)]
     pub cache_cluster_enabled: bool,
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
@@ -646,7 +646,7 @@ impl UpdateStageOutput {
     pub fn cache_cluster_enabled(&self) -> bool {
         self.cache_cluster_enabled
     }
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
@@ -792,12 +792,12 @@ pub mod update_stage_output {
             self.cache_cluster_enabled = input;
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.cache_cluster_size = Some(input);
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -8084,7 +8084,7 @@ pub struct GetStageOutput {
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
     #[doc(hidden)]
     pub cache_cluster_enabled: bool,
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
@@ -8146,7 +8146,7 @@ impl GetStageOutput {
     pub fn cache_cluster_enabled(&self) -> bool {
         self.cache_cluster_enabled
     }
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
@@ -8292,12 +8292,12 @@ pub mod get_stage_output {
             self.cache_cluster_enabled = input;
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.cache_cluster_size = Some(input);
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -14751,7 +14751,7 @@ pub struct CreateStageOutput {
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
     #[doc(hidden)]
     pub cache_cluster_enabled: bool,
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     #[doc(hidden)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
@@ -14813,7 +14813,7 @@ impl CreateStageOutput {
     pub fn cache_cluster_enabled(&self) -> bool {
         self.cache_cluster_enabled
     }
-    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
@@ -14959,12 +14959,12 @@ pub mod create_stage_output {
             self.cache_cluster_enabled = input;
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
             self.cache_cluster_size = Some(input);
             self
         }
-        /// <p>The size of the cache cluster for the stage, if enabled.</p>
+        /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,

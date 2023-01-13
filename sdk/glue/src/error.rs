@@ -480,66 +480,6 @@ impl ResourceNotReadyException {
     }
 }
 
-/// <p>Access to a resource was denied.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
-    /// <p>A message describing the problem.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl AccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
-
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
 /// <p>A value could not be validated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -557,9 +497,9 @@ impl ValidationException {
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -600,6 +540,186 @@ impl ValidationException {
     }
 }
 
+/// <p>A resource to be created or added already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AlreadyExistsException {
+    /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AlreadyExistsException")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+pub mod already_exists_exception {
+
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
+    }
+}
+
+/// <p>Access to a resource was denied.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessDeniedException {
+    /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The same unique identifier was associated with two different records.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IdempotentParameterMismatchException {
+    /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl IdempotentParameterMismatchException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IdempotentParameterMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IdempotentParameterMismatchException")?;
+        if let Some(inner_12) = &self.message {
+            {
+                write!(f, ": {}", inner_12)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IdempotentParameterMismatchException {}
+/// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+pub mod idempotent_parameter_mismatch_exception {
+
+    /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+        pub fn build(self) -> crate::error::IdempotentParameterMismatchException {
+            crate::error::IdempotentParameterMismatchException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IdempotentParameterMismatchException {
+    /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
+    pub fn builder() -> crate::error::idempotent_parameter_mismatch_exception::Builder {
+        crate::error::idempotent_parameter_mismatch_exception::Builder::default()
+    }
+}
+
 /// <p>There was a version conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -617,9 +737,9 @@ impl VersionMismatchException {
 impl std::fmt::Display for VersionMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VersionMismatchException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -677,9 +797,9 @@ impl SchedulerTransitioningException {
 impl std::fmt::Display for SchedulerTransitioningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerTransitioningException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -737,9 +857,9 @@ impl CrawlerRunningException {
 impl std::fmt::Display for CrawlerRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerRunningException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -797,9 +917,9 @@ impl IllegalBlueprintStateException {
 impl std::fmt::Display for IllegalBlueprintStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalBlueprintStateException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -857,9 +977,9 @@ impl IllegalWorkflowStateException {
 impl std::fmt::Display for IllegalWorkflowStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalWorkflowStateException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -917,9 +1037,9 @@ impl IllegalSessionStateException {
 impl std::fmt::Display for IllegalSessionStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalSessionStateException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -977,9 +1097,9 @@ impl SchedulerNotRunningException {
 impl std::fmt::Display for SchedulerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerNotRunningException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1037,9 +1157,9 @@ impl CrawlerStoppingException {
 impl std::fmt::Display for CrawlerStoppingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerStoppingException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1097,9 +1217,9 @@ impl CrawlerNotRunningException {
 impl std::fmt::Display for CrawlerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerNotRunningException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1157,9 +1277,9 @@ impl ConcurrentRunsExceededException {
 impl std::fmt::Display for ConcurrentRunsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentRunsExceededException")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1220,9 +1340,9 @@ impl std::fmt::Display for MlTransformNotReadyException {
             f,
             "MlTransformNotReadyException [MLTransformNotReadyException]"
         )?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1263,6 +1383,66 @@ impl MlTransformNotReadyException {
     }
 }
 
+/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConflictException {
+    /// <p>A message describing the problem.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_24) = &self.message {
+            {
+                write!(f, ": {}", inner_24)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>The specified scheduler is already running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,9 +1460,9 @@ impl SchedulerRunningException {
 impl std::fmt::Display for SchedulerRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerRunningException")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1340,9 +1520,9 @@ impl NoScheduleException {
 impl std::fmt::Display for NoScheduleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoScheduleException")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1383,66 +1563,6 @@ impl NoScheduleException {
     }
 }
 
-/// <p>A resource to be created or added already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlreadyExistsException {
-    /// <p>A message describing the problem.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl AlreadyExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsException")?;
-        if let Some(inner_24) = &self.message {
-            {
-                write!(f, ": {}", inner_24)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AlreadyExistsException {}
-/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-pub mod already_exists_exception {
-
-    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-        pub fn build(self) -> crate::error::AlreadyExistsException {
-            crate::error::AlreadyExistsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AlreadyExistsException {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-    pub fn builder() -> crate::error::already_exists_exception::Builder {
-        crate::error::already_exists_exception::Builder::default()
-    }
-}
-
 /// <p>A specified condition was not satisfied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1460,9 +1580,9 @@ impl ConditionCheckFailureException {
 impl std::fmt::Display for ConditionCheckFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConditionCheckFailureException")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1520,9 +1640,9 @@ impl PermissionTypeMismatchException {
 impl std::fmt::Display for PermissionTypeMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PermissionTypeMismatchException")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1580,9 +1700,9 @@ impl InvalidStateException {
 impl std::fmt::Display for InvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateException")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1620,126 +1740,6 @@ impl InvalidStateException {
     /// Creates a new builder-style object to manufacture [`InvalidStateException`](crate::error::InvalidStateException).
     pub fn builder() -> crate::error::invalid_state_exception::Builder {
         crate::error::invalid_state_exception::Builder::default()
-    }
-}
-
-/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
-    /// <p>A message describing the problem.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ConflictException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictException")?;
-        if let Some(inner_28) = &self.message {
-            {
-                write!(f, ": {}", inner_28)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
-
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
-    }
-}
-
-/// <p>The same unique identifier was associated with two different records.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdempotentParameterMismatchException {
-    /// <p>A message describing the problem.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl IdempotentParameterMismatchException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IdempotentParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IdempotentParameterMismatchException")?;
-        if let Some(inner_29) = &self.message {
-            {
-                write!(f, ": {}", inner_29)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IdempotentParameterMismatchException {}
-/// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-pub mod idempotent_parameter_mismatch_exception {
-
-    /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-        pub fn build(self) -> crate::error::IdempotentParameterMismatchException {
-            crate::error::IdempotentParameterMismatchException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IdempotentParameterMismatchException {
-    /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-    pub fn builder() -> crate::error::idempotent_parameter_mismatch_exception::Builder {
-        crate::error::idempotent_parameter_mismatch_exception::Builder::default()
     }
 }
 
@@ -2886,6 +2886,142 @@ impl std::error::Error for BatchGetCustomEntityTypesError {
     }
 }
 
+/// Error type for the `BatchGetDataQualityResult` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetDataQualityResultError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetDataQualityResultErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchGetDataQualityResultError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchGetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `BatchGetDataQualityResult` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetDataQualityResultErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for BatchGetDataQualityResultError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetDataQualityResultErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            BatchGetDataQualityResultErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            BatchGetDataQualityResultErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            BatchGetDataQualityResultErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetDataQualityResultError {
+    fn code(&self) -> Option<&str> {
+        BatchGetDataQualityResultError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetDataQualityResultError {
+    /// Creates a new `BatchGetDataQualityResultError`.
+    pub fn new(kind: BatchGetDataQualityResultErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetDataQualityResultError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetDataQualityResultError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetDataQualityResultErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetDataQualityResultErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetDataQualityResultErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetDataQualityResultErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetDataQualityResultErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetDataQualityResultErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetDataQualityResultError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetDataQualityResultErrorKind::InternalServiceException(_inner) => Some(_inner),
+            BatchGetDataQualityResultErrorKind::InvalidInputException(_inner) => Some(_inner),
+            BatchGetDataQualityResultErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            BatchGetDataQualityResultErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `BatchGetDevEndpoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3863,6 +3999,338 @@ impl std::error::Error for BatchUpdatePartitionError {
             BatchUpdatePartitionErrorKind::InvalidInputException(_inner) => Some(_inner),
             BatchUpdatePartitionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             BatchUpdatePartitionErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CancelDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelDataQualityRuleRecommendationRunError {
+    /// Kind of error that occurred.
+    pub kind: CancelDataQualityRuleRecommendationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CancelDataQualityRuleRecommendationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CancelDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelDataQualityRuleRecommendationRunErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CancelDataQualityRuleRecommendationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelDataQualityRuleRecommendationRunError {
+    fn code(&self) -> Option<&str> {
+        CancelDataQualityRuleRecommendationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelDataQualityRuleRecommendationRunError {
+    /// Creates a new `CancelDataQualityRuleRecommendationRunError`.
+    pub fn new(
+        kind: CancelDataQualityRuleRecommendationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelDataQualityRuleRecommendationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelDataQualityRuleRecommendationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRuleRecommendationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRuleRecommendationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for CancelDataQualityRuleRecommendationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CancelDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelDataQualityRulesetEvaluationRunError {
+    /// Kind of error that occurred.
+    pub kind: CancelDataQualityRulesetEvaluationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CancelDataQualityRulesetEvaluationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CancelDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelDataQualityRulesetEvaluationRunErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CancelDataQualityRulesetEvaluationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelDataQualityRulesetEvaluationRunError {
+    fn code(&self) -> Option<&str> {
+        CancelDataQualityRulesetEvaluationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelDataQualityRulesetEvaluationRunError {
+    /// Creates a new `CancelDataQualityRulesetEvaluationRunError`.
+    pub fn new(
+        kind: CancelDataQualityRulesetEvaluationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelDataQualityRulesetEvaluationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelDataQualityRulesetEvaluationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRulesetEvaluationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRulesetEvaluationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for CancelDataQualityRulesetEvaluationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            CancelDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5237,6 +5705,168 @@ impl std::error::Error for CreateDatabaseError {
             CreateDatabaseErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             CreateDatabaseErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
             CreateDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `CreateDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateDataQualityRulesetError {
+    /// Kind of error that occurred.
+    pub kind: CreateDataQualityRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDataQualityRulesetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `CreateDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateDataQualityRulesetErrorKind {
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for CreateDataQualityRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateDataQualityRulesetErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDataQualityRulesetErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateDataQualityRulesetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CreateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDataQualityRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDataQualityRulesetError {
+    fn code(&self) -> Option<&str> {
+        CreateDataQualityRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateDataQualityRulesetError {
+    /// Creates a new `CreateDataQualityRulesetError`.
+    pub fn new(kind: CreateDataQualityRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateDataQualityRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateDataQualityRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateDataQualityRulesetErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityRulesetErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataQualityRulesetErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityRulesetErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataQualityRulesetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityRulesetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataQualityRulesetErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityRulesetErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateDataQualityRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateDataQualityRulesetErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateDataQualityRulesetErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateDataQualityRulesetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CreateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateDataQualityRulesetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8813,6 +9443,153 @@ impl std::error::Error for DeleteDatabaseError {
             DeleteDatabaseErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeleteDatabaseErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             DeleteDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDataQualityRulesetError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDataQualityRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDataQualityRulesetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDataQualityRulesetErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteDataQualityRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            DeleteDataQualityRulesetErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteDataQualityRulesetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteDataQualityRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDataQualityRulesetError {
+    fn code(&self) -> Option<&str> {
+        DeleteDataQualityRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDataQualityRulesetError {
+    /// Creates a new `DeleteDataQualityRulesetError`.
+    pub fn new(kind: DeleteDataQualityRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDataQualityRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDataQualityRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDataQualityRulesetErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataQualityRulesetErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataQualityRulesetErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataQualityRulesetErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataQualityRulesetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataQualityRulesetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataQualityRulesetErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataQualityRulesetErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteDataQualityRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            DeleteDataQualityRulesetErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteDataQualityRulesetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteDataQualityRulesetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13554,6 +14331,628 @@ impl std::error::Error for GetDataflowGraphError {
             GetDataflowGraphErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetDataflowGraphErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             GetDataflowGraphErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetDataQualityResult` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataQualityResultError {
+    /// Kind of error that occurred.
+    pub kind: GetDataQualityResultErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDataQualityResultError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetDataQualityResult` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataQualityResultErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetDataQualityResultError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataQualityResultErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetDataQualityResultErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetDataQualityResultErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetDataQualityResultErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetDataQualityResultErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataQualityResultError {
+    fn code(&self) -> Option<&str> {
+        GetDataQualityResultError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataQualityResultError {
+    /// Creates a new `GetDataQualityResultError`.
+    pub fn new(kind: GetDataQualityResultErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataQualityResultError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataQualityResultError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataQualityResultErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataQualityResultErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityResultErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityResultErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityResultErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityResultErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityResultErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityResultErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityResultErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetDataQualityResultError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataQualityResultErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetDataQualityResultErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetDataQualityResultErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetDataQualityResultErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetDataQualityResultErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataQualityRuleRecommendationRunError {
+    /// Kind of error that occurred.
+    pub kind: GetDataQualityRuleRecommendationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDataQualityRuleRecommendationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataQualityRuleRecommendationRunErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetDataQualityRuleRecommendationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataQualityRuleRecommendationRunError {
+    fn code(&self) -> Option<&str> {
+        GetDataQualityRuleRecommendationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataQualityRuleRecommendationRunError {
+    /// Creates a new `GetDataQualityRuleRecommendationRunError`.
+    pub fn new(
+        kind: GetDataQualityRuleRecommendationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataQualityRuleRecommendationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataQualityRuleRecommendationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRuleRecommendationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRuleRecommendationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetDataQualityRuleRecommendationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataQualityRuleRecommendationRunErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataQualityRulesetError {
+    /// Kind of error that occurred.
+    pub kind: GetDataQualityRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDataQualityRulesetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataQualityRulesetErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetDataQualityRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetDataQualityRulesetErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetDataQualityRulesetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetDataQualityRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataQualityRulesetError {
+    fn code(&self) -> Option<&str> {
+        GetDataQualityRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataQualityRulesetError {
+    /// Creates a new `GetDataQualityRulesetError`.
+    pub fn new(kind: GetDataQualityRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataQualityRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataQualityRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetDataQualityRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetDataQualityRulesetErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetDataQualityRulesetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetDataQualityRulesetErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDataQualityRulesetEvaluationRunError {
+    /// Kind of error that occurred.
+    pub kind: GetDataQualityRulesetEvaluationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDataQualityRulesetEvaluationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDataQualityRulesetEvaluationRunErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetDataQualityRulesetEvaluationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetDataQualityRulesetEvaluationRunError {
+    fn code(&self) -> Option<&str> {
+        GetDataQualityRulesetEvaluationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDataQualityRulesetEvaluationRunError {
+    /// Creates a new `GetDataQualityRulesetEvaluationRunError`.
+    pub fn new(
+        kind: GetDataQualityRulesetEvaluationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetDataQualityRulesetEvaluationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetDataQualityRulesetEvaluationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetEvaluationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetEvaluationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for GetDataQualityRulesetEvaluationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20385,6 +21784,587 @@ impl std::error::Error for ListCustomEntityTypesError {
     }
 }
 
+/// Error type for the `ListDataQualityResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataQualityResultsError {
+    /// Kind of error that occurred.
+    pub kind: ListDataQualityResultsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDataQualityResultsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDataQualityResultsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListDataQualityResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataQualityResultsErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListDataQualityResultsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataQualityResultsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListDataQualityResultsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListDataQualityResultsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListDataQualityResultsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataQualityResultsError {
+    fn code(&self) -> Option<&str> {
+        ListDataQualityResultsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataQualityResultsError {
+    /// Creates a new `ListDataQualityResultsError`.
+    pub fn new(kind: ListDataQualityResultsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataQualityResultsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataQualityResultsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataQualityResultsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataQualityResultsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataQualityResultsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityResultsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityResultsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityResultsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityResultsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityResultsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListDataQualityResultsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataQualityResultsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListDataQualityResultsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListDataQualityResultsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListDataQualityResultsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListDataQualityRuleRecommendationRuns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataQualityRuleRecommendationRunsError {
+    /// Kind of error that occurred.
+    pub kind: ListDataQualityRuleRecommendationRunsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDataQualityRuleRecommendationRunsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDataQualityRuleRecommendationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListDataQualityRuleRecommendationRuns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataQualityRuleRecommendationRunsErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListDataQualityRuleRecommendationRunsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataQualityRuleRecommendationRunsErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataQualityRuleRecommendationRunsError {
+    fn code(&self) -> Option<&str> {
+        ListDataQualityRuleRecommendationRunsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataQualityRuleRecommendationRunsError {
+    /// Creates a new `ListDataQualityRuleRecommendationRunsError`.
+    pub fn new(
+        kind: ListDataQualityRuleRecommendationRunsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataQualityRuleRecommendationRunsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataQualityRuleRecommendationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataQualityRuleRecommendationRunsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataQualityRuleRecommendationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRuleRecommendationRunsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRuleRecommendationRunsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRuleRecommendationRunsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRuleRecommendationRunsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRuleRecommendationRunsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRuleRecommendationRunsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListDataQualityRuleRecommendationRunsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataQualityRuleRecommendationRunsErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRuleRecommendationRunsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListDataQualityRulesetEvaluationRuns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataQualityRulesetEvaluationRunsError {
+    /// Kind of error that occurred.
+    pub kind: ListDataQualityRulesetEvaluationRunsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDataQualityRulesetEvaluationRunsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDataQualityRulesetEvaluationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListDataQualityRulesetEvaluationRuns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataQualityRulesetEvaluationRunsErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListDataQualityRulesetEvaluationRunsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataQualityRulesetEvaluationRunsErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataQualityRulesetEvaluationRunsError {
+    fn code(&self) -> Option<&str> {
+        ListDataQualityRulesetEvaluationRunsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataQualityRulesetEvaluationRunsError {
+    /// Creates a new `ListDataQualityRulesetEvaluationRunsError`.
+    pub fn new(
+        kind: ListDataQualityRulesetEvaluationRunsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataQualityRulesetEvaluationRunsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataQualityRulesetEvaluationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataQualityRulesetEvaluationRunsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataQualityRulesetEvaluationRunsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetEvaluationRunsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetEvaluationRunsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetEvaluationRunsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetEvaluationRunsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetEvaluationRunsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetEvaluationRunsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListDataQualityRulesetEvaluationRunsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataQualityRulesetEvaluationRunsErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            ListDataQualityRulesetEvaluationRunsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `ListDataQualityRulesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataQualityRulesetsError {
+    /// Kind of error that occurred.
+    pub kind: ListDataQualityRulesetsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDataQualityRulesetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDataQualityRulesetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListDataQualityRulesets` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataQualityRulesetsErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListDataQualityRulesetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataQualityRulesetsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            ListDataQualityRulesetsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListDataQualityRulesetsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListDataQualityRulesetsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListDataQualityRulesetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataQualityRulesetsError {
+    fn code(&self) -> Option<&str> {
+        ListDataQualityRulesetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataQualityRulesetsError {
+    /// Creates a new `ListDataQualityRulesetsError`.
+    pub fn new(kind: ListDataQualityRulesetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataQualityRulesetsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataQualityRulesetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataQualityRulesetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataQualityRulesetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataQualityRulesetsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataQualityRulesetsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListDataQualityRulesetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataQualityRulesetsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            ListDataQualityRulesetsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListDataQualityRulesetsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListDataQualityRulesetsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListDataQualityRulesetsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListDevEndpoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -23920,6 +25900,353 @@ impl std::error::Error for StartCrawlerScheduleError {
     }
 }
 
+/// Error type for the `StartDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartDataQualityRuleRecommendationRunError {
+    /// Kind of error that occurred.
+    pub kind: StartDataQualityRuleRecommendationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartDataQualityRuleRecommendationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartDataQualityRuleRecommendationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartDataQualityRuleRecommendationRunErrorKind {
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartDataQualityRuleRecommendationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartDataQualityRuleRecommendationRunErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartDataQualityRuleRecommendationRunError {
+    fn code(&self) -> Option<&str> {
+        StartDataQualityRuleRecommendationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartDataQualityRuleRecommendationRunError {
+    /// Creates a new `StartDataQualityRuleRecommendationRunError`.
+    pub fn new(
+        kind: StartDataQualityRuleRecommendationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartDataQualityRuleRecommendationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartDataQualityRuleRecommendationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartDataQualityRuleRecommendationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRuleRecommendationRunErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRuleRecommendationRunErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRuleRecommendationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRuleRecommendationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for StartDataQualityRuleRecommendationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartDataQualityRuleRecommendationRunErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRuleRecommendationRunErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `StartDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartDataQualityRulesetEvaluationRunError {
+    /// Kind of error that occurred.
+    pub kind: StartDataQualityRulesetEvaluationRunErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartDataQualityRulesetEvaluationRunError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartDataQualityRulesetEvaluationRun` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartDataQualityRulesetEvaluationRunErrorKind {
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartDataQualityRulesetEvaluationRunError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartDataQualityRulesetEvaluationRunErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartDataQualityRulesetEvaluationRunError {
+    fn code(&self) -> Option<&str> {
+        StartDataQualityRulesetEvaluationRunError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartDataQualityRulesetEvaluationRunError {
+    /// Creates a new `StartDataQualityRulesetEvaluationRunError`.
+    pub fn new(
+        kind: StartDataQualityRulesetEvaluationRunErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartDataQualityRulesetEvaluationRunError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartDataQualityRulesetEvaluationRunError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartDataQualityRulesetEvaluationRunErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRulesetEvaluationRunErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRulesetEvaluationRunErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRulesetEvaluationRunErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRulesetEvaluationRunErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for StartDataQualityRulesetEvaluationRunError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartDataQualityRulesetEvaluationRunErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            StartDataQualityRulesetEvaluationRunErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `StartExportLabelsTaskRun` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -27347,6 +29674,194 @@ impl std::error::Error for UpdateDatabaseError {
     }
 }
 
+/// Error type for the `UpdateDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDataQualityRulesetError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDataQualityRulesetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDataQualityRulesetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateDataQualityRuleset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDataQualityRulesetErrorKind {
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The same unique identifier was associated with two different records.</p>
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateDataQualityRulesetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDataQualityRulesetErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateDataQualityRulesetErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDataQualityRulesetErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateDataQualityRulesetErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            UpdateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDataQualityRulesetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDataQualityRulesetError {
+    fn code(&self) -> Option<&str> {
+        UpdateDataQualityRulesetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDataQualityRulesetError {
+    /// Creates a new `UpdateDataQualityRulesetError`.
+    pub fn new(kind: UpdateDataQualityRulesetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDataQualityRulesetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDataQualityRulesetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDataQualityRulesetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::IdempotentParameterMismatchException`.
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::IdempotentParameterMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDataQualityRulesetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDataQualityRulesetErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            UpdateDataQualityRulesetErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateDataQualityRulesetErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDataQualityRulesetErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateDataQualityRulesetErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateDataQualityRulesetErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            UpdateDataQualityRulesetErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDataQualityRulesetErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateDevEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -27635,6 +30150,186 @@ impl std::error::Error for UpdateJobError {
             UpdateJobErrorKind::InvalidInputException(_inner) => Some(_inner),
             UpdateJobErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             UpdateJobErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateJobFromSourceControl` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateJobFromSourceControlError {
+    /// Kind of error that occurred.
+    pub kind: UpdateJobFromSourceControlErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateJobFromSourceControlError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateJobFromSourceControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateJobFromSourceControl` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateJobFromSourceControlErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A value could not be validated.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateJobFromSourceControlError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateJobFromSourceControlErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateJobFromSourceControlErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateJobFromSourceControlError {
+    fn code(&self) -> Option<&str> {
+        UpdateJobFromSourceControlError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateJobFromSourceControlError {
+    /// Creates a new `UpdateJobFromSourceControlError`.
+    pub fn new(kind: UpdateJobFromSourceControlErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateJobFromSourceControlError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateJobFromSourceControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateJobFromSourceControlError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateJobFromSourceControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateJobFromSourceControlErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateJobFromSourceControlErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateJobFromSourceControlError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateJobFromSourceControlErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateJobFromSourceControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28237,6 +30932,186 @@ impl std::error::Error for UpdateSchemaError {
             UpdateSchemaErrorKind::InternalServiceException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::InvalidInputException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateSourceControlFromJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateSourceControlFromJobError {
+    /// Kind of error that occurred.
+    pub kind: UpdateSourceControlFromJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSourceControlFromJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSourceControlFromJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateSourceControlFromJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSourceControlFromJobErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A value could not be validated.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateSourceControlFromJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSourceControlFromJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateSourceControlFromJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateSourceControlFromJobError {
+    fn code(&self) -> Option<&str> {
+        UpdateSourceControlFromJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSourceControlFromJobError {
+    /// Creates a new `UpdateSourceControlFromJobError`.
+    pub fn new(kind: UpdateSourceControlFromJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateSourceControlFromJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSourceControlFromJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateSourceControlFromJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSourceControlFromJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceControlFromJobErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceControlFromJobErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateSourceControlFromJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSourceControlFromJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateSourceControlFromJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

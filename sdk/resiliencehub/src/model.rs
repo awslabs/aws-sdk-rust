@@ -796,7 +796,7 @@ pub struct App {
     /// <p>The timestamp for when the app was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the action.</p>
+    /// <p>The status of the application.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AppStatusType>,
     /// <p>The current status of compliance for the resiliency policy.</p>
@@ -840,7 +840,7 @@ impl App {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The status of the action.</p>
+    /// <p>The status of the application.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::AppStatusType> {
         self.status.as_ref()
     }
@@ -980,12 +980,12 @@ pub mod app {
             self.creation_time = input;
             self
         }
-        /// <p>The status of the action.</p>
+        /// <p>The status of the application.</p>
         pub fn status(mut self, input: crate::model::AppStatusType) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the action.</p>
+        /// <p>The status of the application.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AppStatusType>,
@@ -5859,6 +5859,9 @@ pub struct AppSummary {
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
+    /// <p>The status of the application.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::AppStatusType>,
 }
 impl AppSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -5891,6 +5894,10 @@ impl AppSummary {
     ) -> std::option::Option<&crate::model::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
+    /// <p>The status of the application.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AppStatusType> {
+        self.status.as_ref()
+    }
 }
 /// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
@@ -5906,6 +5913,7 @@ pub mod app_summary {
         pub(crate) resiliency_score: std::option::Option<f64>,
         pub(crate) assessment_schedule:
             std::option::Option<crate::model::AppAssessmentScheduleType>,
+        pub(crate) status: std::option::Option<crate::model::AppStatusType>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -5990,6 +5998,19 @@ pub mod app_summary {
             self.assessment_schedule = input;
             self
         }
+        /// <p>The status of the application.</p>
+        pub fn status(mut self, input: crate::model::AppStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the application.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AppStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AppSummary`](crate::model::AppSummary).
         pub fn build(self) -> crate::model::AppSummary {
             crate::model::AppSummary {
@@ -6000,6 +6021,7 @@ pub mod app_summary {
                 compliance_status: self.compliance_status,
                 resiliency_score: self.resiliency_score.unwrap_or_default(),
                 assessment_schedule: self.assessment_schedule,
+                status: self.status,
             }
         }
     }
@@ -6557,6 +6579,7 @@ impl AsRef<str> for HaArchitecture {
 /// match configrecommendationoptimizationtype {
 ///     ConfigRecommendationOptimizationType::BestAzRecovery => { /* ... */ },
 ///     ConfigRecommendationOptimizationType::BestAttainable => { /* ... */ },
+///     ConfigRecommendationOptimizationType::BestRegionRecovery => { /* ... */ },
 ///     ConfigRecommendationOptimizationType::LeastChange => { /* ... */ },
 ///     ConfigRecommendationOptimizationType::LeastCost => { /* ... */ },
 ///     ConfigRecommendationOptimizationType::LeastErrors => { /* ... */ },
@@ -6598,6 +6621,8 @@ pub enum ConfigRecommendationOptimizationType {
     #[allow(missing_docs)] // documentation missing in model
     BestAttainable,
     #[allow(missing_docs)] // documentation missing in model
+    BestRegionRecovery,
+    #[allow(missing_docs)] // documentation missing in model
     LeastChange,
     #[allow(missing_docs)] // documentation missing in model
     LeastCost,
@@ -6611,6 +6636,7 @@ impl std::convert::From<&str> for ConfigRecommendationOptimizationType {
         match s {
             "BestAZRecovery" => ConfigRecommendationOptimizationType::BestAzRecovery,
             "BestAttainable" => ConfigRecommendationOptimizationType::BestAttainable,
+            "BestRegionRecovery" => ConfigRecommendationOptimizationType::BestRegionRecovery,
             "LeastChange" => ConfigRecommendationOptimizationType::LeastChange,
             "LeastCost" => ConfigRecommendationOptimizationType::LeastCost,
             "LeastErrors" => ConfigRecommendationOptimizationType::LeastErrors,
@@ -6633,6 +6659,7 @@ impl ConfigRecommendationOptimizationType {
         match self {
             ConfigRecommendationOptimizationType::BestAzRecovery => "BestAZRecovery",
             ConfigRecommendationOptimizationType::BestAttainable => "BestAttainable",
+            ConfigRecommendationOptimizationType::BestRegionRecovery => "BestRegionRecovery",
             ConfigRecommendationOptimizationType::LeastChange => "LeastChange",
             ConfigRecommendationOptimizationType::LeastCost => "LeastCost",
             ConfigRecommendationOptimizationType::LeastErrors => "LeastErrors",
@@ -6644,6 +6671,7 @@ impl ConfigRecommendationOptimizationType {
         &[
             "BestAZRecovery",
             "BestAttainable",
+            "BestRegionRecovery",
             "LeastChange",
             "LeastCost",
             "LeastErrors",

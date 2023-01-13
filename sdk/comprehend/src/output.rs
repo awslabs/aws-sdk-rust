@@ -3804,6 +3804,20 @@ pub struct DetectEntitiesOutput {
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    #[doc(hidden)]
+    pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    #[doc(hidden)]
+    pub document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
+    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+    /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
+    #[doc(hidden)]
+    pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
+    /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
 }
 impl DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
@@ -3811,11 +3825,33 @@ impl DetectEntitiesOutput {
     pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.entities.as_deref()
     }
+    /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+    pub fn document_type(&self) -> std::option::Option<&[crate::model::DocumentTypeListItem]> {
+        self.document_type.as_deref()
+    }
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
+    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+    /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorsListItem]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectEntitiesOutput");
         formatter.field("entities", &self.entities);
+        formatter.field("document_metadata", &self.document_metadata);
+        formatter.field("document_type", &self.document_type);
+        formatter.field("blocks", &self.blocks);
+        formatter.field("errors", &self.errors);
         formatter.finish()
     }
 }
@@ -3826,6 +3862,11 @@ pub mod detect_entities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+        pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+        pub(crate) document_type:
+            std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -3849,10 +3890,88 @@ pub mod detect_entities_output {
             self.entities = input;
             self
         }
+        /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+        pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
+            self.document_metadata = Some(input);
+            self
+        }
+        /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+        pub fn set_document_metadata(
+            mut self,
+            input: std::option::Option<crate::model::DocumentMetadata>,
+        ) -> Self {
+            self.document_metadata = input;
+            self
+        }
+        /// Appends an item to `document_type`.
+        ///
+        /// To override the contents of this collection use [`set_document_type`](Self::set_document_type).
+        ///
+        /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+        pub fn document_type(mut self, input: crate::model::DocumentTypeListItem) -> Self {
+            let mut v = self.document_type.unwrap_or_default();
+            v.push(input);
+            self.document_type = Some(v);
+            self
+        }
+        /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
+        pub fn set_document_type(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        ) -> Self {
+            self.document_type = input;
+            self
+        }
+        /// Appends an item to `blocks`.
+        ///
+        /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
+        ///
+        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
+        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+        /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
+            let mut v = self.blocks.unwrap_or_default();
+            v.push(input);
+            self.blocks = Some(v);
+            self
+        }
+        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
+        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+        /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
+        pub fn set_blocks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
+        ) -> Self {
+            self.blocks = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+        pub fn errors(mut self, input: crate::model::ErrorsListItem) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
                 entities: self.entities,
+                document_metadata: self.document_metadata,
+                document_type: self.document_type,
+                blocks: self.blocks,
+                errors: self.errors,
             }
         }
     }
@@ -3860,6 +3979,10 @@ pub mod detect_entities_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("entities", &self.entities);
+            formatter.field("document_metadata", &self.document_metadata);
+            formatter.field("document_type", &self.document_type);
+            formatter.field("blocks", &self.blocks);
+            formatter.field("errors", &self.errors);
             formatter.finish()
         }
     }
@@ -5062,6 +5185,15 @@ pub struct ClassifyDocumentOutput {
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
+    /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    #[doc(hidden)]
+    pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    #[doc(hidden)]
+    pub document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+    /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+    #[doc(hidden)]
+    pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
 }
 impl ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
@@ -5072,12 +5204,27 @@ impl ClassifyDocumentOutput {
     pub fn labels(&self) -> std::option::Option<&[crate::model::DocumentLabel]> {
         self.labels.as_deref()
     }
+    /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+    pub fn document_type(&self) -> std::option::Option<&[crate::model::DocumentTypeListItem]> {
+        self.document_type.as_deref()
+    }
+    /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorsListItem]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for ClassifyDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifyDocumentOutput");
         formatter.field("classes", &self.classes);
         formatter.field("labels", &self.labels);
+        formatter.field("document_metadata", &self.document_metadata);
+        formatter.field("document_type", &self.document_type);
+        formatter.field("errors", &self.errors);
         formatter.finish()
     }
 }
@@ -5089,6 +5236,10 @@ pub mod classify_document_output {
     pub struct Builder {
         pub(crate) classes: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>,
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
+        pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+        pub(crate) document_type:
+            std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
     }
     impl Builder {
         /// Appends an item to `classes`.
@@ -5129,11 +5280,65 @@ pub mod classify_document_output {
             self.labels = input;
             self
         }
+        /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+        pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
+            self.document_metadata = Some(input);
+            self
+        }
+        /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+        pub fn set_document_metadata(
+            mut self,
+            input: std::option::Option<crate::model::DocumentMetadata>,
+        ) -> Self {
+            self.document_metadata = input;
+            self
+        }
+        /// Appends an item to `document_type`.
+        ///
+        /// To override the contents of this collection use [`set_document_type`](Self::set_document_type).
+        ///
+        /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+        pub fn document_type(mut self, input: crate::model::DocumentTypeListItem) -> Self {
+            let mut v = self.document_type.unwrap_or_default();
+            v.push(input);
+            self.document_type = Some(v);
+            self
+        }
+        /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
+        pub fn set_document_type(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        ) -> Self {
+            self.document_type = input;
+            self
+        }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+        pub fn errors(mut self, input: crate::model::ErrorsListItem) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
         pub fn build(self) -> crate::output::ClassifyDocumentOutput {
             crate::output::ClassifyDocumentOutput {
                 classes: self.classes,
                 labels: self.labels,
+                document_metadata: self.document_metadata,
+                document_type: self.document_type,
+                errors: self.errors,
             }
         }
     }
@@ -5142,6 +5347,9 @@ pub mod classify_document_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("classes", &self.classes);
             formatter.field("labels", &self.labels);
+            formatter.field("document_metadata", &self.document_metadata);
+            formatter.field("document_type", &self.document_type);
+            formatter.field("errors", &self.errors);
             formatter.finish()
         }
     }

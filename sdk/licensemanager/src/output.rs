@@ -526,6 +526,82 @@ impl ListResourceInventoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListReceivedLicensesForOrganizationOutput {
+    /// <p>Lists the licenses the organization has received.</p>
+    #[doc(hidden)]
+    pub licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
+    /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReceivedLicensesForOrganizationOutput {
+    /// <p>Lists the licenses the organization has received.</p>
+    pub fn licenses(&self) -> std::option::Option<&[crate::model::GrantedLicense]> {
+        self.licenses.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+pub mod list_received_licenses_for_organization_output {
+
+    /// A builder for [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `licenses`.
+        ///
+        /// To override the contents of this collection use [`set_licenses`](Self::set_licenses).
+        ///
+        /// <p>Lists the licenses the organization has received.</p>
+        pub fn licenses(mut self, input: crate::model::GrantedLicense) -> Self {
+            let mut v = self.licenses.unwrap_or_default();
+            v.push(input);
+            self.licenses = Some(v);
+            self
+        }
+        /// <p>Lists the licenses the organization has received.</p>
+        pub fn set_licenses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
+        ) -> Self {
+            self.licenses = input;
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+        pub fn build(self) -> crate::output::ListReceivedLicensesForOrganizationOutput {
+            crate::output::ListReceivedLicensesForOrganizationOutput {
+                licenses: self.licenses,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListReceivedLicensesForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+    pub fn builder() -> crate::output::list_received_licenses_for_organization_output::Builder {
+        crate::output::list_received_licenses_for_organization_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceivedLicensesOutput {
     /// <p>Received license details.</p>
     #[doc(hidden)]
@@ -596,6 +672,82 @@ impl ListReceivedLicensesOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
     pub fn builder() -> crate::output::list_received_licenses_output::Builder {
         crate::output::list_received_licenses_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListReceivedGrantsForOrganizationOutput {
+    /// <p>Lists the grants the organization has received.</p>
+    #[doc(hidden)]
+    pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+    /// <p>Token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReceivedGrantsForOrganizationOutput {
+    /// <p>Lists the grants the organization has received.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.grants.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+pub mod list_received_grants_for_organization_output {
+
+    /// A builder for [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `grants`.
+        ///
+        /// To override the contents of this collection use [`set_grants`](Self::set_grants).
+        ///
+        /// <p>Lists the grants the organization has received.</p>
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
+            let mut v = self.grants.unwrap_or_default();
+            v.push(input);
+            self.grants = Some(v);
+            self
+        }
+        /// <p>Lists the grants the organization has received.</p>
+        pub fn set_grants(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+        ) -> Self {
+            self.grants = input;
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+        pub fn build(self) -> crate::output::ListReceivedGrantsForOrganizationOutput {
+            crate::output::ListReceivedGrantsForOrganizationOutput {
+                grants: self.grants,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListReceivedGrantsForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+    pub fn builder() -> crate::output::list_received_grants_for_organization_output::Builder {
+        crate::output::list_received_grants_for_organization_output::Builder::default()
     }
 }
 

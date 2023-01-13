@@ -673,6 +673,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingProfile {
     }
 }
 
+/// Operation shape for `CreateRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_rule`](crate::client::Client::create_rule).
+///
+/// See [`crate::client::fluent_builders::CreateRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateRule {
+    _private: (),
+}
+impl CreateRule {
+    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput).
+    pub fn builder() -> crate::input::create_rule_input::Builder {
+        crate::input::create_rule_input::Builder::default()
+    }
+    /// Creates a new `CreateRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
+    type Output =
+        std::result::Result<crate::output::CreateRuleOutput, crate::error::CreateRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_rule_error(response)
+        } else {
+            crate::operation_deser::parse_create_rule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateSecurityProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -737,6 +769,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTaskTemplate {
             crate::operation_deser::parse_create_task_template_error(response)
         } else {
             crate::operation_deser::parse_create_task_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateTrafficDistributionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_traffic_distribution_group`](crate::client::Client::create_traffic_distribution_group).
+///
+/// See [`crate::client::fluent_builders::CreateTrafficDistributionGroup`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateTrafficDistributionGroup {
+    _private: (),
+}
+impl CreateTrafficDistributionGroup {
+    /// Creates a new builder-style object to manufacture [`CreateTrafficDistributionGroupInput`](crate::input::CreateTrafficDistributionGroupInput).
+    pub fn builder() -> crate::input::create_traffic_distribution_group_input::Builder {
+        crate::input::create_traffic_distribution_group_input::Builder::default()
+    }
+    /// Creates a new `CreateTrafficDistributionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficDistributionGroup {
+    type Output = std::result::Result<
+        crate::output::CreateTrafficDistributionGroupOutput,
+        crate::error::CreateTrafficDistributionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_traffic_distribution_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_traffic_distribution_group_response(response)
         }
     }
 }
@@ -1075,6 +1141,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQuickConnect {
     }
 }
 
+/// Operation shape for `DeleteRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_rule`](crate::client::Client::delete_rule).
+///
+/// See [`crate::client::fluent_builders::DeleteRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteRule {
+    _private: (),
+}
+impl DeleteRule {
+    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput).
+    pub fn builder() -> crate::input::delete_rule_input::Builder {
+        crate::input::delete_rule_input::Builder::default()
+    }
+    /// Creates a new `DeleteRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
+    type Output =
+        std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_rule_error(response)
+        } else {
+            crate::operation_deser::parse_delete_rule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteSecurityProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1139,6 +1237,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTaskTemplate {
             crate::operation_deser::parse_delete_task_template_error(response)
         } else {
             crate::operation_deser::parse_delete_task_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteTrafficDistributionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_traffic_distribution_group`](crate::client::Client::delete_traffic_distribution_group).
+///
+/// See [`crate::client::fluent_builders::DeleteTrafficDistributionGroup`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteTrafficDistributionGroup {
+    _private: (),
+}
+impl DeleteTrafficDistributionGroup {
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficDistributionGroupInput`](crate::input::DeleteTrafficDistributionGroupInput).
+    pub fn builder() -> crate::input::delete_traffic_distribution_group_input::Builder {
+        crate::input::delete_traffic_distribution_group_input::Builder::default()
+    }
+    /// Creates a new `DeleteTrafficDistributionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficDistributionGroup {
+    type Output = std::result::Result<
+        crate::output::DeleteTrafficDistributionGroupOutput,
+        crate::error::DeleteTrafficDistributionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_traffic_distribution_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_traffic_distribution_group_response(response)
         }
     }
 }
@@ -1681,6 +1813,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoutingProfile {
     }
 }
 
+/// Operation shape for `DescribeRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_rule`](crate::client::Client::describe_rule).
+///
+/// See [`crate::client::fluent_builders::DescribeRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeRule {
+    _private: (),
+}
+impl DescribeRule {
+    /// Creates a new builder-style object to manufacture [`DescribeRuleInput`](crate::input::DescribeRuleInput).
+    pub fn builder() -> crate::input::describe_rule_input::Builder {
+        crate::input::describe_rule_input::Builder::default()
+    }
+    /// Creates a new `DescribeRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeRule {
+    type Output =
+        std::result::Result<crate::output::DescribeRuleOutput, crate::error::DescribeRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_rule_error(response)
+        } else {
+            crate::operation_deser::parse_describe_rule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeSecurityProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1711,6 +1875,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityProfile 
             crate::operation_deser::parse_describe_security_profile_error(response)
         } else {
             crate::operation_deser::parse_describe_security_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeTrafficDistributionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_traffic_distribution_group`](crate::client::Client::describe_traffic_distribution_group).
+///
+/// See [`crate::client::fluent_builders::DescribeTrafficDistributionGroup`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeTrafficDistributionGroup {
+    _private: (),
+}
+impl DescribeTrafficDistributionGroup {
+    /// Creates a new builder-style object to manufacture [`DescribeTrafficDistributionGroupInput`](crate::input::DescribeTrafficDistributionGroupInput).
+    pub fn builder() -> crate::input::describe_traffic_distribution_group_input::Builder {
+        crate::input::describe_traffic_distribution_group_input::Builder::default()
+    }
+    /// Creates a new `DescribeTrafficDistributionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficDistributionGroup {
+    type Output = std::result::Result<
+        crate::output::DescribeTrafficDistributionGroupOutput,
+        crate::error::DescribeTrafficDistributionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_traffic_distribution_group_error(response)
+        } else {
+            crate::operation_deser::parse_describe_traffic_distribution_group_response(response)
         }
     }
 }
@@ -2155,6 +2353,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSecurityKey 
     }
 }
 
+/// Operation shape for `DismissUserContact`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`dismiss_user_contact`](crate::client::Client::dismiss_user_contact).
+///
+/// See [`crate::client::fluent_builders::DismissUserContact`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DismissUserContact {
+    _private: (),
+}
+impl DismissUserContact {
+    /// Creates a new builder-style object to manufacture [`DismissUserContactInput`](crate::input::DismissUserContactInput).
+    pub fn builder() -> crate::input::dismiss_user_contact_input::Builder {
+        crate::input::dismiss_user_contact_input::Builder::default()
+    }
+    /// Creates a new `DismissUserContact` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DismissUserContact {
+    type Output = std::result::Result<
+        crate::output::DismissUserContactOutput,
+        crate::error::DismissUserContactError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_dismiss_user_contact_error(response)
+        } else {
+            crate::operation_deser::parse_dismiss_user_contact_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetContactAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2353,6 +2585,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTaskTemplate {
             crate::operation_deser::parse_get_task_template_error(response)
         } else {
             crate::operation_deser::parse_get_task_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetTrafficDistribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_traffic_distribution`](crate::client::Client::get_traffic_distribution).
+///
+/// See [`crate::client::fluent_builders::GetTrafficDistribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetTrafficDistribution {
+    _private: (),
+}
+impl GetTrafficDistribution {
+    /// Creates a new builder-style object to manufacture [`GetTrafficDistributionInput`](crate::input::GetTrafficDistributionInput).
+    pub fn builder() -> crate::input::get_traffic_distribution_input::Builder {
+        crate::input::get_traffic_distribution_input::Builder::default()
+    }
+    /// Creates a new `GetTrafficDistribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTrafficDistribution {
+    type Output = std::result::Result<
+        crate::output::GetTrafficDistributionOutput,
+        crate::error::GetTrafficDistributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_traffic_distribution_error(response)
+        } else {
+            crate::operation_deser::parse_get_traffic_distribution_response(response)
         }
     }
 }
@@ -3094,6 +3360,37 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingProfiles {
     }
 }
 
+/// Operation shape for `ListRules`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_rules`](crate::client::Client::list_rules).
+///
+/// See [`crate::client::fluent_builders::ListRules`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListRules {
+    _private: (),
+}
+impl ListRules {
+    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput).
+    pub fn builder() -> crate::input::list_rules_input::Builder {
+        crate::input::list_rules_input::Builder::default()
+    }
+    /// Creates a new `ListRules` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRules {
+    type Output = std::result::Result<crate::output::ListRulesOutput, crate::error::ListRulesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_rules_error(response)
+        } else {
+            crate::operation_deser::parse_list_rules_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListSecurityKeys`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3264,6 +3561,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTaskTemplates {
     }
 }
 
+/// Operation shape for `ListTrafficDistributionGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_traffic_distribution_groups`](crate::client::Client::list_traffic_distribution_groups).
+///
+/// See [`crate::client::fluent_builders::ListTrafficDistributionGroups`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListTrafficDistributionGroups {
+    _private: (),
+}
+impl ListTrafficDistributionGroups {
+    /// Creates a new builder-style object to manufacture [`ListTrafficDistributionGroupsInput`](crate::input::ListTrafficDistributionGroupsInput).
+    pub fn builder() -> crate::input::list_traffic_distribution_groups_input::Builder {
+        crate::input::list_traffic_distribution_groups_input::Builder::default()
+    }
+    /// Creates a new `ListTrafficDistributionGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTrafficDistributionGroups {
+    type Output = std::result::Result<
+        crate::output::ListTrafficDistributionGroupsOutput,
+        crate::error::ListTrafficDistributionGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_traffic_distribution_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_traffic_distribution_groups_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListUseCases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3361,6 +3692,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
     }
 }
 
+/// Operation shape for `MonitorContact`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`monitor_contact`](crate::client::Client::monitor_contact).
+///
+/// See [`crate::client::fluent_builders::MonitorContact`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct MonitorContact {
+    _private: (),
+}
+impl MonitorContact {
+    /// Creates a new builder-style object to manufacture [`MonitorContactInput`](crate::input::MonitorContactInput).
+    pub fn builder() -> crate::input::monitor_contact_input::Builder {
+        crate::input::monitor_contact_input::Builder::default()
+    }
+    /// Creates a new `MonitorContact` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for MonitorContact {
+    type Output =
+        std::result::Result<crate::output::MonitorContactOutput, crate::error::MonitorContactError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_monitor_contact_error(response)
+        } else {
+            crate::operation_deser::parse_monitor_contact_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PutUserStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3423,6 +3786,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleasePhoneNumber {
             crate::operation_deser::parse_release_phone_number_error(response)
         } else {
             crate::operation_deser::parse_release_phone_number_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ReplicateInstance`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`replicate_instance`](crate::client::Client::replicate_instance).
+///
+/// See [`crate::client::fluent_builders::ReplicateInstance`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ReplicateInstance {
+    _private: (),
+}
+impl ReplicateInstance {
+    /// Creates a new builder-style object to manufacture [`ReplicateInstanceInput`](crate::input::ReplicateInstanceInput).
+    pub fn builder() -> crate::input::replicate_instance_input::Builder {
+        crate::input::replicate_instance_input::Builder::default()
+    }
+    /// Creates a new `ReplicateInstance` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ReplicateInstance {
+    type Output = std::result::Result<
+        crate::output::ReplicateInstanceOutput,
+        crate::error::ReplicateInstanceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_replicate_instance_error(response)
+        } else {
+            crate::operation_deser::parse_replicate_instance_response(response)
         }
     }
 }
@@ -4469,6 +4866,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceStorageCon
     }
 }
 
+/// Operation shape for `UpdateParticipantRoleConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_participant_role_config`](crate::client::Client::update_participant_role_config).
+///
+/// See [`crate::client::fluent_builders::UpdateParticipantRoleConfig`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateParticipantRoleConfig {
+    _private: (),
+}
+impl UpdateParticipantRoleConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateParticipantRoleConfigInput`](crate::input::UpdateParticipantRoleConfigInput).
+    pub fn builder() -> crate::input::update_participant_role_config_input::Builder {
+        crate::input::update_participant_role_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateParticipantRoleConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateParticipantRoleConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateParticipantRoleConfigOutput,
+        crate::error::UpdateParticipantRoleConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_participant_role_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_participant_role_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdatePhoneNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4881,6 +5312,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileQueu
     }
 }
 
+/// Operation shape for `UpdateRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_rule`](crate::client::Client::update_rule).
+///
+/// See [`crate::client::fluent_builders::UpdateRule`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateRule {
+    _private: (),
+}
+impl UpdateRule {
+    /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput).
+    pub fn builder() -> crate::input::update_rule_input::Builder {
+        crate::input::update_rule_input::Builder::default()
+    }
+    /// Creates a new `UpdateRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateRule {
+    type Output =
+        std::result::Result<crate::output::UpdateRuleOutput, crate::error::UpdateRuleError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_rule_error(response)
+        } else {
+            crate::operation_deser::parse_update_rule_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateSecurityProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -4945,6 +5408,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTaskTemplate {
             crate::operation_deser::parse_update_task_template_error(response)
         } else {
             crate::operation_deser::parse_update_task_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTrafficDistribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_traffic_distribution`](crate::client::Client::update_traffic_distribution).
+///
+/// See [`crate::client::fluent_builders::UpdateTrafficDistribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateTrafficDistribution {
+    _private: (),
+}
+impl UpdateTrafficDistribution {
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficDistributionInput`](crate::input::UpdateTrafficDistributionInput).
+    pub fn builder() -> crate::input::update_traffic_distribution_input::Builder {
+        crate::input::update_traffic_distribution_input::Builder::default()
+    }
+    /// Creates a new `UpdateTrafficDistribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTrafficDistribution {
+    type Output = std::result::Result<
+        crate::output::UpdateTrafficDistributionOutput,
+        crate::error::UpdateTrafficDistributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_traffic_distribution_error(response)
+        } else {
+            crate::operation_deser::parse_update_traffic_distribution_response(response)
         }
     }
 }

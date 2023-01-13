@@ -271,6 +271,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomEntityType
     }
 }
 
+/// Operation shape for `BatchGetDataQualityResult`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_data_quality_result`](crate::client::Client::batch_get_data_quality_result).
+///
+/// See [`crate::client::fluent_builders::BatchGetDataQualityResult`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct BatchGetDataQualityResult {
+    _private: (),
+}
+impl BatchGetDataQualityResult {
+    /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultInput`](crate::input::BatchGetDataQualityResultInput).
+    pub fn builder() -> crate::input::batch_get_data_quality_result_input::Builder {
+        crate::input::batch_get_data_quality_result_input::Builder::default()
+    }
+    /// Creates a new `BatchGetDataQualityResult` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetDataQualityResult {
+    type Output = std::result::Result<
+        crate::output::BatchGetDataQualityResultOutput,
+        crate::error::BatchGetDataQualityResultError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_data_quality_result_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_data_quality_result_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchGetDevEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -503,6 +537,80 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdatePartition {
             crate::operation_deser::parse_batch_update_partition_error(response)
         } else {
             crate::operation_deser::parse_batch_update_partition_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CancelDataQualityRuleRecommendationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_data_quality_rule_recommendation_run`](crate::client::Client::cancel_data_quality_rule_recommendation_run).
+///
+/// See [`crate::client::fluent_builders::CancelDataQualityRuleRecommendationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CancelDataQualityRuleRecommendationRun {
+    _private: (),
+}
+impl CancelDataQualityRuleRecommendationRun {
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRuleRecommendationRunInput`](crate::input::CancelDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::cancel_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::cancel_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+    /// Creates a new `CancelDataQualityRuleRecommendationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelDataQualityRuleRecommendationRun {
+    type Output = std::result::Result<
+        crate::output::CancelDataQualityRuleRecommendationRunOutput,
+        crate::error::CancelDataQualityRuleRecommendationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_data_quality_rule_recommendation_run_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_cancel_data_quality_rule_recommendation_run_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `CancelDataQualityRulesetEvaluationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_data_quality_ruleset_evaluation_run`](crate::client::Client::cancel_data_quality_ruleset_evaluation_run).
+///
+/// See [`crate::client::fluent_builders::CancelDataQualityRulesetEvaluationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CancelDataQualityRulesetEvaluationRun {
+    _private: (),
+}
+impl CancelDataQualityRulesetEvaluationRun {
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRulesetEvaluationRunInput`](crate::input::CancelDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::cancel_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::cancel_data_quality_ruleset_evaluation_run_input::Builder::default()
+    }
+    /// Creates a new `CancelDataQualityRulesetEvaluationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelDataQualityRulesetEvaluationRun {
+    type Output = std::result::Result<
+        crate::output::CancelDataQualityRulesetEvaluationRunOutput,
+        crate::error::CancelDataQualityRulesetEvaluationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_data_quality_ruleset_evaluation_run_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_data_quality_ruleset_evaluation_run_response(
+                response,
+            )
         }
     }
 }
@@ -805,6 +913,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatabase {
             crate::operation_deser::parse_create_database_error(response)
         } else {
             crate::operation_deser::parse_create_database_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateDataQualityRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_data_quality_ruleset`](crate::client::Client::create_data_quality_ruleset).
+///
+/// See [`crate::client::fluent_builders::CreateDataQualityRuleset`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateDataQualityRuleset {
+    _private: (),
+}
+impl CreateDataQualityRuleset {
+    /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetInput`](crate::input::CreateDataQualityRulesetInput).
+    pub fn builder() -> crate::input::create_data_quality_ruleset_input::Builder {
+        crate::input::create_data_quality_ruleset_input::Builder::default()
+    }
+    /// Creates a new `CreateDataQualityRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataQualityRuleset {
+    type Output = std::result::Result<
+        crate::output::CreateDataQualityRulesetOutput,
+        crate::error::CreateDataQualityRulesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_data_quality_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_create_data_quality_ruleset_response(response)
         }
     }
 }
@@ -1532,6 +1674,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatabase {
             crate::operation_deser::parse_delete_database_error(response)
         } else {
             crate::operation_deser::parse_delete_database_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteDataQualityRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_data_quality_ruleset`](crate::client::Client::delete_data_quality_ruleset).
+///
+/// See [`crate::client::fluent_builders::DeleteDataQualityRuleset`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteDataQualityRuleset {
+    _private: (),
+}
+impl DeleteDataQualityRuleset {
+    /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetInput`](crate::input::DeleteDataQualityRulesetInput).
+    pub fn builder() -> crate::input::delete_data_quality_ruleset_input::Builder {
+        crate::input::delete_data_quality_ruleset_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataQualityRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataQualityRuleset {
+    type Output = std::result::Result<
+        crate::output::DeleteDataQualityRulesetOutput,
+        crate::error::DeleteDataQualityRulesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_data_quality_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_delete_data_quality_ruleset_response(response)
         }
     }
 }
@@ -2655,6 +2831,144 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataflowGraph {
             crate::operation_deser::parse_get_dataflow_graph_error(response)
         } else {
             crate::operation_deser::parse_get_dataflow_graph_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetDataQualityResult`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_quality_result`](crate::client::Client::get_data_quality_result).
+///
+/// See [`crate::client::fluent_builders::GetDataQualityResult`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetDataQualityResult {
+    _private: (),
+}
+impl GetDataQualityResult {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityResultInput`](crate::input::GetDataQualityResultInput).
+    pub fn builder() -> crate::input::get_data_quality_result_input::Builder {
+        crate::input::get_data_quality_result_input::Builder::default()
+    }
+    /// Creates a new `GetDataQualityResult` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityResult {
+    type Output = std::result::Result<
+        crate::output::GetDataQualityResultOutput,
+        crate::error::GetDataQualityResultError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_quality_result_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_quality_result_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetDataQualityRuleRecommendationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_quality_rule_recommendation_run`](crate::client::Client::get_data_quality_rule_recommendation_run).
+///
+/// See [`crate::client::fluent_builders::GetDataQualityRuleRecommendationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetDataQualityRuleRecommendationRun {
+    _private: (),
+}
+impl GetDataQualityRuleRecommendationRun {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRuleRecommendationRunInput`](crate::input::GetDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::get_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::get_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+    /// Creates a new `GetDataQualityRuleRecommendationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityRuleRecommendationRun {
+    type Output = std::result::Result<
+        crate::output::GetDataQualityRuleRecommendationRunOutput,
+        crate::error::GetDataQualityRuleRecommendationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_quality_rule_recommendation_run_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_quality_rule_recommendation_run_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `GetDataQualityRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_quality_ruleset`](crate::client::Client::get_data_quality_ruleset).
+///
+/// See [`crate::client::fluent_builders::GetDataQualityRuleset`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetDataQualityRuleset {
+    _private: (),
+}
+impl GetDataQualityRuleset {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetInput`](crate::input::GetDataQualityRulesetInput).
+    pub fn builder() -> crate::input::get_data_quality_ruleset_input::Builder {
+        crate::input::get_data_quality_ruleset_input::Builder::default()
+    }
+    /// Creates a new `GetDataQualityRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityRuleset {
+    type Output = std::result::Result<
+        crate::output::GetDataQualityRulesetOutput,
+        crate::error::GetDataQualityRulesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_quality_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_quality_ruleset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetDataQualityRulesetEvaluationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_quality_ruleset_evaluation_run`](crate::client::Client::get_data_quality_ruleset_evaluation_run).
+///
+/// See [`crate::client::fluent_builders::GetDataQualityRulesetEvaluationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetDataQualityRulesetEvaluationRun {
+    _private: (),
+}
+impl GetDataQualityRulesetEvaluationRun {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunInput`](crate::input::GetDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::get_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::get_data_quality_ruleset_evaluation_run_input::Builder::default()
+    }
+    /// Creates a new `GetDataQualityRulesetEvaluationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityRulesetEvaluationRun {
+    type Output = std::result::Result<
+        crate::output::GetDataQualityRulesetEvaluationRunOutput,
+        crate::error::GetDataQualityRulesetEvaluationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_quality_ruleset_evaluation_run_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_quality_ruleset_evaluation_run_response(response)
         }
     }
 }
@@ -4229,6 +4543,146 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomEntityTypes {
     }
 }
 
+/// Operation shape for `ListDataQualityResults`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_quality_results`](crate::client::Client::list_data_quality_results).
+///
+/// See [`crate::client::fluent_builders::ListDataQualityResults`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListDataQualityResults {
+    _private: (),
+}
+impl ListDataQualityResults {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityResultsInput`](crate::input::ListDataQualityResultsInput).
+    pub fn builder() -> crate::input::list_data_quality_results_input::Builder {
+        crate::input::list_data_quality_results_input::Builder::default()
+    }
+    /// Creates a new `ListDataQualityResults` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataQualityResults {
+    type Output = std::result::Result<
+        crate::output::ListDataQualityResultsOutput,
+        crate::error::ListDataQualityResultsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_quality_results_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_quality_results_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDataQualityRuleRecommendationRuns`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_quality_rule_recommendation_runs`](crate::client::Client::list_data_quality_rule_recommendation_runs).
+///
+/// See [`crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListDataQualityRuleRecommendationRuns {
+    _private: (),
+}
+impl ListDataQualityRuleRecommendationRuns {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsInput`](crate::input::ListDataQualityRuleRecommendationRunsInput).
+    pub fn builder() -> crate::input::list_data_quality_rule_recommendation_runs_input::Builder {
+        crate::input::list_data_quality_rule_recommendation_runs_input::Builder::default()
+    }
+    /// Creates a new `ListDataQualityRuleRecommendationRuns` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataQualityRuleRecommendationRuns {
+    type Output = std::result::Result<
+        crate::output::ListDataQualityRuleRecommendationRunsOutput,
+        crate::error::ListDataQualityRuleRecommendationRunsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_quality_rule_recommendation_runs_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_quality_rule_recommendation_runs_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `ListDataQualityRulesetEvaluationRuns`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_quality_ruleset_evaluation_runs`](crate::client::Client::list_data_quality_ruleset_evaluation_runs).
+///
+/// See [`crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListDataQualityRulesetEvaluationRuns {
+    _private: (),
+}
+impl ListDataQualityRulesetEvaluationRuns {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetEvaluationRunsInput`](crate::input::ListDataQualityRulesetEvaluationRunsInput).
+    pub fn builder() -> crate::input::list_data_quality_ruleset_evaluation_runs_input::Builder {
+        crate::input::list_data_quality_ruleset_evaluation_runs_input::Builder::default()
+    }
+    /// Creates a new `ListDataQualityRulesetEvaluationRuns` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataQualityRulesetEvaluationRuns {
+    type Output = std::result::Result<
+        crate::output::ListDataQualityRulesetEvaluationRunsOutput,
+        crate::error::ListDataQualityRulesetEvaluationRunsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_quality_ruleset_evaluation_runs_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_quality_ruleset_evaluation_runs_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `ListDataQualityRulesets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_quality_rulesets`](crate::client::Client::list_data_quality_rulesets).
+///
+/// See [`crate::client::fluent_builders::ListDataQualityRulesets`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListDataQualityRulesets {
+    _private: (),
+}
+impl ListDataQualityRulesets {
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetsInput`](crate::input::ListDataQualityRulesetsInput).
+    pub fn builder() -> crate::input::list_data_quality_rulesets_input::Builder {
+        crate::input::list_data_quality_rulesets_input::Builder::default()
+    }
+    /// Creates a new `ListDataQualityRulesets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataQualityRulesets {
+    type Output = std::result::Result<
+        crate::output::ListDataQualityRulesetsOutput,
+        crate::error::ListDataQualityRulesetsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_quality_rulesets_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_quality_rulesets_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListDevEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5024,6 +5478,78 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCrawlerSchedule {
     }
 }
 
+/// Operation shape for `StartDataQualityRuleRecommendationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_data_quality_rule_recommendation_run`](crate::client::Client::start_data_quality_rule_recommendation_run).
+///
+/// See [`crate::client::fluent_builders::StartDataQualityRuleRecommendationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartDataQualityRuleRecommendationRun {
+    _private: (),
+}
+impl StartDataQualityRuleRecommendationRun {
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::input::StartDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::start_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::start_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+    /// Creates a new `StartDataQualityRuleRecommendationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartDataQualityRuleRecommendationRun {
+    type Output = std::result::Result<
+        crate::output::StartDataQualityRuleRecommendationRunOutput,
+        crate::error::StartDataQualityRuleRecommendationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_data_quality_rule_recommendation_run_error(response)
+        } else {
+            crate::operation_deser::parse_start_data_quality_rule_recommendation_run_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `StartDataQualityRulesetEvaluationRun`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_data_quality_ruleset_evaluation_run`](crate::client::Client::start_data_quality_ruleset_evaluation_run).
+///
+/// See [`crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct StartDataQualityRulesetEvaluationRun {
+    _private: (),
+}
+impl StartDataQualityRulesetEvaluationRun {
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunInput`](crate::input::StartDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::start_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::start_data_quality_ruleset_evaluation_run_input::Builder::default()
+    }
+    /// Creates a new `StartDataQualityRulesetEvaluationRun` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartDataQualityRulesetEvaluationRun {
+    type Output = std::result::Result<
+        crate::output::StartDataQualityRulesetEvaluationRunOutput,
+        crate::error::StartDataQualityRulesetEvaluationRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_data_quality_ruleset_evaluation_run_error(response)
+        } else {
+            crate::operation_deser::parse_start_data_quality_ruleset_evaluation_run_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `StartExportLabelsTaskRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5756,6 +6282,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatabase {
     }
 }
 
+/// Operation shape for `UpdateDataQualityRuleset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_data_quality_ruleset`](crate::client::Client::update_data_quality_ruleset).
+///
+/// See [`crate::client::fluent_builders::UpdateDataQualityRuleset`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateDataQualityRuleset {
+    _private: (),
+}
+impl UpdateDataQualityRuleset {
+    /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetInput`](crate::input::UpdateDataQualityRulesetInput).
+    pub fn builder() -> crate::input::update_data_quality_ruleset_input::Builder {
+        crate::input::update_data_quality_ruleset_input::Builder::default()
+    }
+    /// Creates a new `UpdateDataQualityRuleset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDataQualityRuleset {
+    type Output = std::result::Result<
+        crate::output::UpdateDataQualityRulesetOutput,
+        crate::error::UpdateDataQualityRulesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_data_quality_ruleset_error(response)
+        } else {
+            crate::operation_deser::parse_update_data_quality_ruleset_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateDevEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5817,6 +6377,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJob {
             crate::operation_deser::parse_update_job_error(response)
         } else {
             crate::operation_deser::parse_update_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateJobFromSourceControl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_job_from_source_control`](crate::client::Client::update_job_from_source_control).
+///
+/// See [`crate::client::fluent_builders::UpdateJobFromSourceControl`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateJobFromSourceControl {
+    _private: (),
+}
+impl UpdateJobFromSourceControl {
+    /// Creates a new builder-style object to manufacture [`UpdateJobFromSourceControlInput`](crate::input::UpdateJobFromSourceControlInput).
+    pub fn builder() -> crate::input::update_job_from_source_control_input::Builder {
+        crate::input::update_job_from_source_control_input::Builder::default()
+    }
+    /// Creates a new `UpdateJobFromSourceControl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateJobFromSourceControl {
+    type Output = std::result::Result<
+        crate::output::UpdateJobFromSourceControlOutput,
+        crate::error::UpdateJobFromSourceControlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_job_from_source_control_error(response)
+        } else {
+            crate::operation_deser::parse_update_job_from_source_control_response(response)
         }
     }
 }
@@ -5949,6 +6543,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSchema {
             crate::operation_deser::parse_update_schema_error(response)
         } else {
             crate::operation_deser::parse_update_schema_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSourceControlFromJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_source_control_from_job`](crate::client::Client::update_source_control_from_job).
+///
+/// See [`crate::client::fluent_builders::UpdateSourceControlFromJob`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateSourceControlFromJob {
+    _private: (),
+}
+impl UpdateSourceControlFromJob {
+    /// Creates a new builder-style object to manufacture [`UpdateSourceControlFromJobInput`](crate::input::UpdateSourceControlFromJobInput).
+    pub fn builder() -> crate::input::update_source_control_from_job_input::Builder {
+        crate::input::update_source_control_from_job_input::Builder::default()
+    }
+    /// Creates a new `UpdateSourceControlFromJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSourceControlFromJob {
+    type Output = std::result::Result<
+        crate::output::UpdateSourceControlFromJobOutput,
+        crate::error::UpdateSourceControlFromJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_source_control_from_job_error(response)
+        } else {
+            crate::operation_deser::parse_update_source_control_from_job_response(response)
         }
     }
 }

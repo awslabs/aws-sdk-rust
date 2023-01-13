@@ -117,6 +117,57 @@ impl UpgradeElasticsearchDomainOutput {
     }
 }
 
+/// <p>Contains the configuration and status of the VPC endpoint being updated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateVpcEndpointOutput {
+    /// <p>The endpoint to be updated.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl UpdateVpcEndpointOutput {
+    /// <p>The endpoint to be updated.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
+}
+/// See [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+pub mod update_vpc_endpoint_output {
+
+    /// A builder for [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+    }
+    impl Builder {
+        /// <p>The endpoint to be updated.</p>
+        pub fn vpc_endpoint(mut self, input: crate::model::VpcEndpoint) -> Self {
+            self.vpc_endpoint = Some(input);
+            self
+        }
+        /// <p>The endpoint to be updated.</p>
+        pub fn set_vpc_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpoint>,
+        ) -> Self {
+            self.vpc_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+        pub fn build(self) -> crate::output::UpdateVpcEndpointOutput {
+            crate::output::UpdateVpcEndpointOutput {
+                vpc_endpoint: self.vpc_endpoint,
+            }
+        }
+    }
+}
+impl UpdateVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+    pub fn builder() -> crate::output::update_vpc_endpoint_output::Builder {
+        crate::output::update_vpc_endpoint_output::Builder::default()
+    }
+}
+
 /// <p> Container for response returned by <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -298,6 +349,30 @@ impl StartElasticsearchServiceSoftwareUpdateOutput {
     }
 }
 
+/// <p>Container for response parameters to the <code><code>RevokeVpcEndpointAccess</code></code> operation. The response body for this operation is empty.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RevokeVpcEndpointAccessOutput {}
+/// See [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+pub mod revoke_vpc_endpoint_access_output {
+
+    /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+        pub fn build(self) -> crate::output::RevokeVpcEndpointAccessOutput {
+            crate::output::RevokeVpcEndpointAccessOutput {}
+        }
+    }
+}
+impl RevokeVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::revoke_vpc_endpoint_access_output::Builder {
+        crate::output::revoke_vpc_endpoint_access_output::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -455,6 +530,255 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
     pub fn builder(
     ) -> crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder {
         crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder::default()
+    }
+}
+
+/// <p>Container for response parameters to the <code><code>ListVpcEndpointsForDomain</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointsForDomainOutput {
+    /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+    /// <p>Information about each endpoint associated with the domain.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointsForDomainOutput {
+    /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
+    pub fn vpc_endpoint_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcEndpointSummary]> {
+        self.vpc_endpoint_summary_list.as_deref()
+    }
+    /// <p>Information about each endpoint associated with the domain.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+pub mod list_vpc_endpoints_for_domain_output {
+
+    /// A builder for [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_endpoint_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_summary_list`](Self::set_vpc_endpoint_summary_list).
+        ///
+        /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
+        pub fn vpc_endpoint_summary_list(
+            mut self,
+            input: crate::model::VpcEndpointSummary,
+        ) -> Self {
+            let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
+            v.push(input);
+            self.vpc_endpoint_summary_list = Some(v);
+            self
+        }
+        /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
+        pub fn set_vpc_endpoint_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        ) -> Self {
+            self.vpc_endpoint_summary_list = input;
+            self
+        }
+        /// <p>Information about each endpoint associated with the domain.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Information about each endpoint associated with the domain.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+        pub fn build(self) -> crate::output::ListVpcEndpointsForDomainOutput {
+            crate::output::ListVpcEndpointsForDomainOutput {
+                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVpcEndpointsForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoints_for_domain_output::Builder {
+        crate::output::list_vpc_endpoints_for_domain_output::Builder::default()
+    }
+}
+
+/// <p>Container for response parameters to the <code><code>ListVpcEndpoints</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointsOutput {
+    /// <p>Information about each endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointsOutput {
+    /// <p>Information about each endpoint.</p>
+    pub fn vpc_endpoint_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcEndpointSummary]> {
+        self.vpc_endpoint_summary_list.as_deref()
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+pub mod list_vpc_endpoints_output {
+
+    /// A builder for [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_endpoint_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_summary_list`](Self::set_vpc_endpoint_summary_list).
+        ///
+        /// <p>Information about each endpoint.</p>
+        pub fn vpc_endpoint_summary_list(
+            mut self,
+            input: crate::model::VpcEndpointSummary,
+        ) -> Self {
+            let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
+            v.push(input);
+            self.vpc_endpoint_summary_list = Some(v);
+            self
+        }
+        /// <p>Information about each endpoint.</p>
+        pub fn set_vpc_endpoint_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointSummary>>,
+        ) -> Self {
+            self.vpc_endpoint_summary_list = input;
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+        pub fn build(self) -> crate::output::ListVpcEndpointsOutput {
+            crate::output::ListVpcEndpointsOutput {
+                vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVpcEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoints_output::Builder {
+        crate::output::list_vpc_endpoints_output::Builder::default()
+    }
+}
+
+/// <p>Container for response parameters to the <code><code>ListVpcEndpointAccess</code></code> operation. Returns a list of accounts id and account type authorized to manage VPC endpoints.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcEndpointAccessOutput {
+    /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
+    #[doc(hidden)]
+    pub authorized_principal_list:
+        std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcEndpointAccessOutput {
+    /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
+    pub fn authorized_principal_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AuthorizedPrincipal]> {
+        self.authorized_principal_list.as_deref()
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+pub mod list_vpc_endpoint_access_output {
+
+    /// A builder for [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authorized_principal_list:
+            std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `authorized_principal_list`.
+        ///
+        /// To override the contents of this collection use [`set_authorized_principal_list`](Self::set_authorized_principal_list).
+        ///
+        /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
+        pub fn authorized_principal_list(
+            mut self,
+            input: crate::model::AuthorizedPrincipal,
+        ) -> Self {
+            let mut v = self.authorized_principal_list.unwrap_or_default();
+            v.push(input);
+            self.authorized_principal_list = Some(v);
+            self
+        }
+        /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
+        pub fn set_authorized_principal_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+        ) -> Self {
+            self.authorized_principal_list = input;
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+        pub fn build(self) -> crate::output::ListVpcEndpointAccessOutput {
+            crate::output::ListVpcEndpointAccessOutput {
+                authorized_principal_list: self.authorized_principal_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoint_access_output::Builder {
+        crate::output::list_vpc_endpoint_access_output::Builder::default()
     }
 }
 
@@ -1337,6 +1661,92 @@ impl DissociatePackageOutput {
     }
 }
 
+/// <p>Container for response parameters to the <code><code>DescribeVpcEndpoints</code></code> operation. Returns a list containing configuration details and status of the VPC Endpoints as well as a list containing error responses of the endpoints that could not be described</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVpcEndpointsOutput {
+    /// <p>Information about each requested VPC endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
+    /// <p>Any errors associated with the request.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_errors: std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
+}
+impl DescribeVpcEndpointsOutput {
+    /// <p>Information about each requested VPC endpoint.</p>
+    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+        self.vpc_endpoints.as_deref()
+    }
+    /// <p>Any errors associated with the request.</p>
+    pub fn vpc_endpoint_errors(&self) -> std::option::Option<&[crate::model::VpcEndpointError]> {
+        self.vpc_endpoint_errors.as_deref()
+    }
+}
+/// See [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+pub mod describe_vpc_endpoints_output {
+
+    /// A builder for [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoints: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
+        pub(crate) vpc_endpoint_errors:
+            std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoints`](Self::set_vpc_endpoints).
+        ///
+        /// <p>Information about each requested VPC endpoint.</p>
+        pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
+            let mut v = self.vpc_endpoints.unwrap_or_default();
+            v.push(input);
+            self.vpc_endpoints = Some(v);
+            self
+        }
+        /// <p>Information about each requested VPC endpoint.</p>
+        pub fn set_vpc_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
+        ) -> Self {
+            self.vpc_endpoints = input;
+            self
+        }
+        /// Appends an item to `vpc_endpoint_errors`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_endpoint_errors`](Self::set_vpc_endpoint_errors).
+        ///
+        /// <p>Any errors associated with the request.</p>
+        pub fn vpc_endpoint_errors(mut self, input: crate::model::VpcEndpointError) -> Self {
+            let mut v = self.vpc_endpoint_errors.unwrap_or_default();
+            v.push(input);
+            self.vpc_endpoint_errors = Some(v);
+            self
+        }
+        /// <p>Any errors associated with the request.</p>
+        pub fn set_vpc_endpoint_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointError>>,
+        ) -> Self {
+            self.vpc_endpoint_errors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+        pub fn build(self) -> crate::output::DescribeVpcEndpointsOutput {
+            crate::output::DescribeVpcEndpointsOutput {
+                vpc_endpoints: self.vpc_endpoints,
+                vpc_endpoint_errors: self.vpc_endpoint_errors,
+            }
+        }
+    }
+}
+impl DescribeVpcEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+    pub fn builder() -> crate::output::describe_vpc_endpoints_output::Builder {
+        crate::output::describe_vpc_endpoints_output::Builder::default()
+    }
+}
+
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstances</code></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2150,6 +2560,57 @@ impl DescribeDomainAutoTunesOutput {
     }
 }
 
+/// <p>Container for response parameters to the <code><code>DeleteVpcEndpoint</code></code> operation. Contains the summarized detail of the VPC Endpoint being deleted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVpcEndpointOutput {
+    /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    #[doc(hidden)]
+    pub vpc_endpoint_summary: std::option::Option<crate::model::VpcEndpointSummary>,
+}
+impl DeleteVpcEndpointOutput {
+    /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    pub fn vpc_endpoint_summary(&self) -> std::option::Option<&crate::model::VpcEndpointSummary> {
+        self.vpc_endpoint_summary.as_ref()
+    }
+}
+/// See [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+pub mod delete_vpc_endpoint_output {
+
+    /// A builder for [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint_summary: std::option::Option<crate::model::VpcEndpointSummary>,
+    }
+    impl Builder {
+        /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+        pub fn vpc_endpoint_summary(mut self, input: crate::model::VpcEndpointSummary) -> Self {
+            self.vpc_endpoint_summary = Some(input);
+            self
+        }
+        /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+        pub fn set_vpc_endpoint_summary(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpointSummary>,
+        ) -> Self {
+            self.vpc_endpoint_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+        pub fn build(self) -> crate::output::DeleteVpcEndpointOutput {
+            crate::output::DeleteVpcEndpointOutput {
+                vpc_endpoint_summary: self.vpc_endpoint_summary,
+            }
+        }
+    }
+}
+impl DeleteVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+    pub fn builder() -> crate::output::delete_vpc_endpoint_output::Builder {
+        crate::output::delete_vpc_endpoint_output::Builder::default()
+    }
+}
+
 /// <p> Container for response parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2391,6 +2852,57 @@ impl DeleteElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
     pub fn builder() -> crate::output::delete_elasticsearch_domain_output::Builder {
         crate::output::delete_elasticsearch_domain_output::Builder::default()
+    }
+}
+
+/// <p>Container for response parameters to the <code><code>CreateVpcEndpoint</code></code> operation. Contains the configuration and status of the VPC Endpoint being created.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVpcEndpointOutput {
+    /// <p>Information about the newly created VPC endpoint.</p>
+    #[doc(hidden)]
+    pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+}
+impl CreateVpcEndpointOutput {
+    /// <p>Information about the newly created VPC endpoint.</p>
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
+}
+/// See [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+pub mod create_vpc_endpoint_output {
+
+    /// A builder for [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
+    }
+    impl Builder {
+        /// <p>Information about the newly created VPC endpoint.</p>
+        pub fn vpc_endpoint(mut self, input: crate::model::VpcEndpoint) -> Self {
+            self.vpc_endpoint = Some(input);
+            self
+        }
+        /// <p>Information about the newly created VPC endpoint.</p>
+        pub fn set_vpc_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::VpcEndpoint>,
+        ) -> Self {
+            self.vpc_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+        pub fn build(self) -> crate::output::CreateVpcEndpointOutput {
+            crate::output::CreateVpcEndpointOutput {
+                vpc_endpoint: self.vpc_endpoint,
+            }
+        }
+    }
+}
+impl CreateVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+    pub fn builder() -> crate::output::create_vpc_endpoint_output::Builder {
+        crate::output::create_vpc_endpoint_output::Builder::default()
     }
 }
 
@@ -2701,6 +3213,57 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
     pub fn builder() -> crate::output::cancel_elasticsearch_service_software_update_output::Builder
     {
         crate::output::cancel_elasticsearch_service_software_update_output::Builder::default()
+    }
+}
+
+/// <p>Container for response parameters to the <code><code>AuthorizeVpcEndpointAccess</code></code> operation. Contains the account ID and the type of the account being authorized to access the VPC endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthorizeVpcEndpointAccessOutput {
+    /// <p>Information about the account or service that was provided access to the domain.</p>
+    #[doc(hidden)]
+    pub authorized_principal: std::option::Option<crate::model::AuthorizedPrincipal>,
+}
+impl AuthorizeVpcEndpointAccessOutput {
+    /// <p>Information about the account or service that was provided access to the domain.</p>
+    pub fn authorized_principal(&self) -> std::option::Option<&crate::model::AuthorizedPrincipal> {
+        self.authorized_principal.as_ref()
+    }
+}
+/// See [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+pub mod authorize_vpc_endpoint_access_output {
+
+    /// A builder for [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authorized_principal: std::option::Option<crate::model::AuthorizedPrincipal>,
+    }
+    impl Builder {
+        /// <p>Information about the account or service that was provided access to the domain.</p>
+        pub fn authorized_principal(mut self, input: crate::model::AuthorizedPrincipal) -> Self {
+            self.authorized_principal = Some(input);
+            self
+        }
+        /// <p>Information about the account or service that was provided access to the domain.</p>
+        pub fn set_authorized_principal(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizedPrincipal>,
+        ) -> Self {
+            self.authorized_principal = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+        pub fn build(self) -> crate::output::AuthorizeVpcEndpointAccessOutput {
+            crate::output::AuthorizeVpcEndpointAccessOutput {
+                authorized_principal: self.authorized_principal,
+            }
+        }
+    }
+}
+impl AuthorizeVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::authorize_vpc_endpoint_access_output::Builder {
+        crate::output::authorize_vpc_endpoint_access_output::Builder::default()
     }
 }
 

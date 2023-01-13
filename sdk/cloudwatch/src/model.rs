@@ -1138,7 +1138,7 @@ impl Dimension {
 
 /// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p>
 /// <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a Metrics Insights query or a math expression. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p>
-/// <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
+/// <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>true</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
 /// <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 /// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
 #[non_exhaustive]
@@ -1160,15 +1160,16 @@ pub struct MetricDataQuery {
     /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
-    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
-    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.</p>
+    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
     #[doc(hidden)]
     pub return_data: std::option::Option<bool>,
     /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
     #[doc(hidden)]
     pub period: std::option::Option<i32>,
-    /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
+    /// <p>The ID of the account where the metrics are located.</p>
+    /// <p>If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which account to retrieve this metric from.</p>
+    /// <p>If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the metric that the alarm is watching.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
@@ -1193,8 +1194,8 @@ impl MetricDataQuery {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
-    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.</p>
+    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
     pub fn return_data(&self) -> std::option::Option<bool> {
         self.return_data
     }
@@ -1202,8 +1203,9 @@ impl MetricDataQuery {
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
-    /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
+    /// <p>The ID of the account where the metrics are located.</p>
+    /// <p>If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which account to retrieve this metric from.</p>
+    /// <p>If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the metric that the alarm is watching.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -1274,14 +1276,14 @@ pub mod metric_data_query {
             self.label = input;
             self
         }
-        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
-        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.</p>
+        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
         pub fn return_data(mut self, input: bool) -> Self {
             self.return_data = Some(input);
             self
         }
-        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
-        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.</p>
+        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
         pub fn set_return_data(mut self, input: std::option::Option<bool>) -> Self {
             self.return_data = input;
             self
@@ -1296,14 +1298,16 @@ pub mod metric_data_query {
             self.period = input;
             self
         }
-        /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
+        /// <p>The ID of the account where the metrics are located.</p>
+        /// <p>If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which account to retrieve this metric from.</p>
+        /// <p>If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the metric that the alarm is watching.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
+        /// <p>The ID of the account where the metrics are located.</p>
+        /// <p>If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which account to retrieve this metric from.</p>
+        /// <p>If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the metric that the alarm is watching.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2074,12 +2078,12 @@ impl DashboardValidationMessage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricMathAnomalyDetector {
-    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
     #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl MetricMathAnomalyDetector {
-    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }
@@ -2098,14 +2102,14 @@ pub mod metric_math_anomaly_detector {
         ///
         /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
         ///
-        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
         pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
             v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
-        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
         pub fn set_metric_data_queries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -3442,6 +3446,7 @@ impl MetricDataResult {
 /// # let statuscode = unimplemented!();
 /// match statuscode {
 ///     StatusCode::Complete => { /* ... */ },
+///     StatusCode::Forbidden => { /* ... */ },
 ///     StatusCode::InternalError => { /* ... */ },
 ///     StatusCode::PartialData => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -3480,6 +3485,8 @@ pub enum StatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Complete,
     #[allow(missing_docs)] // documentation missing in model
+    Forbidden,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     PartialData,
@@ -3490,6 +3497,7 @@ impl std::convert::From<&str> for StatusCode {
     fn from(s: &str) -> Self {
         match s {
             "Complete" => StatusCode::Complete,
+            "Forbidden" => StatusCode::Forbidden,
             "InternalError" => StatusCode::InternalError,
             "PartialData" => StatusCode::PartialData,
             other => StatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -3508,6 +3516,7 @@ impl StatusCode {
     pub fn as_str(&self) -> &str {
         match self {
             StatusCode::Complete => "Complete",
+            StatusCode::Forbidden => "Forbidden",
             StatusCode::InternalError => "InternalError",
             StatusCode::PartialData => "PartialData",
             StatusCode::Unknown(value) => value.as_str(),
@@ -3515,7 +3524,7 @@ impl StatusCode {
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Complete", "InternalError", "PartialData"]
+        &["Complete", "Forbidden", "InternalError", "PartialData"]
     }
 }
 impl AsRef<str> for StatusCode {
@@ -4642,7 +4651,7 @@ pub struct MetricAlarm {
     /// <p>An explanation for the alarm state, in JSON format.</p>
     #[doc(hidden)]
     pub state_reason_data: std::option::Option<std::string::String>,
-    /// <p>The time stamp of the last update to the alarm state.</p>
+    /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
     #[doc(hidden)]
     pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
@@ -4691,6 +4700,12 @@ pub struct MetricAlarm {
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
     #[doc(hidden)]
     pub threshold_metric_id: std::option::Option<std::string::String>,
+    /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
+    #[doc(hidden)]
+    pub evaluation_state: std::option::Option<crate::model::EvaluationState>,
+    /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
+    #[doc(hidden)]
+    pub state_transitioned_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MetricAlarm {
     /// <p>The name of the alarm.</p>
@@ -4739,7 +4754,7 @@ impl MetricAlarm {
     pub fn state_reason_data(&self) -> std::option::Option<&str> {
         self.state_reason_data.as_deref()
     }
-    /// <p>The time stamp of the last update to the alarm state.</p>
+    /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
     pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
@@ -4804,6 +4819,14 @@ impl MetricAlarm {
     pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
         self.threshold_metric_id.as_deref()
     }
+    /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
+    pub fn evaluation_state(&self) -> std::option::Option<&crate::model::EvaluationState> {
+        self.evaluation_state.as_ref()
+    }
+    /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
+    pub fn state_transitioned_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.state_transitioned_timestamp.as_ref()
+    }
 }
 /// See [`MetricAlarm`](crate::model::MetricAlarm).
 pub mod metric_alarm {
@@ -4840,6 +4863,8 @@ pub mod metric_alarm {
         pub(crate) evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
         pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
         pub(crate) threshold_metric_id: std::option::Option<std::string::String>,
+        pub(crate) evaluation_state: std::option::Option<crate::model::EvaluationState>,
+        pub(crate) state_transitioned_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The name of the alarm.</p>
@@ -4994,12 +5019,12 @@ pub mod metric_alarm {
             self.state_reason_data = input;
             self
         }
-        /// <p>The time stamp of the last update to the alarm state.</p>
+        /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
         pub fn state_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
-        /// <p>The time stamp of the last update to the alarm state.</p>
+        /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
         pub fn set_state_updated_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5198,6 +5223,32 @@ pub mod metric_alarm {
             self.threshold_metric_id = input;
             self
         }
+        /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
+        pub fn evaluation_state(mut self, input: crate::model::EvaluationState) -> Self {
+            self.evaluation_state = Some(input);
+            self
+        }
+        /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
+        pub fn set_evaluation_state(
+            mut self,
+            input: std::option::Option<crate::model::EvaluationState>,
+        ) -> Self {
+            self.evaluation_state = input;
+            self
+        }
+        /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
+        pub fn state_transitioned_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.state_transitioned_timestamp = Some(input);
+            self
+        }
+        /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
+        pub fn set_state_transitioned_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.state_transitioned_timestamp = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MetricAlarm`](crate::model::MetricAlarm).
         pub fn build(self) -> crate::model::MetricAlarm {
             crate::model::MetricAlarm {
@@ -5228,6 +5279,8 @@ pub mod metric_alarm {
                 evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile,
                 metrics: self.metrics,
                 threshold_metric_id: self.threshold_metric_id,
+                evaluation_state: self.evaluation_state,
+                state_transitioned_timestamp: self.state_transitioned_timestamp,
             }
         }
     }
@@ -5236,6 +5289,91 @@ impl MetricAlarm {
     /// Creates a new builder-style object to manufacture [`MetricAlarm`](crate::model::MetricAlarm).
     pub fn builder() -> crate::model::metric_alarm::Builder {
         crate::model::metric_alarm::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EvaluationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let evaluationstate = unimplemented!();
+/// match evaluationstate {
+///     EvaluationState::PartialData => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `evaluationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EvaluationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EvaluationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EvaluationState::NewFeature` is defined.
+/// Specifically, when `evaluationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EvaluationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EvaluationState {
+    #[allow(missing_docs)] // documentation missing in model
+    PartialData,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EvaluationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "PARTIAL_DATA" => EvaluationState::PartialData,
+            other => EvaluationState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EvaluationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EvaluationState::from(s))
+    }
+}
+impl EvaluationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EvaluationState::PartialData => "PARTIAL_DATA",
+            EvaluationState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PARTIAL_DATA"]
+    }
+}
+impl AsRef<str> for EvaluationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

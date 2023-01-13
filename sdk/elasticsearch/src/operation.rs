@@ -103,6 +103,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePackage {
     }
 }
 
+/// Operation shape for `AuthorizeVpcEndpointAccess`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`authorize_vpc_endpoint_access`](crate::client::Client::authorize_vpc_endpoint_access).
+///
+/// See [`crate::client::fluent_builders::AuthorizeVpcEndpointAccess`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct AuthorizeVpcEndpointAccess {
+    _private: (),
+}
+impl AuthorizeVpcEndpointAccess {
+    /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessInput`](crate::input::AuthorizeVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::authorize_vpc_endpoint_access_input::Builder {
+        crate::input::authorize_vpc_endpoint_access_input::Builder::default()
+    }
+    /// Creates a new `AuthorizeVpcEndpointAccess` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AuthorizeVpcEndpointAccess {
+    type Output = std::result::Result<
+        crate::output::AuthorizeVpcEndpointAccessOutput,
+        crate::error::AuthorizeVpcEndpointAccessError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_authorize_vpc_endpoint_access_error(response)
+        } else {
+            crate::operation_deser::parse_authorize_vpc_endpoint_access_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CancelElasticsearchServiceSoftwareUpdate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -242,6 +276,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackage {
             crate::operation_deser::parse_create_package_error(response)
         } else {
             crate::operation_deser::parse_create_package_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateVpcEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_vpc_endpoint`](crate::client::Client::create_vpc_endpoint).
+///
+/// See [`crate::client::fluent_builders::CreateVpcEndpoint`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateVpcEndpoint {
+    _private: (),
+}
+impl CreateVpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+    pub fn builder() -> crate::input::create_vpc_endpoint_input::Builder {
+        crate::input::create_vpc_endpoint_input::Builder::default()
+    }
+    /// Creates a new `CreateVpcEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
+    type Output = std::result::Result<
+        crate::output::CreateVpcEndpointOutput,
+        crate::error::CreateVpcEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_vpc_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_create_vpc_endpoint_response(response)
         }
     }
 }
@@ -420,6 +488,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackage {
             crate::operation_deser::parse_delete_package_error(response)
         } else {
             crate::operation_deser::parse_delete_package_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteVpcEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_vpc_endpoint`](crate::client::Client::delete_vpc_endpoint).
+///
+/// See [`crate::client::fluent_builders::DeleteVpcEndpoint`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteVpcEndpoint {
+    _private: (),
+}
+impl DeleteVpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+    pub fn builder() -> crate::input::delete_vpc_endpoint_input::Builder {
+        crate::input::delete_vpc_endpoint_input::Builder::default()
+    }
+    /// Creates a new `DeleteVpcEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoint {
+    type Output = std::result::Result<
+        crate::output::DeleteVpcEndpointOutput,
+        crate::error::DeleteVpcEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_vpc_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_delete_vpc_endpoint_response(response)
         }
     }
 }
@@ -821,6 +923,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElastics
     }
 }
 
+/// Operation shape for `DescribeVpcEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_vpc_endpoints`](crate::client::Client::describe_vpc_endpoints).
+///
+/// See [`crate::client::fluent_builders::DescribeVpcEndpoints`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeVpcEndpoints {
+    _private: (),
+}
+impl DescribeVpcEndpoints {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsInput`](crate::input::DescribeVpcEndpointsInput).
+    pub fn builder() -> crate::input::describe_vpc_endpoints_input::Builder {
+        crate::input::describe_vpc_endpoints_input::Builder::default()
+    }
+    /// Creates a new `DescribeVpcEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
+    type Output = std::result::Result<
+        crate::output::DescribeVpcEndpointsOutput,
+        crate::error::DescribeVpcEndpointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_vpc_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_describe_vpc_endpoints_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DissociatePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1192,6 +1328,108 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
     }
 }
 
+/// Operation shape for `ListVpcEndpointAccess`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_vpc_endpoint_access`](crate::client::Client::list_vpc_endpoint_access).
+///
+/// See [`crate::client::fluent_builders::ListVpcEndpointAccess`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListVpcEndpointAccess {
+    _private: (),
+}
+impl ListVpcEndpointAccess {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessInput`](crate::input::ListVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::list_vpc_endpoint_access_input::Builder {
+        crate::input::list_vpc_endpoint_access_input::Builder::default()
+    }
+    /// Creates a new `ListVpcEndpointAccess` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointAccess {
+    type Output = std::result::Result<
+        crate::output::ListVpcEndpointAccessOutput,
+        crate::error::ListVpcEndpointAccessError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_vpc_endpoint_access_error(response)
+        } else {
+            crate::operation_deser::parse_list_vpc_endpoint_access_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListVpcEndpoints`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_vpc_endpoints`](crate::client::Client::list_vpc_endpoints).
+///
+/// See [`crate::client::fluent_builders::ListVpcEndpoints`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListVpcEndpoints {
+    _private: (),
+}
+impl ListVpcEndpoints {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+    pub fn builder() -> crate::input::list_vpc_endpoints_input::Builder {
+        crate::input::list_vpc_endpoints_input::Builder::default()
+    }
+    /// Creates a new `ListVpcEndpoints` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpoints {
+    type Output = std::result::Result<
+        crate::output::ListVpcEndpointsOutput,
+        crate::error::ListVpcEndpointsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_vpc_endpoints_error(response)
+        } else {
+            crate::operation_deser::parse_list_vpc_endpoints_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListVpcEndpointsForDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_vpc_endpoints_for_domain`](crate::client::Client::list_vpc_endpoints_for_domain).
+///
+/// See [`crate::client::fluent_builders::ListVpcEndpointsForDomain`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListVpcEndpointsForDomain {
+    _private: (),
+}
+impl ListVpcEndpointsForDomain {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainInput`](crate::input::ListVpcEndpointsForDomainInput).
+    pub fn builder() -> crate::input::list_vpc_endpoints_for_domain_input::Builder {
+        crate::input::list_vpc_endpoints_for_domain_input::Builder::default()
+    }
+    /// Creates a new `ListVpcEndpointsForDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointsForDomain {
+    type Output = std::result::Result<
+        crate::output::ListVpcEndpointsForDomainOutput,
+        crate::error::ListVpcEndpointsForDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_vpc_endpoints_for_domain_error(response)
+        } else {
+            crate::operation_deser::parse_list_vpc_endpoints_for_domain_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PurchaseReservedElasticsearchInstanceOffering`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1304,6 +1542,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
     }
 }
 
+/// Operation shape for `RevokeVpcEndpointAccess`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`revoke_vpc_endpoint_access`](crate::client::Client::revoke_vpc_endpoint_access).
+///
+/// See [`crate::client::fluent_builders::RevokeVpcEndpointAccess`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct RevokeVpcEndpointAccess {
+    _private: (),
+}
+impl RevokeVpcEndpointAccess {
+    /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessInput`](crate::input::RevokeVpcEndpointAccessInput).
+    pub fn builder() -> crate::input::revoke_vpc_endpoint_access_input::Builder {
+        crate::input::revoke_vpc_endpoint_access_input::Builder::default()
+    }
+    /// Creates a new `RevokeVpcEndpointAccess` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RevokeVpcEndpointAccess {
+    type Output = std::result::Result<
+        crate::output::RevokeVpcEndpointAccessOutput,
+        crate::error::RevokeVpcEndpointAccessError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_revoke_vpc_endpoint_access_error(response)
+        } else {
+            crate::operation_deser::parse_revoke_vpc_endpoint_access_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartElasticsearchServiceSoftwareUpdate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1404,6 +1676,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackage {
             crate::operation_deser::parse_update_package_error(response)
         } else {
             crate::operation_deser::parse_update_package_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateVpcEndpoint`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_vpc_endpoint`](crate::client::Client::update_vpc_endpoint).
+///
+/// See [`crate::client::fluent_builders::UpdateVpcEndpoint`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateVpcEndpoint {
+    _private: (),
+}
+impl UpdateVpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+    pub fn builder() -> crate::input::update_vpc_endpoint_input::Builder {
+        crate::input::update_vpc_endpoint_input::Builder::default()
+    }
+    /// Creates a new `UpdateVpcEndpoint` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcEndpoint {
+    type Output = std::result::Result<
+        crate::output::UpdateVpcEndpointOutput,
+        crate::error::UpdateVpcEndpointError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_vpc_endpoint_error(response)
+        } else {
+            crate::operation_deser::parse_update_vpc_endpoint_response(response)
         }
     }
 }

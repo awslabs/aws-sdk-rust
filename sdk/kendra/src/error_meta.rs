@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p></p>
+    /// <p>You don't have sufficient access to perform this action. Please ensure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>A conflict occurred with the request. Please fix any inconsistences with your resources and try again.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for help.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The input to the request is not valid.</p>
+    /// <p>The input to the request is not valid. Please provide the correct input and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p></p>
+    /// <p>The resource you want to use already exists. Please check you have provided the correct resource and try again.</p>
     ResourceAlreadyExistException(crate::error::ResourceAlreadyExistException),
-    /// <p></p>
+    /// <p>The resource you want to use is currently in use. Please check you have provided the correct resource and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p></p>
+    /// <p>The resource you want to use doesn’t exist. Please check you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The resource you want to use isn't available. Please check you have provided the correct resource and try again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// <p></p>
+    /// <p>You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> to inquire about an increase of limits.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p></p>
+    /// <p>The request was denied due to request throttling. Please reduce the number of requests and try again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct input and try again.</p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

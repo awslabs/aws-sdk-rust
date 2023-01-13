@@ -820,22 +820,22 @@ pub mod create_filter_input {
             self.detector_id = input;
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+        /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+        /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8735,12 +8735,12 @@ pub mod list_members_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
         pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
             self.only_associated = Some(input.into());
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10785,12 +10785,12 @@ pub mod update_filter_input {
             self.filter_name = input;
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the filter.</p>
+        /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11481,7 +11481,7 @@ pub mod update_malware_scan_settings_input {
             self.scan_resource_criteria = input;
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn ebs_snapshot_preservation(
             mut self,
             input: crate::model::EbsSnapshotPreservation,
@@ -11489,7 +11489,7 @@ pub mod update_malware_scan_settings_input {
             self.ebs_snapshot_preservation = Some(input);
             self
         }
-        /// <p>An enum value representing possible snapshot preservations.</p>
+        /// <p>An enum value representing possible snapshot preservation settings.</p>
         pub fn set_ebs_snapshot_preservation(
             mut self,
             input: std::option::Option<crate::model::EbsSnapshotPreservation>,
@@ -12649,7 +12649,7 @@ pub struct UpdateMalwareScanSettingsInput {
     /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
     #[doc(hidden)]
     pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
-    /// <p>An enum value representing possible snapshot preservations.</p>
+    /// <p>An enum value representing possible snapshot preservation settings.</p>
     #[doc(hidden)]
     pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
 }
@@ -12664,7 +12664,7 @@ impl UpdateMalwareScanSettingsInput {
     ) -> std::option::Option<&crate::model::ScanResourceCriteria> {
         self.scan_resource_criteria.as_ref()
     }
-    /// <p>An enum value representing possible snapshot preservations.</p>
+    /// <p>An enum value representing possible snapshot preservation settings.</p>
     pub fn ebs_snapshot_preservation(
         &self,
     ) -> std::option::Option<&crate::model::EbsSnapshotPreservation> {
@@ -12761,7 +12761,7 @@ pub struct UpdateFilterInput {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
-    /// <p>The description of the filter.</p>
+    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -12783,7 +12783,7 @@ impl UpdateFilterInput {
     pub fn filter_name(&self) -> std::option::Option<&str> {
         self.filter_name.as_deref()
     }
-    /// <p>The description of the filter.</p>
+    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -13061,7 +13061,7 @@ pub struct ListMembersInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     #[doc(hidden)]
     pub only_associated: std::option::Option<std::string::String>,
 }
@@ -13078,7 +13078,7 @@ impl ListMembersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     pub fn only_associated(&self) -> std::option::Option<&str> {
         self.only_associated.as_deref()
     }
@@ -14207,10 +14207,10 @@ pub struct CreateFilterInput {
     /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the filter.</p>
+    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -14295,11 +14295,11 @@ impl CreateFilterInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the filter.</p>
+    /// <p>The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and whitespace. The new line character is considered to be an invalid input for description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }

@@ -161,6 +161,49 @@ impl From<crate::error::AssociatePackageError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AuthorizeVpcEndpointAccessError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AuthorizeVpcEndpointAccessError> for Error {
+    fn from(err: crate::error::AuthorizeVpcEndpointAccessError) -> Self {
+        match err.kind {
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::DisabledOperationException(
+                inner,
+            ) => Error::DisabledOperationException(inner),
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::AuthorizeVpcEndpointAccessErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelServiceSoftwareUpdateError, R>>
     for Error
 where
@@ -321,6 +364,48 @@ impl From<crate::error::CreatePackageError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVpcEndpointError> for Error {
+    fn from(err: crate::error::CreateVpcEndpointError) -> Self {
+        match err.kind {
+            crate::error::CreateVpcEndpointErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::CreateVpcEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -452,6 +537,42 @@ impl From<crate::error::DeletePackageError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::DeletePackageErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVpcEndpointError> for Error {
+    fn from(err: crate::error::DeleteVpcEndpointError) -> Self {
+        match err.kind {
+            crate::error::DeleteVpcEndpointErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::DeleteVpcEndpointErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::DeleteVpcEndpointErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::DeleteVpcEndpointErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteVpcEndpointErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -840,6 +961,43 @@ impl From<crate::error::DescribeReservedInstancesError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::DescribeReservedInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcEndpointsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVpcEndpointsError> for Error {
+    fn from(err: crate::error::DescribeVpcEndpointsError) -> Self {
+        match err.kind {
+            crate::error::DescribeVpcEndpointsErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::DescribeVpcEndpointsErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::DescribeVpcEndpointsErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::DescribeVpcEndpointsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DescribeVpcEndpointsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1256,6 +1414,113 @@ impl From<crate::error::ListVersionsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointAccessError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListVpcEndpointAccessError> for Error {
+    fn from(err: crate::error::ListVpcEndpointAccessError) -> Self {
+        match err.kind {
+            crate::error::ListVpcEndpointAccessErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::ListVpcEndpointAccessErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::ListVpcEndpointAccessErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::ListVpcEndpointAccessErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListVpcEndpointAccessErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListVpcEndpointsError> for Error {
+    fn from(err: crate::error::ListVpcEndpointsError) -> Self {
+        match err.kind {
+            crate::error::ListVpcEndpointsErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::ListVpcEndpointsErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::ListVpcEndpointsErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::ListVpcEndpointsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListVpcEndpointsForDomainError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListVpcEndpointsForDomainError> for Error {
+    fn from(err: crate::error::ListVpcEndpointsForDomainError) -> Self {
+        match err.kind {
+            crate::error::ListVpcEndpointsForDomainErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::ListVpcEndpointsForDomainErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::ListVpcEndpointsForDomainErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::ListVpcEndpointsForDomainErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListVpcEndpointsForDomainErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::PurchaseReservedInstanceOfferingError, R>>
     for Error
@@ -1344,6 +1609,46 @@ impl From<crate::error::RemoveTagsError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RevokeVpcEndpointAccessError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RevokeVpcEndpointAccessError> for Error {
+    fn from(err: crate::error::RevokeVpcEndpointAccessError) -> Self {
+        match err.kind {
+            crate::error::RevokeVpcEndpointAccessErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::RevokeVpcEndpointAccessErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::RevokeVpcEndpointAccessErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::RevokeVpcEndpointAccessErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::RevokeVpcEndpointAccessErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::RevokeVpcEndpointAccessErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1463,6 +1768,48 @@ impl From<crate::error::UpdatePackageError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::UpdatePackageErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateVpcEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateVpcEndpointError> for Error {
+    fn from(err: crate::error::UpdateVpcEndpointError) -> Self {
+        match err.kind {
+            crate::error::UpdateVpcEndpointErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateVpcEndpointErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

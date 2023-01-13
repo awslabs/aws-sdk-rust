@@ -4,6 +4,7 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
@@ -21,11 +22,11 @@ pub enum Error {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
+    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
+    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     OutOfCapacityException(crate::error::OutOfCapacityException),
-    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
+    /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
@@ -281,6 +282,9 @@ where
 impl From<crate::error::CreateFleetLocationsError> for Error {
     fn from(err: crate::error::CreateFleetLocationsError) -> Self {
         match err.kind {
+            crate::error::CreateFleetLocationsErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::error::CreateFleetLocationsErrorKind::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
@@ -445,6 +449,46 @@ impl From<crate::error::CreateGameSessionQueueError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLocationError> for Error {
+    fn from(err: crate::error::CreateLocationError) -> Self {
+        match err.kind {
+            crate::error::CreateLocationErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::CreateLocationErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::CreateLocationErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateLocationErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateLocationErrorKind::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::error::CreateLocationErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::CreateLocationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingConfigurationError, R>>
     for Error
@@ -516,6 +560,9 @@ impl From<crate::error::CreateMatchmakingRuleSetError> for Error {
             }
             crate::error::CreateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateMatchmakingRuleSetErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::error::CreateMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => {
                 Error::TaggingFailedException(inner)
@@ -962,6 +1009,40 @@ impl From<crate::error::DeleteGameSessionQueueError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLocationError> for Error {
+    fn from(err: crate::error::DeleteLocationError) -> Self {
+        match err.kind {
+            crate::error::DeleteLocationErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::DeleteLocationErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteLocationErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DeleteLocationErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::DeleteLocationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingConfigurationError, R>>
     for Error
@@ -1193,6 +1274,42 @@ impl From<crate::error::DeleteVpcPeeringConnectionError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterComputeError> for Error {
+    fn from(err: crate::error::DeregisterComputeError) -> Self {
+        match err.kind {
+            crate::error::DeregisterComputeErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::DeregisterComputeErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeregisterComputeErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DeregisterComputeErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::DeregisterComputeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>>
     for Error
 where
@@ -1293,6 +1410,40 @@ impl From<crate::error::DescribeBuildError> for Error {
                 Error::UnauthorizedException(inner)
             }
             crate::error::DescribeBuildErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeComputeError> for Error {
+    fn from(err: crate::error::DescribeComputeError) -> Self {
+        match err.kind {
+            crate::error::DescribeComputeErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::DescribeComputeErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeComputeErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DescribeComputeErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::DescribeComputeErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -1603,6 +1754,9 @@ impl From<crate::error::DescribeFleetPortSettingsError> for Error {
             }
             crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
+            }
+            crate::error::DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
             }
             crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
@@ -2279,6 +2433,78 @@ impl From<crate::error::DescribeVpcPeeringConnectionsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetComputeAccessError> for Error {
+    fn from(err: crate::error::GetComputeAccessError) -> Self {
+        match err.kind {
+            crate::error::GetComputeAccessErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::GetComputeAccessErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetComputeAccessErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetComputeAccessErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::GetComputeAccessErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetComputeAuthTokenError> for Error {
+    fn from(err: crate::error::GetComputeAuthTokenError) -> Self {
+        match err.kind {
+            crate::error::GetComputeAuthTokenErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::GetComputeAuthTokenErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetComputeAuthTokenErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetComputeAuthTokenErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::GetComputeAuthTokenErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>>
     for Error
 where
@@ -2414,6 +2640,37 @@ impl From<crate::error::ListBuildsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListComputeError> for Error {
+    fn from(err: crate::error::ListComputeError) -> Self {
+        match err.kind {
+            crate::error::ListComputeErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::ListComputeErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListComputeErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::ListComputeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2508,6 +2765,37 @@ impl From<crate::error::ListGameServersError> for Error {
                 Error::UnauthorizedException(inner)
             }
             crate::error::ListGameServersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListLocationsError> for Error {
+    fn from(err: crate::error::ListLocationsError) -> Self {
+        match err.kind {
+            crate::error::ListLocationsErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::ListLocationsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListLocationsErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::ListLocationsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -2611,6 +2899,40 @@ impl From<crate::error::PutScalingPolicyError> for Error {
                 Error::UnauthorizedException(inner)
             }
             crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterComputeError> for Error {
+    fn from(err: crate::error::RegisterComputeError) -> Self {
+        match err.kind {
+            crate::error::RegisterComputeErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::RegisterComputeErrorKind::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::RegisterComputeErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::RegisterComputeErrorKind::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::error::RegisterComputeErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

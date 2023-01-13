@@ -167,6 +167,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLogStream {
     }
 }
 
+/// Operation shape for `DeleteDataProtectionPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_data_protection_policy`](crate::client::Client::delete_data_protection_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteDataProtectionPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteDataProtectionPolicy {
+    _private: (),
+}
+impl DeleteDataProtectionPolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteDataProtectionPolicyInput`](crate::input::DeleteDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::delete_data_protection_policy_input::Builder {
+        crate::input::delete_data_protection_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataProtectionPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataProtectionPolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteDataProtectionPolicyOutput,
+        crate::error::DeleteDataProtectionPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_data_protection_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_data_protection_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -811,6 +845,40 @@ impl aws_smithy_http::response::ParseStrictResponse for FilterLogEvents {
     }
 }
 
+/// Operation shape for `GetDataProtectionPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_protection_policy`](crate::client::Client::get_data_protection_policy).
+///
+/// See [`crate::client::fluent_builders::GetDataProtectionPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetDataProtectionPolicy {
+    _private: (),
+}
+impl GetDataProtectionPolicy {
+    /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::get_data_protection_policy_input::Builder {
+        crate::input::get_data_protection_policy_input::Builder::default()
+    }
+    /// Creates a new `GetDataProtectionPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataProtectionPolicy {
+    type Output = std::result::Result<
+        crate::output::GetDataProtectionPolicyOutput,
+        crate::error::GetDataProtectionPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_protection_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_protection_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetLogEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -943,6 +1011,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
     }
 }
 
+/// Operation shape for `ListTagsForResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+///
+/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    /// Creates a new `ListTagsForResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsLogGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -973,6 +1075,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsLogGroup {
             crate::operation_deser::parse_list_tags_log_group_error(response)
         } else {
             crate::operation_deser::parse_list_tags_log_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutDataProtectionPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_data_protection_policy`](crate::client::Client::put_data_protection_policy).
+///
+/// See [`crate::client::fluent_builders::PutDataProtectionPolicy`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutDataProtectionPolicy {
+    _private: (),
+}
+impl PutDataProtectionPolicy {
+    /// Creates a new builder-style object to manufacture [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+    pub fn builder() -> crate::input::put_data_protection_policy_input::Builder {
+        crate::input::put_data_protection_policy_input::Builder::default()
+    }
+    /// Creates a new `PutDataProtectionPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutDataProtectionPolicy {
+    type Output = std::result::Result<
+        crate::output::PutDataProtectionPolicyOutput,
+        crate::error::PutDataProtectionPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_data_protection_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_data_protection_policy_response(response)
         }
     }
 }
@@ -1340,6 +1476,38 @@ impl aws_smithy_http::response::ParseStrictResponse for TagLogGroup {
     }
 }
 
+/// Operation shape for `TagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`tag_resource`](crate::client::Client::tag_resource).
+///
+/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    /// Creates a new `TagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TestMetricFilter`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1402,6 +1570,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagLogGroup {
             crate::operation_deser::parse_untag_log_group_error(response)
         } else {
             crate::operation_deser::parse_untag_log_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UntagResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`untag_resource`](crate::client::Client::untag_resource).
+///
+/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    /// Creates a new `UntagResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

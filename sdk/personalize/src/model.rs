@@ -91,6 +91,229 @@ impl RecommenderConfig {
     }
 }
 
+/// <p>The output configuration details for a metric attribution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricAttributionOutput {
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    #[doc(hidden)]
+    pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl MetricAttributionOutput {
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+        self.s3_data_destination.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+/// See [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
+pub mod metric_attribution_output {
+
+    /// A builder for [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+        pub fn s3_data_destination(mut self, input: crate::model::S3DataConfig) -> Self {
+            self.s3_data_destination = Some(input);
+            self
+        }
+        /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+        pub fn set_s3_data_destination(
+            mut self,
+            input: std::option::Option<crate::model::S3DataConfig>,
+        ) -> Self {
+            self.s3_data_destination = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
+        pub fn build(self) -> crate::model::MetricAttributionOutput {
+            crate::model::MetricAttributionOutput {
+                s3_data_destination: self.s3_data_destination,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl MetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
+    pub fn builder() -> crate::model::metric_attribution_output::Builder {
+        crate::model::metric_attribution_output::Builder::default()
+    }
+}
+
+/// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3DataConfig {
+    /// <p>The file path of the Amazon S3 bucket.</p>
+    #[doc(hidden)]
+    pub path: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+    #[doc(hidden)]
+    pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3DataConfig {
+    /// <p>The file path of the Amazon S3 bucket.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
+/// See [`S3DataConfig`](crate::model::S3DataConfig).
+pub mod s3_data_config {
+
+    /// A builder for [`S3DataConfig`](crate::model::S3DataConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The file path of the Amazon S3 bucket.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>The file path of the Amazon S3 bucket.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataConfig`](crate::model::S3DataConfig).
+        pub fn build(self) -> crate::model::S3DataConfig {
+            crate::model::S3DataConfig {
+                path: self.path,
+                kms_key_arn: self.kms_key_arn,
+            }
+        }
+    }
+}
+impl S3DataConfig {
+    /// Creates a new builder-style object to manufacture [`S3DataConfig`](crate::model::S3DataConfig).
+    pub fn builder() -> crate::model::s3_data_config::Builder {
+        crate::model::s3_data_config::Builder::default()
+    }
+}
+
+/// <p>Contains information on a metric that a metric attribution reports on. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricAttribute {
+    /// <p>The metric's event type.</p>
+    #[doc(hidden)]
+    pub event_type: std::option::Option<std::string::String>,
+    /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
+    #[doc(hidden)]
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::string::String>,
+}
+impl MetricAttribute {
+    /// <p>The metric's event type.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+}
+/// See [`MetricAttribute`](crate::model::MetricAttribute).
+pub mod metric_attribute {
+
+    /// A builder for [`MetricAttribute`](crate::model::MetricAttribute).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type: std::option::Option<std::string::String>,
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) expression: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric's event type.</p>
+        pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type = Some(input.into());
+            self
+        }
+        /// <p>The metric's event type.</p>
+        pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type = input;
+            self
+        }
+        /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
+            self
+        }
+        /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricAttribute`](crate::model::MetricAttribute).
+        pub fn build(self) -> crate::model::MetricAttribute {
+            crate::model::MetricAttribute {
+                event_type: self.event_type,
+                metric_name: self.metric_name,
+                expression: self.expression,
+            }
+        }
+    }
+}
+impl MetricAttribute {
+    /// Creates a new builder-style object to manufacture [`MetricAttribute`](crate::model::MetricAttribute).
+    pub fn builder() -> crate::model::metric_attribute::Builder {
+        crate::model::metric_attribute::Builder::default()
+    }
+}
+
 /// <p>The configuration details of a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -403,6 +626,9 @@ pub struct SolutionSummary {
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+    #[doc(hidden)]
+    pub recipe_arn: std::option::Option<std::string::String>,
 }
 impl SolutionSummary {
     /// <p>The name of the solution.</p>
@@ -430,6 +656,10 @@ impl SolutionSummary {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
 }
 /// See [`SolutionSummary`](crate::model::SolutionSummary).
 pub mod solution_summary {
@@ -442,6 +672,7 @@ pub mod solution_summary {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) recipe_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the solution.</p>
@@ -510,6 +741,16 @@ pub mod solution_summary {
             self.last_updated_date_time = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+        pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recipe_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+        pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recipe_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SolutionSummary`](crate::model::SolutionSummary).
         pub fn build(self) -> crate::model::SolutionSummary {
             crate::model::SolutionSummary {
@@ -518,6 +759,7 @@ pub mod solution_summary {
                 status: self.status,
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
+                recipe_arn: self.recipe_arn,
             }
         }
     }
@@ -1196,6 +1438,161 @@ impl RecipeProvider {
 impl AsRef<str> for RecipeProvider {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Provides a summary of the properties of a metric attribution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html">DescribeMetricAttribution</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricAttributionSummary {
+    /// <p>The name of the metric attribution.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's creation date time.</p>
+    #[doc(hidden)]
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The metric attribution's last updated date time.</p>
+    #[doc(hidden)]
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The metric attribution's failure reason.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl MetricAttributionSummary {
+    /// <p>The name of the metric attribution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+    /// <p>The metric attribution's status.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The metric attribution's creation date time.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The metric attribution's last updated date time.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The metric attribution's failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+/// See [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
+pub mod metric_attribution_summary {
+
+    /// A builder for [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the metric attribution.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the metric attribution.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// <p>The metric attribution's status.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's status.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The metric attribution's creation date time.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The metric attribution's creation date time.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The metric attribution's last updated date time.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>The metric attribution's last updated date time.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// <p>The metric attribution's failure reason.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's failure reason.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
+        pub fn build(self) -> crate::model::MetricAttributionSummary {
+            crate::model::MetricAttributionSummary {
+                name: self.name,
+                metric_attribution_arn: self.metric_attribution_arn,
+                status: self.status,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl MetricAttributionSummary {
+    /// Creates a new builder-style object to manufacture [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
+    pub fn builder() -> crate::model::metric_attribution_summary::Builder {
+        crate::model::metric_attribution_summary::Builder::default()
     }
 }
 
@@ -2945,6 +3342,9 @@ impl BatchInferenceJobSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SolutionVersion {
+    /// <p>The name of the solution version.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the solution version.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
@@ -3003,6 +3403,10 @@ pub struct SolutionVersion {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SolutionVersion {
+    /// <p>The name of the solution version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
     /// <p>The ARN of the solution version.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
@@ -3081,6 +3485,7 @@ pub mod solution_version {
     /// A builder for [`SolutionVersion`](crate::model::SolutionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
         pub(crate) solution_arn: std::option::Option<std::string::String>,
         pub(crate) perform_hpo: std::option::Option<bool>,
@@ -3098,6 +3503,16 @@ pub mod solution_version {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
+        /// <p>The name of the solution version.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the solution version.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
         /// <p>The ARN of the solution version.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
@@ -3297,6 +3712,7 @@ pub mod solution_version {
         /// Consumes the builder and constructs a [`SolutionVersion`](crate::model::SolutionVersion).
         pub fn build(self) -> crate::model::SolutionVersion {
             crate::model::SolutionVersion {
+                name: self.name,
                 solution_version_arn: self.solution_version_arn,
                 solution_arn: self.solution_arn,
                 perform_hpo: self.perform_hpo.unwrap_or_default(),
@@ -5805,6 +6221,211 @@ impl Recipe {
     }
 }
 
+/// <p>Contains information on a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you import the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MetricAttribution {
+    /// <p>The metric attribution's name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub metric_attribution_arn: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's output configuration.</p>
+    #[doc(hidden)]
+    pub metrics_output_config: std::option::Option<crate::model::MetricAttributionOutput>,
+    /// <p>The metric attribution's status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The metric attribution's creation date time.</p>
+    #[doc(hidden)]
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The metric attribution's last updated date time.</p>
+    #[doc(hidden)]
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The metric attribution's failure reason.</p>
+    #[doc(hidden)]
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl MetricAttribution {
+    /// <p>The metric attribution's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+        self.metric_attribution_arn.as_deref()
+    }
+    /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The metric attribution's output configuration.</p>
+    pub fn metrics_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricAttributionOutput> {
+        self.metrics_output_config.as_ref()
+    }
+    /// <p>The metric attribution's status.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The metric attribution's creation date time.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The metric attribution's last updated date time.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The metric attribution's failure reason.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+/// See [`MetricAttribution`](crate::model::MetricAttribution).
+pub mod metric_attribution {
+
+    /// A builder for [`MetricAttribution`](crate::model::MetricAttribution).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
+        pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) metrics_output_config:
+            std::option::Option<crate::model::MetricAttributionOutput>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric attribution's name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_attribution_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+        pub fn set_metric_attribution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_attribution_arn = input;
+            self
+        }
+        /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_group_arn = input;
+            self
+        }
+        /// <p>The metric attribution's output configuration.</p>
+        pub fn metrics_output_config(
+            mut self,
+            input: crate::model::MetricAttributionOutput,
+        ) -> Self {
+            self.metrics_output_config = Some(input);
+            self
+        }
+        /// <p>The metric attribution's output configuration.</p>
+        pub fn set_metrics_output_config(
+            mut self,
+            input: std::option::Option<crate::model::MetricAttributionOutput>,
+        ) -> Self {
+            self.metrics_output_config = input;
+            self
+        }
+        /// <p>The metric attribution's status.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's status.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The metric attribution's creation date time.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The metric attribution's creation date time.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The metric attribution's last updated date time.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>The metric attribution's last updated date time.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// <p>The metric attribution's failure reason.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The metric attribution's failure reason.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricAttribution`](crate::model::MetricAttribution).
+        pub fn build(self) -> crate::model::MetricAttribution {
+            crate::model::MetricAttribution {
+                name: self.name,
+                metric_attribution_arn: self.metric_attribution_arn,
+                dataset_group_arn: self.dataset_group_arn,
+                metrics_output_config: self.metrics_output_config,
+                status: self.status,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl MetricAttribution {
+    /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
+    pub fn builder() -> crate::model::metric_attribution::Builder {
+        crate::model::metric_attribution::Builder::default()
+    }
+}
+
 /// <p>Contains information on a recommendation filter, including its ARN, status, and filter expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6473,6 +7094,9 @@ pub struct DatasetImportJob {
     /// <p>The import mode used by the dataset import job to import new records.</p>
     #[doc(hidden)]
     pub import_mode: std::option::Option<crate::model::ImportMode>,
+    /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+    #[doc(hidden)]
+    pub publish_attribution_metrics_to_s3: std::option::Option<bool>,
 }
 impl DatasetImportJob {
     /// <p>The name of the import job.</p>
@@ -6519,6 +7143,10 @@ impl DatasetImportJob {
     pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
         self.import_mode.as_ref()
     }
+    /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+    pub fn publish_attribution_metrics_to_s3(&self) -> std::option::Option<bool> {
+        self.publish_attribution_metrics_to_s3
+    }
 }
 /// See [`DatasetImportJob`](crate::model::DatasetImportJob).
 pub mod dataset_import_job {
@@ -6536,6 +7164,7 @@ pub mod dataset_import_job {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) import_mode: std::option::Option<crate::model::ImportMode>,
+        pub(crate) publish_attribution_metrics_to_s3: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the import job.</p>
@@ -6664,6 +7293,19 @@ pub mod dataset_import_job {
             self.import_mode = input;
             self
         }
+        /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+        pub fn publish_attribution_metrics_to_s3(mut self, input: bool) -> Self {
+            self.publish_attribution_metrics_to_s3 = Some(input);
+            self
+        }
+        /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+        pub fn set_publish_attribution_metrics_to_s3(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.publish_attribution_metrics_to_s3 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DatasetImportJob`](crate::model::DatasetImportJob).
         pub fn build(self) -> crate::model::DatasetImportJob {
             crate::model::DatasetImportJob {
@@ -6677,6 +7319,7 @@ pub mod dataset_import_job {
                 last_updated_date_time: self.last_updated_date_time,
                 failure_reason: self.failure_reason,
                 import_mode: self.import_mode,
+                publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3,
             }
         }
     }
@@ -7285,73 +7928,6 @@ impl DatasetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
     pub fn builder() -> crate::model::dataset_export_job_output::Builder {
         crate::model::dataset_export_job_output::Builder::default()
-    }
-}
-
-/// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DataConfig {
-    /// <p>The file path of the Amazon S3 bucket.</p>
-    #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-    #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
-}
-impl S3DataConfig {
-    /// <p>The file path of the Amazon S3 bucket.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
-        self.path.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
-    }
-}
-/// See [`S3DataConfig`](crate::model::S3DataConfig).
-pub mod s3_data_config {
-
-    /// A builder for [`S3DataConfig`](crate::model::S3DataConfig).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) path: std::option::Option<std::string::String>,
-        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The file path of the Amazon S3 bucket.</p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.path = Some(input.into());
-            self
-        }
-        /// <p>The file path of the Amazon S3 bucket.</p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3DataConfig`](crate::model::S3DataConfig).
-        pub fn build(self) -> crate::model::S3DataConfig {
-            crate::model::S3DataConfig {
-                path: self.path,
-                kms_key_arn: self.kms_key_arn,
-            }
-        }
-    }
-}
-impl S3DataConfig {
-    /// Creates a new builder-style object to manufacture [`S3DataConfig`](crate::model::S3DataConfig).
-    pub fn builder() -> crate::model::s3_data_config::Builder {
-        crate::model::s3_data_config::Builder::default()
     }
 }
 

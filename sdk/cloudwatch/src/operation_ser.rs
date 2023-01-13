@@ -813,6 +813,16 @@ pub fn serialize_operation_crate_operation_list_metrics(
     if let Some(var_226) = &input.recently_active {
         scope_225.string(var_226.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_227 = writer.prefix("IncludeLinkedAccounts");
+    if input.include_linked_accounts {
+        scope_227.boolean(input.include_linked_accounts);
+    }
+    #[allow(unused_mut)]
+    let mut scope_228 = writer.prefix("OwningAccount");
+    if let Some(var_229) = &input.owning_account {
+        scope_228.string(var_229);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -825,16 +835,16 @@ pub fn serialize_operation_crate_operation_list_metric_streams(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ListMetricStreams", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_227 = writer.prefix("NextToken");
-    if let Some(var_228) = &input.next_token {
-        scope_227.string(var_228);
+    let mut scope_230 = writer.prefix("NextToken");
+    if let Some(var_231) = &input.next_token {
+        scope_230.string(var_231);
     }
     #[allow(unused_mut)]
-    let mut scope_229 = writer.prefix("MaxResults");
-    if let Some(var_230) = &input.max_results {
-        scope_229.number(
+    let mut scope_232 = writer.prefix("MaxResults");
+    if let Some(var_233) = &input.max_results {
+        scope_232.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_230).into()),
+            aws_smithy_types::Number::NegInt((*var_233).into()),
         );
     }
     writer.finish();
@@ -849,9 +859,9 @@ pub fn serialize_operation_crate_operation_list_tags_for_resource(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ListTagsForResource", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_231 = writer.prefix("ResourceARN");
-    if let Some(var_232) = &input.resource_arn {
-        scope_231.string(var_232);
+    let mut scope_234 = writer.prefix("ResourceARN");
+    if let Some(var_235) = &input.resource_arn {
+        scope_234.string(var_235);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -865,50 +875,50 @@ pub fn serialize_operation_crate_operation_put_anomaly_detector(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PutAnomalyDetector", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_233 = writer.prefix("Namespace");
-    if let Some(var_234) = &input.namespace {
-        scope_233.string(var_234);
+    let mut scope_236 = writer.prefix("Namespace");
+    if let Some(var_237) = &input.namespace {
+        scope_236.string(var_237);
     }
     #[allow(unused_mut)]
-    let mut scope_235 = writer.prefix("MetricName");
-    if let Some(var_236) = &input.metric_name {
-        scope_235.string(var_236);
+    let mut scope_238 = writer.prefix("MetricName");
+    if let Some(var_239) = &input.metric_name {
+        scope_238.string(var_239);
     }
     #[allow(unused_mut)]
-    let mut scope_237 = writer.prefix("Dimensions");
-    if let Some(var_238) = &input.dimensions {
-        let mut list_240 = scope_237.start_list(false, None);
-        for item_239 in var_238 {
+    let mut scope_240 = writer.prefix("Dimensions");
+    if let Some(var_241) = &input.dimensions {
+        let mut list_243 = scope_240.start_list(false, None);
+        for item_242 in var_241 {
             #[allow(unused_mut)]
-            let mut entry_241 = list_240.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_241, item_239)?;
+            let mut entry_244 = list_243.entry();
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_244, item_242)?;
         }
-        list_240.finish();
+        list_243.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_242 = writer.prefix("Stat");
-    if let Some(var_243) = &input.stat {
-        scope_242.string(var_243);
+    let mut scope_245 = writer.prefix("Stat");
+    if let Some(var_246) = &input.stat {
+        scope_245.string(var_246);
     }
     #[allow(unused_mut)]
-    let mut scope_244 = writer.prefix("Configuration");
-    if let Some(var_245) = &input.configuration {
+    let mut scope_247 = writer.prefix("Configuration");
+    if let Some(var_248) = &input.configuration {
         crate::query_ser::serialize_structure_crate_model_anomaly_detector_configuration(
-            scope_244, var_245,
+            scope_247, var_248,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_246 = writer.prefix("SingleMetricAnomalyDetector");
-    if let Some(var_247) = &input.single_metric_anomaly_detector {
+    let mut scope_249 = writer.prefix("SingleMetricAnomalyDetector");
+    if let Some(var_250) = &input.single_metric_anomaly_detector {
         crate::query_ser::serialize_structure_crate_model_single_metric_anomaly_detector(
-            scope_246, var_247,
+            scope_249, var_250,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_248 = writer.prefix("MetricMathAnomalyDetector");
-    if let Some(var_249) = &input.metric_math_anomaly_detector {
+    let mut scope_251 = writer.prefix("MetricMathAnomalyDetector");
+    if let Some(var_252) = &input.metric_math_anomaly_detector {
         crate::query_ser::serialize_structure_crate_model_metric_math_anomaly_detector(
-            scope_248, var_249,
+            scope_251, var_252,
         )?;
     }
     writer.finish();
@@ -923,88 +933,88 @@ pub fn serialize_operation_crate_operation_put_composite_alarm(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PutCompositeAlarm", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_250 = writer.prefix("ActionsEnabled");
-    if let Some(var_251) = &input.actions_enabled {
-        scope_250.boolean(*var_251);
+    let mut scope_253 = writer.prefix("ActionsEnabled");
+    if let Some(var_254) = &input.actions_enabled {
+        scope_253.boolean(*var_254);
     }
     #[allow(unused_mut)]
-    let mut scope_252 = writer.prefix("AlarmActions");
-    if let Some(var_253) = &input.alarm_actions {
-        let mut list_255 = scope_252.start_list(false, None);
-        for item_254 in var_253 {
+    let mut scope_255 = writer.prefix("AlarmActions");
+    if let Some(var_256) = &input.alarm_actions {
+        let mut list_258 = scope_255.start_list(false, None);
+        for item_257 in var_256 {
             #[allow(unused_mut)]
-            let mut entry_256 = list_255.entry();
-            entry_256.string(item_254);
+            let mut entry_259 = list_258.entry();
+            entry_259.string(item_257);
         }
-        list_255.finish();
+        list_258.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_257 = writer.prefix("AlarmDescription");
-    if let Some(var_258) = &input.alarm_description {
-        scope_257.string(var_258);
+    let mut scope_260 = writer.prefix("AlarmDescription");
+    if let Some(var_261) = &input.alarm_description {
+        scope_260.string(var_261);
     }
     #[allow(unused_mut)]
-    let mut scope_259 = writer.prefix("AlarmName");
-    if let Some(var_260) = &input.alarm_name {
-        scope_259.string(var_260);
+    let mut scope_262 = writer.prefix("AlarmName");
+    if let Some(var_263) = &input.alarm_name {
+        scope_262.string(var_263);
     }
     #[allow(unused_mut)]
-    let mut scope_261 = writer.prefix("AlarmRule");
-    if let Some(var_262) = &input.alarm_rule {
-        scope_261.string(var_262);
+    let mut scope_264 = writer.prefix("AlarmRule");
+    if let Some(var_265) = &input.alarm_rule {
+        scope_264.string(var_265);
     }
     #[allow(unused_mut)]
-    let mut scope_263 = writer.prefix("InsufficientDataActions");
-    if let Some(var_264) = &input.insufficient_data_actions {
-        let mut list_266 = scope_263.start_list(false, None);
-        for item_265 in var_264 {
+    let mut scope_266 = writer.prefix("InsufficientDataActions");
+    if let Some(var_267) = &input.insufficient_data_actions {
+        let mut list_269 = scope_266.start_list(false, None);
+        for item_268 in var_267 {
             #[allow(unused_mut)]
-            let mut entry_267 = list_266.entry();
-            entry_267.string(item_265);
+            let mut entry_270 = list_269.entry();
+            entry_270.string(item_268);
         }
-        list_266.finish();
+        list_269.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_268 = writer.prefix("OKActions");
-    if let Some(var_269) = &input.ok_actions {
-        let mut list_271 = scope_268.start_list(false, None);
-        for item_270 in var_269 {
+    let mut scope_271 = writer.prefix("OKActions");
+    if let Some(var_272) = &input.ok_actions {
+        let mut list_274 = scope_271.start_list(false, None);
+        for item_273 in var_272 {
             #[allow(unused_mut)]
-            let mut entry_272 = list_271.entry();
-            entry_272.string(item_270);
+            let mut entry_275 = list_274.entry();
+            entry_275.string(item_273);
         }
-        list_271.finish();
+        list_274.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_273 = writer.prefix("Tags");
-    if let Some(var_274) = &input.tags {
-        let mut list_276 = scope_273.start_list(false, None);
-        for item_275 in var_274 {
+    let mut scope_276 = writer.prefix("Tags");
+    if let Some(var_277) = &input.tags {
+        let mut list_279 = scope_276.start_list(false, None);
+        for item_278 in var_277 {
             #[allow(unused_mut)]
-            let mut entry_277 = list_276.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_277, item_275)?;
+            let mut entry_280 = list_279.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_280, item_278)?;
         }
-        list_276.finish();
+        list_279.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_278 = writer.prefix("ActionsSuppressor");
-    if let Some(var_279) = &input.actions_suppressor {
-        scope_278.string(var_279);
+    let mut scope_281 = writer.prefix("ActionsSuppressor");
+    if let Some(var_282) = &input.actions_suppressor {
+        scope_281.string(var_282);
     }
     #[allow(unused_mut)]
-    let mut scope_280 = writer.prefix("ActionsSuppressorWaitPeriod");
-    if let Some(var_281) = &input.actions_suppressor_wait_period {
-        scope_280.number(
+    let mut scope_283 = writer.prefix("ActionsSuppressorWaitPeriod");
+    if let Some(var_284) = &input.actions_suppressor_wait_period {
+        scope_283.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_281).into()),
+            aws_smithy_types::Number::NegInt((*var_284).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_282 = writer.prefix("ActionsSuppressorExtensionPeriod");
-    if let Some(var_283) = &input.actions_suppressor_extension_period {
-        scope_282.number(
+    let mut scope_285 = writer.prefix("ActionsSuppressorExtensionPeriod");
+    if let Some(var_286) = &input.actions_suppressor_extension_period {
+        scope_285.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_283).into()),
+            aws_smithy_types::Number::NegInt((*var_286).into()),
         );
     }
     writer.finish();
@@ -1018,14 +1028,14 @@ pub fn serialize_operation_crate_operation_put_dashboard(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "PutDashboard", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_284 = writer.prefix("DashboardName");
-    if let Some(var_285) = &input.dashboard_name {
-        scope_284.string(var_285);
+    let mut scope_287 = writer.prefix("DashboardName");
+    if let Some(var_288) = &input.dashboard_name {
+        scope_287.string(var_288);
     }
     #[allow(unused_mut)]
-    let mut scope_286 = writer.prefix("DashboardBody");
-    if let Some(var_287) = &input.dashboard_body {
-        scope_286.string(var_287);
+    let mut scope_289 = writer.prefix("DashboardBody");
+    if let Some(var_290) = &input.dashboard_body {
+        scope_289.string(var_290);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1038,30 +1048,30 @@ pub fn serialize_operation_crate_operation_put_insight_rule(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "PutInsightRule", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_288 = writer.prefix("RuleName");
-    if let Some(var_289) = &input.rule_name {
-        scope_288.string(var_289);
+    let mut scope_291 = writer.prefix("RuleName");
+    if let Some(var_292) = &input.rule_name {
+        scope_291.string(var_292);
     }
     #[allow(unused_mut)]
-    let mut scope_290 = writer.prefix("RuleState");
-    if let Some(var_291) = &input.rule_state {
-        scope_290.string(var_291);
+    let mut scope_293 = writer.prefix("RuleState");
+    if let Some(var_294) = &input.rule_state {
+        scope_293.string(var_294);
     }
     #[allow(unused_mut)]
-    let mut scope_292 = writer.prefix("RuleDefinition");
-    if let Some(var_293) = &input.rule_definition {
-        scope_292.string(var_293);
+    let mut scope_295 = writer.prefix("RuleDefinition");
+    if let Some(var_296) = &input.rule_definition {
+        scope_295.string(var_296);
     }
     #[allow(unused_mut)]
-    let mut scope_294 = writer.prefix("Tags");
-    if let Some(var_295) = &input.tags {
-        let mut list_297 = scope_294.start_list(false, None);
-        for item_296 in var_295 {
+    let mut scope_297 = writer.prefix("Tags");
+    if let Some(var_298) = &input.tags {
+        let mut list_300 = scope_297.start_list(false, None);
+        for item_299 in var_298 {
             #[allow(unused_mut)]
-            let mut entry_298 = list_297.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_298, item_296)?;
+            let mut entry_301 = list_300.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_301, item_299)?;
         }
-        list_297.finish();
+        list_300.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1075,15 +1085,15 @@ pub fn serialize_operation_crate_operation_put_managed_insight_rules(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PutManagedInsightRules", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_299 = writer.prefix("ManagedRules");
-    if let Some(var_300) = &input.managed_rules {
-        let mut list_302 = scope_299.start_list(false, None);
-        for item_301 in var_300 {
+    let mut scope_302 = writer.prefix("ManagedRules");
+    if let Some(var_303) = &input.managed_rules {
+        let mut list_305 = scope_302.start_list(false, None);
+        for item_304 in var_303 {
             #[allow(unused_mut)]
-            let mut entry_303 = list_302.entry();
-            crate::query_ser::serialize_structure_crate_model_managed_rule(entry_303, item_301)?;
+            let mut entry_306 = list_305.entry();
+            crate::query_ser::serialize_structure_crate_model_managed_rule(entry_306, item_304)?;
         }
-        list_302.finish();
+        list_305.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1096,164 +1106,164 @@ pub fn serialize_operation_crate_operation_put_metric_alarm(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "PutMetricAlarm", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_304 = writer.prefix("AlarmName");
-    if let Some(var_305) = &input.alarm_name {
-        scope_304.string(var_305);
+    let mut scope_307 = writer.prefix("AlarmName");
+    if let Some(var_308) = &input.alarm_name {
+        scope_307.string(var_308);
     }
     #[allow(unused_mut)]
-    let mut scope_306 = writer.prefix("AlarmDescription");
-    if let Some(var_307) = &input.alarm_description {
-        scope_306.string(var_307);
+    let mut scope_309 = writer.prefix("AlarmDescription");
+    if let Some(var_310) = &input.alarm_description {
+        scope_309.string(var_310);
     }
     #[allow(unused_mut)]
-    let mut scope_308 = writer.prefix("ActionsEnabled");
-    if let Some(var_309) = &input.actions_enabled {
-        scope_308.boolean(*var_309);
+    let mut scope_311 = writer.prefix("ActionsEnabled");
+    if let Some(var_312) = &input.actions_enabled {
+        scope_311.boolean(*var_312);
     }
     #[allow(unused_mut)]
-    let mut scope_310 = writer.prefix("OKActions");
-    if let Some(var_311) = &input.ok_actions {
-        let mut list_313 = scope_310.start_list(false, None);
-        for item_312 in var_311 {
+    let mut scope_313 = writer.prefix("OKActions");
+    if let Some(var_314) = &input.ok_actions {
+        let mut list_316 = scope_313.start_list(false, None);
+        for item_315 in var_314 {
             #[allow(unused_mut)]
-            let mut entry_314 = list_313.entry();
-            entry_314.string(item_312);
+            let mut entry_317 = list_316.entry();
+            entry_317.string(item_315);
         }
-        list_313.finish();
+        list_316.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_315 = writer.prefix("AlarmActions");
-    if let Some(var_316) = &input.alarm_actions {
-        let mut list_318 = scope_315.start_list(false, None);
-        for item_317 in var_316 {
+    let mut scope_318 = writer.prefix("AlarmActions");
+    if let Some(var_319) = &input.alarm_actions {
+        let mut list_321 = scope_318.start_list(false, None);
+        for item_320 in var_319 {
             #[allow(unused_mut)]
-            let mut entry_319 = list_318.entry();
-            entry_319.string(item_317);
+            let mut entry_322 = list_321.entry();
+            entry_322.string(item_320);
         }
-        list_318.finish();
+        list_321.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_320 = writer.prefix("InsufficientDataActions");
-    if let Some(var_321) = &input.insufficient_data_actions {
-        let mut list_323 = scope_320.start_list(false, None);
-        for item_322 in var_321 {
+    let mut scope_323 = writer.prefix("InsufficientDataActions");
+    if let Some(var_324) = &input.insufficient_data_actions {
+        let mut list_326 = scope_323.start_list(false, None);
+        for item_325 in var_324 {
             #[allow(unused_mut)]
-            let mut entry_324 = list_323.entry();
-            entry_324.string(item_322);
+            let mut entry_327 = list_326.entry();
+            entry_327.string(item_325);
         }
-        list_323.finish();
+        list_326.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_325 = writer.prefix("MetricName");
-    if let Some(var_326) = &input.metric_name {
-        scope_325.string(var_326);
+    let mut scope_328 = writer.prefix("MetricName");
+    if let Some(var_329) = &input.metric_name {
+        scope_328.string(var_329);
     }
     #[allow(unused_mut)]
-    let mut scope_327 = writer.prefix("Namespace");
-    if let Some(var_328) = &input.namespace {
-        scope_327.string(var_328);
+    let mut scope_330 = writer.prefix("Namespace");
+    if let Some(var_331) = &input.namespace {
+        scope_330.string(var_331);
     }
     #[allow(unused_mut)]
-    let mut scope_329 = writer.prefix("Statistic");
-    if let Some(var_330) = &input.statistic {
-        scope_329.string(var_330.as_str());
+    let mut scope_332 = writer.prefix("Statistic");
+    if let Some(var_333) = &input.statistic {
+        scope_332.string(var_333.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_331 = writer.prefix("ExtendedStatistic");
-    if let Some(var_332) = &input.extended_statistic {
-        scope_331.string(var_332);
+    let mut scope_334 = writer.prefix("ExtendedStatistic");
+    if let Some(var_335) = &input.extended_statistic {
+        scope_334.string(var_335);
     }
     #[allow(unused_mut)]
-    let mut scope_333 = writer.prefix("Dimensions");
-    if let Some(var_334) = &input.dimensions {
-        let mut list_336 = scope_333.start_list(false, None);
-        for item_335 in var_334 {
+    let mut scope_336 = writer.prefix("Dimensions");
+    if let Some(var_337) = &input.dimensions {
+        let mut list_339 = scope_336.start_list(false, None);
+        for item_338 in var_337 {
             #[allow(unused_mut)]
-            let mut entry_337 = list_336.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_337, item_335)?;
+            let mut entry_340 = list_339.entry();
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_340, item_338)?;
         }
-        list_336.finish();
+        list_339.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_338 = writer.prefix("Period");
-    if let Some(var_339) = &input.period {
-        scope_338.number(
+    let mut scope_341 = writer.prefix("Period");
+    if let Some(var_342) = &input.period {
+        scope_341.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_339).into()),
+            aws_smithy_types::Number::NegInt((*var_342).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_340 = writer.prefix("Unit");
-    if let Some(var_341) = &input.unit {
-        scope_340.string(var_341.as_str());
+    let mut scope_343 = writer.prefix("Unit");
+    if let Some(var_344) = &input.unit {
+        scope_343.string(var_344.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_342 = writer.prefix("EvaluationPeriods");
-    if let Some(var_343) = &input.evaluation_periods {
-        scope_342.number(
+    let mut scope_345 = writer.prefix("EvaluationPeriods");
+    if let Some(var_346) = &input.evaluation_periods {
+        scope_345.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_343).into()),
+            aws_smithy_types::Number::NegInt((*var_346).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_344 = writer.prefix("DatapointsToAlarm");
-    if let Some(var_345) = &input.datapoints_to_alarm {
-        scope_344.number(
+    let mut scope_347 = writer.prefix("DatapointsToAlarm");
+    if let Some(var_348) = &input.datapoints_to_alarm {
+        scope_347.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_345).into()),
+            aws_smithy_types::Number::NegInt((*var_348).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_346 = writer.prefix("Threshold");
-    if let Some(var_347) = &input.threshold {
-        scope_346.number(
+    let mut scope_349 = writer.prefix("Threshold");
+    if let Some(var_350) = &input.threshold {
+        scope_349.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_347).into()),
+            aws_smithy_types::Number::Float((*var_350).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_348 = writer.prefix("ComparisonOperator");
-    if let Some(var_349) = &input.comparison_operator {
-        scope_348.string(var_349.as_str());
+    let mut scope_351 = writer.prefix("ComparisonOperator");
+    if let Some(var_352) = &input.comparison_operator {
+        scope_351.string(var_352.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_350 = writer.prefix("TreatMissingData");
-    if let Some(var_351) = &input.treat_missing_data {
-        scope_350.string(var_351);
+    let mut scope_353 = writer.prefix("TreatMissingData");
+    if let Some(var_354) = &input.treat_missing_data {
+        scope_353.string(var_354);
     }
     #[allow(unused_mut)]
-    let mut scope_352 = writer.prefix("EvaluateLowSampleCountPercentile");
-    if let Some(var_353) = &input.evaluate_low_sample_count_percentile {
-        scope_352.string(var_353);
+    let mut scope_355 = writer.prefix("EvaluateLowSampleCountPercentile");
+    if let Some(var_356) = &input.evaluate_low_sample_count_percentile {
+        scope_355.string(var_356);
     }
     #[allow(unused_mut)]
-    let mut scope_354 = writer.prefix("Metrics");
-    if let Some(var_355) = &input.metrics {
-        let mut list_357 = scope_354.start_list(false, None);
-        for item_356 in var_355 {
+    let mut scope_357 = writer.prefix("Metrics");
+    if let Some(var_358) = &input.metrics {
+        let mut list_360 = scope_357.start_list(false, None);
+        for item_359 in var_358 {
             #[allow(unused_mut)]
-            let mut entry_358 = list_357.entry();
+            let mut entry_361 = list_360.entry();
             crate::query_ser::serialize_structure_crate_model_metric_data_query(
-                entry_358, item_356,
+                entry_361, item_359,
             )?;
         }
-        list_357.finish();
+        list_360.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_359 = writer.prefix("Tags");
-    if let Some(var_360) = &input.tags {
-        let mut list_362 = scope_359.start_list(false, None);
-        for item_361 in var_360 {
+    let mut scope_362 = writer.prefix("Tags");
+    if let Some(var_363) = &input.tags {
+        let mut list_365 = scope_362.start_list(false, None);
+        for item_364 in var_363 {
             #[allow(unused_mut)]
-            let mut entry_363 = list_362.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_363, item_361)?;
+            let mut entry_366 = list_365.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_366, item_364)?;
         }
-        list_362.finish();
+        list_365.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_364 = writer.prefix("ThresholdMetricId");
-    if let Some(var_365) = &input.threshold_metric_id {
-        scope_364.string(var_365);
+    let mut scope_367 = writer.prefix("ThresholdMetricId");
+    if let Some(var_368) = &input.threshold_metric_id {
+        scope_367.string(var_368);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1266,20 +1276,20 @@ pub fn serialize_operation_crate_operation_put_metric_data(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "PutMetricData", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_366 = writer.prefix("Namespace");
-    if let Some(var_367) = &input.namespace {
-        scope_366.string(var_367);
+    let mut scope_369 = writer.prefix("Namespace");
+    if let Some(var_370) = &input.namespace {
+        scope_369.string(var_370);
     }
     #[allow(unused_mut)]
-    let mut scope_368 = writer.prefix("MetricData");
-    if let Some(var_369) = &input.metric_data {
-        let mut list_371 = scope_368.start_list(false, None);
-        for item_370 in var_369 {
+    let mut scope_371 = writer.prefix("MetricData");
+    if let Some(var_372) = &input.metric_data {
+        let mut list_374 = scope_371.start_list(false, None);
+        for item_373 in var_372 {
             #[allow(unused_mut)]
-            let mut entry_372 = list_371.entry();
-            crate::query_ser::serialize_structure_crate_model_metric_datum(entry_372, item_370)?;
+            let mut entry_375 = list_374.entry();
+            crate::query_ser::serialize_structure_crate_model_metric_datum(entry_375, item_373)?;
         }
-        list_371.finish();
+        list_374.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1292,72 +1302,72 @@ pub fn serialize_operation_crate_operation_put_metric_stream(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "PutMetricStream", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_373 = writer.prefix("Name");
-    if let Some(var_374) = &input.name {
-        scope_373.string(var_374);
+    let mut scope_376 = writer.prefix("Name");
+    if let Some(var_377) = &input.name {
+        scope_376.string(var_377);
     }
     #[allow(unused_mut)]
-    let mut scope_375 = writer.prefix("IncludeFilters");
-    if let Some(var_376) = &input.include_filters {
-        let mut list_378 = scope_375.start_list(false, None);
-        for item_377 in var_376 {
+    let mut scope_378 = writer.prefix("IncludeFilters");
+    if let Some(var_379) = &input.include_filters {
+        let mut list_381 = scope_378.start_list(false, None);
+        for item_380 in var_379 {
             #[allow(unused_mut)]
-            let mut entry_379 = list_378.entry();
+            let mut entry_382 = list_381.entry();
             crate::query_ser::serialize_structure_crate_model_metric_stream_filter(
-                entry_379, item_377,
+                entry_382, item_380,
             )?;
         }
-        list_378.finish();
+        list_381.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_380 = writer.prefix("ExcludeFilters");
-    if let Some(var_381) = &input.exclude_filters {
-        let mut list_383 = scope_380.start_list(false, None);
-        for item_382 in var_381 {
+    let mut scope_383 = writer.prefix("ExcludeFilters");
+    if let Some(var_384) = &input.exclude_filters {
+        let mut list_386 = scope_383.start_list(false, None);
+        for item_385 in var_384 {
             #[allow(unused_mut)]
-            let mut entry_384 = list_383.entry();
+            let mut entry_387 = list_386.entry();
             crate::query_ser::serialize_structure_crate_model_metric_stream_filter(
-                entry_384, item_382,
+                entry_387, item_385,
             )?;
         }
-        list_383.finish();
+        list_386.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_385 = writer.prefix("FirehoseArn");
-    if let Some(var_386) = &input.firehose_arn {
-        scope_385.string(var_386);
+    let mut scope_388 = writer.prefix("FirehoseArn");
+    if let Some(var_389) = &input.firehose_arn {
+        scope_388.string(var_389);
     }
     #[allow(unused_mut)]
-    let mut scope_387 = writer.prefix("RoleArn");
-    if let Some(var_388) = &input.role_arn {
-        scope_387.string(var_388);
+    let mut scope_390 = writer.prefix("RoleArn");
+    if let Some(var_391) = &input.role_arn {
+        scope_390.string(var_391);
     }
     #[allow(unused_mut)]
-    let mut scope_389 = writer.prefix("OutputFormat");
-    if let Some(var_390) = &input.output_format {
-        scope_389.string(var_390.as_str());
+    let mut scope_392 = writer.prefix("OutputFormat");
+    if let Some(var_393) = &input.output_format {
+        scope_392.string(var_393.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_391 = writer.prefix("Tags");
-    if let Some(var_392) = &input.tags {
-        let mut list_394 = scope_391.start_list(false, None);
-        for item_393 in var_392 {
+    let mut scope_394 = writer.prefix("Tags");
+    if let Some(var_395) = &input.tags {
+        let mut list_397 = scope_394.start_list(false, None);
+        for item_396 in var_395 {
             #[allow(unused_mut)]
-            let mut entry_395 = list_394.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_395, item_393)?;
+            let mut entry_398 = list_397.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_398, item_396)?;
         }
-        list_394.finish();
+        list_397.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_396 = writer.prefix("StatisticsConfigurations");
-    if let Some(var_397) = &input.statistics_configurations {
-        let mut list_399 = scope_396.start_list(false, None);
-        for item_398 in var_397 {
+    let mut scope_399 = writer.prefix("StatisticsConfigurations");
+    if let Some(var_400) = &input.statistics_configurations {
+        let mut list_402 = scope_399.start_list(false, None);
+        for item_401 in var_400 {
             #[allow(unused_mut)]
-            let mut entry_400 = list_399.entry();
-            crate::query_ser::serialize_structure_crate_model_metric_stream_statistics_configuration(entry_400, item_398)?;
+            let mut entry_403 = list_402.entry();
+            crate::query_ser::serialize_structure_crate_model_metric_stream_statistics_configuration(entry_403, item_401)?;
         }
-        list_399.finish();
+        list_402.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1370,24 +1380,24 @@ pub fn serialize_operation_crate_operation_set_alarm_state(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "SetAlarmState", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_401 = writer.prefix("AlarmName");
-    if let Some(var_402) = &input.alarm_name {
-        scope_401.string(var_402);
+    let mut scope_404 = writer.prefix("AlarmName");
+    if let Some(var_405) = &input.alarm_name {
+        scope_404.string(var_405);
     }
     #[allow(unused_mut)]
-    let mut scope_403 = writer.prefix("StateValue");
-    if let Some(var_404) = &input.state_value {
-        scope_403.string(var_404.as_str());
+    let mut scope_406 = writer.prefix("StateValue");
+    if let Some(var_407) = &input.state_value {
+        scope_406.string(var_407.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_405 = writer.prefix("StateReason");
-    if let Some(var_406) = &input.state_reason {
-        scope_405.string(var_406);
+    let mut scope_408 = writer.prefix("StateReason");
+    if let Some(var_409) = &input.state_reason {
+        scope_408.string(var_409);
     }
     #[allow(unused_mut)]
-    let mut scope_407 = writer.prefix("StateReasonData");
-    if let Some(var_408) = &input.state_reason_data {
-        scope_407.string(var_408);
+    let mut scope_410 = writer.prefix("StateReasonData");
+    if let Some(var_411) = &input.state_reason_data {
+        scope_410.string(var_411);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1401,15 +1411,15 @@ pub fn serialize_operation_crate_operation_start_metric_streams(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "StartMetricStreams", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_409 = writer.prefix("Names");
-    if let Some(var_410) = &input.names {
-        let mut list_412 = scope_409.start_list(false, None);
-        for item_411 in var_410 {
+    let mut scope_412 = writer.prefix("Names");
+    if let Some(var_413) = &input.names {
+        let mut list_415 = scope_412.start_list(false, None);
+        for item_414 in var_413 {
             #[allow(unused_mut)]
-            let mut entry_413 = list_412.entry();
-            entry_413.string(item_411);
+            let mut entry_416 = list_415.entry();
+            entry_416.string(item_414);
         }
-        list_412.finish();
+        list_415.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1423,15 +1433,15 @@ pub fn serialize_operation_crate_operation_stop_metric_streams(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "StopMetricStreams", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_414 = writer.prefix("Names");
-    if let Some(var_415) = &input.names {
-        let mut list_417 = scope_414.start_list(false, None);
-        for item_416 in var_415 {
+    let mut scope_417 = writer.prefix("Names");
+    if let Some(var_418) = &input.names {
+        let mut list_420 = scope_417.start_list(false, None);
+        for item_419 in var_418 {
             #[allow(unused_mut)]
-            let mut entry_418 = list_417.entry();
-            entry_418.string(item_416);
+            let mut entry_421 = list_420.entry();
+            entry_421.string(item_419);
         }
-        list_417.finish();
+        list_420.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1444,20 +1454,20 @@ pub fn serialize_operation_crate_operation_tag_resource(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "TagResource", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_419 = writer.prefix("ResourceARN");
-    if let Some(var_420) = &input.resource_arn {
-        scope_419.string(var_420);
+    let mut scope_422 = writer.prefix("ResourceARN");
+    if let Some(var_423) = &input.resource_arn {
+        scope_422.string(var_423);
     }
     #[allow(unused_mut)]
-    let mut scope_421 = writer.prefix("Tags");
-    if let Some(var_422) = &input.tags {
-        let mut list_424 = scope_421.start_list(false, None);
-        for item_423 in var_422 {
+    let mut scope_424 = writer.prefix("Tags");
+    if let Some(var_425) = &input.tags {
+        let mut list_427 = scope_424.start_list(false, None);
+        for item_426 in var_425 {
             #[allow(unused_mut)]
-            let mut entry_425 = list_424.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_425, item_423)?;
+            let mut entry_428 = list_427.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_428, item_426)?;
         }
-        list_424.finish();
+        list_427.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1470,20 +1480,20 @@ pub fn serialize_operation_crate_operation_untag_resource(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "UntagResource", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_426 = writer.prefix("ResourceARN");
-    if let Some(var_427) = &input.resource_arn {
-        scope_426.string(var_427);
+    let mut scope_429 = writer.prefix("ResourceARN");
+    if let Some(var_430) = &input.resource_arn {
+        scope_429.string(var_430);
     }
     #[allow(unused_mut)]
-    let mut scope_428 = writer.prefix("TagKeys");
-    if let Some(var_429) = &input.tag_keys {
-        let mut list_431 = scope_428.start_list(false, None);
-        for item_430 in var_429 {
+    let mut scope_431 = writer.prefix("TagKeys");
+    if let Some(var_432) = &input.tag_keys {
+        let mut list_434 = scope_431.start_list(false, None);
+        for item_433 in var_432 {
             #[allow(unused_mut)]
-            let mut entry_432 = list_431.entry();
-            entry_432.string(item_430);
+            let mut entry_435 = list_434.entry();
+            entry_435.string(item_433);
         }
-        list_431.finish();
+        list_434.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

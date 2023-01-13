@@ -1051,6 +1051,7 @@ pub mod create_environment_input {
         pub(crate) provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -1211,6 +1212,21 @@ pub mod create_environment_input {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
         pub fn build(
             self,
@@ -1230,6 +1246,7 @@ pub mod create_environment_input {
                 tags: self.tags,
                 provisioning_repository: self.provisioning_repository,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             })
         }
     }
@@ -1250,6 +1267,7 @@ pub mod create_environment_input {
             formatter.field("tags", &self.tags);
             formatter.field("provisioning_repository", &self.provisioning_repository);
             formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
             formatter.finish()
         }
     }
@@ -1381,6 +1399,7 @@ pub mod create_environment_account_connection_input {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
@@ -1467,6 +1486,19 @@ pub mod create_environment_account_connection_input {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentAccountConnectionInput`](crate::input::CreateEnvironmentAccountConnectionInput).
         pub fn build(
             self,
@@ -1481,6 +1513,7 @@ pub mod create_environment_account_connection_input {
                 environment_name: self.environment_name,
                 tags: self.tags,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             })
         }
     }
@@ -9431,6 +9464,10 @@ pub mod list_service_instances_input {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters:
+            std::option::Option<std::vec::Vec<crate::model::ListServiceInstancesFilter>>,
+        pub(crate) sort_by: std::option::Option<crate::model::ListServiceInstancesSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
     }
     impl Builder {
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -9463,6 +9500,57 @@ pub mod list_service_instances_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+        pub fn filters(mut self, input: crate::model::ListServiceInstancesFilter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListServiceInstancesFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The field that the result list is sorted by.</p>
+        /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+        /// <p>Default: <code>serviceName</code> </p>
+        pub fn sort_by(mut self, input: crate::model::ListServiceInstancesSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The field that the result list is sorted by.</p>
+        /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+        /// <p>Default: <code>serviceName</code> </p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListServiceInstancesSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>Result list sort order.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Result list sort order.</p>
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListServiceInstancesInput`](crate::input::ListServiceInstancesInput).
         pub fn build(
             self,
@@ -9474,6 +9562,9 @@ pub mod list_service_instances_input {
                 service_name: self.service_name,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                filters: self.filters,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
             })
         }
     }
@@ -11301,6 +11392,7 @@ pub mod update_account_settings_input {
         pub(crate) pipeline_provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
         pub(crate) delete_pipeline_provisioning_repository: std::option::Option<bool>,
+        pub(crate) pipeline_codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
@@ -11349,6 +11441,22 @@ pub mod update_account_settings_input {
             self.delete_pipeline_provisioning_repository = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn pipeline_codebuild_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pipeline_codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn set_pipeline_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pipeline_codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
         pub fn build(
             self,
@@ -11361,6 +11469,7 @@ pub mod update_account_settings_input {
                 pipeline_provisioning_repository: self.pipeline_provisioning_repository,
                 delete_pipeline_provisioning_repository: self
                     .delete_pipeline_provisioning_repository,
+                pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn,
             })
         }
     }
@@ -11770,6 +11879,7 @@ pub mod update_environment_input {
         pub(crate) provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment to update.</p>
@@ -11949,6 +12059,19 @@ pub mod update_environment_input {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
         pub fn build(
             self,
@@ -11967,6 +12090,7 @@ pub mod update_environment_input {
                 environment_account_connection_id: self.environment_account_connection_id,
                 provisioning_repository: self.provisioning_repository,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             })
         }
     }
@@ -11986,6 +12110,7 @@ pub mod update_environment_input {
             );
             formatter.field("provisioning_repository", &self.provisioning_repository);
             formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
             formatter.finish()
         }
     }
@@ -12114,6 +12239,7 @@ pub mod update_environment_account_connection_input {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the environment account connection to update.</p>
@@ -12153,6 +12279,19 @@ pub mod update_environment_account_connection_input {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEnvironmentAccountConnectionInput`](crate::input::UpdateEnvironmentAccountConnectionInput).
         pub fn build(
             self,
@@ -12164,6 +12303,7 @@ pub mod update_environment_account_connection_input {
                 id: self.id,
                 role_arn: self.role_arn,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             })
         }
     }
@@ -15008,6 +15148,18 @@ pub struct ListServiceInstancesInput {
     /// <p>The maximum number of service instances to list.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
+    /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::ListServiceInstancesFilter>>,
+    /// <p>The field that the result list is sorted by.</p>
+    /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+    /// <p>Default: <code>serviceName</code> </p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ListServiceInstancesSortBy>,
+    /// <p>Result list sort order.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
@@ -15021,6 +15173,21 @@ impl ListServiceInstancesInput {
     /// <p>The maximum number of service instances to list.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ListServiceInstancesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The field that the result list is sorted by.</p>
+    /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+    /// <p>Default: <code>serviceName</code> </p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListServiceInstancesSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Result list sort order.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
     }
 }
 
@@ -15766,6 +15933,10 @@ pub struct CreateEnvironmentInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
@@ -15820,6 +15991,11 @@ impl CreateEnvironmentInput {
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15838,6 +16014,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
         formatter.field("tags", &self.tags);
         formatter.field("provisioning_repository", &self.provisioning_repository);
         formatter.field("component_role_arn", &self.component_role_arn);
+        formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
         formatter.finish()
     }
 }
@@ -15916,6 +16093,9 @@ pub struct UpdateEnvironmentInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
@@ -15985,6 +16165,10 @@ impl UpdateEnvironmentInput {
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16002,6 +16186,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
         );
         formatter.field("provisioning_repository", &self.provisioning_repository);
         formatter.field("component_role_arn", &self.component_role_arn);
+        formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
         formatter.finish()
     }
 }
@@ -16169,6 +16354,9 @@ pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentAccountConnectionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
@@ -16197,6 +16385,10 @@ impl CreateEnvironmentAccountConnectionInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
     }
 }
 
@@ -16230,6 +16422,9 @@ pub struct UpdateEnvironmentAccountConnectionInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
@@ -16245,6 +16440,10 @@ impl UpdateEnvironmentAccountConnectionInput {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
     }
 }
 
@@ -16587,6 +16786,9 @@ pub struct UpdateAccountSettingsInput {
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
     #[doc(hidden)]
     pub delete_pipeline_provisioning_repository: std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    #[doc(hidden)]
+    pub pipeline_codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
@@ -16604,6 +16806,10 @@ impl UpdateAccountSettingsInput {
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
     pub fn delete_pipeline_provisioning_repository(&self) -> std::option::Option<bool> {
         self.delete_pipeline_provisioning_repository
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    pub fn pipeline_codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_codebuild_role_arn.as_deref()
     }
 }
 

@@ -1709,6 +1709,7 @@ pub mod create_assessment_report_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) assessment_id: std::option::Option<std::string::String>,
+        pub(crate) query_statement: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The name of the new assessment report. </p>
@@ -1744,6 +1745,25 @@ pub mod create_assessment_report_input {
             self.assessment_id = input;
             self
         }
+        /// <p>A SQL statement that represents an evidence finder query.</p>
+        /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+        /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+        /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_statement = Some(input.into());
+            self
+        }
+        /// <p>A SQL statement that represents an evidence finder query.</p>
+        /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+        /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+        /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+        pub fn set_query_statement(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_statement = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssessmentReportInput`](crate::input::CreateAssessmentReportInput).
         pub fn build(
             self,
@@ -1755,6 +1775,7 @@ pub mod create_assessment_report_input {
                 name: self.name,
                 description: self.description,
                 assessment_id: self.assessment_id,
+                query_statement: self.query_statement,
             })
         }
     }
@@ -6265,12 +6286,12 @@ pub mod get_settings_input {
         pub(crate) attribute: std::option::Option<crate::model::SettingAttribute>,
     }
     impl Builder {
-        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+        /// <p> The list of setting attribute enum values. </p>
         pub fn attribute(mut self, input: crate::model::SettingAttribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+        /// <p> The list of setting attribute enum values. </p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::SettingAttribute>,
@@ -11087,6 +11108,8 @@ pub mod update_settings_input {
             std::option::Option<crate::model::AssessmentReportsDestination>,
         pub(crate) default_process_owners: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
+        pub(crate) evidence_finder_enabled: std::option::Option<bool>,
+        pub(crate) deregistration_policy: std::option::Option<crate::model::DeregistrationPolicy>,
     }
     impl Builder {
         /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
@@ -11144,6 +11167,33 @@ pub mod update_settings_input {
             self.kms_key = input;
             self
         }
+        /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+        /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+        /// </important>
+        pub fn evidence_finder_enabled(mut self, input: bool) -> Self {
+            self.evidence_finder_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+        /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+        /// </important>
+        pub fn set_evidence_finder_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.evidence_finder_enabled = input;
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn deregistration_policy(mut self, input: crate::model::DeregistrationPolicy) -> Self {
+            self.deregistration_policy = Some(input);
+            self
+        }
+        /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+        pub fn set_deregistration_policy(
+            mut self,
+            input: std::option::Option<crate::model::DeregistrationPolicy>,
+        ) -> Self {
+            self.deregistration_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::input::UpdateSettingsInput).
         pub fn build(
             self,
@@ -11154,6 +11204,8 @@ pub mod update_settings_input {
                 default_assessment_reports_destination: self.default_assessment_reports_destination,
                 default_process_owners: self.default_process_owners,
                 kms_key: self.kms_key,
+                evidence_finder_enabled: self.evidence_finder_enabled,
+                deregistration_policy: self.deregistration_policy,
             })
         }
     }
@@ -11444,6 +11496,14 @@ pub struct UpdateSettingsInput {
     /// <p> The KMS key details. </p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+    /// </important>
+    #[doc(hidden)]
+    pub evidence_finder_enabled: std::option::Option<bool>,
+    /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+    #[doc(hidden)]
+    pub deregistration_policy: std::option::Option<crate::model::DeregistrationPolicy>,
 }
 impl UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
@@ -11463,6 +11523,18 @@ impl UpdateSettingsInput {
     /// <p> The KMS key details. </p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
+    }
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
+    /// </important>
+    pub fn evidence_finder_enabled(&self) -> std::option::Option<bool> {
+        self.evidence_finder_enabled
+    }
+    /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
+    pub fn deregistration_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DeregistrationPolicy> {
+        self.deregistration_policy.as_ref()
     }
 }
 
@@ -12200,12 +12272,12 @@ impl ListAssessmentControlInsightsByControlDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSettingsInput {
-    /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+    /// <p> The list of setting attribute enum values. </p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SettingAttribute>,
 }
 impl GetSettingsInput {
-    /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+    /// <p> The list of setting attribute enum values. </p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::SettingAttribute> {
         self.attribute.as_ref()
     }
@@ -12766,6 +12838,12 @@ pub struct CreateAssessmentReportInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
+    /// <p>A SQL statement that represents an evidence finder query.</p>
+    /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+    /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+    /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+    #[doc(hidden)]
+    pub query_statement: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentReportInput {
     /// <p> The name of the new assessment report. </p>
@@ -12779,6 +12857,13 @@ impl CreateAssessmentReportInput {
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
+    }
+    /// <p>A SQL statement that represents an evidence finder query.</p>
+    /// <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p>
+    /// <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p>
+    /// <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
+    pub fn query_statement(&self) -> std::option::Option<&str> {
+        self.query_statement.as_deref()
     }
 }
 

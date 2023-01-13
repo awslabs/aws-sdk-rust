@@ -124,6 +124,7 @@ impl Client {
     ///   - [`retention_period(i32)`](crate::client::fluent_builders::CreateEventDataStore::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateEventDataStore::set_retention_period): <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     ///   - [`termination_protection_enabled(bool)`](crate::client::fluent_builders::CreateEventDataStore::termination_protection_enabled) / [`set_termination_protection_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventDataStore::set_termination_protection_enabled): <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::CreateEventDataStore::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEventDataStore::set_tags_list): <p>A list of tags.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEventDataStore::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEventDataStore::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>   <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>  </important>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p> <code>alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>  </ul>
     /// - On success, responds with [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput) with field(s):
     ///   - [`event_data_store_arn(Option<String>)`](crate::output::CreateEventDataStoreOutput::event_data_store_arn): <p>The ARN of the event data store.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateEventDataStoreOutput::name): <p>The name of the event data store.</p>
@@ -136,6 +137,7 @@ impl Client {
     ///   - [`tags_list(Option<Vec<Tag>>)`](crate::output::CreateEventDataStoreOutput::tags_list): <p>A list of tags.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::CreateEventDataStoreOutput::created_timestamp): <p>The timestamp that shows when the event data store was created.</p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::CreateEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<CreateEventDataStoreError>`](crate::error::CreateEventDataStoreError)
     pub fn create_event_data_store(&self) -> fluent_builders::CreateEventDataStore {
         fluent_builders::CreateEventDataStore::new(self.handle.clone())
@@ -152,7 +154,7 @@ impl Client {
     ///   - [`enable_log_file_validation(bool)`](crate::client::fluent_builders::CreateTrail::enable_log_file_validation) / [`set_enable_log_file_validation(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_enable_log_file_validation): <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>   <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>  </note>
     ///   - [`cloud_watch_logs_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::cloud_watch_logs_log_group_arn) / [`set_cloud_watch_logs_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_cloud_watch_logs_log_group_arn): <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     ///   - [`cloud_watch_logs_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::cloud_watch_logs_role_arn) / [`set_cloud_watch_logs_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p>alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>   <li> <p>12345678-1234-1234-1234-123456789012</p> </li>  </ul>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p> <code>alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>  </ul>
     ///   - [`is_organization_trail(bool)`](crate::client::fluent_builders::CreateTrail::is_organization_trail) / [`set_is_organization_trail(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_is_organization_trail): <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
     ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::CreateTrail::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrail::set_tags_list): <p>A list of tags.</p>
     /// - On success, responds with [`CreateTrailOutput`](crate::output::CreateTrailOutput) with field(s):
@@ -167,7 +169,7 @@ impl Client {
     ///   - [`log_file_validation_enabled(Option<bool>)`](crate::output::CreateTrailOutput::log_file_validation_enabled): <p>Specifies whether log file integrity validation is enabled.</p>
     ///   - [`cloud_watch_logs_log_group_arn(Option<String>)`](crate::output::CreateTrailOutput::cloud_watch_logs_log_group_arn): <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
     ///   - [`cloud_watch_logs_role_arn(Option<String>)`](crate::output::CreateTrailOutput::cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateTrailOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateTrailOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     ///   - [`is_organization_trail(Option<bool>)`](crate::output::CreateTrailOutput::is_organization_trail): <p>Specifies whether the trail is an organization trail.</p>
     /// - On failure, responds with [`SdkError<CreateTrailError>`](crate::error::CreateTrailError)
     pub fn create_trail(&self) -> fluent_builders::CreateTrail {
@@ -193,6 +195,18 @@ impl Client {
     pub fn delete_trail(&self) -> fluent_builders::DeleteTrail {
         fluent_builders::DeleteTrail::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeregisterOrganizationDelegatedAdmin`](crate::client::fluent_builders::DeregisterOrganizationDelegatedAdmin) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`delegated_admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterOrganizationDelegatedAdmin::delegated_admin_account_id) / [`set_delegated_admin_account_id(Option<String>)`](crate::client::fluent_builders::DeregisterOrganizationDelegatedAdmin::set_delegated_admin_account_id): <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+    /// - On success, responds with [`DeregisterOrganizationDelegatedAdminOutput`](crate::output::DeregisterOrganizationDelegatedAdminOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterOrganizationDelegatedAdminError>`](crate::error::DeregisterOrganizationDelegatedAdminError)
+    pub fn deregister_organization_delegated_admin(
+        &self,
+    ) -> fluent_builders::DeregisterOrganizationDelegatedAdmin {
+        fluent_builders::DeregisterOrganizationDelegatedAdmin::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeQuery`](crate::client::fluent_builders::DescribeQuery) operation.
     ///
     /// - The fluent builder is configurable:
@@ -204,6 +218,8 @@ impl Client {
     ///   - [`query_status(Option<QueryStatus>)`](crate::output::DescribeQueryOutput::query_status): <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     ///   - [`query_statistics(Option<QueryStatisticsForDescribeQuery>)`](crate::output::DescribeQueryOutput::query_statistics): <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeQueryOutput::error_message): <p>The error message returned if a query failed.</p>
+    ///   - [`delivery_s3_uri(Option<String>)`](crate::output::DescribeQueryOutput::delivery_s3_uri): <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
+    ///   - [`delivery_status(Option<DeliveryStatus>)`](crate::output::DescribeQueryOutput::delivery_status): <p>The delivery status.</p>
     /// - On failure, responds with [`SdkError<DescribeQueryError>`](crate::error::DescribeQueryError)
     pub fn describe_query(&self) -> fluent_builders::DescribeQuery {
         fluent_builders::DescribeQuery::new(self.handle.clone())
@@ -222,13 +238,13 @@ impl Client {
     /// Constructs a fluent builder for the [`GetChannel`](crate::client::fluent_builders::GetChannel) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel(impl Into<String>)`](crate::client::fluent_builders::GetChannel::channel) / [`set_channel(Option<String>)`](crate::client::fluent_builders::GetChannel::set_channel): <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+    ///   - [`channel(impl Into<String>)`](crate::client::fluent_builders::GetChannel::channel) / [`set_channel(Option<String>)`](crate::client::fluent_builders::GetChannel::set_channel): <p>The ARN or <code>UUID</code> of a channel.</p>
     /// - On success, responds with [`GetChannelOutput`](crate::output::GetChannelOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::GetChannelOutput::channel_arn): <p> The ARN of the CloudTrail service-linked channel. </p>
-    ///   - [`name(Option<String>)`](crate::output::GetChannelOutput::name): <p> The name of the CloudTrail service-linked channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
-    ///   - [`source(Option<String>)`](crate::output::GetChannelOutput::source): <p> The trail or event data store for the CloudTrail service-linked channel. </p>
-    ///   - [`source_config(Option<SourceConfig>)`](crate::output::GetChannelOutput::source_config): <p> Provides information about the advanced event selectors configured for the service-linked channel, and whether the service-linked channel applies to all regions or one region. </p>
-    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::GetChannelOutput::destinations): <p> The Amazon Web Services service that created the CloudTrail service-linked channel. </p>
+    ///   - [`channel_arn(Option<String>)`](crate::output::GetChannelOutput::channel_arn): <p>The ARN of an channel returned by a <code>GetChannel</code> request.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetChannelOutput::name): <p> The name of the CloudTrail channel. For service-linked channels, the value is <code>aws-service-channel/service-name/custom-suffix</code> where <code>service-name</code> represents the name of the Amazon Web Services service that created the channel and <code>custom-suffix</code> represents the suffix generated by the Amazon Web Services service. </p>
+    ///   - [`source(Option<String>)`](crate::output::GetChannelOutput::source): <p>The event source for the CloudTrail channel.</p>
+    ///   - [`source_config(Option<SourceConfig>)`](crate::output::GetChannelOutput::source_config): <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
+    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::GetChannelOutput::destinations): <p>The Amazon Web Services service that created the service-linked channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelError>`](crate::error::GetChannelError)
     pub fn get_channel(&self) -> fluent_builders::GetChannel {
         fluent_builders::GetChannel::new(self.handle.clone())
@@ -248,6 +264,7 @@ impl Client {
     ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::GetEventDataStoreOutput::termination_protection_enabled): <p>Indicates that termination protection is enabled.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::GetEventDataStoreOutput::created_timestamp): <p>The timestamp of the event data store's creation.</p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::GetEventDataStoreOutput::updated_timestamp): <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::GetEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<GetEventDataStoreError>`](crate::error::GetEventDataStoreError)
     pub fn get_event_data_store(&self) -> fluent_builders::GetEventDataStore {
         fluent_builders::GetEventDataStore::new(self.handle.clone())
@@ -270,14 +287,14 @@ impl Client {
     ///   - [`import_id(impl Into<String>)`](crate::client::fluent_builders::GetImport::import_id) / [`set_import_id(Option<String>)`](crate::client::fluent_builders::GetImport::set_import_id): <p> The ID for the import. </p>
     /// - On success, responds with [`GetImportOutput`](crate::output::GetImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::GetImportOutput::import_id): <p> The ID of the import. </p>
-    ///   - [`destinations(Option<Vec<String>>)`](crate::output::GetImportOutput::destinations): <p> The destination event data store. </p>
+    ///   - [`destinations(Option<Vec<String>>)`](crate::output::GetImportOutput::destinations): <p> The ARN of the destination event data store. </p>
     ///   - [`import_source(Option<ImportSource>)`](crate::output::GetImportOutput::import_source): <p> The source S3 bucket. </p>
     ///   - [`start_event_time(Option<DateTime>)`](crate::output::GetImportOutput::start_event_time): <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     ///   - [`end_event_time(Option<DateTime>)`](crate::output::GetImportOutput::end_event_time): <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::output::GetImportOutput::import_status): <p> The status of the import. </p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::GetImportOutput::created_timestamp): <p> The timestamp of the import's creation. </p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::GetImportOutput::updated_timestamp): <p> The timestamp of when the import was updated. </p>
-    ///   - [`import_statistics(Option<ImportStatistics>)`](crate::output::GetImportOutput::import_statistics): <p> Provides statistics for the import. </p>
+    ///   - [`import_statistics(Option<ImportStatistics>)`](crate::output::GetImportOutput::import_statistics): <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
     /// - On failure, responds with [`SdkError<GetImportError>`](crate::error::GetImportError)
     pub fn get_import(&self) -> fluent_builders::GetImport {
         fluent_builders::GetImport::new(self.handle.clone())
@@ -352,10 +369,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannels::set_max_results): <p> The maximum number of CloudTrail channels to display on a single page. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p> A token you can use to get the next page of results. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
-    ///   - [`channels(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::channels): <p> The list of CloudTrail channels. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p> A token used to get the next page of results. </p>
+    ///   - [`channels(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::channels): <p> The list of channels in the account. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>The token to use to get the next page of results after a previous API call.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels {
         fluent_builders::ListChannels::new(self.handle.clone())
@@ -392,7 +409,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImports::set_max_results): <p> The maximum number of imports to display on a single page. </p>
-    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::ListImports::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::ListImports::set_destination): <p> The destination event data store. </p>
+    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::ListImports::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::ListImports::set_destination): <p> The ARN of the destination event data store. </p>
     ///   - [`import_status(ImportStatus)`](crate::client::fluent_builders::ListImports::import_status) / [`set_import_status(Option<ImportStatus>)`](crate::client::fluent_builders::ListImports::set_import_status): <p> The status of the import. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImports::set_next_token): <p> A token you can use to get the next page of import results. </p>
     /// - On success, responds with [`ListImportsOutput`](crate::output::ListImportsOutput) with field(s):
@@ -501,6 +518,18 @@ impl Client {
     pub fn put_insight_selectors(&self) -> fluent_builders::PutInsightSelectors {
         fluent_builders::PutInsightSelectors::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RegisterOrganizationDelegatedAdmin`](crate::client::fluent_builders::RegisterOrganizationDelegatedAdmin) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`member_account_id(impl Into<String>)`](crate::client::fluent_builders::RegisterOrganizationDelegatedAdmin::member_account_id) / [`set_member_account_id(Option<String>)`](crate::client::fluent_builders::RegisterOrganizationDelegatedAdmin::set_member_account_id): <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+    /// - On success, responds with [`RegisterOrganizationDelegatedAdminOutput`](crate::output::RegisterOrganizationDelegatedAdminOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterOrganizationDelegatedAdminError>`](crate::error::RegisterOrganizationDelegatedAdminError)
+    pub fn register_organization_delegated_admin(
+        &self,
+    ) -> fluent_builders::RegisterOrganizationDelegatedAdmin {
+        fluent_builders::RegisterOrganizationDelegatedAdmin::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
     /// - The fluent builder is configurable:
@@ -527,6 +556,7 @@ impl Client {
     ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::RestoreEventDataStoreOutput::termination_protection_enabled): <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::RestoreEventDataStoreOutput::created_timestamp): <p>The timestamp of an event data store's creation.</p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::RestoreEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::RestoreEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<RestoreEventDataStoreError>`](crate::error::RestoreEventDataStoreError)
     pub fn restore_event_data_store(&self) -> fluent_builders::RestoreEventDataStore {
         fluent_builders::RestoreEventDataStore::new(self.handle.clone())
@@ -534,15 +564,15 @@ impl Client {
     /// Constructs a fluent builder for the [`StartImport`](crate::client::fluent_builders::StartImport) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`destinations(Vec<String>)`](crate::client::fluent_builders::StartImport::destinations) / [`set_destinations(Option<Vec<String>>)`](crate::client::fluent_builders::StartImport::set_destinations): <p> The destination event data store. Use this parameter for a new import. </p>
+    ///   - [`destinations(Vec<String>)`](crate::client::fluent_builders::StartImport::destinations) / [`set_destinations(Option<Vec<String>>)`](crate::client::fluent_builders::StartImport::set_destinations): <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
     ///   - [`import_source(ImportSource)`](crate::client::fluent_builders::StartImport::import_source) / [`set_import_source(Option<ImportSource>)`](crate::client::fluent_builders::StartImport::set_import_source): <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
-    ///   - [`start_event_time(DateTime)`](crate::client::fluent_builders::StartImport::start_event_time) / [`set_start_event_time(Option<DateTime>)`](crate::client::fluent_builders::StartImport::set_start_event_time): <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    ///   - [`end_event_time(DateTime)`](crate::client::fluent_builders::StartImport::end_event_time) / [`set_end_event_time(Option<DateTime>)`](crate::client::fluent_builders::StartImport::set_end_event_time): <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    ///   - [`start_event_time(DateTime)`](crate::client::fluent_builders::StartImport::start_event_time) / [`set_start_event_time(Option<DateTime>)`](crate::client::fluent_builders::StartImport::set_start_event_time): <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
+    ///   - [`end_event_time(DateTime)`](crate::client::fluent_builders::StartImport::end_event_time) / [`set_end_event_time(Option<DateTime>)`](crate::client::fluent_builders::StartImport::set_end_event_time): <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
     ///   - [`import_id(impl Into<String>)`](crate::client::fluent_builders::StartImport::import_id) / [`set_import_id(Option<String>)`](crate::client::fluent_builders::StartImport::set_import_id): <p> The ID of the import. Use this parameter when you are retrying an import. </p>
     /// - On success, responds with [`StartImportOutput`](crate::output::StartImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::StartImportOutput::import_id): <p> The ID of the import. </p>
-    ///   - [`destinations(Option<Vec<String>>)`](crate::output::StartImportOutput::destinations): <p> The destination event data store. </p>
-    ///   - [`import_source(Option<ImportSource>)`](crate::output::StartImportOutput::import_source): <p> The source S3 bucket. </p>
+    ///   - [`destinations(Option<Vec<String>>)`](crate::output::StartImportOutput::destinations): <p> The ARN of the destination event data store. </p>
+    ///   - [`import_source(Option<ImportSource>)`](crate::output::StartImportOutput::import_source): <p> The source S3 bucket for the import. </p>
     ///   - [`start_event_time(Option<DateTime>)`](crate::output::StartImportOutput::start_event_time): <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     ///   - [`end_event_time(Option<DateTime>)`](crate::output::StartImportOutput::end_event_time): <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::output::StartImportOutput::import_status): <p> Shows the status of the import after a <code>StartImport</code> request. An import finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code> if there were failures. </p>
@@ -566,6 +596,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`query_statement(impl Into<String>)`](crate::client::fluent_builders::StartQuery::query_statement) / [`set_query_statement(Option<String>)`](crate::client::fluent_builders::StartQuery::set_query_statement): <p>The SQL code of your query.</p>
+    ///   - [`delivery_s3_uri(impl Into<String>)`](crate::client::fluent_builders::StartQuery::delivery_s3_uri) / [`set_delivery_s3_uri(Option<String>)`](crate::client::fluent_builders::StartQuery::set_delivery_s3_uri): <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     /// - On success, responds with [`StartQueryOutput`](crate::output::StartQueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::output::StartQueryOutput::query_id): <p>The ID of the started query.</p>
     /// - On failure, responds with [`SdkError<StartQueryError>`](crate::error::StartQueryError)
@@ -578,8 +609,8 @@ impl Client {
     ///   - [`import_id(impl Into<String>)`](crate::client::fluent_builders::StopImport::import_id) / [`set_import_id(Option<String>)`](crate::client::fluent_builders::StopImport::set_import_id): <p> The ID of the import. </p>
     /// - On success, responds with [`StopImportOutput`](crate::output::StopImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::StopImportOutput::import_id): <p> The ID for the import. </p>
-    ///   - [`import_source(Option<ImportSource>)`](crate::output::StopImportOutput::import_source): <p> The source S3 bucket. </p>
-    ///   - [`destinations(Option<Vec<String>>)`](crate::output::StopImportOutput::destinations): <p> The destination event data store. </p>
+    ///   - [`import_source(Option<ImportSource>)`](crate::output::StopImportOutput::import_source): <p> The source S3 bucket for the import. </p>
+    ///   - [`destinations(Option<Vec<String>>)`](crate::output::StopImportOutput::destinations): <p> The ARN of the destination event data store. </p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::output::StopImportOutput::import_status): <p> The status of the import. </p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::StopImportOutput::created_timestamp): <p> The timestamp of the import's creation. </p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::StopImportOutput::updated_timestamp): <p> The timestamp of the import's last update. </p>
@@ -610,6 +641,7 @@ impl Client {
     ///   - [`organization_enabled(bool)`](crate::client::fluent_builders::UpdateEventDataStore::organization_enabled) / [`set_organization_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventDataStore::set_organization_enabled): <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     ///   - [`retention_period(i32)`](crate::client::fluent_builders::UpdateEventDataStore::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::UpdateEventDataStore::set_retention_period): <p>The retention period, in days.</p>
     ///   - [`termination_protection_enabled(bool)`](crate::client::fluent_builders::UpdateEventDataStore::termination_protection_enabled) / [`set_termination_protection_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventDataStore::set_termination_protection_enabled): <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEventDataStore::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::UpdateEventDataStore::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>   <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>  </important>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p> <code>alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>   <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>   <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput) with field(s):
     ///   - [`event_data_store_arn(Option<String>)`](crate::output::UpdateEventDataStoreOutput::event_data_store_arn): <p>The ARN of the event data store.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateEventDataStoreOutput::name): <p>The name of the event data store.</p>
@@ -621,6 +653,7 @@ impl Client {
     ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::UpdateEventDataStoreOutput::termination_protection_enabled): <p>Indicates whether termination protection is enabled for the event data store.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::output::UpdateEventDataStoreOutput::created_timestamp): <p>The timestamp that shows when an event data store was first created.</p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::UpdateEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::UpdateEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<UpdateEventDataStoreError>`](crate::error::UpdateEventDataStoreError)
     pub fn update_event_data_store(&self) -> fluent_builders::UpdateEventDataStore {
         fluent_builders::UpdateEventDataStore::new(self.handle.clone())
@@ -820,11 +853,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
         pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data_store(input.into());
             self
         }
         /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
         pub fn set_event_data_store(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -993,6 +1028,36 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags_list(input);
+            self
+        }
+        /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+        /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+        /// </important>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// </ul>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+        /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+        /// </important>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// </ul>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }
@@ -1187,27 +1252,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
         /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li> <p>alias/MyAliasName</p> </li>
-        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
-        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
-        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
         /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li> <p>alias/MyAliasName</p> </li>
-        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
-        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
-        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
@@ -1391,6 +1456,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeregisterOrganizationDelegatedAdmin`.
+    ///
+    /// <p>Removes CloudTrail delegated administrator permissions from a member account in an organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeregisterOrganizationDelegatedAdmin {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::deregister_organization_delegated_admin_input::Builder,
+    }
+    impl DeregisterOrganizationDelegatedAdmin {
+        /// Creates a new `DeregisterOrganizationDelegatedAdmin`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeregisterOrganizationDelegatedAdmin,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeregisterOrganizationDelegatedAdminError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeregisterOrganizationDelegatedAdminOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeregisterOrganizationDelegatedAdminError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+        pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(input.into());
+            self
+        }
+        /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+        pub fn set_delegated_admin_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_delegated_admin_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeQuery`.
     ///
     /// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.</p>
@@ -1454,11 +1599,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
         pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data_store(input.into());
             self
         }
         /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
         pub fn set_event_data_store(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1585,7 +1732,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannel`.
     ///
-    /// <p> Returns the specified CloudTrail service-linked channel. Amazon Web Services services create service-linked channels to view CloudTrail events. </p>
+    /// <p> Returns information about a specific channel. Amazon Web Services services create service-linked channels to get information about CloudTrail events on your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing service-linked channels for CloudTrail by using the CLI</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannel {
         handle: std::sync::Arc<super::Handle>,
@@ -1645,12 +1792,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+        /// <p>The ARN or <code>UUID</code> of a channel.</p>
         pub fn channel(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. </p>
+        /// <p>The ARN or <code>UUID</code> of a channel.</p>
         pub fn set_channel(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel(input);
             self
@@ -1835,7 +1982,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetImport`.
     ///
-    /// <p> Returns information for the specified import. </p>
+    /// <p> Returns information about a specific import. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImport {
         handle: std::sync::Arc<super::Handle>,
@@ -2067,11 +2214,13 @@ pub mod fluent_builders {
             crate::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
         }
         /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
         pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data_store(input.into());
             self
         }
         /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
         pub fn set_event_data_store(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2260,7 +2409,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p> Returns all CloudTrail channels. </p>
+    /// <p> Lists the channels in the current account, and their source names. Amazon Web Services services create service-linked channels get information about CloudTrail events on your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing service-linked channels for CloudTrail by using the CLI</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels {
         handle: std::sync::Arc<super::Handle>,
@@ -2336,12 +2485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> A token you can use to get the next page of results. </p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A token you can use to get the next page of results. </p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2613,12 +2762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination(input.into());
             self
         }
-        /// <p> The destination event data store. </p>
+        /// <p> The ARN of the destination event data store. </p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_destination(input);
             self
@@ -3464,6 +3613,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RegisterOrganizationDelegatedAdmin`.
+    ///
+    /// <p>Registers an organization’s member account as the CloudTrail delegated administrator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RegisterOrganizationDelegatedAdmin {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::register_organization_delegated_admin_input::Builder,
+    }
+    impl RegisterOrganizationDelegatedAdmin {
+        /// Creates a new `RegisterOrganizationDelegatedAdmin`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::RegisterOrganizationDelegatedAdmin,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::RegisterOrganizationDelegatedAdminError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterOrganizationDelegatedAdminOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::RegisterOrganizationDelegatedAdminError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(input.into());
+            self
+        }
+        /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+        pub fn set_member_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_member_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified tags from a trail or event data store.</p>
@@ -3636,7 +3865,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImport`.
     ///
-    /// <p> Starts an import of logged trail events from a source S3 bucket to a destination event data store. </p>
+    /// <p> Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default, CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If you want to import CloudTrail events contained in another prefix, you must include the prefix in the <code>S3LocationUri</code>. For more considerations about importing trail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>. </p>
     /// <p> When you start a new import, the <code>Destinations</code> and <code>ImportSource</code> parameters are required. Before starting a new import, disable any access control lists (ACLs) attached to the source S3 bucket. For more information about disabling ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a>. </p>
     /// <p> When you retry an import, the <code>ImportID</code> parameter is required. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3702,12 +3931,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p> The destination event data store. Use this parameter for a new import. </p>
+        /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destinations(input.into());
             self
         }
-        /// <p> The destination event data store. Use this parameter for a new import. </p>
+        /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3728,12 +3957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_import_source(input);
             self
         }
-        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
         pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_event_time(input);
             self
         }
-        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
         pub fn set_start_event_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3741,12 +3970,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_event_time(input);
             self
         }
-        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
         pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_event_time(input);
             self
         }
-        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+        /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
         pub fn set_end_event_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3842,7 +4071,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartQuery`.
     ///
-    /// <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query, enclosed in single quotation marks.</p>
+    /// <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3 bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQuery {
         handle: std::sync::Arc<super::Handle>,
@@ -3913,6 +4142,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_query_statement(input);
+            self
+        }
+        /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+        pub fn delivery_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_uri(input.into());
+            self
+        }
+        /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+        pub fn set_delivery_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_delivery_s3_uri(input);
             self
         }
     }
@@ -4210,6 +4452,36 @@ pub mod fluent_builders {
             input: std::option::Option<bool>,
         ) -> Self {
             self.inner = self.inner.set_termination_protection_enabled(input);
+            self
+        }
+        /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+        /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+        /// </important>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// </ul>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+        /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+        /// </important>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+        /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+        /// </ul>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }

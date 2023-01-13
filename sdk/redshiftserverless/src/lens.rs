@@ -39,6 +39,16 @@ pub(crate) fn reflens_structure_crate_output_list_snapshots_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_table_restore_status_output_next_token(
+    input: &crate::output::ListTableRestoreStatusOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_usage_limits_output_next_token(
     input: &crate::output::ListUsageLimitsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -93,6 +103,16 @@ pub(crate) fn lens_structure_crate_output_list_snapshots_output_snapshots(
     input: crate::output::ListSnapshotsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Snapshot>> {
     let input = match input.snapshots {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_table_restore_status_output_table_restore_statuses(
+    input: crate::output::ListTableRestoreStatusOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>> {
+    let input = match input.table_restore_statuses {
         None => return None,
         Some(t) => t,
     };

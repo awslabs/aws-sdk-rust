@@ -309,7 +309,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_user_pool_id): <p>The user pool ID.</p>
     ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_username): <p>The user pool username or an alias.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::AdminListUserAuthEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_max_results): <p>The maximum number of authentication events to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::AdminListUserAuthEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_max_results): <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_next_token): <p>A pagination token.</p>
     /// - On success, responds with [`AdminListUserAuthEventsOutput`](crate::output::AdminListUserAuthEventsOutput) with field(s):
     ///   - [`auth_events(Option<Vec<AuthEventType>>)`](crate::output::AdminListUserAuthEventsOutput::auth_events): <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
@@ -582,6 +582,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_pool_name): <p>A string used to name the user pool.</p>
     ///   - [`policies(UserPoolPolicyType)`](crate::client::fluent_builders::CreateUserPool::policies) / [`set_policies(Option<UserPoolPolicyType>)`](crate::client::fluent_builders::CreateUserPool::set_policies): <p>The policies associated with the new user pool.</p>
+    ///   - [`deletion_protection(DeletionProtectionType)`](crate::client::fluent_builders::CreateUserPool::deletion_protection) / [`set_deletion_protection(Option<DeletionProtectionType>)`](crate::client::fluent_builders::CreateUserPool::set_deletion_protection): <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>  <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
     ///   - [`lambda_config(LambdaConfigType)`](crate::client::fluent_builders::CreateUserPool::lambda_config) / [`set_lambda_config(Option<LambdaConfigType>)`](crate::client::fluent_builders::CreateUserPool::set_lambda_config): <p>The Lambda trigger configuration information for the new user pool.</p> <note>   <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>   <p></p>   <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>   <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>  </note>
     ///   - [`auto_verified_attributes(Vec<VerifiedAttributeType>)`](crate::client::fluent_builders::CreateUserPool::auto_verified_attributes) / [`set_auto_verified_attributes(Option<Vec<VerifiedAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_auto_verified_attributes): <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
     ///   - [`alias_attributes(Vec<AliasAttributeType>)`](crate::client::fluent_builders::CreateUserPool::alias_attributes) / [`set_alias_attributes(Option<Vec<AliasAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_alias_attributes): <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
@@ -614,13 +615,13 @@ impl Client {
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool where you want to create a user pool client.</p>
     ///   - [`client_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::client_name) / [`set_client_name(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_client_name): <p>The client name for the user pool client you would like to create.</p>
     ///   - [`generate_secret(bool)`](crate::client::fluent_builders::CreateUserPoolClient::generate_secret) / [`set_generate_secret(bool)`](crate::client::fluent_builders::CreateUserPoolClient::set_generate_secret): <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
-    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::set_refresh_token_validity): <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>  <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
-    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_access_token_validity): <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
-    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_id_token_validity): <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::set_refresh_token_validity): <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>  <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
+    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_access_token_validity): <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
+    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_id_token_validity): <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     ///   - [`token_validity_units(TokenValidityUnitsType)`](crate::client::fluent_builders::CreateUserPoolClient::token_validity_units) / [`set_token_validity_units(Option<TokenValidityUnitsType>)`](crate::client::fluent_builders::CreateUserPoolClient::set_token_validity_units): <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
     ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_read_attributes): <p>The read attributes.</p>
     ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_write_attributes): <p>The user pool attributes that the app client can write to.</p>  <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
-    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::CreateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>   <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>  </note>  <p>Valid values include:</p>  <dl>   <dt>   ALLOW_ADMIN_USER_PASSWORD_AUTH  </dt>   <dd>    <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>   </dd>   <dt>   ALLOW_CUSTOM_AUTH  </dt>   <dd>    <p>Enable Lambda trigger based authentication.</p>   </dd>   <dt>   ALLOW_USER_PASSWORD_AUTH  </dt>   <dd>    <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>   </dd>   <dt>   ALLOW_USER_SRP_AUTH  </dt>   <dd>    <p>Enable SRP-based authentication.</p>   </dd>   <dt>   ALLOW_REFRESH_TOKEN_AUTH  </dt>   <dd>    <p>Enable the authflow that refreshes tokens.</p>   </dd>  </dl>  <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::CreateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>   <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>  <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
     ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the IdPs.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
     ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the IdPs.</p>
@@ -743,7 +744,7 @@ impl Client {
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::set_user_pool_id): <p>The user pool ID.</p>
     ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::set_provider_name): <p>The IdP name.</p>
     /// - On success, responds with [`DescribeIdentityProviderOutput`](crate::output::DescribeIdentityProviderOutput) with field(s):
-    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::DescribeIdentityProviderOutput::identity_provider): <p>The IdP that was deleted.</p>
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::DescribeIdentityProviderOutput::identity_provider): <p>The identity provider details.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityProviderError>`](crate::error::DescribeIdentityProviderError)
     pub fn describe_identity_provider(&self) -> fluent_builders::DescribeIdentityProvider {
         fluent_builders::DescribeIdentityProvider::new(self.handle.clone())
@@ -877,7 +878,7 @@ impl Client {
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::set_user_pool_id): <p>The user pool ID.</p>
     ///   - [`idp_identifier(impl Into<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::idp_identifier) / [`set_idp_identifier(Option<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::set_idp_identifier): <p>The IdP identifier.</p>
     /// - On success, responds with [`GetIdentityProviderByIdentifierOutput`](crate::output::GetIdentityProviderByIdentifierOutput) with field(s):
-    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::GetIdentityProviderByIdentifierOutput::identity_provider): <p>The IdP object.</p>
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::GetIdentityProviderByIdentifierOutput::identity_provider): <p>The identity provider details.</p>
     /// - On failure, responds with [`SdkError<GetIdentityProviderByIdentifierError>`](crate::error::GetIdentityProviderByIdentifierError)
     pub fn get_identity_provider_by_identifier(
         &self,
@@ -1200,7 +1201,7 @@ impl Client {
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_user_pool_id): <p>The user pool ID.</p>
     ///   - [`sms_mfa_configuration(SmsMfaConfigType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::sms_mfa_configuration) / [`set_sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_sms_mfa_configuration): <p>The SMS text message MFA configuration.</p>
     ///   - [`software_token_mfa_configuration(SoftwareTokenMfaConfigType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::software_token_mfa_configuration) / [`set_software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_software_token_mfa_configuration): <p>The software token MFA configuration.</p>
-    ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_mfa_configuration): <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>  </ul>
+    ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_mfa_configuration): <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>  </ul>
     /// - On success, responds with [`SetUserPoolMfaConfigOutput`](crate::output::SetUserPoolMfaConfigOutput) with field(s):
     ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::output::SetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message MFA configuration.</p>
     ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::output::SetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token MFA configuration.</p>
@@ -1333,7 +1334,7 @@ impl Client {
     ///   - [`attribute_mapping(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityProvider::attribute_mapping) / [`set_attribute_mapping(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_attribute_mapping): <p>The IdP attribute mapping to be changed.</p>
     ///   - [`idp_identifiers(Vec<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::idp_identifiers) / [`set_idp_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_idp_identifiers): <p>A list of IdP identifiers.</p>
     /// - On success, responds with [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput) with field(s):
-    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::UpdateIdentityProviderOutput::identity_provider): <p>The IdP object.</p>
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::UpdateIdentityProviderOutput::identity_provider): <p>The identity provider details.</p>
     /// - On failure, responds with [`SdkError<UpdateIdentityProviderError>`](crate::error::UpdateIdentityProviderError)
     pub fn update_identity_provider(&self) -> fluent_builders::UpdateIdentityProvider {
         fluent_builders::UpdateIdentityProvider::new(self.handle.clone())
@@ -1368,6 +1369,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_user_pool_id): <p>The user pool ID for the user pool you want to update.</p>
     ///   - [`policies(UserPoolPolicyType)`](crate::client::fluent_builders::UpdateUserPool::policies) / [`set_policies(Option<UserPoolPolicyType>)`](crate::client::fluent_builders::UpdateUserPool::set_policies): <p>A container with the policies you want to update in a user pool.</p>
+    ///   - [`deletion_protection(DeletionProtectionType)`](crate::client::fluent_builders::UpdateUserPool::deletion_protection) / [`set_deletion_protection(Option<DeletionProtectionType>)`](crate::client::fluent_builders::UpdateUserPool::set_deletion_protection): <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>  <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
     ///   - [`lambda_config(LambdaConfigType)`](crate::client::fluent_builders::UpdateUserPool::lambda_config) / [`set_lambda_config(Option<LambdaConfigType>)`](crate::client::fluent_builders::UpdateUserPool::set_lambda_config): <p>The Lambda configuration information from the request to update the user pool.</p>
     ///   - [`auto_verified_attributes(Vec<VerifiedAttributeType>)`](crate::client::fluent_builders::UpdateUserPool::auto_verified_attributes) / [`set_auto_verified_attributes(Option<Vec<VerifiedAttributeType>>)`](crate::client::fluent_builders::UpdateUserPool::set_auto_verified_attributes): <p>The attributes that are automatically verified when Amazon Cognito requests to update user pools.</p>
     ///   - [`sms_verification_message(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::sms_verification_message) / [`set_sms_verification_message(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_verification_message): <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
@@ -1396,13 +1398,13 @@ impl Client {
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool where you want to update the user pool client.</p>
     ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_client_id): <p>The ID of the client associated with the user pool.</p>
     ///   - [`client_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::client_name) / [`set_client_name(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_client_name): <p>The client name from the update user pool client request.</p>
-    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::set_refresh_token_validity): <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>  <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
-    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_access_token_validity): <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
-    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_id_token_validity): <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::set_refresh_token_validity): <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>  <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
+    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_access_token_validity): <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
+    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_id_token_validity): <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>  <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>  <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>  <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     ///   - [`token_validity_units(TokenValidityUnitsType)`](crate::client::fluent_builders::UpdateUserPoolClient::token_validity_units) / [`set_token_validity_units(Option<TokenValidityUnitsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_token_validity_units): <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_read_attributes): <p>The read-only attributes of the user pool.</p>
     ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_write_attributes): <p>The writeable attributes of the user pool.</p>
-    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>
+    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>   <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>  <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the IdPs.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the IdPs.</p>
@@ -2303,8 +2305,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AdminDisableUser`.
     ///
-    /// <p>Disables the specified user.</p>
-    /// <p>Calling this action requires developer credentials.</p>
+    /// <p>Deactivates a user and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code> API requests.</p>
+    /// <p>You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code> permissions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminDisableUser {
         handle: std::sync::Arc<super::Handle>,
@@ -3425,12 +3427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_username(input);
             self
         }
-        /// <p>The maximum number of authentication events to return.</p>
+        /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of authentication events to return.</p>
+        /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6013,6 +6015,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policies(input);
             self
         }
+        /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+        /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
+        pub fn deletion_protection(mut self, input: crate::model::DeletionProtectionType) -> Self {
+            self.inner = self.inner.deletion_protection(input);
+            self
+        }
+        /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+        /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
+        pub fn set_deletion_protection(
+            mut self,
+            input: std::option::Option<crate::model::DeletionProtectionType>,
+        ) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
         /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
         /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
         /// <p></p>
@@ -6431,6 +6448,7 @@ pub mod fluent_builders {
         /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
         /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.refresh_token_validity(input);
             self
@@ -6438,6 +6456,7 @@ pub mod fluent_builders {
         /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
         /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_refresh_token_validity(input);
             self
@@ -6445,6 +6464,7 @@ pub mod fluent_builders {
         /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.access_token_validity(input);
             self
@@ -6452,6 +6472,7 @@ pub mod fluent_builders {
         /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_access_token_validity(input);
             self
@@ -6459,6 +6480,7 @@ pub mod fluent_builders {
         /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.id_token_validity(input);
             self
@@ -6466,6 +6488,7 @@ pub mod fluent_builders {
         /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_id_token_validity(input);
             self
@@ -6523,84 +6546,34 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
         ///
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>
-        /// <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
         /// </note>
         /// <p>Valid values include:</p>
-        /// <dl>
-        /// <dt>
-        /// ALLOW_ADMIN_USER_PASSWORD_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_CUSTOM_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable Lambda trigger based authentication.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_USER_PASSWORD_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_USER_SRP_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable SRP-based authentication.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_REFRESH_TOKEN_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable the authflow that refreshes tokens.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+        /// <ul>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
+        /// </ul>
+        /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
         pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             self.inner = self.inner.explicit_auth_flows(input);
             self
         }
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>
-        /// <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
         /// </note>
         /// <p>Valid values include:</p>
-        /// <dl>
-        /// <dt>
-        /// ALLOW_ADMIN_USER_PASSWORD_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_CUSTOM_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable Lambda trigger based authentication.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_USER_PASSWORD_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_USER_SRP_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable SRP-based authentication.</p>
-        /// </dd>
-        /// <dt>
-        /// ALLOW_REFRESH_TOKEN_AUTH
-        /// </dt>
-        /// <dd>
-        /// <p>Enable the authflow that refreshes tokens.</p>
-        /// </dd>
-        /// </dl>
-        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+        /// <ul>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
+        /// </ul>
+        /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -8779,7 +8752,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSigningCertificate`.
     ///
-    /// <p>This method takes a user pool ID, and returns the signing certificate.</p>
+    /// <p>This method takes a user pool ID, and returns the signing certificate. The issued certificate is valid for 10 years from the date of issue.</p>
+    /// <p>Amazon Cognito issues and assigns a new signing certificate annually. This process returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't invalidate the original certificate.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSigningCertificate {
         handle: std::sync::Arc<super::Handle>,
@@ -9211,7 +9185,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GlobalSignOut`.
     ///
-    /// <p>Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. The user's current access and ID tokens remain valid until their expiry. By default, access and ID tokens expire one hour after Amazon Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the cookie validity period of 1 hour.</p>
+    /// <p>Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the 1-hour cookie validity period.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GlobalSignOut {
         handle: std::sync::Arc<super::Handle>,
@@ -10953,7 +10927,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RevokeToken`.
     ///
-    /// <p>Revokes all of the access tokens generated by the specified refresh token. After the token is revoked, you can't use the revoked token to access Amazon Cognito authenticated APIs.</p>
+    /// <p>Revokes all of the access tokens generated by, and at the same time as, the specified refresh token. After a token is revoked, you can't use the revoked token to access Amazon Cognito user APIs, or to authorize access to your resource server.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeToken {
         handle: std::sync::Arc<super::Handle>,
@@ -11498,7 +11472,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_software_token_mfa_configuration(input);
             self
         }
-        /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
+        /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -11508,7 +11482,7 @@ pub mod fluent_builders {
             self.inner = self.inner.mfa_configuration(input);
             self
         }
-        /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
+        /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -12995,6 +12969,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policies(input);
             self
         }
+        /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+        /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
+        pub fn deletion_protection(mut self, input: crate::model::DeletionProtectionType) -> Self {
+            self.inner = self.inner.deletion_protection(input);
+            self
+        }
+        /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
+        /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
+        pub fn set_deletion_protection(
+            mut self,
+            input: std::option::Option<crate::model::DeletionProtectionType>,
+        ) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
         /// <p>The Lambda configuration information from the request to update the user pool.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.inner = self.inner.lambda_config(input);
@@ -13348,6 +13337,7 @@ pub mod fluent_builders {
         /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
         /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.refresh_token_validity(input);
             self
@@ -13355,6 +13345,7 @@ pub mod fluent_builders {
         /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
         /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_refresh_token_validity(input);
             self
@@ -13362,6 +13353,7 @@ pub mod fluent_builders {
         /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.access_token_validity(input);
             self
@@ -13369,6 +13361,7 @@ pub mod fluent_builders {
         /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_access_token_validity(input);
             self
@@ -13376,6 +13369,7 @@ pub mod fluent_builders {
         /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.inner = self.inner.id_token_validity(input);
             self
@@ -13383,6 +13377,7 @@ pub mod fluent_builders {
         /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
         /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
         /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+        /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_id_token_validity(input);
             self
@@ -13438,28 +13433,34 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
         ///
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+        /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
         /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
         /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
+        /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
         pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             self.inner = self.inner.explicit_auth_flows(input);
             self
         }
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+        /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
         /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
         /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
         /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
+        /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,

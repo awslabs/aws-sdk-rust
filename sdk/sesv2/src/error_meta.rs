@@ -13,6 +13,8 @@ pub enum Error {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>If there is already an ongoing account details update under review.</p>
     ConflictException(crate::error::ConflictException),
+    /// <p>The request couldn't be processed because an error occurred with the Amazon SES API v2.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>The specified request includes an invalid or expired token.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>There are too many instances of the specified resource type.</p>
@@ -45,6 +47,7 @@ impl std::fmt::Display for Error {
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::InternalServiceErrorException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MailFromDomainNotVerifiedException(inner) => inner.fmt(f),
@@ -53,6 +56,42 @@ impl std::fmt::Display for Error {
             Error::SendingPausedException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetMetricDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::BatchGetMetricDataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchGetMetricDataError> for Error {
+    fn from(err: crate::error::BatchGetMetricDataError) -> Self {
+        match err.kind {
+            crate::error::BatchGetMetricDataErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::BatchGetMetricDataErrorKind::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::BatchGetMetricDataErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::BatchGetMetricDataErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::BatchGetMetricDataErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1072,6 +1111,39 @@ impl From<crate::error::GetDedicatedIpError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDedicatedIpPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetDedicatedIpPoolError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetDedicatedIpPoolError> for Error {
+    fn from(err: crate::error::GetDedicatedIpPoolError) -> Self {
+        match err.kind {
+            crate::error::GetDedicatedIpPoolErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::GetDedicatedIpPoolErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetDedicatedIpPoolErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::GetDedicatedIpPoolErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDedicatedIpsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1728,6 +1800,39 @@ impl From<crate::error::ListImportJobsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRecommendationsError> for Error {
+    fn from(err: crate::error::ListRecommendationsError) -> Self {
+        match err.kind {
+            crate::error::ListRecommendationsErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::ListRecommendationsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListRecommendationsErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::ListRecommendationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSuppressedDestinationsError, R>>
     for Error
 where
@@ -1927,6 +2032,37 @@ impl From<crate::error::PutAccountSuppressionAttributesError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAccountVdmAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutAccountVdmAttributesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutAccountVdmAttributesError> for Error {
+    fn from(err: crate::error::PutAccountVdmAttributesError) -> Self {
+        match err.kind {
+            crate::error::PutAccountVdmAttributesErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::PutAccountVdmAttributesErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::PutAccountVdmAttributesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<crate::error::PutConfigurationSetDeliveryOptionsError, R>,
@@ -2106,6 +2242,40 @@ impl From<crate::error::PutConfigurationSetTrackingOptionsError> for Error {
                 inner,
             ) => Error::TooManyRequestsException(inner),
             crate::error::PutConfigurationSetTrackingOptionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutConfigurationSetVdmOptionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutConfigurationSetVdmOptionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutConfigurationSetVdmOptionsError> for Error {
+    fn from(err: crate::error::PutConfigurationSetVdmOptionsError) -> Self {
+        match err.kind {
+            crate::error::PutConfigurationSetVdmOptionsErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::PutConfigurationSetVdmOptionsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::PutConfigurationSetVdmOptionsErrorKind::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::error::PutConfigurationSetVdmOptionsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

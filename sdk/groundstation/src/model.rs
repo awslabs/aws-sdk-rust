@@ -16,6 +16,9 @@ pub struct SatelliteListItem {
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     #[doc(hidden)]
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    #[doc(hidden)]
+    pub current_ephemeris: std::option::Option<crate::model::EphemerisMetaData>,
 }
 impl SatelliteListItem {
     /// <p>UUID of a satellite.</p>
@@ -34,6 +37,10 @@ impl SatelliteListItem {
     pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
         self.ground_stations.as_deref()
     }
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    pub fn current_ephemeris(&self) -> std::option::Option<&crate::model::EphemerisMetaData> {
+        self.current_ephemeris.as_ref()
+    }
 }
 /// See [`SatelliteListItem`](crate::model::SatelliteListItem).
 pub mod satellite_list_item {
@@ -45,6 +52,7 @@ pub mod satellite_list_item {
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
         pub(crate) norad_satellite_id: std::option::Option<i32>,
         pub(crate) ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) current_ephemeris: std::option::Option<crate::model::EphemerisMetaData>,
     }
     impl Builder {
         /// <p>UUID of a satellite.</p>
@@ -99,6 +107,19 @@ pub mod satellite_list_item {
             self.ground_stations = input;
             self
         }
+        /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+        pub fn current_ephemeris(mut self, input: crate::model::EphemerisMetaData) -> Self {
+            self.current_ephemeris = Some(input);
+            self
+        }
+        /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+        pub fn set_current_ephemeris(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisMetaData>,
+        ) -> Self {
+            self.current_ephemeris = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SatelliteListItem`](crate::model::SatelliteListItem).
         pub fn build(self) -> crate::model::SatelliteListItem {
             crate::model::SatelliteListItem {
@@ -106,6 +127,7 @@ pub mod satellite_list_item {
                 satellite_arn: self.satellite_arn,
                 norad_satellite_id: self.norad_satellite_id.unwrap_or_default(),
                 ground_stations: self.ground_stations,
+                current_ephemeris: self.current_ephemeris,
             }
         }
     }
@@ -114,6 +136,216 @@ impl SatelliteListItem {
     /// Creates a new builder-style object to manufacture [`SatelliteListItem`](crate::model::SatelliteListItem).
     pub fn builder() -> crate::model::satellite_list_item::Builder {
         crate::model::satellite_list_item::Builder::default()
+    }
+}
+
+/// <p>Metadata describing a particular ephemeris.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EphemerisMetaData {
+    /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+    #[doc(hidden)]
+    pub source: std::option::Option<crate::model::EphemerisSource>,
+    /// <p>UUID of a customer-provided ephemeris.</p>
+    /// <p>This field is not populated for default ephemerides from Space Track.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+    /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
+    /// <p>This field is not populated for customer-provided ephemerides.</p>
+    #[doc(hidden)]
+    pub epoch: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl EphemerisMetaData {
+    /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::EphemerisSource> {
+        self.source.as_ref()
+    }
+    /// <p>UUID of a customer-provided ephemeris.</p>
+    /// <p>This field is not populated for default ephemerides from Space Track.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+    /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
+    /// <p>This field is not populated for customer-provided ephemerides.</p>
+    pub fn epoch(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.epoch.as_ref()
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+/// See [`EphemerisMetaData`](crate::model::EphemerisMetaData).
+pub mod ephemeris_meta_data {
+
+    /// A builder for [`EphemerisMetaData`](crate::model::EphemerisMetaData).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source: std::option::Option<crate::model::EphemerisSource>,
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+        pub(crate) epoch: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+        pub fn source(mut self, input: crate::model::EphemerisSource) -> Self {
+            self.source = Some(input);
+            self
+        }
+        /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisSource>,
+        ) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>UUID of a customer-provided ephemeris.</p>
+        /// <p>This field is not populated for default ephemerides from Space Track.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>UUID of a customer-provided ephemeris.</p>
+        /// <p>This field is not populated for default ephemerides from Space Track.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
+        /// <p>This field is not populated for customer-provided ephemerides.</p>
+        pub fn epoch(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.epoch = Some(input);
+            self
+        }
+        /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
+        /// <p>This field is not populated for customer-provided ephemerides.</p>
+        pub fn set_epoch(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.epoch = input;
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EphemerisMetaData`](crate::model::EphemerisMetaData).
+        pub fn build(self) -> crate::model::EphemerisMetaData {
+            crate::model::EphemerisMetaData {
+                source: self.source,
+                ephemeris_id: self.ephemeris_id,
+                epoch: self.epoch,
+                name: self.name,
+            }
+        }
+    }
+}
+impl EphemerisMetaData {
+    /// Creates a new builder-style object to manufacture [`EphemerisMetaData`](crate::model::EphemerisMetaData).
+    pub fn builder() -> crate::model::ephemeris_meta_data::Builder {
+        crate::model::ephemeris_meta_data::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EphemerisSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ephemerissource = unimplemented!();
+/// match ephemerissource {
+///     EphemerisSource::CustomerProvided => { /* ... */ },
+///     EphemerisSource::SpaceTrack => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ephemerissource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EphemerisSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EphemerisSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EphemerisSource::NewFeature` is defined.
+/// Specifically, when `ephemerissource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EphemerisSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EphemerisSource {
+    #[allow(missing_docs)] // documentation missing in model
+    CustomerProvided,
+    #[allow(missing_docs)] // documentation missing in model
+    SpaceTrack,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EphemerisSource {
+    fn from(s: &str) -> Self {
+        match s {
+            "CUSTOMER_PROVIDED" => EphemerisSource::CustomerProvided,
+            "SPACE_TRACK" => EphemerisSource::SpaceTrack,
+            other => EphemerisSource::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EphemerisSource {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EphemerisSource::from(s))
+    }
+}
+impl EphemerisSource {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EphemerisSource::CustomerProvided => "CUSTOMER_PROVIDED",
+            EphemerisSource::SpaceTrack => "SPACE_TRACK",
+            EphemerisSource::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CUSTOMER_PROVIDED", "SPACE_TRACK"]
+    }
+}
+impl AsRef<str> for EphemerisSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -320,6 +552,981 @@ impl GroundStationData {
     }
 }
 
+/// <p>Ephemeris item.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EphemerisItem {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    #[doc(hidden)]
+    pub ephemeris_id: std::option::Option<std::string::String>,
+    /// <p>The status of the ephemeris.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::EphemerisStatus>,
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    #[doc(hidden)]
+    pub priority: std::option::Option<i32>,
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    #[doc(hidden)]
+    pub enabled: std::option::Option<bool>,
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Source S3 object used for the ephemeris.</p>
+    #[doc(hidden)]
+    pub source_s3_object: std::option::Option<crate::model::S3Object>,
+}
+impl EphemerisItem {
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
+    }
+    /// <p>The status of the ephemeris.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EphemerisStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Source S3 object used for the ephemeris.</p>
+    pub fn source_s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.source_s3_object.as_ref()
+    }
+}
+/// See [`EphemerisItem`](crate::model::EphemerisItem).
+pub mod ephemeris_item {
+
+    /// A builder for [`EphemerisItem`](crate::model::EphemerisItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ephemeris_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EphemerisStatus>,
+        pub(crate) priority: std::option::Option<i32>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) source_s3_object: std::option::Option<crate::model::S3Object>,
+    }
+    impl Builder {
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Ground Station ephemeris ID.</p>
+        pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ephemeris_id = input;
+            self
+        }
+        /// <p>The status of the ephemeris.</p>
+        pub fn status(mut self, input: crate::model::EphemerisStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the ephemeris.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EphemerisStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Priority must be 1 or greater</p>
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// <p>Whether or not the ephemeris is enabled.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>Whether or not the ephemeris is enabled.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>The time the ephemeris was uploaded in UTC.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time the ephemeris was uploaded in UTC.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Source S3 object used for the ephemeris.</p>
+        pub fn source_s3_object(mut self, input: crate::model::S3Object) -> Self {
+            self.source_s3_object = Some(input);
+            self
+        }
+        /// <p>Source S3 object used for the ephemeris.</p>
+        pub fn set_source_s3_object(
+            mut self,
+            input: std::option::Option<crate::model::S3Object>,
+        ) -> Self {
+            self.source_s3_object = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EphemerisItem`](crate::model::EphemerisItem).
+        pub fn build(self) -> crate::model::EphemerisItem {
+            crate::model::EphemerisItem {
+                ephemeris_id: self.ephemeris_id,
+                status: self.status,
+                priority: self.priority,
+                enabled: self.enabled,
+                creation_time: self.creation_time,
+                name: self.name,
+                source_s3_object: self.source_s3_object,
+            }
+        }
+    }
+}
+impl EphemerisItem {
+    /// Creates a new builder-style object to manufacture [`EphemerisItem`](crate::model::EphemerisItem).
+    pub fn builder() -> crate::model::ephemeris_item::Builder {
+        crate::model::ephemeris_item::Builder::default()
+    }
+}
+
+/// <p>Object stored in S3 containing ephemeris data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3Object {
+    /// <p>An Amazon S3 Bucket name.</p>
+    #[doc(hidden)]
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>An Amazon S3 key for the ephemeris.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<std::string::String>,
+    /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+    #[doc(hidden)]
+    pub version: std::option::Option<std::string::String>,
+}
+impl S3Object {
+    /// <p>An Amazon S3 Bucket name.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>An Amazon S3 key for the ephemeris.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+/// See [`S3Object`](crate::model::S3Object).
+pub mod s3_object {
+
+    /// A builder for [`S3Object`](crate::model::S3Object).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An Amazon S3 Bucket name.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>An Amazon S3 Bucket name.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>An Amazon S3 key for the ephemeris.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>An Amazon S3 key for the ephemeris.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Object`](crate::model::S3Object).
+        pub fn build(self) -> crate::model::S3Object {
+            crate::model::S3Object {
+                bucket: self.bucket,
+                key: self.key,
+                version: self.version,
+            }
+        }
+    }
+}
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EphemerisStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ephemerisstatus = unimplemented!();
+/// match ephemerisstatus {
+///     EphemerisStatus::Disabled => { /* ... */ },
+///     EphemerisStatus::Enabled => { /* ... */ },
+///     EphemerisStatus::Error => { /* ... */ },
+///     EphemerisStatus::Expired => { /* ... */ },
+///     EphemerisStatus::Invalid => { /* ... */ },
+///     EphemerisStatus::Validating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ephemerisstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EphemerisStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EphemerisStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EphemerisStatus::NewFeature` is defined.
+/// Specifically, when `ephemerisstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EphemerisStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EphemerisStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
+    Invalid,
+    #[allow(missing_docs)] // documentation missing in model
+    Validating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EphemerisStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EphemerisStatus::Disabled,
+            "ENABLED" => EphemerisStatus::Enabled,
+            "ERROR" => EphemerisStatus::Error,
+            "EXPIRED" => EphemerisStatus::Expired,
+            "INVALID" => EphemerisStatus::Invalid,
+            "VALIDATING" => EphemerisStatus::Validating,
+            other => EphemerisStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for EphemerisStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EphemerisStatus::from(s))
+    }
+}
+impl EphemerisStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EphemerisStatus::Disabled => "DISABLED",
+            EphemerisStatus::Enabled => "ENABLED",
+            EphemerisStatus::Error => "ERROR",
+            EphemerisStatus::Expired => "EXPIRED",
+            EphemerisStatus::Invalid => "INVALID",
+            EphemerisStatus::Validating => "VALIDATING",
+            EphemerisStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DISABLED",
+            "ENABLED",
+            "ERROR",
+            "EXPIRED",
+            "INVALID",
+            "VALIDATING",
+        ]
+    }
+}
+impl AsRef<str> for EphemerisStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Ephemeris data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum EphemerisData {
+    /// <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p>
+    Oem(crate::model::OemEphemeris),
+    /// <p>Two-line element set (TLE) ephemeris.</p>
+    Tle(crate::model::TleEphemeris),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl EphemerisData {
+    /// Tries to convert the enum instance into [`Oem`](crate::model::EphemerisData::Oem), extracting the inner [`OemEphemeris`](crate::model::OemEphemeris).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_oem(&self) -> std::result::Result<&crate::model::OemEphemeris, &Self> {
+        if let EphemerisData::Oem(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Oem`](crate::model::EphemerisData::Oem).
+    pub fn is_oem(&self) -> bool {
+        self.as_oem().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Tle`](crate::model::EphemerisData::Tle), extracting the inner [`TleEphemeris`](crate::model::TleEphemeris).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tle(&self) -> std::result::Result<&crate::model::TleEphemeris, &Self> {
+        if let EphemerisData::Tle(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Tle`](crate::model::EphemerisData::Tle).
+    pub fn is_tle(&self) -> bool {
+        self.as_tle().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct OemEphemeris {
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    #[doc(hidden)]
+    pub s3_object: std::option::Option<crate::model::S3Object>,
+    /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    #[doc(hidden)]
+    pub oem_data: std::option::Option<std::string::String>,
+}
+impl OemEphemeris {
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+    /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    pub fn oem_data(&self) -> std::option::Option<&str> {
+        self.oem_data.as_deref()
+    }
+}
+/// See [`OemEphemeris`](crate::model::OemEphemeris).
+pub mod oem_ephemeris {
+
+    /// A builder for [`OemEphemeris`](crate::model::OemEphemeris).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
+        pub(crate) oem_data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+        pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
+            self.s3_object = Some(input);
+            self
+        }
+        /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+        pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
+            self.s3_object = input;
+            self
+        }
+        /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
+        pub fn oem_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.oem_data = Some(input.into());
+            self
+        }
+        /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
+        pub fn set_oem_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.oem_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OemEphemeris`](crate::model::OemEphemeris).
+        pub fn build(self) -> crate::model::OemEphemeris {
+            crate::model::OemEphemeris {
+                s3_object: self.s3_object,
+                oem_data: self.oem_data,
+            }
+        }
+    }
+}
+impl OemEphemeris {
+    /// Creates a new builder-style object to manufacture [`OemEphemeris`](crate::model::OemEphemeris).
+    pub fn builder() -> crate::model::oem_ephemeris::Builder {
+        crate::model::oem_ephemeris::Builder::default()
+    }
+}
+
+/// <p>Two-line element set (TLE) ephemeris.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TleEphemeris {
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    #[doc(hidden)]
+    pub s3_object: std::option::Option<crate::model::S3Object>,
+    /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    #[doc(hidden)]
+    pub tle_data: std::option::Option<std::vec::Vec<crate::model::TleData>>,
+}
+impl TleEphemeris {
+    /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+    /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
+    pub fn tle_data(&self) -> std::option::Option<&[crate::model::TleData]> {
+        self.tle_data.as_deref()
+    }
+}
+/// See [`TleEphemeris`](crate::model::TleEphemeris).
+pub mod tle_ephemeris {
+
+    /// A builder for [`TleEphemeris`](crate::model::TleEphemeris).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
+        pub(crate) tle_data: std::option::Option<std::vec::Vec<crate::model::TleData>>,
+    }
+    impl Builder {
+        /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+        pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
+            self.s3_object = Some(input);
+            self
+        }
+        /// <p>Identifies the S3 object to be used as the ephemeris.</p>
+        pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
+            self.s3_object = input;
+            self
+        }
+        /// Appends an item to `tle_data`.
+        ///
+        /// To override the contents of this collection use [`set_tle_data`](Self::set_tle_data).
+        ///
+        /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
+        pub fn tle_data(mut self, input: crate::model::TleData) -> Self {
+            let mut v = self.tle_data.unwrap_or_default();
+            v.push(input);
+            self.tle_data = Some(v);
+            self
+        }
+        /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
+        pub fn set_tle_data(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TleData>>,
+        ) -> Self {
+            self.tle_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TleEphemeris`](crate::model::TleEphemeris).
+        pub fn build(self) -> crate::model::TleEphemeris {
+            crate::model::TleEphemeris {
+                s3_object: self.s3_object,
+                tle_data: self.tle_data,
+            }
+        }
+    }
+}
+impl TleEphemeris {
+    /// Creates a new builder-style object to manufacture [`TleEphemeris`](crate::model::TleEphemeris).
+    pub fn builder() -> crate::model::tle_ephemeris::Builder {
+        crate::model::tle_ephemeris::Builder::default()
+    }
+}
+
+/// <p>Two-line element set (TLE) data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TleData {
+    /// <p>First line of two-line element set (TLE) data.</p>
+    #[doc(hidden)]
+    pub tle_line1: std::option::Option<std::string::String>,
+    /// <p>Second line of two-line element set (TLE) data.</p>
+    #[doc(hidden)]
+    pub tle_line2: std::option::Option<std::string::String>,
+    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    #[doc(hidden)]
+    pub valid_time_range: std::option::Option<crate::model::TimeRange>,
+}
+impl TleData {
+    /// <p>First line of two-line element set (TLE) data.</p>
+    pub fn tle_line1(&self) -> std::option::Option<&str> {
+        self.tle_line1.as_deref()
+    }
+    /// <p>Second line of two-line element set (TLE) data.</p>
+    pub fn tle_line2(&self) -> std::option::Option<&str> {
+        self.tle_line2.as_deref()
+    }
+    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    pub fn valid_time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.valid_time_range.as_ref()
+    }
+}
+/// See [`TleData`](crate::model::TleData).
+pub mod tle_data {
+
+    /// A builder for [`TleData`](crate::model::TleData).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tle_line1: std::option::Option<std::string::String>,
+        pub(crate) tle_line2: std::option::Option<std::string::String>,
+        pub(crate) valid_time_range: std::option::Option<crate::model::TimeRange>,
+    }
+    impl Builder {
+        /// <p>First line of two-line element set (TLE) data.</p>
+        pub fn tle_line1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tle_line1 = Some(input.into());
+            self
+        }
+        /// <p>First line of two-line element set (TLE) data.</p>
+        pub fn set_tle_line1(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tle_line1 = input;
+            self
+        }
+        /// <p>Second line of two-line element set (TLE) data.</p>
+        pub fn tle_line2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tle_line2 = Some(input.into());
+            self
+        }
+        /// <p>Second line of two-line element set (TLE) data.</p>
+        pub fn set_tle_line2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tle_line2 = input;
+            self
+        }
+        /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+        pub fn valid_time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.valid_time_range = Some(input);
+            self
+        }
+        /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+        pub fn set_valid_time_range(
+            mut self,
+            input: std::option::Option<crate::model::TimeRange>,
+        ) -> Self {
+            self.valid_time_range = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TleData`](crate::model::TleData).
+        pub fn build(self) -> crate::model::TleData {
+            crate::model::TleData {
+                tle_line1: self.tle_line1,
+                tle_line2: self.tle_line2,
+                valid_time_range: self.valid_time_range,
+            }
+        }
+    }
+}
+impl TleData {
+    /// Creates a new builder-style object to manufacture [`TleData`](crate::model::TleData).
+    pub fn builder() -> crate::model::tle_data::Builder {
+        crate::model::tle_data::Builder::default()
+    }
+}
+
+/// <p>A time range with a start and end time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TimeRange {
+    /// <p>Time in UTC at which the time range starts.</p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Time in UTC at which the time range ends.</p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TimeRange {
+    /// <p>Time in UTC at which the time range starts.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>Time in UTC at which the time range ends.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+}
+/// See [`TimeRange`](crate::model::TimeRange).
+pub mod time_range {
+
+    /// A builder for [`TimeRange`](crate::model::TimeRange).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Time in UTC at which the time range starts.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Time in UTC at which the time range starts.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Time in UTC at which the time range ends.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>Time in UTC at which the time range ends.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange).
+        pub fn build(self) -> crate::model::TimeRange {
+            crate::model::TimeRange {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
+/// When writing a match expression against `EphemerisInvalidReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ephemerisinvalidreason = unimplemented!();
+/// match ephemerisinvalidreason {
+///     EphemerisInvalidReason::KmsKeyInvalid => { /* ... */ },
+///     EphemerisInvalidReason::MetadataInvalid => { /* ... */ },
+///     EphemerisInvalidReason::TimeRangeInvalid => { /* ... */ },
+///     EphemerisInvalidReason::TrajectoryInvalid => { /* ... */ },
+///     EphemerisInvalidReason::ValidationError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ephemerisinvalidreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EphemerisInvalidReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EphemerisInvalidReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EphemerisInvalidReason::NewFeature` is defined.
+/// Specifically, when `ephemerisinvalidreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EphemerisInvalidReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EphemerisInvalidReason {
+    /// Provided KMS key is invalid
+    KmsKeyInvalid,
+    /// Provided spacecraft identifiers such as spacecraft NORAD Id are invalid
+    MetadataInvalid,
+    /// Start, end, or expiration time(s) are invalid for the provided ephemeris
+    TimeRangeInvalid,
+    /// Provided ephemeris defines invalid spacecraft trajectory
+    TrajectoryInvalid,
+    /// Internal Service Error occurred while processing ephemeris
+    ValidationError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for EphemerisInvalidReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "KMS_KEY_INVALID" => EphemerisInvalidReason::KmsKeyInvalid,
+            "METADATA_INVALID" => EphemerisInvalidReason::MetadataInvalid,
+            "TIME_RANGE_INVALID" => EphemerisInvalidReason::TimeRangeInvalid,
+            "TRAJECTORY_INVALID" => EphemerisInvalidReason::TrajectoryInvalid,
+            "VALIDATION_ERROR" => EphemerisInvalidReason::ValidationError,
+            other => {
+                EphemerisInvalidReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for EphemerisInvalidReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EphemerisInvalidReason::from(s))
+    }
+}
+impl EphemerisInvalidReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EphemerisInvalidReason::KmsKeyInvalid => "KMS_KEY_INVALID",
+            EphemerisInvalidReason::MetadataInvalid => "METADATA_INVALID",
+            EphemerisInvalidReason::TimeRangeInvalid => "TIME_RANGE_INVALID",
+            EphemerisInvalidReason::TrajectoryInvalid => "TRAJECTORY_INVALID",
+            EphemerisInvalidReason::ValidationError => "VALIDATION_ERROR",
+            EphemerisInvalidReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "KMS_KEY_INVALID",
+            "METADATA_INVALID",
+            "TIME_RANGE_INVALID",
+            "TRAJECTORY_INVALID",
+            "VALIDATION_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for EphemerisInvalidReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum EphemerisTypeDescription {
+    /// <p>Description of ephemeris.</p>
+    Oem(crate::model::EphemerisDescription),
+    /// <p>Description of ephemeris.</p>
+    Tle(crate::model::EphemerisDescription),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl EphemerisTypeDescription {
+    /// Tries to convert the enum instance into [`Oem`](crate::model::EphemerisTypeDescription::Oem), extracting the inner [`EphemerisDescription`](crate::model::EphemerisDescription).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_oem(&self) -> std::result::Result<&crate::model::EphemerisDescription, &Self> {
+        if let EphemerisTypeDescription::Oem(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Oem`](crate::model::EphemerisTypeDescription::Oem).
+    pub fn is_oem(&self) -> bool {
+        self.as_oem().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Tle`](crate::model::EphemerisTypeDescription::Tle), extracting the inner [`EphemerisDescription`](crate::model::EphemerisDescription).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tle(&self) -> std::result::Result<&crate::model::EphemerisDescription, &Self> {
+        if let EphemerisTypeDescription::Tle(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Tle`](crate::model::EphemerisTypeDescription::Tle).
+    pub fn is_tle(&self) -> bool {
+        self.as_tle().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>Description of ephemeris.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EphemerisDescription {
+    /// <p>Source S3 object used for the ephemeris.</p>
+    #[doc(hidden)]
+    pub source_s3_object: std::option::Option<crate::model::S3Object>,
+    /// <p>Supplied ephemeris data.</p>
+    #[doc(hidden)]
+    pub ephemeris_data: std::option::Option<std::string::String>,
+}
+impl EphemerisDescription {
+    /// <p>Source S3 object used for the ephemeris.</p>
+    pub fn source_s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.source_s3_object.as_ref()
+    }
+    /// <p>Supplied ephemeris data.</p>
+    pub fn ephemeris_data(&self) -> std::option::Option<&str> {
+        self.ephemeris_data.as_deref()
+    }
+}
+/// See [`EphemerisDescription`](crate::model::EphemerisDescription).
+pub mod ephemeris_description {
+
+    /// A builder for [`EphemerisDescription`](crate::model::EphemerisDescription).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_s3_object: std::option::Option<crate::model::S3Object>,
+        pub(crate) ephemeris_data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Source S3 object used for the ephemeris.</p>
+        pub fn source_s3_object(mut self, input: crate::model::S3Object) -> Self {
+            self.source_s3_object = Some(input);
+            self
+        }
+        /// <p>Source S3 object used for the ephemeris.</p>
+        pub fn set_source_s3_object(
+            mut self,
+            input: std::option::Option<crate::model::S3Object>,
+        ) -> Self {
+            self.source_s3_object = input;
+            self
+        }
+        /// <p>Supplied ephemeris data.</p>
+        pub fn ephemeris_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ephemeris_data = Some(input.into());
+            self
+        }
+        /// <p>Supplied ephemeris data.</p>
+        pub fn set_ephemeris_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ephemeris_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EphemerisDescription`](crate::model::EphemerisDescription).
+        pub fn build(self) -> crate::model::EphemerisDescription {
+            crate::model::EphemerisDescription {
+                source_s3_object: self.source_s3_object,
+                ephemeris_data: self.ephemeris_data,
+            }
+        }
+    }
+}
+impl EphemerisDescription {
+    /// Creates a new builder-style object to manufacture [`EphemerisDescription`](crate::model::EphemerisDescription).
+    pub fn builder() -> crate::model::ephemeris_description::Builder {
+        crate::model::ephemeris_description::Builder::default()
+    }
+}
+
 /// <p>Item in a list of <code>DataflowEndpoint</code> groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -400,7 +1607,7 @@ impl DataflowEndpointListItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDetails {
-    /// <p>Endpoint security details.</p>
+    /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     #[doc(hidden)]
     pub security_details: std::option::Option<crate::model::SecurityDetails>,
     /// <p>A dataflow endpoint.</p>
@@ -408,7 +1615,7 @@ pub struct EndpointDetails {
     pub endpoint: std::option::Option<crate::model::DataflowEndpoint>,
 }
 impl EndpointDetails {
-    /// <p>Endpoint security details.</p>
+    /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     pub fn security_details(&self) -> std::option::Option<&crate::model::SecurityDetails> {
         self.security_details.as_ref()
     }
@@ -427,12 +1634,12 @@ pub mod endpoint_details {
         pub(crate) endpoint: std::option::Option<crate::model::DataflowEndpoint>,
     }
     impl Builder {
-        /// <p>Endpoint security details.</p>
+        /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
         pub fn security_details(mut self, input: crate::model::SecurityDetails) -> Self {
             self.security_details = Some(input);
             self
         }
-        /// <p>Endpoint security details.</p>
+        /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
         pub fn set_security_details(
             mut self,
             input: std::option::Option<crate::model::SecurityDetails>,
@@ -869,10 +2076,10 @@ pub struct ContactData {
     /// <p>ARN of a satellite.</p>
     #[doc(hidden)]
     pub satellite_arn: std::option::Option<std::string::String>,
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
@@ -914,11 +2121,11 @@ impl ContactData {
     pub fn satellite_arn(&self) -> std::option::Option<&str> {
         self.satellite_arn.as_deref()
     }
-    /// <p>Start time of a contact.</p>
+    /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>End time of a contact.</p>
+    /// <p>End time of a contact in UTC.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -1017,12 +2224,12 @@ pub mod contact_data {
             self.satellite_arn = input;
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Start time of a contact.</p>
+        /// <p>Start time of a contact in UTC.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1030,12 +2237,12 @@ pub mod contact_data {
             self.start_time = input;
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>End time of a contact.</p>
+        /// <p>End time of a contact in UTC.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1787,7 +2994,7 @@ pub struct S3RecordingDetails {
     /// <p>ARN of the bucket used.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
-    /// <p>Template of the S3 key used.</p>
+    /// <p>Key template used for the S3 Recording Configuration</p>
     #[doc(hidden)]
     pub key_template: std::option::Option<std::string::String>,
 }
@@ -1796,7 +3003,7 @@ impl S3RecordingDetails {
     pub fn bucket_arn(&self) -> std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
-    /// <p>Template of the S3 key used.</p>
+    /// <p>Key template used for the S3 Recording Configuration</p>
     pub fn key_template(&self) -> std::option::Option<&str> {
         self.key_template.as_deref()
     }
@@ -1821,12 +3028,12 @@ pub mod s3_recording_details {
             self.bucket_arn = input;
             self
         }
-        /// <p>Template of the S3 key used.</p>
+        /// <p>Key template used for the S3 Recording Configuration</p>
         pub fn key_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_template = Some(input.into());
             self
         }
-        /// <p>Template of the S3 key used.</p>
+        /// <p>Key template used for the S3 Recording Configuration</p>
         pub fn set_key_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_template = input;
             self
@@ -2030,7 +3237,7 @@ pub struct Source {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
-    /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     #[doc(hidden)]
     pub config_details: std::option::Option<crate::model::ConfigDetails>,
     /// <p>Region of a dataflow source.</p>
@@ -2046,7 +3253,7 @@ impl Source {
     pub fn config_id(&self) -> std::option::Option<&str> {
         self.config_id.as_deref()
     }
-    /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
     pub fn config_details(&self) -> std::option::Option<&crate::model::ConfigDetails> {
         self.config_details.as_ref()
     }
@@ -2090,12 +3297,12 @@ pub mod source {
             self.config_id = input;
             self
         }
-        /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+        /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
         pub fn config_details(mut self, input: crate::model::ConfigDetails) -> Self {
             self.config_details = Some(input);
             self
         }
-        /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+        /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
         pub fn set_config_details(
             mut self,
             input: std::option::Option<crate::model::ConfigDetails>,

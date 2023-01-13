@@ -2697,6 +2697,23 @@ pub fn parse_get_model_manifest_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::GetModelManifestError {
+            meta: generic,
+            kind: crate::error::GetModelManifestErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetModelManifestError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::GetModelManifestError {
             meta: generic,
             kind: crate::error::GetModelManifestErrorKind::InternalServerException({
@@ -6402,6 +6419,23 @@ pub fn parse_update_signal_catalog_error(
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSignalCatalogError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateSignalCatalogError {
+            meta: generic,
+            kind: crate::error::UpdateSignalCatalogErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSignalCatalogError::unhandled)?;
                     output.build()
                 };
                 if tmp.message.is_none() {

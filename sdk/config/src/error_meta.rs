@@ -3,10 +3,12 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You have specified a template that is not valid or supported.</p>
+    /// <p>You have specified a template that is invalid or supported.</p>
     ConformancePackTemplateValidationException(
         crate::error::ConformancePackTemplateValidationException,
     ),
+    /// <p>Using the same client token with one or more different parameters. Specify a new client token with the parameter changes and try again.</p>
+    IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
     InsufficientDeliveryPolicyException(crate::error::InsufficientDeliveryPolicyException),
     /// <p>Indicates one of the following errors:</p>
@@ -14,10 +16,10 @@ pub enum Error {
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
     /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
-    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
+    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
-    /// <li> <p>To read Amazon S3 bucket or call SSM:GetDocument.</p> </li>
+    /// <li> <p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
+    /// <li> <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p> </li>
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
@@ -25,7 +27,7 @@ pub enum Error {
     InvalidConfigurationRecorderNameException(
         crate::error::InvalidConfigurationRecorderNameException,
     ),
-    /// <p>The specified delivery channel name is not valid.</p>
+    /// <p>The specified delivery channel name is invalid.</p>
     InvalidDeliveryChannelNameException(crate::error::InvalidDeliveryChannelNameException),
     /// <p>The syntax of the query is incorrect.</p>
     InvalidExpressionException(crate::error::InvalidExpressionException),
@@ -41,13 +43,13 @@ pub enum Error {
     InvalidResultTokenException(crate::error::InvalidResultTokenException),
     /// <p>You have provided a null or empty role ARN.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    /// <p>The specified Amazon S3 key prefix is not valid.</p>
+    /// <p>The specified Amazon S3 key prefix is invalid.</p>
     InvalidS3KeyPrefixException(crate::error::InvalidS3KeyPrefixException),
-    /// <p>The specified Amazon KMS Key ARN is not valid.</p>
+    /// <p>The specified Amazon KMS Key ARN is invalid.</p>
     InvalidS3KmsKeyArnException(crate::error::InvalidS3KmsKeyArnException),
     /// <p>The specified Amazon SNS topic does not exist.</p>
     InvalidSnsTopicArnException(crate::error::InvalidSnsTopicArnException),
-    /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
+    /// <p>The specified time range is invalid. The earlier time is not chronologically before the later time.</p>
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
     /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(
@@ -56,7 +58,7 @@ pub enum Error {
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>You have reached the limit (100,000) of active custom resource types in your account. Delete unused resources using <code>DeleteResourceConfig</code>.</p>
+    /// <p>You have reached the limit of active custom resource types in your account. There is a limit of 100,000. Delete unused resources using <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a> <code></code>.</p>
     MaxActiveResourcesExceededException(crate::error::MaxActiveResourcesExceededException),
     /// <p>Failed to add the Config rule because the account already contains the maximum number of 150 rules. Consider deleting any deactivated rules before you add new rules.</p>
     MaxNumberOfConfigRulesExceededException(crate::error::MaxNumberOfConfigRulesExceededException),
@@ -64,7 +66,7 @@ pub enum Error {
     MaxNumberOfConfigurationRecordersExceededException(
         crate::error::MaxNumberOfConfigurationRecordersExceededException,
     ),
-    /// <p>You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with 25 Config rules per pack).</p>
+    /// <p>You have reached the limit of the number of conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfConformancePacksExceededException(
         crate::error::MaxNumberOfConformancePacksExceededException,
     ),
@@ -72,11 +74,11 @@ pub enum Error {
     MaxNumberOfDeliveryChannelsExceededException(
         crate::error::MaxNumberOfDeliveryChannelsExceededException,
     ),
-    /// <p>You have reached the limit of the number of organization Config rules you can create.</p>
+    /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
         crate::error::MaxNumberOfOrganizationConfigRulesExceededException,
     ),
-    /// <p>You have reached the limit (6) of the number of organization conformance packs in an account (6 conformance pack with 25 Config rules per pack per account).</p>
+    /// <p>You have reached the limit of the number of organization conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfOrganizationConformancePacksExceededException(
         crate::error::MaxNumberOfOrganizationConformancePacksExceededException,
     ),
@@ -96,7 +98,7 @@ pub enum Error {
     NoRunningConfigurationRecorderException(crate::error::NoRunningConfigurationRecorderException),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::error::NoSuchBucketException),
-    /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is invalid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>Config rule that you passed in the filter does not exist.</p>
     NoSuchConfigRuleInConformancePackException(
@@ -110,7 +112,7 @@ pub enum Error {
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
     /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
-    /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
+    /// <p>The Config rule in the request is invalid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
     /// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
     /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
@@ -130,13 +132,13 @@ pub enum Error {
     /// <li> <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p> </li>
     /// <li> <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p> </li>
     /// </ul>
-    /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
+    /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
     /// <p>Config resource cannot be created because your organization does not have all features enabled.</p>
     OrganizationAllFeaturesNotEnabledException(
         crate::error::OrganizationAllFeaturesNotEnabledException,
     ),
-    /// <p>You have specified a template that is not valid or supported.</p>
+    /// <p>You have specified a template that is invalid or supported.</p>
     OrganizationConformancePackTemplateValidationException(
         crate::error::OrganizationConformancePackTemplateValidationException,
     ),
@@ -161,9 +163,9 @@ pub enum Error {
     ResourceNotDiscoveredException(crate::error::ResourceNotDiscoveredException),
     /// <p>You have specified a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have reached the limit of the number of tags you can use. You have more than 50 tags.</p>
+    /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>The requested action is not valid.</p>
+    /// <p>The requested action is invalid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
@@ -181,6 +183,7 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConformancePackTemplateValidationException(inner) => inner.fmt(f),
+            Error::IdempotentParameterMismatch(inner) => inner.fmt(f),
             Error::InsufficientDeliveryPolicyException(inner) => inner.fmt(f),
             Error::InsufficientPermissionsException(inner) => inner.fmt(f),
             Error::InvalidConfigurationRecorderNameException(inner) => inner.fmt(f),
@@ -941,6 +944,9 @@ impl From<crate::error::DescribeConfigRulesError> for Error {
         match err.kind {
             crate::error::DescribeConfigRulesErrorKind::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
+            }
+            crate::error::DescribeConfigRulesErrorKind::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
             }
             crate::error::DescribeConfigRulesErrorKind::NoSuchConfigRuleException(inner) => {
                 Error::NoSuchConfigRuleException(inner)
@@ -2048,6 +2054,34 @@ impl From<crate::error::GetResourceConfigHistoryError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetResourceEvaluationSummaryError> for Error {
+    fn from(err: crate::error::GetResourceEvaluationSummaryError) -> Self {
+        match err.kind {
+            crate::error::GetResourceEvaluationSummaryErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::GetResourceEvaluationSummaryErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStoredQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2165,6 +2199,40 @@ impl From<crate::error::ListDiscoveredResourcesError> for Error {
             crate::error::ListDiscoveredResourcesErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
             crate::error::ListDiscoveredResourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
             crate::error::ListDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListResourceEvaluationsError> for Error {
+    fn from(err: crate::error::ListResourceEvaluationsError) -> Self {
+        match err.kind {
+            crate::error::ListResourceEvaluationsErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListResourceEvaluationsErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::ListResourceEvaluationsErrorKind::InvalidTimeRangeException(inner) => {
+                Error::InvalidTimeRangeException(inner)
+            }
+            crate::error::ListResourceEvaluationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2834,6 +2902,37 @@ impl From<crate::error::StartRemediationExecutionError> for Error {
             crate::error::StartRemediationExecutionErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::error::StartRemediationExecutionErrorKind::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
             crate::error::StartRemediationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartResourceEvaluationError> for Error {
+    fn from(err: crate::error::StartResourceEvaluationError) -> Self {
+        match err.kind {
+            crate::error::StartResourceEvaluationErrorKind::IdempotentParameterMismatch(inner) => {
+                Error::IdempotentParameterMismatch(inner)
+            }
+            crate::error::StartResourceEvaluationErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::StartResourceEvaluationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

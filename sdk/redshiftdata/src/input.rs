@@ -15,20 +15,21 @@ pub mod batch_execute_statement_input {
         pub(crate) with_event: std::option::Option<bool>,
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `sqls`.
         ///
         /// To override the contents of this collection use [`set_sqls`](Self::set_sqls).
         ///
-        /// <p>One or more SQL statements to run. </p>
+        /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
         pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sqls.unwrap_or_default();
             v.push(input.into());
             self.sqls = Some(v);
             self
         }
-        /// <p>One or more SQL statements to run. </p>
+        /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
         pub fn set_sqls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -115,6 +116,16 @@ pub mod batch_execute_statement_input {
             self.workgroup_name = input;
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
         pub fn build(
             self,
@@ -131,6 +142,7 @@ pub mod batch_execute_statement_input {
                 with_event: self.with_event,
                 statement_name: self.statement_name,
                 workgroup_name: self.workgroup_name,
+                client_token: self.client_token,
             })
         }
     }
@@ -141,7 +153,7 @@ impl BatchExecuteStatementInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -150,6 +162,9 @@ impl BatchExecuteStatementInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchExecuteStatementInput,
@@ -817,6 +832,7 @@ pub mod execute_statement_input {
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The SQL statement text to run. </p>
@@ -927,6 +943,16 @@ pub mod execute_statement_input {
             self.workgroup_name = input;
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
         pub fn build(
             self,
@@ -944,6 +970,7 @@ pub mod execute_statement_input {
                 statement_name: self.statement_name,
                 parameters: self.parameters,
                 workgroup_name: self.workgroup_name,
+                client_token: self.client_token,
             })
         }
     }
@@ -954,7 +981,7 @@ impl ExecuteStatementInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -963,6 +990,9 @@ impl ExecuteStatementInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteStatementInput,
@@ -2503,6 +2533,9 @@ pub struct ExecuteStatementInput {
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
@@ -2540,6 +2573,10 @@ impl ExecuteStatementInput {
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 
@@ -2655,7 +2692,7 @@ impl CancelStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
-    /// <p>One or more SQL statements to run. </p>
+    /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     #[doc(hidden)]
     pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -2679,9 +2716,12 @@ pub struct BatchExecuteStatementInput {
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementInput {
-    /// <p>One or more SQL statements to run. </p>
+    /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
         self.sqls.as_deref()
     }
@@ -2712,5 +2752,9 @@ impl BatchExecuteStatementInput {
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }

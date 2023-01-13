@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request attempted an invalid action.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request was valid but failed because of a problem with the service.</p>
@@ -33,6 +35,7 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -61,6 +64,9 @@ where
 impl From<crate::error::AcceptInvitationError> for Error {
     fn from(err: crate::error::AcceptInvitationError) -> Self {
         match err.kind {
+            crate::error::AcceptInvitationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::AcceptInvitationErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -102,6 +108,9 @@ where
 impl From<crate::error::BatchGetGraphMemberDatasourcesError> for Error {
     fn from(err: crate::error::BatchGetGraphMemberDatasourcesError) -> Self {
         match err.kind {
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -136,6 +145,9 @@ where
 impl From<crate::error::BatchGetMembershipDatasourcesError> for Error {
     fn from(err: crate::error::BatchGetMembershipDatasourcesError) -> Self {
         match err.kind {
+            crate::error::BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::BatchGetMembershipDatasourcesErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -167,6 +179,9 @@ where
 impl From<crate::error::CreateGraphError> for Error {
     fn from(err: crate::error::CreateGraphError) -> Self {
         match err.kind {
+            crate::error::CreateGraphErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::CreateGraphErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -198,6 +213,9 @@ where
 impl From<crate::error::CreateMembersError> for Error {
     fn from(err: crate::error::CreateMembersError) -> Self {
         match err.kind {
+            crate::error::CreateMembersErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::CreateMembersErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -232,6 +250,9 @@ where
 impl From<crate::error::DeleteGraphError> for Error {
     fn from(err: crate::error::DeleteGraphError) -> Self {
         match err.kind {
+            crate::error::DeleteGraphErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::DeleteGraphErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -263,6 +284,9 @@ where
 impl From<crate::error::DeleteMembersError> for Error {
     fn from(err: crate::error::DeleteMembersError) -> Self {
         match err.kind {
+            crate::error::DeleteMembersErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::DeleteMembersErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -304,6 +328,9 @@ where
 impl From<crate::error::DescribeOrganizationConfigurationError> for Error {
     fn from(err: crate::error::DescribeOrganizationConfigurationError) -> Self {
         match err.kind {
+            crate::error::DescribeOrganizationConfigurationErrorKind::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
             crate::error::DescribeOrganizationConfigurationErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -342,6 +369,9 @@ where
 impl From<crate::error::DisableOrganizationAdminAccountError> for Error {
     fn from(err: crate::error::DisableOrganizationAdminAccountError) -> Self {
         match err.kind {
+            crate::error::DisableOrganizationAdminAccountErrorKind::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
             crate::error::DisableOrganizationAdminAccountErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -376,6 +406,9 @@ where
 impl From<crate::error::DisassociateMembershipError> for Error {
     fn from(err: crate::error::DisassociateMembershipError) -> Self {
         match err.kind {
+            crate::error::DisassociateMembershipErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::DisassociateMembershipErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -417,6 +450,9 @@ where
 impl From<crate::error::EnableOrganizationAdminAccountError> for Error {
     fn from(err: crate::error::EnableOrganizationAdminAccountError) -> Self {
         match err.kind {
+            crate::error::EnableOrganizationAdminAccountErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::EnableOrganizationAdminAccountErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -448,6 +484,9 @@ where
 impl From<crate::error::GetMembersError> for Error {
     fn from(err: crate::error::GetMembersError) -> Self {
         match err.kind {
+            crate::error::GetMembersErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::GetMembersErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -482,6 +521,9 @@ where
 impl From<crate::error::ListDatasourcePackagesError> for Error {
     fn from(err: crate::error::ListDatasourcePackagesError) -> Self {
         match err.kind {
+            crate::error::ListDatasourcePackagesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListDatasourcePackagesErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -513,6 +555,9 @@ where
 impl From<crate::error::ListGraphsError> for Error {
     fn from(err: crate::error::ListGraphsError) -> Self {
         match err.kind {
+            crate::error::ListGraphsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListGraphsErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -541,6 +586,9 @@ where
 impl From<crate::error::ListInvitationsError> for Error {
     fn from(err: crate::error::ListInvitationsError) -> Self {
         match err.kind {
+            crate::error::ListInvitationsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListInvitationsErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -569,6 +617,9 @@ where
 impl From<crate::error::ListMembersError> for Error {
     fn from(err: crate::error::ListMembersError) -> Self {
         match err.kind {
+            crate::error::ListMembersErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListMembersErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -603,6 +654,9 @@ where
 impl From<crate::error::ListOrganizationAdminAccountsError> for Error {
     fn from(err: crate::error::ListOrganizationAdminAccountsError) -> Self {
         match err.kind {
+            crate::error::ListOrganizationAdminAccountsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListOrganizationAdminAccountsErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -636,6 +690,9 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
+            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -669,6 +726,9 @@ where
 impl From<crate::error::RejectInvitationError> for Error {
     fn from(err: crate::error::RejectInvitationError) -> Self {
         match err.kind {
+            crate::error::RejectInvitationErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::RejectInvitationErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -706,6 +766,9 @@ where
 impl From<crate::error::StartMonitoringMemberError> for Error {
     fn from(err: crate::error::StartMonitoringMemberError) -> Self {
         match err.kind {
+            crate::error::StartMonitoringMemberErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::StartMonitoringMemberErrorKind::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
@@ -743,6 +806,9 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
+            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::TagResourceErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -774,6 +840,9 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
+            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -808,6 +877,9 @@ where
 impl From<crate::error::UpdateDatasourcePackagesError> for Error {
     fn from(err: crate::error::UpdateDatasourcePackagesError) -> Self {
         match err.kind {
+            crate::error::UpdateDatasourcePackagesErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::error::UpdateDatasourcePackagesErrorKind::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -849,6 +921,9 @@ where
 impl From<crate::error::UpdateOrganizationConfigurationError> for Error {
     fn from(err: crate::error::UpdateOrganizationConfigurationError) -> Self {
         match err.kind {
+            crate::error::UpdateOrganizationConfigurationErrorKind::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
             crate::error::UpdateOrganizationConfigurationErrorKind::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),

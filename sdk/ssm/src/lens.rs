@@ -329,6 +329,16 @@ pub(crate) fn reflens_structure_crate_output_get_parameters_by_path_output_next_
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_get_resource_policies_output_next_token(
+    input: &crate::output::GetResourcePoliciesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_associations_output_next_token(
     input: &crate::output::ListAssociationsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -757,6 +767,16 @@ pub(crate) fn lens_structure_crate_output_get_ops_summary_output_entities(
     input: crate::output::GetOpsSummaryOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::OpsEntity>> {
     let input = match input.entities {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_get_resource_policies_output_policies(
+    input: crate::output::GetResourcePoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>> {
+    let input = match input.policies {
         None => return None,
         Some(t) => t,
     };

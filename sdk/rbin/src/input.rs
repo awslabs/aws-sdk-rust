@@ -12,6 +12,7 @@ pub mod create_rule_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
     }
     impl Builder {
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -92,6 +93,19 @@ pub mod create_rule_input {
             self.resource_tags = input;
             self
         }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn lock_configuration(mut self, input: crate::model::LockConfiguration) -> Self {
+            self.lock_configuration = Some(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn set_lock_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LockConfiguration>,
+        ) -> Self {
+            self.lock_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRuleInput`](crate::input::CreateRuleInput).
         pub fn build(
             self,
@@ -103,6 +117,7 @@ pub mod create_rule_input {
                 tags: self.tags,
                 resource_type: self.resource_type,
                 resource_tags: self.resource_tags,
+                lock_configuration: self.lock_configuration,
             })
         }
     }
@@ -514,6 +529,7 @@ pub mod list_rules_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        pub(crate) lock_state: std::option::Option<crate::model::LockState>,
     }
     impl Builder {
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -568,6 +584,19 @@ pub mod list_rules_input {
             self.resource_tags = input;
             self
         }
+        /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+        pub fn lock_state(mut self, input: crate::model::LockState) -> Self {
+            self.lock_state = Some(input);
+            self
+        }
+        /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+        pub fn set_lock_state(
+            mut self,
+            input: std::option::Option<crate::model::LockState>,
+        ) -> Self {
+            self.lock_state = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRulesInput`](crate::input::ListRulesInput).
         pub fn build(
             self,
@@ -578,6 +607,7 @@ pub mod list_rules_input {
                 next_token: self.next_token,
                 resource_type: self.resource_type,
                 resource_tags: self.resource_tags,
+                lock_state: self.lock_state,
             })
         }
     }
@@ -838,6 +868,178 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`LockRuleInput`](crate::input::LockRuleInput).
+pub mod lock_rule_input {
+
+    /// A builder for [`LockRuleInput`](crate::input::LockRuleInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn lock_configuration(mut self, input: crate::model::LockConfiguration) -> Self {
+            self.lock_configuration = Some(input);
+            self
+        }
+        /// <p>Information about the retention rule lock configuration.</p>
+        pub fn set_lock_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LockConfiguration>,
+        ) -> Self {
+            self.lock_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LockRuleInput`](crate::input::LockRuleInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::LockRuleInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::LockRuleInput {
+                identifier: self.identifier,
+                lock_configuration: self.lock_configuration,
+            })
+        }
+    }
+}
+impl LockRuleInput {
+    /// Consumes the builder and constructs an Operation<[`LockRule`](crate::operation::LockRule)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::LockRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::LockRuleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_4 = &_input.identifier;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if identifier.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/rules/{Identifier}/lock", Identifier = identifier)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::LockRuleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_lock_rule(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::LockRule::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "LockRule", "rbin",
+                ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`LockRuleInput`](crate::input::LockRuleInput).
+    pub fn builder() -> crate::input::lock_rule_input::Builder {
+        crate::input::lock_rule_input::Builder::default()
+    }
+}
+
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
 
@@ -909,15 +1111,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_4 = &_input.resource_arn;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
+                let input_5 = &_input.resource_arn;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_4,
+                    input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -1019,6 +1221,156 @@ impl TagResourceInput {
     }
 }
 
+/// See [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+pub mod unlock_rule_input {
+
+    /// A builder for [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the retention rule.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UnlockRuleInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UnlockRuleInput {
+                identifier: self.identifier,
+            })
+        }
+    }
+}
+impl UnlockRuleInput {
+    /// Consumes the builder and constructs an Operation<[`UnlockRule`](crate::operation::UnlockRule)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UnlockRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UnlockRuleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_6 = &_input.identifier;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if identifier.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/rules/{Identifier}/unlock",
+                    Identifier = identifier
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UnlockRuleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UnlockRule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UnlockRule",
+            "rbin",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UnlockRuleInput`](crate::input::UnlockRuleInput).
+    pub fn builder() -> crate::input::unlock_rule_input::Builder {
+        crate::input::unlock_rule_input::Builder::default()
+    }
+}
+
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
 
@@ -1090,15 +1442,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_5 = &_input.resource_arn;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
+                let input_7 = &_input.resource_arn;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_5,
+                    input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
@@ -1118,15 +1470,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_6 = &_input.tag_keys;
-                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                let inner_8 = &_input.tag_keys;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_7 in inner_6 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_7));
+                for inner_9 in inner_8 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
                 Ok(())
             }
@@ -1250,12 +1602,16 @@ pub mod update_rule_input {
             self.description = input;
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+        /// <note>
+        /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+        /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+        /// <note>
+        /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+        /// </note>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -1321,15 +1677,15 @@ impl UpdateRuleInput {
                 _input: &crate::input::UpdateRuleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_8 = &_input.identifier;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_10 = &_input.identifier;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "identifier",
                         "cannot be empty or unset",
                     )
                 })?;
                 let identifier = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if identifier.is_empty() {
@@ -1444,7 +1800,9 @@ pub struct UpdateRuleInput {
     /// <p>The retention rule description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <note>
+    /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+    /// </note>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
@@ -1466,7 +1824,9 @@ impl UpdateRuleInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <note>
+    /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
+    /// </note>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -1503,6 +1863,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UnlockRuleInput {
+    /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
+    pub identifier: std::option::Option<std::string::String>,
+}
+impl UnlockRuleInput {
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
     #[doc(hidden)]
@@ -1519,6 +1894,28 @@ impl TagResourceInput {
     /// <p>Information about the tags to assign to the retention rule.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LockRuleInput {
+    /// <p>The unique ID of the retention rule.</p>
+    #[doc(hidden)]
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>Information about the retention rule lock configuration.</p>
+    #[doc(hidden)]
+    pub lock_configuration: std::option::Option<crate::model::LockConfiguration>,
+}
+impl LockRuleInput {
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn lock_configuration(&self) -> std::option::Option<&crate::model::LockConfiguration> {
+        self.lock_configuration.as_ref()
     }
 }
 
@@ -1553,6 +1950,9 @@ pub struct ListRulesInput {
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+    /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+    #[doc(hidden)]
+    pub lock_state: std::option::Option<crate::model::LockState>,
 }
 impl ListRulesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -1570,6 +1970,10 @@ impl ListRulesInput {
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
+    }
+    /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
+    pub fn lock_state(&self) -> std::option::Option<&crate::model::LockState> {
+        self.lock_state.as_ref()
     }
 }
 
@@ -1624,6 +2028,9 @@ pub struct CreateRuleInput {
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+    /// <p>Information about the retention rule lock configuration.</p>
+    #[doc(hidden)]
+    pub lock_configuration: std::option::Option<crate::model::LockConfiguration>,
 }
 impl CreateRuleInput {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -1647,5 +2054,9 @@ impl CreateRuleInput {
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn lock_configuration(&self) -> std::option::Option<&crate::model::LockConfiguration> {
+        self.lock_configuration.as_ref()
     }
 }

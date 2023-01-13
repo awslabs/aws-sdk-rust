@@ -862,7 +862,7 @@ pub struct ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <p>The current state of the replica global secondary index:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code> </p> </li>
     /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
     /// </ul>
@@ -885,7 +885,7 @@ impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
     /// <p>The current state of the replica global secondary index:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code> </p> </li>
     /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
     /// </ul>
@@ -934,7 +934,7 @@ pub mod replica_global_secondary_index_auto_scaling_description {
         /// <p>The current state of the replica global secondary index:</p>
         /// <ul>
         /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code> </p> </li>
         /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
         /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
         /// </ul>
@@ -945,7 +945,7 @@ pub mod replica_global_secondary_index_auto_scaling_description {
         /// <p>The current state of the replica global secondary index:</p>
         /// <ul>
         /// <li> <p> <code>CREATING</code> - The index is being created.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The index is being updated.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code> </p> </li>
         /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
         /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
         /// </ul>
@@ -1870,7 +1870,7 @@ pub struct TableDescription {
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code>.</p> </li>
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt the table in inaccessible. Table operations may fail due to failure to use the KMS key. DynamoDB will initiate the table archival process when a table's KMS key remains inaccessible for more than seven days. </p> </li>
@@ -1887,10 +1887,10 @@ pub struct TableDescription {
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub table_size_bytes: i64,
+    pub table_size_bytes: std::option::Option<i64>,
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub item_count: i64,
+    pub item_count: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
     #[doc(hidden)]
     pub table_arn: std::option::Option<std::string::String>,
@@ -2020,7 +2020,7 @@ impl TableDescription {
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code>.</p> </li>
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt the table in inaccessible. Table operations may fail due to failure to use the KMS key. DynamoDB will initiate the table archival process when a table's KMS key remains inaccessible for more than seven days. </p> </li>
@@ -2041,11 +2041,11 @@ impl TableDescription {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn table_size_bytes(&self) -> i64 {
+    pub fn table_size_bytes(&self) -> std::option::Option<i64> {
         self.table_size_bytes
     }
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn item_count(&self) -> i64 {
+    pub fn item_count(&self) -> std::option::Option<i64> {
         self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
@@ -2277,7 +2277,7 @@ pub mod table_description {
         /// <p>The current state of the table:</p>
         /// <ul>
         /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code>.</p> </li>
         /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
         /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
         /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt the table in inaccessible. Table operations may fail due to failure to use the KMS key. DynamoDB will initiate the table archival process when a table's KMS key remains inaccessible for more than seven days. </p> </li>
@@ -2291,7 +2291,7 @@ pub mod table_description {
         /// <p>The current state of the table:</p>
         /// <ul>
         /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for data operations when <code>UPDATING</code>.</p> </li>
         /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
         /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
         /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt the table in inaccessible. Table operations may fail due to failure to use the KMS key. DynamoDB will initiate the table archival process when a table's KMS key remains inaccessible for more than seven days. </p> </li>
@@ -2663,8 +2663,8 @@ pub mod table_description {
                 table_status: self.table_status,
                 creation_date_time: self.creation_date_time,
                 provisioned_throughput: self.provisioned_throughput,
-                table_size_bytes: self.table_size_bytes.unwrap_or_default(),
-                item_count: self.item_count.unwrap_or_default(),
+                table_size_bytes: self.table_size_bytes,
+                item_count: self.item_count,
                 table_arn: self.table_arn,
                 table_id: self.table_id,
                 billing_mode_summary: self.billing_mode_summary,
@@ -4080,10 +4080,10 @@ pub struct GlobalSecondaryIndexDescription {
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub index_size_bytes: i64,
+    pub index_size_bytes: std::option::Option<i64>,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub item_count: i64,
+    pub item_count: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
@@ -4133,11 +4133,11 @@ impl GlobalSecondaryIndexDescription {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn index_size_bytes(&self) -> i64 {
+    pub fn index_size_bytes(&self) -> std::option::Option<i64> {
         self.index_size_bytes
     }
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn item_count(&self) -> i64 {
+    pub fn item_count(&self) -> std::option::Option<i64> {
         self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
@@ -4317,8 +4317,8 @@ pub mod global_secondary_index_description {
                 index_status: self.index_status,
                 backfilling: self.backfilling,
                 provisioned_throughput: self.provisioned_throughput,
-                index_size_bytes: self.index_size_bytes.unwrap_or_default(),
-                item_count: self.item_count.unwrap_or_default(),
+                index_size_bytes: self.index_size_bytes,
+                item_count: self.item_count,
                 index_arn: self.index_arn,
             }
         }
@@ -4871,10 +4871,10 @@ pub struct LocalSecondaryIndexDescription {
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub index_size_bytes: i64,
+    pub index_size_bytes: std::option::Option<i64>,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub item_count: i64,
+    pub item_count: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
@@ -4900,11 +4900,11 @@ impl LocalSecondaryIndexDescription {
         self.projection.as_ref()
     }
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn index_size_bytes(&self) -> i64 {
+    pub fn index_size_bytes(&self) -> std::option::Option<i64> {
         self.index_size_bytes
     }
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn item_count(&self) -> i64 {
+    pub fn item_count(&self) -> std::option::Option<i64> {
         self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
@@ -5018,8 +5018,8 @@ pub mod local_secondary_index_description {
                 index_name: self.index_name,
                 key_schema: self.key_schema,
                 projection: self.projection,
-                index_size_bytes: self.index_size_bytes.unwrap_or_default(),
-                item_count: self.item_count.unwrap_or_default(),
+                index_size_bytes: self.index_size_bytes,
+                item_count: self.item_count,
                 index_arn: self.index_arn,
             }
         }
@@ -5032,7 +5032,9 @@ impl LocalSecondaryIndexDescription {
     }
 }
 
-/// <p>Contains the details for the read/write capacity mode.</p>
+/// <p>Contains the details for the read/write capacity mode. This page talks about <code>PROVISIONED</code> and <code>PAY_PER_REQUEST</code> billing modes. For more information about these modes, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html">Read/write capacity mode</a>.</p> <note>
+/// <p>You may need to switch to on-demand mode at least once in order to return a <code>BillingModeSummary</code> response.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingModeSummary {
@@ -13760,7 +13762,7 @@ pub struct ImportTableDescription {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The total size of data processed from the source file, in Bytes. </p>
     #[doc(hidden)]
-    pub processed_size_bytes: i64,
+    pub processed_size_bytes: std::option::Option<i64>,
     /// <p> The total number of items processed from the source file. </p>
     #[doc(hidden)]
     pub processed_item_count: i64,
@@ -13836,7 +13838,7 @@ impl ImportTableDescription {
         self.end_time.as_ref()
     }
     /// <p> The total size of data processed from the source file, in Bytes. </p>
-    pub fn processed_size_bytes(&self) -> i64 {
+    pub fn processed_size_bytes(&self) -> std::option::Option<i64> {
         self.processed_size_bytes
     }
     /// <p> The total number of items processed from the source file. </p>
@@ -14124,7 +14126,7 @@ pub mod import_table_description {
                 table_creation_parameters: self.table_creation_parameters,
                 start_time: self.start_time,
                 end_time: self.end_time,
-                processed_size_bytes: self.processed_size_bytes.unwrap_or_default(),
+                processed_size_bytes: self.processed_size_bytes,
                 processed_item_count: self.processed_item_count.unwrap_or_default(),
                 imported_item_count: self.imported_item_count.unwrap_or_default(),
                 failure_code: self.failure_code,
@@ -16356,7 +16358,7 @@ pub struct SourceTableDetails {
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
     #[doc(hidden)]
-    pub table_size_bytes: i64,
+    pub table_size_bytes: std::option::Option<i64>,
     /// <p>Schema of the table. </p>
     #[doc(hidden)]
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -16391,7 +16393,7 @@ impl SourceTableDetails {
         self.table_arn.as_deref()
     }
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
-    pub fn table_size_bytes(&self) -> i64 {
+    pub fn table_size_bytes(&self) -> std::option::Option<i64> {
         self.table_size_bytes
     }
     /// <p>Schema of the table. </p>
@@ -16563,7 +16565,7 @@ pub mod source_table_details {
                 table_name: self.table_name,
                 table_id: self.table_id,
                 table_arn: self.table_arn,
-                table_size_bytes: self.table_size_bytes.unwrap_or_default(),
+                table_size_bytes: self.table_size_bytes,
                 key_schema: self.key_schema,
                 table_creation_date_time: self.table_creation_date_time,
                 provisioned_throughput: self.provisioned_throughput,

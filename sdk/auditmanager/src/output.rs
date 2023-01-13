@@ -503,12 +503,12 @@ impl UpdateAssessmentControlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
         self.assessment.as_ref()
     }
@@ -522,12 +522,12 @@ pub mod update_assessment_output {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
     }
     impl Builder {
-        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+        /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
             self
         }
-        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+        /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
         pub fn set_assessment(
             mut self,
             input: std::option::Option<crate::model::Assessment>,
@@ -2309,12 +2309,12 @@ impl GetEvidenceByEvidenceFolderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceOutput {
-    /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     #[doc(hidden)]
     pub evidence: std::option::Option<crate::model::Evidence>,
 }
 impl GetEvidenceOutput {
-    /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
     pub fn evidence(&self) -> std::option::Option<&crate::model::Evidence> {
         self.evidence.as_ref()
     }
@@ -2328,12 +2328,12 @@ pub mod get_evidence_output {
         pub(crate) evidence: std::option::Option<crate::model::Evidence>,
     }
     impl Builder {
-        /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+        /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
         pub fn evidence(mut self, input: crate::model::Evidence) -> Self {
             self.evidence = Some(input);
             self
         }
-        /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+        /// <p> The evidence that the <code>GetEvidence</code> API returned. </p>
         pub fn set_evidence(mut self, input: std::option::Option<crate::model::Evidence>) -> Self {
             self.evidence = input;
             self

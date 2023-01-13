@@ -97,6 +97,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataflowEndpointGr
     }
 }
 
+/// Operation shape for `CreateEphemeris`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_ephemeris`](crate::client::Client::create_ephemeris).
+///
+/// See [`crate::client::fluent_builders::CreateEphemeris`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateEphemeris {
+    _private: (),
+}
+impl CreateEphemeris {
+    /// Creates a new builder-style object to manufacture [`CreateEphemerisInput`](crate::input::CreateEphemerisInput).
+    pub fn builder() -> crate::input::create_ephemeris_input::Builder {
+        crate::input::create_ephemeris_input::Builder::default()
+    }
+    /// Creates a new `CreateEphemeris` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEphemeris {
+    type Output = std::result::Result<
+        crate::output::CreateEphemerisOutput,
+        crate::error::CreateEphemerisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_ephemeris_error(response)
+        } else {
+            crate::operation_deser::parse_create_ephemeris_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -197,6 +231,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataflowEndpointGr
     }
 }
 
+/// Operation shape for `DeleteEphemeris`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_ephemeris`](crate::client::Client::delete_ephemeris).
+///
+/// See [`crate::client::fluent_builders::DeleteEphemeris`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteEphemeris {
+    _private: (),
+}
+impl DeleteEphemeris {
+    /// Creates a new builder-style object to manufacture [`DeleteEphemerisInput`](crate::input::DeleteEphemerisInput).
+    pub fn builder() -> crate::input::delete_ephemeris_input::Builder {
+        crate::input::delete_ephemeris_input::Builder::default()
+    }
+    /// Creates a new `DeleteEphemeris` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEphemeris {
+    type Output = std::result::Result<
+        crate::output::DeleteEphemerisOutput,
+        crate::error::DeleteEphemerisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_ephemeris_error(response)
+        } else {
+            crate::operation_deser::parse_delete_ephemeris_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -261,6 +329,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContact {
             crate::operation_deser::parse_describe_contact_error(response)
         } else {
             crate::operation_deser::parse_describe_contact_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeEphemeris`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_ephemeris`](crate::client::Client::describe_ephemeris).
+///
+/// See [`crate::client::fluent_builders::DescribeEphemeris`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeEphemeris {
+    _private: (),
+}
+impl DescribeEphemeris {
+    /// Creates a new builder-style object to manufacture [`DescribeEphemerisInput`](crate::input::DescribeEphemerisInput).
+    pub fn builder() -> crate::input::describe_ephemeris_input::Builder {
+        crate::input::describe_ephemeris_input::Builder::default()
+    }
+    /// Creates a new `DescribeEphemeris` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEphemeris {
+    type Output = std::result::Result<
+        crate::output::DescribeEphemerisOutput,
+        crate::error::DescribeEphemerisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_ephemeris_error(response)
+        } else {
+            crate::operation_deser::parse_describe_ephemeris_response(response)
         }
     }
 }
@@ -526,6 +628,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataflowEndpointGrou
     }
 }
 
+/// Operation shape for `ListEphemerides`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_ephemerides`](crate::client::Client::list_ephemerides).
+///
+/// See [`crate::client::fluent_builders::ListEphemerides`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListEphemerides {
+    _private: (),
+}
+impl ListEphemerides {
+    /// Creates a new builder-style object to manufacture [`ListEphemeridesInput`](crate::input::ListEphemeridesInput).
+    pub fn builder() -> crate::input::list_ephemerides_input::Builder {
+        crate::input::list_ephemerides_input::Builder::default()
+    }
+    /// Creates a new `ListEphemerides` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEphemerides {
+    type Output = std::result::Result<
+        crate::output::ListEphemeridesOutput,
+        crate::error::ListEphemeridesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_ephemerides_error(response)
+        } else {
+            crate::operation_deser::parse_list_ephemerides_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListGroundStations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -784,6 +920,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfig {
             crate::operation_deser::parse_update_config_error(response)
         } else {
             crate::operation_deser::parse_update_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEphemeris`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_ephemeris`](crate::client::Client::update_ephemeris).
+///
+/// See [`crate::client::fluent_builders::UpdateEphemeris`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateEphemeris {
+    _private: (),
+}
+impl UpdateEphemeris {
+    /// Creates a new builder-style object to manufacture [`UpdateEphemerisInput`](crate::input::UpdateEphemerisInput).
+    pub fn builder() -> crate::input::update_ephemeris_input::Builder {
+        crate::input::update_ephemeris_input::Builder::default()
+    }
+    /// Creates a new `UpdateEphemeris` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEphemeris {
+    type Output = std::result::Result<
+        crate::output::UpdateEphemerisOutput,
+        crate::error::UpdateEphemerisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_ephemeris_error(response)
+        } else {
+            crate::operation_deser::parse_update_ephemeris_response(response)
         }
     }
 }

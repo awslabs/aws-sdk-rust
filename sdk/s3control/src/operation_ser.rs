@@ -264,6 +264,21 @@ pub fn serialize_operation_crate_operation_put_storage_lens_configuration_taggin
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_submit_multi_region_access_point_routes(
+    input: &crate::input::SubmitMultiRegionAccessPointRoutesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    let mut out = String::new();
+    {
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
+        #[allow(unused_mut)]
+        let mut root = writer
+            .start_el("SubmitMultiRegionAccessPointRoutesRequest")
+            .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
+        crate::xml_ser::serialize_structure_crate_input_submit_multi_region_access_point_routes_input(input, root)?
+    }
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn rest_xml_unset_payload() -> std::vec::Vec<u8> {
     Vec::new()
 }

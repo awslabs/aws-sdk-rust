@@ -5052,6 +5052,172 @@ impl std::error::Error for RemoveApplicationInstanceError {
     }
 }
 
+/// Error type for the `SignalApplicationInstanceNodeInstances` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SignalApplicationInstanceNodeInstancesError {
+    /// Kind of error that occurred.
+    pub kind: SignalApplicationInstanceNodeInstancesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SignalApplicationInstanceNodeInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `SignalApplicationInstanceNodeInstances` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SignalApplicationInstanceNodeInstancesErrorKind {
+    /// <p>The requestor does not have permission to access the target action or resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request would cause a limit to be exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request contains an invalid parameter value.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for SignalApplicationInstanceNodeInstancesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException(
+                _inner,
+            ) => _inner.fmt(f),
+            SignalApplicationInstanceNodeInstancesErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SignalApplicationInstanceNodeInstancesError {
+    fn code(&self) -> Option<&str> {
+        SignalApplicationInstanceNodeInstancesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SignalApplicationInstanceNodeInstancesError {
+    /// Creates a new `SignalApplicationInstanceNodeInstancesError`.
+    pub fn new(
+        kind: SignalApplicationInstanceNodeInstancesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SignalApplicationInstanceNodeInstancesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SignalApplicationInstanceNodeInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SignalApplicationInstanceNodeInstancesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SignalApplicationInstanceNodeInstancesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for SignalApplicationInstanceNodeInstancesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SignalApplicationInstanceNodeInstancesErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::ServiceQuotaExceededException(
+                _inner,
+            ) => Some(_inner),
+            SignalApplicationInstanceNodeInstancesErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            SignalApplicationInstanceNodeInstancesErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

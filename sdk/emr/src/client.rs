@@ -169,11 +169,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_name): <p>A descriptive name for the Amazon EMR Studio.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_description): <p>A detailed description of the Amazon EMR Studio.</p>
-    ///   - [`auth_mode(AuthMode)`](crate::client::fluent_builders::CreateStudio::auth_mode) / [`set_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreateStudio::set_auth_mode): <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+    ///   - [`auth_mode(AuthMode)`](crate::client::fluent_builders::CreateStudio::auth_mode) / [`set_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreateStudio::set_auth_mode): <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_vpc_id): <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateStudio::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStudio::set_subnet_ids): <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
     ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_service_role): <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-    ///   - [`user_role(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role) / [`set_user_role(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role): <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
+    ///   - [`user_role(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role) / [`set_user_role(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role): <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
     ///   - [`workspace_security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::workspace_security_group_id) / [`set_workspace_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_workspace_security_group_id): <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     ///   - [`engine_security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::engine_security_group_id) / [`set_engine_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_engine_security_group_id): <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     ///   - [`default_s3_location(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::default_s3_location) / [`set_default_s3_location(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_default_s3_location): <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
@@ -191,8 +191,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_name): <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_name): <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
     ///   - [`session_policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_session_policy_arn): <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
     /// - On success, responds with [`CreateStudioSessionMappingOutput`](crate::output::CreateStudioSessionMappingOutput)
@@ -225,8 +225,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_name): <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_name): <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     /// - On success, responds with [`DeleteStudioSessionMappingOutput`](crate::output::DeleteStudioSessionMappingOutput)
 
@@ -340,6 +340,18 @@ impl Client {
     ) -> fluent_builders::GetBlockPublicAccessConfiguration {
         fluent_builders::GetBlockPublicAccessConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetClusterSessionCredentials`](crate::client::fluent_builders::GetClusterSessionCredentials) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::set_cluster_id): <p>The unique identifier of the cluster.</p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
+    /// - On success, responds with [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput) with field(s):
+    ///   - [`credentials(Option<Credentials>)`](crate::output::GetClusterSessionCredentialsOutput::credentials): <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    ///   - [`expires_at(Option<DateTime>)`](crate::output::GetClusterSessionCredentialsOutput::expires_at): <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
+    /// - On failure, responds with [`SdkError<GetClusterSessionCredentialsError>`](crate::error::GetClusterSessionCredentialsError)
+    pub fn get_cluster_session_credentials(&self) -> fluent_builders::GetClusterSessionCredentials {
+        fluent_builders::GetClusterSessionCredentials::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetManagedScalingPolicy`](crate::client::fluent_builders::GetManagedScalingPolicy) operation.
     ///
     /// - The fluent builder is configurable:
@@ -354,8 +366,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_name): <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_name): <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to fetch is a user or a group.</p>
     /// - On success, responds with [`GetStudioSessionMappingOutput`](crate::output::GetStudioSessionMappingOutput) with field(s):
     ///   - [`session_mapping(Option<SessionMappingDetail>)`](crate::output::GetStudioSessionMappingOutput::session_mapping): <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
@@ -660,7 +672,7 @@ impl Client {
     ///   - [`configurations(Vec<Configuration>)`](crate::client::fluent_builders::RunJobFlow::configurations) / [`set_configurations(Option<Vec<Configuration>>)`](crate::client::fluent_builders::RunJobFlow::set_configurations): <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
     ///   - [`visible_to_all_users(bool)`](crate::client::fluent_builders::RunJobFlow::visible_to_all_users) / [`set_visible_to_all_users(bool)`](crate::client::fluent_builders::RunJobFlow::set_visible_to_all_users): <important>   <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>  </important>  <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>  <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     ///   - [`job_flow_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::job_flow_role) / [`set_job_flow_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_job_flow_role): <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_service_role): <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_service_role): <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RunJobFlow::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RunJobFlow::set_tags): <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
     ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_security_configuration): <p>The name of a security configuration to apply to the cluster.</p>
     ///   - [`auto_scaling_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::auto_scaling_role) / [`set_auto_scaling_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_auto_scaling_role): <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
@@ -758,8 +770,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_name): <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_name): <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to update is a user or a group.</p>
     ///   - [`session_policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_session_policy_arn): <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
     /// - On success, responds with [`UpdateStudioSessionMappingOutput`](crate::output::UpdateStudioSessionMappingOutput)
@@ -957,7 +969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddJobFlowSteps`.
     ///
     /// <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed in each job flow.</p>
-    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop.</p>
     /// <p>A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step.</p>
     /// <p>Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully.</p>
     /// <p>You can only add steps to a cluster that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> <note>
@@ -1429,12 +1441,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
             self.inner = self.inner.auth_mode(input);
             self
         }
-        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
+        /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
             self.inner = self.inner.set_auth_mode(input);
             self
@@ -1476,12 +1488,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
         pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_role(input.into());
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
         pub fn set_user_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_role(input);
             self
@@ -1574,7 +1586,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStudioSessionMapping`.
     ///
-    /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>
+    /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use IAM Identity Center authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudioSessionMapping {
         handle: std::sync::Arc<super::Handle>,
@@ -1644,22 +1656,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1912,22 +1924,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2691,6 +2703,92 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `GetClusterSessionCredentials`.
+    ///
+    /// <p>Provides Temporary, basic HTTP credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username-based and password-based authentication.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetClusterSessionCredentials {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_cluster_session_credentials_input::Builder,
+    }
+    impl GetClusterSessionCredentials {
+        /// Creates a new `GetClusterSessionCredentials`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetClusterSessionCredentials,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetClusterSessionCredentialsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetClusterSessionCredentialsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetClusterSessionCredentialsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the cluster.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the cluster.</p>
+        pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cluster_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
+        pub fn set_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_role_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetManagedScalingPolicy`.
     ///
     /// <p>Fetches the attached managed scaling policy for an Amazon EMR cluster. </p>
@@ -2836,22 +2934,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5006,8 +5104,8 @@ pub mod fluent_builders {
     /// <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <code>JobFlowInstancesConfig</code> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state rather than shutting down after the steps have completed. </p>
     /// <p>For additional protection, you can set the <code>JobFlowInstancesConfig</code> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p>
     /// <p>A maximum of 256 steps are allowed in each job flow.</p>
-    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    /// <p>For long running clusters, we recommend that you periodically store your results.</p> <note>
+    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop.</p>
+    /// <p>For long-running clusters, we recommend that you periodically store your results.</p> <note>
     /// <p>The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not both.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -5327,12 +5425,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_role(input);
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
@@ -6225,22 +6323,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,

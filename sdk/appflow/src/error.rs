@@ -420,66 +420,6 @@ impl ConflictException {
     }
 }
 
-/// <p> The requested operation is not supported for the current flow. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedOperationException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl UnsupportedOperationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedOperationException")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedOperationException {}
-/// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-pub mod unsupported_operation_exception {
-
-    /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-        pub fn build(self) -> crate::error::UnsupportedOperationException {
-            crate::error::UnsupportedOperationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl UnsupportedOperationException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-    pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
-        crate::error::unsupported_operation_exception::Builder::default()
-    }
-}
-
 /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -497,9 +437,9 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -557,9 +497,9 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -597,6 +537,66 @@ impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p> The requested operation is not supported for the current flow. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UnsupportedOperationException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl UnsupportedOperationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedOperationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedOperationException")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedOperationException {}
+/// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+pub mod unsupported_operation_exception {
+
+    /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+        pub fn build(self) -> crate::error::UnsupportedOperationException {
+            crate::error::UnsupportedOperationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UnsupportedOperationException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+    pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
+        crate::error::unsupported_operation_exception::Builder::default()
     }
 }
 
@@ -3486,6 +3486,218 @@ impl std::error::Error for UpdateConnectorProfileError {
             UpdateConnectorProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConnectorProfileErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateConnectorProfileErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `UpdateConnectorRegistration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateConnectorRegistrationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateConnectorRegistrationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateConnectorRegistrationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateConnectorRegistrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateConnectorRegistration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateConnectorRegistrationErrorKind {
+    /// <p>AppFlow/Requester has invalid or missing permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p> An error occurred when authenticating with the connector endpoint. </p>
+    ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
+    /// <p> An error occurred when retrieving data from the connector endpoint. </p>
+    ConnectorServerException(crate::error::ConnectorServerException),
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>API calls have exceeded the maximum allowed API request rate per account and per Region. </p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateConnectorRegistrationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateConnectorRegistrationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::ConnectorAuthenticationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateConnectorRegistrationErrorKind::ConnectorServerException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateConnectorRegistrationErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateConnectorRegistrationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateConnectorRegistrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateConnectorRegistrationError {
+    fn code(&self) -> Option<&str> {
+        UpdateConnectorRegistrationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateConnectorRegistrationError {
+    /// Creates a new `UpdateConnectorRegistrationError`.
+    pub fn new(kind: UpdateConnectorRegistrationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateConnectorRegistrationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateConnectorRegistrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateConnectorRegistrationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateConnectorRegistrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ConnectorAuthenticationException`.
+    pub fn is_connector_authentication_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ConnectorAuthenticationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ConnectorServerException`.
+    pub fn is_connector_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ConnectorServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorRegistrationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorRegistrationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateConnectorRegistrationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateConnectorRegistrationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::ConnectorAuthenticationException(_inner) => {
+                Some(_inner)
+            }
+            UpdateConnectorRegistrationErrorKind::ConnectorServerException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateConnectorRegistrationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateConnectorRegistrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

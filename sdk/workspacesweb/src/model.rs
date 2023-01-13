@@ -497,6 +497,110 @@ impl AsRef<str> for EnabledType {
     }
 }
 
+/// <p>A user access logging settings resource that can be associated with a web portal.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UserAccessLoggingSettings {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
+    #[doc(hidden)]
+    pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the Kinesis stream.</p>
+    #[doc(hidden)]
+    pub kinesis_stream_arn: std::option::Option<std::string::String>,
+}
+impl UserAccessLoggingSettings {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+    /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
+    pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.associated_portal_arns.as_deref()
+    }
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn kinesis_stream_arn(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_arn.as_deref()
+    }
+}
+/// See [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
+pub mod user_access_logging_settings {
+
+    /// A builder for [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+        pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Appends an item to `associated_portal_arns`.
+        ///
+        /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
+        ///
+        /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
+        pub fn associated_portal_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.associated_portal_arns.unwrap_or_default();
+            v.push(input.into());
+            self.associated_portal_arns = Some(v);
+            self
+        }
+        /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
+        pub fn set_associated_portal_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.associated_portal_arns = input;
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn set_kinesis_stream_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kinesis_stream_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
+        pub fn build(self) -> crate::model::UserAccessLoggingSettings {
+            crate::model::UserAccessLoggingSettings {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+                associated_portal_arns: self.associated_portal_arns,
+                kinesis_stream_arn: self.kinesis_stream_arn,
+            }
+        }
+    }
+}
+impl UserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
+    pub fn builder() -> crate::model::user_access_logging_settings::Builder {
+        crate::model::user_access_logging_settings::Builder::default()
+    }
+}
+
 /// <p>The web portal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -525,7 +629,7 @@ pub struct Portal {
     /// <p>The ARN of the browser settings that is associated with this web portal.</p>
     #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the trust store that is associated with the web portal.</p>
+    /// <p>The ARN of the user settings that is associated with the web portal.</p>
     #[doc(hidden)]
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
@@ -537,6 +641,14 @@ pub struct Portal {
     /// <p>A message that explains why the web portal is in its current status.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    #[doc(hidden)]
+    pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl Portal {
     /// <p>The ARN of the web portal.</p>
@@ -571,7 +683,7 @@ impl Portal {
     pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
     }
-    /// <p>The ARN of the trust store that is associated with the web portal.</p>
+    /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub fn user_settings_arn(&self) -> std::option::Option<&str> {
         self.user_settings_arn.as_deref()
     }
@@ -586,6 +698,16 @@ impl Portal {
     /// <p>A message that explains why the web portal is in its current status.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
+    }
+    /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
     }
 }
 impl std::fmt::Debug for Portal {
@@ -603,6 +725,11 @@ impl std::fmt::Debug for Portal {
         formatter.field("network_settings_arn", &self.network_settings_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field(
+            "user_access_logging_settings_arn",
+            &self.user_access_logging_settings_arn,
+        );
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -624,6 +751,8 @@ pub mod portal {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+        pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
         /// <p>The ARN of the web portal.</p>
@@ -724,12 +853,12 @@ pub mod portal {
             self.browser_settings_arn = input;
             self
         }
-        /// <p>The ARN of the trust store that is associated with the web portal.</p>
+        /// <p>The ARN of the user settings that is associated with the web portal.</p>
         pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_settings_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the trust store that is associated with the web portal.</p>
+        /// <p>The ARN of the user settings that is associated with the web portal.</p>
         pub fn set_user_settings_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -776,6 +905,39 @@ pub mod portal {
             self.status_reason = input;
             self
         }
+        /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Portal`](crate::model::Portal).
         pub fn build(self) -> crate::model::Portal {
             crate::model::Portal {
@@ -791,6 +953,8 @@ pub mod portal {
                 network_settings_arn: self.network_settings_arn,
                 trust_store_arn: self.trust_store_arn,
                 status_reason: self.status_reason,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+                authentication_type: self.authentication_type,
             }
         }
     }
@@ -809,6 +973,11 @@ pub mod portal {
             formatter.field("network_settings_arn", &self.network_settings_arn);
             formatter.field("trust_store_arn", &self.trust_store_arn);
             formatter.field("status_reason", &self.status_reason);
+            formatter.field(
+                "user_access_logging_settings_arn",
+                &self.user_access_logging_settings_arn,
+            );
+            formatter.field("authentication_type", &self.authentication_type);
             formatter.finish()
         }
     }
@@ -817,6 +986,98 @@ impl Portal {
     /// Creates a new builder-style object to manufacture [`Portal`](crate::model::Portal).
     pub fn builder() -> crate::model::portal::Builder {
         crate::model::portal::Builder::default()
+    }
+}
+
+/// When writing a match expression against `AuthenticationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let authenticationtype = unimplemented!();
+/// match authenticationtype {
+///     AuthenticationType::IamIdentityCenter => { /* ... */ },
+///     AuthenticationType::Standard => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `authenticationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AuthenticationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AuthenticationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AuthenticationType::NewFeature` is defined.
+/// Specifically, when `authenticationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AuthenticationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
+    IamIdentityCenter,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for AuthenticationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "IAM_Identity_Center" => AuthenticationType::IamIdentityCenter,
+            "Standard" => AuthenticationType::Standard,
+            other => {
+                AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for AuthenticationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AuthenticationType::from(s))
+    }
+}
+impl AuthenticationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AuthenticationType::IamIdentityCenter => "IAM_Identity_Center",
+            AuthenticationType::Standard => "Standard",
+            AuthenticationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["IAM_Identity_Center", "Standard"]
+    }
+}
+impl AsRef<str> for AuthenticationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2088,6 +2349,82 @@ impl UserSettingsSummary {
     }
 }
 
+/// <p>The summary of user access logging settings.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UserAccessLoggingSettingsSummary {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Kinesis stream.</p>
+    #[doc(hidden)]
+    pub kinesis_stream_arn: std::option::Option<std::string::String>,
+}
+impl UserAccessLoggingSettingsSummary {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn kinesis_stream_arn(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_arn.as_deref()
+    }
+}
+/// See [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
+pub mod user_access_logging_settings_summary {
+
+    /// A builder for [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+        pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kinesis_stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Kinesis stream.</p>
+        pub fn set_kinesis_stream_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kinesis_stream_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
+        pub fn build(self) -> crate::model::UserAccessLoggingSettingsSummary {
+            crate::model::UserAccessLoggingSettingsSummary {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+                kinesis_stream_arn: self.kinesis_stream_arn,
+            }
+        }
+    }
+}
+impl UserAccessLoggingSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
+    pub fn builder() -> crate::model::user_access_logging_settings_summary::Builder {
+        crate::model::user_access_logging_settings_summary::Builder::default()
+    }
+}
+
 /// <p>The summary of the trust store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2306,6 +2643,14 @@ pub struct PortalSummary {
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    #[doc(hidden)]
+    pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl PortalSummary {
     /// <p>The ARN of the web portal.</p>
@@ -2352,6 +2697,16 @@ impl PortalSummary {
     pub fn trust_store_arn(&self) -> std::option::Option<&str> {
         self.trust_store_arn.as_deref()
     }
+    /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+    /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+    /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+    /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for PortalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2367,6 +2722,11 @@ impl std::fmt::Debug for PortalSummary {
         formatter.field("user_settings_arn", &self.user_settings_arn);
         formatter.field("network_settings_arn", &self.network_settings_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);
+        formatter.field(
+            "user_access_logging_settings_arn",
+            &self.user_access_logging_settings_arn,
+        );
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -2387,6 +2747,8 @@ pub mod portal_summary {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+        pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
         /// <p>The ARN of the web portal.</p>
@@ -2526,6 +2888,39 @@ pub mod portal_summary {
             self.trust_store_arn = input;
             self
         }
+        /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
+        /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
+        /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PortalSummary`](crate::model::PortalSummary).
         pub fn build(self) -> crate::model::PortalSummary {
             crate::model::PortalSummary {
@@ -2540,6 +2935,8 @@ pub mod portal_summary {
                 user_settings_arn: self.user_settings_arn,
                 network_settings_arn: self.network_settings_arn,
                 trust_store_arn: self.trust_store_arn,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+                authentication_type: self.authentication_type,
             }
         }
     }
@@ -2557,6 +2954,11 @@ pub mod portal_summary {
             formatter.field("user_settings_arn", &self.user_settings_arn);
             formatter.field("network_settings_arn", &self.network_settings_arn);
             formatter.field("trust_store_arn", &self.trust_store_arn);
+            formatter.field(
+                "user_access_logging_settings_arn",
+                &self.user_access_logging_settings_arn,
+            );
+            formatter.field("authentication_type", &self.authentication_type);
             formatter.finish()
         }
     }

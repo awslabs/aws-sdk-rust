@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`attachment_ids(Vec<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::attachment_ids) / [`set_attachment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_attachment_ids): <p>A list of unique identifiers for the attachments.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput)
 
@@ -106,7 +106,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required.</p>
+    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
     ///   - [`participant_token(impl Into<String>)`](crate::client::fluent_builders::CreateParticipantConnection::participant_token) / [`set_participant_token(Option<String>)`](crate::client::fluent_builders::CreateParticipantConnection::set_participant_token): <p>This is a header parameter.</p>  <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     ///   - [`connect_participant(bool)`](crate::client::fluent_builders::CreateParticipantConnection::connect_participant) / [`set_connect_participant(Option<bool>)`](crate::client::fluent_builders::CreateParticipantConnection::set_connect_participant): <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
     /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput) with field(s):
@@ -119,7 +119,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DisconnectParticipant`](crate::client::fluent_builders::DisconnectParticipant) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput)
 
@@ -161,9 +161,9 @@ impl Client {
     /// Constructs a fluent builder for the [`SendEvent`](crate::client::fluent_builders::SendEvent) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content_type): <p>The content type of the request. Supported types are:</p>  <ul>   <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>  </ul>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content): <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content_type): <p>The content type of the request. Supported types are:</p>  <ul>   <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>  </ul>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content): <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>  <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`SendEventOutput`](crate::output::SendEventOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::SendEventOutput::id): <p>The ID of the response.</p>
@@ -175,9 +175,9 @@ impl Client {
     /// Constructs a fluent builder for the [`SendMessage`](crate::client::fluent_builders::SendMessage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content_type): <p>The type of the content. Supported types are text/plain.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content): <p>The content of the message.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content_type): <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content): <p>The content of the message. </p>  <ul>   <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>   <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>  </ul>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_connection_token): <p>The authentication token associated with the connection.</p>
     /// - On success, responds with [`SendMessageOutput`](crate::output::SendMessageOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::SendMessageOutput::id): <p>The ID of the message.</p>
@@ -189,10 +189,10 @@ impl Client {
     /// Constructs a fluent builder for the [`StartAttachmentUpload`](crate::client::fluent_builders::StartAttachmentUpload) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_content_type): <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_content_type): <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     ///   - [`attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_size_in_bytes) / [`set_attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_size_in_bytes): <p>The size of the attachment in bytes.</p>
     ///   - [`attachment_name(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_name) / [`set_attachment_name(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_name): <p>A case-sensitive name of the attachment being uploaded.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_client_token): <p>A unique case sensitive identifier to support idempotency of request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput) with field(s):
     ///   - [`attachment_id(Option<String>)`](crate::output::StartAttachmentUploadOutput::attachment_id): <p>A unique identifier for the attachment.</p>
@@ -211,7 +211,9 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
     ///
-    /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p>
+    /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteAttachmentUpload {
@@ -289,12 +291,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attachment_ids(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -315,7 +317,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParticipantConnection`.
     ///
-    /// <p>Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of ConnectionToken.</p>
+    /// <p>Creates the participant's connection. </p> <note>
+    /// <p> <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.</p>
+    /// </note>
     /// <p>The participant token is valid for the lifetime of the participant – until they are part of a contact.</p>
     /// <p>The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s. Clients must manually connect to the returned websocket URL and subscribe to the desired topic. </p>
     /// <p>For chat, you need to publish the following on the established websocket connection:</p>
@@ -388,12 +392,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_type`](Self::set_type).
         ///
-        /// <p>Type of connection information required.</p>
+        /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
         pub fn r#type(mut self, input: crate::model::ConnectionType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Type of connection information required.</p>
+        /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
@@ -429,7 +433,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisconnectParticipant`.
     ///
-    /// <p>Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>Disconnects a participant. </p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectParticipant {
@@ -490,12 +496,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -516,7 +522,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttachment`.
     ///
-    /// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p>
+    /// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttachment {
@@ -606,7 +614,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTranscript`.
     ///
-    /// <p>Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>Retrieves a transcript of the session, including details about any attachments. </p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTranscript {
@@ -755,7 +765,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendEvent`.
     ///
-    /// <p>Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>Sends an event. </p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEvent {
@@ -820,6 +832,8 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
         /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
         /// </ul>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(input.into());
@@ -829,27 +843,31 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
         /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
+        /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
+        /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
+        /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
+        /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -870,7 +888,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendMessage`.
     ///
-    /// <p>Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>Sends a message.</p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendMessage {
@@ -931,32 +951,40 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of the content. Supported types are text/plain.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(input.into());
             self
         }
-        /// <p>The type of the content. Supported types are text/plain.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and <code>application/json</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
-        /// <p>The content of the message.</p>
+        /// <p>The content of the message. </p>
+        /// <ul>
+        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+        /// </ul>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the message.</p>
+        /// <p>The content of the message. </p>
+        /// <ul>
+        /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
+        /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
+        /// </ul>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -977,7 +1005,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartAttachmentUpload`.
     ///
-    /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p>
+    /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p> <note>
+    /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+    /// </note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAttachmentUpload {
@@ -1038,12 +1068,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(input.into());
             self
         }
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
@@ -1071,12 +1101,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attachment_name(input);
             self
         }
-        /// <p>A unique case sensitive identifier to support idempotency of request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case sensitive identifier to support idempotency of request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self

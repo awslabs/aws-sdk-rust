@@ -104,6 +104,19 @@ impl Client {
     ) -> fluent_builders::AcceptDomainTransferFromAnotherAwsAccount {
         fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssociateDelegationSignerToDomain`](crate::client::fluent_builders::AssociateDelegationSignerToDomain) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDelegationSignerToDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociateDelegationSignerToDomain::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`signing_attributes(DnssecSigningAttributes)`](crate::client::fluent_builders::AssociateDelegationSignerToDomain::signing_attributes) / [`set_signing_attributes(Option<DnssecSigningAttributes>)`](crate::client::fluent_builders::AssociateDelegationSignerToDomain::set_signing_attributes): <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    /// - On success, responds with [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::AssociateDelegationSignerToDomainOutput::operation_id): <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<AssociateDelegationSignerToDomainError>`](crate::error::AssociateDelegationSignerToDomainError)
+    pub fn associate_delegation_signer_to_domain(
+        &self,
+    ) -> fluent_builders::AssociateDelegationSignerToDomain {
+        fluent_builders::AssociateDelegationSignerToDomain::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CancelDomainTransferToAnotherAwsAccount`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount) operation.
     ///
     /// - The fluent builder is configurable:
@@ -179,6 +192,19 @@ impl Client {
     pub fn disable_domain_transfer_lock(&self) -> fluent_builders::DisableDomainTransferLock {
         fluent_builders::DisableDomainTransferLock::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DisassociateDelegationSignerFromDomain`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain::set_domain_name): <p>Name of the domain.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain::set_id): <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+    /// - On success, responds with [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::DisassociateDelegationSignerFromDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<DisassociateDelegationSignerFromDomainError>`](crate::error::DisassociateDelegationSignerFromDomainError)
+    pub fn disassociate_delegation_signer_from_domain(
+        &self,
+    ) -> fluent_builders::DisassociateDelegationSignerFromDomain {
+        fluent_builders::DisassociateDelegationSignerFromDomain::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`EnableDomainAutoRenew`](crate::client::fluent_builders::EnableDomainAutoRenew) operation.
     ///
     /// - The fluent builder is configurable:
@@ -216,7 +242,7 @@ impl Client {
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomainDetail::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomainDetail::set_domain_name): <p>The name of the domain that you want to get detailed information about.</p>
     /// - On success, responds with [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetDomainDetailOutput::domain_name): <p>The name of a domain.</p>
-    ///   - [`nameservers(Option<Vec<Nameserver>>)`](crate::output::GetDomainDetailOutput::nameservers): <p>The name of the domain.</p>
+    ///   - [`nameservers(Option<Vec<Nameserver>>)`](crate::output::GetDomainDetailOutput::nameservers): <p>The name servers of the domain.</p>
     ///   - [`auto_renew(Option<bool>)`](crate::output::GetDomainDetailOutput::auto_renew): <p>Specifies whether the domain registration is set to renew automatically.</p>
     ///   - [`admin_contact(Option<ContactDetail>)`](crate::output::GetDomainDetailOutput::admin_contact): <p>Provides details about the domain administrative contact.</p>
     ///   - [`registrant_contact(Option<ContactDetail>)`](crate::output::GetDomainDetailOutput::registrant_contact): <p>Provides details about the domain registrant.</p>
@@ -236,6 +262,7 @@ impl Client {
     ///   - [`reseller(Option<String>)`](crate::output::GetDomainDetailOutput::reseller): <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
     ///   - [`dns_sec(Option<String>)`](crate::output::GetDomainDetailOutput::dns_sec): <p>Deprecated.</p>
     ///   - [`status_list(Option<Vec<String>>)`](crate::output::GetDomainDetailOutput::status_list): <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>  <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>  <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
+    ///   - [`dnssec_keys(Option<Vec<DnssecKey>>)`](crate::output::GetDomainDetailOutput::dnssec_keys): <p>A complex type that contains information about the DNSSEC configuration.</p>
     /// - On failure, responds with [`SdkError<GetDomainDetailError>`](crate::error::GetDomainDetailError)
     pub fn get_domain_detail(&self) -> fluent_builders::GetDomainDetail {
         fluent_builders::GetDomainDetail::new(self.handle.clone())
@@ -263,6 +290,8 @@ impl Client {
     ///   - [`domain_name(Option<String>)`](crate::output::GetOperationDetailOutput::domain_name): <p>The name of a domain.</p>
     ///   - [`r#type(Option<OperationType>)`](crate::output::GetOperationDetailOutput::type): <p>The type of operation that was requested.</p>
     ///   - [`submitted_date(Option<DateTime>)`](crate::output::GetOperationDetailOutput::submitted_date): <p>The date when the request was submitted.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::GetOperationDetailOutput::last_updated_date): <p> The date when the operation was last updated. </p>
+    ///   - [`status_flag(Option<StatusFlag>)`](crate::output::GetOperationDetailOutput::status_flag): <p> Lists any outstanding operations that require customer action. Valid values are:</p>  <ul>   <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>   <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>   <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>   <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>   <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetOperationDetailError>`](crate::error::GetOperationDetailError)
     pub fn get_operation_detail(&self) -> fluent_builders::GetOperationDetail {
         fluent_builders::GetOperationDetail::new(self.handle.clone())
@@ -289,6 +318,10 @@ impl Client {
     ///   - [`submitted_since(DateTime)`](crate::client::fluent_builders::ListOperations::submitted_since) / [`set_submitted_since(Option<DateTime>)`](crate::client::fluent_builders::ListOperations::set_submitted_since): <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOperations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOperations::set_marker): <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOperations::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOperations::set_max_items): <p>Number of domains to be returned.</p>  <p>Default: 20</p>
+    ///   - [`status(Vec<OperationStatus>)`](crate::client::fluent_builders::ListOperations::status) / [`set_status(Option<Vec<OperationStatus>>)`](crate::client::fluent_builders::ListOperations::set_status): <p> The status of the operations. </p>
+    ///   - [`r#type(Vec<OperationType>)`](crate::client::fluent_builders::ListOperations::type) / [`set_type(Option<Vec<OperationType>>)`](crate::client::fluent_builders::ListOperations::set_type): <p> An arrays of the domains operation types. </p>
+    ///   - [`sort_by(ListOperationsSortAttributeName)`](crate::client::fluent_builders::ListOperations::sort_by) / [`set_sort_by(Option<ListOperationsSortAttributeName>)`](crate::client::fluent_builders::ListOperations::set_sort_by): <p> The sort type for returned values. </p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListOperations::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListOperations::set_sort_order): <p> The sort order ofr returned values, either ascending or descending. </p>
     /// - On success, responds with [`ListOperationsOutput`](crate::output::ListOperationsOutput) with field(s):
     ///   - [`operations(Option<Vec<OperationSummary>>)`](crate::output::ListOperationsOutput::operations): <p>Lists summaries of the operations.</p>
     ///   - [`next_page_marker(Option<String>)`](crate::output::ListOperationsOutput::next_page_marker): <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
@@ -320,13 +353,24 @@ impl Client {
     pub fn list_tags_for_domain(&self) -> fluent_builders::ListTagsForDomain {
         fluent_builders::ListTagsForDomain::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PushDomain`](crate::client::fluent_builders::PushDomain) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::PushDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::PushDomain::set_domain_name): <p> Name of the domain. </p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::PushDomain::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::PushDomain::set_target): <p> New IPS tag for the domain. </p>
+    /// - On success, responds with [`PushDomainOutput`](crate::output::PushDomainOutput)
+
+    /// - On failure, responds with [`SdkError<PushDomainError>`](crate::error::PushDomainError)
+    pub fn push_domain(&self) -> fluent_builders::PushDomain {
+        fluent_builders::PushDomain::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`RegisterDomain`](crate::client::fluent_builders::RegisterDomain) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RegisterDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RegisterDomain::set_domain_name): <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>  <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     ///   - [`idn_lang_code(impl Into<String>)`](crate::client::fluent_builders::RegisterDomain::idn_lang_code) / [`set_idn_lang_code(Option<String>)`](crate::client::fluent_builders::RegisterDomain::set_idn_lang_code): <p>Reserved for future use.</p>
     ///   - [`duration_in_years(i32)`](crate::client::fluent_builders::RegisterDomain::duration_in_years) / [`set_duration_in_years(Option<i32>)`](crate::client::fluent_builders::RegisterDomain::set_duration_in_years): <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>Default: 1</p>
-    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::RegisterDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::RegisterDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>  <p>Default: <code>true</code> </p>
     ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_admin_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_registrant_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_tech_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
@@ -377,6 +421,16 @@ impl Client {
     ) -> fluent_builders::ResendContactReachabilityEmail {
         fluent_builders::ResendContactReachabilityEmail::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ResendOperationAuthorization`](crate::client::fluent_builders::ResendOperationAuthorization) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`operation_id(impl Into<String>)`](crate::client::fluent_builders::ResendOperationAuthorization::operation_id) / [`set_operation_id(Option<String>)`](crate::client::fluent_builders::ResendOperationAuthorization::set_operation_id): <p> Operation ID. </p>
+    /// - On success, responds with [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<ResendOperationAuthorizationError>`](crate::error::ResendOperationAuthorizationError)
+    pub fn resend_operation_authorization(&self) -> fluent_builders::ResendOperationAuthorization {
+        fluent_builders::ResendOperationAuthorization::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`RetrieveDomainAuthCode`](crate::client::fluent_builders::RetrieveDomainAuthCode) operation.
     ///
     /// - The fluent builder is configurable:
@@ -395,7 +449,7 @@ impl Client {
     ///   - [`duration_in_years(i32)`](crate::client::fluent_builders::TransferDomain::duration_in_years) / [`set_duration_in_years(Option<i32>)`](crate::client::fluent_builders::TransferDomain::set_duration_in_years): <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>  <p>Default: 1</p>
     ///   - [`nameservers(Vec<Nameserver>)`](crate::client::fluent_builders::TransferDomain::nameservers) / [`set_nameservers(Option<Vec<Nameserver>>)`](crate::client::fluent_builders::TransferDomain::set_nameservers): <p>Contains details for the host and glue IP addresses.</p>
     ///   - [`auth_code(impl Into<String>)`](crate::client::fluent_builders::TransferDomain::auth_code) / [`set_auth_code(Option<String>)`](crate::client::fluent_builders::TransferDomain::set_auth_code): <p>The authorization code for the domain. You get this value from the current registrar.</p>
-    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::TransferDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>  <p>Default: true</p>
+    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::TransferDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>  <p>Default: true</p>
     ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_admin_contact): <p>Provides detailed contact information.</p>
     ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_registrant_contact): <p>Provides detailed contact information.</p>
     ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_tech_contact): <p>Provides detailed contact information.</p>
@@ -429,6 +483,7 @@ impl Client {
     ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_admin_contact): <p>Provides detailed contact information.</p>
     ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_registrant_contact): <p>Provides detailed contact information.</p>
     ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_tech_contact): <p>Provides detailed contact information.</p>
+    ///   - [`consent(Consent)`](crate::client::fluent_builders::UpdateDomainContact::consent) / [`set_consent(Option<Consent>)`](crate::client::fluent_builders::UpdateDomainContact::set_consent): <p> Customer's consent for the owner change request. </p>
     /// - On success, responds with [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::output::UpdateDomainContactOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainContactError>`](crate::error::UpdateDomainContactError)
@@ -580,6 +635,93 @@ pub mod fluent_builders {
         /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateDelegationSignerToDomain`.
+    ///
+    /// <p> Creates a delegation signer (DS) record in the registry zone for this domain name.</p>
+    /// <p>Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may render your domain name unavailable on the internet if the steps are completed in the wrong order, or with incorrect timing. For more information about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC signing</a> in the <i>Route&nbsp;53 developer guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateDelegationSignerToDomain {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_delegation_signer_to_domain_input::Builder,
+    }
+    impl AssociateDelegationSignerToDomain {
+        /// Creates a new `AssociateDelegationSignerToDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::AssociateDelegationSignerToDomain,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::AssociateDelegationSignerToDomainError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateDelegationSignerToDomainOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateDelegationSignerToDomainError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+        pub fn signing_attributes(mut self, input: crate::model::DnssecSigningAttributes) -> Self {
+            self.inner = self.inner.signing_attributes(input);
+            self
+        }
+        /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+        pub fn set_signing_attributes(
+            mut self,
+            input: std::option::Option<crate::model::DnssecSigningAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_signing_attributes(input);
             self
         }
     }
@@ -1175,6 +1317,93 @@ pub mod fluent_builders {
         /// <p>The name of the domain that you want to remove the transfer lock for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateDelegationSignerFromDomain`.
+    ///
+    /// <p>Deletes a delegation signer (DS) record in the registry zone for this domain name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateDelegationSignerFromDomain {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_delegation_signer_from_domain_input::Builder,
+    }
+    impl DisassociateDelegationSignerFromDomain {
+        /// Creates a new `DisassociateDelegationSignerFromDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DisassociateDelegationSignerFromDomain,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateDelegationSignerFromDomainError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateDelegationSignerFromDomainOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateDelegationSignerFromDomainError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>Name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -1881,6 +2110,66 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
+        /// Appends an item to `Status`.
+        ///
+        /// To override the contents of this collection use [`set_status`](Self::set_status).
+        ///
+        /// <p> The status of the operations. </p>
+        pub fn status(mut self, input: crate::model::OperationStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p> The status of the operations. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// Appends an item to `Type`.
+        ///
+        /// To override the contents of this collection use [`set_type`](Self::set_type).
+        ///
+        /// <p> An arrays of the domains operation types. </p>
+        pub fn r#type(mut self, input: crate::model::OperationType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p> An arrays of the domains operation types. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationType>>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p> The sort type for returned values. </p>
+        pub fn sort_by(mut self, input: crate::model::ListOperationsSortAttributeName) -> Self {
+            self.inner = self.inner.sort_by(input);
+            self
+        }
+        /// <p> The sort type for returned values. </p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListOperationsSortAttributeName>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p> The sort order ofr returned values, either ascending or descending. </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
+            self
+        }
+        /// <p> The sort order ofr returned values, either ascending or descending. </p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListPrices`.
     ///
@@ -2068,13 +2357,100 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PushDomain`.
+    ///
+    /// <p> Moves a domain from Amazon Web Services to another registrar. </p>
+    /// <p>Supported actions:</p>
+    /// <ul>
+    /// <li> <p>Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be transferred to another registrar.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PushDomain {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::push_domain_input::Builder,
+    }
+    impl PushDomain {
+        /// Creates a new `PushDomain`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PushDomain,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PushDomainError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PushDomainOutput,
+            aws_smithy_http::result::SdkError<crate::error::PushDomainError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Name of the domain. </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p> Name of the domain. </p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p> New IPS tag for the domain. </p>
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
+            self
+        }
+        /// <p> New IPS tag for the domain. </p>
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RegisterDomain`.
     ///
     /// <p>This operation registers a domain. Domains are registered either by Amazon Registrar (for .com, .net, and .org domains) or by our registrar associate, Gandi (for all other domains). For some top-level domains (TLDs), this operation requires extra parameters.</p>
     /// <p>When you register a domain, Amazon Route 53 does the following:</p>
     /// <ul>
     /// <li> <p>Creates a Route 53 hosted zone that has the same name as the domain. Route 53 assigns four name servers to your hosted zone and automatically updates your domain registration with the names of these name servers.</p> </li>
-    /// <li> <p>Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of the renewal date so you can choose whether to renew the registration.</p> </li>
+    /// <li> <p>Enables auto renew, so your domain registration will renew automatically each year. We'll notify you in advance of the renewal date so you can choose whether to renew the registration.</p> </li>
     /// <li> <p>Optionally enables privacy protection, so WHOIS queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you don't enable privacy protection, WHOIS queries return the information that you entered for the administrative, registrant, and technical contacts.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note> </li>
@@ -2191,13 +2567,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration_in_years(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: <code>true</code> </p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_renew(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: <code>true</code> </p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_renew(input);
@@ -2547,9 +2923,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ResendOperationAuthorization`.
+    ///
+    /// <p> Resend the form of authorization email for this operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ResendOperationAuthorization {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::resend_operation_authorization_input::Builder,
+    }
+    impl ResendOperationAuthorization {
+        /// Creates a new `ResendOperationAuthorization`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ResendOperationAuthorization,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ResendOperationAuthorizationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ResendOperationAuthorizationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ResendOperationAuthorizationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Operation ID. </p>
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input.into());
+            self
+        }
+        /// <p> Operation ID. </p>
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RetrieveDomainAuthCode`.
     ///
-    /// <p>This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
+    /// <p>This operation returns the authorization code for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetrieveDomainAuthCode {
         handle: std::sync::Arc<super::Handle>,
@@ -2768,13 +3217,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auth_code(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_renew(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_renew(input);
@@ -2971,7 +3420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainContact`.
     ///
     /// <p>This operation updates the contact information for a particular domain. You must specify information for at least one contact: registrant, administrator, or technical.</p>
-    /// <p>If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
+    /// <p>If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the operation. If the request is not completed successfully, the domain registrant will be notified by email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainContact {
         handle: std::sync::Arc<super::Handle>,
@@ -3078,6 +3527,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ContactDetail>,
         ) -> Self {
             self.inner = self.inner.set_tech_contact(input);
+            self
+        }
+        /// <p> Customer's consent for the owner change request. </p>
+        pub fn consent(mut self, input: crate::model::Consent) -> Self {
+            self.inner = self.inner.consent(input);
+            self
+        }
+        /// <p> Customer's consent for the owner change request. </p>
+        pub fn set_consent(mut self, input: std::option::Option<crate::model::Consent>) -> Self {
+            self.inner = self.inner.set_consent(input);
             self
         }
     }

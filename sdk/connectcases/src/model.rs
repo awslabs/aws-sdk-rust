@@ -13,6 +13,9 @@ pub struct TemplateSummary {
     /// <p>The template name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    /// <p>The status of the template.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::TemplateStatus>,
 }
 impl TemplateSummary {
     /// <p>The unique identifier for the template.</p>
@@ -27,6 +30,10 @@ impl TemplateSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The status of the template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateStatus> {
+        self.status.as_ref()
+    }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
@@ -37,6 +44,7 @@ pub mod template_summary {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) template_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
     }
     impl Builder {
         /// <p>The unique identifier for the template.</p>
@@ -69,12 +77,26 @@ pub mod template_summary {
             self.name = input;
             self
         }
+        /// <p>The status of the template.</p>
+        pub fn status(mut self, input: crate::model::TemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the template.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TemplateSummary`](crate::model::TemplateSummary).
         pub fn build(self) -> crate::model::TemplateSummary {
             crate::model::TemplateSummary {
                 template_id: self.template_id,
                 template_arn: self.template_arn,
                 name: self.name,
+                status: self.status,
             }
         }
     }
@@ -83,6 +105,96 @@ impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
     pub fn builder() -> crate::model::template_summary::Builder {
         crate::model::template_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TemplateStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let templatestatus = unimplemented!();
+/// match templatestatus {
+///     TemplateStatus::Active => { /* ... */ },
+///     TemplateStatus::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `templatestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TemplateStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TemplateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TemplateStatus::NewFeature` is defined.
+/// Specifically, when `templatestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TemplateStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+/// Status of a template
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TemplateStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TemplateStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => TemplateStatus::Active,
+            "Inactive" => TemplateStatus::Inactive,
+            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for TemplateStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TemplateStatus::from(s))
+    }
+}
+impl TemplateStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TemplateStatus::Active => "Active",
+            TemplateStatus::Inactive => "Inactive",
+            TemplateStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
+}
+impl AsRef<str> for TemplateStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

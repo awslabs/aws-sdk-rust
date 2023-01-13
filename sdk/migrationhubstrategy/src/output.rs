@@ -854,6 +854,9 @@ pub struct GetPortfolioPreferencesOutput {
     /// <p> The transformation preferences for database applications. </p>
     #[doc(hidden)]
     pub database_preferences: std::option::Option<crate::model::DatabasePreferences>,
+    /// <p>The classification for application component types.</p>
+    #[doc(hidden)]
+    pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
@@ -872,6 +875,10 @@ impl GetPortfolioPreferencesOutput {
     pub fn database_preferences(&self) -> std::option::Option<&crate::model::DatabasePreferences> {
         self.database_preferences.as_ref()
     }
+    /// <p>The classification for application component types.</p>
+    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+        self.application_mode.as_ref()
+    }
 }
 /// See [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
 pub mod get_portfolio_preferences_output {
@@ -884,6 +891,7 @@ pub mod get_portfolio_preferences_output {
         pub(crate) application_preferences:
             std::option::Option<crate::model::ApplicationPreferences>,
         pub(crate) database_preferences: std::option::Option<crate::model::DatabasePreferences>,
+        pub(crate) application_mode: std::option::Option<crate::model::ApplicationMode>,
     }
     impl Builder {
         /// <p> The rank of business goals based on priority. </p>
@@ -931,12 +939,26 @@ pub mod get_portfolio_preferences_output {
             self.database_preferences = input;
             self
         }
+        /// <p>The classification for application component types.</p>
+        pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
+            self.application_mode = Some(input);
+            self
+        }
+        /// <p>The classification for application component types.</p>
+        pub fn set_application_mode(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationMode>,
+        ) -> Self {
+            self.application_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
         pub fn build(self) -> crate::output::GetPortfolioPreferencesOutput {
             crate::output::GetPortfolioPreferencesOutput {
                 prioritize_business_goals: self.prioritize_business_goals,
                 application_preferences: self.application_preferences,
                 database_preferences: self.database_preferences,
+                application_mode: self.application_mode,
             }
         }
     }
@@ -945,6 +967,52 @@ impl GetPortfolioPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
     pub fn builder() -> crate::output::get_portfolio_preferences_output::Builder {
         crate::output::get_portfolio_preferences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetLatestAssessmentIdOutput {
+    /// <p>The latest ID for the specific assessment task.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetLatestAssessmentIdOutput {
+    /// <p>The latest ID for the specific assessment task.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+/// See [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
+pub mod get_latest_assessment_id_output {
+
+    /// A builder for [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The latest ID for the specific assessment task.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The latest ID for the specific assessment task.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
+        pub fn build(self) -> crate::output::GetLatestAssessmentIdOutput {
+            crate::output::GetLatestAssessmentIdOutput { id: self.id }
+        }
+    }
+}
+impl GetLatestAssessmentIdOutput {
+    /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
+    pub fn builder() -> crate::output::get_latest_assessment_id_output::Builder {
+        crate::output::get_latest_assessment_id_output::Builder::default()
     }
 }
 
@@ -1214,6 +1282,9 @@ pub struct GetAssessmentOutput {
     /// <p> Detailed information about the assessment. </p>
     #[doc(hidden)]
     pub data_collection_details: std::option::Option<crate::model::DataCollectionDetails>,
+    /// <p>List of criteria for assessment.</p>
+    #[doc(hidden)]
+    pub assessment_targets: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
 }
 impl GetAssessmentOutput {
     /// <p> The ID for the specific assessment task. </p>
@@ -1226,6 +1297,10 @@ impl GetAssessmentOutput {
     ) -> std::option::Option<&crate::model::DataCollectionDetails> {
         self.data_collection_details.as_ref()
     }
+    /// <p>List of criteria for assessment.</p>
+    pub fn assessment_targets(&self) -> std::option::Option<&[crate::model::AssessmentTarget]> {
+        self.assessment_targets.as_deref()
+    }
 }
 /// See [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
 pub mod get_assessment_output {
@@ -1236,6 +1311,8 @@ pub mod get_assessment_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) data_collection_details:
             std::option::Option<crate::model::DataCollectionDetails>,
+        pub(crate) assessment_targets:
+            std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
     }
     impl Builder {
         /// <p> The ID for the specific assessment task. </p>
@@ -1264,11 +1341,31 @@ pub mod get_assessment_output {
             self.data_collection_details = input;
             self
         }
+        /// Appends an item to `assessment_targets`.
+        ///
+        /// To override the contents of this collection use [`set_assessment_targets`](Self::set_assessment_targets).
+        ///
+        /// <p>List of criteria for assessment.</p>
+        pub fn assessment_targets(mut self, input: crate::model::AssessmentTarget) -> Self {
+            let mut v = self.assessment_targets.unwrap_or_default();
+            v.push(input);
+            self.assessment_targets = Some(v);
+            self
+        }
+        /// <p>List of criteria for assessment.</p>
+        pub fn set_assessment_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
+        ) -> Self {
+            self.assessment_targets = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
         pub fn build(self) -> crate::output::GetAssessmentOutput {
             crate::output::GetAssessmentOutput {
                 id: self.id,
                 data_collection_details: self.data_collection_details,
+                assessment_targets: self.assessment_targets,
             }
         }
     }

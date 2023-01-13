@@ -357,6 +357,7 @@ impl Client {
         fluent_builders::DescribeCertificate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeClientAuthenticationSettings`](crate::client::fluent_builders::DescribeClientAuthenticationSettings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_directory_id): <p>The identifier of the directory for which to retrieve information.</p>
@@ -386,6 +387,7 @@ impl Client {
         fluent_builders::DescribeConditionalForwarders::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDirectories`](crate::client::fluent_builders::DescribeDirectories) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDirectories::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDirectories::directory_ids) / [`set_directory_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDirectories::set_directory_ids): <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
@@ -425,6 +427,7 @@ impl Client {
         fluent_builders::DescribeEventTopics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeLDAPSSettings`](crate::client::fluent_builders::DescribeLDAPSSettings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLDAPSSettings::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_directory_id): <p>The identifier of the directory.</p>
@@ -439,6 +442,7 @@ impl Client {
         fluent_builders::DescribeLDAPSSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeRegions`](crate::client::fluent_builders::DescribeRegions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRegions::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRegions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeRegions::set_directory_id): <p>The identifier of the directory.</p>
@@ -466,6 +470,7 @@ impl Client {
         fluent_builders::DescribeSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSharedDirectories`](crate::client::fluent_builders::DescribeSharedDirectories) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSharedDirectories::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`owner_directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::owner_directory_id) / [`set_owner_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::set_owner_directory_id): <p>Returns the identifier of the directory in the directory owner account. </p>
@@ -480,6 +485,7 @@ impl Client {
         fluent_builders::DescribeSharedDirectories::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSnapshots::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeSnapshots::set_directory_id): <p>The identifier of the directory for which to retrieve snapshot information.</p>
@@ -494,6 +500,7 @@ impl Client {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeTrusts`](crate::client::fluent_builders::DescribeTrusts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeTrusts::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTrusts::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeTrusts::set_directory_id): <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
@@ -506,6 +513,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeTrustsError>`](crate::error::DescribeTrustsError)
     pub fn describe_trusts(&self) -> fluent_builders::DescribeTrusts {
         fluent_builders::DescribeTrusts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeUpdateDirectory`](crate::client::fluent_builders::DescribeUpdateDirectory) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeUpdateDirectory::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::set_directory_id): <p> The unique identifier of the directory. </p>
+    ///   - [`update_type(UpdateType)`](crate::client::fluent_builders::DescribeUpdateDirectory::update_type) / [`set_update_type(Option<UpdateType>)`](crate::client::fluent_builders::DescribeUpdateDirectory::set_update_type): <p> The type of updates you want to describe for the directory. </p>
+    ///   - [`region_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::region_name) / [`set_region_name(Option<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::set_region_name): <p> The name of the Region. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeUpdateDirectory::set_next_token): <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+    /// - On success, responds with [`DescribeUpdateDirectoryOutput`](crate::output::DescribeUpdateDirectoryOutput) with field(s):
+    ///   - [`update_activities(Option<Vec<UpdateInfoEntry>>)`](crate::output::DescribeUpdateDirectoryOutput::update_activities): <p> The list of update activities on a directory for the requested update type. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeUpdateDirectoryOutput::next_token): <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+    /// - On failure, responds with [`SdkError<DescribeUpdateDirectoryError>`](crate::error::DescribeUpdateDirectoryError)
+    pub fn describe_update_directory(&self) -> fluent_builders::DescribeUpdateDirectory {
+        fluent_builders::DescribeUpdateDirectory::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisableClientAuthentication`](crate::client::fluent_builders::DisableClientAuthentication) operation.
     ///
@@ -617,6 +639,7 @@ impl Client {
         fluent_builders::GetSnapshotLimits::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCertificates`](crate::client::fluent_builders::ListCertificates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCertificates::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_directory_id): <p>The identifier of the directory.</p>
@@ -630,6 +653,7 @@ impl Client {
         fluent_builders::ListCertificates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListIpRoutes`](crate::client::fluent_builders::ListIpRoutes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIpRoutes::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListIpRoutes::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListIpRoutes::set_directory_id): <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
@@ -643,6 +667,7 @@ impl Client {
         fluent_builders::ListIpRoutes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLogSubscriptions`](crate::client::fluent_builders::ListLogSubscriptions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLogSubscriptions::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListLogSubscriptions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListLogSubscriptions::set_directory_id): <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
@@ -656,6 +681,7 @@ impl Client {
         fluent_builders::ListLogSubscriptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSchemaExtensions`](crate::client::fluent_builders::ListSchemaExtensions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemaExtensions::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListSchemaExtensions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListSchemaExtensions::set_directory_id): <p>The identifier of the directory from which to retrieve the schema extension information.</p>
@@ -669,6 +695,7 @@ impl Client {
         fluent_builders::ListSchemaExtensions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
@@ -817,6 +844,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateConditionalForwarderError>`](crate::error::UpdateConditionalForwarderError)
     pub fn update_conditional_forwarder(&self) -> fluent_builders::UpdateConditionalForwarder {
         fluent_builders::UpdateConditionalForwarder::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateDirectorySetup`](crate::client::fluent_builders::UpdateDirectorySetup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDirectorySetup::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UpdateDirectorySetup::set_directory_id): <p> The identifier of the directory on which you want to perform the update. </p>
+    ///   - [`update_type(UpdateType)`](crate::client::fluent_builders::UpdateDirectorySetup::update_type) / [`set_update_type(Option<UpdateType>)`](crate::client::fluent_builders::UpdateDirectorySetup::set_update_type): <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+    ///   - [`os_update_settings(OsUpdateSettings)`](crate::client::fluent_builders::UpdateDirectorySetup::os_update_settings) / [`set_os_update_settings(Option<OsUpdateSettings>)`](crate::client::fluent_builders::UpdateDirectorySetup::set_os_update_settings): <p> The settings for the OS update that needs to be performed on the directory. </p>
+    ///   - [`create_snapshot_before_update(bool)`](crate::client::fluent_builders::UpdateDirectorySetup::create_snapshot_before_update) / [`set_create_snapshot_before_update(Option<bool>)`](crate::client::fluent_builders::UpdateDirectorySetup::set_create_snapshot_before_update): <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+    /// - On success, responds with [`UpdateDirectorySetupOutput`](crate::output::UpdateDirectorySetupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDirectorySetupError>`](crate::error::UpdateDirectorySetupError)
+    pub fn update_directory_setup(&self) -> fluent_builders::UpdateDirectorySetup {
+        fluent_builders::UpdateDirectorySetup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateNumberOfDomainControllers`](crate::client::fluent_builders::UpdateNumberOfDomainControllers) operation.
     ///
@@ -3223,6 +3263,17 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeClientAuthenticationSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeClientAuthenticationSettingsPaginator {
+            crate::paginator::DescribeClientAuthenticationSettingsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The identifier of the directory for which to retrieve information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -3422,6 +3473,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDirectoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeDirectoriesPaginator {
+            crate::paginator::DescribeDirectoriesPaginator::new(self.handle, self.inner)
         }
         /// Appends an item to `DirectoryIds`.
         ///
@@ -3734,6 +3791,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeLdapsSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeLdapsSettingsPaginator {
+            crate::paginator::DescribeLdapsSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the directory.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -3836,6 +3899,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRegionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeRegionsPaginator {
+            crate::paginator::DescribeRegionsPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the directory.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4026,6 +4095,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSharedDirectoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSharedDirectoriesPaginator {
+            crate::paginator::DescribeSharedDirectoriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Returns the identifier of the directory in the directory owner account. </p>
         pub fn owner_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_directory_id(input.into());
@@ -4141,6 +4216,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSnapshotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSnapshotsPaginator {
+            crate::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -4252,6 +4333,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTrustsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTrustsPaginator {
+            crate::paginator::DescribeTrustsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -4299,6 +4386,118 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects to return.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeUpdateDirectory`.
+    ///
+    /// <p> Describes the updates of a directory for a particular update type. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeUpdateDirectory {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_update_directory_input::Builder,
+    }
+    impl DescribeUpdateDirectory {
+        /// Creates a new `DescribeUpdateDirectory`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeUpdateDirectory,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeUpdateDirectoryError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeUpdateDirectoryOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeUpdateDirectoryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeUpdateDirectoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeUpdateDirectoryPaginator {
+            crate::paginator::DescribeUpdateDirectoryPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The unique identifier of the directory. </p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
+            self
+        }
+        /// <p> The unique identifier of the directory. </p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// <p> The type of updates you want to describe for the directory. </p>
+        pub fn update_type(mut self, input: crate::model::UpdateType) -> Self {
+            self.inner = self.inner.update_type(input);
+            self
+        }
+        /// <p> The type of updates you want to describe for the directory. </p>
+        pub fn set_update_type(
+            mut self,
+            input: std::option::Option<crate::model::UpdateType>,
+        ) -> Self {
+            self.inner = self.inner.set_update_type(input);
+            self
+        }
+        /// <p> The name of the Region. </p>
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input.into());
+            self
+        }
+        /// <p> The name of the Region. </p>
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_region_name(input);
+            self
+        }
+        /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -5187,6 +5386,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCertificatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCertificatesPaginator {
+            crate::paginator::ListCertificatesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the directory.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -5279,6 +5484,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIpRoutesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIpRoutesPaginator {
+            crate::paginator::ListIpRoutesPaginator::new(self.handle, self.inner)
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5373,6 +5584,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLogSubscriptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLogSubscriptionsPaginator {
+            crate::paginator::ListLogSubscriptionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -5466,6 +5683,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemaExtensionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemaExtensionsPaginator {
+            crate::paginator::ListSchemaExtensionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input.into());
@@ -5558,6 +5781,12 @@ pub mod fluent_builders {
                 .await
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6696,6 +6925,118 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_dns_ip_addrs(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDirectorySetup`.
+    ///
+    /// <p> Updates the directory for a particular update type. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateDirectorySetup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_directory_setup_input::Builder,
+    }
+    impl UpdateDirectorySetup {
+        /// Creates a new `UpdateDirectorySetup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateDirectorySetup,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDirectorySetupError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDirectorySetupOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDirectorySetupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The identifier of the directory on which you want to perform the update. </p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
+            self
+        }
+        /// <p> The identifier of the directory on which you want to perform the update. </p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+        pub fn update_type(mut self, input: crate::model::UpdateType) -> Self {
+            self.inner = self.inner.update_type(input);
+            self
+        }
+        /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+        pub fn set_update_type(
+            mut self,
+            input: std::option::Option<crate::model::UpdateType>,
+        ) -> Self {
+            self.inner = self.inner.set_update_type(input);
+            self
+        }
+        /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+        pub fn os_update_settings(mut self, input: crate::model::OsUpdateSettings) -> Self {
+            self.inner = self.inner.os_update_settings(input);
+            self
+        }
+        /// <p> The settings for the OS update that needs to be performed on the directory. </p>
+        pub fn set_os_update_settings(
+            mut self,
+            input: std::option::Option<crate::model::OsUpdateSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_os_update_settings(input);
+            self
+        }
+        /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+        pub fn create_snapshot_before_update(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_snapshot_before_update(input);
+            self
+        }
+        /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
+        pub fn set_create_snapshot_before_update(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_create_snapshot_before_update(input);
             self
         }
     }

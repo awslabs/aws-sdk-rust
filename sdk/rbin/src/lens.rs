@@ -8,3 +8,13 @@ pub(crate) fn reflens_structure_crate_output_list_rules_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_rules_output_rules(
+    input: crate::output::ListRulesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RuleSummary>> {
+    let input = match input.rules {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

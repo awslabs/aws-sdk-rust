@@ -247,6 +247,22 @@ pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::model::BadRequestReason>,
+    /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
+    #[doc(hidden)]
+    pub detail: std::option::Option<crate::model::BadRequestDetail>,
+}
+impl BadRequestException {
+    /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::BadRequestReason> {
+        self.reason.as_ref()
+    }
+    /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
+    pub fn detail(&self) -> std::option::Option<&crate::model::BadRequestDetail> {
+        self.detail.as_ref()
+    }
 }
 impl BadRequestException {
     /// Returns the error message.
@@ -273,6 +289,8 @@ pub mod bad_request_exception {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::BadRequestReason>,
+        pub(crate) detail: std::option::Option<crate::model::BadRequestDetail>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -285,10 +303,38 @@ pub mod bad_request_exception {
             self.message = input;
             self
         }
+        /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
+        pub fn reason(mut self, input: crate::model::BadRequestReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::BadRequestReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
+        pub fn detail(mut self, input: crate::model::BadRequestDetail) -> Self {
+            self.detail = Some(input);
+            self
+        }
+        /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
+        pub fn set_detail(
+            mut self,
+            input: std::option::Option<crate::model::BadRequestDetail>,
+        ) -> Self {
+            self.detail = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
                 message: self.message,
+                reason: self.reason,
+                detail: self.detail,
             }
         }
     }
@@ -1701,6 +1747,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResolverErrorKind {
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::error::BadRequestException),
     /// <p>Another modification is in progress at this time and it must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
@@ -1722,6 +1770,7 @@ pub enum CreateResolverErrorKind {
 impl std::fmt::Display for CreateResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateResolverErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateResolverErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateResolverErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             CreateResolverErrorKind::NotFoundException(_inner) => _inner.fmt(f),
@@ -1780,6 +1829,10 @@ impl CreateResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateResolverErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateResolverErrorKind::BadRequestException(_))
+    }
     /// Returns `true` if the error kind is `CreateResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
@@ -1809,6 +1862,7 @@ impl CreateResolverError {
 impl std::error::Error for CreateResolverError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateResolverErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateResolverErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateResolverErrorKind::NotFoundException(_inner) => Some(_inner),
@@ -2853,6 +2907,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResolverErrorKind {
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::error::BadRequestException),
     /// <p>Another modification is in progress at this time and it must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
@@ -2874,6 +2930,7 @@ pub enum DeleteResolverErrorKind {
 impl std::fmt::Display for DeleteResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteResolverErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             DeleteResolverErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             DeleteResolverErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             DeleteResolverErrorKind::NotFoundException(_inner) => _inner.fmt(f),
@@ -2932,6 +2989,10 @@ impl DeleteResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteResolverErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteResolverErrorKind::BadRequestException(_))
+    }
     /// Returns `true` if the error kind is `DeleteResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
@@ -2961,6 +3022,7 @@ impl DeleteResolverError {
 impl std::error::Error for DeleteResolverError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteResolverErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteResolverErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteResolverErrorKind::NotFoundException(_inner) => Some(_inner),
@@ -3252,6 +3314,130 @@ impl std::error::Error for DisassociateApiError {
             DisassociateApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             DisassociateApiErrorKind::NotFoundException(_inner) => Some(_inner),
             DisassociateApiErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `EvaluateCode` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct EvaluateCodeError {
+    /// Kind of error that occurred.
+    pub kind: EvaluateCodeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for EvaluateCodeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EvaluateCodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `EvaluateCode` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum EvaluateCodeErrorKind {
+    /// <p>You don't have access to perform this operation on this resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal AppSync error occurred. Try your request again.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for EvaluateCodeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            EvaluateCodeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            EvaluateCodeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            EvaluateCodeErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            EvaluateCodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for EvaluateCodeError {
+    fn code(&self) -> Option<&str> {
+        EvaluateCodeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl EvaluateCodeError {
+    /// Creates a new `EvaluateCodeError`.
+    pub fn new(kind: EvaluateCodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `EvaluateCodeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: EvaluateCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `EvaluateCodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: EvaluateCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `EvaluateCodeErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, EvaluateCodeErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `EvaluateCodeErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, EvaluateCodeErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `EvaluateCodeErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EvaluateCodeErrorKind::InternalFailureException(_)
+        )
+    }
+}
+impl std::error::Error for EvaluateCodeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            EvaluateCodeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            EvaluateCodeErrorKind::BadRequestException(_inner) => Some(_inner),
+            EvaluateCodeErrorKind::InternalFailureException(_inner) => Some(_inner),
+            EvaluateCodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7505,6 +7691,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResolverErrorKind {
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::error::BadRequestException),
     /// <p>Another modification is in progress at this time and it must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
@@ -7526,6 +7714,7 @@ pub enum UpdateResolverErrorKind {
 impl std::fmt::Display for UpdateResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateResolverErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateResolverErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             UpdateResolverErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             UpdateResolverErrorKind::NotFoundException(_inner) => _inner.fmt(f),
@@ -7584,6 +7773,10 @@ impl UpdateResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateResolverErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateResolverErrorKind::BadRequestException(_))
+    }
     /// Returns `true` if the error kind is `UpdateResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
@@ -7613,6 +7806,7 @@ impl UpdateResolverError {
 impl std::error::Error for UpdateResolverError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateResolverErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateResolverErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UpdateResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateResolverErrorKind::NotFoundException(_inner) => Some(_inner),

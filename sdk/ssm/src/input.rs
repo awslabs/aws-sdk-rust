@@ -764,12 +764,16 @@ pub mod create_activation_input {
             self.default_instance_name = input;
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -1336,14 +1340,14 @@ pub mod create_association_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2396,6 +2400,7 @@ pub mod create_ops_item_input {
         pub(crate) actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information about the OpsItem. </p>
@@ -2408,12 +2413,22 @@ pub mod create_ops_item_input {
             self.description = input;
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_type = Some(input.into());
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn set_ops_item_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2625,6 +2640,16 @@ pub mod create_ops_item_input {
             self.planned_end_time = input;
             self
         }
+        /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateOpsItemInput`](crate::input::CreateOpsItemInput).
         pub fn build(
             self,
@@ -2646,6 +2671,7 @@ pub mod create_ops_item_input {
                 actual_end_time: self.actual_end_time,
                 planned_start_time: self.planned_start_time,
                 planned_end_time: self.planned_end_time,
+                account_id: self.account_id,
             })
         }
     }
@@ -5148,6 +5174,179 @@ impl DeleteResourceDataSyncInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDataSyncInput`](crate::input::DeleteResourceDataSyncInput).
     pub fn builder() -> crate::input::delete_resource_data_sync_input::Builder {
         crate::input::delete_resource_data_sync_input::Builder::default()
+    }
+}
+
+/// See [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+pub mod delete_resource_policy_input {
+
+    /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) policy_id: std::option::Option<std::string::String>,
+        pub(crate) policy_hash: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_hash = Some(input.into());
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_hash = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteResourcePolicyInput {
+                resource_arn: self.resource_arn,
+                policy_id: self.policy_id,
+                policy_hash: self.policy_hash,
+            })
+        }
+    }
+}
+impl DeleteResourcePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteResourcePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteResourcePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonSSM.DeleteResourcePolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteResourcePolicy",
+            "ssm",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
+        crate::input::delete_resource_policy_input::Builder::default()
     }
 }
 
@@ -14541,6 +14740,7 @@ pub mod get_ops_item_input {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
+        pub(crate) ops_item_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the OpsItem that you want to get.</p>
@@ -14553,6 +14753,16 @@ pub mod get_ops_item_input {
             self.ops_item_id = input;
             self
         }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_arn = Some(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetOpsItemInput`](crate::input::GetOpsItemInput).
         pub fn build(
             self,
@@ -14560,6 +14770,7 @@ pub mod get_ops_item_input {
         {
             Ok(crate::input::GetOpsItemInput {
                 ops_item_id: self.ops_item_id,
+                ops_item_arn: self.ops_item_arn,
             })
         }
     }
@@ -16132,6 +16343,177 @@ impl GetPatchBaselineForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineForPatchGroupInput`](crate::input::GetPatchBaselineForPatchGroupInput).
     pub fn builder() -> crate::input::get_patch_baseline_for_patch_group_input::Builder {
         crate::input::get_patch_baseline_for_patch_group_input::Builder::default()
+    }
+}
+
+/// See [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
+pub mod get_resource_policies_input {
+
+    /// A builder for [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetResourcePoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetResourcePoliciesInput {
+                resource_arn: self.resource_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl GetResourcePoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourcePolicies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetResourcePoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetResourcePoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonSSM.GetResourcePolicies",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourcePolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourcePolicies",
+            "ssm",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
+    pub fn builder() -> crate::input::get_resource_policies_input::Builder {
+        crate::input::get_resource_policies_input::Builder::default()
     }
 }
 
@@ -20581,6 +20963,189 @@ impl PutParameterInput {
     /// Creates a new builder-style object to manufacture [`PutParameterInput`](crate::input::PutParameterInput).
     pub fn builder() -> crate::input::put_parameter_input::Builder {
         crate::input::put_parameter_input::Builder::default()
+    }
+}
+
+/// See [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+pub mod put_resource_policy_input {
+
+    /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) policy_id: std::option::Option<std::string::String>,
+        pub(crate) policy_hash: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>A policy you want to associate with a resource.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        /// <p>A policy you want to associate with a resource.</p>
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_hash = Some(input.into());
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_hash = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::PutResourcePolicyInput {
+                resource_arn: self.resource_arn,
+                policy: self.policy,
+                policy_id: self.policy_id,
+                policy_hash: self.policy_hash,
+            })
+        }
+    }
+}
+impl PutResourcePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutResourcePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutResourcePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonSSM.PutResourcePolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutResourcePolicy",
+            "ssm",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    pub fn builder() -> crate::input::put_resource_policy_input::Builder {
+        crate::input::put_resource_policy_input::Builder::default()
     }
 }
 
@@ -26871,12 +27436,16 @@ pub mod update_managed_instance_role_input {
             self.instance_id = input;
             self
         }
-        /// <p>The IAM role you want to assign or change.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role you want to assign or change.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -27038,6 +27607,7 @@ pub mod update_ops_item_input {
         pub(crate) actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ops_item_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
@@ -27257,6 +27827,16 @@ pub mod update_ops_item_input {
             self.planned_end_time = input;
             self
         }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ops_item_arn = Some(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateOpsItemInput`](crate::input::UpdateOpsItemInput).
         pub fn build(
             self,
@@ -27278,6 +27858,7 @@ pub mod update_ops_item_input {
                 actual_end_time: self.actual_end_time,
                 planned_start_time: self.planned_start_time,
                 planned_end_time: self.planned_end_time,
+                ops_item_arn: self.ops_item_arn,
             })
         }
     }
@@ -28594,6 +29175,9 @@ pub struct UpdateOpsItemInput {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub ops_item_arn: std::option::Option<std::string::String>,
 }
 impl UpdateOpsItemInput {
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
@@ -28665,6 +29249,10 @@ impl UpdateOpsItemInput {
     pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
     }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_arn.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -28674,7 +29262,9 @@ pub struct UpdateManagedInstanceRoleInput {
     /// <p>The ID of the managed node where you want to update the role.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role you want to assign or change.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// </note>
     #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
 }
@@ -28683,7 +29273,9 @@ impl UpdateManagedInstanceRoleInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The IAM role you want to assign or change.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// </note>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -30614,6 +31206,42 @@ impl RegisterDefaultPatchBaselineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutResourcePolicyInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>A policy you want to associate with a resource.</p>
+    #[doc(hidden)]
+    pub policy: std::option::Option<std::string::String>,
+    /// <p>The policy ID.</p>
+    #[doc(hidden)]
+    pub policy_id: std::option::Option<std::string::String>,
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    #[doc(hidden)]
+    pub policy_hash: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A policy you want to associate with a resource.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The policy ID.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutParameterInput {
     /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
@@ -31596,6 +32224,35 @@ impl GetServiceSettingInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourcePoliciesInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl GetResourcePoliciesInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
     #[doc(hidden)]
@@ -31864,11 +32521,18 @@ pub struct GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
+    pub ops_item_arn: std::option::Option<std::string::String>,
 }
 impl GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
     pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
+    }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_arn.as_deref()
     }
 }
 
@@ -33593,6 +34257,35 @@ impl DeregisterManagedInstanceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteResourcePolicyInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The policy ID.</p>
+    #[doc(hidden)]
+    pub policy_id: std::option::Option<std::string::String>,
+    /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    #[doc(hidden)]
+    pub policy_hash: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyInput {
+    /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The policy ID.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceDataSyncInput {
     /// <p>The name of the configuration to delete.</p>
     #[doc(hidden)]
@@ -34026,7 +34719,12 @@ pub struct CreateOpsItemInput {
     /// <p>Information about the OpsItem. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub ops_item_type: std::option::Option<std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
@@ -34080,13 +34778,21 @@ pub struct CreateOpsItemInput {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
     pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl CreateOpsItemInput {
     /// <p>Information about the OpsItem. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
     pub fn ops_item_type(&self) -> std::option::Option<&str> {
         self.ops_item_type.as_deref()
     }
@@ -34155,6 +34861,10 @@ impl CreateOpsItemInput {
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
+    }
+    /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 
@@ -34511,7 +35221,7 @@ pub struct CreateAssociationInput {
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
@@ -34619,7 +35329,7 @@ impl CreateAssociationInput {
     > {
         self.target_maps.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -34675,7 +35385,9 @@ pub struct CreateActivationInput {
     /// </important>
     #[doc(hidden)]
     pub default_instance_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// </note>
     #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
@@ -34712,7 +35424,9 @@ impl CreateActivationInput {
     pub fn default_instance_name(&self) -> std::option::Option<&str> {
         self.default_instance_name.as_deref()
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// </note>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }

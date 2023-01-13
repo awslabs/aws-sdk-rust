@@ -9,6 +9,16 @@ pub(crate) fn reflens_structure_crate_output_list_job_runs_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_job_templates_output_next_token(
+    input: &crate::output::ListJobTemplatesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_managed_endpoints_output_next_token(
     input: &crate::output::ListManagedEndpointsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -33,6 +43,16 @@ pub(crate) fn lens_structure_crate_output_list_job_runs_output_job_runs(
     input: crate::output::ListJobRunsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::JobRun>> {
     let input = match input.job_runs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_job_templates_output_templates(
+    input: crate::output::ListJobTemplatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobTemplate>> {
+    let input = match input.templates {
         None => return None,
         Some(t) => t,
     };

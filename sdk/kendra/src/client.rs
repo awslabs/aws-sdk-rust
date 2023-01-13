@@ -230,7 +230,7 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_client_token): <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_language_code): <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     /// - On success, responds with [`CreateFaqOutput`](crate::output::CreateFaqOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateFaqOutput::id): <p>The unique identifier of the FAQ.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateFaqOutput::id): <p>The identifier of the FAQ.</p>
     /// - On failure, responds with [`SdkError<CreateFaqError>`](crate::error::CreateFaqError)
     pub fn create_faq(&self) -> fluent_builders::CreateFaq {
         fluent_builders::CreateFaq::new(self.handle.clone())
@@ -249,7 +249,7 @@ impl Client {
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::CreateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::CreateIndex::set_user_context_policy): <p>The user context policy.</p>  <dl>   <dt>   ATTRIBUTE_FILTER  </dt>   <dd>    <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>   </dd>   <dt>   USER_TOKEN  </dt>   <dd>    <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>   </dd>  </dl>
     ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::CreateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     /// - On success, responds with [`CreateIndexOutput`](crate::output::CreateIndexOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateIndexOutput::id): <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateIndexOutput::id): <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::error::CreateIndexError)
     pub fn create_index(&self) -> fluent_builders::CreateIndex {
         fluent_builders::CreateIndex::new(self.handle.clone())
@@ -265,7 +265,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>  <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_tags): <p>A tag that you can assign to a block list that categorizes the block list.</p>
     /// - On success, responds with [`CreateQuerySuggestionsBlockListOutput`](crate::output::CreateQuerySuggestionsBlockListOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateQuerySuggestionsBlockListOutput::id): <p>The unique identifier of the created block list.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateQuerySuggestionsBlockListOutput::id): <p>The identifier of the created block list.</p>
     /// - On failure, responds with [`SdkError<CreateQuerySuggestionsBlockListError>`](crate::error::CreateQuerySuggestionsBlockListError)
     pub fn create_query_suggestions_block_list(
         &self,
@@ -283,7 +283,7 @@ impl Client {
     ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateThesaurus::set_source_s3_path): <p>The path to the thesaurus file in S3.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_client_token): <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     /// - On success, responds with [`CreateThesaurusOutput`](crate::output::CreateThesaurusOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateThesaurusOutput::id): <p>The unique identifier of the thesaurus. </p>
+    ///   - [`id(Option<String>)`](crate::output::CreateThesaurusOutput::id): <p>The identifier of the thesaurus. </p>
     /// - On failure, responds with [`SdkError<CreateThesaurusError>`](crate::error::CreateThesaurusError)
     pub fn create_thesaurus(&self) -> fluent_builders::CreateThesaurus {
         fluent_builders::CreateThesaurus::new(self.handle.clone())
@@ -608,7 +608,7 @@ impl Client {
     ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::GetQuerySuggestions::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::GetQuerySuggestions::set_query_text): <p>The text of a user's query to generate query suggestions.</p>  <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>  <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     ///   - [`max_suggestions_count(i32)`](crate::client::fluent_builders::GetQuerySuggestions::max_suggestions_count) / [`set_max_suggestions_count(Option<i32>)`](crate::client::fluent_builders::GetQuerySuggestions::set_max_suggestions_count): <p>The maximum number of query suggestions you want to show to your users.</p>
     /// - On success, responds with [`GetQuerySuggestionsOutput`](crate::output::GetQuerySuggestionsOutput) with field(s):
-    ///   - [`query_suggestions_id(Option<String>)`](crate::output::GetQuerySuggestionsOutput::query_suggestions_id): <p>The unique identifier for a list of query suggestions for an index.</p>
+    ///   - [`query_suggestions_id(Option<String>)`](crate::output::GetQuerySuggestionsOutput::query_suggestions_id): <p>The identifier for a list of query suggestions for an index.</p>
     ///   - [`suggestions(Option<Vec<Suggestion>>)`](crate::output::GetQuerySuggestionsOutput::suggestions): <p>A list of query suggestions for an index.</p>
     /// - On failure, responds with [`SdkError<GetQuerySuggestionsError>`](crate::error::GetQuerySuggestionsError)
     pub fn get_query_suggestions(&self) -> fluent_builders::GetQuerySuggestions {
@@ -653,7 +653,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index used with one or more data source connectors.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of data source connectors to return.</p>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
     ///   - [`summary_items(Option<Vec<DataSourceSummary>>)`](crate::output::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data source connector.</p>
@@ -758,8 +758,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIndices::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndices::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndices::set_max_results): <p>The maximum number of data sources to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndices::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndices::set_max_results): <p>The maximum number of indices to return.</p>
     /// - On success, responds with [`ListIndicesOutput`](crate::output::ListIndicesOutput) with field(s):
     ///   - [`index_configuration_summary_items(Option<Vec<IndexConfigurationSummary>>)`](crate::output::ListIndicesOutput::index_configuration_summary_items): <p>An array of summary information on the configuration of one or more indexes.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIndicesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
@@ -825,8 +825,8 @@ impl Client {
     /// Constructs a fluent builder for the [`Query`](crate::client::fluent_builders::Query) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
-    ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::Query::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::Query::set_query_text): <p>The text to search for.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+    ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::Query::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::Query::set_query_text): <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
     ///   - [`attribute_filter(AttributeFilter)`](crate::client::fluent_builders::Query::attribute_filter) / [`set_attribute_filter(Option<AttributeFilter>)`](crate::client::fluent_builders::Query::set_attribute_filter): <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>  <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     ///   - [`facets(Vec<Facet>)`](crate::client::fluent_builders::Query::facets) / [`set_facets(Option<Vec<Facet>>)`](crate::client::fluent_builders::Query::set_facets): <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
     ///   - [`requested_document_attributes(Vec<String>)`](crate::client::fluent_builders::Query::requested_document_attributes) / [`set_requested_document_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::Query::set_requested_document_attributes): <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
@@ -839,7 +839,7 @@ impl Client {
     ///   - [`visitor_id(impl Into<String>)`](crate::client::fluent_builders::Query::visitor_id) / [`set_visitor_id(Option<String>)`](crate::client::fluent_builders::Query::set_visitor_id): <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     ///   - [`spell_correction_configuration(SpellCorrectionConfiguration)`](crate::client::fluent_builders::Query::spell_correction_configuration) / [`set_spell_correction_configuration(Option<SpellCorrectionConfiguration>)`](crate::client::fluent_builders::Query::set_spell_correction_configuration): <p>Enables suggested spell corrections for queries.</p>
     /// - On success, responds with [`QueryOutput`](crate::output::QueryOutput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::output::QueryOutput::query_id): <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    ///   - [`query_id(Option<String>)`](crate::output::QueryOutput::query_id): <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
     ///   - [`result_items(Option<Vec<QueryResultItem>>)`](crate::output::QueryOutput::result_items): <p>The results of the search.</p>
     ///   - [`facet_results(Option<Vec<FacetResult>>)`](crate::output::QueryOutput::facet_results): <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
     ///   - [`total_number_of_results(Option<i32>)`](crate::output::QueryOutput::total_number_of_results): <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
@@ -4900,12 +4900,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5653,22 +5653,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListIndicesPaginator {
             crate::paginator::ListIndicesPaginator::new(self.handle, self.inner)
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of indices to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of indices to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6165,22 +6165,22 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+        /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+        /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The text to search for.</p>
+        /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
         pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_text(input.into());
             self
         }
-        /// <p>The text to search for.</p>
+        /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
         pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_query_text(input);
             self

@@ -728,6 +728,30 @@ impl DisableMetricsCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DetachTrafficSourcesOutput {}
+/// See [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput).
+pub mod detach_traffic_sources_output {
+
+    /// A builder for [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput).
+        pub fn build(self) -> crate::output::DetachTrafficSourcesOutput {
+            crate::output::DetachTrafficSourcesOutput {}
+        }
+    }
+}
+impl DetachTrafficSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput).
+    pub fn builder() -> crate::output::detach_traffic_sources_output::Builder {
+        crate::output::detach_traffic_sources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsOutput {}
 /// See [`DetachLoadBalancerTargetGroupsOutput`](crate::output::DetachLoadBalancerTargetGroupsOutput).
 pub mod detach_load_balancer_target_groups_output {
@@ -840,7 +864,7 @@ pub struct DescribeWarmPoolOutput {
     /// <p>The instances that are currently in the warm pool.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -855,7 +879,7 @@ impl DescribeWarmPoolOutput {
     pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
         self.instances.as_deref()
     }
-    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -907,12 +931,12 @@ pub mod describe_warm_pool_output {
             self.instances = input;
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+        /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+        /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -931,6 +955,83 @@ impl DescribeWarmPoolOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolOutput`](crate::output::DescribeWarmPoolOutput).
     pub fn builder() -> crate::output::describe_warm_pool_output::Builder {
         crate::output::describe_warm_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeTrafficSourcesOutput {
+    /// <p>Information about the traffic sources.</p>
+    #[doc(hidden)]
+    pub traffic_sources: std::option::Option<std::vec::Vec<crate::model::TrafficSourceState>>,
+    /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTrafficSourcesOutput {
+    /// <p>Information about the traffic sources.</p>
+    pub fn traffic_sources(&self) -> std::option::Option<&[crate::model::TrafficSourceState]> {
+        self.traffic_sources.as_deref()
+    }
+    /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput).
+pub mod describe_traffic_sources_output {
+
+    /// A builder for [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) traffic_sources:
+            std::option::Option<std::vec::Vec<crate::model::TrafficSourceState>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `traffic_sources`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).
+        ///
+        /// <p>Information about the traffic sources.</p>
+        pub fn traffic_sources(mut self, input: crate::model::TrafficSourceState) -> Self {
+            let mut v = self.traffic_sources.unwrap_or_default();
+            v.push(input);
+            self.traffic_sources = Some(v);
+            self
+        }
+        /// <p>Information about the traffic sources.</p>
+        pub fn set_traffic_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficSourceState>>,
+        ) -> Self {
+            self.traffic_sources = input;
+            self
+        }
+        /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput).
+        pub fn build(self) -> crate::output::DescribeTrafficSourcesOutput {
+            crate::output::DescribeTrafficSourcesOutput {
+                traffic_sources: self.traffic_sources,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeTrafficSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput).
+    pub fn builder() -> crate::output::describe_traffic_sources_output::Builder {
+        crate::output::describe_traffic_sources_output::Builder::default()
     }
 }
 
@@ -2829,6 +2930,30 @@ impl BatchDeleteScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteScheduledActionOutput`](crate::output::BatchDeleteScheduledActionOutput).
     pub fn builder() -> crate::output::batch_delete_scheduled_action_output::Builder {
         crate::output::batch_delete_scheduled_action_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AttachTrafficSourcesOutput {}
+/// See [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput).
+pub mod attach_traffic_sources_output {
+
+    /// A builder for [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput).
+        pub fn build(self) -> crate::output::AttachTrafficSourcesOutput {
+            crate::output::AttachTrafficSourcesOutput {}
+        }
+    }
+}
+impl AttachTrafficSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput).
+    pub fn builder() -> crate::output::attach_traffic_sources_output::Builder {
+        crate::output::attach_traffic_sources_output::Builder::default()
     }
 }
 

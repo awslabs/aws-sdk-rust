@@ -168,6 +168,8 @@ pub enum Error {
     ),
     /// <p>The specified policy type isn't currently enabled in this root. You can't attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p>
     PolicyTypeNotEnabledException(crate::error::PolicyTypeNotEnabledException),
+    /// <p>We can't find a resource policy request with the parameter that you specified.</p>
+    ResourcePolicyNotFoundException(crate::error::ResourcePolicyNotFoundException),
     /// <p>We can't find a root with the <code>RootId</code> that you specified.</p>
     RootNotFoundException(crate::error::RootNotFoundException),
     /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
@@ -234,6 +236,7 @@ impl std::fmt::Display for Error {
             Error::PolicyTypeAlreadyEnabledException(inner) => inner.fmt(f),
             Error::PolicyTypeNotAvailableForOrganizationException(inner) => inner.fmt(f),
             Error::PolicyTypeNotEnabledException(inner) => inner.fmt(f),
+            Error::ResourcePolicyNotFoundException(inner) => inner.fmt(f),
             Error::RootNotFoundException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::SourceParentNotFoundException(inner) => inner.fmt(f),
@@ -870,6 +873,55 @@ impl From<crate::error::DeletePolicyError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteResourcePolicyErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
+                inner,
+            ) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DeleteResourcePolicyErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(inner) => {
+                Error::ResourcePolicyNotFoundException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
+                Error::UnsupportedApiEndpointException(inner)
+            }
+            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DeregisterDelegatedAdministratorError, R>>
     for Error
@@ -1178,6 +1230,52 @@ impl From<crate::error::DescribePolicyError> for Error {
                 Error::UnsupportedApiEndpointException(inner)
             }
             crate::error::DescribePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeResourcePolicyError> for Error {
+    fn from(err: crate::error::DescribeResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::DescribeResourcePolicyErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
+                inner,
+            ) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::error::DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(
+                inner,
+            ) => Error::ResourcePolicyNotFoundException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::DescribeResourcePolicyErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(
+                inner,
+            ) => Error::UnsupportedApiEndpointException(inner),
+            crate::error::DescribeResourcePolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -2227,6 +2325,54 @@ impl From<crate::error::MoveAccountError> for Error {
                 Error::TooManyRequestsException(inner)
             }
             crate::error::MoveAccountErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutResourcePolicyError> for Error {
+    fn from(err: crate::error::PutResourcePolicyError) -> Self {
+        match err.kind {
+            crate::error::PutResourcePolicyErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(inner) => {
+                Error::AwsOrganizationsNotInUseException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
+                Error::UnsupportedApiEndpointException(inner)
+            }
+            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

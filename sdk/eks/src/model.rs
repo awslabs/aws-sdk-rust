@@ -1014,10 +1014,7 @@ pub struct LaunchTemplateSpecification {
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
-    /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
-    /// <p>Default: The default version of the launch template.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The ID of the launch template.</p>
@@ -1031,10 +1028,7 @@ impl LaunchTemplateSpecification {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
-    /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
-    /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
-    /// <p>Default: The default version of the launch template.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -1067,18 +1061,12 @@ pub mod launch_template_specification {
             self.name = input;
             self
         }
-        /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
-        /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
-        /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
-        /// <p>Default: The default version of the launch template.</p>
+        /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>.</p>
-        /// <p>If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch template.</p>
-        /// <p>If the value is <code>$Default</code>, Amazon EKS uses the default version of the launch template.</p>
-        /// <p>Default: The default version of the launch template.</p>
+        /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1288,7 +1276,7 @@ pub struct UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
     #[doc(hidden)]
     pub add_or_update_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
-    /// <p>Kubernetes taints to be removed.</p>
+    /// <p>Kubernetes taints to remove.</p>
     #[doc(hidden)]
     pub remove_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
 }
@@ -1297,7 +1285,7 @@ impl UpdateTaintsPayload {
     pub fn add_or_update_taints(&self) -> std::option::Option<&[crate::model::Taint]> {
         self.add_or_update_taints.as_deref()
     }
-    /// <p>Kubernetes taints to be removed.</p>
+    /// <p>Kubernetes taints to remove.</p>
     pub fn remove_taints(&self) -> std::option::Option<&[crate::model::Taint]> {
         self.remove_taints.as_deref()
     }
@@ -1335,14 +1323,14 @@ pub mod update_taints_payload {
         ///
         /// To override the contents of this collection use [`set_remove_taints`](Self::set_remove_taints).
         ///
-        /// <p>Kubernetes taints to be removed.</p>
+        /// <p>Kubernetes taints to remove.</p>
         pub fn remove_taints(mut self, input: crate::model::Taint) -> Self {
             let mut v = self.remove_taints.unwrap_or_default();
             v.push(input);
             self.remove_taints = Some(v);
             self
         }
-        /// <p>Kubernetes taints to be removed.</p>
+        /// <p>Kubernetes taints to remove.</p>
         pub fn set_remove_taints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -1895,12 +1883,7 @@ pub struct VpcConfigRequest {
     /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your nodes and the Kubernetes control plane.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
-    /// <ul>
-    /// <li> <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p> </li>
-    /// <li> <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Set this value to <code>false</code> to disable public access to your cluster's Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
@@ -1918,12 +1901,7 @@ impl VpcConfigRequest {
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
-    /// <ul>
-    /// <li> <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p> </li>
-    /// <li> <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -1976,24 +1954,14 @@ pub mod vpc_config_request {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
-        /// <ul>
-        /// <li> <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p> </li>
-        /// <li> <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p> </li>
-        /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+        /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
-        /// <ul>
-        /// <li> <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p> </li>
-        /// <li> <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p> </li>
-        /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+        /// <p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2641,6 +2609,9 @@ pub struct OutpostConfigResponse {
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
     #[doc(hidden)]
     pub control_plane_instance_type: std::option::Option<std::string::String>,
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
+    pub control_plane_placement: std::option::Option<crate::model::ControlPlanePlacementResponse>,
 }
 impl OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
@@ -2651,6 +2622,12 @@ impl OutpostConfigResponse {
     pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
         self.control_plane_instance_type.as_deref()
     }
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn control_plane_placement(
+        &self,
+    ) -> std::option::Option<&crate::model::ControlPlanePlacementResponse> {
+        self.control_plane_placement.as_ref()
+    }
 }
 /// See [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
 pub mod outpost_config_response {
@@ -2660,6 +2637,8 @@ pub mod outpost_config_response {
     pub struct Builder {
         pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_plane_instance_type: std::option::Option<std::string::String>,
+        pub(crate) control_plane_placement:
+            std::option::Option<crate::model::ControlPlanePlacementResponse>,
     }
     impl Builder {
         /// Appends an item to `outpost_arns`.
@@ -2697,11 +2676,28 @@ pub mod outpost_config_response {
             self.control_plane_instance_type = input;
             self
         }
+        /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        pub fn control_plane_placement(
+            mut self,
+            input: crate::model::ControlPlanePlacementResponse,
+        ) -> Self {
+            self.control_plane_placement = Some(input);
+            self
+        }
+        /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        pub fn set_control_plane_placement(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlanePlacementResponse>,
+        ) -> Self {
+            self.control_plane_placement = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
         pub fn build(self) -> crate::model::OutpostConfigResponse {
             crate::model::OutpostConfigResponse {
                 outpost_arns: self.outpost_arns,
                 control_plane_instance_type: self.control_plane_instance_type,
+                control_plane_placement: self.control_plane_placement,
             }
         }
     }
@@ -2710,6 +2706,54 @@ impl OutpostConfigResponse {
     /// Creates a new builder-style object to manufacture [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
     pub fn builder() -> crate::model::outpost_config_response::Builder {
         crate::model::outpost_config_response::Builder::default()
+    }
+}
+
+/// <p>The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ControlPlanePlacementResponse {
+    /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
+    #[doc(hidden)]
+    pub group_name: std::option::Option<std::string::String>,
+}
+impl ControlPlanePlacementResponse {
+    /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
+/// See [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+pub mod control_plane_placement_response {
+
+    /// A builder for [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+        pub fn build(self) -> crate::model::ControlPlanePlacementResponse {
+            crate::model::ControlPlanePlacementResponse {
+                group_name: self.group_name,
+            }
+        }
+    }
+}
+impl ControlPlanePlacementResponse {
+    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+    pub fn builder() -> crate::model::control_plane_placement_response::Builder {
+        crate::model::control_plane_placement_response::Builder::default()
     }
 }
 
@@ -3498,7 +3542,7 @@ impl Oidc {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KubernetesNetworkConfigResponse {
-    /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
+    /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
     #[doc(hidden)]
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.</p>
@@ -3509,7 +3553,7 @@ pub struct KubernetesNetworkConfigResponse {
     pub ip_family: std::option::Option<crate::model::IpFamily>,
 }
 impl KubernetesNetworkConfigResponse {
-    /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
+    /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
     pub fn service_ipv4_cidr(&self) -> std::option::Option<&str> {
         self.service_ipv4_cidr.as_deref()
     }
@@ -3533,12 +3577,12 @@ pub mod kubernetes_network_config_response {
         pub(crate) ip_family: std::option::Option<crate::model::IpFamily>,
     }
     impl Builder {
-        /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
+        /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
         pub fn service_ipv4_cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_ipv4_cidr = Some(input.into());
             self
         }
-        /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
+        /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
         pub fn set_service_ipv4_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5307,6 +5351,10 @@ impl AutoScalingGroup {
 ///     AmiTypes::BottlerocketX8664 => { /* ... */ },
 ///     AmiTypes::BottlerocketX8664Nvidia => { /* ... */ },
 ///     AmiTypes::Custom => { /* ... */ },
+///     AmiTypes::WindowsCore2019X8664 => { /* ... */ },
+///     AmiTypes::WindowsCore2022X8664 => { /* ... */ },
+///     AmiTypes::WindowsFull2019X8664 => { /* ... */ },
+///     AmiTypes::WindowsFull2022X8664 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -5356,6 +5404,14 @@ pub enum AmiTypes {
     BottlerocketX8664Nvidia,
     #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsCore2019X8664,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsCore2022X8664,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsFull2019X8664,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsFull2022X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -5370,6 +5426,10 @@ impl std::convert::From<&str> for AmiTypes {
             "BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
             "BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
             "CUSTOM" => AmiTypes::Custom,
+            "WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
+            "WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
+            "WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
+            "WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
             other => AmiTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -5393,6 +5453,10 @@ impl AmiTypes {
             AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
             AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
             AmiTypes::Custom => "CUSTOM",
+            AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
+            AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
+            AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
+            AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
             AmiTypes::Unknown(value) => value.as_str(),
         }
     }
@@ -5407,6 +5471,10 @@ impl AmiTypes {
             "BOTTLEROCKET_x86_64",
             "BOTTLEROCKET_x86_64_NVIDIA",
             "CUSTOM",
+            "WINDOWS_CORE_2019_x86_64",
+            "WINDOWS_CORE_2022_x86_64",
+            "WINDOWS_FULL_2019_x86_64",
+            "WINDOWS_FULL_2022_x86_64",
         ]
     }
 }
@@ -5420,19 +5488,19 @@ impl AsRef<str> for AmiTypes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoteAccessConfig {
-    /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+    /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     #[doc(hidden)]
     pub ec2_ssh_key: std::option::Option<std::string::String>,
-    /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     #[doc(hidden)]
     pub source_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoteAccessConfig {
-    /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+    /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     pub fn ec2_ssh_key(&self) -> std::option::Option<&str> {
         self.ec2_ssh_key.as_deref()
     }
-    /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub fn source_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.source_security_groups.as_deref()
     }
@@ -5447,12 +5515,12 @@ pub mod remote_access_config {
         pub(crate) source_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+        /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
         pub fn ec2_ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_ssh_key = Some(input.into());
             self
         }
-        /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+        /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
         pub fn set_ec2_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_ssh_key = input;
             self
@@ -5461,14 +5529,14 @@ pub mod remote_access_config {
         ///
         /// To override the contents of this collection use [`set_source_security_groups`](Self::set_source_security_groups).
         ///
-        /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+        /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
         pub fn source_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_security_groups.unwrap_or_default();
             v.push(input.into());
             self.source_security_groups = Some(v);
             self
         }
-        /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+        /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
         pub fn set_source_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6641,6 +6709,15 @@ pub struct AddonInfo {
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
     #[doc(hidden)]
     pub addon_versions: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
+    /// <p>The publisher of the add-on.</p>
+    #[doc(hidden)]
+    pub publisher: std::option::Option<std::string::String>,
+    /// <p>The owner of the add-on.</p>
+    #[doc(hidden)]
+    pub owner: std::option::Option<std::string::String>,
+    /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+    #[doc(hidden)]
+    pub marketplace_information: std::option::Option<crate::model::MarketplaceInformation>,
 }
 impl AddonInfo {
     /// <p>The name of the add-on.</p>
@@ -6655,6 +6732,20 @@ impl AddonInfo {
     pub fn addon_versions(&self) -> std::option::Option<&[crate::model::AddonVersionInfo]> {
         self.addon_versions.as_deref()
     }
+    /// <p>The publisher of the add-on.</p>
+    pub fn publisher(&self) -> std::option::Option<&str> {
+        self.publisher.as_deref()
+    }
+    /// <p>The owner of the add-on.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+    pub fn marketplace_information(
+        &self,
+    ) -> std::option::Option<&crate::model::MarketplaceInformation> {
+        self.marketplace_information.as_ref()
+    }
 }
 /// See [`AddonInfo`](crate::model::AddonInfo).
 pub mod addon_info {
@@ -6666,6 +6757,10 @@ pub mod addon_info {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) addon_versions:
             std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
+        pub(crate) publisher: std::option::Option<std::string::String>,
+        pub(crate) owner: std::option::Option<std::string::String>,
+        pub(crate) marketplace_information:
+            std::option::Option<crate::model::MarketplaceInformation>,
     }
     impl Builder {
         /// <p>The name of the add-on.</p>
@@ -6707,12 +6802,51 @@ pub mod addon_info {
             self.addon_versions = input;
             self
         }
+        /// <p>The publisher of the add-on.</p>
+        pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher = Some(input.into());
+            self
+        }
+        /// <p>The publisher of the add-on.</p>
+        pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher = input;
+            self
+        }
+        /// <p>The owner of the add-on.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
+            self
+        }
+        /// <p>The owner of the add-on.</p>
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
+            self
+        }
+        /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+        pub fn marketplace_information(
+            mut self,
+            input: crate::model::MarketplaceInformation,
+        ) -> Self {
+            self.marketplace_information = Some(input);
+            self
+        }
+        /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+        pub fn set_marketplace_information(
+            mut self,
+            input: std::option::Option<crate::model::MarketplaceInformation>,
+        ) -> Self {
+            self.marketplace_information = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddonInfo`](crate::model::AddonInfo).
         pub fn build(self) -> crate::model::AddonInfo {
             crate::model::AddonInfo {
                 addon_name: self.addon_name,
                 r#type: self.r#type,
                 addon_versions: self.addon_versions,
+                publisher: self.publisher,
+                owner: self.owner,
+                marketplace_information: self.marketplace_information,
             }
         }
     }
@@ -6721,6 +6855,73 @@ impl AddonInfo {
     /// Creates a new builder-style object to manufacture [`AddonInfo`](crate::model::AddonInfo).
     pub fn builder() -> crate::model::addon_info::Builder {
         crate::model::addon_info::Builder::default()
+    }
+}
+
+/// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MarketplaceInformation {
+    /// <p>The product ID from the Amazon Web Services Marketplace.</p>
+    #[doc(hidden)]
+    pub product_id: std::option::Option<std::string::String>,
+    /// <p>The product URL from the Amazon Web Services Marketplace.</p>
+    #[doc(hidden)]
+    pub product_url: std::option::Option<std::string::String>,
+}
+impl MarketplaceInformation {
+    /// <p>The product ID from the Amazon Web Services Marketplace.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The product URL from the Amazon Web Services Marketplace.</p>
+    pub fn product_url(&self) -> std::option::Option<&str> {
+        self.product_url.as_deref()
+    }
+}
+/// See [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+pub mod marketplace_information {
+
+    /// A builder for [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) product_id: std::option::Option<std::string::String>,
+        pub(crate) product_url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The product ID from the Amazon Web Services Marketplace.</p>
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_id = Some(input.into());
+            self
+        }
+        /// <p>The product ID from the Amazon Web Services Marketplace.</p>
+        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_id = input;
+            self
+        }
+        /// <p>The product URL from the Amazon Web Services Marketplace.</p>
+        pub fn product_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_url = Some(input.into());
+            self
+        }
+        /// <p>The product URL from the Amazon Web Services Marketplace.</p>
+        pub fn set_product_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+        pub fn build(self) -> crate::model::MarketplaceInformation {
+            crate::model::MarketplaceInformation {
+                product_id: self.product_id,
+                product_url: self.product_url,
+            }
+        }
+    }
+}
+impl MarketplaceInformation {
+    /// Creates a new builder-style object to manufacture [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+    pub fn builder() -> crate::model::marketplace_information::Builder {
+        crate::model::marketplace_information::Builder::default()
     }
 }
 
@@ -6737,6 +6938,9 @@ pub struct AddonVersionInfo {
     /// <p>An object representing the compatibilities of a version.</p>
     #[doc(hidden)]
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+    /// <p>Whether the add-on requires configuration.</p>
+    #[doc(hidden)]
+    pub requires_configuration: bool,
 }
 impl AddonVersionInfo {
     /// <p>The version of the add-on.</p>
@@ -6751,6 +6955,10 @@ impl AddonVersionInfo {
     pub fn compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
         self.compatibilities.as_deref()
     }
+    /// <p>Whether the add-on requires configuration.</p>
+    pub fn requires_configuration(&self) -> bool {
+        self.requires_configuration
+    }
 }
 /// See [`AddonVersionInfo`](crate::model::AddonVersionInfo).
 pub mod addon_version_info {
@@ -6761,6 +6969,7 @@ pub mod addon_version_info {
         pub(crate) addon_version: std::option::Option<std::string::String>,
         pub(crate) architecture: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+        pub(crate) requires_configuration: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The version of the add-on.</p>
@@ -6814,12 +7023,23 @@ pub mod addon_version_info {
             self.compatibilities = input;
             self
         }
+        /// <p>Whether the add-on requires configuration.</p>
+        pub fn requires_configuration(mut self, input: bool) -> Self {
+            self.requires_configuration = Some(input);
+            self
+        }
+        /// <p>Whether the add-on requires configuration.</p>
+        pub fn set_requires_configuration(mut self, input: std::option::Option<bool>) -> Self {
+            self.requires_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddonVersionInfo`](crate::model::AddonVersionInfo).
         pub fn build(self) -> crate::model::AddonVersionInfo {
             crate::model::AddonVersionInfo {
                 addon_version: self.addon_version,
                 architecture: self.architecture,
                 compatibilities: self.compatibilities,
+                requires_configuration: self.requires_configuration.unwrap_or_default(),
             }
         }
     }
@@ -6945,7 +7165,7 @@ pub struct Addon {
     /// <p>The version of the add-on.</p>
     #[doc(hidden)]
     pub addon_version: std::option::Option<std::string::String>,
-    /// <p>An object representing the health of the add-on.</p>
+    /// <p>An object that represents the health of the add-on.</p>
     #[doc(hidden)]
     pub health: std::option::Option<crate::model::AddonHealth>,
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
@@ -6957,13 +7177,25 @@ pub struct Addon {
     /// <p>The date and time that the add-on was last modified.</p>
     #[doc(hidden)]
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the add-on.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
     #[doc(hidden)]
     pub service_account_role_arn: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster. </p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The publisher of the add-on.</p>
+    #[doc(hidden)]
+    pub publisher: std::option::Option<std::string::String>,
+    /// <p>The owner of the add-on.</p>
+    #[doc(hidden)]
+    pub owner: std::option::Option<std::string::String>,
+    /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+    #[doc(hidden)]
+    pub marketplace_information: std::option::Option<crate::model::MarketplaceInformation>,
+    /// <p>The configuration values that you provided.</p>
+    #[doc(hidden)]
+    pub configuration_values: std::option::Option<std::string::String>,
 }
 impl Addon {
     /// <p>The name of the add-on.</p>
@@ -6982,7 +7214,7 @@ impl Addon {
     pub fn addon_version(&self) -> std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>An object representing the health of the add-on.</p>
+    /// <p>An object that represents the health of the add-on.</p>
     pub fn health(&self) -> std::option::Option<&crate::model::AddonHealth> {
         self.health.as_ref()
     }
@@ -6998,7 +7230,7 @@ impl Addon {
     pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the add-on.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
     pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
@@ -7008,6 +7240,24 @@ impl Addon {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The publisher of the add-on.</p>
+    pub fn publisher(&self) -> std::option::Option<&str> {
+        self.publisher.as_deref()
+    }
+    /// <p>The owner of the add-on.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+    pub fn marketplace_information(
+        &self,
+    ) -> std::option::Option<&crate::model::MarketplaceInformation> {
+        self.marketplace_information.as_ref()
+    }
+    /// <p>The configuration values that you provided.</p>
+    pub fn configuration_values(&self) -> std::option::Option<&str> {
+        self.configuration_values.as_deref()
     }
 }
 /// See [`Addon`](crate::model::Addon).
@@ -7028,6 +7278,11 @@ pub mod addon {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) publisher: std::option::Option<std::string::String>,
+        pub(crate) owner: std::option::Option<std::string::String>,
+        pub(crate) marketplace_information:
+            std::option::Option<crate::model::MarketplaceInformation>,
+        pub(crate) configuration_values: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the add-on.</p>
@@ -7073,12 +7328,12 @@ pub mod addon {
             self.addon_version = input;
             self
         }
-        /// <p>An object representing the health of the add-on.</p>
+        /// <p>An object that represents the health of the add-on.</p>
         pub fn health(mut self, input: crate::model::AddonHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>An object representing the health of the add-on.</p>
+        /// <p>An object that represents the health of the add-on.</p>
         pub fn set_health(mut self, input: std::option::Option<crate::model::AddonHealth>) -> Self {
             self.health = input;
             self
@@ -7119,12 +7374,12 @@ pub mod addon {
             self.modified_at = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the add-on.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
         pub fn service_account_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the add-on.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
         pub fn set_service_account_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7157,6 +7412,55 @@ pub mod addon {
             self.tags = input;
             self
         }
+        /// <p>The publisher of the add-on.</p>
+        pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher = Some(input.into());
+            self
+        }
+        /// <p>The publisher of the add-on.</p>
+        pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher = input;
+            self
+        }
+        /// <p>The owner of the add-on.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
+            self
+        }
+        /// <p>The owner of the add-on.</p>
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
+            self
+        }
+        /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+        pub fn marketplace_information(
+            mut self,
+            input: crate::model::MarketplaceInformation,
+        ) -> Self {
+            self.marketplace_information = Some(input);
+            self
+        }
+        /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
+        pub fn set_marketplace_information(
+            mut self,
+            input: std::option::Option<crate::model::MarketplaceInformation>,
+        ) -> Self {
+            self.marketplace_information = input;
+            self
+        }
+        /// <p>The configuration values that you provided.</p>
+        pub fn configuration_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_values = Some(input.into());
+            self
+        }
+        /// <p>The configuration values that you provided.</p>
+        pub fn set_configuration_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_values = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Addon`](crate::model::Addon).
         pub fn build(self) -> crate::model::Addon {
             crate::model::Addon {
@@ -7170,6 +7474,10 @@ pub mod addon {
                 modified_at: self.modified_at,
                 service_account_role_arn: self.service_account_role_arn,
                 tags: self.tags,
+                publisher: self.publisher,
+                owner: self.owner,
+                marketplace_information: self.marketplace_information,
+                configuration_values: self.configuration_values,
             }
         }
     }
@@ -7594,39 +7902,38 @@ impl AsRef<str> for AddonStatus {
     }
 }
 
-/// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating a local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
+/// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html">Creating a local cluster on an Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutpostConfigRequest {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
     #[doc(hidden)]
     pub outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
-    /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
-    /// <ul>
-    /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
-    /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
-    /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
-    /// </ul>
-    /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
+    /// <p> </p>
     #[doc(hidden)]
     pub control_plane_instance_type: std::option::Option<std::string::String>,
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    #[doc(hidden)]
+    pub control_plane_placement: std::option::Option<crate::model::ControlPlanePlacementRequest>,
 }
 impl OutpostConfigRequest {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
     pub fn outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.outpost_arns.as_deref()
     }
-    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
-    /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
-    /// <ul>
-    /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
-    /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
-    /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
-    /// </ul>
-    /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+    /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
+    /// <p> </p>
     pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
         self.control_plane_instance_type.as_deref()
+    }
+    /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn control_plane_placement(
+        &self,
+    ) -> std::option::Option<&crate::model::ControlPlanePlacementRequest> {
+        self.control_plane_placement.as_ref()
     }
 }
 /// See [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
@@ -7637,6 +7944,8 @@ pub mod outpost_config_request {
     pub struct Builder {
         pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_plane_instance_type: std::option::Option<std::string::String>,
+        pub(crate) control_plane_placement:
+            std::option::Option<crate::model::ControlPlanePlacementRequest>,
     }
     impl Builder {
         /// Appends an item to `outpost_arns`.
@@ -7658,14 +7967,9 @@ pub mod outpost_config_request {
             self.outpost_arns = input;
             self
         }
-        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
-        /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
-        /// <ul>
-        /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
-        /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
-        /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
-        /// </ul>
-        /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
+        /// <p> </p>
         pub fn control_plane_instance_type(
             mut self,
             input: impl Into<std::string::String>,
@@ -7673,14 +7977,9 @@ pub mod outpost_config_request {
             self.control_plane_instance_type = Some(input.into());
             self
         }
-        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation.</p>
-        /// <p>Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:</p>
-        /// <ul>
-        /// <li> <p>1–20 nodes, then we recommend specifying a <code>large</code> instance type.</p> </li>
-        /// <li> <p>21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.</p> </li>
-        /// <li> <p>101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.</p> </li>
-        /// </ul>
-        /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
+        /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
+        /// <p> </p>
         pub fn set_control_plane_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7688,11 +7987,28 @@ pub mod outpost_config_request {
             self.control_plane_instance_type = input;
             self
         }
+        /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        pub fn control_plane_placement(
+            mut self,
+            input: crate::model::ControlPlanePlacementRequest,
+        ) -> Self {
+            self.control_plane_placement = Some(input);
+            self
+        }
+        /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+        pub fn set_control_plane_placement(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlanePlacementRequest>,
+        ) -> Self {
+            self.control_plane_placement = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
         pub fn build(self) -> crate::model::OutpostConfigRequest {
             crate::model::OutpostConfigRequest {
                 outpost_arns: self.outpost_arns,
                 control_plane_instance_type: self.control_plane_instance_type,
+                control_plane_placement: self.control_plane_placement,
             }
         }
     }
@@ -7704,13 +8020,61 @@ impl OutpostConfigRequest {
     }
 }
 
+/// <p>The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ControlPlanePlacementRequest {
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+    #[doc(hidden)]
+    pub group_name: std::option::Option<std::string::String>,
+}
+impl ControlPlanePlacementRequest {
+    /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
+/// See [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+pub mod control_plane_placement_request {
+
+    /// A builder for [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation. </p>
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+        pub fn build(self) -> crate::model::ControlPlanePlacementRequest {
+            crate::model::ControlPlanePlacementRequest {
+                group_name: self.group_name,
+            }
+        }
+    }
+}
+impl ControlPlanePlacementRequest {
+    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+    pub fn builder() -> crate::model::control_plane_placement_request::Builder {
+        crate::model::control_plane_placement_request::Builder::default()
+    }
+}
+
 /// <p>The Kubernetes network configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KubernetesNetworkConfigRequest {
-    /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
+    /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.</p> </li>
+    /// <li> <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p> </li>
     /// <li> <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p> </li>
     /// <li> <p>Between /24 and /12.</p> </li>
     /// </ul> <important>
@@ -7718,15 +8082,15 @@ pub struct KubernetesNetworkConfigRequest {
     /// </important>
     #[doc(hidden)]
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
-    /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
-    /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
+    /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
+    /// <p>You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
     #[doc(hidden)]
     pub ip_family: std::option::Option<crate::model::IpFamily>,
 }
 impl KubernetesNetworkConfigRequest {
-    /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
+    /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.</p> </li>
+    /// <li> <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p> </li>
     /// <li> <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p> </li>
     /// <li> <p>Between /24 and /12.</p> </li>
     /// </ul> <important>
@@ -7735,8 +8099,8 @@ impl KubernetesNetworkConfigRequest {
     pub fn service_ipv4_cidr(&self) -> std::option::Option<&str> {
         self.service_ipv4_cidr.as_deref()
     }
-    /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
-    /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
+    /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
+    /// <p>You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
     pub fn ip_family(&self) -> std::option::Option<&crate::model::IpFamily> {
         self.ip_family.as_ref()
     }
@@ -7751,9 +8115,9 @@ pub mod kubernetes_network_config_request {
         pub(crate) ip_family: std::option::Option<crate::model::IpFamily>,
     }
     impl Builder {
-        /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
+        /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
         /// <ul>
-        /// <li> <p>Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.</p> </li>
+        /// <li> <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p> </li>
         /// <li> <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p> </li>
         /// <li> <p>Between /24 and /12.</p> </li>
         /// </ul> <important>
@@ -7763,9 +8127,9 @@ pub mod kubernetes_network_config_request {
             self.service_ipv4_cidr = Some(input.into());
             self
         }
-        /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
+        /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
         /// <ul>
-        /// <li> <p>Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.</p> </li>
+        /// <li> <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p> </li>
         /// <li> <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p> </li>
         /// <li> <p>Between /24 and /12.</p> </li>
         /// </ul> <important>
@@ -7778,14 +8142,14 @@ pub mod kubernetes_network_config_request {
             self.service_ipv4_cidr = input;
             self
         }
-        /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
-        /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
+        /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
+        /// <p>You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
         pub fn ip_family(mut self, input: crate::model::IpFamily) -> Self {
             self.ip_family = Some(input);
             self
         }
-        /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both IPv4 and IPv6 CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
-        /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
+        /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
+        /// <p>You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
         pub fn set_ip_family(mut self, input: std::option::Option<crate::model::IpFamily>) -> Self {
             self.ip_family = input;
             self

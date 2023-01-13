@@ -1170,12 +1170,12 @@ pub mod create_application_input {
             self.application_description = input;
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn runtime_environment(mut self, input: crate::model::RuntimeEnvironment) -> Self {
             self.runtime_environment = Some(input);
             self
         }
-        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+        /// <p>The runtime environment for the application.</p>
         pub fn set_runtime_environment(
             mut self,
             input: std::option::Option<crate::model::RuntimeEnvironment>,
@@ -1253,12 +1253,12 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
             self.application_mode = Some(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -6334,7 +6334,7 @@ pub struct CreateApplicationInput {
     /// <p>A summary description of the application.</p>
     #[doc(hidden)]
     pub application_description: std::option::Option<std::string::String>,
-    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    /// <p>The runtime environment for the application.</p>
     #[doc(hidden)]
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
@@ -6350,7 +6350,7 @@ pub struct CreateApplicationInput {
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     #[doc(hidden)]
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
@@ -6363,7 +6363,7 @@ impl CreateApplicationInput {
     pub fn application_description(&self) -> std::option::Option<&str> {
         self.application_description.as_deref()
     }
-    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
@@ -6387,7 +6387,7 @@ impl CreateApplicationInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
         self.application_mode.as_ref()
     }

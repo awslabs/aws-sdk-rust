@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.52.0"
-aws-sdk-snowdevicemanagement = "0.22.0"
+aws-sdk-snowdevicemanagement = "0.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

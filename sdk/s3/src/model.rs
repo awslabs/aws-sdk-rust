@@ -16394,6 +16394,7 @@ impl PolicyStatus {
 ///     BucketLocationConstraint::ApSouth1 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast1 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast2 => { /* ... */ },
+///     BucketLocationConstraint::ApSoutheast3 => { /* ... */ },
 ///     BucketLocationConstraint::CaCentral1 => { /* ... */ },
 ///     BucketLocationConstraint::CnNorth1 => { /* ... */ },
 ///     BucketLocationConstraint::CnNorthwest1 => { /* ... */ },
@@ -16462,6 +16463,8 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast3,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
@@ -16508,6 +16511,7 @@ impl std::convert::From<&str> for BucketLocationConstraint {
             "ap-south-1" => BucketLocationConstraint::ApSouth1,
             "ap-southeast-1" => BucketLocationConstraint::ApSoutheast1,
             "ap-southeast-2" => BucketLocationConstraint::ApSoutheast2,
+            "ap-southeast-3" => BucketLocationConstraint::ApSoutheast3,
             "ca-central-1" => BucketLocationConstraint::CaCentral1,
             "cn-north-1" => BucketLocationConstraint::CnNorth1,
             "cn-northwest-1" => BucketLocationConstraint::CnNorthwest1,
@@ -16550,6 +16554,7 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::ApSouth1 => "ap-south-1",
             BucketLocationConstraint::ApSoutheast1 => "ap-southeast-1",
             BucketLocationConstraint::ApSoutheast2 => "ap-southeast-2",
+            BucketLocationConstraint::ApSoutheast3 => "ap-southeast-3",
             BucketLocationConstraint::CaCentral1 => "ca-central-1",
             BucketLocationConstraint::CnNorth1 => "cn-north-1",
             BucketLocationConstraint::CnNorthwest1 => "cn-northwest-1",
@@ -16581,6 +16586,7 @@ impl BucketLocationConstraint {
             "ap-south-1",
             "ap-southeast-1",
             "ap-southeast-2",
+            "ap-southeast-3",
             "ca-central-1",
             "cn-north-1",
             "cn-northwest-1",

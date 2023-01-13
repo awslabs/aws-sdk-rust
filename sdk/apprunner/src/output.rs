@@ -2,6 +2,59 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+    #[doc(hidden)]
+    pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+}
+impl UpdateVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIngressConnection> {
+        self.vpc_ingress_connection.as_ref()
+    }
+}
+/// See [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
+pub mod update_vpc_ingress_connection_output {
+
+    /// A builder for [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+        pub fn vpc_ingress_connection(mut self, input: crate::model::VpcIngressConnection) -> Self {
+            self.vpc_ingress_connection = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+        pub fn set_vpc_ingress_connection(
+            mut self,
+            input: std::option::Option<crate::model::VpcIngressConnection>,
+        ) -> Self {
+            self.vpc_ingress_connection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
+        pub fn build(self) -> crate::output::UpdateVpcIngressConnectionOutput {
+            crate::output::UpdateVpcIngressConnectionOutput {
+                vpc_ingress_connection: self.vpc_ingress_connection,
+            }
+        }
+    }
+}
+impl UpdateVpcIngressConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
+    pub fn builder() -> crate::output::update_vpc_ingress_connection_output::Builder {
+        crate::output::update_vpc_ingress_connection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceOutput {
     /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     #[doc(hidden)]
@@ -293,6 +346,89 @@ impl PauseServiceOutput {
     /// Creates a new builder-style object to manufacture [`PauseServiceOutput`](crate::output::PauseServiceOutput).
     pub fn builder() -> crate::output::pause_service_output::Builder {
         crate::output::pause_service_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListVpcIngressConnectionsOutput {
+    /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    #[doc(hidden)]
+    pub vpc_ingress_connection_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::VpcIngressConnectionSummary>>,
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcIngressConnectionsOutput {
+    /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub fn vpc_ingress_connection_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcIngressConnectionSummary]> {
+        self.vpc_ingress_connection_summary_list.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
+pub mod list_vpc_ingress_connections_output {
+
+    /// A builder for [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_ingress_connection_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::VpcIngressConnectionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_ingress_connection_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_ingress_connection_summary_list`](Self::set_vpc_ingress_connection_summary_list).
+        ///
+        /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn vpc_ingress_connection_summary_list(
+            mut self,
+            input: crate::model::VpcIngressConnectionSummary,
+        ) -> Self {
+            let mut v = self.vpc_ingress_connection_summary_list.unwrap_or_default();
+            v.push(input);
+            self.vpc_ingress_connection_summary_list = Some(v);
+            self
+        }
+        /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn set_vpc_ingress_connection_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcIngressConnectionSummary>>,
+        ) -> Self {
+            self.vpc_ingress_connection_summary_list = input;
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
+        pub fn build(self) -> crate::output::ListVpcIngressConnectionsOutput {
+            crate::output::ListVpcIngressConnectionsOutput {
+                vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVpcIngressConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
+    pub fn builder() -> crate::output::list_vpc_ingress_connections_output::Builder {
+        crate::output::list_vpc_ingress_connections_output::Builder::default()
     }
 }
 
@@ -850,6 +986,9 @@ pub struct DisassociateCustomDomainOutput {
     /// <p>A description of the domain name that's being disassociated.</p>
     #[doc(hidden)]
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    #[doc(hidden)]
+    pub vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
 }
 impl DisassociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
@@ -864,6 +1003,10 @@ impl DisassociateCustomDomainOutput {
     pub fn custom_domain(&self) -> std::option::Option<&crate::model::CustomDomain> {
         self.custom_domain.as_ref()
     }
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    pub fn vpc_dns_targets(&self) -> std::option::Option<&[crate::model::VpcDnsTarget]> {
+        self.vpc_dns_targets.as_deref()
+    }
 }
 /// See [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
 pub mod disassociate_custom_domain_output {
@@ -874,6 +1017,7 @@ pub mod disassociate_custom_domain_output {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<crate::model::CustomDomain>,
+        pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
     }
     impl Builder {
         /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
@@ -909,12 +1053,32 @@ pub mod disassociate_custom_domain_output {
             self.custom_domain = input;
             self
         }
+        /// Appends an item to `vpc_dns_targets`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_dns_targets`](Self::set_vpc_dns_targets).
+        ///
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn vpc_dns_targets(mut self, input: crate::model::VpcDnsTarget) -> Self {
+            let mut v = self.vpc_dns_targets.unwrap_or_default();
+            v.push(input);
+            self.vpc_dns_targets = Some(v);
+            self
+        }
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn set_vpc_dns_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+        ) -> Self {
+            self.vpc_dns_targets = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
         pub fn build(self) -> crate::output::DisassociateCustomDomainOutput {
             crate::output::DisassociateCustomDomainOutput {
                 dns_target: self.dns_target,
                 service_arn: self.service_arn,
                 custom_domain: self.custom_domain,
+                vpc_dns_targets: self.vpc_dns_targets,
             }
         }
     }
@@ -923,6 +1087,59 @@ impl DisassociateCustomDomainOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
     pub fn builder() -> crate::output::disassociate_custom_domain_output::Builder {
         crate::output::disassociate_custom_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
+    #[doc(hidden)]
+    pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+}
+impl DescribeVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIngressConnection> {
+        self.vpc_ingress_connection.as_ref()
+    }
+}
+/// See [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
+pub mod describe_vpc_ingress_connection_output {
+
+    /// A builder for [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
+        pub fn vpc_ingress_connection(mut self, input: crate::model::VpcIngressConnection) -> Self {
+            self.vpc_ingress_connection = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
+        pub fn set_vpc_ingress_connection(
+            mut self,
+            input: std::option::Option<crate::model::VpcIngressConnection>,
+        ) -> Self {
+            self.vpc_ingress_connection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
+        pub fn build(self) -> crate::output::DescribeVpcIngressConnectionOutput {
+            crate::output::DescribeVpcIngressConnectionOutput {
+                vpc_ingress_connection: self.vpc_ingress_connection,
+            }
+        }
+    }
+}
+impl DescribeVpcIngressConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
+    pub fn builder() -> crate::output::describe_vpc_ingress_connection_output::Builder {
+        crate::output::describe_vpc_ingress_connection_output::Builder::default()
     }
 }
 
@@ -1095,6 +1312,9 @@ pub struct DescribeCustomDomainsOutput {
     /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
     #[doc(hidden)]
     pub custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    #[doc(hidden)]
+    pub vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1112,6 +1332,10 @@ impl DescribeCustomDomainsOutput {
     pub fn custom_domains(&self) -> std::option::Option<&[crate::model::CustomDomain]> {
         self.custom_domains.as_deref()
     }
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    pub fn vpc_dns_targets(&self) -> std::option::Option<&[crate::model::VpcDnsTarget]> {
+        self.vpc_dns_targets.as_deref()
+    }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1126,6 +1350,7 @@ pub mod describe_custom_domains_output {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
+        pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1168,6 +1393,25 @@ pub mod describe_custom_domains_output {
             self.custom_domains = input;
             self
         }
+        /// Appends an item to `vpc_dns_targets`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_dns_targets`](Self::set_vpc_dns_targets).
+        ///
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn vpc_dns_targets(mut self, input: crate::model::VpcDnsTarget) -> Self {
+            let mut v = self.vpc_dns_targets.unwrap_or_default();
+            v.push(input);
+            self.vpc_dns_targets = Some(v);
+            self
+        }
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn set_vpc_dns_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+        ) -> Self {
+            self.vpc_dns_targets = input;
+            self
+        }
         /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -1184,6 +1428,7 @@ pub mod describe_custom_domains_output {
                 dns_target: self.dns_target,
                 service_arn: self.service_arn,
                 custom_domains: self.custom_domains,
+                vpc_dns_targets: self.vpc_dns_targets,
                 next_token: self.next_token,
             }
         }
@@ -1250,6 +1495,59 @@ impl DescribeAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingConfigurationOutput`](crate::output::DescribeAutoScalingConfigurationOutput).
     pub fn builder() -> crate::output::describe_auto_scaling_configuration_output::Builder {
         crate::output::describe_auto_scaling_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+    #[doc(hidden)]
+    pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+}
+impl DeleteVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIngressConnection> {
+        self.vpc_ingress_connection.as_ref()
+    }
+}
+/// See [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
+pub mod delete_vpc_ingress_connection_output {
+
+    /// A builder for [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+        pub fn vpc_ingress_connection(mut self, input: crate::model::VpcIngressConnection) -> Self {
+            self.vpc_ingress_connection = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+        pub fn set_vpc_ingress_connection(
+            mut self,
+            input: std::option::Option<crate::model::VpcIngressConnection>,
+        ) -> Self {
+            self.vpc_ingress_connection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
+        pub fn build(self) -> crate::output::DeleteVpcIngressConnectionOutput {
+            crate::output::DeleteVpcIngressConnectionOutput {
+                vpc_ingress_connection: self.vpc_ingress_connection,
+            }
+        }
+    }
+}
+impl DeleteVpcIngressConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
+    pub fn builder() -> crate::output::delete_vpc_ingress_connection_output::Builder {
+        crate::output::delete_vpc_ingress_connection_output::Builder::default()
     }
 }
 
@@ -1533,6 +1831,59 @@ impl DeleteAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput).
     pub fn builder() -> crate::output::delete_auto_scaling_configuration_output::Builder {
         crate::output::delete_auto_scaling_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
+    #[doc(hidden)]
+    pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+}
+impl CreateVpcIngressConnectionOutput {
+    /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcIngressConnection> {
+        self.vpc_ingress_connection.as_ref()
+    }
+}
+/// See [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
+pub mod create_vpc_ingress_connection_output {
+
+    /// A builder for [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
+        pub fn vpc_ingress_connection(mut self, input: crate::model::VpcIngressConnection) -> Self {
+            self.vpc_ingress_connection = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
+        pub fn set_vpc_ingress_connection(
+            mut self,
+            input: std::option::Option<crate::model::VpcIngressConnection>,
+        ) -> Self {
+            self.vpc_ingress_connection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
+        pub fn build(self) -> crate::output::CreateVpcIngressConnectionOutput {
+            crate::output::CreateVpcIngressConnectionOutput {
+                vpc_ingress_connection: self.vpc_ingress_connection,
+            }
+        }
+    }
+}
+impl CreateVpcIngressConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
+    pub fn builder() -> crate::output::create_vpc_ingress_connection_output::Builder {
+        crate::output::create_vpc_ingress_connection_output::Builder::default()
     }
 }
 
@@ -1832,6 +2183,9 @@ pub struct AssociateCustomDomainOutput {
     /// <p>A description of the domain name that's being associated.</p>
     #[doc(hidden)]
     pub custom_domain: std::option::Option<crate::model::CustomDomain>,
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    #[doc(hidden)]
+    pub vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
 }
 impl AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
@@ -1846,6 +2200,10 @@ impl AssociateCustomDomainOutput {
     pub fn custom_domain(&self) -> std::option::Option<&crate::model::CustomDomain> {
         self.custom_domain.as_ref()
     }
+    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    pub fn vpc_dns_targets(&self) -> std::option::Option<&[crate::model::VpcDnsTarget]> {
+        self.vpc_dns_targets.as_deref()
+    }
 }
 /// See [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput).
 pub mod associate_custom_domain_output {
@@ -1856,6 +2214,7 @@ pub mod associate_custom_domain_output {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<crate::model::CustomDomain>,
+        pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
     }
     impl Builder {
         /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
@@ -1891,12 +2250,32 @@ pub mod associate_custom_domain_output {
             self.custom_domain = input;
             self
         }
+        /// Appends an item to `vpc_dns_targets`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_dns_targets`](Self::set_vpc_dns_targets).
+        ///
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn vpc_dns_targets(mut self, input: crate::model::VpcDnsTarget) -> Self {
+            let mut v = self.vpc_dns_targets.unwrap_or_default();
+            v.push(input);
+            self.vpc_dns_targets = Some(v);
+            self
+        }
+        /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+        pub fn set_vpc_dns_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+        ) -> Self {
+            self.vpc_dns_targets = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput).
         pub fn build(self) -> crate::output::AssociateCustomDomainOutput {
             crate::output::AssociateCustomDomainOutput {
                 dns_target: self.dns_target,
                 service_arn: self.service_arn,
                 custom_domain: self.custom_domain,
+                vpc_dns_targets: self.vpc_dns_targets,
             }
         }
     }

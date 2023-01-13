@@ -104,6 +104,79 @@ impl UpdateSceneOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdatePricingPlanOutput {
+    /// <p>Update the current pricing plan.</p>
+    #[doc(hidden)]
+    pub current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Update the pending pricing plan.</p>
+    #[doc(hidden)]
+    pub pending_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+}
+impl UpdatePricingPlanOutput {
+    /// <p>Update the current pricing plan.</p>
+    pub fn current_pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.current_pricing_plan.as_ref()
+    }
+    /// <p>Update the pending pricing plan.</p>
+    pub fn pending_pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pending_pricing_plan.as_ref()
+    }
+}
+/// See [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
+pub mod update_pricing_plan_output {
+
+    /// A builder for [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) pending_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    }
+    impl Builder {
+        /// <p>Update the current pricing plan.</p>
+        pub fn current_pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.current_pricing_plan = Some(input);
+            self
+        }
+        /// <p>Update the current pricing plan.</p>
+        pub fn set_current_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.current_pricing_plan = input;
+            self
+        }
+        /// <p>Update the pending pricing plan.</p>
+        pub fn pending_pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pending_pricing_plan = Some(input);
+            self
+        }
+        /// <p>Update the pending pricing plan.</p>
+        pub fn set_pending_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pending_pricing_plan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
+        pub fn build(self) -> crate::output::UpdatePricingPlanOutput {
+            crate::output::UpdatePricingPlanOutput {
+                current_pricing_plan: self.current_pricing_plan,
+                pending_pricing_plan: self.pending_pricing_plan,
+            }
+        }
+    }
+}
+impl UpdatePricingPlanOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
+    pub fn builder() -> crate::output::update_pricing_plan_output::Builder {
+        crate::output::update_pricing_plan_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEntityOutput {
     /// <p>The date and time when the entity was last updated.</p>
     #[doc(hidden)]
@@ -489,6 +562,160 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSyncResourcesOutput {
+    /// <p>The sync resources.</p>
+    #[doc(hidden)]
+    pub sync_resources: std::option::Option<std::vec::Vec<crate::model::SyncResourceSummary>>,
+    /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSyncResourcesOutput {
+    /// <p>The sync resources.</p>
+    pub fn sync_resources(&self) -> std::option::Option<&[crate::model::SyncResourceSummary]> {
+        self.sync_resources.as_deref()
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput).
+pub mod list_sync_resources_output {
+
+    /// A builder for [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sync_resources:
+            std::option::Option<std::vec::Vec<crate::model::SyncResourceSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `sync_resources`.
+        ///
+        /// To override the contents of this collection use [`set_sync_resources`](Self::set_sync_resources).
+        ///
+        /// <p>The sync resources.</p>
+        pub fn sync_resources(mut self, input: crate::model::SyncResourceSummary) -> Self {
+            let mut v = self.sync_resources.unwrap_or_default();
+            v.push(input);
+            self.sync_resources = Some(v);
+            self
+        }
+        /// <p>The sync resources.</p>
+        pub fn set_sync_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SyncResourceSummary>>,
+        ) -> Self {
+            self.sync_resources = input;
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput).
+        pub fn build(self) -> crate::output::ListSyncResourcesOutput {
+            crate::output::ListSyncResourcesOutput {
+                sync_resources: self.sync_resources,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSyncResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSyncResourcesOutput`](crate::output::ListSyncResourcesOutput).
+    pub fn builder() -> crate::output::list_sync_resources_output::Builder {
+        crate::output::list_sync_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSyncJobsOutput {
+    /// <p>The listed SyncJob summaries.</p>
+    #[doc(hidden)]
+    pub sync_job_summaries: std::option::Option<std::vec::Vec<crate::model::SyncJobSummary>>,
+    /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSyncJobsOutput {
+    /// <p>The listed SyncJob summaries.</p>
+    pub fn sync_job_summaries(&self) -> std::option::Option<&[crate::model::SyncJobSummary]> {
+        self.sync_job_summaries.as_deref()
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput).
+pub mod list_sync_jobs_output {
+
+    /// A builder for [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sync_job_summaries:
+            std::option::Option<std::vec::Vec<crate::model::SyncJobSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `sync_job_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_sync_job_summaries`](Self::set_sync_job_summaries).
+        ///
+        /// <p>The listed SyncJob summaries.</p>
+        pub fn sync_job_summaries(mut self, input: crate::model::SyncJobSummary) -> Self {
+            let mut v = self.sync_job_summaries.unwrap_or_default();
+            v.push(input);
+            self.sync_job_summaries = Some(v);
+            self
+        }
+        /// <p>The listed SyncJob summaries.</p>
+        pub fn set_sync_job_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SyncJobSummary>>,
+        ) -> Self {
+            self.sync_job_summaries = input;
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput).
+        pub fn build(self) -> crate::output::ListSyncJobsOutput {
+            crate::output::ListSyncJobsOutput {
+                sync_job_summaries: self.sync_job_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSyncJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSyncJobsOutput`](crate::output::ListSyncJobsOutput).
+    pub fn builder() -> crate::output::list_sync_jobs_output::Builder {
+        crate::output::list_sync_jobs_output::Builder::default()
     }
 }
 
@@ -937,6 +1164,185 @@ impl GetWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSyncJobOutput {
+    /// <p>The sync job ARN.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the workspace that contains the sync job.</p>
+    #[doc(hidden)]
+    pub workspace_id: std::option::Option<std::string::String>,
+    /// <p>The sync soucre.</p> <note>
+    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub sync_source: std::option::Option<std::string::String>,
+    /// <p>The sync IAM role.</p>
+    #[doc(hidden)]
+    pub sync_role: std::option::Option<std::string::String>,
+    /// <p>The SyncJob response status.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::SyncJobStatus>,
+    /// <p>The creation date and time.</p>
+    #[doc(hidden)]
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The update date and time.</p>
+    #[doc(hidden)]
+    pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetSyncJobOutput {
+    /// <p>The sync job ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the workspace that contains the sync job.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The sync soucre.</p> <note>
+    /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn sync_source(&self) -> std::option::Option<&str> {
+        self.sync_source.as_deref()
+    }
+    /// <p>The sync IAM role.</p>
+    pub fn sync_role(&self) -> std::option::Option<&str> {
+        self.sync_role.as_deref()
+    }
+    /// <p>The SyncJob response status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SyncJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The creation date and time.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The update date and time.</p>
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.update_date_time.as_ref()
+    }
+}
+/// See [`GetSyncJobOutput`](crate::output::GetSyncJobOutput).
+pub mod get_sync_job_output {
+
+    /// A builder for [`GetSyncJobOutput`](crate::output::GetSyncJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+        pub(crate) sync_source: std::option::Option<std::string::String>,
+        pub(crate) sync_role: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::SyncJobStatus>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The sync job ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The sync job ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the workspace that contains the sync job.</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_source = Some(input.into());
+            self
+        }
+        /// <p>The sync soucre.</p> <note>
+        /// <p>Currently the only supported syncSoucre is <code>SITEWISE </code>.</p>
+        /// </note>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_source = input;
+            self
+        }
+        /// <p>The sync IAM role.</p>
+        pub fn sync_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_role = Some(input.into());
+            self
+        }
+        /// <p>The sync IAM role.</p>
+        pub fn set_sync_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_role = input;
+            self
+        }
+        /// <p>The SyncJob response status.</p>
+        pub fn status(mut self, input: crate::model::SyncJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The SyncJob response status.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SyncJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The creation date and time.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The creation date and time.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The update date and time.</p>
+        pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.update_date_time = Some(input);
+            self
+        }
+        /// <p>The update date and time.</p>
+        pub fn set_update_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.update_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSyncJobOutput`](crate::output::GetSyncJobOutput).
+        pub fn build(self) -> crate::output::GetSyncJobOutput {
+            crate::output::GetSyncJobOutput {
+                arn: self.arn,
+                workspace_id: self.workspace_id,
+                sync_source: self.sync_source,
+                sync_role: self.sync_role,
+                status: self.status,
+                creation_date_time: self.creation_date_time,
+                update_date_time: self.update_date_time,
+            }
+        }
+    }
+}
+impl GetSyncJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetSyncJobOutput`](crate::output::GetSyncJobOutput).
+    pub fn builder() -> crate::output::get_sync_job_output::Builder {
+        crate::output::get_sync_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSceneOutput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
@@ -1219,6 +1625,16 @@ pub struct GetPropertyValueOutput {
     pub property_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyLatestValue>,
     >,
+    /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A table of property values.</p>
+    #[doc(hidden)]
+    pub tabular_property_values: std::option::Option<
+        std::vec::Vec<
+            std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::DataValue>>,
+        >,
+    >,
 }
 impl GetPropertyValueOutput {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
@@ -1229,6 +1645,18 @@ impl GetPropertyValueOutput {
     > {
         self.property_values.as_ref()
     }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A table of property values.</p>
+    pub fn tabular_property_values(
+        &self,
+    ) -> std::option::Option<
+        &[std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::DataValue>>],
+    > {
+        self.tabular_property_values.as_deref()
+    }
 }
 /// See [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput).
 pub mod get_property_value_output {
@@ -1238,6 +1666,14 @@ pub mod get_property_value_output {
     pub struct Builder {
         pub(crate) property_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::PropertyLatestValue>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) tabular_property_values: std::option::Option<
+            std::vec::Vec<
+                std::vec::Vec<
+                    std::collections::HashMap<std::string::String, crate::model::DataValue>,
+                >,
+            >,
         >,
     }
     impl Builder {
@@ -1266,10 +1702,52 @@ pub mod get_property_value_output {
             self.property_values = input;
             self
         }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `tabular_property_values`.
+        ///
+        /// To override the contents of this collection use [`set_tabular_property_values`](Self::set_tabular_property_values).
+        ///
+        /// <p>A table of property values.</p>
+        pub fn tabular_property_values(
+            mut self,
+            input: std::vec::Vec<
+                std::collections::HashMap<std::string::String, crate::model::DataValue>,
+            >,
+        ) -> Self {
+            let mut v = self.tabular_property_values.unwrap_or_default();
+            v.push(input);
+            self.tabular_property_values = Some(v);
+            self
+        }
+        /// <p>A table of property values.</p>
+        pub fn set_tabular_property_values(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::vec::Vec<
+                        std::collections::HashMap<std::string::String, crate::model::DataValue>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.tabular_property_values = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput).
         pub fn build(self) -> crate::output::GetPropertyValueOutput {
             crate::output::GetPropertyValueOutput {
                 property_values: self.property_values,
+                next_token: self.next_token,
+                tabular_property_values: self.tabular_property_values,
             }
         }
     }
@@ -1278,6 +1756,79 @@ impl GetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput).
     pub fn builder() -> crate::output::get_property_value_output::Builder {
         crate::output::get_property_value_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetPricingPlanOutput {
+    /// <p>The chosen pricing plan for the current billing cycle.</p>
+    #[doc(hidden)]
+    pub current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>The pending pricing plan.</p>
+    #[doc(hidden)]
+    pub pending_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+}
+impl GetPricingPlanOutput {
+    /// <p>The chosen pricing plan for the current billing cycle.</p>
+    pub fn current_pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.current_pricing_plan.as_ref()
+    }
+    /// <p>The pending pricing plan.</p>
+    pub fn pending_pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+        self.pending_pricing_plan.as_ref()
+    }
+}
+/// See [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput).
+pub mod get_pricing_plan_output {
+
+    /// A builder for [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) current_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) pending_pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    }
+    impl Builder {
+        /// <p>The chosen pricing plan for the current billing cycle.</p>
+        pub fn current_pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.current_pricing_plan = Some(input);
+            self
+        }
+        /// <p>The chosen pricing plan for the current billing cycle.</p>
+        pub fn set_current_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.current_pricing_plan = input;
+            self
+        }
+        /// <p>The pending pricing plan.</p>
+        pub fn pending_pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pending_pricing_plan = Some(input);
+            self
+        }
+        /// <p>The pending pricing plan.</p>
+        pub fn set_pending_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pending_pricing_plan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput).
+        pub fn build(self) -> crate::output::GetPricingPlanOutput {
+            crate::output::GetPricingPlanOutput {
+                current_pricing_plan: self.current_pricing_plan,
+                pending_pricing_plan: self.pending_pricing_plan,
+            }
+        }
+    }
+}
+impl GetPricingPlanOutput {
+    /// Creates a new builder-style object to manufacture [`GetPricingPlanOutput`](crate::output::GetPricingPlanOutput).
+    pub fn builder() -> crate::output::get_pricing_plan_output::Builder {
+        crate::output::get_pricing_plan_output::Builder::default()
     }
 }
 
@@ -1320,6 +1871,9 @@ pub struct GetEntityOutput {
     /// <p>The date and time when the entity was last updated.</p>
     #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    #[doc(hidden)]
+    pub sync_source: std::option::Option<std::string::String>,
 }
 impl GetEntityOutput {
     /// <p>The ID of the entity.</p>
@@ -1370,6 +1924,10 @@ impl GetEntityOutput {
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    pub fn sync_source(&self) -> std::option::Option<&str> {
+        self.sync_source.as_deref()
+    }
 }
 /// See [`GetEntityOutput`](crate::output::GetEntityOutput).
 pub mod get_entity_output {
@@ -1390,6 +1948,7 @@ pub mod get_entity_output {
         pub(crate) has_child_entities: std::option::Option<bool>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sync_source: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the entity.</p>
@@ -1526,6 +2085,16 @@ pub mod get_entity_output {
             self.update_date_time = input;
             self
         }
+        /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_source = Some(input.into());
+            self
+        }
+        /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEntityOutput`](crate::output::GetEntityOutput).
         pub fn build(self) -> crate::output::GetEntityOutput {
             crate::output::GetEntityOutput {
@@ -1540,6 +2109,7 @@ pub mod get_entity_output {
                 has_child_entities: self.has_child_entities,
                 creation_date_time: self.creation_date_time,
                 update_date_time: self.update_date_time,
+                sync_source: self.sync_source,
             }
         }
     }
@@ -1598,6 +2168,18 @@ pub struct GetComponentTypeOutput {
     /// <p>The current status of the component type.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    #[doc(hidden)]
+    pub property_groups: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::PropertyGroupResponse>,
+    >,
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    #[doc(hidden)]
+    pub sync_source: std::option::Option<std::string::String>,
+    /// <p>The component type name.</p>
+    #[doc(hidden)]
+    pub component_type_name: std::option::Option<std::string::String>,
 }
 impl GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
@@ -1660,6 +2242,23 @@ impl GetComponentTypeOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn property_groups(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PropertyGroupResponse>,
+    > {
+        self.property_groups.as_ref()
+    }
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    pub fn sync_source(&self) -> std::option::Option<&str> {
+        self.sync_source.as_deref()
+    }
+    /// <p>The component type name.</p>
+    pub fn component_type_name(&self) -> std::option::Option<&str> {
+        self.component_type_name.as_deref()
+    }
 }
 /// See [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput).
 pub mod get_component_type_output {
@@ -1687,6 +2286,11 @@ pub mod get_component_type_output {
         pub(crate) is_abstract: std::option::Option<bool>,
         pub(crate) is_schema_initialized: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) property_groups: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::PropertyGroupResponse>,
+        >,
+        pub(crate) sync_source: std::option::Option<std::string::String>,
+        pub(crate) component_type_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -1870,6 +2474,56 @@ pub mod get_component_type_output {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `property_groups`.
+        ///
+        /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
+        ///
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn property_groups(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::PropertyGroupResponse,
+        ) -> Self {
+            let mut hash_map = self.property_groups.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.property_groups = Some(hash_map);
+            self
+        }
+        /// <p>The maximum number of results to return at one time. The default is 25.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+        pub fn set_property_groups(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::PropertyGroupResponse>,
+            >,
+        ) -> Self {
+            self.property_groups = input;
+            self
+        }
+        /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+        pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sync_source = Some(input.into());
+            self
+        }
+        /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+        pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_source = input;
+            self
+        }
+        /// <p>The component type name.</p>
+        pub fn component_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_type_name = Some(input.into());
+            self
+        }
+        /// <p>The component type name.</p>
+        pub fn set_component_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_type_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput).
         pub fn build(self) -> crate::output::GetComponentTypeOutput {
             crate::output::GetComponentTypeOutput {
@@ -1886,6 +2540,9 @@ pub mod get_component_type_output {
                 is_abstract: self.is_abstract,
                 is_schema_initialized: self.is_schema_initialized,
                 status: self.status,
+                property_groups: self.property_groups,
+                sync_source: self.sync_source,
+                component_type_name: self.component_type_name,
             }
         }
     }
@@ -1894,6 +2551,111 @@ impl GetComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput).
     pub fn builder() -> crate::output::get_component_type_output::Builder {
         crate::output::get_component_type_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExecuteQueryOutput {
+    /// <p>A list of ColumnDescription objects.</p>
+    #[doc(hidden)]
+    pub column_descriptions: std::option::Option<std::vec::Vec<crate::model::ColumnDescription>>,
+    /// <p>Represents a single row in the query results.</p>
+    #[doc(hidden)]
+    pub rows: std::option::Option<std::vec::Vec<crate::model::Row>>,
+    /// <p>The string that specifies the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ExecuteQueryOutput {
+    /// <p>A list of ColumnDescription objects.</p>
+    pub fn column_descriptions(&self) -> std::option::Option<&[crate::model::ColumnDescription]> {
+        self.column_descriptions.as_deref()
+    }
+    /// <p>Represents a single row in the query results.</p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::Row]> {
+        self.rows.as_deref()
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput).
+pub mod execute_query_output {
+
+    /// A builder for [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) column_descriptions:
+            std::option::Option<std::vec::Vec<crate::model::ColumnDescription>>,
+        pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::Row>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `column_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_column_descriptions`](Self::set_column_descriptions).
+        ///
+        /// <p>A list of ColumnDescription objects.</p>
+        pub fn column_descriptions(mut self, input: crate::model::ColumnDescription) -> Self {
+            let mut v = self.column_descriptions.unwrap_or_default();
+            v.push(input);
+            self.column_descriptions = Some(v);
+            self
+        }
+        /// <p>A list of ColumnDescription objects.</p>
+        pub fn set_column_descriptions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnDescription>>,
+        ) -> Self {
+            self.column_descriptions = input;
+            self
+        }
+        /// Appends an item to `rows`.
+        ///
+        /// To override the contents of this collection use [`set_rows`](Self::set_rows).
+        ///
+        /// <p>Represents a single row in the query results.</p>
+        pub fn rows(mut self, input: crate::model::Row) -> Self {
+            let mut v = self.rows.unwrap_or_default();
+            v.push(input);
+            self.rows = Some(v);
+            self
+        }
+        /// <p>Represents a single row in the query results.</p>
+        pub fn set_rows(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Row>>,
+        ) -> Self {
+            self.rows = input;
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string that specifies the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput).
+        pub fn build(self) -> crate::output::ExecuteQueryOutput {
+            crate::output::ExecuteQueryOutput {
+                column_descriptions: self.column_descriptions,
+                rows: self.rows,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ExecuteQueryOutput {
+    /// Creates a new builder-style object to manufacture [`ExecuteQueryOutput`](crate::output::ExecuteQueryOutput).
+    pub fn builder() -> crate::output::execute_query_output::Builder {
+        crate::output::execute_query_output::Builder::default()
     }
 }
 
@@ -1918,6 +2680,52 @@ impl DeleteWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
     pub fn builder() -> crate::output::delete_workspace_output::Builder {
         crate::output::delete_workspace_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteSyncJobOutput {
+    /// <p>The SyncJob response state.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::SyncJobState>,
+}
+impl DeleteSyncJobOutput {
+    /// <p>The SyncJob response state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SyncJobState> {
+        self.state.as_ref()
+    }
+}
+/// See [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput).
+pub mod delete_sync_job_output {
+
+    /// A builder for [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::SyncJobState>,
+    }
+    impl Builder {
+        /// <p>The SyncJob response state.</p>
+        pub fn state(mut self, input: crate::model::SyncJobState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The SyncJob response state.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SyncJobState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput).
+        pub fn build(self) -> crate::output::DeleteSyncJobOutput {
+            crate::output::DeleteSyncJobOutput { state: self.state }
+        }
+    }
+}
+impl DeleteSyncJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSyncJobOutput`](crate::output::DeleteSyncJobOutput).
+    pub fn builder() -> crate::output::delete_sync_job_output::Builder {
+        crate::output::delete_sync_job_output::Builder::default()
     }
 }
 
@@ -2104,6 +2912,95 @@ impl CreateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
     pub fn builder() -> crate::output::create_workspace_output::Builder {
         crate::output::create_workspace_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateSyncJobOutput {
+    /// <p>The SyncJob ARN.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time for the SyncJob creation.</p>
+    #[doc(hidden)]
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The SyncJob response state.</p>
+    #[doc(hidden)]
+    pub state: std::option::Option<crate::model::SyncJobState>,
+}
+impl CreateSyncJobOutput {
+    /// <p>The SyncJob ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time for the SyncJob creation.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The SyncJob response state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SyncJobState> {
+        self.state.as_ref()
+    }
+}
+/// See [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput).
+pub mod create_sync_job_output {
+
+    /// A builder for [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::SyncJobState>,
+    }
+    impl Builder {
+        /// <p>The SyncJob ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The SyncJob ARN.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time for the SyncJob creation.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time for the SyncJob creation.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The SyncJob response state.</p>
+        pub fn state(mut self, input: crate::model::SyncJobState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The SyncJob response state.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SyncJobState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput).
+        pub fn build(self) -> crate::output::CreateSyncJobOutput {
+            crate::output::CreateSyncJobOutput {
+                arn: self.arn,
+                creation_date_time: self.creation_date_time,
+                state: self.state,
+            }
+        }
+    }
+}
+impl CreateSyncJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSyncJobOutput`](crate::output::CreateSyncJobOutput).
+    pub fn builder() -> crate::output::create_sync_job_output::Builder {
+        crate::output::create_sync_job_output::Builder::default()
     }
 }
 

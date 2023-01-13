@@ -15,7 +15,7 @@ pub enum Error {
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
+    /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
     /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
@@ -390,6 +390,85 @@ impl From<crate::error::GetExpenseAnalysisError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLendingAnalysisError> for Error {
+    fn from(err: crate::error::GetLendingAnalysisError) -> Self {
+        match err.kind {
+            crate::error::GetLendingAnalysisErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::InvalidJobIdException(inner) => {
+                Error::InvalidJobIdException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::InvalidKmsKeyException(inner) => {
+                Error::InvalidKmsKeyException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::InvalidS3ObjectException(inner) => {
+                Error::InvalidS3ObjectException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(
+                inner,
+            ) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetLendingAnalysisErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetLendingAnalysisErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisSummaryError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLendingAnalysisSummaryError> for Error {
+    fn from(err: crate::error::GetLendingAnalysisSummaryError) -> Self {
+        match err.kind {
+            crate::error::GetLendingAnalysisSummaryErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetLendingAnalysisSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDocumentAnalysisError, R>>
     for Error
 where
@@ -516,6 +595,67 @@ impl From<crate::error::StartExpenseAnalysisError> for Error {
                 Error::UnsupportedDocumentException(inner)
             }
             crate::error::StartExpenseAnalysisErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartLendingAnalysisError> for Error {
+    fn from(err: crate::error::StartLendingAnalysisError) -> Self {
+        match err.kind {
+            crate::error::StartLendingAnalysisErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::BadDocumentException(inner) => {
+                Error::BadDocumentException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::DocumentTooLargeException(inner) => {
+                Error::DocumentTooLargeException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartLendingAnalysisErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::InvalidKmsKeyException(inner) => {
+                Error::InvalidKmsKeyException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::InvalidS3ObjectException(inner) => {
+                Error::InvalidS3ObjectException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(
+                inner,
+            ) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartLendingAnalysisErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::UnsupportedDocumentException(inner) => {
+                Error::UnsupportedDocumentException(inner)
+            }
+            crate::error::StartLendingAnalysisErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

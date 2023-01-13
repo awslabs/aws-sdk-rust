@@ -1118,6 +1118,11 @@ pub fn serialize_structure_crate_model_function_configuration(
             aws_smithy_types::Number::NegInt((input.timeout).into()),
         );
     }
+    if let Some(var_211) = &input.function_runtime_override {
+        object
+            .key("FunctionRuntimeOverride")
+            .string(var_211.as_str());
+    }
     Ok(())
 }
 
@@ -1125,53 +1130,53 @@ pub fn serialize_structure_crate_model_resource_data_container(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceDataContainer,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_211) = &input.local_device_resource_data {
+    if let Some(var_212) = &input.local_device_resource_data {
         #[allow(unused_mut)]
-        let mut object_212 = object.key("LocalDeviceResourceData").start_object();
+        let mut object_213 = object.key("LocalDeviceResourceData").start_object();
         crate::json_ser::serialize_structure_crate_model_local_device_resource_data(
-            &mut object_212,
-            var_211,
+            &mut object_213,
+            var_212,
         )?;
-        object_212.finish();
+        object_213.finish();
     }
-    if let Some(var_213) = &input.local_volume_resource_data {
+    if let Some(var_214) = &input.local_volume_resource_data {
         #[allow(unused_mut)]
-        let mut object_214 = object.key("LocalVolumeResourceData").start_object();
+        let mut object_215 = object.key("LocalVolumeResourceData").start_object();
         crate::json_ser::serialize_structure_crate_model_local_volume_resource_data(
-            &mut object_214,
-            var_213,
+            &mut object_215,
+            var_214,
         )?;
-        object_214.finish();
+        object_215.finish();
     }
-    if let Some(var_215) = &input.s3_machine_learning_model_resource_data {
+    if let Some(var_216) = &input.s3_machine_learning_model_resource_data {
         #[allow(unused_mut)]
-        let mut object_216 = object
+        let mut object_217 = object
             .key("S3MachineLearningModelResourceData")
             .start_object();
         crate::json_ser::serialize_structure_crate_model_s3_machine_learning_model_resource_data(
-            &mut object_216,
-            var_215,
+            &mut object_217,
+            var_216,
         )?;
-        object_216.finish();
+        object_217.finish();
     }
-    if let Some(var_217) = &input.sage_maker_machine_learning_model_resource_data {
+    if let Some(var_218) = &input.sage_maker_machine_learning_model_resource_data {
         #[allow(unused_mut)]
-        let mut object_218 = object
+        let mut object_219 = object
             .key("SageMakerMachineLearningModelResourceData")
             .start_object();
-        crate::json_ser::serialize_structure_crate_model_sage_maker_machine_learning_model_resource_data(&mut object_218, var_217)?;
-        object_218.finish();
+        crate::json_ser::serialize_structure_crate_model_sage_maker_machine_learning_model_resource_data(&mut object_219, var_218)?;
+        object_219.finish();
     }
-    if let Some(var_219) = &input.secrets_manager_secret_resource_data {
+    if let Some(var_220) = &input.secrets_manager_secret_resource_data {
         #[allow(unused_mut)]
-        let mut object_220 = object
+        let mut object_221 = object
             .key("SecretsManagerSecretResourceData")
             .start_object();
         crate::json_ser::serialize_structure_crate_model_secrets_manager_secret_resource_data(
-            &mut object_220,
-            var_219,
+            &mut object_221,
+            var_220,
         )?;
-        object_220.finish();
+        object_221.finish();
     }
     Ok(())
 }
@@ -1202,39 +1207,39 @@ pub fn serialize_structure_crate_model_function_configuration_environment(
     if input.access_sysfs {
         object.key("AccessSysfs").boolean(input.access_sysfs);
     }
-    if let Some(var_221) = &input.execution {
+    if let Some(var_222) = &input.execution {
         #[allow(unused_mut)]
-        let mut object_222 = object.key("Execution").start_object();
+        let mut object_223 = object.key("Execution").start_object();
         crate::json_ser::serialize_structure_crate_model_function_execution_config(
-            &mut object_222,
-            var_221,
+            &mut object_223,
+            var_222,
         )?;
-        object_222.finish();
+        object_223.finish();
     }
-    if let Some(var_223) = &input.resource_access_policies {
-        let mut array_224 = object.key("ResourceAccessPolicies").start_array();
-        for item_225 in var_223 {
+    if let Some(var_224) = &input.resource_access_policies {
+        let mut array_225 = object.key("ResourceAccessPolicies").start_array();
+        for item_226 in var_224 {
             {
                 #[allow(unused_mut)]
-                let mut object_226 = array_224.value().start_object();
+                let mut object_227 = array_225.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_access_policy(
-                    &mut object_226,
-                    item_225,
+                    &mut object_227,
+                    item_226,
                 )?;
-                object_226.finish();
+                object_227.finish();
             }
         }
-        array_224.finish();
+        array_225.finish();
     }
-    if let Some(var_227) = &input.variables {
+    if let Some(var_228) = &input.variables {
         #[allow(unused_mut)]
-        let mut object_228 = object.key("Variables").start_object();
-        for (key_229, value_230) in var_227 {
+        let mut object_229 = object.key("Variables").start_object();
+        for (key_230, value_231) in var_228 {
             {
-                object_228.key(key_229.as_str()).string(value_230.as_str());
+                object_229.key(key_230.as_str()).string(value_231.as_str());
             }
         }
-        object_228.finish();
+        object_229.finish();
     }
     Ok(())
 }
@@ -1243,17 +1248,17 @@ pub fn serialize_structure_crate_model_local_device_resource_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LocalDeviceResourceData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_231) = &input.group_owner_setting {
+    if let Some(var_232) = &input.group_owner_setting {
         #[allow(unused_mut)]
-        let mut object_232 = object.key("GroupOwnerSetting").start_object();
+        let mut object_233 = object.key("GroupOwnerSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_group_owner_setting(
-            &mut object_232,
-            var_231,
+            &mut object_233,
+            var_232,
         )?;
-        object_232.finish();
+        object_233.finish();
     }
-    if let Some(var_233) = &input.source_path {
-        object.key("SourcePath").string(var_233.as_str());
+    if let Some(var_234) = &input.source_path {
+        object.key("SourcePath").string(var_234.as_str());
     }
     Ok(())
 }
@@ -1262,20 +1267,20 @@ pub fn serialize_structure_crate_model_local_volume_resource_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LocalVolumeResourceData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_234) = &input.destination_path {
-        object.key("DestinationPath").string(var_234.as_str());
+    if let Some(var_235) = &input.destination_path {
+        object.key("DestinationPath").string(var_235.as_str());
     }
-    if let Some(var_235) = &input.group_owner_setting {
+    if let Some(var_236) = &input.group_owner_setting {
         #[allow(unused_mut)]
-        let mut object_236 = object.key("GroupOwnerSetting").start_object();
+        let mut object_237 = object.key("GroupOwnerSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_group_owner_setting(
-            &mut object_236,
-            var_235,
+            &mut object_237,
+            var_236,
         )?;
-        object_236.finish();
+        object_237.finish();
     }
-    if let Some(var_237) = &input.source_path {
-        object.key("SourcePath").string(var_237.as_str());
+    if let Some(var_238) = &input.source_path {
+        object.key("SourcePath").string(var_238.as_str());
     }
     Ok(())
 }
@@ -1284,20 +1289,20 @@ pub fn serialize_structure_crate_model_s3_machine_learning_model_resource_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3MachineLearningModelResourceData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_238) = &input.destination_path {
-        object.key("DestinationPath").string(var_238.as_str());
+    if let Some(var_239) = &input.destination_path {
+        object.key("DestinationPath").string(var_239.as_str());
     }
-    if let Some(var_239) = &input.owner_setting {
+    if let Some(var_240) = &input.owner_setting {
         #[allow(unused_mut)]
-        let mut object_240 = object.key("OwnerSetting").start_object();
+        let mut object_241 = object.key("OwnerSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_download_owner_setting(
-            &mut object_240,
-            var_239,
+            &mut object_241,
+            var_240,
         )?;
-        object_240.finish();
+        object_241.finish();
     }
-    if let Some(var_241) = &input.s3_uri {
-        object.key("S3Uri").string(var_241.as_str());
+    if let Some(var_242) = &input.s3_uri {
+        object.key("S3Uri").string(var_242.as_str());
     }
     Ok(())
 }
@@ -1306,20 +1311,20 @@ pub fn serialize_structure_crate_model_sage_maker_machine_learning_model_resourc
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SageMakerMachineLearningModelResourceData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_242) = &input.destination_path {
-        object.key("DestinationPath").string(var_242.as_str());
+    if let Some(var_243) = &input.destination_path {
+        object.key("DestinationPath").string(var_243.as_str());
     }
-    if let Some(var_243) = &input.owner_setting {
+    if let Some(var_244) = &input.owner_setting {
         #[allow(unused_mut)]
-        let mut object_244 = object.key("OwnerSetting").start_object();
+        let mut object_245 = object.key("OwnerSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_download_owner_setting(
-            &mut object_244,
-            var_243,
+            &mut object_245,
+            var_244,
         )?;
-        object_244.finish();
+        object_245.finish();
     }
-    if let Some(var_245) = &input.sage_maker_job_arn {
-        object.key("SageMakerJobArn").string(var_245.as_str());
+    if let Some(var_246) = &input.sage_maker_job_arn {
+        object.key("SageMakerJobArn").string(var_246.as_str());
     }
     Ok(())
 }
@@ -1328,19 +1333,19 @@ pub fn serialize_structure_crate_model_secrets_manager_secret_resource_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SecretsManagerSecretResourceData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_246) = &input.arn {
-        object.key("ARN").string(var_246.as_str());
+    if let Some(var_247) = &input.arn {
+        object.key("ARN").string(var_247.as_str());
     }
-    if let Some(var_247) = &input.additional_staging_labels_to_download {
-        let mut array_248 = object
+    if let Some(var_248) = &input.additional_staging_labels_to_download {
+        let mut array_249 = object
             .key("AdditionalStagingLabelsToDownload")
             .start_array();
-        for item_249 in var_247 {
+        for item_250 in var_248 {
             {
-                array_248.value().string(item_249.as_str());
+                array_249.value().string(item_250.as_str());
             }
         }
-        array_248.finish();
+        array_249.finish();
     }
     Ok(())
 }
@@ -1349,17 +1354,17 @@ pub fn serialize_structure_crate_model_function_execution_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FunctionExecutionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_250) = &input.isolation_mode {
-        object.key("IsolationMode").string(var_250.as_str());
+    if let Some(var_251) = &input.isolation_mode {
+        object.key("IsolationMode").string(var_251.as_str());
     }
-    if let Some(var_251) = &input.run_as {
+    if let Some(var_252) = &input.run_as {
         #[allow(unused_mut)]
-        let mut object_252 = object.key("RunAs").start_object();
+        let mut object_253 = object.key("RunAs").start_object();
         crate::json_ser::serialize_structure_crate_model_function_run_as_config(
-            &mut object_252,
-            var_251,
+            &mut object_253,
+            var_252,
         )?;
-        object_252.finish();
+        object_253.finish();
     }
     Ok(())
 }
@@ -1368,11 +1373,11 @@ pub fn serialize_structure_crate_model_resource_access_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceAccessPolicy,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_253) = &input.permission {
-        object.key("Permission").string(var_253.as_str());
+    if let Some(var_254) = &input.permission {
+        object.key("Permission").string(var_254.as_str());
     }
-    if let Some(var_254) = &input.resource_id {
-        object.key("ResourceId").string(var_254.as_str());
+    if let Some(var_255) = &input.resource_id {
+        object.key("ResourceId").string(var_255.as_str());
     }
     Ok(())
 }
@@ -1386,8 +1391,8 @@ pub fn serialize_structure_crate_model_group_owner_setting(
             .key("AutoAddGroupOwner")
             .boolean(input.auto_add_group_owner);
     }
-    if let Some(var_255) = &input.group_owner {
-        object.key("GroupOwner").string(var_255.as_str());
+    if let Some(var_256) = &input.group_owner {
+        object.key("GroupOwner").string(var_256.as_str());
     }
     Ok(())
 }
@@ -1396,11 +1401,11 @@ pub fn serialize_structure_crate_model_resource_download_owner_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceDownloadOwnerSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_256) = &input.group_owner {
-        object.key("GroupOwner").string(var_256.as_str());
+    if let Some(var_257) = &input.group_owner {
+        object.key("GroupOwner").string(var_257.as_str());
     }
-    if let Some(var_257) = &input.group_permission {
-        object.key("GroupPermission").string(var_257.as_str());
+    if let Some(var_258) = &input.group_permission {
+        object.key("GroupPermission").string(var_258.as_str());
     }
     Ok(())
 }

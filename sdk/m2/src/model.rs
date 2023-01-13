@@ -174,11 +174,11 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>Contains a subset of the possible environment attributes. Used in the environment list.</p>
+/// <p>Contains a subset of the possible runtime environment attributes. Used in the environment list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentSummary {
-    /// <p>The name of the environment.</p>
+    /// <p>The name of the runtime environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
@@ -187,24 +187,24 @@ pub struct EnvironmentSummary {
     /// <p>The unique identifier of a particular runtime environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The instance type of the environment.</p>
+    /// <p>The instance type of the runtime environment.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The status of the environment</p>
+    /// <p>The status of the runtime environment</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentLifecycle>,
-    /// <p>The target platform for the environment.</p>
+    /// <p>The target platform for the runtime environment.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>The version of the runtime engine.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the environment was created.</p>
+    /// <p>The timestamp when the runtime environment was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentSummary {
-    /// <p>The name of the environment.</p>
+    /// <p>The name of the runtime environment.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -216,15 +216,15 @@ impl EnvironmentSummary {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The instance type of the environment.</p>
+    /// <p>The instance type of the runtime environment.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The status of the environment</p>
+    /// <p>The status of the runtime environment</p>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentLifecycle> {
         self.status.as_ref()
     }
-    /// <p>The target platform for the environment.</p>
+    /// <p>The target platform for the runtime environment.</p>
     pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
         self.engine_type.as_ref()
     }
@@ -232,7 +232,7 @@ impl EnvironmentSummary {
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The timestamp when the environment was created.</p>
+    /// <p>The timestamp when the runtime environment was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
@@ -253,12 +253,12 @@ pub mod environment_summary {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name of the environment.</p>
+        /// <p>The name of the runtime environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the environment.</p>
+        /// <p>The name of the runtime environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -289,12 +289,12 @@ pub mod environment_summary {
             self.environment_id = input;
             self
         }
-        /// <p>The instance type of the environment.</p>
+        /// <p>The instance type of the runtime environment.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type of the environment.</p>
+        /// <p>The instance type of the runtime environment.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -302,12 +302,12 @@ pub mod environment_summary {
             self.instance_type = input;
             self
         }
-        /// <p>The status of the environment</p>
+        /// <p>The status of the runtime environment</p>
         pub fn status(mut self, input: crate::model::EnvironmentLifecycle) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the environment</p>
+        /// <p>The status of the runtime environment</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentLifecycle>,
@@ -315,12 +315,12 @@ pub mod environment_summary {
             self.status = input;
             self
         }
-        /// <p>The target platform for the environment.</p>
+        /// <p>The target platform for the runtime environment.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
             self.engine_type = Some(input);
             self
         }
-        /// <p>The target platform for the environment.</p>
+        /// <p>The target platform for the runtime environment.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -341,12 +341,12 @@ pub mod environment_summary {
             self.engine_version = input;
             self
         }
-        /// <p>The timestamp when the environment was created.</p>
+        /// <p>The timestamp when the runtime environment was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The timestamp when the environment was created.</p>
+        /// <p>The timestamp when the runtime environment was created.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -482,6 +482,7 @@ impl AsRef<str> for EngineType {
 ///     EnvironmentLifecycle::Creating => { /* ... */ },
 ///     EnvironmentLifecycle::Deleting => { /* ... */ },
 ///     EnvironmentLifecycle::Failed => { /* ... */ },
+///     EnvironmentLifecycle::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -523,6 +524,8 @@ pub enum EnvironmentLifecycle {
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -533,6 +536,7 @@ impl std::convert::From<&str> for EnvironmentLifecycle {
             "Creating" => EnvironmentLifecycle::Creating,
             "Deleting" => EnvironmentLifecycle::Deleting,
             "Failed" => EnvironmentLifecycle::Failed,
+            "Updating" => EnvironmentLifecycle::Updating,
             other => {
                 EnvironmentLifecycle::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
             }
@@ -554,12 +558,13 @@ impl EnvironmentLifecycle {
             EnvironmentLifecycle::Creating => "Creating",
             EnvironmentLifecycle::Deleting => "Deleting",
             EnvironmentLifecycle::Failed => "Failed",
+            EnvironmentLifecycle::Updating => "Updating",
             EnvironmentLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available", "Creating", "Deleting", "Failed"]
+        &["Available", "Creating", "Deleting", "Failed", "Updating"]
     }
 }
 impl AsRef<str> for EnvironmentLifecycle {
@@ -616,7 +621,7 @@ impl HighAvailabilityConfig {
     }
 }
 
-/// <p>Defines the storage configuration for an environment.</p>
+/// <p>Defines the storage configuration for a runtime environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum StorageConfiguration {
@@ -811,7 +816,7 @@ impl EfsStorageConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PendingMaintenance {
-    /// <p>The maintenance schedule for the engine version.</p>
+    /// <p>The maintenance schedule for the runtime engine version.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::MaintenanceSchedule>,
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
@@ -819,7 +824,7 @@ pub struct PendingMaintenance {
     pub engine_version: std::option::Option<std::string::String>,
 }
 impl PendingMaintenance {
-    /// <p>The maintenance schedule for the engine version.</p>
+    /// <p>The maintenance schedule for the runtime engine version.</p>
     pub fn schedule(&self) -> std::option::Option<&crate::model::MaintenanceSchedule> {
         self.schedule.as_ref()
     }
@@ -838,12 +843,12 @@ pub mod pending_maintenance {
         pub(crate) engine_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maintenance schedule for the engine version.</p>
+        /// <p>The maintenance schedule for the runtime engine version.</p>
         pub fn schedule(mut self, input: crate::model::MaintenanceSchedule) -> Self {
             self.schedule = Some(input);
             self
         }
-        /// <p>The maintenance schedule for the engine version.</p>
+        /// <p>The maintenance schedule for the runtime engine version.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::MaintenanceSchedule>,
@@ -1133,7 +1138,7 @@ pub struct DeploymentSummary {
     /// <p>The unique identifier of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the environment.</p>
+    /// <p>The unique identifier of the runtime environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
@@ -1158,7 +1163,7 @@ impl DeploymentSummary {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The unique identifier of the environment.</p>
+    /// <p>The unique identifier of the runtime environment.</p>
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -1220,12 +1225,12 @@ pub mod deployment_summary {
             self.application_id = input;
             self
         }
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The unique identifier of the runtime environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the environment.</p>
+        /// <p>The unique identifier of the runtime environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1407,7 +1412,7 @@ pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
     #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
-    /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    /// <p>The type of data set. The only supported value is VSAM.</p>
     #[doc(hidden)]
     pub data_set_org: std::option::Option<std::string::String>,
     /// <p>The format of the data set. </p>
@@ -1428,7 +1433,7 @@ impl DataSetSummary {
     pub fn data_set_name(&self) -> std::option::Option<&str> {
         self.data_set_name.as_deref()
     }
-    /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+    /// <p>The type of data set. The only supported value is VSAM.</p>
     pub fn data_set_org(&self) -> std::option::Option<&str> {
         self.data_set_org.as_deref()
     }
@@ -1476,12 +1481,12 @@ pub mod data_set_summary {
             self.data_set_name = input;
             self
         }
-        /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+        /// <p>The type of data set. The only supported value is VSAM.</p>
         pub fn data_set_org(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_org = Some(input.into());
             self
         }
-        /// <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.</p>
+        /// <p>The type of data set. The only supported value is VSAM.</p>
         pub fn set_data_set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_org = input;
             self
@@ -3317,7 +3322,7 @@ pub struct DataSet {
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.</p>
+    /// <p>The type of dataset. The only supported value is VSAM.</p>
     #[doc(hidden)]
     pub dataset_org: std::option::Option<crate::model::DatasetOrgAttributes>,
     /// <p>The relative location of the data set in the database or file system. </p>
@@ -3336,7 +3341,7 @@ impl DataSet {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.</p>
+    /// <p>The type of dataset. The only supported value is VSAM.</p>
     pub fn dataset_org(&self) -> std::option::Option<&crate::model::DatasetOrgAttributes> {
         self.dataset_org.as_ref()
     }
@@ -3382,12 +3387,12 @@ pub mod data_set {
             self.dataset_name = input;
             self
         }
-        /// <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.</p>
+        /// <p>The type of dataset. The only supported value is VSAM.</p>
         pub fn dataset_org(mut self, input: crate::model::DatasetOrgAttributes) -> Self {
             self.dataset_org = Some(input);
             self
         }
-        /// <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS, UNKNOWN etc.</p>
+        /// <p>The type of dataset. The only supported value is VSAM.</p>
         pub fn set_dataset_org(
             mut self,
             input: std::option::Option<crate::model::DatasetOrgAttributes>,
@@ -3795,13 +3800,13 @@ pub struct ApplicationSummary {
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     #[doc(hidden)]
     pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the latest version of the application.</p>
     #[doc(hidden)]
     pub version_status: std::option::Option<crate::model::ApplicationVersionLifecycle>,
-    /// <p>Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.</p>
+    /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
     #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::ApplicationDeploymentLifecycle>,
 }
@@ -3842,7 +3847,7 @@ impl ApplicationSummary {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+    /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn last_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
@@ -3852,7 +3857,7 @@ impl ApplicationSummary {
     ) -> std::option::Option<&crate::model::ApplicationVersionLifecycle> {
         self.version_status.as_ref()
     }
-    /// <p>Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.</p>
+    /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
     pub fn deployment_status(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationDeploymentLifecycle> {
@@ -3988,12 +3993,12 @@ pub mod application_summary {
             self.environment_id = input;
             self
         }
-        /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+        /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
         pub fn last_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_start_time = Some(input);
             self
         }
-        /// <p>The timestamp when the application was last started. Null until the application has started running for the first time.</p>
+        /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
         pub fn set_last_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4014,7 +4019,7 @@ pub mod application_summary {
             self.version_status = input;
             self
         }
-        /// <p>Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.</p>
+        /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
         pub fn deployment_status(
             mut self,
             input: crate::model::ApplicationDeploymentLifecycle,
@@ -4022,7 +4027,7 @@ pub mod application_summary {
             self.deployment_status = Some(input);
             self
         }
-        /// <p>Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.</p>
+        /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<crate::model::ApplicationDeploymentLifecycle>,
@@ -4164,6 +4169,7 @@ impl AsRef<str> for ApplicationDeploymentLifecycle {
 ///     ApplicationLifecycle::Created => { /* ... */ },
 ///     ApplicationLifecycle::Creating => { /* ... */ },
 ///     ApplicationLifecycle::Deleting => { /* ... */ },
+///     ApplicationLifecycle::DeletingFromEnvironment => { /* ... */ },
 ///     ApplicationLifecycle::Failed => { /* ... */ },
 ///     ApplicationLifecycle::Ready => { /* ... */ },
 ///     ApplicationLifecycle::Running => { /* ... */ },
@@ -4212,6 +4218,8 @@ pub enum ApplicationLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    DeletingFromEnvironment,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
@@ -4233,6 +4241,7 @@ impl std::convert::From<&str> for ApplicationLifecycle {
             "Created" => ApplicationLifecycle::Created,
             "Creating" => ApplicationLifecycle::Creating,
             "Deleting" => ApplicationLifecycle::Deleting,
+            "Deleting From Environment" => ApplicationLifecycle::DeletingFromEnvironment,
             "Failed" => ApplicationLifecycle::Failed,
             "Ready" => ApplicationLifecycle::Ready,
             "Running" => ApplicationLifecycle::Running,
@@ -4260,6 +4269,7 @@ impl ApplicationLifecycle {
             ApplicationLifecycle::Created => "Created",
             ApplicationLifecycle::Creating => "Creating",
             ApplicationLifecycle::Deleting => "Deleting",
+            ApplicationLifecycle::DeletingFromEnvironment => "Deleting From Environment",
             ApplicationLifecycle::Failed => "Failed",
             ApplicationLifecycle::Ready => "Ready",
             ApplicationLifecycle::Running => "Running",
@@ -4276,6 +4286,7 @@ impl ApplicationLifecycle {
             "Created",
             "Creating",
             "Deleting",
+            "Deleting From Environment",
             "Failed",
             "Ready",
             "Running",
@@ -4342,7 +4353,7 @@ impl Definition {
     }
 }
 
-/// <p>A subset of the attributes about a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings.</p>
+/// <p>A subset of the attributes that describe a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogGroupSummary {

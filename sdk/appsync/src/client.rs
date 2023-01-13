@@ -170,9 +170,11 @@ impl Client {
     ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
     ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_response_mapping_template): <p>The <code>Function</code> response mapping template.</p>
-    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::CreateFunction::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::CreateFunction::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
+    ///   - [`runtime(AppSyncRuntime)`](crate::client::fluent_builders::CreateFunction::runtime) / [`set_runtime(Option<AppSyncRuntime>)`](crate::client::fluent_builders::CreateFunction::set_runtime): <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_code): <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::CreateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
@@ -211,6 +213,8 @@ impl Client {
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::CreateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::CreateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
     ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::CreateResolver::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::CreateResolver::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
+    ///   - [`runtime(AppSyncRuntime)`](crate::client::fluent_builders::CreateResolver::runtime) / [`set_runtime(Option<AppSyncRuntime>)`](crate::client::fluent_builders::CreateResolver::set_runtime): <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_code): <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     /// - On success, responds with [`CreateResolverOutput`](crate::output::CreateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::CreateResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateResolverError>`](crate::error::CreateResolverError)
@@ -325,6 +329,21 @@ impl Client {
     pub fn disassociate_api(&self) -> fluent_builders::DisassociateApi {
         fluent_builders::DisassociateApi::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`EvaluateCode`](crate::client::fluent_builders::EvaluateCode) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`runtime(AppSyncRuntime)`](crate::client::fluent_builders::EvaluateCode::runtime) / [`set_runtime(Option<AppSyncRuntime>)`](crate::client::fluent_builders::EvaluateCode::set_runtime): <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::EvaluateCode::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::EvaluateCode::set_code): <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    ///   - [`context(impl Into<String>)`](crate::client::fluent_builders::EvaluateCode::context) / [`set_context(Option<String>)`](crate::client::fluent_builders::EvaluateCode::set_context): <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    ///   - [`function(impl Into<String>)`](crate::client::fluent_builders::EvaluateCode::function) / [`set_function(Option<String>)`](crate::client::fluent_builders::EvaluateCode::set_function): <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+    /// - On success, responds with [`EvaluateCodeOutput`](crate::output::EvaluateCodeOutput) with field(s):
+    ///   - [`evaluation_result(Option<String>)`](crate::output::EvaluateCodeOutput::evaluation_result): <p>The result of the evaluation operation.</p>
+    ///   - [`error(Option<EvaluateCodeErrorDetail>)`](crate::output::EvaluateCodeOutput::error): <p>Contains the payload of the response error.</p>
+    ///   - [`logs(Option<Vec<String>>)`](crate::output::EvaluateCodeOutput::logs): <p>A list of logs that were generated by calls to <code>util.log.info</code> and <code>util.log.error</code> in the evaluated code.</p>
+    /// - On failure, responds with [`SdkError<EvaluateCodeError>`](crate::error::EvaluateCodeError)
+    pub fn evaluate_code(&self) -> fluent_builders::EvaluateCode {
+        fluent_builders::EvaluateCode::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`EvaluateMappingTemplate`](crate::client::fluent_builders::EvaluateMappingTemplate) operation.
     ///
     /// - The fluent builder is configurable:
@@ -333,6 +352,7 @@ impl Client {
     /// - On success, responds with [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput) with field(s):
     ///   - [`evaluation_result(Option<String>)`](crate::output::EvaluateMappingTemplateOutput::evaluation_result): <p>The mapping template; this can be a request or response template.</p>
     ///   - [`error(Option<ErrorDetail>)`](crate::output::EvaluateMappingTemplateOutput::error): <p>The <code>ErrorDetail</code> object.</p>
+    ///   - [`logs(Option<Vec<String>>)`](crate::output::EvaluateMappingTemplateOutput::logs): <p>A list of logs that were generated by calls to <code>util.log.info</code> and <code>util.log.error</code> in the evaluated code.</p>
     /// - On failure, responds with [`SdkError<EvaluateMappingTemplateError>`](crate::error::EvaluateMappingTemplateError)
     pub fn evaluate_mapping_template(&self) -> fluent_builders::EvaluateMappingTemplate {
         fluent_builders::EvaluateMappingTemplate::new(self.handle.clone())
@@ -671,9 +691,11 @@ impl Client {
     ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
     ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_response_mapping_template): <p>The <code>Function</code> request mapping template.</p>
-    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::UpdateFunction::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::UpdateFunction::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
+    ///   - [`runtime(AppSyncRuntime)`](crate::client::fluent_builders::UpdateFunction::runtime) / [`set_runtime(Option<AppSyncRuntime>)`](crate::client::fluent_builders::UpdateFunction::set_runtime): <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_code): <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     /// - On success, responds with [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::UpdateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::error::UpdateFunctionError)
@@ -712,6 +734,8 @@ impl Client {
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::UpdateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::UpdateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
     ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::UpdateResolver::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::UpdateResolver::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
+    ///   - [`runtime(AppSyncRuntime)`](crate::client::fluent_builders::UpdateResolver::runtime) / [`set_runtime(Option<AppSyncRuntime>)`](crate::client::fluent_builders::UpdateResolver::set_runtime): <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_code): <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     /// - On success, responds with [`UpdateResolverOutput`](crate::output::UpdateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::UpdateResolverOutput::resolver): <p>The updated <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverError>`](crate::error::UpdateResolverError)
@@ -1529,12 +1553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_mapping_template(input);
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.function_version(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1565,6 +1589,29 @@ pub mod fluent_builders {
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.inner = self.inner.runtime(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime(input);
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
             self
         }
     }
@@ -1965,6 +2012,29 @@ pub mod fluent_builders {
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.inner = self.inner.runtime(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime(input);
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
             self
         }
     }
@@ -2780,6 +2850,112 @@ pub mod fluent_builders {
         /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `EvaluateCode`.
+    ///
+    /// <p>Evaluates the given code and returns the response. The code definition requirements depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request function takes the incoming request after a GraphQL operation is parsed and converts it into a request configuration for the selected data source operation. The response function interprets responses from the data source and maps it to the shape of the GraphQL field output type. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct EvaluateCode {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::evaluate_code_input::Builder,
+    }
+    impl EvaluateCode {
+        /// Creates a new `EvaluateCode`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::EvaluateCode,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::EvaluateCodeError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::EvaluateCodeOutput,
+            aws_smithy_http::result::SdkError<crate::error::EvaluateCodeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.inner = self.inner.runtime(input);
+            self
+        }
+        /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime(input);
+            self
+        }
+        /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(input.into());
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context(input);
+            self
+        }
+        /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+        pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function(input.into());
+            self
+        }
+        /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+        pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_function(input);
             self
         }
     }
@@ -5552,12 +5728,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_mapping_template(input);
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.function_version(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+        /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5588,6 +5764,29 @@ pub mod fluent_builders {
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.inner = self.inner.runtime(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime(input);
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
             self
         }
     }
@@ -5974,6 +6173,29 @@ pub mod fluent_builders {
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
+            self.inner = self.inner.runtime(input);
+            self
+        }
+        /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
+        pub fn set_runtime(
+            mut self,
+            input: std::option::Option<crate::model::AppSyncRuntime>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime(input);
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
+            self
+        }
+        /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_code(input);
             self
         }
     }

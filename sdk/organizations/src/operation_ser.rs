@@ -134,6 +134,12 @@ pub fn serialize_operation_crate_operation_delete_policy(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_delete_resource_policy(
+    _input: &crate::input::DeleteResourcePolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    Ok(aws_smithy_http::body::SdkBody::from("{}"))
+}
+
 pub fn serialize_operation_crate_operation_deregister_delegated_administrator(
     input: &crate::input::DeregisterDelegatedAdministratorInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
@@ -220,6 +226,12 @@ pub fn serialize_operation_crate_operation_describe_policy(
     crate::json_ser::serialize_structure_crate_input_describe_policy_input(&mut object, input)?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_resource_policy(
+    _input: &crate::input::DescribeResourcePolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    Ok(aws_smithy_http::body::SdkBody::from("{}"))
 }
 
 pub fn serialize_operation_crate_operation_detach_policy(
@@ -499,6 +511,16 @@ pub fn serialize_operation_crate_operation_move_account(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_move_account_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_put_resource_policy(
+    input: &crate::input::PutResourcePolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::error::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_resource_policy_input(&mut object, input)?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

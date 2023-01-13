@@ -9,6 +9,26 @@ pub(crate) fn reflens_structure_crate_output_describe_addresses_attribute_output
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_address_transfers_output_next_token(
+    input: &crate::output::DescribeAddressTransfersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_aws_network_performance_metric_subscriptions_output_next_token(
+    input: &crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_byoip_cidrs_output_next_token(
     input: &crate::output::DescribeByoipCidrsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -231,6 +251,16 @@ pub(crate) fn reflens_structure_crate_output_describe_hosts_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_describe_iam_instance_profile_associations_output_next_token(
     input: &crate::output::DescribeIamInstanceProfileAssociationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_images_output_next_token(
+    input: &crate::output::DescribeImagesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -889,6 +919,56 @@ pub(crate) fn reflens_structure_crate_output_describe_trunk_interface_associatio
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_verified_access_endpoints_output_next_token(
+    input: &crate::output::DescribeVerifiedAccessEndpointsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_verified_access_groups_output_next_token(
+    input: &crate::output::DescribeVerifiedAccessGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_verified_access_instance_logging_configurations_output_next_token(
+    input: &crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_verified_access_instances_output_next_token(
+    input: &crate::output::DescribeVerifiedAccessInstancesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_verified_access_trust_providers_output_next_token(
+    input: &crate::output::DescribeVerifiedAccessTrustProvidersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_volumes_output_next_token(
     input: &crate::output::DescribeVolumesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -1001,6 +1081,16 @@ pub(crate) fn reflens_structure_crate_output_describe_vpcs_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_get_associated_ipv6_pool_cidrs_output_next_token(
     input: &crate::output::GetAssociatedIpv6PoolCidrsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_get_aws_network_performance_data_output_next_token(
+    input: &crate::output::GetAwsNetworkPerformanceDataOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -1213,6 +1303,26 @@ pub(crate) fn lens_structure_crate_output_describe_addresses_attribute_output_ad
     input: crate::output::DescribeAddressesAttributeOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AddressAttribute>> {
     let input = match input.addresses {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_address_transfers_output_address_transfers(
+    input: crate::output::DescribeAddressTransfersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AddressTransfer>> {
+    let input = match input.address_transfers {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_aws_network_performance_metric_subscriptions_output_subscriptions(
+    input: crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Subscription>> {
+    let input = match input.subscriptions {
         None => return None,
         Some(t) => t,
     };
@@ -1443,6 +1553,16 @@ pub(crate) fn lens_structure_crate_output_describe_iam_instance_profile_associat
     input: crate::output::DescribeIamInstanceProfileAssociationsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::IamInstanceProfileAssociation>> {
     let input = match input.iam_instance_profile_associations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_images_output_images(
+    input: crate::output::DescribeImagesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Image>> {
+    let input = match input.images {
         None => return None,
         Some(t) => t,
     };
@@ -2101,6 +2221,56 @@ pub(crate) fn lens_structure_crate_output_describe_trunk_interface_associations_
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_describe_verified_access_endpoints_output_verified_access_endpoints(
+    input: crate::output::DescribeVerifiedAccessEndpointsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VerifiedAccessEndpoint>> {
+    let input = match input.verified_access_endpoints {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_verified_access_groups_output_verified_access_groups(
+    input: crate::output::DescribeVerifiedAccessGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VerifiedAccessGroup>> {
+    let input = match input.verified_access_groups {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_verified_access_instance_logging_configurations_output_logging_configurations(
+    input: crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VerifiedAccessInstanceLoggingConfiguration>> {
+    let input = match input.logging_configurations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_verified_access_instances_output_verified_access_instances(
+    input: crate::output::DescribeVerifiedAccessInstancesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VerifiedAccessInstance>> {
+    let input = match input.verified_access_instances {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_verified_access_trust_providers_output_verified_access_trust_providers(
+    input: crate::output::DescribeVerifiedAccessTrustProvidersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VerifiedAccessTrustProvider>> {
+    let input = match input.verified_access_trust_providers {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_describe_volumes_output_volumes(
     input: crate::output::DescribeVolumesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Volume>> {
@@ -2215,6 +2385,16 @@ pub(crate) fn lens_structure_crate_output_get_associated_ipv6_pool_cidrs_output_
     input: crate::output::GetAssociatedIpv6PoolCidrsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Ipv6CidrAssociation>> {
     let input = match input.ipv6_cidr_associations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_get_aws_network_performance_data_output_data_responses(
+    input: crate::output::GetAwsNetworkPerformanceDataOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DataResponse>> {
+    let input = match input.data_responses {
         None => return None,
         Some(t) => t,
     };

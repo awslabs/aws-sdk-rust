@@ -339,12 +339,12 @@ impl UpdateResourceServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIdentityProviderOutput {
-    /// <p>The IdP object.</p>
+    /// <p>The identity provider details.</p>
     #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl UpdateIdentityProviderOutput {
-    /// <p>The IdP object.</p>
+    /// <p>The identity provider details.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -358,12 +358,12 @@ pub mod update_identity_provider_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The IdP object.</p>
+        /// <p>The identity provider details.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The IdP object.</p>
+        /// <p>The identity provider details.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -2667,12 +2667,12 @@ impl GetSigningCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierOutput {
-    /// <p>The IdP object.</p>
+    /// <p>The identity provider details.</p>
     #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl GetIdentityProviderByIdentifierOutput {
-    /// <p>The IdP object.</p>
+    /// <p>The identity provider details.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -2686,12 +2686,12 @@ pub mod get_identity_provider_by_identifier_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The IdP object.</p>
+        /// <p>The identity provider details.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The IdP object.</p>
+        /// <p>The identity provider details.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -3275,12 +3275,12 @@ impl DescribeResourceServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIdentityProviderOutput {
-    /// <p>The IdP that was deleted.</p>
+    /// <p>The identity provider details.</p>
     #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProviderType>,
 }
 impl DescribeIdentityProviderOutput {
-    /// <p>The IdP that was deleted.</p>
+    /// <p>The identity provider details.</p>
     pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -3294,12 +3294,12 @@ pub mod describe_identity_provider_output {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProviderType>,
     }
     impl Builder {
-        /// <p>The IdP that was deleted.</p>
+        /// <p>The identity provider details.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider = Some(input);
             self
         }
-        /// <p>The IdP that was deleted.</p>
+        /// <p>The identity provider details.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,

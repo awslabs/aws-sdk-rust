@@ -2170,6 +2170,66 @@ impl PolicyNotAttachedException {
     }
 }
 
+/// <p>We can't find a resource policy request with the parameter that you specified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicyNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourcePolicyNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourcePolicyNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourcePolicyNotFoundException")?;
+        if let Some(inner_34) = &self.message {
+            {
+                write!(f, ": {}", inner_34)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourcePolicyNotFoundException {}
+/// See [`ResourcePolicyNotFoundException`](crate::error::ResourcePolicyNotFoundException).
+pub mod resource_policy_not_found_exception {
+
+    /// A builder for [`ResourcePolicyNotFoundException`](crate::error::ResourcePolicyNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicyNotFoundException`](crate::error::ResourcePolicyNotFoundException).
+        pub fn build(self) -> crate::error::ResourcePolicyNotFoundException {
+            crate::error::ResourcePolicyNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourcePolicyNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicyNotFoundException`](crate::error::ResourcePolicyNotFoundException).
+    pub fn builder() -> crate::error::resource_policy_not_found_exception::Builder {
+        crate::error::resource_policy_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>We can't find a handshake with the <code>HandshakeId</code> that you specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2187,9 +2247,9 @@ impl HandshakeNotFoundException {
 impl std::fmt::Display for HandshakeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HandshakeNotFoundException")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2247,9 +2307,9 @@ impl EffectivePolicyNotFoundException {
 impl std::fmt::Display for EffectivePolicyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EffectivePolicyNotFoundException")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2307,9 +2367,9 @@ impl CreateAccountStatusNotFoundException {
 impl std::fmt::Display for CreateAccountStatusNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CreateAccountStatusNotFoundException")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -2367,9 +2427,9 @@ impl PolicyInUseException {
 impl std::fmt::Display for PolicyInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PolicyInUseException")?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2427,9 +2487,9 @@ impl OrganizationalUnitNotEmptyException {
 impl std::fmt::Display for OrganizationalUnitNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OrganizationalUnitNotEmptyException")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2487,9 +2547,9 @@ impl OrganizationNotEmptyException {
 impl std::fmt::Display for OrganizationNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OrganizationNotEmptyException")?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2547,9 +2607,9 @@ impl InvalidHandshakeTransitionException {
 impl std::fmt::Display for InvalidHandshakeTransitionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHandshakeTransitionException")?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2607,9 +2667,9 @@ impl HandshakeAlreadyInStateException {
 impl std::fmt::Display for HandshakeAlreadyInStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HandshakeAlreadyInStateException")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2667,9 +2727,9 @@ impl AlreadyInOrganizationException {
 impl std::fmt::Display for AlreadyInOrganizationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyInOrganizationException")?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2738,9 +2798,9 @@ impl AccessDeniedForDependencyException {
 impl std::fmt::Display for AccessDeniedForDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedForDependencyException")?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2817,9 +2877,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2877,9 +2937,9 @@ impl AccountAlreadyClosedException {
 impl std::fmt::Display for AccountAlreadyClosedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccountAlreadyClosedException")?;
-        if let Some(inner_45) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2937,9 +2997,9 @@ impl DuplicatePolicyAttachmentException {
 impl std::fmt::Display for DuplicatePolicyAttachmentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicatePolicyAttachmentException")?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
@@ -6244,6 +6304,240 @@ impl std::error::Error for DeletePolicyError {
     }
 }
 
+/// Error type for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResourcePolicyErrorKind {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
+    AwsOrganizationsNotInUseException(crate::error::AwsOrganizationsNotInUseException),
+    /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note>
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li>
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note>
+    /// <p>Deleted and closed accounts still count toward your limit.</p>
+    /// </note> <important>
+    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
+    /// </important> </li>
+    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
+    /// <li> <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To close the management account for the organization, you must first either remove or close all member accounts in the organization. Follow standard account closure process using root credentials.​ </p> </li>
+    /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30 days. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can close at a time. ​ </p> </li>
+    /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li>
+    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
+    /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li>
+    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment method is associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li>
+    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li>
+    /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li>
+    /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li>
+    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li>
+    /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li>
+    /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li>
+    /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li>
+    /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li>
+    /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li>
+    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li>
+    /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li>
+    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
+    /// </ul>
+    ConstraintViolationException(crate::error::ConstraintViolationException),
+    /// <p>We can't find a resource policy request with the parameter that you specified.</p>
+    ResourcePolicyNotFoundException(crate::error::ResourcePolicyNotFoundException),
+    /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>This action isn't available in the current Amazon Web Services Region.</p>
+    UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteResourcePolicyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ConstraintViolationException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResourcePolicyError {
+    /// Creates a new `DeleteResourcePolicyError`.
+    pub fn new(kind: DeleteResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ConstraintViolationException`.
+    pub fn is_constraint_violation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ConstraintViolationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException`.
+    pub fn is_resource_policy_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException`.
+    pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => {
+                Some(_inner)
+            }
+            DeleteResourcePolicyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ConstraintViolationException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ResourcePolicyNotFoundException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DeregisterDelegatedAdministrator` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8008,6 +8302,237 @@ impl std::error::Error for DescribePolicyError {
             DescribePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
             DescribePolicyErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DescribeResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DescribeResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeResourcePolicyErrorKind {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
+    AwsOrganizationsNotInUseException(crate::error::AwsOrganizationsNotInUseException),
+    /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note>
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li>
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note>
+    /// <p>Deleted and closed accounts still count toward your limit.</p>
+    /// </note> <important>
+    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
+    /// </important> </li>
+    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
+    /// <li> <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To close the management account for the organization, you must first either remove or close all member accounts in the organization. Follow standard account closure process using root credentials.​ </p> </li>
+    /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30 days. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can close at a time. ​ </p> </li>
+    /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li>
+    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
+    /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li>
+    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment method is associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li>
+    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li>
+    /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li>
+    /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li>
+    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li>
+    /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li>
+    /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li>
+    /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li>
+    /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li>
+    /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li>
+    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li>
+    /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li>
+    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
+    /// </ul>
+    ConstraintViolationException(crate::error::ConstraintViolationException),
+    /// <p>We can't find a resource policy request with the parameter that you specified.</p>
+    ResourcePolicyNotFoundException(crate::error::ResourcePolicyNotFoundException),
+    /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>This action isn't available in the current Amazon Web Services Region.</p>
+    UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeResourcePolicyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeResourcePolicyErrorKind::ConstraintViolationException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeResourcePolicyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DescribeResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeResourcePolicyError {
+    /// Creates a new `DescribeResourcePolicyError`.
+    pub fn new(kind: DescribeResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ConstraintViolationException`.
+    pub fn is_constraint_violation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::ConstraintViolationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException`.
+    pub fn is_resource_policy_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException`.
+    pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeResourcePolicyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => {
+                Some(_inner)
+            }
+            DescribeResourcePolicyErrorKind::ConstraintViolationException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::ResourcePolicyNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeResourcePolicyErrorKind::ServiceException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => {
+                Some(_inner)
+            }
+            DescribeResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13843,6 +14368,257 @@ impl std::error::Error for MoveAccountError {
             MoveAccountErrorKind::SourceParentNotFoundException(_inner) => Some(_inner),
             MoveAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             MoveAccountErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutResourcePolicyErrorKind {
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
+    AwsOrganizationsNotInUseException(crate::error::AwsOrganizationsNotInUseException),
+    /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional information about the violated limit:</p> <note>
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't remove the management account. Instead, after you remove all member accounts, delete the organization itself.</p> </li>
+    /// <li> <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p> </li>
+    /// <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit. </p> <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p> <note>
+    /// <p>Deleted and closed accounts still count toward your limit.</p>
+    /// </note> <important>
+    /// <p>If you get this exception when running a command immediately after creating the organization, wait one hour and try again. After an hour, if the command continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
+    /// </important> </li>
+    /// <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the organization as a delegated administrator for an Amazon Web Services service integrated with Organizations. You can designate only a member account as a delegated administrator.</p> </li>
+    /// <li> <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To close the management account for the organization, you must first either remove or close all member accounts in the organization. Follow standard account closure process using root credentials.​ </p> </li>
+    /// <li> <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as a delegated administrator for a service integrated with your organization. To complete this operation, you must first deregister this account as a delegated administrator. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30 days. </p> </li>
+    /// <li> <p>CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can close at a time. ​ </p> </li>
+    /// <li> <p>CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified region, you must enable all features mode.</p> </li>
+    /// <li> <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p> </li>
+    /// <li> <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p> </li>
+    /// <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p> </li>
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment method is associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate the organization's management account to the marketplace that corresponds to the management account's address. For example, accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be associated with the same marketplace.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt; Regions in China. To create an organization, the master must have a valid business license. For more information, contact customer support.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact address and phone number for the management account. Then try the operation again.</p> </li>
+    /// <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the <i>Amazon Web Services GovCloud User Guide.</i> </p> </li>
+    /// <li> <p>MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than allowed for the service principal. </p> </li>
+    /// <li> <p>MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can be attached to an entity at one time.</p> </li>
+    /// <li> <p>MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource. </p> </li>
+    /// <li> <p>MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// <li> <p>MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the entity to have fewer than the minimum number of policies of a certain type required.</p> </li>
+    /// <li> <p>ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be configured to support all features. An organization that supports only consolidated billing features can't perform this operation.</p> </li>
+    /// <li> <p>OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.</p> </li>
+    /// <li> <p>OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.</p> </li>
+    /// <li> <p>POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.</p> </li>
+    /// <li> <p>POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.</p> </li>
+    /// <li> <p>SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.</p> </li>
+    /// <li> <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p> </li>
+    /// <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting period before you can remove it from the organization. If you get an error that indicates that a wait period is required, try again in a few days.</p> </li>
+    /// </ul>
+    ConstraintViolationException(crate::error::ConstraintViolationException),
+    /// <p>The requested operation failed because you provided invalid values for one or more of the request parameters. This exception includes a reason that contains additional information about the violated limit:</p> <note>
+    /// <p>Some of the reasons in the following list might not be applicable to this specific API or operation.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.</p> </li>
+    /// <li> <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p> </li>
+    /// <li> <p>INPUT_REQUIRED: You must include a value for all required parameters.</p> </li>
+    /// <li> <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.</p> </li>
+    /// <li> <p>INVALID_ENUM: You specified an invalid value.</p> </li>
+    /// <li> <p>INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.</p> </li>
+    /// <li> <p>INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.</p> </li>
+    /// <li> <p>INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.</p> </li>
+    /// <li> <p>INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call of the operation.</p> </li>
+    /// <li> <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.</p> </li>
+    /// <li> <p>INVALID_PATTERN: You provided a value that doesn't match the required pattern.</p> </li>
+    /// <li> <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.</p> </li>
+    /// <li> <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p> </li>
+    /// <li> <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p> </li>
+    /// <li> <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. </p> </li>
+    /// <li> <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system tag keys because they're reserved for Amazon Web Services use. System tags don’t count against your tags per resource limit.</p> </li>
+    /// <li> <p>MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.</p> </li>
+    /// <li> <p>MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.</p> </li>
+    /// <li> <p>MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.</p> </li>
+    /// <li> <p>MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.</p> </li>
+    /// <li> <p>MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.</p> </li>
+    /// <li> <p>MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.</p> </li>
+    /// <li> <p>TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.</p> </li>
+    /// <li> <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p> </li>
+    /// </ul>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>This action isn't available in the current Amazon Web Services Region.</p>
+    UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutResourcePolicyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ConstraintViolationException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        PutResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutResourcePolicyError {
+    /// Creates a new `PutResourcePolicyError`.
+    pub fn new(kind: PutResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ConstraintViolationException`.
+    pub fn is_constraint_violation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ConstraintViolationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, PutResourcePolicyErrorKind::ServiceException(_))
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::UnsupportedApiEndpointException`.
+    pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::UnsupportedApiEndpointException(_)
+        )
+    }
+}
+impl std::error::Error for PutResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutResourcePolicyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::AwsOrganizationsNotInUseException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ConstraintViolationException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::InvalidInputException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ServiceException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

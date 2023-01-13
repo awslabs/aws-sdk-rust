@@ -13992,6 +13992,111 @@ impl AsRef<str> for ExportSortAttribute {
     }
 }
 
+/// <p>The unique custom vocabulary item from the custom vocabulary list.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CustomVocabularyItem {
+    /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub item_id: std::option::Option<std::string::String>,
+    /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub phrase: std::option::Option<std::string::String>,
+    /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub weight: std::option::Option<i32>,
+    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub display_as: std::option::Option<std::string::String>,
+}
+impl CustomVocabularyItem {
+    /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+    /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
+    pub fn phrase(&self) -> std::option::Option<&str> {
+        self.phrase.as_deref()
+    }
+    /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
+    /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+    pub fn display_as(&self) -> std::option::Option<&str> {
+        self.display_as.as_deref()
+    }
+}
+/// See [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
+pub mod custom_vocabulary_item {
+
+    /// A builder for [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) item_id: std::option::Option<std::string::String>,
+        pub(crate) phrase: std::option::Option<std::string::String>,
+        pub(crate) weight: std::option::Option<i32>,
+        pub(crate) display_as: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.item_id = Some(input.into());
+            self
+        }
+        /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.item_id = input;
+            self
+        }
+        /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn phrase(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phrase = Some(input.into());
+            self
+        }
+        /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phrase = input;
+            self
+        }
+        /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn weight(mut self, input: i32) -> Self {
+            self.weight = Some(input);
+            self
+        }
+        /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+            self.weight = input;
+            self
+        }
+        /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_as = Some(input.into());
+            self
+        }
+        /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_as = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
+        pub fn build(self) -> crate::model::CustomVocabularyItem {
+            crate::model::CustomVocabularyItem {
+                item_id: self.item_id,
+                phrase: self.phrase,
+                weight: self.weight,
+                display_as: self.display_as,
+            }
+        }
+    }
+}
+impl CustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
+    pub fn builder() -> crate::model::custom_vocabulary_item::Builder {
+        crate::model::custom_vocabulary_item::Builder::default()
+    }
+}
+
 /// <p>Provides summary information about a built-in slot type for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17815,5 +17920,336 @@ impl BotVersionLocaleDetails {
     /// Creates a new builder-style object to manufacture [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
     pub fn builder() -> crate::model::bot_version_locale_details::Builder {
         crate::model::bot_version_locale_details::Builder::default()
+    }
+}
+
+/// <p>The unique failed custom vocabulary item from the custom vocabulary list.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct FailedCustomVocabularyItem {
+    /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub item_id: std::option::Option<std::string::String>,
+    /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<crate::model::ErrorCode>,
+}
+impl FailedCustomVocabularyItem {
+    /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+    /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+}
+/// See [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
+pub mod failed_custom_vocabulary_item {
+
+    /// A builder for [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) item_id: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
+    }
+    impl Builder {
+        /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.item_id = Some(input.into());
+            self
+        }
+        /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.item_id = input;
+            self
+        }
+        /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
+        pub fn build(self) -> crate::model::FailedCustomVocabularyItem {
+            crate::model::FailedCustomVocabularyItem {
+                item_id: self.item_id,
+                error_message: self.error_message,
+                error_code: self.error_code,
+            }
+        }
+    }
+}
+impl FailedCustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
+    pub fn builder() -> crate::model::failed_custom_vocabulary_item::Builder {
+        crate::model::failed_custom_vocabulary_item::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let errorcode = unimplemented!();
+/// match errorcode {
+///     ErrorCode::DuplicateInput => { /* ... */ },
+///     ErrorCode::InternalServerFailure => { /* ... */ },
+///     ErrorCode::ResourceAlreadyExists => { /* ... */ },
+///     ErrorCode::ResourceDoesNotExist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `errorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ErrorCode::NewFeature` is defined.
+/// Specifically, when `errorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    DuplicateInput,
+    #[allow(missing_docs)] // documentation missing in model
+    InternalServerFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceDoesNotExist,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "DUPLICATE_INPUT" => ErrorCode::DuplicateInput,
+            "INTERNAL_SERVER_FAILURE" => ErrorCode::InternalServerFailure,
+            "RESOURCE_ALREADY_EXISTS" => ErrorCode::ResourceAlreadyExists,
+            "RESOURCE_DOES_NOT_EXIST" => ErrorCode::ResourceDoesNotExist,
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ErrorCode::from(s))
+    }
+}
+impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ErrorCode::DuplicateInput => "DUPLICATE_INPUT",
+            ErrorCode::InternalServerFailure => "INTERNAL_SERVER_FAILURE",
+            ErrorCode::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
+            ErrorCode::ResourceDoesNotExist => "RESOURCE_DOES_NOT_EXIST",
+            ErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DUPLICATE_INPUT",
+            "INTERNAL_SERVER_FAILURE",
+            "RESOURCE_ALREADY_EXISTS",
+            "RESOURCE_DOES_NOT_EXIST",
+        ]
+    }
+}
+impl AsRef<str> for ErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The unique entry identifier for the custom vocabulary items.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CustomVocabularyEntryId {
+    /// <p>The unique item identifier for the custom vocabulary items.</p>
+    #[doc(hidden)]
+    pub item_id: std::option::Option<std::string::String>,
+}
+impl CustomVocabularyEntryId {
+    /// <p>The unique item identifier for the custom vocabulary items.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+}
+/// See [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
+pub mod custom_vocabulary_entry_id {
+
+    /// A builder for [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) item_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique item identifier for the custom vocabulary items.</p>
+        pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.item_id = Some(input.into());
+            self
+        }
+        /// <p>The unique item identifier for the custom vocabulary items.</p>
+        pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.item_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
+        pub fn build(self) -> crate::model::CustomVocabularyEntryId {
+            crate::model::CustomVocabularyEntryId {
+                item_id: self.item_id,
+            }
+        }
+    }
+}
+impl CustomVocabularyEntryId {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
+    pub fn builder() -> crate::model::custom_vocabulary_entry_id::Builder {
+        crate::model::custom_vocabulary_entry_id::Builder::default()
+    }
+}
+
+/// <p>The new custom vocabulary item from the custom vocabulary list.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NewCustomVocabularyItem {
+    /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub phrase: std::option::Option<std::string::String>,
+    /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub weight: std::option::Option<i32>,
+    /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+    #[doc(hidden)]
+    pub display_as: std::option::Option<std::string::String>,
+}
+impl NewCustomVocabularyItem {
+    /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
+    pub fn phrase(&self) -> std::option::Option<&str> {
+        self.phrase.as_deref()
+    }
+    /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
+    /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+    pub fn display_as(&self) -> std::option::Option<&str> {
+        self.display_as.as_deref()
+    }
+}
+/// See [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
+pub mod new_custom_vocabulary_item {
+
+    /// A builder for [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phrase: std::option::Option<std::string::String>,
+        pub(crate) weight: std::option::Option<i32>,
+        pub(crate) display_as: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn phrase(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phrase = Some(input.into());
+            self
+        }
+        /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phrase = input;
+            self
+        }
+        /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn weight(mut self, input: i32) -> Self {
+            self.weight = Some(input);
+            self
+        }
+        /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+            self.weight = input;
+            self
+        }
+        /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_as = Some(input.into());
+            self
+        }
+        /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
+        pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_as = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
+        pub fn build(self) -> crate::model::NewCustomVocabularyItem {
+            crate::model::NewCustomVocabularyItem {
+                phrase: self.phrase,
+                weight: self.weight,
+                display_as: self.display_as,
+            }
+        }
+    }
+}
+impl NewCustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
+    pub fn builder() -> crate::model::new_custom_vocabulary_item::Builder {
+        crate::model::new_custom_vocabulary_item::Builder::default()
     }
 }

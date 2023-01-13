@@ -3932,6 +3932,450 @@ impl ServiceInstanceSummary {
     }
 }
 
+/// When writing a match expression against `SortOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortorder = unimplemented!();
+/// match sortorder {
+///     SortOrder::Ascending => { /* ... */ },
+///     SortOrder::Descending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrder::NewFeature` is defined.
+/// Specifically, when `sortorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `ListServiceInstancesSortBy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listserviceinstancessortby = unimplemented!();
+/// match listserviceinstancessortby {
+///     ListServiceInstancesSortBy::CreatedAt => { /* ... */ },
+///     ListServiceInstancesSortBy::DeploymentStatus => { /* ... */ },
+///     ListServiceInstancesSortBy::EnvironmentName => { /* ... */ },
+///     ListServiceInstancesSortBy::LastDeploymentAttemptedAt => { /* ... */ },
+///     ListServiceInstancesSortBy::Name => { /* ... */ },
+///     ListServiceInstancesSortBy::ServiceName => { /* ... */ },
+///     ListServiceInstancesSortBy::TemplateName => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listserviceinstancessortby` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListServiceInstancesSortBy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListServiceInstancesSortBy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListServiceInstancesSortBy::NewFeature` is defined.
+/// Specifically, when `listserviceinstancessortby` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListServiceInstancesSortBy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListServiceInstancesSortBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreatedAt,
+    #[allow(missing_docs)] // documentation missing in model
+    DeploymentStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    EnvironmentName,
+    #[allow(missing_docs)] // documentation missing in model
+    LastDeploymentAttemptedAt,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceName,
+    #[allow(missing_docs)] // documentation missing in model
+    TemplateName,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListServiceInstancesSortBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "createdAt" => ListServiceInstancesSortBy::CreatedAt,
+            "deploymentStatus" => ListServiceInstancesSortBy::DeploymentStatus,
+            "environmentName" => ListServiceInstancesSortBy::EnvironmentName,
+            "lastDeploymentAttemptedAt" => ListServiceInstancesSortBy::LastDeploymentAttemptedAt,
+            "name" => ListServiceInstancesSortBy::Name,
+            "serviceName" => ListServiceInstancesSortBy::ServiceName,
+            "templateName" => ListServiceInstancesSortBy::TemplateName,
+            other => ListServiceInstancesSortBy::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListServiceInstancesSortBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListServiceInstancesSortBy::from(s))
+    }
+}
+impl ListServiceInstancesSortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListServiceInstancesSortBy::CreatedAt => "createdAt",
+            ListServiceInstancesSortBy::DeploymentStatus => "deploymentStatus",
+            ListServiceInstancesSortBy::EnvironmentName => "environmentName",
+            ListServiceInstancesSortBy::LastDeploymentAttemptedAt => "lastDeploymentAttemptedAt",
+            ListServiceInstancesSortBy::Name => "name",
+            ListServiceInstancesSortBy::ServiceName => "serviceName",
+            ListServiceInstancesSortBy::TemplateName => "templateName",
+            ListServiceInstancesSortBy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "createdAt",
+            "deploymentStatus",
+            "environmentName",
+            "lastDeploymentAttemptedAt",
+            "name",
+            "serviceName",
+            "templateName",
+        ]
+    }
+}
+impl AsRef<str> for ListServiceInstancesSortBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A filtering criterion to scope down the result list of the <code>ListServiceInstances</code> action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListServiceInstancesFilter {
+    /// <p>The name of a filtering criterion.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
+    /// <p>A value to filter by.</p>
+    /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl ListServiceInstancesFilter {
+    /// <p>The name of a filtering criterion.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::ListServiceInstancesFilterBy> {
+        self.key.as_ref()
+    }
+    /// <p>A value to filter by.</p>
+    /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+/// See [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+pub mod list_service_instances_filter {
+
+    /// A builder for [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of a filtering criterion.</p>
+        pub fn key(mut self, input: crate::model::ListServiceInstancesFilterBy) -> Self {
+            self.key = Some(input);
+            self
+        }
+        /// <p>The name of a filtering criterion.</p>
+        pub fn set_key(
+            mut self,
+            input: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
+        ) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>A value to filter by.</p>
+        /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A value to filter by.</p>
+        /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+        pub fn build(self) -> crate::model::ListServiceInstancesFilter {
+            crate::model::ListServiceInstancesFilter {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ListServiceInstancesFilter {
+    /// Creates a new builder-style object to manufacture [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+    pub fn builder() -> crate::model::list_service_instances_filter::Builder {
+        crate::model::list_service_instances_filter::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ListServiceInstancesFilterBy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let listserviceinstancesfilterby = unimplemented!();
+/// match listserviceinstancesfilterby {
+///     ListServiceInstancesFilterBy::CreatedAtAfter => { /* ... */ },
+///     ListServiceInstancesFilterBy::CreatedAtBefore => { /* ... */ },
+///     ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => { /* ... */ },
+///     ListServiceInstancesFilterBy::DeploymentStatus => { /* ... */ },
+///     ListServiceInstancesFilterBy::EnvironmentName => { /* ... */ },
+///     ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => { /* ... */ },
+///     ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => { /* ... */ },
+///     ListServiceInstancesFilterBy::Name => { /* ... */ },
+///     ListServiceInstancesFilterBy::ServiceName => { /* ... */ },
+///     ListServiceInstancesFilterBy::TemplateName => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `listserviceinstancesfilterby` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ListServiceInstancesFilterBy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ListServiceInstancesFilterBy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ListServiceInstancesFilterBy::NewFeature` is defined.
+/// Specifically, when `listserviceinstancesfilterby` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ListServiceInstancesFilterBy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListServiceInstancesFilterBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreatedAtAfter,
+    #[allow(missing_docs)] // documentation missing in model
+    CreatedAtBefore,
+    #[allow(missing_docs)] // documentation missing in model
+    DeployedTemplateVersionStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    DeploymentStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    EnvironmentName,
+    #[allow(missing_docs)] // documentation missing in model
+    LastDeploymentAttemptedAtAfter,
+    #[allow(missing_docs)] // documentation missing in model
+    LastDeploymentAttemptedAtBefore,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceName,
+    #[allow(missing_docs)] // documentation missing in model
+    TemplateName,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ListServiceInstancesFilterBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
+            "createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
+            "deployedTemplateVersionStatus" => {
+                ListServiceInstancesFilterBy::DeployedTemplateVersionStatus
+            }
+            "deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
+            "environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
+            "lastDeploymentAttemptedAtAfter" => {
+                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter
+            }
+            "lastDeploymentAttemptedAtBefore" => {
+                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore
+            }
+            "name" => ListServiceInstancesFilterBy::Name,
+            "serviceName" => ListServiceInstancesFilterBy::ServiceName,
+            "templateName" => ListServiceInstancesFilterBy::TemplateName,
+            other => ListServiceInstancesFilterBy::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for ListServiceInstancesFilterBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListServiceInstancesFilterBy::from(s))
+    }
+}
+impl ListServiceInstancesFilterBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
+            ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
+            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => {
+                "deployedTemplateVersionStatus"
+            }
+            ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
+            ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => {
+                "lastDeploymentAttemptedAtAfter"
+            }
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => {
+                "lastDeploymentAttemptedAtBefore"
+            }
+            ListServiceInstancesFilterBy::Name => "name",
+            ListServiceInstancesFilterBy::ServiceName => "serviceName",
+            ListServiceInstancesFilterBy::TemplateName => "templateName",
+            ListServiceInstancesFilterBy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "createdAtAfter",
+            "createdAtBefore",
+            "deployedTemplateVersionStatus",
+            "deploymentStatus",
+            "environmentName",
+            "lastDeploymentAttemptedAtAfter",
+            "lastDeploymentAttemptedAtBefore",
+            "name",
+            "serviceName",
+            "templateName",
+        ]
+    }
+}
+impl AsRef<str> for ListServiceInstancesFilterBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Detailed data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6134,6 +6578,9 @@ pub struct Environment {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl Environment {
     /// <p>The name of the environment.</p>
@@ -6210,6 +6657,10 @@ impl Environment {
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6244,6 +6695,7 @@ impl std::fmt::Debug for Environment {
         formatter.field("provisioning", &self.provisioning);
         formatter.field("provisioning_repository", &self.provisioning_repository);
         formatter.field("component_role_arn", &self.component_role_arn);
+        formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
         formatter.finish()
     }
 }
@@ -6271,6 +6723,7 @@ pub mod environment {
         pub(crate) provisioning: std::option::Option<crate::model::Provisioning>,
         pub(crate) provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -6502,6 +6955,19 @@ pub mod environment {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
@@ -6523,6 +6989,7 @@ pub mod environment {
                 provisioning: self.provisioning,
                 provisioning_repository: self.provisioning_repository,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             }
         }
     }
@@ -6559,6 +7026,7 @@ pub mod environment {
             formatter.field("provisioning", &self.provisioning);
             formatter.field("provisioning_repository", &self.provisioning_repository);
             formatter.field("component_role_arn", &self.component_role_arn);
+            formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
             formatter.finish()
         }
     }
@@ -6803,6 +7271,9 @@ pub struct EnvironmentAccountConnection {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    #[doc(hidden)]
+    pub codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
@@ -6847,6 +7318,10 @@ impl EnvironmentAccountConnection {
     pub fn component_role_arn(&self) -> std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.codebuild_role_arn.as_deref()
+    }
 }
 /// See [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
 pub mod environment_account_connection {
@@ -6864,6 +7339,7 @@ pub mod environment_account_connection {
         pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
         pub(crate) component_role_arn: std::option::Option<std::string::String>,
+        pub(crate) codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the environment account connection.</p>
@@ -6991,6 +7467,19 @@ pub mod environment_account_connection {
             self.component_role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+        pub fn set_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
         pub fn build(self) -> crate::model::EnvironmentAccountConnection {
             crate::model::EnvironmentAccountConnection {
@@ -7004,6 +7493,7 @@ pub mod environment_account_connection {
                 last_modified_at: self.last_modified_at,
                 status: self.status,
                 component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
             }
         }
     }
@@ -8234,6 +8724,9 @@ pub struct AccountSettings {
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[doc(hidden)]
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
+    /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    #[doc(hidden)]
+    pub pipeline_codebuild_role_arn: std::option::Option<std::string::String>,
 }
 impl AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
@@ -8246,6 +8739,10 @@ impl AccountSettings {
     ) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.pipeline_provisioning_repository.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    pub fn pipeline_codebuild_role_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_codebuild_role_arn.as_deref()
+    }
 }
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
@@ -8256,6 +8753,7 @@ pub mod account_settings {
         pub(crate) pipeline_service_role_arn: std::option::Option<std::string::String>,
         pub(crate) pipeline_provisioning_repository:
             std::option::Option<crate::model::RepositoryBranch>,
+        pub(crate) pipeline_codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
@@ -8287,11 +8785,28 @@ pub mod account_settings {
             self.pipeline_provisioning_repository = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn pipeline_codebuild_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pipeline_codebuild_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+        pub fn set_pipeline_codebuild_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pipeline_codebuild_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccountSettings`](crate::model::AccountSettings).
         pub fn build(self) -> crate::model::AccountSettings {
             crate::model::AccountSettings {
                 pipeline_service_role_arn: self.pipeline_service_role_arn,
                 pipeline_provisioning_repository: self.pipeline_provisioning_repository,
+                pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn,
             }
         }
     }

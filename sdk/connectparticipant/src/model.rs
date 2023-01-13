@@ -139,6 +139,9 @@ pub struct Item {
     /// <p>Provides information about the attachments.</p>
     #[doc(hidden)]
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
+    /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
+    #[doc(hidden)]
+    pub message_metadata: std::option::Option<crate::model::MessageMetadata>,
 }
 impl Item {
     /// <p>The time when the message or event was sent.</p>
@@ -178,6 +181,10 @@ impl Item {
     pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentItem]> {
         self.attachments.as_deref()
     }
+    /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
+    pub fn message_metadata(&self) -> std::option::Option<&crate::model::MessageMetadata> {
+        self.message_metadata.as_ref()
+    }
 }
 /// See [`Item`](crate::model::Item).
 pub mod item {
@@ -194,6 +201,7 @@ pub mod item {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
+        pub(crate) message_metadata: std::option::Option<crate::model::MessageMetadata>,
     }
     impl Builder {
         /// <p>The time when the message or event was sent.</p>
@@ -306,6 +314,19 @@ pub mod item {
             self.attachments = input;
             self
         }
+        /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
+        pub fn message_metadata(mut self, input: crate::model::MessageMetadata) -> Self {
+            self.message_metadata = Some(input);
+            self
+        }
+        /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
+        pub fn set_message_metadata(
+            mut self,
+            input: std::option::Option<crate::model::MessageMetadata>,
+        ) -> Self {
+            self.message_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
@@ -318,6 +339,7 @@ pub mod item {
                 display_name: self.display_name,
                 participant_role: self.participant_role,
                 attachments: self.attachments,
+                message_metadata: self.message_metadata,
             }
         }
     }
@@ -329,11 +351,182 @@ impl Item {
     }
 }
 
+/// <p>Contains metadata related to a message.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MessageMetadata {
+    /// <p>The identifier of the message that contains the metadata information. </p>
+    #[doc(hidden)]
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>The list of receipt information for a message for different recipients.</p>
+    #[doc(hidden)]
+    pub receipts: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
+}
+impl MessageMetadata {
+    /// <p>The identifier of the message that contains the metadata information. </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The list of receipt information for a message for different recipients.</p>
+    pub fn receipts(&self) -> std::option::Option<&[crate::model::Receipt]> {
+        self.receipts.as_deref()
+    }
+}
+/// See [`MessageMetadata`](crate::model::MessageMetadata).
+pub mod message_metadata {
+
+    /// A builder for [`MessageMetadata`](crate::model::MessageMetadata).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) receipts: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the message that contains the metadata information. </p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the message that contains the metadata information. </p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// Appends an item to `receipts`.
+        ///
+        /// To override the contents of this collection use [`set_receipts`](Self::set_receipts).
+        ///
+        /// <p>The list of receipt information for a message for different recipients.</p>
+        pub fn receipts(mut self, input: crate::model::Receipt) -> Self {
+            let mut v = self.receipts.unwrap_or_default();
+            v.push(input);
+            self.receipts = Some(v);
+            self
+        }
+        /// <p>The list of receipt information for a message for different recipients.</p>
+        pub fn set_receipts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
+        ) -> Self {
+            self.receipts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MessageMetadata`](crate::model::MessageMetadata).
+        pub fn build(self) -> crate::model::MessageMetadata {
+            crate::model::MessageMetadata {
+                message_id: self.message_id,
+                receipts: self.receipts,
+            }
+        }
+    }
+}
+impl MessageMetadata {
+    /// Creates a new builder-style object to manufacture [`MessageMetadata`](crate::model::MessageMetadata).
+    pub fn builder() -> crate::model::message_metadata::Builder {
+        crate::model::message_metadata::Builder::default()
+    }
+}
+
+/// <p>The receipt for the message delivered to the recipient.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Receipt {
+    /// <p>The time when the message was delivered to the recipient.</p>
+    #[doc(hidden)]
+    pub delivered_timestamp: std::option::Option<std::string::String>,
+    /// <p>The time when the message was read by the recipient.</p>
+    #[doc(hidden)]
+    pub read_timestamp: std::option::Option<std::string::String>,
+    /// <p>The identifier of the recipient of the message. </p>
+    #[doc(hidden)]
+    pub recipient_participant_id: std::option::Option<std::string::String>,
+}
+impl Receipt {
+    /// <p>The time when the message was delivered to the recipient.</p>
+    pub fn delivered_timestamp(&self) -> std::option::Option<&str> {
+        self.delivered_timestamp.as_deref()
+    }
+    /// <p>The time when the message was read by the recipient.</p>
+    pub fn read_timestamp(&self) -> std::option::Option<&str> {
+        self.read_timestamp.as_deref()
+    }
+    /// <p>The identifier of the recipient of the message. </p>
+    pub fn recipient_participant_id(&self) -> std::option::Option<&str> {
+        self.recipient_participant_id.as_deref()
+    }
+}
+/// See [`Receipt`](crate::model::Receipt).
+pub mod receipt {
+
+    /// A builder for [`Receipt`](crate::model::Receipt).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delivered_timestamp: std::option::Option<std::string::String>,
+        pub(crate) read_timestamp: std::option::Option<std::string::String>,
+        pub(crate) recipient_participant_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time when the message was delivered to the recipient.</p>
+        pub fn delivered_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delivered_timestamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the message was delivered to the recipient.</p>
+        pub fn set_delivered_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.delivered_timestamp = input;
+            self
+        }
+        /// <p>The time when the message was read by the recipient.</p>
+        pub fn read_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.read_timestamp = Some(input.into());
+            self
+        }
+        /// <p>The time when the message was read by the recipient.</p>
+        pub fn set_read_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.read_timestamp = input;
+            self
+        }
+        /// <p>The identifier of the recipient of the message. </p>
+        pub fn recipient_participant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recipient_participant_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the recipient of the message. </p>
+        pub fn set_recipient_participant_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recipient_participant_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Receipt`](crate::model::Receipt).
+        pub fn build(self) -> crate::model::Receipt {
+            crate::model::Receipt {
+                delivered_timestamp: self.delivered_timestamp,
+                read_timestamp: self.read_timestamp,
+                recipient_participant_id: self.recipient_participant_id,
+            }
+        }
+    }
+}
+impl Receipt {
+    /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
+    pub fn builder() -> crate::model::receipt::Builder {
+        crate::model::receipt::Builder::default()
+    }
+}
+
 /// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentItem {
-    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the attachment.</p>
@@ -347,7 +540,7 @@ pub struct AttachmentItem {
     pub status: std::option::Option<crate::model::ArtifactStatus>,
 }
 impl AttachmentItem {
-    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -376,12 +569,12 @@ pub mod attachment_item {
         pub(crate) status: std::option::Option<crate::model::ArtifactStatus>,
     }
     impl Builder {
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -650,6 +843,8 @@ impl AsRef<str> for ParticipantRole {
 ///     ChatItemType::ConnectionAck => { /* ... */ },
 ///     ChatItemType::Event => { /* ... */ },
 ///     ChatItemType::Message => { /* ... */ },
+///     ChatItemType::MessageDelivered => { /* ... */ },
+///     ChatItemType::MessageRead => { /* ... */ },
 ///     ChatItemType::ParticipantJoined => { /* ... */ },
 ///     ChatItemType::ParticipantLeft => { /* ... */ },
 ///     ChatItemType::TransferFailed => { /* ... */ },
@@ -699,6 +894,10 @@ pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Message,
     #[allow(missing_docs)] // documentation missing in model
+    MessageDelivered,
+    #[allow(missing_docs)] // documentation missing in model
+    MessageRead,
+    #[allow(missing_docs)] // documentation missing in model
     ParticipantJoined,
     #[allow(missing_docs)] // documentation missing in model
     ParticipantLeft,
@@ -719,6 +918,8 @@ impl std::convert::From<&str> for ChatItemType {
             "CONNECTION_ACK" => ChatItemType::ConnectionAck,
             "EVENT" => ChatItemType::Event,
             "MESSAGE" => ChatItemType::Message,
+            "MESSAGE_DELIVERED" => ChatItemType::MessageDelivered,
+            "MESSAGE_READ" => ChatItemType::MessageRead,
             "PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
             "PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
             "TRANSFER_FAILED" => ChatItemType::TransferFailed,
@@ -744,6 +945,8 @@ impl ChatItemType {
             ChatItemType::ConnectionAck => "CONNECTION_ACK",
             ChatItemType::Event => "EVENT",
             ChatItemType::Message => "MESSAGE",
+            ChatItemType::MessageDelivered => "MESSAGE_DELIVERED",
+            ChatItemType::MessageRead => "MESSAGE_READ",
             ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
             ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
             ChatItemType::TransferFailed => "TRANSFER_FAILED",
@@ -760,6 +963,8 @@ impl ChatItemType {
             "CONNECTION_ACK",
             "EVENT",
             "MESSAGE",
+            "MESSAGE_DELIVERED",
+            "MESSAGE_READ",
             "PARTICIPANT_JOINED",
             "PARTICIPANT_LEFT",
             "TRANSFER_FAILED",

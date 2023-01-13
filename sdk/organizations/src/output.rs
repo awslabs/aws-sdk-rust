@@ -197,6 +197,57 @@ impl RegisterDelegatedAdministratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutResourcePolicyOutput {
+    /// <p>A structure that contains details about the resource policy.</p>
+    #[doc(hidden)]
+    pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+}
+impl PutResourcePolicyOutput {
+    /// <p>A structure that contains details about the resource policy.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.resource_policy.as_ref()
+    }
+}
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+pub mod put_resource_policy_output {
+
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+    }
+    impl Builder {
+        /// <p>A structure that contains details about the resource policy.</p>
+        pub fn resource_policy(mut self, input: crate::model::ResourcePolicy) -> Self {
+            self.resource_policy = Some(input);
+            self
+        }
+        /// <p>A structure that contains details about the resource policy.</p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePolicy>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+        pub fn build(self) -> crate::output::PutResourcePolicyOutput {
+            crate::output::PutResourcePolicyOutput {
+                resource_policy: self.resource_policy,
+            }
+        }
+    }
+}
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MoveAccountOutput {}
 /// See [`MoveAccountOutput`](crate::output::MoveAccountOutput).
 pub mod move_account_output {
@@ -1747,6 +1798,57 @@ impl DetachPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeResourcePolicyOutput {
+    /// <p>A structure that contains details about the resource policy.</p>
+    #[doc(hidden)]
+    pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+}
+impl DescribeResourcePolicyOutput {
+    /// <p>A structure that contains details about the resource policy.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+        self.resource_policy.as_ref()
+    }
+}
+/// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+pub mod describe_resource_policy_output {
+
+    /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
+    }
+    impl Builder {
+        /// <p>A structure that contains details about the resource policy.</p>
+        pub fn resource_policy(mut self, input: crate::model::ResourcePolicy) -> Self {
+            self.resource_policy = Some(input);
+            self
+        }
+        /// <p>A structure that contains details about the resource policy.</p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePolicy>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+        pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
+            crate::output::DescribeResourcePolicyOutput {
+                resource_policy: self.resource_policy,
+            }
+        }
+    }
+}
+impl DescribeResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+    pub fn builder() -> crate::output::describe_resource_policy_output::Builder {
+        crate::output::describe_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePolicyOutput {
     /// <p>A structure that contains details about the specified policy.</p>
     #[doc(hidden)]
@@ -2124,6 +2226,30 @@ impl DeregisterDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
     pub fn builder() -> crate::output::deregister_delegated_administrator_output::Builder {
         crate::output::deregister_delegated_administrator_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteResourcePolicyOutput {}
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+pub mod delete_resource_policy_output {
+
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+        pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
+            crate::output::DeleteResourcePolicyOutput {}
+        }
+    }
+}
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
     }
 }
 

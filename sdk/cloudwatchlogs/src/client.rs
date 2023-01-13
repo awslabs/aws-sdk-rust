@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::AssociateKmsKey::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::AssociateKmsKey::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::AssociateKmsKey::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::AssociateKmsKey::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::AssociateKmsKey::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::AssociateKmsKey::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     /// - On success, responds with [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput)
 
     /// - On failure, responds with [`SdkError<AssociateKmsKeyError>`](crate::error::AssociateKmsKeyError)
@@ -118,9 +118,9 @@ impl Client {
     ///   - [`task_name(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::task_name) / [`set_task_name(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_task_name): <p>The name of the export task.</p>
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_group_name): <p>The name of the log group.</p>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_stream_name_prefix): <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    ///   - [`from(i64)`](crate::client::fluent_builders::CreateExportTask::from) / [`set_from(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_from): <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
-    ///   - [`to(i64)`](crate::client::fluent_builders::CreateExportTask::to) / [`set_to(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_to): <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
-    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination): <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
+    ///   - [`from(i64)`](crate::client::fluent_builders::CreateExportTask::from) / [`set_from(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_from): <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
+    ///   - [`to(i64)`](crate::client::fluent_builders::CreateExportTask::to) / [`set_to(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_to): <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>  <p>You must specify a time that is not earlier than when this log group was created.</p>
+    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination): <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
     ///   - [`destination_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination_prefix) / [`set_destination_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination_prefix): <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     /// - On success, responds with [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::CreateExportTaskOutput::task_id): <p>The ID of the export task.</p>
@@ -132,8 +132,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateLogGroup::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateLogGroup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateLogGroup::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLogGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLogGroup::set_tags): <p>The key-value pairs to use for the tags.</p>  <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateLogGroup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateLogGroup::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLogGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLogGroup::set_tags): <p>The key-value pairs to use for the tags.</p>  <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     /// - On success, responds with [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<CreateLogGroupError>`](crate::error::CreateLogGroupError)
@@ -150,6 +150,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateLogStreamError>`](crate::error::CreateLogStreamError)
     pub fn create_log_stream(&self) -> fluent_builders::CreateLogStream {
         fluent_builders::CreateLogStream::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteDataProtectionPolicy`](crate::client::fluent_builders::DeleteDataProtectionPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDataProtectionPolicy::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDataProtectionPolicy::set_log_group_identifier): <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+    /// - On success, responds with [`DeleteDataProtectionPolicyOutput`](crate::output::DeleteDataProtectionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDataProtectionPolicyError>`](crate::error::DeleteDataProtectionPolicyError)
+    pub fn delete_data_protection_policy(&self) -> fluent_builders::DeleteDataProtectionPolicy {
+        fluent_builders::DeleteDataProtectionPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteDestination`](crate::client::fluent_builders::DeleteDestination) operation.
     ///
@@ -240,7 +250,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`destination_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeDestinations::destination_name_prefix) / [`set_destination_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeDestinations::set_destination_name_prefix): <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDestinations::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDestinations::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDestinations::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDestinations::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDestinations::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
     /// - On success, responds with [`DescribeDestinationsOutput`](crate::output::DescribeDestinationsOutput) with field(s):
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::DescribeDestinationsOutput::destinations): <p>The destinations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDestinationsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -251,7 +261,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeExportTasks`](crate::client::fluent_builders::DescribeExportTasks) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_task_id): <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_task_id): <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
     ///   - [`status_code(ExportTaskStatusCode)`](crate::client::fluent_builders::DescribeExportTasks::status_code) / [`set_status_code(Option<ExportTaskStatusCode>)`](crate::client::fluent_builders::DescribeExportTasks::set_status_code): <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeExportTasks::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeExportTasks::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -266,11 +276,14 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLogGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::log_group_name_prefix) / [`set_log_group_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_log_group_name_prefix): <p>The prefix to match.</p>
+    ///   - [`account_identifiers(Vec<String>)`](crate::client::fluent_builders::DescribeLogGroups::account_identifiers) / [`set_account_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLogGroups::set_account_identifiers): <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
+    ///   - [`log_group_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::log_group_name_prefix) / [`set_log_group_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_log_group_name_prefix): <p>The prefix to match.</p> <note>   <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>  </note>
+    ///   - [`log_group_name_pattern(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::log_group_name_pattern) / [`set_log_group_name_pattern(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_log_group_name_pattern): <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>   <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>  </note>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLogGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLogGroups::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    ///   - [`include_linked_accounts(bool)`](crate::client::fluent_builders::DescribeLogGroups::include_linked_accounts) / [`set_include_linked_accounts(Option<bool>)`](crate::client::fluent_builders::DescribeLogGroups::set_include_linked_accounts): <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>  <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account. </p> <note>   <p> If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>, <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response. </p>  </note>
     /// - On success, responds with [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput) with field(s):
-    ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::output::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its events never expire.</p>
+    ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::output::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeLogGroupsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeLogGroupsError>`](crate::error::DescribeLogGroupsError)
     pub fn describe_log_groups(&self) -> fluent_builders::DescribeLogGroups {
@@ -280,9 +293,10 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLogStreams::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_name): <p>The name of the log group.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_stream_name_prefix): <p>The prefix to match.</p>  <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
-    ///   - [`order_by(OrderBy)`](crate::client::fluent_builders::DescribeLogStreams::order_by) / [`set_order_by(Option<OrderBy>)`](crate::client::fluent_builders::DescribeLogStreams::set_order_by): <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>  <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>  <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    ///   - [`order_by(OrderBy)`](crate::client::fluent_builders::DescribeLogStreams::order_by) / [`set_order_by(Option<OrderBy>)`](crate::client::fluent_builders::DescribeLogStreams::set_order_by): <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>  <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>  <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     ///   - [`descending(bool)`](crate::client::fluent_builders::DescribeLogStreams::descending) / [`set_descending(Option<bool>)`](crate::client::fluent_builders::DescribeLogStreams::set_descending): <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLogStreams::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLogStreams::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -298,7 +312,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_filter_name_prefix): <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    ///   - [`filter_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_filter_name_prefix): <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeMetricFilters::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeMetricFilters::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_metric_name): <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
@@ -378,38 +392,54 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::FilterLogEvents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_name): <p>The name of the log group to search.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_name): <p>The name of the log group to search.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`log_stream_names(Vec<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_names) / [`set_log_stream_names(Option<Vec<String>>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_names): <p>Filters the results to only logs from the log streams in this list.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_name_prefix): <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    ///   - [`start_time(i64)`](crate::client::fluent_builders::FilterLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
-    ///   - [`end_time(i64)`](crate::client::fluent_builders::FilterLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::FilterLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::FilterLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
     ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_filter_pattern): <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>  <p>If not provided, all the events are matched.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_next_token): <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::FilterLogEvents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::FilterLogEvents::set_limit): <p>The maximum number of events to return. The default is 10,000 events.</p>
-    ///   - [`interleaved(bool)`](crate::client::fluent_builders::FilterLogEvents::interleaved) / [`set_interleaved(Option<bool>)`](crate::client::fluent_builders::FilterLogEvents::set_interleaved): <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>  <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+    ///   - [`interleaved(bool)`](crate::client::fluent_builders::FilterLogEvents::interleaved) / [`set_interleaved(Option<bool>)`](crate::client::fluent_builders::FilterLogEvents::set_interleaved): <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>  <p> <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+    ///   - [`unmask(bool)`](crate::client::fluent_builders::FilterLogEvents::unmask) / [`set_unmask(bool)`](crate::client::fluent_builders::FilterLogEvents::set_unmask): <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>  <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     /// - On success, responds with [`FilterLogEventsOutput`](crate::output::FilterLogEventsOutput) with field(s):
     ///   - [`events(Option<Vec<FilteredLogEvent>>)`](crate::output::FilterLogEventsOutput::events): <p>The matched events.</p>
-    ///   - [`searched_log_streams(Option<Vec<SearchedLogStream>>)`](crate::output::FilterLogEventsOutput::searched_log_streams): <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>  <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
+    ///   - [`searched_log_streams(Option<Vec<SearchedLogStream>>)`](crate::output::FilterLogEventsOutput::searched_log_streams): <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p>  <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
     ///   - [`next_token(Option<String>)`](crate::output::FilterLogEventsOutput::next_token): <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<FilterLogEventsError>`](crate::error::FilterLogEventsError)
     pub fn filter_log_events(&self) -> fluent_builders::FilterLogEvents {
         fluent_builders::FilterLogEvents::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetDataProtectionPolicy`](crate::client::fluent_builders::GetDataProtectionPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetDataProtectionPolicy::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetDataProtectionPolicy::set_log_group_identifier): <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
+    /// - On success, responds with [`GetDataProtectionPolicyOutput`](crate::output::GetDataProtectionPolicyOutput) with field(s):
+    ///   - [`log_group_identifier(Option<String>)`](crate::output::GetDataProtectionPolicyOutput::log_group_identifier): <p>The log group name or ARN that you specified in your request.</p>
+    ///   - [`policy_document(Option<String>)`](crate::output::GetDataProtectionPolicyOutput::policy_document): <p>The data protection policy document for this log group.</p>
+    ///   - [`last_updated_time(Option<i64>)`](crate::output::GetDataProtectionPolicyOutput::last_updated_time): <p>The date and time that this policy was most recently updated.</p>
+    /// - On failure, responds with [`SdkError<GetDataProtectionPolicyError>`](crate::error::GetDataProtectionPolicyError)
+    pub fn get_data_protection_policy(&self) -> fluent_builders::GetDataProtectionPolicy {
+        fluent_builders::GetDataProtectionPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetLogEvents`](crate::client::fluent_builders::GetLogEvents) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetLogEvents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_name): <p>The name of the log group.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_stream_name): <p>The name of the log stream.</p>
-    ///   - [`start_time(i64)`](crate::client::fluent_builders::GetLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
-    ///   - [`end_time(i64)`](crate::client::fluent_builders::GetLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::GetLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::GetLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(i32)`](crate::client::fluent_builders::GetLogEvents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetLogEvents::set_limit): <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetLogEvents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetLogEvents::set_limit): <p>The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).</p>
     ///   - [`start_from_head(bool)`](crate::client::fluent_builders::GetLogEvents::start_from_head) / [`set_start_from_head(Option<bool>)`](crate::client::fluent_builders::GetLogEvents::set_start_from_head): <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>  <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
+    ///   - [`unmask(bool)`](crate::client::fluent_builders::GetLogEvents::unmask) / [`set_unmask(bool)`](crate::client::fluent_builders::GetLogEvents::set_unmask): <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>  <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     /// - On success, responds with [`GetLogEventsOutput`](crate::output::GetLogEventsOutput) with field(s):
     ///   - [`events(Option<Vec<OutputLogEvent>>)`](crate::output::GetLogEventsOutput::events): <p>The events.</p>
     ///   - [`next_forward_token(Option<String>)`](crate::output::GetLogEventsOutput::next_forward_token): <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
-    ///   - [`next_backward_token(Option<String>)`](crate::output::GetLogEventsOutput::next_backward_token): <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
+    ///   - [`next_backward_token(Option<String>)`](crate::output::GetLogEventsOutput::next_backward_token): <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     /// - On failure, responds with [`SdkError<GetLogEventsError>`](crate::error::GetLogEventsError)
     pub fn get_log_events(&self) -> fluent_builders::GetLogEvents {
         fluent_builders::GetLogEvents::new(self.handle.clone())
@@ -417,8 +447,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLogGroupFields`](crate::client::fluent_builders::GetLogGroupFields) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_name): <p>The name of the log group to search.</p>
-    ///   - [`time(i64)`](crate::client::fluent_builders::GetLogGroupFields::time) / [`set_time(Option<i64>)`](crate::client::fluent_builders::GetLogGroupFields::set_time): <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>  <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_name): <p>The name of the log group to search.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`time(i64)`](crate::client::fluent_builders::GetLogGroupFields::time) / [`set_time(Option<i64>)`](crate::client::fluent_builders::GetLogGroupFields::set_time): <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>  <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     /// - On success, responds with [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput) with field(s):
     ///   - [`log_group_fields(Option<Vec<LogGroupField>>)`](crate::output::GetLogGroupFieldsOutput::log_group_fields): <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     /// - On failure, responds with [`SdkError<GetLogGroupFieldsError>`](crate::error::GetLogGroupFieldsError)
@@ -429,6 +460,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_record_pointer(impl Into<String>)`](crate::client::fluent_builders::GetLogRecord::log_record_pointer) / [`set_log_record_pointer(Option<String>)`](crate::client::fluent_builders::GetLogRecord::set_log_record_pointer): <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
+    ///   - [`unmask(bool)`](crate::client::fluent_builders::GetLogRecord::unmask) / [`set_unmask(bool)`](crate::client::fluent_builders::GetLogRecord::set_unmask): <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>  <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     /// - On success, responds with [`GetLogRecordOutput`](crate::output::GetLogRecordOutput) with field(s):
     ///   - [`log_record(Option<HashMap<String, String>>)`](crate::output::GetLogRecordOutput::log_record): <p>The requested log event, as a JSON string.</p>
     /// - On failure, responds with [`SdkError<GetLogRecordError>`](crate::error::GetLogRecordError)
@@ -442,10 +474,20 @@ impl Client {
     /// - On success, responds with [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput) with field(s):
     ///   - [`results(Option<Vec<Vec<ResultField>>>)`](crate::output::GetQueryResultsOutput::results): <p>The log events that matched the query criteria during the most recent time it ran.</p>  <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     ///   - [`statistics(Option<QueryStatistics>)`](crate::output::GetQueryResultsOutput::statistics): <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
-    ///   - [`status(Option<QueryStatus>)`](crate::output::GetQueryResultsOutput::status): <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>  <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
+    ///   - [`status(Option<QueryStatus>)`](crate::output::GetQueryResultsOutput::status): <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>  <p>Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::error::GetQueryResultsError)
     pub fn get_query_results(&self) -> fluent_builders::GetQueryResults {
         fluent_builders::GetQueryResults::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource that you want to view tags for.</p>  <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>  <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the requested resource.&gt;</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsLogGroup`](crate::client::fluent_builders::ListTagsLogGroup) operation.
     ///
@@ -457,12 +499,26 @@ impl Client {
     pub fn list_tags_log_group(&self) -> fluent_builders::ListTagsLogGroup {
         fluent_builders::ListTagsLogGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutDataProtectionPolicy`](crate::client::fluent_builders::PutDataProtectionPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::set_log_group_identifier): <p>Specify either the log group name or log group ARN.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutDataProtectionPolicy::set_policy_document): <p>Specify the data protection policy, in JSON.</p>  <p>This policy must include two JSON blocks:</p>  <ul>   <li> <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p> <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p> </li>   <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>  </ul>  <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>   <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>  </important>
+    /// - On success, responds with [`PutDataProtectionPolicyOutput`](crate::output::PutDataProtectionPolicyOutput) with field(s):
+    ///   - [`log_group_identifier(Option<String>)`](crate::output::PutDataProtectionPolicyOutput::log_group_identifier): <p>The log group name or ARN that you specified in your request.</p>
+    ///   - [`policy_document(Option<String>)`](crate::output::PutDataProtectionPolicyOutput::policy_document): <p>The data protection policy used for this log group.</p>
+    ///   - [`last_updated_time(Option<i64>)`](crate::output::PutDataProtectionPolicyOutput::last_updated_time): <p>The date and time that this policy was most recently updated.</p>
+    /// - On failure, responds with [`SdkError<PutDataProtectionPolicyError>`](crate::error::PutDataProtectionPolicyError)
+    pub fn put_data_protection_policy(&self) -> fluent_builders::PutDataProtectionPolicy {
+        fluent_builders::PutDataProtectionPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PutDestination`](crate::client::fluent_builders::PutDestination) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::PutDestination::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::PutDestination::set_destination_name): <p>A name for the destination.</p>
     ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::PutDestination::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::PutDestination::set_target_arn): <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutDestination::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutDestination::set_role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutDestination::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutDestination::set_tags): <p>An optional list of key-value pairs to associate with the resource.</p>  <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> </p>
     /// - On success, responds with [`PutDestinationOutput`](crate::output::PutDestinationOutput) with field(s):
     ///   - [`destination(Option<Destination>)`](crate::output::PutDestinationOutput::destination): <p>The destination.</p>
     /// - On failure, responds with [`SdkError<PutDestinationError>`](crate::error::PutDestinationError)
@@ -487,9 +543,9 @@ impl Client {
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_log_group_name): <p>The name of the log group.</p>
     ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_log_stream_name): <p>The name of the log stream.</p>
     ///   - [`log_events(Vec<InputLogEvent>)`](crate::client::fluent_builders::PutLogEvents::log_events) / [`set_log_events(Option<Vec<InputLogEvent>>)`](crate::client::fluent_builders::PutLogEvents::set_log_events): <p>The log events.</p>
-    ///   - [`sequence_token(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::sequence_token) / [`set_sequence_token(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_sequence_token): <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
+    ///   - [`sequence_token(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::sequence_token) / [`set_sequence_token(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_sequence_token): <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>   <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>  </important>
     /// - On success, responds with [`PutLogEventsOutput`](crate::output::PutLogEventsOutput) with field(s):
-    ///   - [`next_sequence_token(Option<String>)`](crate::output::PutLogEventsOutput::next_sequence_token): <p>The next sequence token.</p>
+    ///   - [`next_sequence_token(Option<String>)`](crate::output::PutLogEventsOutput::next_sequence_token): <p>The next sequence token.</p> <important>   <p>This field has been deprecated.</p>   <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.</p>  </important>
     ///   - [`rejected_log_events_info(Option<RejectedLogEventsInfo>)`](crate::output::PutLogEventsOutput::rejected_log_events_info): <p>The rejected events.</p>
     /// - On failure, responds with [`SdkError<PutLogEventsError>`](crate::error::PutLogEventsError)
     pub fn put_log_events(&self) -> fluent_builders::PutLogEvents {
@@ -511,7 +567,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutQueryDefinition`](crate::client::fluent_builders::PutQueryDefinition) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_name): <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_name): <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     ///   - [`query_definition_id(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::query_definition_id) / [`set_query_definition_id(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_query_definition_id): <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>  <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
     ///   - [`log_group_names(Vec<String>)`](crate::client::fluent_builders::PutQueryDefinition::log_group_names) / [`set_log_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::PutQueryDefinition::set_log_group_names): <p>Use this parameter to include specific log groups as part of your query definition.</p>  <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
     ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_query_string): <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
@@ -525,7 +581,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_name): <p>Name of the new policy. This parameter is required.</p>
-    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_document): <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>  <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>  <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>  <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>  <p></p>  <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_document): <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>  <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>  <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>  <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs. You would also replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>  <p></p>  <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::output::PutResourcePolicyOutput::resource_policy): <p>The new policy.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
@@ -536,7 +592,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutRetentionPolicy::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutRetentionPolicy::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`retention_in_days(i32)`](crate::client::fluent_builders::PutRetentionPolicy::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::client::fluent_builders::PutRetentionPolicy::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>  <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    ///   - [`retention_in_days(i32)`](crate::client::fluent_builders::PutRetentionPolicy::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::client::fluent_builders::PutRetentionPolicy::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>  <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     /// - On success, responds with [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::error::PutRetentionPolicyError)
@@ -549,9 +605,9 @@ impl Client {
     ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_log_group_name): <p>The name of the log group.</p>
     ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_filter_name): <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
     ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_filter_pattern): <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_destination_arn): <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>  <ul>   <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>   <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>  </ul>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_destination_arn): <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>  <ul>   <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>   <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>  </ul>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
-    ///   - [`distribution(Distribution)`](crate::client::fluent_builders::PutSubscriptionFilter::distribution) / [`set_distribution(Option<Distribution>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_distribution): <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+    ///   - [`distribution(Distribution)`](crate::client::fluent_builders::PutSubscriptionFilter::distribution) / [`set_distribution(Option<Distribution>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_distribution): <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
     /// - On success, responds with [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput)
 
     /// - On failure, responds with [`SdkError<PutSubscriptionFilterError>`](crate::error::PutSubscriptionFilterError)
@@ -561,10 +617,11 @@ impl Client {
     /// Constructs a fluent builder for the [`StartQuery`](crate::client::fluent_builders::StartQuery) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::StartQuery::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::StartQuery::set_log_group_name): <p>The log group on which to perform the query.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
-    ///   - [`log_group_names(Vec<String>)`](crate::client::fluent_builders::StartQuery::log_group_names) / [`set_log_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartQuery::set_log_group_names): <p>The list of log groups to be queried. You can include up to 20 log groups.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
-    ///   - [`start_time(i64)`](crate::client::fluent_builders::StartQuery::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_start_time): <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
-    ///   - [`end_time(i64)`](crate::client::fluent_builders::StartQuery::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_end_time): <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::StartQuery::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::StartQuery::set_log_group_name): <p>The log group on which to perform the query.</p> <note>   <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>  </note>
+    ///   - [`log_group_names(Vec<String>)`](crate::client::fluent_builders::StartQuery::log_group_names) / [`set_log_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartQuery::set_log_group_names): <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>   <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>  </note>
+    ///   - [`log_group_identifiers(Vec<String>)`](crate::client::fluent_builders::StartQuery::log_group_identifiers) / [`set_log_group_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::StartQuery::set_log_group_identifiers): <p>The list of log groups to query. You can include up to 50 log groups.</p>  <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>  <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>  <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::StartQuery::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_start_time): <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::StartQuery::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_end_time): <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::StartQuery::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::StartQuery::set_query_string): <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::StartQuery::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::StartQuery::set_limit): <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     /// - On success, responds with [`StartQueryOutput`](crate::output::StartQueryOutput) with field(s):
@@ -594,6 +651,17 @@ impl Client {
     pub fn tag_log_group(&self) -> fluent_builders::TagLogGroup {
         fluent_builders::TagLogGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource that you're adding tags to.</p>  <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>  <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TestMetricFilter`](crate::client::fluent_builders::TestMetricFilter) operation.
     ///
     /// - The fluent builder is configurable:
@@ -616,6 +684,17 @@ impl Client {
     pub fn untag_log_group(&self) -> fluent_builders::UntagLogGroup {
         fluent_builders::UntagLogGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the CloudWatch Logs resource that you're removing tags from.</p>  <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>  <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
 
@@ -626,12 +705,12 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AssociateKmsKey`.
     ///
-    /// <p>Associates the specified Key Management Service customer master key (CMK) with the specified log group.</p>
-    /// <p>Associating an KMS CMK with a log group overrides any existing associations between the log group and a CMK. After a CMK is associated with a log group, all newly ingested data for the log group is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p> <important>
-    /// <p>CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    /// <p>Associates the specified KMS key with the specified log group.</p>
+    /// <p>Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key. After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS keyis still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p> <important>
+    /// <p>CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     /// </important>
     /// <p>It can take up to 5 minutes for this operation to take effect.</p>
-    /// <p>If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you receive an <code>InvalidParameterException</code> error. </p>
+    /// <p>If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code> error. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateKmsKey {
         handle: std::sync::Arc<super::Handle>,
@@ -704,12 +783,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -791,13 +870,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExportTask`.
     ///
-    /// <p>Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.</p> <important>
-    /// <p>Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period is not supported.</p>
+    /// <p>Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.</p>
+    /// <p>Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period is also supported.</p>
     /// <p>Exporting to S3 buckets that are encrypted with AES-256 is supported. </p>
-    /// </important>
     /// <p>This is an asynchronous call. If all the required information is provided, this operation initiates an export task and responds with the ID of the task. After the task has started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a> to get the status of the export task. Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.</p>
-    /// <p>You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported objects.</p> <note>
-    /// <p>Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log fild data by using Linux utilities.</p>
+    /// <p>You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate log data for each export task, specify a prefix to be used as the Amazon S3 key prefix for all exported objects.</p> <note>
+    /// <p>Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log field data by using Linux utilities.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExportTask {
@@ -894,32 +972,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_stream_name_prefix(input);
             self
         }
-        /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
+        /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
         pub fn from(mut self, input: i64) -> Self {
             self.inner = self.inner.from(input);
             self
         }
-        /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
+        /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
         pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_from(input);
             self
         }
-        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
+        /// <p>You must specify a time that is not earlier than when this log group was created.</p>
         pub fn to(mut self, input: i64) -> Self {
             self.inner = self.inner.to(input);
             self
         }
-        /// <p>The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+        /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
+        /// <p>You must specify a time that is not earlier than when this log group was created.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_to(input);
             self
         }
-        /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
+        /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination(input.into());
             self
         }
-        /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
+        /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_destination(input);
             self
@@ -943,14 +1023,14 @@ pub mod fluent_builders {
     /// <p>Creates a log group with the specified name. You can create up to 20,000 log groups per account.</p>
     /// <p>You must use the following guidelines when naming a log group:</p>
     /// <ul>
-    /// <li> <p>Log group names must be unique within a region for an Amazon Web Services account.</p> </li>
+    /// <li> <p>Log group names must be unique within a Region for an Amazon Web Services account.</p> </li>
     /// <li> <p>Log group names can be between 1 and 512 characters long.</p> </li>
     /// <li> <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p> </li>
     /// </ul>
-    /// <p>When you create a log group, by default the log events in the log group never expire. To set a retention policy so that events expire and are deleted after a specified time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
-    /// <p>If you associate a Key Management Service customer master key (CMK) with the log group, ingested data is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p>
-    /// <p>If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you receive an <code>InvalidParameterException</code> error. </p> <important>
-    /// <p>CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    /// <p>When you create a log group, by default the log events in the log group do not expire. To set a retention policy so that events expire and are deleted after a specified time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
+    /// <p>If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p>
+    /// <p>If you attempt to associate a KMS key with the log group but the KMS keydoes not exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code> error. </p> <important>
+    /// <p>CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogGroup {
@@ -1024,12 +1104,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -1039,7 +1119,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs to use for the tags.</p>
-        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+        /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1049,7 +1129,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-value pairs to use for the tags.</p>
-        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+        /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1068,7 +1148,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>Log stream names must be unique within the log group.</p> </li>
     /// <li> <p>Log stream names can be between 1 and 512 characters long.</p> </li>
-    /// <li> <p>The ':' (colon) and '*' (asterisk) characters are not allowed.</p> </li>
+    /// <li> <p>Don't use ':' (colon) or '*' (asterisk) characters.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogStream {
@@ -1153,6 +1233,83 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_log_stream_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteDataProtectionPolicy`.
+    ///
+    /// <p>Deletes the data protection policy from the specified log group. </p>
+    /// <p>For more information about data protection policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteDataProtectionPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_data_protection_policy_input::Builder,
+    }
+    impl DeleteDataProtectionPolicy {
+        /// Creates a new `DeleteDataProtectionPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteDataProtectionPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDataProtectionPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDataProtectionPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDataProtectionPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
             self
         }
     }
@@ -1888,12 +2045,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+        /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+        /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -1961,12 +2118,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
+        /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
+        /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
@@ -2009,6 +2166,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the specified log groups. You can list all your log groups or filter the results by prefix. The results are ASCII-sorted by log group name.</p>
     /// <p>CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code> action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i> </code> condition key to control access. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -2074,17 +2232,55 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeLogGroupsPaginator {
             crate::paginator::DescribeLogGroupsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The prefix to match.</p>
+        /// Appends an item to `accountIdentifiers`.
+        ///
+        /// To override the contents of this collection use [`set_account_identifiers`](Self::set_account_identifiers).
+        ///
+        /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
+        pub fn account_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_identifiers(input.into());
+            self
+        }
+        /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
+        pub fn set_account_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_identifiers(input);
+            self
+        }
+        /// <p>The prefix to match.</p> <note>
+        /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+        /// </note>
         pub fn log_group_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name_prefix(input.into());
             self
         }
-        /// <p>The prefix to match.</p>
+        /// <p>The prefix to match.</p> <note>
+        /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+        /// </note>
         pub fn set_log_group_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_log_group_name_prefix(input);
+            self
+        }
+        /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>
+        /// <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+        /// </note>
+        pub fn log_group_name_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name_pattern(input.into());
+            self
+        }
+        /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>
+        /// <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>
+        /// </note>
+        pub fn set_log_group_name_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_name_pattern(input);
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -2107,11 +2303,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
+        /// <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>
+        /// <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account. </p> <note>
+        /// <p> If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>, <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response. </p>
+        /// </note>
+        pub fn include_linked_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_linked_accounts(input);
+            self
+        }
+        /// <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>
+        /// <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account. </p> <note>
+        /// <p> If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>, <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response. </p>
+        /// </note>
+        pub fn set_include_linked_accounts(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_linked_accounts(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DescribeLogStreams`.
     ///
     /// <p>Lists the log streams for the specified log group. You can list all the log streams or filter the results by prefix. You can also control how the results are ordered.</p>
     /// <p>This operation has a limit of five transactions per second, after which transactions are throttled.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogStreams {
         handle: std::sync::Arc<super::Handle>,
@@ -2177,17 +2390,36 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeLogStreamsPaginator {
             crate::paginator::DescribeLogStreamsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of the log group.</p>
+        /// <p>The name of the log group.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
-        /// <p>The name of the log group.</p>
+        /// <p>The name of the log group.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_log_group_name(input);
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
             self
         }
         /// <p>The prefix to match.</p>
@@ -2207,14 +2439,14 @@ pub mod fluent_builders {
         }
         /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
         /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
             self.inner = self.inner.order_by(input);
             self
         }
         /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
         /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.inner = self.inner.set_order_by(input);
             self
@@ -2331,12 +2563,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
+        /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
         pub fn filter_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_name_prefix(input.into());
             self
         }
-        /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
+        /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
         pub fn set_filter_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2390,7 +2622,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeQueries`.
     ///
-    /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.</p>
+    /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQueries {
         handle: std::sync::Arc<super::Handle>,
@@ -2794,8 +3026,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateKmsKey`.
     ///
-    /// <p>Disassociates the associated Key Management Service customer master key (CMK) from the specified log group.</p>
-    /// <p>After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested.</p>
+    /// <p>Disassociates the associated KMS key from the specified log group.</p>
+    /// <p>After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the KMS key whenever the encrypted data is requested.</p>
     /// <p>Note that it can take up to 5 minutes for this operation to take effect.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateKmsKey {
@@ -2873,8 +3105,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FilterLogEvents`.
     ///
     /// <p>Lists log events from the specified log group. You can list all the log events or filter the results using a filter pattern, a time range, and the name of the log stream.</p>
-    /// <p>By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the events found within the time range that you specify. If the results include a token, then there are more log events available, and you can get additional results by specifying the token in a subsequent call. This operation can return empty results while there are more log events available through the token.</p>
+    /// <p>You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.</p>
+    /// <p>By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the events found within the specified time range. If the results include a token, that means there are more log events available. You can get additional results by specifying the token in a subsequent call. This operation can return empty results while there are more log events available through the token.</p>
     /// <p>The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FilterLogEvents {
         handle: std::sync::Arc<super::Handle>,
@@ -2940,17 +3174,36 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::FilterLogEventsPaginator {
             crate::paginator::FilterLogEventsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of the log group to search.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
-        /// <p>The name of the log group to search.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_log_group_name(input);
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
             self
         }
         /// Appends an item to `logStreamNames`.
@@ -2987,22 +3240,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_stream_name_prefix(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -3042,8 +3295,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
-        /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+        /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
+        /// <p> <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
         #[deprecated(
             note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
         )]
@@ -3051,8 +3304,8 @@ pub mod fluent_builders {
             self.inner = self.inner.interleaved(input);
             self
         }
-        /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
-        /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+        /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
+        /// <p> <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
         #[deprecated(
             note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
         )]
@@ -3060,11 +3313,100 @@ pub mod fluent_builders {
             self.inner = self.inner.set_interleaved(input);
             self
         }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn unmask(mut self, input: bool) -> Self {
+            self.inner = self.inner.unmask(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn set_unmask(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_unmask(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataProtectionPolicy`.
+    ///
+    /// <p>Returns information about a log group data protection policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataProtectionPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_protection_policy_input::Builder,
+    }
+    impl GetDataProtectionPolicy {
+        /// Creates a new `GetDataProtectionPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDataProtectionPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataProtectionPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDataProtectionPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetLogEvents`.
     ///
     /// <p>Lists log events from the specified log stream. You can list all of the log events or filter using a time range.</p>
     /// <p>By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation can return empty results while there are more log events available through the token.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogEvents {
         handle: std::sync::Arc<super::Handle>,
@@ -3130,17 +3472,36 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetLogEventsPaginator {
             crate::paginator::GetLogEventsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The name of the log group.</p>
+        /// <p>The name of the log group.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
-        /// <p>The name of the log group.</p>
+        /// <p>The name of the log group.</p> <note>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_log_group_name(input);
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
+        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
             self
         }
         /// <p>The name of the log stream.</p>
@@ -3156,22 +3517,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_stream_name(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -3186,12 +3547,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+        /// <p>The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+        /// <p>The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3208,12 +3569,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_from_head(input);
             self
         }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn unmask(mut self, input: bool) -> Self {
+            self.inner = self.inner.unmask(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn set_unmask(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_unmask(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetLogGroupFields`.
     ///
-    /// <p>Returns a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field. The search is limited to a time period that you specify.</p>
-    /// <p>In the results, fields that start with @ are fields generated by CloudWatch Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
+    /// <p>Returns a list of the fields that are included in log events in the specified log group. Includes the percentage of log events that contain each field. The search is limited to a time period that you specify.</p>
+    /// <p>In the results, fields that start with <code>@</code> are fields generated by CloudWatch Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
     /// <p>The response results are sorted by the frequency percentage, starting with the highest percentage.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogGroupFields {
         handle: std::sync::Arc<super::Handle>,
@@ -3274,11 +3648,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group to search.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
         /// <p>The name of the log group to search.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3286,16 +3662,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
-        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+        /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn time(mut self, input: i64) -> Self {
             self.inner = self.inner.time(input);
             self
         }
-        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
-        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+        /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn set_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_time(input);
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
+        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
             self
         }
     }
@@ -3375,13 +3766,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_record_pointer(input);
             self
         }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn unmask(mut self, input: bool) -> Self {
+            self.inner = self.inner.unmask(input);
+            self
+        }
+        /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
+        /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
+        pub fn set_unmask(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_unmask(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetQueryResults`.
     ///
     /// <p>Returns the results from the specified query.</p>
     /// <p>Only the fields requested in the query are returned, along with a <code>@ptr</code> field, which is the identifier for the log record. You can use the value of <code>@ptr</code> in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a> operation to get the full log record.</p>
-    /// <p> <code>GetQueryResults</code> does not start a query execution. To run a query, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.</p>
+    /// <p> <code>GetQueryResults</code> does not start running a query. To run a query, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.</p>
     /// <p>If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status, you can retry the operation later to see the final results. </p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start queries in linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryResults {
         handle: std::sync::Arc<super::Handle>,
@@ -3452,9 +3856,92 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support tagging.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListTagsForResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource that you want to view tags for.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource that you want to view tags for.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsLogGroup`.
     ///
+    /// <important>
+    /// <p>The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a> instead.</p>
+    /// </important>
     /// <p>Lists the tags for the specified log group.</p>
+    #[deprecated(note = "Please use the generic tagging API ListTagsForResource")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsLogGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -3528,10 +4015,119 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutDataProtectionPolicy`.
+    ///
+    /// <p>Creates a data protection policy for the specified log group. A data protection policy can help safeguard sensitive data that's ingested by the log group by auditing and masking the sensitive log data.</p> <important>
+    /// <p>Sensitive data is detected and masked when it is ingested into the log group. When you set a data protection policy, log events ingested into the log group before that time are not masked.</p>
+    /// </important>
+    /// <p>By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a> operation with the <code>unmask</code> parameter set to <code>true</code> to view the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the <code>unmask</code> query command.</p>
+    /// <p>For more information, including a list of types of data that can be audited and masked, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive log data with masking</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutDataProtectionPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_data_protection_policy_input::Builder,
+    }
+    impl PutDataProtectionPolicy {
+        /// Creates a new `PutDataProtectionPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutDataProtectionPolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutDataProtectionPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutDataProtectionPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specify either the log group name or log group ARN.</p>
+        pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifier(input.into());
+            self
+        }
+        /// <p>Specify either the log group name or log group ARN.</p>
+        pub fn set_log_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifier(input);
+            self
+        }
+        /// <p>Specify the data protection policy, in JSON.</p>
+        /// <p>This policy must include two JSON blocks:</p>
+        /// <ul>
+        /// <li> <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p> <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p> </li>
+        /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
+        /// </ul>
+        /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
+        /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+        /// </important>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>Specify the data protection policy, in JSON.</p>
+        /// <p>This policy must include two JSON blocks:</p>
+        /// <ul>
+        /// <li> <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p> <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p> </li>
+        /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
+        /// </ul>
+        /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
+        /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+        /// </important>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutDestination`.
     ///
     /// <p>Creates or updates a destination. This operation is used only to create destinations for cross-account subscriptions.</p>
-    /// <p>A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to a real-time stream of log events for a different account, ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
+    /// <p>A destination encapsulates a physical resource (such as an Amazon Kinesis stream). With a destination, you can subscribe to a real-time stream of log events for a different account, ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
     /// <p>Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code> does not set any access policy with the destination, which means a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a> after <code>PutDestination</code>.</p>
     /// <p>To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code> permission.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3626,11 +4222,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An optional list of key-value pairs to associate with the resource.</p>
+        /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>An optional list of key-value pairs to associate with the resource.</p>
+        /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutDestinationPolicy`.
     ///
     /// <p>Creates or updates an access policy associated with an existing destination. An access policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination.</p>
-    /// <p>If multiple Amazon Web Services accounts are sending logs to this destination, each sender account must be listed separately in the policy. The policy does not support specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code> global key.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDestinationPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -3731,19 +4351,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLogEvents`.
     ///
-    /// <p>Uploads a batch of log events to the specified log stream.</p>
-    /// <p>You must include the sequence token obtained from the response of the previous call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
+    /// <p>Uploads a batch of log events to the specified log stream.</p> <important>
+    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions on the same log stream. </p>
+    /// </important>
     /// <p>The batch of events must satisfy the following constraints:</p>
     /// <ul>
     /// <li> <p>The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p> </li>
     /// <li> <p>None of the log events in the batch can be more than 2 hours in the future.</p> </li>
-    /// <li> <p>None of the log events in the batch can be older than 14 days or older than the retention period of the log group.</p> </li>
-    /// <li> <p>The log events in the batch must be in chronological order by their timestamp. The timestamp is the time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li>
+    /// <li> <p>None of the log events in the batch can be more than 14 days in the past. Also, none of the log events can be from earlier than the retention period of the log group.</p> </li>
+    /// <li> <p>The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.) </p> </li>
     /// <li> <p>A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.</p> </li>
     /// <li> <p>The maximum number of log events in a batch is 10,000.</p> </li>
-    /// <li> <p>There is a quota of 5 requests per second per log stream. Additional requests are throttled. This quota can't be changed.</p> </li>
+    /// <li> <important>
+    /// <p>The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code> actions are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling quota by using the Service Quotas service.</p>
+    /// </important> </li>
     /// </ul>
-    /// <p>If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is an invalid Amazon Web Services access key ID or secret key. </p>
+    /// <p>If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web Services access key ID or secret key. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLogEvents {
         handle: std::sync::Arc<super::Handle>,
@@ -3846,12 +4469,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_events(input);
             self
         }
-        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
+        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
+        /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
+        /// </important>
         pub fn sequence_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sequence_token(input.into());
             self
         }
-        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
+        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
+        /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
+        /// </important>
         pub fn set_sequence_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3862,11 +4489,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricFilter`.
     ///
-    /// <p>Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to configure rules to extract metric data from log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
+    /// <p>Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can configure rules to extract metric data from log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
     /// <p>The maximum number of metric filters that can be associated with a log group is 100.</p>
     /// <p>When you create a metric filter, you can also optionally assign a unit and dimensions to the metric that is created.</p> <important>
     /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-    /// <p>To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different name/value pairs for the dimensions that you have specified within a certain amount of time.</p>
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1,000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
     /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3985,7 +4612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutQueryDefinition`.
     ///
     /// <p>Creates or updates a query definition for CloudWatch Logs Insights. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing Log Data with CloudWatch Logs Insights</a>.</p>
-    /// <p>To update a query definition, specify its <code>queryDefinitionId</code> in your request. The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are changed to the values that you specify in your update operation. No current values are retained from the current query definition. For example, if you update a current query definition that includes log groups, and you don't specify the <code>logGroupNames</code> parameter in your update operation, the query definition changes to contain no log groups.</p>
+    /// <p>To update a query definition, specify its <code>queryDefinitionId</code> in your request. The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are changed to the values that you specify in your update operation. No current values are retained from the current query definition. For example, imagine updating a current query definition that includes log groups. If you don't specify the <code>logGroupNames</code> parameter in your update operation, the query definition changes to contain no log groups.</p>
     /// <p>You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutQueryDefinition {
@@ -4046,12 +4673,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+        /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+        /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -4176,7 +4803,7 @@ pub mod fluent_builders {
         /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
         /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
         /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
-        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
+        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs. You would also replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
         /// <p></p>
         /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4186,7 +4813,7 @@ pub mod fluent_builders {
         /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
         /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
         /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
-        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
+        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs. You would also replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
         /// <p></p>
         /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
         pub fn set_policy_document(
@@ -4199,7 +4826,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRetentionPolicy`.
     ///
-    /// <p>Sets the retention of the specified log group. A retention policy allows you to configure the number of days for which to retain log events in the specified log group.</p>
+    /// <p>Sets the retention of the specified log group. With a retention policy, you can configure the number of days for which to retain log events in the specified log group.</p> <note>
+    /// <p>CloudWatch Logs doesn’t immediately delete log events when they reach their retention setting. It typically takes up to 72 hours after that before log events are deleted, but in rare situations might take longer.</p>
+    /// <p>To illustrate, imagine that you change a log group to have a longer retention setting when it contains log events that are past the expiration date, but haven’t been deleted. Those log events will take up to 72 hours to be deleted after the new retention date is reached. To make sure that log data is deleted permanently, keep a log group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait to change the retention setting until you confirm that the earlier log events are deleted. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -4273,13 +4903,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+        /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.inner = self.inner.retention_in_days(input);
             self
         }
         /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+        /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_retention_in_days(input);
             self
@@ -4287,12 +4917,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSubscriptionFilter`.
     ///
-    /// <p>Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the gzip format.</p>
+    /// <p>Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p>
     /// <p>The following destinations are supported for subscription filters:</p>
     /// <ul>
-    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li>
-    /// <li> <p>An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
     /// <p>Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. </p>
@@ -4395,8 +5025,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
         /// <ul>
         /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
-        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
-        /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+        /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// </ul>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4406,8 +5036,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
         /// <ul>
         /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
-        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
-        /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+        /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// </ul>
         pub fn set_destination_arn(
@@ -4427,12 +5057,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
         pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
             self.inner = self.inner.distribution(input);
             self
         }
-        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -4445,7 +5075,9 @@ pub mod fluent_builders {
     ///
     /// <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to query and the query string to use.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    /// <p>Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being searched or partition your query into a number of queries.</p>
+    /// <p>Queries time out after 15 minutes of runtime. If your queries are timing out, reduce the time range being searched or partition your query into a number of queries.</p>
+    /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start a query in a linked source account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code> operation, the query definition must be defined in the monitoring account.</p>
+    /// <p>You can have up to 20 concurrent CloudWatch Logs insights queries, including queries that have been added to dashboards. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQuery {
         handle: std::sync::Arc<super::Handle>,
@@ -4505,14 +5137,16 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The log group on which to perform the query.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+        /// <p>The log group on which to perform the query.</p> <note>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
-        /// <p>The log group on which to perform the query.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+        /// <p>The log group on which to perform the query.</p> <note>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4524,14 +5158,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
         ///
-        /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+        /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        /// </note>
         pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_names(input.into());
             self
         }
-        /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+        /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        /// </note>
         pub fn set_log_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4539,22 +5175,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_names(input);
             self
         }
-        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// Appends an item to `logGroupIdentifiers`.
+        ///
+        /// To override the contents of this collection use [`set_log_group_identifiers`](Self::set_log_group_identifiers).
+        ///
+        /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
+        /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
+        /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        pub fn log_group_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_identifiers(input.into());
+            self
+        }
+        /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
+        /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
+        /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
+        /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+        pub fn set_log_group_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_identifiers(input);
+            self
+        }
+        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
@@ -4655,10 +5314,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagLogGroup`.
     ///
+    /// <important>
+    /// <p>The TagLogGroup operation is on the path to deprecation. We recommend that you use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a> instead.</p>
+    /// </important>
     /// <p>Adds or updates the specified tags for the specified log group.</p>
-    /// <p>To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.</p>
+    /// <p>To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
     /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    #[deprecated(note = "Please use the generic tagging API TagResource")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagLogGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -4745,6 +5408,112 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-value pairs to use for the tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only CloudWatch Logs resources that can be tagged are log groups and destinations. </p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.</p>
+    /// <p>You can associate as many as 50 tags with a CloudWatch Logs resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::TagResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource that you're adding tags to.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource that you're adding tags to.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value pairs to associate with the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The list of key-value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4850,9 +5619,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagLogGroup`.
     ///
+    /// <important>
+    /// <p>The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a> instead.</p>
+    /// </important>
     /// <p>Removes the specified tags from the specified log group.</p>
-    /// <p>To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>. To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.</p>
+    /// <p>To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>. To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. </p>
+    #[deprecated(note = "Please use the generic tagging API UntagResource")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagLogGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -4940,6 +5713,102 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>Removes one or more tags from the specified resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UntagResource,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the CloudWatch Logs resource that you're removing tags from.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the CloudWatch Logs resource that you're removing tags from.</p>
+        /// <p>The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i> </code> </p>
+        /// <p>The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `tagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tag keys to remove from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>The list of tag keys to remove from the resource.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

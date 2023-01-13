@@ -160,6 +160,7 @@ pub mod delete_record_input {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
         pub(crate) event_time: std::option::Option<std::string::String>,
+        pub(crate) target_stores: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
     }
     impl Builder {
         /// <p>The name of the feature group to delete the record from. </p>
@@ -201,6 +202,25 @@ pub mod delete_record_input {
             self.event_time = input;
             self
         }
+        /// Appends an item to `target_stores`.
+        ///
+        /// To override the contents of this collection use [`set_target_stores`](Self::set_target_stores).
+        ///
+        /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+        pub fn target_stores(mut self, input: crate::model::TargetStore) -> Self {
+            let mut v = self.target_stores.unwrap_or_default();
+            v.push(input);
+            self.target_stores = Some(v);
+            self
+        }
+        /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+        pub fn set_target_stores(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
+        ) -> Self {
+            self.target_stores = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::input::DeleteRecordInput).
         pub fn build(
             self,
@@ -210,6 +230,7 @@ pub mod delete_record_input {
                 feature_group_name: self.feature_group_name,
                 record_identifier_value_as_string: self.record_identifier_value_as_string,
                 event_time: self.event_time,
+                target_stores: self.target_stores,
             })
         }
     }
@@ -301,6 +322,16 @@ impl DeleteRecordInput {
                     );
                 }
                 query.push_kv("EventTime", &aws_smithy_http::query::fmt_string(&inner_3));
+                if let Some(inner_4) = &_input.target_stores {
+                    {
+                        for inner_5 in inner_4 {
+                            query.push_kv(
+                                "TargetStores",
+                                &aws_smithy_http::query::fmt_string(&inner_5),
+                            );
+                        }
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -388,12 +419,12 @@ pub mod get_record_input {
         pub(crate) feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The name of the feature group in which you want to put the records.</p>
+        /// <p>The name of the feature group from which you want to retrieve a record.</p>
         pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the feature group in which you want to put the records.</p>
+        /// <p>The name of the feature group from which you want to retrieve a record.</p>
         pub fn set_feature_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -469,15 +500,15 @@ impl GetRecordInput {
                 _input: &crate::input::GetRecordInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_4 = &_input.feature_group_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
+                let input_6 = &_input.feature_group_name;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "feature_group_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let feature_group_name = aws_smithy_http::label::fmt_string(
-                    input_4,
+                    input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if feature_group_name.is_empty() {
@@ -501,14 +532,14 @@ impl GetRecordInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_5 = &_input.record_identifier_value_as_string;
-                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                let inner_7 = &_input.record_identifier_value_as_string;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "record_identifier_value_as_string",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_5.is_empty() {
+                if inner_7.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "record_identifier_value_as_string",
@@ -518,14 +549,14 @@ impl GetRecordInput {
                 }
                 query.push_kv(
                     "RecordIdentifierValueAsString",
-                    &aws_smithy_http::query::fmt_string(&inner_5),
+                    &aws_smithy_http::query::fmt_string(&inner_7),
                 );
-                if let Some(inner_6) = &_input.feature_names {
+                if let Some(inner_8) = &_input.feature_names {
                     {
-                        for inner_7 in inner_6 {
+                        for inner_9 in inner_8 {
                             query.push_kv(
                                 "FeatureName",
-                                &aws_smithy_http::query::fmt_string(&inner_7),
+                                &aws_smithy_http::query::fmt_string(&inner_9),
                             );
                         }
                     }
@@ -612,6 +643,7 @@ pub mod put_record_input {
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+        pub(crate) target_stores: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
     }
     impl Builder {
         /// <p>The name of the feature group that you want to insert the record into.</p>
@@ -656,6 +688,25 @@ pub mod put_record_input {
             self.record = input;
             self
         }
+        /// Appends an item to `target_stores`.
+        ///
+        /// To override the contents of this collection use [`set_target_stores`](Self::set_target_stores).
+        ///
+        /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+        pub fn target_stores(mut self, input: crate::model::TargetStore) -> Self {
+            let mut v = self.target_stores.unwrap_or_default();
+            v.push(input);
+            self.target_stores = Some(v);
+            self
+        }
+        /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+        pub fn set_target_stores(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
+        ) -> Self {
+            self.target_stores = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput).
         pub fn build(
             self,
@@ -664,6 +715,7 @@ pub mod put_record_input {
             Ok(crate::input::PutRecordInput {
                 feature_group_name: self.feature_group_name,
                 record: self.record,
+                target_stores: self.target_stores,
             })
         }
     }
@@ -688,15 +740,15 @@ impl PutRecordInput {
                 _input: &crate::input::PutRecordInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_8 = &_input.feature_group_name;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_10 = &_input.feature_group_name;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "feature_group_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let feature_group_name = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if feature_group_name.is_empty() {
@@ -815,6 +867,9 @@ pub struct PutRecordInput {
     /// </ul>
     #[doc(hidden)]
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+    /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    #[doc(hidden)]
+    pub target_stores: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
 }
 impl PutRecordInput {
     /// <p>The name of the feature group that you want to insert the record into.</p>
@@ -830,13 +885,17 @@ impl PutRecordInput {
     pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
         self.record.as_deref()
     }
+    /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn target_stores(&self) -> std::option::Option<&[crate::model::TargetStore]> {
+        self.target_stores.as_deref()
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordInput {
-    /// <p>The name of the feature group in which you want to put the records.</p>
+    /// <p>The name of the feature group from which you want to retrieve a record.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
@@ -847,7 +906,7 @@ pub struct GetRecordInput {
     pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRecordInput {
-    /// <p>The name of the feature group in which you want to put the records.</p>
+    /// <p>The name of the feature group from which you want to retrieve a record.</p>
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -874,6 +933,9 @@ pub struct DeleteRecordInput {
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     #[doc(hidden)]
     pub event_time: std::option::Option<std::string::String>,
+    /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    #[doc(hidden)]
+    pub target_stores: std::option::Option<std::vec::Vec<crate::model::TargetStore>>,
 }
 impl DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
@@ -887,6 +949,10 @@ impl DeleteRecordInput {
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn event_time(&self) -> std::option::Option<&str> {
         self.event_time.as_deref()
+    }
+    /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn target_stores(&self) -> std::option::Option<&[crate::model::TargetStore]> {
+        self.target_stores.as_deref()
     }
 }
 

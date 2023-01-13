@@ -53,6 +53,63 @@ impl UpdateUserSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings: std::option::Option<crate::model::UserAccessLoggingSettings>,
+}
+impl UpdateUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    pub fn user_access_logging_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::UserAccessLoggingSettings> {
+        self.user_access_logging_settings.as_ref()
+    }
+}
+/// See [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+pub mod update_user_access_logging_settings_output {
+
+    /// A builder for [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings:
+            std::option::Option<crate::model::UserAccessLoggingSettings>,
+    }
+    impl Builder {
+        /// <p>The user access logging settings.</p>
+        pub fn user_access_logging_settings(
+            mut self,
+            input: crate::model::UserAccessLoggingSettings,
+        ) -> Self {
+            self.user_access_logging_settings = Some(input);
+            self
+        }
+        /// <p>The user access logging settings.</p>
+        pub fn set_user_access_logging_settings(
+            mut self,
+            input: std::option::Option<crate::model::UserAccessLoggingSettings>,
+        ) -> Self {
+            self.user_access_logging_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::UpdateUserAccessLoggingSettingsOutput {
+            crate::output::UpdateUserAccessLoggingSettingsOutput {
+                user_access_logging_settings: self.user_access_logging_settings,
+            }
+        }
+    }
+}
+impl UpdateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::update_user_access_logging_settings_output::Builder {
+        crate::output::update_user_access_logging_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
@@ -424,6 +481,91 @@ impl ListUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput).
     pub fn builder() -> crate::output::list_user_settings_output::Builder {
         crate::output::list_user_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings:
+        std::option::Option<std::vec::Vec<crate::model::UserAccessLoggingSettingsSummary>>,
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    pub fn user_access_logging_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserAccessLoggingSettingsSummary]> {
+        self.user_access_logging_settings.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+pub mod list_user_access_logging_settings_output {
+
+    /// A builder for [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings:
+            std::option::Option<std::vec::Vec<crate::model::UserAccessLoggingSettingsSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `user_access_logging_settings`.
+        ///
+        /// To override the contents of this collection use [`set_user_access_logging_settings`](Self::set_user_access_logging_settings).
+        ///
+        /// <p>The user access logging settings.</p>
+        pub fn user_access_logging_settings(
+            mut self,
+            input: crate::model::UserAccessLoggingSettingsSummary,
+        ) -> Self {
+            let mut v = self.user_access_logging_settings.unwrap_or_default();
+            v.push(input);
+            self.user_access_logging_settings = Some(v);
+            self
+        }
+        /// <p>The user access logging settings.</p>
+        pub fn set_user_access_logging_settings(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::UserAccessLoggingSettingsSummary>,
+            >,
+        ) -> Self {
+            self.user_access_logging_settings = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::ListUserAccessLoggingSettingsOutput {
+            crate::output::ListUserAccessLoggingSettingsOutput {
+                user_access_logging_settings: self.user_access_logging_settings,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::list_user_access_logging_settings_output::Builder {
+        crate::output::list_user_access_logging_settings_output::Builder::default()
     }
 }
 
@@ -1022,6 +1164,63 @@ impl GetUserSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings: std::option::Option<crate::model::UserAccessLoggingSettings>,
+}
+impl GetUserAccessLoggingSettingsOutput {
+    /// <p>The user access logging settings.</p>
+    pub fn user_access_logging_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::UserAccessLoggingSettings> {
+        self.user_access_logging_settings.as_ref()
+    }
+}
+/// See [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+pub mod get_user_access_logging_settings_output {
+
+    /// A builder for [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings:
+            std::option::Option<crate::model::UserAccessLoggingSettings>,
+    }
+    impl Builder {
+        /// <p>The user access logging settings.</p>
+        pub fn user_access_logging_settings(
+            mut self,
+            input: crate::model::UserAccessLoggingSettings,
+        ) -> Self {
+            self.user_access_logging_settings = Some(input);
+            self
+        }
+        /// <p>The user access logging settings.</p>
+        pub fn set_user_access_logging_settings(
+            mut self,
+            input: std::option::Option<crate::model::UserAccessLoggingSettings>,
+        ) -> Self {
+            self.user_access_logging_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::GetUserAccessLoggingSettingsOutput {
+            crate::output::GetUserAccessLoggingSettingsOutput {
+                user_access_logging_settings: self.user_access_logging_settings,
+            }
+        }
+    }
+}
+impl GetUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::get_user_access_logging_settings_output::Builder {
+        crate::output::get_user_access_logging_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
     #[doc(hidden)]
@@ -1444,6 +1643,30 @@ impl DisassociateUserSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisassociateUserAccessLoggingSettingsOutput {}
+/// See [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+pub mod disassociate_user_access_logging_settings_output {
+
+    /// A builder for [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::DisassociateUserAccessLoggingSettingsOutput {
+            crate::output::DisassociateUserAccessLoggingSettingsOutput {}
+        }
+    }
+}
+impl DisassociateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::disassociate_user_access_logging_settings_output::Builder {
+        crate::output::disassociate_user_access_logging_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTrustStoreOutput {}
 /// See [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput).
 pub mod disassociate_trust_store_output {
@@ -1534,6 +1757,30 @@ impl DeleteUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput).
     pub fn builder() -> crate::output::delete_user_settings_output::Builder {
         crate::output::delete_user_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteUserAccessLoggingSettingsOutput {}
+/// See [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+pub mod delete_user_access_logging_settings_output {
+
+    /// A builder for [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::DeleteUserAccessLoggingSettingsOutput {
+            crate::output::DeleteUserAccessLoggingSettingsOutput {}
+        }
+    }
+}
+impl DeleteUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::delete_user_access_logging_settings_output::Builder {
+        crate::output::delete_user_access_logging_settings_output::Builder::default()
     }
 }
 
@@ -1705,6 +1952,60 @@ impl CreateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput).
     pub fn builder() -> crate::output::create_user_settings_output::Builder {
         crate::output::create_user_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateUserAccessLoggingSettingsOutput {
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+}
+impl CreateUserAccessLoggingSettingsOutput {
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+}
+/// See [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+pub mod create_user_access_logging_settings_output {
+
+    /// A builder for [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::CreateUserAccessLoggingSettingsOutput {
+            crate::output::CreateUserAccessLoggingSettingsOutput {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            }
+        }
+    }
+}
+impl CreateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::create_user_access_logging_settings_output::Builder {
+        crate::output::create_user_access_logging_settings_output::Builder::default()
     }
 }
 
@@ -2049,6 +2350,79 @@ impl AssociateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput).
     pub fn builder() -> crate::output::associate_user_settings_output::Builder {
         crate::output::associate_user_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssociateUserAccessLoggingSettingsOutput {
+    /// <p>The ARN of the web portal.</p>
+    #[doc(hidden)]
+    pub portal_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the user access logging settings.</p>
+    #[doc(hidden)]
+    pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
+}
+impl AssociateUserAccessLoggingSettingsOutput {
+    /// <p>The ARN of the web portal.</p>
+    pub fn portal_arn(&self) -> std::option::Option<&str> {
+        self.portal_arn.as_deref()
+    }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
+        self.user_access_logging_settings_arn.as_deref()
+    }
+}
+/// See [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+pub mod associate_user_access_logging_settings_output {
+
+    /// A builder for [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) portal_arn: std::option::Option<std::string::String>,
+        pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the web portal.</p>
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.portal_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the web portal.</p>
+        pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_arn = input;
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn user_access_logging_settings_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the user access logging settings.</p>
+        pub fn set_user_access_logging_settings_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_logging_settings_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+        pub fn build(self) -> crate::output::AssociateUserAccessLoggingSettingsOutput {
+            crate::output::AssociateUserAccessLoggingSettingsOutput {
+                portal_arn: self.portal_arn,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            }
+        }
+    }
+}
+impl AssociateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::associate_user_access_logging_settings_output::Builder {
+        crate::output::associate_user_access_logging_settings_output::Builder::default()
     }
 }
 

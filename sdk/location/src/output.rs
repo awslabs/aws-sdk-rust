@@ -1932,6 +1932,7 @@ pub struct DescribeRouteCalculatorOutput {
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -1983,6 +1984,7 @@ impl DescribeRouteCalculatorOutput {
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2119,6 +2121,7 @@ pub mod describe_route_calculator_output {
         /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2129,6 +2132,7 @@ pub mod describe_route_calculator_output {
         /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2815,6 +2819,7 @@ pub struct DescribePlaceIndexOutput {
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2863,6 +2868,7 @@ impl DescribePlaceIndexOutput {
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2989,6 +2995,7 @@ pub mod describe_place_index_output {
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -2999,6 +3006,7 @@ pub mod describe_place_index_output {
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Grab</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
@@ -3423,7 +3431,7 @@ pub struct CreateMapOutput {
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -3438,7 +3446,7 @@ impl CreateMapOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
@@ -3471,7 +3479,7 @@ pub mod create_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
@@ -3479,7 +3487,7 @@ pub mod create_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;
@@ -3548,7 +3556,7 @@ pub struct UpdateMapOutput {
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -3563,7 +3571,7 @@ impl UpdateMapOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
@@ -3596,7 +3604,7 @@ pub mod update_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
@@ -3604,7 +3612,7 @@ pub mod update_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;
@@ -3649,7 +3657,7 @@ pub struct DescribeMapOutput {
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -3687,7 +3695,7 @@ impl DescribeMapOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
@@ -3759,7 +3767,7 @@ pub mod describe_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
@@ -3767,7 +3775,7 @@ pub mod describe_map_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;

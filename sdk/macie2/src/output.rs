@@ -2,6 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSensitivityInspectionTemplateOutput {}
+/// See [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
+pub mod update_sensitivity_inspection_template_output {
+
+    /// A builder for [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
+        pub fn build(self) -> crate::output::UpdateSensitivityInspectionTemplateOutput {
+            crate::output::UpdateSensitivityInspectionTemplateOutput {}
+        }
+    }
+}
+impl UpdateSensitivityInspectionTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
+    pub fn builder() -> crate::output::update_sensitivity_inspection_template_output::Builder {
+        crate::output::update_sensitivity_inspection_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRevealConfigurationOutput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
     #[doc(hidden)]
@@ -47,6 +71,54 @@ impl UpdateRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
     pub fn builder() -> crate::output::update_reveal_configuration_output::Builder {
         crate::output::update_reveal_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourceProfileDetectionsOutput {}
+/// See [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
+pub mod update_resource_profile_detections_output {
+
+    /// A builder for [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
+        pub fn build(self) -> crate::output::UpdateResourceProfileDetectionsOutput {
+            crate::output::UpdateResourceProfileDetectionsOutput {}
+        }
+    }
+}
+impl UpdateResourceProfileDetectionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
+    pub fn builder() -> crate::output::update_resource_profile_detections_output::Builder {
+        crate::output::update_resource_profile_detections_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateResourceProfileOutput {}
+/// See [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
+pub mod update_resource_profile_output {
+
+    /// A builder for [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
+        pub fn build(self) -> crate::output::UpdateResourceProfileOutput {
+            crate::output::UpdateResourceProfileOutput {}
+        }
+    }
+}
+impl UpdateResourceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
+    pub fn builder() -> crate::output::update_resource_profile_output::Builder {
+        crate::output::update_resource_profile_output::Builder::default()
     }
 }
 
@@ -192,6 +264,30 @@ impl UpdateFindingsFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateClassificationScopeOutput {}
+/// See [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
+pub mod update_classification_scope_output {
+
+    /// A builder for [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
+        pub fn build(self) -> crate::output::UpdateClassificationScopeOutput {
+            crate::output::UpdateClassificationScopeOutput {}
+        }
+    }
+}
+impl UpdateClassificationScopeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
+    pub fn builder() -> crate::output::update_classification_scope_output::Builder {
+        crate::output::update_classification_scope_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateClassificationJobOutput {}
 /// See [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
 pub mod update_classification_job_output {
@@ -210,6 +306,30 @@ impl UpdateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
     pub fn builder() -> crate::output::update_classification_job_output::Builder {
         crate::output::update_classification_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateAutomatedDiscoveryConfigurationOutput {}
+/// See [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
+pub mod update_automated_discovery_configuration_output {
+
+    /// A builder for [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateAutomatedDiscoveryConfigurationOutput {
+            crate::output::UpdateAutomatedDiscoveryConfigurationOutput {}
+        }
+    }
+}
+impl UpdateAutomatedDiscoveryConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
+    pub fn builder() -> crate::output::update_automated_discovery_configuration_output::Builder {
+        crate::output::update_automated_discovery_configuration_output::Builder::default()
     }
 }
 
@@ -380,7 +500,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchResourcesOutput {
-    /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub matching_resources: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -388,7 +508,7 @@ pub struct SearchResourcesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchResourcesOutput {
-    /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     pub fn matching_resources(&self) -> std::option::Option<&[crate::model::MatchingResource]> {
         self.matching_resources.as_deref()
     }
@@ -412,14 +532,14 @@ pub mod search_resources_output {
         ///
         /// To override the contents of this collection use [`set_matching_resources`](Self::set_matching_resources).
         ///
-        /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
         pub fn matching_resources(mut self, input: crate::model::MatchingResource) -> Self {
             let mut v = self.matching_resources.unwrap_or_default();
             v.push(input);
             self.matching_resources = Some(v);
             self
         }
-        /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
         pub fn set_matching_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
@@ -604,6 +724,244 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSensitivityInspectionTemplatesOutput {
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+    #[doc(hidden)]
+    pub sensitivity_inspection_templates:
+        std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
+}
+impl ListSensitivityInspectionTemplatesOutput {
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+    pub fn sensitivity_inspection_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::SensitivityInspectionTemplatesEntry]> {
+        self.sensitivity_inspection_templates.as_deref()
+    }
+}
+/// See [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
+pub mod list_sensitivity_inspection_templates_output {
+
+    /// A builder for [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) sensitivity_inspection_templates:
+            std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
+    }
+    impl Builder {
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `sensitivity_inspection_templates`.
+        ///
+        /// To override the contents of this collection use [`set_sensitivity_inspection_templates`](Self::set_sensitivity_inspection_templates).
+        ///
+        /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+        pub fn sensitivity_inspection_templates(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplatesEntry,
+        ) -> Self {
+            let mut v = self.sensitivity_inspection_templates.unwrap_or_default();
+            v.push(input);
+            self.sensitivity_inspection_templates = Some(v);
+            self
+        }
+        /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+        pub fn set_sensitivity_inspection_templates(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>,
+            >,
+        ) -> Self {
+            self.sensitivity_inspection_templates = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
+        pub fn build(self) -> crate::output::ListSensitivityInspectionTemplatesOutput {
+            crate::output::ListSensitivityInspectionTemplatesOutput {
+                next_token: self.next_token,
+                sensitivity_inspection_templates: self.sensitivity_inspection_templates,
+            }
+        }
+    }
+}
+impl ListSensitivityInspectionTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
+    pub fn builder() -> crate::output::list_sensitivity_inspection_templates_output::Builder {
+        crate::output::list_sensitivity_inspection_templates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceProfileDetectionsOutput {
+    /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
+    #[doc(hidden)]
+    pub detections: std::option::Option<std::vec::Vec<crate::model::Detection>>,
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceProfileDetectionsOutput {
+    /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
+    pub fn detections(&self) -> std::option::Option<&[crate::model::Detection]> {
+        self.detections.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
+pub mod list_resource_profile_detections_output {
+
+    /// A builder for [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detections: std::option::Option<std::vec::Vec<crate::model::Detection>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `detections`.
+        ///
+        /// To override the contents of this collection use [`set_detections`](Self::set_detections).
+        ///
+        /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
+        pub fn detections(mut self, input: crate::model::Detection) -> Self {
+            let mut v = self.detections.unwrap_or_default();
+            v.push(input);
+            self.detections = Some(v);
+            self
+        }
+        /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
+        pub fn set_detections(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Detection>>,
+        ) -> Self {
+            self.detections = input;
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
+        pub fn build(self) -> crate::output::ListResourceProfileDetectionsOutput {
+            crate::output::ListResourceProfileDetectionsOutput {
+                detections: self.detections,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListResourceProfileDetectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
+    pub fn builder() -> crate::output::list_resource_profile_detections_output::Builder {
+        crate::output::list_resource_profile_detections_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListResourceProfileArtifactsOutput {
+    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    #[doc(hidden)]
+    pub artifacts: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceProfileArtifactsOutput {
+    /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+    pub fn artifacts(&self) -> std::option::Option<&[crate::model::ResourceProfileArtifact]> {
+        self.artifacts.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
+pub mod list_resource_profile_artifacts_output {
+
+    /// A builder for [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) artifacts:
+            std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
+        ///
+        /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+        pub fn artifacts(mut self, input: crate::model::ResourceProfileArtifact) -> Self {
+            let mut v = self.artifacts.unwrap_or_default();
+            v.push(input);
+            self.artifacts = Some(v);
+            self
+        }
+        /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
+        pub fn set_artifacts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
+        ) -> Self {
+            self.artifacts = input;
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
+        pub fn build(self) -> crate::output::ListResourceProfileArtifactsOutput {
+            crate::output::ListResourceProfileArtifactsOutput {
+                artifacts: self.artifacts,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListResourceProfileArtifactsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
+    pub fn builder() -> crate::output::list_resource_profile_artifacts_output::Builder {
+        crate::output::list_resource_profile_artifacts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsOutput {
     /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
     #[doc(hidden)]
@@ -681,7 +1039,7 @@ impl ListOrganizationAdminAccountsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMembersOutput {
-    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
     #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -689,7 +1047,7 @@ pub struct ListMembersOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
-    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
@@ -712,14 +1070,14 @@ pub mod list_members_output {
         ///
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
-        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
         pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
             v.push(input);
             self.members = Some(v);
             self
         }
-        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -993,7 +1351,7 @@ impl ListFindingsFiltersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsOutput {
-    /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -1001,7 +1359,7 @@ pub struct ListFindingsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
-    /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }
@@ -1024,14 +1382,14 @@ pub mod list_findings_output {
         ///
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
-        /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+        /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
-        /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+        /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1145,8 +1503,91 @@ impl ListCustomDataIdentifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListClassificationScopesOutput {
+    /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+    #[doc(hidden)]
+    pub classification_scopes:
+        std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClassificationScopesOutput {
+    /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+    pub fn classification_scopes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClassificationScopeSummary]> {
+        self.classification_scopes.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
+pub mod list_classification_scopes_output {
+
+    /// A builder for [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) classification_scopes:
+            std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `classification_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_classification_scopes`](Self::set_classification_scopes).
+        ///
+        /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+        pub fn classification_scopes(
+            mut self,
+            input: crate::model::ClassificationScopeSummary,
+        ) -> Self {
+            let mut v = self.classification_scopes.unwrap_or_default();
+            v.push(input);
+            self.classification_scopes = Some(v);
+            self
+        }
+        /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+        pub fn set_classification_scopes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+        ) -> Self {
+            self.classification_scopes = input;
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
+        pub fn build(self) -> crate::output::ListClassificationScopesOutput {
+            crate::output::ListClassificationScopesOutput {
+                classification_scopes: self.classification_scopes,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListClassificationScopesOutput {
+    /// Creates a new builder-style object to manufacture [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
+    pub fn builder() -> crate::output::list_classification_scopes_output::Builder {
+        crate::output::list_classification_scopes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClassificationJobsOutput {
-    /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -1154,7 +1595,7 @@ pub struct ListClassificationJobsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClassificationJobsOutput {
-    /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::JobSummary]> {
         self.items.as_deref()
     }
@@ -1177,14 +1618,14 @@ pub mod list_classification_jobs_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
         pub fn items(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -1380,7 +1821,7 @@ pub struct GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
@@ -1392,7 +1833,7 @@ impl GetUsageStatisticsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
         self.records.as_deref()
     }
@@ -1426,14 +1867,14 @@ pub mod get_usage_statistics_output {
         ///
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
-        /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
         pub fn records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input);
             self.records = Some(v);
             self
         }
-        /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
@@ -1468,6 +1909,154 @@ impl GetUsageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput).
     pub fn builder() -> crate::output::get_usage_statistics_output::Builder {
         crate::output::get_usage_statistics_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSensitivityInspectionTemplateOutput {
+    /// <p>The custom description of the template.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    #[doc(hidden)]
+    pub excludes: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
+    #[doc(hidden)]
+    pub includes: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+    /// <p>The name of the template.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the template.</p>
+    #[doc(hidden)]
+    pub sensitivity_inspection_template_id: std::option::Option<std::string::String>,
+}
+impl GetSensitivityInspectionTemplateOutput {
+    /// <p>The custom description of the template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    pub fn excludes(
+        &self,
+    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateExcludes> {
+        self.excludes.as_ref()
+    }
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
+    pub fn includes(
+        &self,
+    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateIncludes> {
+        self.includes.as_ref()
+    }
+    /// <p>The name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the template.</p>
+    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<&str> {
+        self.sensitivity_inspection_template_id.as_deref()
+    }
+}
+/// See [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
+pub mod get_sensitivity_inspection_template_output {
+
+    /// A builder for [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) excludes:
+            std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        pub(crate) includes:
+            std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) sensitivity_inspection_template_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The custom description of the template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The custom description of the template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+        pub fn excludes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateExcludes,
+        ) -> Self {
+            self.excludes = Some(input);
+            self
+        }
+        /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+        pub fn set_excludes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        ) -> Self {
+            self.excludes = input;
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
+        pub fn includes(
+            mut self,
+            input: crate::model::SensitivityInspectionTemplateIncludes,
+        ) -> Self {
+            self.includes = Some(input);
+            self
+        }
+        /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
+        pub fn set_includes(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+        ) -> Self {
+            self.includes = input;
+            self
+        }
+        /// <p>The name of the template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The unique identifier for the template.</p>
+        pub fn sensitivity_inspection_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.sensitivity_inspection_template_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the template.</p>
+        pub fn set_sensitivity_inspection_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sensitivity_inspection_template_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
+        pub fn build(self) -> crate::output::GetSensitivityInspectionTemplateOutput {
+            crate::output::GetSensitivityInspectionTemplateOutput {
+                description: self.description,
+                excludes: self.excludes,
+                includes: self.includes,
+                name: self.name,
+                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
+            }
+        }
+    }
+}
+impl GetSensitivityInspectionTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
+    pub fn builder() -> crate::output::get_sensitivity_inspection_template_output::Builder {
+        crate::output::get_sensitivity_inspection_template_output::Builder::default()
     }
 }
 
@@ -1775,6 +2364,120 @@ impl GetRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
     pub fn builder() -> crate::output::get_reveal_configuration_output::Builder {
         crate::output::get_reveal_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetResourceProfileOutput {
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
+    #[doc(hidden)]
+    pub profile_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    #[doc(hidden)]
+    pub sensitivity_score: i32,
+    /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
+    #[doc(hidden)]
+    pub sensitivity_score_overridden: bool,
+    /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
+    #[doc(hidden)]
+    pub statistics: std::option::Option<crate::model::ResourceStatistics>,
+}
+impl GetResourceProfileOutput {
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
+    pub fn profile_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.profile_updated_at.as_ref()
+    }
+    /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+    pub fn sensitivity_score(&self) -> i32 {
+        self.sensitivity_score
+    }
+    /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
+    pub fn sensitivity_score_overridden(&self) -> bool {
+        self.sensitivity_score_overridden
+    }
+    /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::ResourceStatistics> {
+        self.statistics.as_ref()
+    }
+}
+/// See [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
+pub mod get_resource_profile_output {
+
+    /// A builder for [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sensitivity_score: std::option::Option<i32>,
+        pub(crate) sensitivity_score_overridden: std::option::Option<bool>,
+        pub(crate) statistics: std::option::Option<crate::model::ResourceStatistics>,
+    }
+    impl Builder {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
+        pub fn profile_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.profile_updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
+        pub fn set_profile_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.profile_updated_at = input;
+            self
+        }
+        /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+        pub fn sensitivity_score(mut self, input: i32) -> Self {
+            self.sensitivity_score = Some(input);
+            self
+        }
+        /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+        pub fn set_sensitivity_score(mut self, input: std::option::Option<i32>) -> Self {
+            self.sensitivity_score = input;
+            self
+        }
+        /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
+        pub fn sensitivity_score_overridden(mut self, input: bool) -> Self {
+            self.sensitivity_score_overridden = Some(input);
+            self
+        }
+        /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
+        pub fn set_sensitivity_score_overridden(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.sensitivity_score_overridden = input;
+            self
+        }
+        /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
+        pub fn statistics(mut self, input: crate::model::ResourceStatistics) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::ResourceStatistics>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
+        pub fn build(self) -> crate::output::GetResourceProfileOutput {
+            crate::output::GetResourceProfileOutput {
+                profile_updated_at: self.profile_updated_at,
+                sensitivity_score: self.sensitivity_score.unwrap_or_default(),
+                sensitivity_score_overridden: self.sensitivity_score_overridden.unwrap_or_default(),
+                statistics: self.statistics,
+            }
+        }
+    }
+}
+impl GetResourceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
+    pub fn builder() -> crate::output::get_resource_profile_output::Builder {
+        crate::output::get_resource_profile_output::Builder::default()
     }
 }
 
@@ -2253,12 +2956,12 @@ impl GetInvitationsCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingStatisticsOutput {
-    /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
 }
 impl GetFindingStatisticsOutput {
-    /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     pub fn counts_by_group(&self) -> std::option::Option<&[crate::model::GroupCount]> {
         self.counts_by_group.as_deref()
     }
@@ -2276,14 +2979,14 @@ pub mod get_finding_statistics_output {
         ///
         /// To override the contents of this collection use [`set_counts_by_group`](Self::set_counts_by_group).
         ///
-        /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
         pub fn counts_by_group(mut self, input: crate::model::GroupCount) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
             v.push(input);
             self.counts_by_group = Some(v);
             self
         }
-        /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
         pub fn set_counts_by_group(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
@@ -2367,7 +3070,7 @@ impl GetFindingsPublicationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsFilterOutput {
-    /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
@@ -2394,7 +3097,7 @@ pub struct GetFindingsFilterOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetFindingsFilterOutput {
-    /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
         self.action.as_ref()
     }
@@ -2448,12 +3151,12 @@ pub mod get_findings_filter_output {
         >,
     }
     impl Builder {
-        /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+        /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
@@ -2575,12 +3278,12 @@ impl GetFindingsFilterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsOutput {
-    /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
 impl GetFindingsOutput {
-    /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
     pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
         self.findings.as_deref()
     }
@@ -2598,14 +3301,14 @@ pub mod get_findings_output {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
         pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input);
             self.findings = Some(v);
             self
         }
-        /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Finding>>,
@@ -2939,6 +3642,95 @@ impl GetCustomDataIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetClassificationScopeOutput {
+    /// <p>The unique identifier for the classification scope.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the classification scope.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
+    #[doc(hidden)]
+    pub s3: std::option::Option<crate::model::S3ClassificationScope>,
+}
+impl GetClassificationScopeOutput {
+    /// <p>The unique identifier for the classification scope.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the classification scope.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3ClassificationScope> {
+        self.s3.as_ref()
+    }
+}
+/// See [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
+pub mod get_classification_scope_output {
+
+    /// A builder for [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) s3: std::option::Option<crate::model::S3ClassificationScope>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the classification scope.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the classification scope.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the classification scope.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the classification scope.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
+        pub fn s3(mut self, input: crate::model::S3ClassificationScope) -> Self {
+            self.s3 = Some(input);
+            self
+        }
+        /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
+        pub fn set_s3(
+            mut self,
+            input: std::option::Option<crate::model::S3ClassificationScope>,
+        ) -> Self {
+            self.s3 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
+        pub fn build(self) -> crate::output::GetClassificationScopeOutput {
+            crate::output::GetClassificationScopeOutput {
+                id: self.id,
+                name: self.name,
+                s3: self.s3,
+            }
+        }
+    }
+}
+impl GetClassificationScopeOutput {
+    /// Creates a new builder-style object to manufacture [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
+    pub fn builder() -> crate::output::get_classification_scope_output::Builder {
+        crate::output::get_classification_scope_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClassificationExportConfigurationOutput {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     #[doc(hidden)]
@@ -3016,11 +3808,15 @@ pub struct GetBucketStatisticsOutput {
     #[doc(hidden)]
     pub bucket_count_by_shared_access_type:
         std::option::Option<crate::model::BucketCountBySharedAccessType>,
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    #[doc(hidden)]
+    pub bucket_statistics_by_sensitivity:
+        std::option::Option<crate::model::BucketStatisticsBySensitivity>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
@@ -3030,11 +3826,11 @@ pub struct GetBucketStatisticsOutput {
     #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total storage size, in bytes, of the buckets.</p>
-    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     #[doc(hidden)]
     pub size_in_bytes: i64,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
-    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
@@ -3074,12 +3870,18 @@ impl GetBucketStatisticsOutput {
     ) -> std::option::Option<&crate::model::BucketCountBySharedAccessType> {
         self.bucket_count_by_shared_access_type.as_ref()
     }
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    pub fn bucket_statistics_by_sensitivity(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketStatisticsBySensitivity> {
+        self.bucket_statistics_by_sensitivity.as_ref()
+    }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn classifiable_object_count(&self) -> i64 {
         self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub fn classifiable_size_in_bytes(&self) -> i64 {
         self.classifiable_size_in_bytes
     }
@@ -3092,12 +3894,12 @@ impl GetBucketStatisticsOutput {
         self.object_count
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
-    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub fn size_in_bytes(&self) -> i64 {
         self.size_in_bytes
     }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
-    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub fn size_in_bytes_compressed(&self) -> i64 {
         self.size_in_bytes_compressed
     }
@@ -3129,6 +3931,8 @@ pub mod get_bucket_statistics_output {
             std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
         pub(crate) bucket_count_by_shared_access_type:
             std::option::Option<crate::model::BucketCountBySharedAccessType>,
+        pub(crate) bucket_statistics_by_sensitivity:
+            std::option::Option<crate::model::BucketStatisticsBySensitivity>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
@@ -3217,6 +4021,22 @@ pub mod get_bucket_statistics_output {
             self.bucket_count_by_shared_access_type = input;
             self
         }
+        /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+        pub fn bucket_statistics_by_sensitivity(
+            mut self,
+            input: crate::model::BucketStatisticsBySensitivity,
+        ) -> Self {
+            self.bucket_statistics_by_sensitivity = Some(input);
+            self
+        }
+        /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+        pub fn set_bucket_statistics_by_sensitivity(
+            mut self,
+            input: std::option::Option<crate::model::BucketStatisticsBySensitivity>,
+        ) -> Self {
+            self.bucket_statistics_by_sensitivity = input;
+            self
+        }
         /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
         pub fn classifiable_object_count(mut self, input: i64) -> Self {
             self.classifiable_object_count = Some(input);
@@ -3228,13 +4048,13 @@ pub mod get_bucket_statistics_output {
             self
         }
         /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-        /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn classifiable_size_in_bytes(mut self, input: i64) -> Self {
             self.classifiable_size_in_bytes = Some(input);
             self
         }
         /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-        /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_size_in_bytes = input;
             self
@@ -3263,25 +4083,25 @@ pub mod get_bucket_statistics_output {
             self
         }
         /// <p>The total storage size, in bytes, of the buckets.</p>
-        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
             self.size_in_bytes = Some(input);
             self
         }
         /// <p>The total storage size, in bytes, of the buckets.</p>
-        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
         }
         /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
-        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
         }
         /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
-        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn set_size_in_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes_compressed = input;
             self
@@ -3327,6 +4147,7 @@ pub mod get_bucket_statistics_output {
                 bucket_count_by_object_encryption_requirement: self
                     .bucket_count_by_object_encryption_requirement,
                 bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type,
+                bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity,
                 classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
                 classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
                 last_updated: self.last_updated,
@@ -3343,6 +4164,170 @@ impl GetBucketStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput).
     pub fn builder() -> crate::output::get_bucket_statistics_output::Builder {
         crate::output::get_bucket_statistics_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetAutomatedDiscoveryConfigurationOutput {
+    /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
+    #[doc(hidden)]
+    pub classification_scope_id: std::option::Option<std::string::String>,
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
+    #[doc(hidden)]
+    pub disabled_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
+    #[doc(hidden)]
+    pub first_enabled_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
+    #[doc(hidden)]
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
+    #[doc(hidden)]
+    pub sensitivity_inspection_template_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+}
+impl GetAutomatedDiscoveryConfigurationOutput {
+    /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
+    pub fn classification_scope_id(&self) -> std::option::Option<&str> {
+        self.classification_scope_id.as_deref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
+    pub fn disabled_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.disabled_at.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
+    pub fn first_enabled_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.first_enabled_at.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
+    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<&str> {
+        self.sensitivity_inspection_template_id.as_deref()
+    }
+    /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AutomatedDiscoveryStatus> {
+        self.status.as_ref()
+    }
+}
+/// See [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
+pub mod get_automated_discovery_configuration_output {
+
+    /// A builder for [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) classification_scope_id: std::option::Option<std::string::String>,
+        pub(crate) disabled_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) first_enabled_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sensitivity_inspection_template_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
+        pub fn classification_scope_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classification_scope_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
+        pub fn set_classification_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classification_scope_id = input;
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
+        pub fn disabled_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.disabled_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
+        pub fn set_disabled_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.disabled_at = input;
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
+        pub fn first_enabled_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.first_enabled_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
+        pub fn set_first_enabled_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.first_enabled_at = input;
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
+        pub fn sensitivity_inspection_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.sensitivity_inspection_template_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
+        pub fn set_sensitivity_inspection_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sensitivity_inspection_template_id = input;
+            self
+        }
+        /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
+        pub fn status(mut self, input: crate::model::AutomatedDiscoveryStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
+        pub fn build(self) -> crate::output::GetAutomatedDiscoveryConfigurationOutput {
+            crate::output::GetAutomatedDiscoveryConfigurationOutput {
+                classification_scope_id: self.classification_scope_id,
+                disabled_at: self.disabled_at,
+                first_enabled_at: self.first_enabled_at,
+                last_updated_at: self.last_updated_at,
+                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl GetAutomatedDiscoveryConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
+    pub fn builder() -> crate::output::get_automated_discovery_configuration_output::Builder {
+        crate::output::get_automated_discovery_configuration_output::Builder::default()
     }
 }
 
@@ -4460,7 +5445,7 @@ impl DescribeClassificationJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBucketsOutput {
-    /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -4468,7 +5453,7 @@ pub struct DescribeBucketsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBucketsOutput {
-    /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     pub fn buckets(&self) -> std::option::Option<&[crate::model::BucketMetadata]> {
         self.buckets.as_deref()
     }
@@ -4491,14 +5476,14 @@ pub mod describe_buckets_output {
         ///
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
-        /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
         pub fn buckets(mut self, input: crate::model::BucketMetadata) -> Self {
             let mut v = self.buckets.unwrap_or_default();
             v.push(input);
             self.buckets = Some(v);
             self
         }
-        /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+        /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
         pub fn set_buckets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>,
@@ -5128,7 +6113,7 @@ impl CreateAllowListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersOutput {
-    /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
     #[doc(hidden)]
     pub custom_data_identifiers:
         std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
@@ -5137,7 +6122,7 @@ pub struct BatchGetCustomDataIdentifiersOutput {
     pub not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersOutput {
-    /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
     pub fn custom_data_identifiers(
         &self,
     ) -> std::option::Option<&[crate::model::BatchGetCustomDataIdentifierSummary]> {
@@ -5164,7 +6149,7 @@ pub mod batch_get_custom_data_identifiers_output {
         ///
         /// To override the contents of this collection use [`set_custom_data_identifiers`](Self::set_custom_data_identifiers).
         ///
-        /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
         pub fn custom_data_identifiers(
             mut self,
             input: crate::model::BatchGetCustomDataIdentifierSummary,
@@ -5174,7 +6159,7 @@ pub mod batch_get_custom_data_identifiers_output {
             self.custom_data_identifiers = Some(v);
             self
         }
-        /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+        /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
         pub fn set_custom_data_identifiers(
             mut self,
             input: std::option::Option<

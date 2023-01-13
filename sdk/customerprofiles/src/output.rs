@@ -320,7 +320,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchProfilesOutput {
-    /// <p>The list of SearchProfiles instances.</p>
+    /// <p>The list of Profiles matching the search criteria.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Profile>>,
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -328,7 +328,7 @@ pub struct SearchProfilesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchProfilesOutput {
-    /// <p>The list of SearchProfiles instances.</p>
+    /// <p>The list of Profiles matching the search criteria.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::Profile]> {
         self.items.as_deref()
     }
@@ -351,14 +351,14 @@ pub mod search_profiles_output {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>The list of SearchProfiles instances.</p>
+        /// <p>The list of Profiles matching the search criteria.</p>
         pub fn items(mut self, input: crate::model::Profile) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>The list of SearchProfiles instances.</p>
+        /// <p>The list of Profiles matching the search criteria.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Profile>>,

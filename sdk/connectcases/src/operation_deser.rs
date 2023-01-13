@@ -3618,6 +3618,24 @@ pub fn parse_update_layout_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::UpdateLayoutError {
+            meta: generic,
+            kind: crate::error::UpdateLayoutErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLayoutError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::UpdateLayoutError {
             meta: generic,
             kind: crate::error::UpdateLayoutErrorKind::ThrottlingException({

@@ -128,6 +128,9 @@ impl Authorization {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackagingGroup {
+    /// The approximate asset count of the PackagingGroup.
+    #[doc(hidden)]
+    pub approximate_asset_count: i32,
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -149,6 +152,10 @@ pub struct PackagingGroup {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PackagingGroup {
+    /// The approximate asset count of the PackagingGroup.
+    pub fn approximate_asset_count(&self) -> i32 {
+        self.approximate_asset_count
+    }
     /// The ARN of the PackagingGroup.
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -183,6 +190,7 @@ pub mod packaging_group {
     /// A builder for [`PackagingGroup`](crate::model::PackagingGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) approximate_asset_count: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -193,6 +201,16 @@ pub mod packaging_group {
         >,
     }
     impl Builder {
+        /// The approximate asset count of the PackagingGroup.
+        pub fn approximate_asset_count(mut self, input: i32) -> Self {
+            self.approximate_asset_count = Some(input);
+            self
+        }
+        /// The approximate asset count of the PackagingGroup.
+        pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.approximate_asset_count = input;
+            self
+        }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
@@ -277,6 +295,7 @@ pub mod packaging_group {
         /// Consumes the builder and constructs a [`PackagingGroup`](crate::model::PackagingGroup).
         pub fn build(self) -> crate::model::PackagingGroup {
             crate::model::PackagingGroup {
+                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
                 arn: self.arn,
                 authorization: self.authorization,
                 domain_name: self.domain_name,
@@ -925,6 +944,10 @@ impl MssEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpekeKeyProvider {
+    /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+    #[doc(hidden)]
+    pub encryption_contract_configuration:
+        std::option::Option<crate::model::EncryptionContractConfiguration>,
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -936,6 +959,12 @@ pub struct SpekeKeyProvider {
     pub url: std::option::Option<std::string::String>,
 }
 impl SpekeKeyProvider {
+    /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+    pub fn encryption_contract_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionContractConfiguration> {
+        self.encryption_contract_configuration.as_ref()
+    }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -955,11 +984,29 @@ pub mod speke_key_provider {
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) encryption_contract_configuration:
+            std::option::Option<crate::model::EncryptionContractConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+        pub fn encryption_contract_configuration(
+            mut self,
+            input: crate::model::EncryptionContractConfiguration,
+        ) -> Self {
+            self.encryption_contract_configuration = Some(input);
+            self
+        }
+        /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+        pub fn set_encryption_contract_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionContractConfiguration>,
+        ) -> Self {
+            self.encryption_contract_configuration = input;
+            self
+        }
         /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -1002,6 +1049,7 @@ pub mod speke_key_provider {
         /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
         pub fn build(self) -> crate::model::SpekeKeyProvider {
             crate::model::SpekeKeyProvider {
+                encryption_contract_configuration: self.encryption_contract_configuration,
                 role_arn: self.role_arn,
                 system_ids: self.system_ids,
                 url: self.url,
@@ -1013,6 +1061,335 @@ impl SpekeKeyProvider {
     /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
     pub fn builder() -> crate::model::speke_key_provider::Builder {
         crate::model::speke_key_provider::Builder::default()
+    }
+}
+
+/// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EncryptionContractConfiguration {
+    /// A collection of audio encryption presets.
+    #[doc(hidden)]
+    pub preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
+    /// A collection of video encryption presets.
+    #[doc(hidden)]
+    pub preset_speke20_video: std::option::Option<crate::model::PresetSpeke20Video>,
+}
+impl EncryptionContractConfiguration {
+    /// A collection of audio encryption presets.
+    pub fn preset_speke20_audio(&self) -> std::option::Option<&crate::model::PresetSpeke20Audio> {
+        self.preset_speke20_audio.as_ref()
+    }
+    /// A collection of video encryption presets.
+    pub fn preset_speke20_video(&self) -> std::option::Option<&crate::model::PresetSpeke20Video> {
+        self.preset_speke20_video.as_ref()
+    }
+}
+/// See [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
+pub mod encryption_contract_configuration {
+
+    /// A builder for [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
+        pub(crate) preset_speke20_video: std::option::Option<crate::model::PresetSpeke20Video>,
+    }
+    impl Builder {
+        /// A collection of audio encryption presets.
+        pub fn preset_speke20_audio(mut self, input: crate::model::PresetSpeke20Audio) -> Self {
+            self.preset_speke20_audio = Some(input);
+            self
+        }
+        /// A collection of audio encryption presets.
+        pub fn set_preset_speke20_audio(
+            mut self,
+            input: std::option::Option<crate::model::PresetSpeke20Audio>,
+        ) -> Self {
+            self.preset_speke20_audio = input;
+            self
+        }
+        /// A collection of video encryption presets.
+        pub fn preset_speke20_video(mut self, input: crate::model::PresetSpeke20Video) -> Self {
+            self.preset_speke20_video = Some(input);
+            self
+        }
+        /// A collection of video encryption presets.
+        pub fn set_preset_speke20_video(
+            mut self,
+            input: std::option::Option<crate::model::PresetSpeke20Video>,
+        ) -> Self {
+            self.preset_speke20_video = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
+        pub fn build(self) -> crate::model::EncryptionContractConfiguration {
+            crate::model::EncryptionContractConfiguration {
+                preset_speke20_audio: self.preset_speke20_audio,
+                preset_speke20_video: self.preset_speke20_video,
+            }
+        }
+    }
+}
+impl EncryptionContractConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
+    pub fn builder() -> crate::model::encryption_contract_configuration::Builder {
+        crate::model::encryption_contract_configuration::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PresetSpeke20Video`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let presetspeke20video = unimplemented!();
+/// match presetspeke20video {
+///     PresetSpeke20Video::PresetVideo1 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo2 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo3 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo4 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo5 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo6 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo7 => { /* ... */ },
+///     PresetSpeke20Video::PresetVideo8 => { /* ... */ },
+///     PresetSpeke20Video::Shared => { /* ... */ },
+///     PresetSpeke20Video::Unencrypted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `presetspeke20video` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PresetSpeke20Video::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PresetSpeke20Video::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PresetSpeke20Video::NewFeature` is defined.
+/// Specifically, when `presetspeke20video` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PresetSpeke20Video::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PresetSpeke20Video {
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo1,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo2,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo3,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo4,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo5,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo6,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo7,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo8,
+    #[allow(missing_docs)] // documentation missing in model
+    Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    Unencrypted,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PresetSpeke20Video {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRESET-VIDEO-1" => PresetSpeke20Video::PresetVideo1,
+            "PRESET-VIDEO-2" => PresetSpeke20Video::PresetVideo2,
+            "PRESET-VIDEO-3" => PresetSpeke20Video::PresetVideo3,
+            "PRESET-VIDEO-4" => PresetSpeke20Video::PresetVideo4,
+            "PRESET-VIDEO-5" => PresetSpeke20Video::PresetVideo5,
+            "PRESET-VIDEO-6" => PresetSpeke20Video::PresetVideo6,
+            "PRESET-VIDEO-7" => PresetSpeke20Video::PresetVideo7,
+            "PRESET-VIDEO-8" => PresetSpeke20Video::PresetVideo8,
+            "SHARED" => PresetSpeke20Video::Shared,
+            "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
+            other => {
+                PresetSpeke20Video::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for PresetSpeke20Video {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PresetSpeke20Video::from(s))
+    }
+}
+impl PresetSpeke20Video {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PresetSpeke20Video::PresetVideo1 => "PRESET-VIDEO-1",
+            PresetSpeke20Video::PresetVideo2 => "PRESET-VIDEO-2",
+            PresetSpeke20Video::PresetVideo3 => "PRESET-VIDEO-3",
+            PresetSpeke20Video::PresetVideo4 => "PRESET-VIDEO-4",
+            PresetSpeke20Video::PresetVideo5 => "PRESET-VIDEO-5",
+            PresetSpeke20Video::PresetVideo6 => "PRESET-VIDEO-6",
+            PresetSpeke20Video::PresetVideo7 => "PRESET-VIDEO-7",
+            PresetSpeke20Video::PresetVideo8 => "PRESET-VIDEO-8",
+            PresetSpeke20Video::Shared => "SHARED",
+            PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
+            PresetSpeke20Video::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "PRESET-VIDEO-1",
+            "PRESET-VIDEO-2",
+            "PRESET-VIDEO-3",
+            "PRESET-VIDEO-4",
+            "PRESET-VIDEO-5",
+            "PRESET-VIDEO-6",
+            "PRESET-VIDEO-7",
+            "PRESET-VIDEO-8",
+            "SHARED",
+            "UNENCRYPTED",
+        ]
+    }
+}
+impl AsRef<str> for PresetSpeke20Video {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `PresetSpeke20Audio`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let presetspeke20audio = unimplemented!();
+/// match presetspeke20audio {
+///     PresetSpeke20Audio::PresetAudio1 => { /* ... */ },
+///     PresetSpeke20Audio::PresetAudio2 => { /* ... */ },
+///     PresetSpeke20Audio::PresetAudio3 => { /* ... */ },
+///     PresetSpeke20Audio::Shared => { /* ... */ },
+///     PresetSpeke20Audio::Unencrypted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `presetspeke20audio` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PresetSpeke20Audio::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PresetSpeke20Audio::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PresetSpeke20Audio::NewFeature` is defined.
+/// Specifically, when `presetspeke20audio` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PresetSpeke20Audio::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PresetSpeke20Audio {
+    #[allow(missing_docs)] // documentation missing in model
+    PresetAudio1,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetAudio2,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetAudio3,
+    #[allow(missing_docs)] // documentation missing in model
+    Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    Unencrypted,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PresetSpeke20Audio {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRESET-AUDIO-1" => PresetSpeke20Audio::PresetAudio1,
+            "PRESET-AUDIO-2" => PresetSpeke20Audio::PresetAudio2,
+            "PRESET-AUDIO-3" => PresetSpeke20Audio::PresetAudio3,
+            "SHARED" => PresetSpeke20Audio::Shared,
+            "UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
+            other => {
+                PresetSpeke20Audio::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for PresetSpeke20Audio {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PresetSpeke20Audio::from(s))
+    }
+}
+impl PresetSpeke20Audio {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PresetSpeke20Audio::PresetAudio1 => "PRESET-AUDIO-1",
+            PresetSpeke20Audio::PresetAudio2 => "PRESET-AUDIO-2",
+            PresetSpeke20Audio::PresetAudio3 => "PRESET-AUDIO-3",
+            PresetSpeke20Audio::Shared => "SHARED",
+            PresetSpeke20Audio::Unencrypted => "UNENCRYPTED",
+            PresetSpeke20Audio::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "PRESET-AUDIO-1",
+            "PRESET-AUDIO-2",
+            "PRESET-AUDIO-3",
+            "SHARED",
+            "UNENCRYPTED",
+        ]
+    }
+}
+impl AsRef<str> for PresetSpeke20Audio {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1605,6 +1982,9 @@ pub struct DashPackage {
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     #[doc(hidden)]
     pub include_encoder_configuration_in_segments: bool,
+    /// When enabled, an I-Frame only stream will be included in the output.
+    #[doc(hidden)]
+    pub include_iframe_only_stream: bool,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     #[doc(hidden)]
     pub period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
@@ -1627,6 +2007,10 @@ impl DashPackage {
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     pub fn include_encoder_configuration_in_segments(&self) -> bool {
         self.include_encoder_configuration_in_segments
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
@@ -1652,6 +2036,7 @@ pub mod dash_package {
         pub(crate) dash_manifests: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
         pub(crate) encryption: std::option::Option<crate::model::DashEncryption>,
         pub(crate) include_encoder_configuration_in_segments: std::option::Option<bool>,
+        pub(crate) include_iframe_only_stream: std::option::Option<bool>,
         pub(crate) period_triggers:
             std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
         pub(crate) segment_duration_seconds: std::option::Option<i32>,
@@ -1702,6 +2087,16 @@ pub mod dash_package {
             input: std::option::Option<bool>,
         ) -> Self {
             self.include_encoder_configuration_in_segments = input;
+            self
+        }
+        /// When enabled, an I-Frame only stream will be included in the output.
+        pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
+            self.include_iframe_only_stream = Some(input);
+            self
+        }
+        /// When enabled, an I-Frame only stream will be included in the output.
+        pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_iframe_only_stream = input;
             self
         }
         /// Appends an item to `period_triggers`.
@@ -1757,6 +2152,7 @@ pub mod dash_package {
                 include_encoder_configuration_in_segments: self
                     .include_encoder_configuration_in_segments
                     .unwrap_or_default(),
+                include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
                 period_triggers: self.period_triggers,
                 segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
                 segment_template_format: self.segment_template_format,
@@ -2026,7 +2422,7 @@ pub struct DashManifest {
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     #[doc(hidden)]
     pub profile: std::option::Option<crate::model::Profile>,
-    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
     #[doc(hidden)]
     pub scte_markers_source: std::option::Option<crate::model::ScteMarkersSource>,
     /// A StreamSelection configuration.
@@ -2050,7 +2446,7 @@ impl DashManifest {
     pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
         self.profile.as_ref()
     }
-    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+    /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
     pub fn scte_markers_source(&self) -> std::option::Option<&crate::model::ScteMarkersSource> {
         self.scte_markers_source.as_ref()
     }
@@ -2119,12 +2515,12 @@ pub mod dash_manifest {
             self.profile = input;
             self
         }
-        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
         pub fn scte_markers_source(mut self, input: crate::model::ScteMarkersSource) -> Self {
             self.scte_markers_source = Some(input);
             self
         }
-        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+        /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
         pub fn set_scte_markers_source(
             mut self,
             input: std::option::Option<crate::model::ScteMarkersSource>,

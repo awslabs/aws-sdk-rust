@@ -183,7 +183,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`region_linking_mode(impl Into<String>)`](crate::client::fluent_builders::CreateFindingAggregator::region_linking_mode) / [`set_region_linking_mode(Option<String>)`](crate::client::fluent_builders::CreateFindingAggregator::set_region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
-    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::CreateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
+    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::CreateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     /// - On success, responds with [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::output::CreateFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::output::CreateFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
@@ -695,7 +695,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`finding_aggregator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_finding_aggregator_arn): <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     ///   - [`region_linking_mode(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::region_linking_mode) / [`set_region_linking_mode(Option<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
-    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
     /// - On success, responds with [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::output::UpdateFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::output::UpdateFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
@@ -1678,14 +1678,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.regions(input.into());
             self
         }
-        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5377,14 +5377,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.regions(input.into());
             self
         }
-        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

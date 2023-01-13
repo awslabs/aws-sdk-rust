@@ -50,13 +50,118 @@ impl UpdateTaskSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateTaskProtectionOutput {
+    /// <p>A list of tasks with the following information.</p>
+    /// <ul>
+    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub protected_tasks: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+    /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
+    pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl UpdateTaskProtectionOutput {
+    /// <p>A list of tasks with the following information.</p>
+    /// <ul>
+    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// </ul>
+    pub fn protected_tasks(&self) -> std::option::Option<&[crate::model::ProtectedTask]> {
+        self.protected_tasks.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
+}
+/// See [`UpdateTaskProtectionOutput`](crate::output::UpdateTaskProtectionOutput).
+pub mod update_task_protection_output {
+
+    /// A builder for [`UpdateTaskProtectionOutput`](crate::output::UpdateTaskProtectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) protected_tasks: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+        pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+    }
+    impl Builder {
+        /// Appends an item to `protected_tasks`.
+        ///
+        /// To override the contents of this collection use [`set_protected_tasks`](Self::set_protected_tasks).
+        ///
+        /// <p>A list of tasks with the following information.</p>
+        /// <ul>
+        /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+        /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+        /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+        /// </ul>
+        pub fn protected_tasks(mut self, input: crate::model::ProtectedTask) -> Self {
+            let mut v = self.protected_tasks.unwrap_or_default();
+            v.push(input);
+            self.protected_tasks = Some(v);
+            self
+        }
+        /// <p>A list of tasks with the following information.</p>
+        /// <ul>
+        /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+        /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+        /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+        /// </ul>
+        pub fn set_protected_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+        ) -> Self {
+            self.protected_tasks = input;
+            self
+        }
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p>Any failures associated with the call.</p>
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
+            let mut v = self.failures.unwrap_or_default();
+            v.push(input);
+            self.failures = Some(v);
+            self
+        }
+        /// <p>Any failures associated with the call.</p>
+        pub fn set_failures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+        ) -> Self {
+            self.failures = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTaskProtectionOutput`](crate::output::UpdateTaskProtectionOutput).
+        pub fn build(self) -> crate::output::UpdateTaskProtectionOutput {
+            crate::output::UpdateTaskProtectionOutput {
+                protected_tasks: self.protected_tasks,
+                failures: self.failures,
+            }
+        }
+    }
+}
+impl UpdateTaskProtectionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskProtectionOutput`](crate::output::UpdateTaskProtectionOutput).
+    pub fn builder() -> crate::output::update_task_protection_output::Builder {
+        crate::output::update_task_protection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetOutput {
-    /// <p>etails about the task set.</p>
+    /// <p>The details about the task set.</p>
     #[doc(hidden)]
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl UpdateServicePrimaryTaskSetOutput {
-    /// <p>etails about the task set.</p>
+    /// <p>The details about the task set.</p>
     pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
         self.task_set.as_ref()
     }
@@ -70,12 +175,12 @@ pub mod update_service_primary_task_set_output {
         pub(crate) task_set: std::option::Option<crate::model::TaskSet>,
     }
     impl Builder {
-        /// <p>etails about the task set.</p>
+        /// <p>The details about the task set.</p>
         pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
             self.task_set = Some(input);
             self
         }
-        /// <p>etails about the task set.</p>
+        /// <p>The details about the task set.</p>
         pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
             self.task_set = input;
             self
@@ -1461,6 +1566,82 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListServicesByNamespaceOutput {
+    /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+    #[doc(hidden)]
+    pub service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListServicesByNamespaceOutput {
+    /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+    pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListServicesByNamespaceOutput`](crate::output::ListServicesByNamespaceOutput).
+pub mod list_services_by_namespace_output {
+
+    /// A builder for [`ListServicesByNamespaceOutput`](crate::output::ListServicesByNamespaceOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `service_arns`.
+        ///
+        /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
+        ///
+        /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+        pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.service_arns.unwrap_or_default();
+            v.push(input.into());
+            self.service_arns = Some(v);
+            self
+        }
+        /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
+        pub fn set_service_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.service_arns = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListServicesByNamespaceOutput`](crate::output::ListServicesByNamespaceOutput).
+        pub fn build(self) -> crate::output::ListServicesByNamespaceOutput {
+            crate::output::ListServicesByNamespaceOutput {
+                service_arns: self.service_arns,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListServicesByNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`ListServicesByNamespaceOutput`](crate::output::ListServicesByNamespaceOutput).
+    pub fn builder() -> crate::output::list_services_by_namespace_output::Builder {
+        crate::output::list_services_by_namespace_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServicesOutput {
     /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
     #[doc(hidden)]
@@ -1841,6 +2022,111 @@ impl ListAccountSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetTaskProtectionOutput {
+    /// <p>A list of tasks with the following information.</p>
+    /// <ul>
+    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub protected_tasks: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+    /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
+    pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl GetTaskProtectionOutput {
+    /// <p>A list of tasks with the following information.</p>
+    /// <ul>
+    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// </ul>
+    pub fn protected_tasks(&self) -> std::option::Option<&[crate::model::ProtectedTask]> {
+        self.protected_tasks.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
+}
+/// See [`GetTaskProtectionOutput`](crate::output::GetTaskProtectionOutput).
+pub mod get_task_protection_output {
+
+    /// A builder for [`GetTaskProtectionOutput`](crate::output::GetTaskProtectionOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) protected_tasks: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+        pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+    }
+    impl Builder {
+        /// Appends an item to `protected_tasks`.
+        ///
+        /// To override the contents of this collection use [`set_protected_tasks`](Self::set_protected_tasks).
+        ///
+        /// <p>A list of tasks with the following information.</p>
+        /// <ul>
+        /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+        /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+        /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+        /// </ul>
+        pub fn protected_tasks(mut self, input: crate::model::ProtectedTask) -> Self {
+            let mut v = self.protected_tasks.unwrap_or_default();
+            v.push(input);
+            self.protected_tasks = Some(v);
+            self
+        }
+        /// <p>A list of tasks with the following information.</p>
+        /// <ul>
+        /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+        /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+        /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+        /// </ul>
+        pub fn set_protected_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectedTask>>,
+        ) -> Self {
+            self.protected_tasks = input;
+            self
+        }
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p>Any failures associated with the call.</p>
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
+            let mut v = self.failures.unwrap_or_default();
+            v.push(input);
+            self.failures = Some(v);
+            self
+        }
+        /// <p>Any failures associated with the call.</p>
+        pub fn set_failures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+        ) -> Self {
+            self.failures = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTaskProtectionOutput`](crate::output::GetTaskProtectionOutput).
+        pub fn build(self) -> crate::output::GetTaskProtectionOutput {
+            crate::output::GetTaskProtectionOutput {
+                protected_tasks: self.protected_tasks,
+                failures: self.failures,
+            }
+        }
+    }
+}
+impl GetTaskProtectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetTaskProtectionOutput`](crate::output::GetTaskProtectionOutput).
+    pub fn builder() -> crate::output::get_task_protection_output::Builder {
+        crate::output::get_task_protection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteCommandOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
@@ -1997,6 +2283,9 @@ pub struct DiscoverPollEndpointOutput {
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
     #[doc(hidden)]
     pub telemetry_endpoint: std::option::Option<std::string::String>,
+    /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub service_connect_endpoint: std::option::Option<std::string::String>,
 }
 impl DiscoverPollEndpointOutput {
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -2007,6 +2296,10 @@ impl DiscoverPollEndpointOutput {
     pub fn telemetry_endpoint(&self) -> std::option::Option<&str> {
         self.telemetry_endpoint.as_deref()
     }
+    /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn service_connect_endpoint(&self) -> std::option::Option<&str> {
+        self.service_connect_endpoint.as_deref()
+    }
 }
 /// See [`DiscoverPollEndpointOutput`](crate::output::DiscoverPollEndpointOutput).
 pub mod discover_poll_endpoint_output {
@@ -2016,6 +2309,7 @@ pub mod discover_poll_endpoint_output {
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) telemetry_endpoint: std::option::Option<std::string::String>,
+        pub(crate) service_connect_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -2041,11 +2335,25 @@ pub mod discover_poll_endpoint_output {
             self.telemetry_endpoint = input;
             self
         }
+        /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn service_connect_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_connect_endpoint = Some(input.into());
+            self
+        }
+        /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn set_service_connect_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_connect_endpoint = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DiscoverPollEndpointOutput`](crate::output::DiscoverPollEndpointOutput).
         pub fn build(self) -> crate::output::DiscoverPollEndpointOutput {
             crate::output::DiscoverPollEndpointOutput {
                 endpoint: self.endpoint,
                 telemetry_endpoint: self.telemetry_endpoint,
+                service_connect_endpoint: self.service_connect_endpoint,
             }
         }
     }

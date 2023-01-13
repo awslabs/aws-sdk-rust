@@ -101,6 +101,7 @@ impl Client {
     ///   - [`dns_target(Option<String>)`](crate::output::AssociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
     ///   - [`service_arn(Option<String>)`](crate::output::AssociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::output::AssociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being associated.</p>
+    ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::output::AssociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     /// - On failure, responds with [`SdkError<AssociateCustomDomainError>`](crate::error::AssociateCustomDomainError)
     pub fn associate_custom_domain(&self) -> fluent_builders::AssociateCustomDomain {
         fluent_builders::AssociateCustomDomain::new(self.handle.clone())
@@ -179,6 +180,19 @@ impl Client {
     pub fn create_vpc_connector(&self) -> fluent_builders::CreateVpcConnector {
         fluent_builders::CreateVpcConnector::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateVpcIngressConnection`](crate::client::fluent_builders::CreateVpcIngressConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::CreateVpcIngressConnection::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::CreateVpcIngressConnection::set_service_arn): <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
+    ///   - [`vpc_ingress_connection_name(impl Into<String>)`](crate::client::fluent_builders::CreateVpcIngressConnection::vpc_ingress_connection_name) / [`set_vpc_ingress_connection_name(Option<String>)`](crate::client::fluent_builders::CreateVpcIngressConnection::set_vpc_ingress_connection_name): <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    ///   - [`ingress_vpc_configuration(IngressVpcConfiguration)`](crate::client::fluent_builders::CreateVpcIngressConnection::ingress_vpc_configuration) / [`set_ingress_vpc_configuration(Option<IngressVpcConfiguration>)`](crate::client::fluent_builders::CreateVpcIngressConnection::set_ingress_vpc_configuration): <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVpcIngressConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVpcIngressConnection::set_tags): <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput) with field(s):
+    ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::output::CreateVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
+    /// - On failure, responds with [`SdkError<CreateVpcIngressConnectionError>`](crate::error::CreateVpcIngressConnectionError)
+    pub fn create_vpc_ingress_connection(&self) -> fluent_builders::CreateVpcIngressConnection {
+        fluent_builders::CreateVpcIngressConnection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteAutoScalingConfiguration`](crate::client::fluent_builders::DeleteAutoScalingConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -234,6 +248,16 @@ impl Client {
     pub fn delete_vpc_connector(&self) -> fluent_builders::DeleteVpcConnector {
         fluent_builders::DeleteVpcConnector::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteVpcIngressConnection`](crate::client::fluent_builders::DeleteVpcIngressConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_ingress_connection_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcIngressConnection::vpc_ingress_connection_arn) / [`set_vpc_ingress_connection_arn(Option<String>)`](crate::client::fluent_builders::DeleteVpcIngressConnection::set_vpc_ingress_connection_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+    /// - On success, responds with [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput) with field(s):
+    ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::output::DeleteVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVpcIngressConnectionError>`](crate::error::DeleteVpcIngressConnectionError)
+    pub fn delete_vpc_ingress_connection(&self) -> fluent_builders::DeleteVpcIngressConnection {
+        fluent_builders::DeleteVpcIngressConnection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeAutoScalingConfiguration`](crate::client::fluent_builders::DescribeAutoScalingConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -257,6 +281,7 @@ impl Client {
     ///   - [`dns_target(Option<String>)`](crate::output::DescribeCustomDomainsOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
     ///   - [`service_arn(Option<String>)`](crate::output::DescribeCustomDomainsOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
     ///   - [`custom_domains(Option<Vec<CustomDomain>>)`](crate::output::DescribeCustomDomainsOutput::custom_domains): <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
+    ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::output::DescribeCustomDomainsOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeCustomDomainsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomDomainsError>`](crate::error::DescribeCustomDomainsError)
     pub fn describe_custom_domains(&self) -> fluent_builders::DescribeCustomDomains {
@@ -294,6 +319,16 @@ impl Client {
     pub fn describe_vpc_connector(&self) -> fluent_builders::DescribeVpcConnector {
         fluent_builders::DescribeVpcConnector::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeVpcIngressConnection`](crate::client::fluent_builders::DescribeVpcIngressConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_ingress_connection_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeVpcIngressConnection::vpc_ingress_connection_arn) / [`set_vpc_ingress_connection_arn(Option<String>)`](crate::client::fluent_builders::DescribeVpcIngressConnection::set_vpc_ingress_connection_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
+    /// - On success, responds with [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput) with field(s):
+    ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::output::DescribeVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcIngressConnectionError>`](crate::error::DescribeVpcIngressConnectionError)
+    pub fn describe_vpc_ingress_connection(&self) -> fluent_builders::DescribeVpcIngressConnection {
+        fluent_builders::DescribeVpcIngressConnection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DisassociateCustomDomain`](crate::client::fluent_builders::DisassociateCustomDomain) operation.
     ///
     /// - The fluent builder is configurable:
@@ -303,6 +338,7 @@ impl Client {
     ///   - [`dns_target(Option<String>)`](crate::output::DisassociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
     ///   - [`service_arn(Option<String>)`](crate::output::DisassociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
     ///   - [`custom_domain(Option<CustomDomain>)`](crate::output::DisassociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being disassociated.</p>
+    ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::output::DisassociateCustomDomainOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     /// - On failure, responds with [`SdkError<DisassociateCustomDomainError>`](crate::error::DisassociateCustomDomainError)
     pub fn disassociate_custom_domain(&self) -> fluent_builders::DisassociateCustomDomain {
         fluent_builders::DisassociateCustomDomain::new(self.handle.clone())
@@ -405,6 +441,20 @@ impl Client {
     pub fn list_vpc_connectors(&self) -> fluent_builders::ListVpcConnectors {
         fluent_builders::ListVpcConnectors::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListVpcIngressConnections`](crate::client::fluent_builders::ListVpcIngressConnections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVpcIngressConnections::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ListVpcIngressConnectionsFilter)`](crate::client::fluent_builders::ListVpcIngressConnections::filter) / [`set_filter(Option<ListVpcIngressConnectionsFilter>)`](crate::client::fluent_builders::ListVpcIngressConnections::set_filter): <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVpcIngressConnections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVpcIngressConnections::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcIngressConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcIngressConnections::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    /// - On success, responds with [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput) with field(s):
+    ///   - [`vpc_ingress_connection_summary_list(Option<Vec<VpcIngressConnectionSummary>>)`](crate::output::ListVpcIngressConnectionsOutput::vpc_ingress_connection_summary_list): <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcIngressConnectionsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListVpcIngressConnectionsError>`](crate::error::ListVpcIngressConnectionsError)
+    pub fn list_vpc_ingress_connections(&self) -> fluent_builders::ListVpcIngressConnections {
+        fluent_builders::ListVpcIngressConnections::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PauseService`](crate::client::fluent_builders::PauseService) operation.
     ///
     /// - The fluent builder is configurable:
@@ -475,6 +525,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
     pub fn update_service(&self) -> fluent_builders::UpdateService {
         fluent_builders::UpdateService::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateVpcIngressConnection`](crate::client::fluent_builders::UpdateVpcIngressConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_ingress_connection_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcIngressConnection::vpc_ingress_connection_arn) / [`set_vpc_ingress_connection_arn(Option<String>)`](crate::client::fluent_builders::UpdateVpcIngressConnection::set_vpc_ingress_connection_arn): <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
+    ///   - [`ingress_vpc_configuration(IngressVpcConfiguration)`](crate::client::fluent_builders::UpdateVpcIngressConnection::ingress_vpc_configuration) / [`set_ingress_vpc_configuration(Option<IngressVpcConfiguration>)`](crate::client::fluent_builders::UpdateVpcIngressConnection::set_ingress_vpc_configuration): <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
+    /// - On success, responds with [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput) with field(s):
+    ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::output::UpdateVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+    /// - On failure, responds with [`SdkError<UpdateVpcIngressConnectionError>`](crate::error::UpdateVpcIngressConnectionError)
+    pub fn update_vpc_ingress_connection(&self) -> fluent_builders::UpdateVpcIngressConnection {
+        fluent_builders::UpdateVpcIngressConnection::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1279,6 +1340,128 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateVpcIngressConnection`.
+    ///
+    /// <p>Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to associate your App Runner service with an Amazon VPC endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVpcIngressConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_vpc_ingress_connection_input::Builder,
+    }
+    impl CreateVpcIngressConnection {
+        /// Creates a new `CreateVpcIngressConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateVpcIngressConnection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcIngressConnectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVpcIngressConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcIngressConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_arn(input);
+            self
+        }
+        /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+        pub fn vpc_ingress_connection_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.vpc_ingress_connection_name(input.into());
+            self
+        }
+        /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+        pub fn set_vpc_ingress_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_ingress_connection_name(input);
+            self
+        }
+        /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
+        pub fn ingress_vpc_configuration(
+            mut self,
+            input: crate::model::IngressVpcConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ingress_vpc_configuration(input);
+            self
+        }
+        /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
+        pub fn set_ingress_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::IngressVpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ingress_vpc_configuration(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteAutoScalingConfiguration`.
     ///
     /// <p>Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>
@@ -1520,7 +1703,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Delete an App Runner service.</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p> <note>
+    /// <p>Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService {
         handle: std::sync::Arc<super::Handle>,
@@ -1666,6 +1851,88 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vpc_connector_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteVpcIngressConnection`.
+    ///
+    /// <p>Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC Ingress Connection must be in one of the following states to be deleted: </p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> </p> </li>
+    /// <li> <p> <code>FAILED_CREATION</code> </p> </li>
+    /// <li> <p> <code>FAILED_UPDATE</code> </p> </li>
+    /// <li> <p> <code>FAILED_DELETION</code> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteVpcIngressConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_vpc_ingress_connection_input::Builder,
+    }
+    impl DeleteVpcIngressConnection {
+        /// Creates a new `DeleteVpcIngressConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteVpcIngressConnection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcIngressConnectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVpcIngressConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcIngressConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+        pub fn vpc_ingress_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_ingress_connection_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+        pub fn set_vpc_ingress_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_ingress_connection_arn(input);
             self
         }
     }
@@ -2086,6 +2353,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vpc_connector_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeVpcIngressConnection`.
+    ///
+    /// <p>Return a full description of an App Runner VPC Ingress Connection resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeVpcIngressConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_vpc_ingress_connection_input::Builder,
+    }
+    impl DescribeVpcIngressConnection {
+        /// Creates a new `DescribeVpcIngressConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeVpcIngressConnection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcIngressConnectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVpcIngressConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcIngressConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
+        pub fn vpc_ingress_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_ingress_connection_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
+        pub fn set_vpc_ingress_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_ingress_connection_arn(input);
             self
         }
     }
@@ -2892,6 +3235,112 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListVpcIngressConnections`.
+    ///
+    /// <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcIngressConnections {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_ingress_connections_input::Builder,
+    }
+    impl ListVpcIngressConnections {
+        /// Creates a new `ListVpcIngressConnections`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListVpcIngressConnections,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcIngressConnectionsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcIngressConnectionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcIngressConnectionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVpcIngressConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVpcIngressConnectionsPaginator {
+            crate::paginator::ListVpcIngressConnectionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
+        pub fn filter(mut self, input: crate::model::ListVpcIngressConnectionsFilter) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListVpcIngressConnectionsFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PauseService`.
     ///
     /// <p>Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is removed).</p>
@@ -3463,6 +3912,103 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ServiceObservabilityConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_observability_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateVpcIngressConnection`.
+    ///
+    /// <p>Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the following states to be updated:</p>
+    /// <ul>
+    /// <li> <p> AVAILABLE </p> </li>
+    /// <li> <p> FAILED_CREATION </p> </li>
+    /// <li> <p> FAILED_UPDATE </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateVpcIngressConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_vpc_ingress_connection_input::Builder,
+    }
+    impl UpdateVpcIngressConnection {
+        /// Creates a new `UpdateVpcIngressConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateVpcIngressConnection,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcIngressConnectionError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateVpcIngressConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcIngressConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
+        pub fn vpc_ingress_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_ingress_connection_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
+        pub fn set_vpc_ingress_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_ingress_connection_arn(input);
+            self
+        }
+        /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
+        pub fn ingress_vpc_configuration(
+            mut self,
+            input: crate::model::IngressVpcConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ingress_vpc_configuration(input);
+            self
+        }
+        /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
+        pub fn set_ingress_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::IngressVpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ingress_vpc_configuration(input);
             self
         }
     }

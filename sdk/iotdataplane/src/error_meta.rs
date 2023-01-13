@@ -303,6 +303,9 @@ impl From<crate::error::PublishError> for Error {
             crate::error::PublishErrorKind::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
+            crate::error::PublishErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::error::PublishErrorKind::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }

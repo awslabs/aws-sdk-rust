@@ -2015,6 +2015,8 @@ pub enum CreateGeofenceCollectionErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input failed to meet the constraints specified by the AWS service. </p>
@@ -2035,6 +2037,9 @@ impl std::fmt::Display for CreateGeofenceCollectionError {
             CreateGeofenceCollectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateGeofenceCollectionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateGeofenceCollectionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateGeofenceCollectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateGeofenceCollectionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateGeofenceCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2124,6 +2129,13 @@ impl CreateGeofenceCollectionError {
             CreateGeofenceCollectionErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateGeofenceCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
@@ -2145,6 +2157,9 @@ impl std::error::Error for CreateGeofenceCollectionError {
             CreateGeofenceCollectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateGeofenceCollectionErrorKind::ConflictException(_inner) => Some(_inner),
             CreateGeofenceCollectionErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateGeofenceCollectionErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
             CreateGeofenceCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateGeofenceCollectionErrorKind::ValidationException(_inner) => Some(_inner),
             CreateGeofenceCollectionErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2179,6 +2194,8 @@ pub enum CreateMapErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input failed to meet the constraints specified by the AWS service. </p>
@@ -2199,6 +2216,7 @@ impl std::fmt::Display for CreateMapError {
             CreateMapErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateMapErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateMapErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateMapErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateMapErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateMapErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateMapErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2273,6 +2291,13 @@ impl CreateMapError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateMapErrorKind::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `CreateMapErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMapErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateMapErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateMapErrorKind::ThrottlingException(_))
@@ -2288,6 +2313,7 @@ impl std::error::Error for CreateMapError {
             CreateMapErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateMapErrorKind::ConflictException(_inner) => Some(_inner),
             CreateMapErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateMapErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateMapErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMapErrorKind::ValidationException(_inner) => Some(_inner),
             CreateMapErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2322,6 +2348,8 @@ pub enum CreatePlaceIndexErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input failed to meet the constraints specified by the AWS service. </p>
@@ -2342,6 +2370,7 @@ impl std::fmt::Display for CreatePlaceIndexError {
             CreatePlaceIndexErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreatePlaceIndexErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreatePlaceIndexErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreatePlaceIndexErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreatePlaceIndexErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreatePlaceIndexErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreatePlaceIndexErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2424,6 +2453,13 @@ impl CreatePlaceIndexError {
             CreatePlaceIndexErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreatePlaceIndexErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlaceIndexErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreatePlaceIndexErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
@@ -2445,6 +2481,7 @@ impl std::error::Error for CreatePlaceIndexError {
             CreatePlaceIndexErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreatePlaceIndexErrorKind::ConflictException(_inner) => Some(_inner),
             CreatePlaceIndexErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreatePlaceIndexErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreatePlaceIndexErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreatePlaceIndexErrorKind::ValidationException(_inner) => Some(_inner),
             CreatePlaceIndexErrorKind::Unhandled(_inner) => Some(_inner),
@@ -2479,6 +2516,8 @@ pub enum CreateRouteCalculatorErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input failed to meet the constraints specified by the AWS service. </p>
@@ -2499,6 +2538,7 @@ impl std::fmt::Display for CreateRouteCalculatorError {
             CreateRouteCalculatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateRouteCalculatorErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateRouteCalculatorErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateRouteCalculatorErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateRouteCalculatorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateRouteCalculatorErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateRouteCalculatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2588,6 +2628,13 @@ impl CreateRouteCalculatorError {
             CreateRouteCalculatorErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateRouteCalculatorErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRouteCalculatorErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateRouteCalculatorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
@@ -2609,6 +2656,7 @@ impl std::error::Error for CreateRouteCalculatorError {
             CreateRouteCalculatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateRouteCalculatorErrorKind::ConflictException(_inner) => Some(_inner),
             CreateRouteCalculatorErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateRouteCalculatorErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateRouteCalculatorErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateRouteCalculatorErrorKind::ValidationException(_inner) => Some(_inner),
             CreateRouteCalculatorErrorKind::Unhandled(_inner) => Some(_inner),

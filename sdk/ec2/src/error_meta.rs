@@ -20,6 +20,31 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptAddressTransferError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AcceptAddressTransferError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AcceptAddressTransferError> for Error {
+    fn from(err: crate::error::AcceptAddressTransferError) -> Self {
+        match err.kind {
+            crate::error::AcceptAddressTransferErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -797,6 +822,35 @@ impl From<crate::error::AttachNetworkInterfaceError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::AttachVerifiedAccessTrustProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AttachVerifiedAccessTrustProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AttachVerifiedAccessTrustProviderError> for Error {
+    fn from(err: crate::error::AttachVerifiedAccessTrustProviderError) -> Self {
+        match err.kind {
+            crate::error::AttachVerifiedAccessTrustProviderErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1062,6 +1116,31 @@ impl From<crate::error::CancelExportTaskError> for Error {
     fn from(err: crate::error::CancelExportTaskError) -> Self {
         match err.kind {
             crate::error::CancelExportTaskErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelImageLaunchPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CancelImageLaunchPermissionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CancelImageLaunchPermissionError> for Error {
+    fn from(err: crate::error::CancelImageLaunchPermissionError) -> Self {
+        match err.kind {
+            crate::error::CancelImageLaunchPermissionErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -2974,6 +3053,110 @@ impl From<crate::error::CreateTransitGatewayVpcAttachmentError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVerifiedAccessEndpointError> for Error {
+    fn from(err: crate::error::CreateVerifiedAccessEndpointError) -> Self {
+        match err.kind {
+            crate::error::CreateVerifiedAccessEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVerifiedAccessGroupError> for Error {
+    fn from(err: crate::error::CreateVerifiedAccessGroupError) -> Self {
+        match err.kind {
+            crate::error::CreateVerifiedAccessGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessInstanceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVerifiedAccessInstanceError> for Error {
+    fn from(err: crate::error::CreateVerifiedAccessInstanceError) -> Self {
+        match err.kind {
+            crate::error::CreateVerifiedAccessInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateVerifiedAccessTrustProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateVerifiedAccessTrustProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateVerifiedAccessTrustProviderError> for Error {
+    fn from(err: crate::error::CreateVerifiedAccessTrustProviderError) -> Self {
+        match err.kind {
+            crate::error::CreateVerifiedAccessTrustProviderErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4727,6 +4910,110 @@ impl From<crate::error::DeleteTransitGatewayVpcAttachmentError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVerifiedAccessEndpointError> for Error {
+    fn from(err: crate::error::DeleteVerifiedAccessEndpointError) -> Self {
+        match err.kind {
+            crate::error::DeleteVerifiedAccessEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVerifiedAccessGroupError> for Error {
+    fn from(err: crate::error::DeleteVerifiedAccessGroupError) -> Self {
+        match err.kind {
+            crate::error::DeleteVerifiedAccessGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessInstanceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVerifiedAccessInstanceError> for Error {
+    fn from(err: crate::error::DeleteVerifiedAccessInstanceError) -> Self {
+        match err.kind {
+            crate::error::DeleteVerifiedAccessInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedAccessTrustProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteVerifiedAccessTrustProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteVerifiedAccessTrustProviderError> for Error {
+    fn from(err: crate::error::DeleteVerifiedAccessTrustProviderError) -> Self {
+        match err.kind {
+            crate::error::DeleteVerifiedAccessTrustProviderErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5229,6 +5516,31 @@ impl From<crate::error::DescribeAddressesAttributeError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAddressTransfersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeAddressTransfersError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAddressTransfersError> for Error {
+    fn from(err: crate::error::DescribeAddressTransfersError) -> Self {
+        match err.kind {
+            crate::error::DescribeAddressTransfersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAggregateIdFormatError, R>>
     for Error
 where
@@ -5276,6 +5588,39 @@ impl From<crate::error::DescribeAvailabilityZonesError> for Error {
             crate::error::DescribeAvailabilityZonesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError> for Error {
+    fn from(err: crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError) -> Self {
+        match err.kind {
+            crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsErrorKind::Unhandled(
+                inner,
+            ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -8287,6 +8632,153 @@ impl From<crate::error::DescribeTrunkInterfaceAssociationsError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeVerifiedAccessEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessEndpointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVerifiedAccessEndpointsError> for Error {
+    fn from(err: crate::error::DescribeVerifiedAccessEndpointsError) -> Self {
+        match err.kind {
+            crate::error::DescribeVerifiedAccessEndpointsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVerifiedAccessGroupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeVerifiedAccessGroupsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVerifiedAccessGroupsError> for Error {
+    fn from(err: crate::error::DescribeVerifiedAccessGroupsError) -> Self {
+        match err.kind {
+            crate::error::DescribeVerifiedAccessGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError> for Error {
+    fn from(err: crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError) -> Self {
+        match err.kind {
+            crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeVerifiedAccessInstancesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessInstancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVerifiedAccessInstancesError> for Error {
+    fn from(err: crate::error::DescribeVerifiedAccessInstancesError) -> Self {
+        match err.kind {
+            crate::error::DescribeVerifiedAccessInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessTrustProvidersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeVerifiedAccessTrustProvidersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeVerifiedAccessTrustProvidersError> for Error {
+    fn from(err: crate::error::DescribeVerifiedAccessTrustProvidersError) -> Self {
+        match err.kind {
+            crate::error::DescribeVerifiedAccessTrustProvidersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVolumeAttributeError, R>>
     for Error
 where
@@ -8812,6 +9304,35 @@ impl From<crate::error::DetachNetworkInterfaceError> for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DetachVerifiedAccessTrustProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DetachVerifiedAccessTrustProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetachVerifiedAccessTrustProviderError> for Error {
+    fn from(err: crate::error::DetachVerifiedAccessTrustProviderError) -> Self {
+        match err.kind {
+            crate::error::DetachVerifiedAccessTrustProviderErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8855,6 +9376,64 @@ impl From<crate::error::DetachVpnGatewayError> for Error {
             crate::error::DetachVpnGatewayErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableAddressTransferError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DisableAddressTransferError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableAddressTransferError> for Error {
+    fn from(err: crate::error::DisableAddressTransferError) -> Self {
+        match err.kind {
+            crate::error::DisableAddressTransferErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError> for Error {
+    fn from(err: crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::DisableAwsNetworkPerformanceMetricSubscriptionErrorKind::Unhandled(
+                inner,
+            ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -9471,6 +10050,64 @@ impl From<crate::error::DisassociateVpcCidrBlockError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAddressTransferError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::EnableAddressTransferError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableAddressTransferError> for Error {
+    fn from(err: crate::error::EnableAddressTransferError) -> Self {
+        match err.kind {
+            crate::error::EnableAddressTransferErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError> for Error {
+    fn from(err: crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::EnableAwsNetworkPerformanceMetricSubscriptionErrorKind::Unhandled(
+                inner,
+            ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableEbsEncryptionByDefaultError, R>>
     for Error
 where
@@ -9597,6 +10234,39 @@ impl From<crate::error::EnableIpamOrganizationAdminAccountError> for Error {
             crate::error::EnableIpamOrganizationAdminAccountErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::EnableReachabilityAnalyzerOrganizationSharingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::EnableReachabilityAnalyzerOrganizationSharingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableReachabilityAnalyzerOrganizationSharingError> for Error {
+    fn from(err: crate::error::EnableReachabilityAnalyzerOrganizationSharingError) -> Self {
+        match err.kind {
+            crate::error::EnableReachabilityAnalyzerOrganizationSharingErrorKind::Unhandled(
+                inner,
+            ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -9922,6 +10592,31 @@ impl From<crate::error::GetAssociatedIpv6PoolCidrsError> for Error {
     fn from(err: crate::error::GetAssociatedIpv6PoolCidrsError) -> Self {
         match err.kind {
             crate::error::GetAssociatedIpv6PoolCidrsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAwsNetworkPerformanceDataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetAwsNetworkPerformanceDataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetAwsNetworkPerformanceDataError> for Error {
+    fn from(err: crate::error::GetAwsNetworkPerformanceDataError) -> Self {
+        match err.kind {
+            crate::error::GetAwsNetworkPerformanceDataErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -10840,6 +11535,60 @@ impl From<crate::error::GetTransitGatewayRouteTablePropagationsError> for Error 
     fn from(err: crate::error::GetTransitGatewayRouteTablePropagationsError) -> Self {
         match err.kind {
             crate::error::GetTransitGatewayRouteTablePropagationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetVerifiedAccessEndpointPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetVerifiedAccessEndpointPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetVerifiedAccessEndpointPolicyError> for Error {
+    fn from(err: crate::error::GetVerifiedAccessEndpointPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetVerifiedAccessEndpointPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVerifiedAccessGroupPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetVerifiedAccessGroupPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetVerifiedAccessGroupPolicyError> for Error {
+    fn from(err: crate::error::GetVerifiedAccessGroupPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetVerifiedAccessGroupPolicyErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }
@@ -12170,6 +12919,202 @@ impl From<crate::error::ModifyTransitGatewayVpcAttachmentError> for Error {
     fn from(err: crate::error::ModifyTransitGatewayVpcAttachmentError) -> Self {
         match err.kind {
             crate::error::ModifyTransitGatewayVpcAttachmentErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessEndpointError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessEndpointError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessEndpointPolicyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyVerifiedAccessEndpointPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessEndpointPolicyError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessEndpointPolicyError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessEndpointPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessGroupError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessGroupError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessGroupPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyVerifiedAccessGroupPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessGroupPolicyError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessGroupPolicyError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessGroupPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessInstanceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessInstanceError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessInstanceError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationErrorKind::Unhandled(
+                inner,
+            ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ModifyVerifiedAccessTrustProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyVerifiedAccessTrustProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyVerifiedAccessTrustProviderError> for Error {
+    fn from(err: crate::error::ModifyVerifiedAccessTrustProviderError) -> Self {
+        match err.kind {
+            crate::error::ModifyVerifiedAccessTrustProviderErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

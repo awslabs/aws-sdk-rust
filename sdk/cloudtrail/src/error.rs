@@ -480,6 +480,69 @@ impl NotOrganizationMasterAccountException {
     }
 }
 
+/// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NoManagementAccountSlrExistsException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl NoManagementAccountSlrExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoManagementAccountSlrExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "NoManagementAccountSlrExistsException [NoManagementAccountSLRExistsException]"
+        )?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoManagementAccountSlrExistsException {}
+/// See [`NoManagementAccountSlrExistsException`](crate::error::NoManagementAccountSlrExistsException).
+pub mod no_management_account_slr_exists_exception {
+
+    /// A builder for [`NoManagementAccountSlrExistsException`](crate::error::NoManagementAccountSlrExistsException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoManagementAccountSlrExistsException`](crate::error::NoManagementAccountSlrExistsException).
+        pub fn build(self) -> crate::error::NoManagementAccountSlrExistsException {
+            crate::error::NoManagementAccountSlrExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoManagementAccountSlrExistsException {
+    /// Creates a new builder-style object to manufacture [`NoManagementAccountSlrExistsException`](crate::error::NoManagementAccountSlrExistsException).
+    pub fn builder() -> crate::error::no_management_account_slr_exists_exception::Builder {
+        crate::error::no_management_account_slr_exists_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -497,9 +560,9 @@ impl KmsKeyNotFoundException {
 impl std::fmt::Display for KmsKeyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsKeyNotFoundException")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -558,9 +621,9 @@ impl KmsKeyDisabledException {
 impl std::fmt::Display for KmsKeyDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsKeyDisabledException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -601,7 +664,7 @@ impl KmsKeyDisabledException {
     }
 }
 
-/// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
+/// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KmsException {
@@ -618,9 +681,9 @@ impl KmsException {
 impl std::fmt::Display for KmsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -685,9 +748,9 @@ impl InvalidTrailNameException {
 impl std::fmt::Display for InvalidTrailNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTrailNameException")?;
-        if let Some(inner_12) = &self.message {
+        if let Some(inner_13) = &self.message {
             {
-                write!(f, ": {}", inner_12)?;
+                write!(f, ": {}", inner_13)?;
             }
         }
         Ok(())
@@ -745,9 +808,9 @@ impl InvalidSnsTopicNameException {
 impl std::fmt::Display for InvalidSnsTopicNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnsTopicNameException")?;
-        if let Some(inner_13) = &self.message {
+        if let Some(inner_14) = &self.message {
             {
-                write!(f, ": {}", inner_13)?;
+                write!(f, ": {}", inner_14)?;
             }
         }
         Ok(())
@@ -805,9 +868,9 @@ impl InvalidS3PrefixException {
 impl std::fmt::Display for InvalidS3PrefixException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3PrefixException")?;
-        if let Some(inner_14) = &self.message {
+        if let Some(inner_15) = &self.message {
             {
-                write!(f, ": {}", inner_14)?;
+                write!(f, ": {}", inner_15)?;
             }
         }
         Ok(())
@@ -865,9 +928,9 @@ impl InvalidS3BucketNameException {
 impl std::fmt::Display for InvalidS3BucketNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3BucketNameException")?;
-        if let Some(inner_15) = &self.message {
+        if let Some(inner_16) = &self.message {
             {
-                write!(f, ": {}", inner_15)?;
+                write!(f, ": {}", inner_16)?;
             }
         }
         Ok(())
@@ -908,6 +971,66 @@ impl InvalidS3BucketNameException {
     }
 }
 
+/// <p>The request includes a parameter that is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidParameterException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl InvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterException")?;
+        if let Some(inner_17) = &self.message {
+            {
+                write!(f, ": {}", inner_17)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterException {}
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException).
+pub mod invalid_parameter_exception {
+
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -925,9 +1048,9 @@ impl InvalidParameterCombinationException {
 impl std::fmt::Display for InvalidParameterCombinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterCombinationException")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -985,9 +1108,9 @@ impl InvalidKmsKeyIdException {
 impl std::fmt::Display for InvalidKmsKeyIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKmsKeyIdException")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1045,9 +1168,9 @@ impl InvalidHomeRegionException {
 impl std::fmt::Display for InvalidHomeRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHomeRegionException")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1112,9 +1235,9 @@ impl InvalidEventSelectorsException {
 impl std::fmt::Display for InvalidEventSelectorsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSelectorsException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1172,9 +1295,9 @@ impl InvalidCloudWatchLogsRoleArnException {
 impl std::fmt::Display for InvalidCloudWatchLogsRoleArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCloudWatchLogsRoleArnException")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1232,9 +1355,9 @@ impl InvalidCloudWatchLogsLogGroupArnException {
 impl std::fmt::Display for InvalidCloudWatchLogsLogGroupArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCloudWatchLogsLogGroupArnException")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1292,9 +1415,9 @@ impl InsufficientSnsTopicPolicyException {
 impl std::fmt::Display for InsufficientSnsTopicPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientSnsTopicPolicyException")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1352,9 +1475,9 @@ impl InsufficientS3BucketPolicyException {
 impl std::fmt::Display for InsufficientS3BucketPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientS3BucketPolicyException")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1395,7 +1518,7 @@ impl InsufficientS3BucketPolicyException {
     }
 }
 
-/// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
+/// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientEncryptionPolicyException {
@@ -1412,9 +1535,9 @@ impl InsufficientEncryptionPolicyException {
 impl std::fmt::Display for InsufficientEncryptionPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientEncryptionPolicyException")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1472,9 +1595,9 @@ impl InsufficientDependencyServiceAccessPermissionException {
 impl std::fmt::Display for InsufficientDependencyServiceAccessPermissionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientDependencyServiceAccessPermissionException")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1534,9 +1657,9 @@ impl CloudWatchLogsDeliveryUnavailableException {
 impl std::fmt::Display for CloudWatchLogsDeliveryUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudWatchLogsDeliveryUnavailableException")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1594,9 +1717,9 @@ impl CloudTrailInvalidClientTokenIdException {
 impl std::fmt::Display for CloudTrailInvalidClientTokenIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudTrailInvalidClientTokenIdException")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1637,6 +1760,70 @@ impl CloudTrailInvalidClientTokenIdException {
     }
 }
 
+/// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+/// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CloudTrailArnInvalidException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl CloudTrailArnInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudTrailArnInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "CloudTrailArnInvalidException [CloudTrailARNInvalidException]"
+        )?;
+        if let Some(inner_30) = &self.message {
+            {
+                write!(f, ": {}", inner_30)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudTrailArnInvalidException {}
+/// See [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
+pub mod cloud_trail_arn_invalid_exception {
+
+    /// A builder for [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
+        pub fn build(self) -> crate::error::CloudTrailArnInvalidException {
+            crate::error::CloudTrailArnInvalidException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CloudTrailArnInvalidException {
+    /// Creates a new builder-style object to manufacture [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
+    pub fn builder() -> crate::error::cloud_trail_arn_invalid_exception::Builder {
+        crate::error::cloud_trail_arn_invalid_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1654,9 +1841,9 @@ impl CloudTrailAccessNotEnabledException {
 impl std::fmt::Display for CloudTrailAccessNotEnabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudTrailAccessNotEnabledException")?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -1697,66 +1884,6 @@ impl CloudTrailAccessNotEnabledException {
     }
 }
 
-/// <p>The request includes a parameter that is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException {
-    /// <p>Brief description of the exception returned by the request.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl InvalidParameterException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterException")?;
-        if let Some(inner_29) = &self.message {
-            {
-                write!(f, ": {}", inner_29)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidParameterException {}
-/// See [`InvalidParameterException`](crate::error::InvalidParameterException).
-pub mod invalid_parameter_exception {
-
-    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Brief description of the exception returned by the request.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Brief description of the exception returned by the request.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
-        pub fn build(self) -> crate::error::InvalidParameterException {
-            crate::error::InvalidParameterException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidParameterException {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
-    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
-        crate::error::invalid_parameter_exception::Builder::default()
-    }
-}
-
 /// <p>The event data store is inactive.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1774,9 +1901,9 @@ impl InactiveEventDataStoreException {
 impl std::fmt::Display for InactiveEventDataStoreException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InactiveEventDataStoreException")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -1834,9 +1961,9 @@ impl EventDataStoreNotFoundException {
 impl std::fmt::Display for EventDataStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreNotFoundException")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -1894,9 +2021,9 @@ impl EventDataStoreHasOngoingImportException {
 impl std::fmt::Display for EventDataStoreHasOngoingImportException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreHasOngoingImportException")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -1957,9 +2084,9 @@ impl std::fmt::Display for EventDataStoreArnInvalidException {
             f,
             "EventDataStoreArnInvalidException [EventDataStoreARNInvalidException]"
         )?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2017,9 +2144,9 @@ impl ImportNotFoundException {
 impl std::fmt::Display for ImportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ImportNotFoundException")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2077,9 +2204,9 @@ impl MaxConcurrentQueriesException {
 impl std::fmt::Display for MaxConcurrentQueriesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaxConcurrentQueriesException")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -2137,9 +2264,9 @@ impl InvalidQueryStatementException {
 impl std::fmt::Display for InvalidQueryStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStatementException")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2197,9 +2324,9 @@ impl InvalidImportSourceException {
 impl std::fmt::Display for InvalidImportSourceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportSourceException")?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2257,9 +2384,9 @@ impl InvalidEventDataStoreStatusException {
 impl std::fmt::Display for InvalidEventDataStoreStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventDataStoreStatusException")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2300,7 +2427,7 @@ impl InvalidEventDataStoreStatusException {
     }
 }
 
-/// <p> This exception is thrown when the event data store category is not valid for the import. </p>
+/// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEventDataStoreCategoryException {
@@ -2317,9 +2444,9 @@ impl InvalidEventDataStoreCategoryException {
 impl std::fmt::Display for InvalidEventDataStoreCategoryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventDataStoreCategoryException")?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2377,9 +2504,9 @@ impl AccountHasOngoingImportException {
 impl std::fmt::Display for AccountHasOngoingImportException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccountHasOngoingImportException")?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2437,9 +2564,9 @@ impl EventDataStoreMaxLimitExceededException {
 impl std::fmt::Display for EventDataStoreMaxLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreMaxLimitExceededException")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2497,9 +2624,9 @@ impl ResourceTypeNotSupportedException {
 impl std::fmt::Display for ResourceTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceTypeNotSupportedException")?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2557,9 +2684,9 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2617,9 +2744,9 @@ impl InvalidTagParameterException {
 impl std::fmt::Display for InvalidTagParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagParameterException")?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2660,40 +2787,36 @@ impl InvalidTagParameterException {
     }
 }
 
-/// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-/// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+/// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudTrailArnInvalidException {
+pub struct NotOrganizationManagementAccountException {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl CloudTrailArnInvalidException {
+impl NotOrganizationManagementAccountException {
     /// Returns the error message.
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudTrailArnInvalidException {
+impl std::fmt::Display for NotOrganizationManagementAccountException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CloudTrailArnInvalidException [CloudTrailARNInvalidException]"
-        )?;
-        if let Some(inner_45) = &self.message {
+        write!(f, "NotOrganizationManagementAccountException")?;
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudTrailArnInvalidException {}
-/// See [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
-pub mod cloud_trail_arn_invalid_exception {
+impl std::error::Error for NotOrganizationManagementAccountException {}
+/// See [`NotOrganizationManagementAccountException`](crate::error::NotOrganizationManagementAccountException).
+pub mod not_organization_management_account_exception {
 
-    /// A builder for [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
+    /// A builder for [`NotOrganizationManagementAccountException`](crate::error::NotOrganizationManagementAccountException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2709,18 +2832,258 @@ pub mod cloud_trail_arn_invalid_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
-        pub fn build(self) -> crate::error::CloudTrailArnInvalidException {
-            crate::error::CloudTrailArnInvalidException {
+        /// Consumes the builder and constructs a [`NotOrganizationManagementAccountException`](crate::error::NotOrganizationManagementAccountException).
+        pub fn build(self) -> crate::error::NotOrganizationManagementAccountException {
+            crate::error::NotOrganizationManagementAccountException {
                 message: self.message,
             }
         }
     }
 }
-impl CloudTrailArnInvalidException {
-    /// Creates a new builder-style object to manufacture [`CloudTrailArnInvalidException`](crate::error::CloudTrailArnInvalidException).
-    pub fn builder() -> crate::error::cloud_trail_arn_invalid_exception::Builder {
-        crate::error::cloud_trail_arn_invalid_exception::Builder::default()
+impl NotOrganizationManagementAccountException {
+    /// Creates a new builder-style object to manufacture [`NotOrganizationManagementAccountException`](crate::error::NotOrganizationManagementAccountException).
+    pub fn builder() -> crate::error::not_organization_management_account_exception::Builder {
+        crate::error::not_organization_management_account_exception::Builder::default()
+    }
+}
+
+/// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DelegatedAdminAccountLimitExceededException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl DelegatedAdminAccountLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DelegatedAdminAccountLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DelegatedAdminAccountLimitExceededException")?;
+        if let Some(inner_48) = &self.message {
+            {
+                write!(f, ": {}", inner_48)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DelegatedAdminAccountLimitExceededException {}
+/// See [`DelegatedAdminAccountLimitExceededException`](crate::error::DelegatedAdminAccountLimitExceededException).
+pub mod delegated_admin_account_limit_exceeded_exception {
+
+    /// A builder for [`DelegatedAdminAccountLimitExceededException`](crate::error::DelegatedAdminAccountLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DelegatedAdminAccountLimitExceededException`](crate::error::DelegatedAdminAccountLimitExceededException).
+        pub fn build(self) -> crate::error::DelegatedAdminAccountLimitExceededException {
+            crate::error::DelegatedAdminAccountLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DelegatedAdminAccountLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`DelegatedAdminAccountLimitExceededException`](crate::error::DelegatedAdminAccountLimitExceededException).
+    pub fn builder() -> crate::error::delegated_admin_account_limit_exceeded_exception::Builder {
+        crate::error::delegated_admin_account_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CannotDelegateManagementAccountException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl CannotDelegateManagementAccountException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CannotDelegateManagementAccountException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CannotDelegateManagementAccountException")?;
+        if let Some(inner_49) = &self.message {
+            {
+                write!(f, ": {}", inner_49)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CannotDelegateManagementAccountException {}
+/// See [`CannotDelegateManagementAccountException`](crate::error::CannotDelegateManagementAccountException).
+pub mod cannot_delegate_management_account_exception {
+
+    /// A builder for [`CannotDelegateManagementAccountException`](crate::error::CannotDelegateManagementAccountException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CannotDelegateManagementAccountException`](crate::error::CannotDelegateManagementAccountException).
+        pub fn build(self) -> crate::error::CannotDelegateManagementAccountException {
+            crate::error::CannotDelegateManagementAccountException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CannotDelegateManagementAccountException {
+    /// Creates a new builder-style object to manufacture [`CannotDelegateManagementAccountException`](crate::error::CannotDelegateManagementAccountException).
+    pub fn builder() -> crate::error::cannot_delegate_management_account_exception::Builder {
+        crate::error::cannot_delegate_management_account_exception::Builder::default()
+    }
+}
+
+/// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccountRegisteredException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccountRegisteredException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccountRegisteredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccountRegisteredException")?;
+        if let Some(inner_50) = &self.message {
+            {
+                write!(f, ": {}", inner_50)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccountRegisteredException {}
+/// See [`AccountRegisteredException`](crate::error::AccountRegisteredException).
+pub mod account_registered_exception {
+
+    /// A builder for [`AccountRegisteredException`](crate::error::AccountRegisteredException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountRegisteredException`](crate::error::AccountRegisteredException).
+        pub fn build(self) -> crate::error::AccountRegisteredException {
+            crate::error::AccountRegisteredException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccountRegisteredException {
+    /// Creates a new builder-style object to manufacture [`AccountRegisteredException`](crate::error::AccountRegisteredException).
+    pub fn builder() -> crate::error::account_registered_exception::Builder {
+        crate::error::account_registered_exception::Builder::default()
+    }
+}
+
+/// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccountNotFoundException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccountNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccountNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccountNotFoundException")?;
+        if let Some(inner_51) = &self.message {
+            {
+                write!(f, ": {}", inner_51)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccountNotFoundException {}
+/// See [`AccountNotFoundException`](crate::error::AccountNotFoundException).
+pub mod account_not_found_exception {
+
+    /// A builder for [`AccountNotFoundException`](crate::error::AccountNotFoundException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountNotFoundException`](crate::error::AccountNotFoundException).
+        pub fn build(self) -> crate::error::AccountNotFoundException {
+            crate::error::AccountNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccountNotFoundException {
+    /// Creates a new builder-style object to manufacture [`AccountNotFoundException`](crate::error::AccountNotFoundException).
+    pub fn builder() -> crate::error::account_not_found_exception::Builder {
+        crate::error::account_not_found_exception::Builder::default()
     }
 }
 
@@ -2741,9 +3104,9 @@ impl InvalidInsightSelectorsException {
 impl std::fmt::Display for InvalidInsightSelectorsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInsightSelectorsException")?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_52) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_52)?;
             }
         }
         Ok(())
@@ -2801,9 +3164,9 @@ impl InvalidTimeRangeException {
 impl std::fmt::Display for InvalidTimeRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTimeRangeException")?;
-        if let Some(inner_47) = &self.message {
+        if let Some(inner_53) = &self.message {
             {
-                write!(f, ": {}", inner_47)?;
+                write!(f, ": {}", inner_53)?;
             }
         }
         Ok(())
@@ -2861,9 +3224,9 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_48) = &self.message {
+        if let Some(inner_54) = &self.message {
             {
-                write!(f, ": {}", inner_48)?;
+                write!(f, ": {}", inner_54)?;
             }
         }
         Ok(())
@@ -2921,9 +3284,9 @@ impl InvalidMaxResultsException {
 impl std::fmt::Display for InvalidMaxResultsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxResultsException")?;
-        if let Some(inner_49) = &self.message {
+        if let Some(inner_55) = &self.message {
             {
-                write!(f, ": {}", inner_49)?;
+                write!(f, ": {}", inner_55)?;
             }
         }
         Ok(())
@@ -2981,9 +3344,9 @@ impl InvalidLookupAttributesException {
 impl std::fmt::Display for InvalidLookupAttributesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLookupAttributesException")?;
-        if let Some(inner_50) = &self.message {
+        if let Some(inner_56) = &self.message {
             {
-                write!(f, ": {}", inner_50)?;
+                write!(f, ": {}", inner_56)?;
             }
         }
         Ok(())
@@ -3041,9 +3404,9 @@ impl InvalidEventCategoryException {
 impl std::fmt::Display for InvalidEventCategoryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventCategoryException")?;
-        if let Some(inner_51) = &self.message {
+        if let Some(inner_57) = &self.message {
             {
-                write!(f, ": {}", inner_51)?;
+                write!(f, ": {}", inner_57)?;
             }
         }
         Ok(())
@@ -3101,9 +3464,9 @@ impl InvalidTokenException {
 impl std::fmt::Display for InvalidTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTokenException")?;
-        if let Some(inner_52) = &self.message {
+        if let Some(inner_58) = &self.message {
             {
-                write!(f, ": {}", inner_52)?;
+                write!(f, ": {}", inner_58)?;
             }
         }
         Ok(())
@@ -3161,9 +3524,9 @@ impl InvalidQueryStatusException {
 impl std::fmt::Display for InvalidQueryStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStatusException")?;
-        if let Some(inner_53) = &self.message {
+        if let Some(inner_59) = &self.message {
             {
-                write!(f, ": {}", inner_53)?;
+                write!(f, ": {}", inner_59)?;
             }
         }
         Ok(())
@@ -3221,9 +3584,9 @@ impl InvalidDateRangeException {
 impl std::fmt::Display for InvalidDateRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDateRangeException")?;
-        if let Some(inner_54) = &self.message {
+        if let Some(inner_60) = &self.message {
             {
-                write!(f, ": {}", inner_54)?;
+                write!(f, ": {}", inner_60)?;
             }
         }
         Ok(())
@@ -3281,9 +3644,9 @@ impl QueryIdNotFoundException {
 impl std::fmt::Display for QueryIdNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryIdNotFoundException")?;
-        if let Some(inner_55) = &self.message {
+        if let Some(inner_61) = &self.message {
             {
-                write!(f, ": {}", inner_55)?;
+                write!(f, ": {}", inner_61)?;
             }
         }
         Ok(())
@@ -3341,9 +3704,9 @@ impl InsightNotEnabledException {
 impl std::fmt::Display for InsightNotEnabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsightNotEnabledException")?;
-        if let Some(inner_56) = &self.message {
+        if let Some(inner_62) = &self.message {
             {
-                write!(f, ": {}", inner_56)?;
+                write!(f, ": {}", inner_62)?;
             }
         }
         Ok(())
@@ -3401,9 +3764,9 @@ impl ChannelNotFoundException {
 impl std::fmt::Display for ChannelNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ChannelNotFoundException")?;
-        if let Some(inner_57) = &self.message {
+        if let Some(inner_63) = &self.message {
             {
-                write!(f, ": {}", inner_57)?;
+                write!(f, ": {}", inner_63)?;
             }
         }
         Ok(())
@@ -3444,7 +3807,7 @@ impl ChannelNotFoundException {
     }
 }
 
-/// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
+/// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelArnInvalidException {
@@ -3461,9 +3824,9 @@ impl ChannelArnInvalidException {
 impl std::fmt::Display for ChannelArnInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ChannelArnInvalidException [ChannelARNInvalidException]")?;
-        if let Some(inner_58) = &self.message {
+        if let Some(inner_64) = &self.message {
             {
-                write!(f, ": {}", inner_58)?;
+                write!(f, ": {}", inner_64)?;
             }
         }
         Ok(())
@@ -3504,6 +3867,66 @@ impl ChannelArnInvalidException {
     }
 }
 
+/// <p>This exception is thrown when the specified account is not registered as the CloudTrail delegated administrator.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccountNotRegisteredException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl AccountNotRegisteredException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccountNotRegisteredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccountNotRegisteredException")?;
+        if let Some(inner_65) = &self.message {
+            {
+                write!(f, ": {}", inner_65)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccountNotRegisteredException {}
+/// See [`AccountNotRegisteredException`](crate::error::AccountNotRegisteredException).
+pub mod account_not_registered_exception {
+
+    /// A builder for [`AccountNotRegisteredException`](crate::error::AccountNotRegisteredException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountNotRegisteredException`](crate::error::AccountNotRegisteredException).
+        pub fn build(self) -> crate::error::AccountNotRegisteredException {
+            crate::error::AccountNotRegisteredException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccountNotRegisteredException {
+    /// Creates a new builder-style object to manufacture [`AccountNotRegisteredException`](crate::error::AccountNotRegisteredException).
+    pub fn builder() -> crate::error::account_not_registered_exception::Builder {
+        crate::error::account_not_registered_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3521,9 +3944,9 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_59) = &self.message {
+        if let Some(inner_66) = &self.message {
             {
-                write!(f, ": {}", inner_59)?;
+                write!(f, ": {}", inner_66)?;
             }
         }
         Ok(())
@@ -3581,9 +4004,9 @@ impl EventDataStoreTerminationProtectedException {
 impl std::fmt::Display for EventDataStoreTerminationProtectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreTerminationProtectedException")?;
-        if let Some(inner_60) = &self.message {
+        if let Some(inner_67) = &self.message {
             {
-                write!(f, ": {}", inner_60)?;
+                write!(f, ": {}", inner_67)?;
             }
         }
         Ok(())
@@ -3641,9 +4064,9 @@ impl TrailAlreadyExistsException {
 impl std::fmt::Display for TrailAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrailAlreadyExistsException")?;
-        if let Some(inner_61) = &self.message {
+        if let Some(inner_68) = &self.message {
             {
-                write!(f, ": {}", inner_61)?;
+                write!(f, ": {}", inner_68)?;
             }
         }
         Ok(())
@@ -3684,6 +4107,66 @@ impl TrailAlreadyExistsException {
     }
 }
 
+/// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TagsLimitExceededException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl TagsLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TagsLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TagsLimitExceededException")?;
+        if let Some(inner_69) = &self.message {
+            {
+                write!(f, ": {}", inner_69)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TagsLimitExceededException {}
+/// See [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
+pub mod tags_limit_exceeded_exception {
+
+    /// A builder for [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
+        pub fn build(self) -> crate::error::TagsLimitExceededException {
+            crate::error::TagsLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TagsLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
+    pub fn builder() -> crate::error::tags_limit_exceeded_exception::Builder {
+        crate::error::tags_limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the maximum number of trails is reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3701,9 +4184,9 @@ impl MaximumNumberOfTrailsExceededException {
 impl std::fmt::Display for MaximumNumberOfTrailsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumNumberOfTrailsExceededException")?;
-        if let Some(inner_62) = &self.message {
+        if let Some(inner_70) = &self.message {
             {
-                write!(f, ": {}", inner_62)?;
+                write!(f, ": {}", inner_70)?;
             }
         }
         Ok(())
@@ -3761,9 +4244,9 @@ impl EventDataStoreAlreadyExistsException {
 impl std::fmt::Display for EventDataStoreAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventDataStoreAlreadyExistsException")?;
-        if let Some(inner_63) = &self.message {
+        if let Some(inner_71) = &self.message {
             {
-                write!(f, ": {}", inner_63)?;
+                write!(f, ": {}", inner_71)?;
             }
         }
         Ok(())
@@ -3821,9 +4304,9 @@ impl InactiveQueryException {
 impl std::fmt::Display for InactiveQueryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InactiveQueryException")?;
-        if let Some(inner_64) = &self.message {
+        if let Some(inner_72) = &self.message {
             {
-                write!(f, ": {}", inner_64)?;
+                write!(f, ": {}", inner_72)?;
             }
         }
         Ok(())
@@ -3861,66 +4344,6 @@ impl InactiveQueryException {
     /// Creates a new builder-style object to manufacture [`InactiveQueryException`](crate::error::InactiveQueryException).
     pub fn builder() -> crate::error::inactive_query_exception::Builder {
         crate::error::inactive_query_exception::Builder::default()
-    }
-}
-
-/// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagsLimitExceededException {
-    /// <p>Brief description of the exception returned by the request.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl TagsLimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TagsLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagsLimitExceededException")?;
-        if let Some(inner_65) = &self.message {
-            {
-                write!(f, ": {}", inner_65)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TagsLimitExceededException {}
-/// See [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
-pub mod tags_limit_exceeded_exception {
-
-    /// A builder for [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Brief description of the exception returned by the request.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Brief description of the exception returned by the request.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
-        pub fn build(self) -> crate::error::TagsLimitExceededException {
-            crate::error::TagsLimitExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl TagsLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`TagsLimitExceededException`](crate::error::TagsLimitExceededException).
-    pub fn builder() -> crate::error::tags_limit_exceeded_exception::Builder {
-        crate::error::tags_limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -3965,6 +4388,8 @@ pub enum AddTagsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -3996,6 +4421,7 @@ impl std::fmt::Display for AddTagsError {
             AddTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::InvalidTagParameterException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -4092,6 +4518,13 @@ impl AddTagsError {
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidTrailNameException(_))
     }
+    /// Returns `true` if the error kind is `AddTagsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AddTagsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
@@ -4138,6 +4571,7 @@ impl std::error::Error for AddTagsError {
             AddTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             AddTagsErrorKind::InvalidTagParameterException(_inner) => Some(_inner),
             AddTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            AddTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             AddTagsErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             AddTagsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             AddTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -4182,6 +4616,8 @@ pub enum CancelQueryErrorKind {
     InactiveQueryException(crate::error::InactiveQueryException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The query ID does not exist or does not map to a query.</p>
@@ -4207,6 +4643,7 @@ impl std::fmt::Display for CancelQueryError {
             CancelQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             CancelQueryErrorKind::InactiveQueryException(_inner) => _inner.fmt(f),
             CancelQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             CancelQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             CancelQueryErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
             CancelQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -4300,6 +4737,13 @@ impl CancelQueryError {
             CancelQueryErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CancelQueryErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -4331,6 +4775,7 @@ impl std::error::Error for CancelQueryError {
             CancelQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             CancelQueryErrorKind::InactiveQueryException(_inner) => Some(_inner),
             CancelQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CancelQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             CancelQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             CancelQueryErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
             CancelQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -4372,10 +4817,29 @@ pub enum CreateEventDataStoreErrorKind {
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>You can:</p>
+    /// <ul>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
+    /// </ul>
+    InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
+    /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
+    InvalidKmsKeyIdException(crate::error::InvalidKmsKeyIdException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
+    KmsException(crate::error::KmsException),
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -4416,10 +4880,28 @@ impl std::fmt::Display for CreateEventDataStoreError {
             CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             _inner.fmt(f)
             ,
+            CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::InvalidEventSelectorsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::InvalidKmsKeyIdException(_inner) =>
+            _inner.fmt(f)
+            ,
             CreateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
             _inner.fmt(f)
             ,
             CreateEventDataStoreErrorKind::InvalidTagParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::KmsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::KmsKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             _inner.fmt(f)
             ,
             CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -4534,6 +5016,27 @@ impl CreateEventDataStoreError {
             )
         )
     }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException`.
+    pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InvalidEventSelectorsException`.
+    pub fn is_invalid_event_selectors_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InvalidEventSelectorsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InvalidKmsKeyIdException`.
+    pub fn is_invalid_kms_key_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InvalidKmsKeyIdException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
@@ -4546,6 +5049,24 @@ impl CreateEventDataStoreError {
         matches!(
             &self.kind,
             CreateEventDataStoreErrorKind::InvalidTagParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::KmsException`.
+    pub fn is_kms_exception(&self) -> bool {
+        matches!(&self.kind, CreateEventDataStoreErrorKind::KmsException(_))
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::KmsKeyNotFoundException`.
+    pub fn is_kms_key_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::KmsKeyNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
@@ -4602,10 +5123,28 @@ impl std::error::Error for CreateEventDataStoreError {
             CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             Some(_inner)
             ,
+            CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::InvalidEventSelectorsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::InvalidKmsKeyIdException(_inner) =>
+            Some(_inner)
+            ,
             CreateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
             Some(_inner)
             ,
             CreateEventDataStoreErrorKind::InvalidTagParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::KmsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::KmsKeyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             Some(_inner)
             ,
             CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -4665,7 +5204,7 @@ pub enum CreateTrailErrorKind {
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
@@ -4698,7 +5237,7 @@ pub enum CreateTrailErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
@@ -4707,6 +5246,8 @@ pub enum CreateTrailErrorKind {
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::error::MaximumNumberOfTrailsExceededException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -4719,6 +5260,8 @@ pub enum CreateTrailErrorKind {
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
+    /// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
+    TagsLimitExceededException(crate::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the specified trail already exists.</p>
     TrailAlreadyExistsException(crate::error::TrailAlreadyExistsException),
     /// <p>This exception is no longer in use.</p>
@@ -4765,6 +5308,7 @@ impl std::fmt::Display for CreateTrailError {
             CreateTrailErrorKind::KmsKeyDisabledException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::KmsKeyNotFoundException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::MaximumNumberOfTrailsExceededException(_inner) => _inner.fmt(f),
+            CreateTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_inner) => {
@@ -4772,6 +5316,7 @@ impl std::fmt::Display for CreateTrailError {
             }
             CreateTrailErrorKind::OrganizationsNotInUseException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::S3BucketDoesNotExistException(_inner) => _inner.fmt(f),
+            CreateTrailErrorKind::TagsLimitExceededException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::TrailAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::TrailNotProvidedException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -4964,6 +5509,13 @@ impl CreateTrailError {
             CreateTrailErrorKind::MaximumNumberOfTrailsExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrailErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateTrailErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
@@ -4997,6 +5549,13 @@ impl CreateTrailError {
         matches!(
             &self.kind,
             CreateTrailErrorKind::S3BucketDoesNotExistException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::TagsLimitExceededException`.
+    pub fn is_tags_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTrailErrorKind::TagsLimitExceededException(_)
         )
     }
     /// Returns `true` if the error kind is `CreateTrailErrorKind::TrailAlreadyExistsException`.
@@ -5049,11 +5608,13 @@ impl std::error::Error for CreateTrailError {
             CreateTrailErrorKind::KmsKeyDisabledException(_inner) => Some(_inner),
             CreateTrailErrorKind::KmsKeyNotFoundException(_inner) => Some(_inner),
             CreateTrailErrorKind::MaximumNumberOfTrailsExceededException(_inner) => Some(_inner),
+            CreateTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             CreateTrailErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             CreateTrailErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_inner) => Some(_inner),
             CreateTrailErrorKind::OrganizationsNotInUseException(_inner) => Some(_inner),
             CreateTrailErrorKind::S3BucketDoesNotExistException(_inner) => Some(_inner),
+            CreateTrailErrorKind::TagsLimitExceededException(_inner) => Some(_inner),
             CreateTrailErrorKind::TrailAlreadyExistsException(_inner) => Some(_inner),
             CreateTrailErrorKind::TrailNotProvidedException(_inner) => Some(_inner),
             CreateTrailErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -5093,12 +5654,16 @@ pub enum DeleteEventDataStoreErrorKind {
     EventDataStoreTerminationProtectedException(
         crate::error::EventDataStoreTerminationProtectedException,
     ),
+    /// <p>The event data store is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -5130,10 +5695,16 @@ impl std::fmt::Display for DeleteEventDataStoreError {
             DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_inner) =>
             _inner.fmt(f)
             ,
+            DeleteEventDataStoreErrorKind::InactiveEventDataStoreException(_inner) =>
+            _inner.fmt(f)
+            ,
             DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             _inner.fmt(f)
             ,
             DeleteEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             _inner.fmt(f)
             ,
             DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -5233,6 +5804,13 @@ impl DeleteEventDataStoreError {
             DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
@@ -5247,6 +5825,13 @@ impl DeleteEventDataStoreError {
         matches!(
             &self.kind,
             DeleteEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
@@ -5286,10 +5871,16 @@ impl std::error::Error for DeleteEventDataStoreError {
             DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_inner) =>
             Some(_inner)
             ,
+            DeleteEventDataStoreErrorKind::InactiveEventDataStoreException(_inner) =>
+            Some(_inner)
+            ,
             DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             Some(_inner)
             ,
             DeleteEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             Some(_inner)
             ,
             DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -5329,6 +5920,9 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrailErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
@@ -5346,6 +5940,8 @@ pub enum DeleteTrailErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -5367,12 +5963,14 @@ pub enum DeleteTrailErrorKind {
 impl std::fmt::Display for DeleteTrailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteTrailErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => _inner.fmt(f),
             DeleteTrailErrorKind::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            DeleteTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             DeleteTrailErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
@@ -5431,6 +6029,13 @@ impl DeleteTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrailErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteTrailErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteTrailErrorKind::ConflictException(_))
@@ -5454,6 +6059,13 @@ impl DeleteTrailError {
         matches!(
             &self.kind,
             DeleteTrailErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTrailErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTrailErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `DeleteTrailErrorKind::NotOrganizationMasterAccountException`.
@@ -5485,17 +6097,276 @@ impl DeleteTrailError {
 impl std::error::Error for DeleteTrailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteTrailErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             DeleteTrailErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => Some(_inner),
             DeleteTrailErrorKind::InvalidHomeRegionException(_inner) => Some(_inner),
             DeleteTrailErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            DeleteTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             DeleteTrailErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             DeleteTrailErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteTrailErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             DeleteTrailErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             DeleteTrailErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeregisterOrganizationDelegatedAdmin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeregisterOrganizationDelegatedAdminError {
+    /// Kind of error that occurred.
+    pub kind: DeregisterOrganizationDelegatedAdminErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterOrganizationDelegatedAdminError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeregisterOrganizationDelegatedAdmin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeregisterOrganizationDelegatedAdminErrorKind {
+    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    AccountNotFoundException(crate::error::AccountNotFoundException),
+    /// <p>This exception is thrown when the specified account is not registered as the CloudTrail delegated administrator.</p>
+    AccountNotRegisteredException(crate::error::AccountNotRegisteredException),
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
+    NotOrganizationManagementAccountException(
+        crate::error::NotOrganizationManagementAccountException,
+    ),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
+    OrganizationNotInAllFeaturesModeException(
+        crate::error::OrganizationNotInAllFeaturesModeException,
+    ),
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeregisterOrganizationDelegatedAdminError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeregisterOrganizationDelegatedAdminError {
+    fn code(&self) -> Option<&str> {
+        DeregisterOrganizationDelegatedAdminError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeregisterOrganizationDelegatedAdminError {
+    /// Creates a new `DeregisterOrganizationDelegatedAdminError`.
+    pub fn new(
+        kind: DeregisterOrganizationDelegatedAdminErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeregisterOrganizationDelegatedAdminError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeregisterOrganizationDelegatedAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException`.
+    pub fn is_account_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException`.
+    pub fn is_account_not_registered_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException`.
+    pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_))
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException`.
+    pub fn is_not_organization_management_account_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(_))
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException`.
+    pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(_))
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException`.
+    pub fn is_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for DeregisterOrganizationDelegatedAdminError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOrganizationDelegatedAdminErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5529,6 +6400,8 @@ pub enum DescribeQueryErrorKind {
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The query ID does not exist or does not map to a query.</p>
@@ -5552,6 +6425,7 @@ impl std::fmt::Display for DescribeQueryError {
             DescribeQueryErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             DescribeQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             DescribeQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             DescribeQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             DescribeQueryErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
             DescribeQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -5637,6 +6511,13 @@ impl DescribeQueryError {
             DescribeQueryErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeQueryErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -5666,6 +6547,7 @@ impl std::error::Error for DescribeQueryError {
             DescribeQueryErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
             DescribeQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             DescribeQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             DescribeQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DescribeQueryErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
             DescribeQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -5704,6 +6586,8 @@ pub enum DescribeTrailsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -5722,6 +6606,7 @@ impl std::fmt::Display for DescribeTrailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeTrailsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             DescribeTrailsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             DescribeTrailsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             DescribeTrailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5785,6 +6670,13 @@ impl DescribeTrailsError {
             DescribeTrailsErrorKind::InvalidTrailNameException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeTrailsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeTrailsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -5804,6 +6696,7 @@ impl std::error::Error for DescribeTrailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTrailsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             DescribeTrailsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DescribeTrailsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             DescribeTrailsErrorKind::Unhandled(_inner) => Some(_inner),
@@ -5832,7 +6725,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChannelErrorKind {
-    /// <p> The specified channel ARN is not valid or does not map to a channel in your account. </p>
+    /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::error::ChannelArnInvalidException),
     /// <p> The specified channel was not found. </p>
     ChannelNotFoundException(crate::error::ChannelNotFoundException),
@@ -5976,6 +6869,8 @@ pub enum GetEventDataStoreErrorKind {
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -5996,6 +6891,9 @@ impl std::fmt::Display for GetEventDataStoreError {
             GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             GetEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             GetEventDataStoreErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetEventDataStoreErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetEventDataStoreErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             GetEventDataStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6073,6 +6971,13 @@ impl GetEventDataStoreError {
             GetEventDataStoreErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -6094,6 +6999,9 @@ impl std::error::Error for GetEventDataStoreError {
             GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             GetEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
             GetEventDataStoreErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             GetEventDataStoreErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetEventDataStoreErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetEventDataStoreErrorKind::Unhandled(_inner) => Some(_inner),
@@ -6122,6 +7030,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetEventSelectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEventSelectorsErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
@@ -6131,6 +7042,8 @@ pub enum GetEventSelectorsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
@@ -6150,7 +7063,11 @@ pub enum GetEventSelectorsErrorKind {
 impl std::fmt::Display for GetEventSelectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetEventSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             GetEventSelectorsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetEventSelectorsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetEventSelectorsErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
             GetEventSelectorsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -6208,11 +7125,25 @@ impl GetEventSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSelectorsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSelectorsErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `GetEventSelectorsErrorKind::OperationNotPermittedException`.
@@ -6240,7 +7171,11 @@ impl GetEventSelectorsError {
 impl std::error::Error for GetEventSelectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetEventSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             GetEventSelectorsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             GetEventSelectorsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetEventSelectorsErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             GetEventSelectorsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -6405,6 +7340,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetInsightSelectorsError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInsightSelectorsErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
@@ -6416,6 +7354,8 @@ pub enum GetInsightSelectorsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
@@ -6435,8 +7375,12 @@ pub enum GetInsightSelectorsErrorKind {
 impl std::fmt::Display for GetInsightSelectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             GetInsightSelectorsErrorKind::InsightNotEnabledException(_inner) => _inner.fmt(f),
             GetInsightSelectorsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetInsightSelectorsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetInsightSelectorsErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
             GetInsightSelectorsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -6494,6 +7438,13 @@ impl GetInsightSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::InsightNotEnabledException`.
     pub fn is_insight_not_enabled_exception(&self) -> bool {
         matches!(
@@ -6506,6 +7457,13 @@ impl GetInsightSelectorsError {
         matches!(
             &self.kind,
             GetInsightSelectorsErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `GetInsightSelectorsErrorKind::OperationNotPermittedException`.
@@ -6533,8 +7491,12 @@ impl GetInsightSelectorsError {
 impl std::error::Error for GetInsightSelectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             GetInsightSelectorsErrorKind::InsightNotEnabledException(_inner) => Some(_inner),
             GetInsightSelectorsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             GetInsightSelectorsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetInsightSelectorsErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             GetInsightSelectorsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -6570,12 +7532,16 @@ pub enum GetQueryResultsErrorKind {
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown if the limit specified is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The query ID does not exist or does not map to a query.</p>
@@ -6598,9 +7564,15 @@ impl std::fmt::Display for GetQueryResultsError {
             GetQueryResultsErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(_inner) => {
+                _inner.fmt(f)
+            }
             GetQueryResultsErrorKind::InvalidMaxResultsException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetQueryResultsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
             GetQueryResultsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -6679,6 +7651,13 @@ impl GetQueryResultsError {
             GetQueryResultsErrorKind::InactiveEventDataStoreException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InsufficientEncryptionPolicyException`.
+    pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
@@ -6698,6 +7677,13 @@ impl GetQueryResultsError {
         matches!(
             &self.kind,
             GetQueryResultsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `GetQueryResultsErrorKind::OperationNotPermittedException`.
@@ -6728,9 +7714,11 @@ impl std::error::Error for GetQueryResultsError {
             GetQueryResultsErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
             GetQueryResultsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
@@ -6760,6 +7748,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTrailErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
@@ -6788,6 +7779,7 @@ pub enum GetTrailErrorKind {
 impl std::fmt::Display for GetTrailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetTrailErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             GetTrailErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             GetTrailErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetTrailErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
@@ -6846,6 +7838,13 @@ impl GetTrailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetTrailErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTrailErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetTrailErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, GetTrailErrorKind::InvalidTrailNameException(_))
@@ -6872,6 +7871,7 @@ impl GetTrailError {
 impl std::error::Error for GetTrailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetTrailErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             GetTrailErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             GetTrailErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetTrailErrorKind::TrailNotFoundException(_inner) => Some(_inner),
@@ -6902,6 +7902,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetTrailStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTrailStatusErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
@@ -6930,6 +7933,7 @@ pub enum GetTrailStatusErrorKind {
 impl std::fmt::Display for GetTrailStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetTrailStatusErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             GetTrailStatusErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             GetTrailStatusErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             GetTrailStatusErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
@@ -6988,6 +7992,13 @@ impl GetTrailStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetTrailStatusErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTrailStatusErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetTrailStatusErrorKind::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(
@@ -7020,6 +8031,7 @@ impl GetTrailStatusError {
 impl std::error::Error for GetTrailStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetTrailStatusErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             GetTrailStatusErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             GetTrailStatusErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             GetTrailStatusErrorKind::TrailNotFoundException(_inner) => Some(_inner),
@@ -7184,6 +8196,8 @@ pub enum ListEventDataStoresErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -7203,6 +8217,9 @@ impl std::fmt::Display for ListEventDataStoresError {
         match &self.kind {
             ListEventDataStoresErrorKind::InvalidMaxResultsException(_inner) => _inner.fmt(f),
             ListEventDataStoresErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             ListEventDataStoresErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             ListEventDataStoresErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             ListEventDataStoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7273,6 +8290,13 @@ impl ListEventDataStoresError {
             ListEventDataStoresErrorKind::InvalidNextTokenException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -7293,6 +8317,9 @@ impl std::error::Error for ListEventDataStoresError {
         match &self.kind {
             ListEventDataStoresErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
             ListEventDataStoresErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             ListEventDataStoresErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListEventDataStoresErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             ListEventDataStoresErrorKind::Unhandled(_inner) => Some(_inner),
@@ -7760,6 +8787,8 @@ pub enum ListQueriesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The query status is not valid for the operation.</p>
     InvalidQueryStatusException(crate::error::InvalidQueryStatusException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -7785,6 +8814,7 @@ impl std::fmt::Display for ListQueriesError {
             ListQueriesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
             ListQueriesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListQueriesErrorKind::InvalidQueryStatusException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             ListQueriesErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             ListQueriesErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             ListQueriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7897,6 +8927,13 @@ impl ListQueriesError {
             ListQueriesErrorKind::InvalidQueryStatusException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListQueriesErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -7923,6 +8960,7 @@ impl std::error::Error for ListQueriesError {
             ListQueriesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListQueriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListQueriesErrorKind::InvalidQueryStatusException(_inner) => Some(_inner),
+            ListQueriesErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             ListQueriesErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListQueriesErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             ListQueriesErrorKind::Unhandled(_inner) => Some(_inner),
@@ -7969,6 +9007,8 @@ pub enum ListTagsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
@@ -7995,6 +9035,7 @@ impl std::fmt::Display for ListTagsError {
             ListTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::InvalidTokenException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::ResourceTypeNotSupportedException(_inner) => _inner.fmt(f),
@@ -8082,6 +9123,13 @@ impl ListTagsError {
     pub fn is_invalid_trail_name_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidTrailNameException(_))
     }
+    /// Returns `true` if the error kind is `ListTagsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTagsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
@@ -8116,6 +9164,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidTokenException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            ListTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             ListTagsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsErrorKind::ResourceTypeNotSupportedException(_inner) => Some(_inner),
@@ -8439,6 +9488,9 @@ impl aws_smithy_http::result::CreateUnhandledError for PutEventSelectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEventSelectorsErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
@@ -8463,6 +9515,8 @@ pub enum PutEventSelectorsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -8484,12 +9538,16 @@ pub enum PutEventSelectorsErrorKind {
 impl std::fmt::Display for PutEventSelectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            PutEventSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => _inner.fmt(f),
             PutEventSelectorsErrorKind::InvalidEventSelectorsException(_inner) => _inner.fmt(f),
             PutEventSelectorsErrorKind::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             PutEventSelectorsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutEventSelectorsErrorKind::NotOrganizationMasterAccountException(_inner) => {
                 _inner.fmt(f)
             }
@@ -8550,6 +9608,13 @@ impl PutEventSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEventSelectorsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
@@ -8576,6 +9641,13 @@ impl PutEventSelectorsError {
         matches!(
             &self.kind,
             PutEventSelectorsErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `PutEventSelectorsErrorKind::NotOrganizationMasterAccountException`.
@@ -8610,12 +9682,16 @@ impl PutEventSelectorsError {
 impl std::error::Error for PutEventSelectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            PutEventSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => Some(_inner),
             PutEventSelectorsErrorKind::InvalidEventSelectorsException(_inner) => Some(_inner),
             PutEventSelectorsErrorKind::InvalidHomeRegionException(_inner) => Some(_inner),
             PutEventSelectorsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             PutEventSelectorsErrorKind::NotOrganizationMasterAccountException(_inner) => {
                 Some(_inner)
             }
@@ -8648,7 +9724,10 @@ impl aws_smithy_http::result::CreateUnhandledError for PutInsightSelectorsError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInsightSelectorsErrorKind {
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
@@ -8665,8 +9744,10 @@ pub enum PutInsightSelectorsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::error::KmsException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -8690,6 +9771,7 @@ pub enum PutInsightSelectorsErrorKind {
 impl std::fmt::Display for PutInsightSelectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(_inner) => {
                 _inner.fmt(f)
             }
@@ -8700,6 +9782,9 @@ impl std::fmt::Display for PutInsightSelectorsError {
             PutInsightSelectorsErrorKind::InvalidInsightSelectorsException(_inner) => _inner.fmt(f),
             PutInsightSelectorsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             PutInsightSelectorsErrorKind::KmsException(_inner) => _inner.fmt(f),
+            PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(_inner) => {
                 _inner.fmt(f)
             }
@@ -8761,6 +9846,13 @@ impl PutInsightSelectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException`.
     pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
         matches!(
@@ -8799,6 +9891,13 @@ impl PutInsightSelectorsError {
     /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::KmsException`.
     pub fn is_kms_exception(&self) -> bool {
         matches!(&self.kind, PutInsightSelectorsErrorKind::KmsException(_))
+    }
+    /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_)
+        )
     }
     /// Returns `true` if the error kind is `PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
@@ -8839,6 +9938,7 @@ impl PutInsightSelectorsError {
 impl std::error::Error for PutInsightSelectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(_inner) => {
                 Some(_inner)
             }
@@ -8849,6 +9949,9 @@ impl std::error::Error for PutInsightSelectorsError {
             PutInsightSelectorsErrorKind::InvalidInsightSelectorsException(_inner) => Some(_inner),
             PutInsightSelectorsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             PutInsightSelectorsErrorKind::KmsException(_inner) => Some(_inner),
+            PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(_inner) => {
+                Some(_inner)
+            }
             PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(_inner) => {
                 Some(_inner)
             }
@@ -8857,6 +9960,306 @@ impl std::error::Error for PutInsightSelectorsError {
             PutInsightSelectorsErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             PutInsightSelectorsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             PutInsightSelectorsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `RegisterOrganizationDelegatedAdmin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RegisterOrganizationDelegatedAdminError {
+    /// Kind of error that occurred.
+    pub kind: RegisterOrganizationDelegatedAdminErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterOrganizationDelegatedAdminError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RegisterOrganizationDelegatedAdmin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RegisterOrganizationDelegatedAdminErrorKind {
+    /// <p>This exception is thrown when when the specified account is not found or not part of an organization.</p>
+    AccountNotFoundException(crate::error::AccountNotFoundException),
+    /// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
+    AccountRegisteredException(crate::error::AccountRegisteredException),
+    /// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
+    CannotDelegateManagementAccountException(
+        crate::error::CannotDelegateManagementAccountException,
+    ),
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
+    DelegatedAdminAccountLimitExceededException(
+        crate::error::DelegatedAdminAccountLimitExceededException,
+    ),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
+    NotOrganizationManagementAccountException(
+        crate::error::NotOrganizationManagementAccountException,
+    ),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
+    OrganizationNotInAllFeaturesModeException(
+        crate::error::OrganizationNotInAllFeaturesModeException,
+    ),
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RegisterOrganizationDelegatedAdminError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RegisterOrganizationDelegatedAdminError {
+    fn code(&self) -> Option<&str> {
+        RegisterOrganizationDelegatedAdminError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RegisterOrganizationDelegatedAdminError {
+    /// Creates a new `RegisterOrganizationDelegatedAdminError`.
+    pub fn new(
+        kind: RegisterOrganizationDelegatedAdminErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RegisterOrganizationDelegatedAdminError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RegisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RegisterOrganizationDelegatedAdminError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RegisterOrganizationDelegatedAdminErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException`.
+    pub fn is_account_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException`.
+    pub fn is_account_registered_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException`.
+    pub fn is_cannot_delegate_management_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException`.
+    pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException`.
+    pub fn is_delegated_admin_account_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(&self.kind, RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_))
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException`.
+    pub fn is_not_organization_management_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException`.
+    pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException`.
+    pub fn is_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for RegisterOrganizationDelegatedAdminError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOrganizationDelegatedAdminErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8900,6 +10303,8 @@ pub enum RemoveTagsErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -8928,6 +10333,7 @@ impl std::fmt::Display for RemoveTagsError {
             RemoveTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::InvalidTagParameterException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            RemoveTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -9022,6 +10428,13 @@ impl RemoveTagsError {
             RemoveTagsErrorKind::InvalidTrailNameException(_)
         )
     }
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
@@ -9066,6 +10479,7 @@ impl std::error::Error for RemoveTagsError {
             RemoveTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             RemoveTagsErrorKind::InvalidTagParameterException(_inner) => Some(_inner),
             RemoveTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            RemoveTagsErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             RemoveTagsErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             RemoveTagsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             RemoveTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -9113,6 +10527,8 @@ pub enum RestoreEventDataStoreErrorKind {
     InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -9157,6 +10573,9 @@ impl std::fmt::Display for RestoreEventDataStoreError {
             _inner.fmt(f)
             ,
             RestoreEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             _inner.fmt(f)
             ,
             RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -9285,6 +10704,13 @@ impl RestoreEventDataStoreError {
             RestoreEventDataStoreErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
         matches!(
@@ -9345,6 +10771,9 @@ impl std::error::Error for RestoreEventDataStoreError {
             RestoreEventDataStoreErrorKind::InvalidParameterException(_inner) =>
             Some(_inner)
             ,
+            RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
+            Some(_inner)
+            ,
             RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
             Some(_inner)
             ,
@@ -9398,7 +10827,7 @@ pub enum StartImportErrorKind {
     ImportNotFoundException(crate::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
-    /// <p> This exception is thrown when the event data store category is not valid for the import. </p>
+    /// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
     InvalidEventDataStoreCategoryException(crate::error::InvalidEventDataStoreCategoryException),
     /// <p>The event data store is not in a status that supports the operation.</p>
     InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
@@ -9603,6 +11032,9 @@ impl aws_smithy_http::result::CreateUnhandledError for StartLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartLoggingErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
@@ -9618,6 +11050,8 @@ pub enum StartLoggingErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -9639,11 +11073,13 @@ pub enum StartLoggingErrorKind {
 impl std::fmt::Display for StartLoggingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            StartLoggingErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => _inner.fmt(f),
             StartLoggingErrorKind::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             StartLoggingErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            StartLoggingErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             StartLoggingErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             StartLoggingErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             StartLoggingErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
@@ -9702,6 +11138,13 @@ impl StartLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLoggingErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
@@ -9721,6 +11164,13 @@ impl StartLoggingError {
         matches!(
             &self.kind,
             StartLoggingErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartLoggingErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartLoggingErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `StartLoggingErrorKind::NotOrganizationMasterAccountException`.
@@ -9752,11 +11202,13 @@ impl StartLoggingError {
 impl std::error::Error for StartLoggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            StartLoggingErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => Some(_inner),
             StartLoggingErrorKind::InvalidHomeRegionException(_inner) => Some(_inner),
             StartLoggingErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            StartLoggingErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             StartLoggingErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             StartLoggingErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             StartLoggingErrorKind::TrailNotFoundException(_inner) => Some(_inner),
@@ -9793,14 +11245,26 @@ pub enum StartQueryErrorKind {
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
+    /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
+    InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The query that was submitted has validation errors, or uses incorrect syntax or unsupported keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
     InvalidQueryStatementException(crate::error::InvalidQueryStatementException),
+    /// <p>This exception is thrown when the provided S3 bucket name is not valid.</p>
+    InvalidS3BucketNameException(crate::error::InvalidS3BucketNameException),
+    /// <p>This exception is thrown when the provided S3 prefix is not valid.</p>
+    InvalidS3PrefixException(crate::error::InvalidS3PrefixException),
     /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
     MaxConcurrentQueriesException(crate::error::MaxConcurrentQueriesException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
+    S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     ///
@@ -9819,10 +11283,16 @@ impl std::fmt::Display for StartQueryError {
             StartQueryErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InsufficientEncryptionPolicyException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InsufficientS3BucketPolicyException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::InvalidQueryStatementException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InvalidS3BucketNameException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InvalidS3PrefixException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::MaxConcurrentQueriesException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::S3BucketDoesNotExistException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             StartQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -9899,6 +11369,20 @@ impl StartQueryError {
             StartQueryErrorKind::InactiveEventDataStoreException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InsufficientEncryptionPolicyException`.
+    pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InsufficientEncryptionPolicyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InsufficientS3BucketPolicyException`.
+    pub fn is_insufficient_s3_bucket_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InsufficientS3BucketPolicyException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
@@ -9913,6 +11397,17 @@ impl StartQueryError {
             StartQueryErrorKind::InvalidQueryStatementException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidS3BucketNameException`.
+    pub fn is_invalid_s3_bucket_name_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InvalidS3BucketNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidS3PrefixException`.
+    pub fn is_invalid_s3_prefix_exception(&self) -> bool {
+        matches!(&self.kind, StartQueryErrorKind::InvalidS3PrefixException(_))
+    }
     /// Returns `true` if the error kind is `StartQueryErrorKind::MaxConcurrentQueriesException`.
     pub fn is_max_concurrent_queries_exception(&self) -> bool {
         matches!(
@@ -9920,11 +11415,25 @@ impl StartQueryError {
             StartQueryErrorKind::MaxConcurrentQueriesException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::NoManagementAccountSlrExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartQueryErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartQueryErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::S3BucketDoesNotExistException`.
+    pub fn is_s3_bucket_does_not_exist_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::S3BucketDoesNotExistException(_)
         )
     }
     /// Returns `true` if the error kind is `StartQueryErrorKind::UnsupportedOperationException`.
@@ -9941,10 +11450,16 @@ impl std::error::Error for StartQueryError {
             StartQueryErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             StartQueryErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
             StartQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            StartQueryErrorKind::InsufficientEncryptionPolicyException(_inner) => Some(_inner),
+            StartQueryErrorKind::InsufficientS3BucketPolicyException(_inner) => Some(_inner),
             StartQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StartQueryErrorKind::InvalidQueryStatementException(_inner) => Some(_inner),
+            StartQueryErrorKind::InvalidS3BucketNameException(_inner) => Some(_inner),
+            StartQueryErrorKind::InvalidS3PrefixException(_inner) => Some(_inner),
             StartQueryErrorKind::MaxConcurrentQueriesException(_inner) => Some(_inner),
+            StartQueryErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             StartQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            StartQueryErrorKind::S3BucketDoesNotExistException(_inner) => Some(_inner),
             StartQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             StartQueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -10110,6 +11625,9 @@ impl aws_smithy_http::result::CreateUnhandledError for StopLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopLoggingErrorKind {
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
@@ -10125,6 +11643,8 @@ pub enum StopLoggingErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -10146,11 +11666,13 @@ pub enum StopLoggingErrorKind {
 impl std::fmt::Display for StopLoggingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            StopLoggingErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => _inner.fmt(f),
             StopLoggingErrorKind::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             StopLoggingErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
+            StopLoggingErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             StopLoggingErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             StopLoggingErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             StopLoggingErrorKind::TrailNotFoundException(_inner) => _inner.fmt(f),
@@ -10209,6 +11731,13 @@ impl StopLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopLoggingErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(
@@ -10228,6 +11757,13 @@ impl StopLoggingError {
         matches!(
             &self.kind,
             StopLoggingErrorKind::InvalidTrailNameException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopLoggingErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopLoggingErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `StopLoggingErrorKind::NotOrganizationMasterAccountException`.
@@ -10259,11 +11795,13 @@ impl StopLoggingError {
 impl std::error::Error for StopLoggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            StopLoggingErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => Some(_inner),
             StopLoggingErrorKind::InvalidHomeRegionException(_inner) => Some(_inner),
             StopLoggingErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
+            StopLoggingErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             StopLoggingErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             StopLoggingErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             StopLoggingErrorKind::TrailNotFoundException(_inner) => Some(_inner),
@@ -10308,8 +11846,27 @@ pub enum UpdateEventDataStoreErrorKind {
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>You can:</p>
+    /// <ul>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
+    /// </ul>
+    InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
+    /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
+    InvalidKmsKeyIdException(crate::error::InvalidKmsKeyIdException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
+    KmsException(crate::error::KmsException),
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -10353,7 +11910,25 @@ impl std::fmt::Display for UpdateEventDataStoreError {
             UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             _inner.fmt(f)
             ,
+            UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidEventSelectorsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException(_inner) =>
+            _inner.fmt(f)
+            ,
             UpdateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::KmsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::KmsKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             _inner.fmt(f)
             ,
             UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -10475,11 +12050,50 @@ impl UpdateEventDataStoreError {
             )
         )
     }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException`.
+    pub fn is_insufficient_encryption_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InvalidEventSelectorsException`.
+    pub fn is_invalid_event_selectors_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InvalidEventSelectorsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException`.
+    pub fn is_invalid_kms_key_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::KmsException`.
+    pub fn is_kms_exception(&self) -> bool {
+        matches!(&self.kind, UpdateEventDataStoreErrorKind::KmsException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::KmsKeyNotFoundException`.
+    pub fn is_kms_key_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::KmsKeyNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_)
         )
     }
     /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
@@ -10539,7 +12153,25 @@ impl std::error::Error for UpdateEventDataStoreError {
             UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
             Some(_inner)
             ,
+            UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidEventSelectorsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException(_inner) =>
+            Some(_inner)
+            ,
             UpdateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::KmsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::KmsKeyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException(_inner) =>
             Some(_inner)
             ,
             UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
@@ -10587,6 +12219,9 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateTrailError {
 pub enum UpdateTrailErrorKind {
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
@@ -10597,7 +12232,7 @@ pub enum UpdateTrailErrorKind {
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.</p>
+    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
@@ -10624,6 +12259,8 @@ pub enum UpdateTrailErrorKind {
     InvalidKmsKeyIdException(crate::error::InvalidKmsKeyIdException),
     /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the provided S3 bucket name is not valid.</p>
     InvalidS3BucketNameException(crate::error::InvalidS3BucketNameException),
     /// <p>This exception is thrown when the provided S3 prefix is not valid.</p>
@@ -10639,13 +12276,15 @@ pub enum UpdateTrailErrorKind {
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
+    /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
     /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
+    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -10678,6 +12317,7 @@ impl std::fmt::Display for UpdateTrailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            UpdateTrailErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_inner) => {
                 _inner.fmt(f)
@@ -10696,6 +12336,7 @@ impl std::fmt::Display for UpdateTrailError {
             UpdateTrailErrorKind::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::InvalidKmsKeyIdException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            UpdateTrailErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::InvalidS3BucketNameException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::InvalidS3PrefixException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::InvalidSnsTopicNameException(_inner) => _inner.fmt(f),
@@ -10703,6 +12344,7 @@ impl std::fmt::Display for UpdateTrailError {
             UpdateTrailErrorKind::KmsException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::KmsKeyDisabledException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::KmsKeyNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_inner) => {
@@ -10772,6 +12414,13 @@ impl UpdateTrailError {
         matches!(
             &self.kind,
             UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrailErrorKind::CloudTrailArnInvalidException(_)
         )
     }
     /// Returns `true` if the error kind is `UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException`.
@@ -10858,6 +12507,13 @@ impl UpdateTrailError {
             UpdateTrailErrorKind::InvalidParameterCombinationException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrailErrorKind::InvalidParameterException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateTrailErrorKind::InvalidS3BucketNameException`.
     pub fn is_invalid_s3_bucket_name_exception(&self) -> bool {
         matches!(
@@ -10897,6 +12553,13 @@ impl UpdateTrailError {
     /// Returns `true` if the error kind is `UpdateTrailErrorKind::KmsKeyNotFoundException`.
     pub fn is_kms_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateTrailErrorKind::KmsKeyNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateTrailErrorKind::NoManagementAccountSlrExistsException`.
+    pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrailErrorKind::NoManagementAccountSlrExistsException(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateTrailErrorKind::NotOrganizationMasterAccountException`.
     pub fn is_not_organization_master_account_exception(&self) -> bool {
@@ -10956,6 +12619,7 @@ impl std::error::Error for UpdateTrailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateTrailErrorKind::CloudTrailAccessNotEnabledException(_inner) => Some(_inner),
+            UpdateTrailErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
             UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException(_inner) => Some(_inner),
             UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_inner) => {
                 Some(_inner)
@@ -10972,6 +12636,7 @@ impl std::error::Error for UpdateTrailError {
             UpdateTrailErrorKind::InvalidHomeRegionException(_inner) => Some(_inner),
             UpdateTrailErrorKind::InvalidKmsKeyIdException(_inner) => Some(_inner),
             UpdateTrailErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
+            UpdateTrailErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateTrailErrorKind::InvalidS3BucketNameException(_inner) => Some(_inner),
             UpdateTrailErrorKind::InvalidS3PrefixException(_inner) => Some(_inner),
             UpdateTrailErrorKind::InvalidSnsTopicNameException(_inner) => Some(_inner),
@@ -10979,6 +12644,7 @@ impl std::error::Error for UpdateTrailError {
             UpdateTrailErrorKind::KmsException(_inner) => Some(_inner),
             UpdateTrailErrorKind::KmsKeyDisabledException(_inner) => Some(_inner),
             UpdateTrailErrorKind::KmsKeyNotFoundException(_inner) => Some(_inner),
+            UpdateTrailErrorKind::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
             UpdateTrailErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
             UpdateTrailErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException(_inner) => Some(_inner),

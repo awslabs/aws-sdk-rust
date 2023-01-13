@@ -162,6 +162,167 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
     }
 }
 
+/// See [`AssociateDelegationSignerToDomainInput`](crate::input::AssociateDelegationSignerToDomainInput).
+pub mod associate_delegation_signer_to_domain_input {
+
+    /// A builder for [`AssociateDelegationSignerToDomainInput`](crate::input::AssociateDelegationSignerToDomainInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) signing_attributes: std::option::Option<crate::model::DnssecSigningAttributes>,
+    }
+    impl Builder {
+        /// <p>The name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+        pub fn signing_attributes(mut self, input: crate::model::DnssecSigningAttributes) -> Self {
+            self.signing_attributes = Some(input);
+            self
+        }
+        /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+        pub fn set_signing_attributes(
+            mut self,
+            input: std::option::Option<crate::model::DnssecSigningAttributes>,
+        ) -> Self {
+            self.signing_attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainInput`](crate::input::AssociateDelegationSignerToDomainInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssociateDelegationSignerToDomainInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::AssociateDelegationSignerToDomainInput {
+                domain_name: self.domain_name,
+                signing_attributes: self.signing_attributes,
+            })
+        }
+    }
+}
+impl AssociateDelegationSignerToDomainInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateDelegationSignerToDomain`](crate::operation::AssociateDelegationSignerToDomain)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateDelegationSignerToDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssociateDelegationSignerToDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateDelegationSignerToDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Domains_v20140515.AssociateDelegationSignerToDomain",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_delegation_signer_to_domain(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateDelegationSignerToDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateDelegationSignerToDomain",
+            "route53domains",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainInput`](crate::input::AssociateDelegationSignerToDomainInput).
+    pub fn builder() -> crate::input::associate_delegation_signer_to_domain_input::Builder {
+        crate::input::associate_delegation_signer_to_domain_input::Builder::default()
+    }
+}
+
 /// See [`CancelDomainTransferToAnotherAwsAccountInput`](crate::input::CancelDomainTransferToAnotherAwsAccountInput).
 pub mod cancel_domain_transfer_to_another_aws_account_input {
 
@@ -1281,6 +1442,164 @@ impl DisableDomainTransferLockInput {
     /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockInput`](crate::input::DisableDomainTransferLockInput).
     pub fn builder() -> crate::input::disable_domain_transfer_lock_input::Builder {
         crate::input::disable_domain_transfer_lock_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateDelegationSignerFromDomainInput`](crate::input::DisassociateDelegationSignerFromDomainInput).
+pub mod disassociate_delegation_signer_from_domain_input {
+
+    /// A builder for [`DisassociateDelegationSignerFromDomainInput`](crate::input::DisassociateDelegationSignerFromDomainInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainInput`](crate::input::DisassociateDelegationSignerFromDomainInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DisassociateDelegationSignerFromDomainInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DisassociateDelegationSignerFromDomainInput {
+                domain_name: self.domain_name,
+                id: self.id,
+            })
+        }
+    }
+}
+impl DisassociateDelegationSignerFromDomainInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateDelegationSignerFromDomain`](crate::operation::DisassociateDelegationSignerFromDomain)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateDelegationSignerFromDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisassociateDelegationSignerFromDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateDelegationSignerFromDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Domains_v20140515.DisassociateDelegationSignerFromDomain",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_delegation_signer_from_domain(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateDelegationSignerFromDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateDelegationSignerFromDomain",
+            "route53domains",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainInput`](crate::input::DisassociateDelegationSignerFromDomainInput).
+    pub fn builder() -> crate::input::disassociate_delegation_signer_from_domain_input::Builder {
+        crate::input::disassociate_delegation_signer_from_domain_input::Builder::default()
     }
 }
 
@@ -2416,6 +2735,10 @@ pub mod list_operations_input {
         pub(crate) submitted_since: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) status: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
+        pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::OperationType>>,
+        pub(crate) sort_by: std::option::Option<crate::model::ListOperationsSortAttributeName>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
     }
     impl Builder {
         /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
@@ -2453,6 +2776,70 @@ pub mod list_operations_input {
             self.max_items = input;
             self
         }
+        /// Appends an item to `status`.
+        ///
+        /// To override the contents of this collection use [`set_status`](Self::set_status).
+        ///
+        /// <p> The status of the operations. </p>
+        pub fn status(mut self, input: crate::model::OperationStatus) -> Self {
+            let mut v = self.status.unwrap_or_default();
+            v.push(input);
+            self.status = Some(v);
+            self
+        }
+        /// <p> The status of the operations. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `r#type`.
+        ///
+        /// To override the contents of this collection use [`set_type`](Self::set_type).
+        ///
+        /// <p> An arrays of the domains operation types. </p>
+        pub fn r#type(mut self, input: crate::model::OperationType) -> Self {
+            let mut v = self.r#type.unwrap_or_default();
+            v.push(input);
+            self.r#type = Some(v);
+            self
+        }
+        /// <p> An arrays of the domains operation types. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OperationType>>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The sort type for returned values. </p>
+        pub fn sort_by(mut self, input: crate::model::ListOperationsSortAttributeName) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p> The sort type for returned values. </p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListOperationsSortAttributeName>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p> The sort order ofr returned values, either ascending or descending. </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p> The sort order ofr returned values, either ascending or descending. </p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListOperationsInput`](crate::input::ListOperationsInput).
         pub fn build(
             self,
@@ -2462,6 +2849,10 @@ pub mod list_operations_input {
                 submitted_since: self.submitted_since,
                 marker: self.marker,
                 max_items: self.max_items,
+                status: self.status,
+                r#type: self.r#type,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
             })
         }
     }
@@ -2903,6 +3294,163 @@ impl ListTagsForDomainInput {
     }
 }
 
+/// See [`PushDomainInput`](crate::input::PushDomainInput).
+pub mod push_domain_input {
+
+    /// A builder for [`PushDomainInput`](crate::input::PushDomainInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) target: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Name of the domain. </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p> Name of the domain. </p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p> New IPS tag for the domain. </p>
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
+            self
+        }
+        /// <p> New IPS tag for the domain. </p>
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PushDomainInput`](crate::input::PushDomainInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PushDomainInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::PushDomainInput {
+                domain_name: self.domain_name,
+                target: self.target,
+            })
+        }
+    }
+}
+impl PushDomainInput {
+    /// Consumes the builder and constructs an Operation<[`PushDomain`](crate::operation::PushDomain)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PushDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PushDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PushDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Domains_v20140515.PushDomain",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_push_domain(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PushDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PushDomain",
+            "route53domains",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PushDomainInput`](crate::input::PushDomainInput).
+    pub fn builder() -> crate::input::push_domain_input::Builder {
+        crate::input::push_domain_input::Builder::default()
+    }
+}
+
 /// See [`RegisterDomainInput`](crate::input::RegisterDomainInput).
 pub mod register_domain_input {
 
@@ -2972,13 +3520,13 @@ pub mod register_domain_input {
             self.duration_in_years = input;
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: <code>true</code> </p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.auto_renew = Some(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: <code>true</code> </p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
@@ -3706,6 +4254,152 @@ impl ResendContactReachabilityEmailInput {
     }
 }
 
+/// See [`ResendOperationAuthorizationInput`](crate::input::ResendOperationAuthorizationInput).
+pub mod resend_operation_authorization_input {
+
+    /// A builder for [`ResendOperationAuthorizationInput`](crate::input::ResendOperationAuthorizationInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Operation ID. </p>
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
+            self
+        }
+        /// <p> Operation ID. </p>
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResendOperationAuthorizationInput`](crate::input::ResendOperationAuthorizationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ResendOperationAuthorizationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ResendOperationAuthorizationInput {
+                operation_id: self.operation_id,
+            })
+        }
+    }
+}
+impl ResendOperationAuthorizationInput {
+    /// Consumes the builder and constructs an Operation<[`ResendOperationAuthorization`](crate::operation::ResendOperationAuthorization)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ResendOperationAuthorization,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ResendOperationAuthorizationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ResendOperationAuthorizationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Domains_v20140515.ResendOperationAuthorization",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_resend_operation_authorization(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ResendOperationAuthorization::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ResendOperationAuthorization",
+            "route53domains",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationInput`](crate::input::ResendOperationAuthorizationInput).
+    pub fn builder() -> crate::input::resend_operation_authorization_input::Builder {
+        crate::input::resend_operation_authorization_input::Builder::default()
+    }
+}
+
 /// See [`RetrieveDomainAuthCodeInput`](crate::input::RetrieveDomainAuthCodeInput).
 pub mod retrieve_domain_auth_code_input {
 
@@ -3953,13 +4647,13 @@ pub mod transfer_domain_input {
             self.auth_code = input;
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.auto_renew = Some(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
@@ -4393,6 +5087,7 @@ pub mod update_domain_contact_input {
         pub(crate) admin_contact: std::option::Option<crate::model::ContactDetail>,
         pub(crate) registrant_contact: std::option::Option<crate::model::ContactDetail>,
         pub(crate) tech_contact: std::option::Option<crate::model::ContactDetail>,
+        pub(crate) consent: std::option::Option<crate::model::Consent>,
     }
     impl Builder {
         /// <p>The name of the domain that you want to update contact information for.</p>
@@ -4444,6 +5139,16 @@ pub mod update_domain_contact_input {
             self.tech_contact = input;
             self
         }
+        /// <p> Customer's consent for the owner change request. </p>
+        pub fn consent(mut self, input: crate::model::Consent) -> Self {
+            self.consent = Some(input);
+            self
+        }
+        /// <p> Customer's consent for the owner change request. </p>
+        pub fn set_consent(mut self, input: std::option::Option<crate::model::Consent>) -> Self {
+            self.consent = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput).
         pub fn build(
             self,
@@ -4456,6 +5161,7 @@ pub mod update_domain_contact_input {
                 admin_contact: self.admin_contact,
                 registrant_contact: self.registrant_contact,
                 tech_contact: self.tech_contact,
+                consent: self.consent,
             })
         }
     }
@@ -4466,6 +5172,7 @@ pub mod update_domain_contact_input {
             formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
             formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
             formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+            formatter.field("consent", &self.consent);
             formatter.finish()
         }
     }
@@ -5494,6 +6201,9 @@ pub struct UpdateDomainContactInput {
     /// <p>Provides detailed contact information.</p>
     #[doc(hidden)]
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
+    /// <p> Customer's consent for the owner change request. </p>
+    #[doc(hidden)]
+    pub consent: std::option::Option<crate::model::Consent>,
 }
 impl UpdateDomainContactInput {
     /// <p>The name of the domain that you want to update contact information for.</p>
@@ -5512,6 +6222,10 @@ impl UpdateDomainContactInput {
     pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
         self.tech_contact.as_ref()
     }
+    /// <p> Customer's consent for the owner change request. </p>
+    pub fn consent(&self) -> std::option::Option<&crate::model::Consent> {
+        self.consent.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5520,6 +6234,7 @@ impl std::fmt::Debug for UpdateDomainContactInput {
         formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
+        formatter.field("consent", &self.consent);
         formatter.finish()
     }
 }
@@ -5573,7 +6288,7 @@ pub struct TransferDomainInput {
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
     #[doc(hidden)]
     pub auto_renew: std::option::Option<bool>,
@@ -5634,7 +6349,7 @@ impl TransferDomainInput {
     pub fn auth_code(&self) -> std::option::Option<&str> {
         self.auth_code.as_deref()
     }
-    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
     pub fn auto_renew(&self) -> std::option::Option<bool> {
         self.auto_renew
@@ -5713,6 +6428,21 @@ impl RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResendOperationAuthorizationInput {
+    /// <p> Operation ID. </p>
+    #[doc(hidden)]
+    pub operation_id: std::option::Option<std::string::String>,
+}
+impl ResendOperationAuthorizationInput {
+    /// <p> Operation ID. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 
@@ -5799,7 +6529,7 @@ pub struct RegisterDomainInput {
     /// <p>Default: 1</p>
     #[doc(hidden)]
     pub duration_in_years: std::option::Option<i32>,
-    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code> </p>
     #[doc(hidden)]
     pub auto_renew: std::option::Option<bool>,
@@ -5853,7 +6583,7 @@ impl RegisterDomainInput {
     pub fn duration_in_years(&self) -> std::option::Option<i32> {
         self.duration_in_years
     }
-    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code> </p>
     pub fn auto_renew(&self) -> std::option::Option<bool> {
         self.auto_renew
@@ -5915,6 +6645,28 @@ impl std::fmt::Debug for RegisterDomainInput {
             &self.privacy_protect_tech_contact,
         );
         formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PushDomainInput {
+    /// <p> Name of the domain. </p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p> New IPS tag for the domain. </p>
+    #[doc(hidden)]
+    pub target: std::option::Option<std::string::String>,
+}
+impl PushDomainInput {
+    /// <p> Name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> New IPS tag for the domain. </p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
     }
 }
 
@@ -5982,6 +6734,18 @@ pub struct ListOperationsInput {
     /// <p>Default: 20</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
+    /// <p> The status of the operations. </p>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
+    /// <p> An arrays of the domains operation types. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::vec::Vec<crate::model::OperationType>>,
+    /// <p> The sort type for returned values. </p>
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::ListOperationsSortAttributeName>,
+    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    #[doc(hidden)]
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl ListOperationsInput {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
@@ -5996,6 +6760,22 @@ impl ListOperationsInput {
     /// <p>Default: 20</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
+    }
+    /// <p> The status of the operations. </p>
+    pub fn status(&self) -> std::option::Option<&[crate::model::OperationStatus]> {
+        self.status.as_deref()
+    }
+    /// <p> An arrays of the domains operation types. </p>
+    pub fn r#type(&self) -> std::option::Option<&[crate::model::OperationType]> {
+        self.r#type.as_deref()
+    }
+    /// <p> The sort type for returned values. </p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListOperationsSortAttributeName> {
+        self.sort_by.as_ref()
+    }
+    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
     }
 }
 
@@ -6156,6 +6936,28 @@ impl EnableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DisassociateDelegationSignerFromDomainInput {
+    /// <p>Name of the domain.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl DisassociateDelegationSignerFromDomainInput {
+    /// <p>Name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 
@@ -6320,6 +7122,30 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AssociateDelegationSignerToDomainInput {
+    /// <p>The name of the domain.</p>
+    #[doc(hidden)]
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    #[doc(hidden)]
+    pub signing_attributes: std::option::Option<crate::model::DnssecSigningAttributes>,
+}
+impl AssociateDelegationSignerToDomainInput {
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    pub fn signing_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::DnssecSigningAttributes> {
+        self.signing_attributes.as_ref()
     }
 }
 

@@ -60,7 +60,7 @@ impl ValidationException {
     }
 }
 
-/// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+/// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
@@ -447,7 +447,7 @@ pub enum CreateClusterErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
@@ -609,7 +609,7 @@ pub enum CreateControlPanelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
@@ -783,7 +783,7 @@ pub enum CreateRoutingControlErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
@@ -1080,7 +1080,7 @@ pub enum DeleteClusterErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1231,7 +1231,7 @@ pub enum DeleteControlPanelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1394,7 +1394,7 @@ pub enum DeleteRoutingControlErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1557,7 +1557,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteSafetyRuleError {
 pub enum DeleteSafetyRuleErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -1691,7 +1691,7 @@ pub enum DescribeClusterErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1845,7 +1845,7 @@ pub enum DescribeControlPanelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2012,7 +2012,7 @@ pub enum DescribeRoutingControlErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2173,7 +2173,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeSafetyRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSafetyRuleErrorKind {
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -2296,7 +2296,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListAssociatedRoute53Heal
 pub enum ListAssociatedRoute53HealthChecksErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -2445,7 +2445,7 @@ pub enum ListClustersErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2588,7 +2588,7 @@ pub enum ListControlPanelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2740,7 +2740,7 @@ pub enum ListRoutingControlsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2892,7 +2892,7 @@ pub enum ListSafetyRulesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3036,7 +3036,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError 
 pub enum ListTagsForResourceErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -3166,7 +3166,7 @@ impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -3290,7 +3290,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
@@ -3421,7 +3421,7 @@ pub enum UpdateControlPanelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3584,7 +3584,7 @@ pub enum UpdateRoutingControlErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3747,7 +3747,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateSafetyRuleError {
 pub enum UpdateSafetyRuleErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),

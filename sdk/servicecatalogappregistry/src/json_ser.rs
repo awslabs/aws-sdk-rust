@@ -54,19 +54,35 @@ pub fn serialize_structure_crate_input_create_attribute_group_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_put_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::PutConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_16) = &input.configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("configuration").start_object();
+        crate::json_ser::serialize_structure_crate_model_app_registry_configuration(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_16) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_17.finish();
+        object_19.finish();
     }
     Ok(())
 }
@@ -75,11 +91,11 @@ pub fn serialize_structure_crate_input_update_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_20) = &input.description {
-        object.key("description").string(var_20.as_str());
+    if let Some(var_22) = &input.description {
+        object.key("description").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.name {
-        object.key("name").string(var_21.as_str());
+    if let Some(var_23) = &input.name {
+        object.key("name").string(var_23.as_str());
     }
     Ok(())
 }
@@ -88,14 +104,40 @@ pub fn serialize_structure_crate_input_update_attribute_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAttributeGroupInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_22) = &input.attributes {
-        object.key("attributes").string(var_22.as_str());
+    if let Some(var_24) = &input.attributes {
+        object.key("attributes").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.description {
-        object.key("description").string(var_23.as_str());
+    if let Some(var_25) = &input.description {
+        object.key("description").string(var_25.as_str());
     }
-    if let Some(var_24) = &input.name {
-        object.key("name").string(var_24.as_str());
+    if let Some(var_26) = &input.name {
+        object.key("name").string(var_26.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_app_registry_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AppRegistryConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_27) = &input.tag_query_configuration {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("tagQueryConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_tag_query_configuration(
+            &mut object_28,
+            var_27,
+        )?;
+        object_28.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_tag_query_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::TagQueryConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_29) = &input.tag_key {
+        object.key("tagKey").string(var_29.as_str());
     }
     Ok(())
 }

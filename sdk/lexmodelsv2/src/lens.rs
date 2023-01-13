@@ -79,6 +79,16 @@ pub(crate) fn reflens_structure_crate_output_list_built_in_slot_types_output_nex
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_custom_vocabulary_items_output_next_token(
+    input: &crate::output::ListCustomVocabularyItemsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_exports_output_next_token(
     input: &crate::output::ListExportsOutput,
 ) -> std::option::Option<&std::string::String> {

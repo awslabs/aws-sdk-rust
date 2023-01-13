@@ -315,7 +315,7 @@ impl StartDataSourceSyncJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryOutput {
-    /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
     #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
     /// <p>The results of the search.</p>
@@ -337,7 +337,7 @@ pub struct QueryOutput {
         std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
 }
 impl QueryOutput {
-    /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -380,12 +380,12 @@ pub mod query_output {
             std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
     }
     impl Builder {
-        /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+        /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
         pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+        /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -1583,7 +1583,7 @@ impl GetSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetQuerySuggestionsOutput {
-    /// <p>The unique identifier for a list of query suggestions for an index.</p>
+    /// <p>The identifier for a list of query suggestions for an index.</p>
     #[doc(hidden)]
     pub query_suggestions_id: std::option::Option<std::string::String>,
     /// <p>A list of query suggestions for an index.</p>
@@ -1591,7 +1591,7 @@ pub struct GetQuerySuggestionsOutput {
     pub suggestions: std::option::Option<std::vec::Vec<crate::model::Suggestion>>,
 }
 impl GetQuerySuggestionsOutput {
-    /// <p>The unique identifier for a list of query suggestions for an index.</p>
+    /// <p>The identifier for a list of query suggestions for an index.</p>
     pub fn query_suggestions_id(&self) -> std::option::Option<&str> {
         self.query_suggestions_id.as_deref()
     }
@@ -1610,12 +1610,12 @@ pub mod get_query_suggestions_output {
         pub(crate) suggestions: std::option::Option<std::vec::Vec<crate::model::Suggestion>>,
     }
     impl Builder {
-        /// <p>The unique identifier for a list of query suggestions for an index.</p>
+        /// <p>The identifier for a list of query suggestions for an index.</p>
         pub fn query_suggestions_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_suggestions_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for a list of query suggestions for an index.</p>
+        /// <p>The identifier for a list of query suggestions for an index.</p>
         pub fn set_query_suggestions_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4386,12 +4386,12 @@ impl DeleteAccessControlConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThesaurusOutput {
-    /// <p>The unique identifier of the thesaurus. </p>
+    /// <p>The identifier of the thesaurus. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusOutput {
-    /// <p>The unique identifier of the thesaurus. </p>
+    /// <p>The identifier of the thesaurus. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4405,12 +4405,12 @@ pub mod create_thesaurus_output {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the thesaurus. </p>
+        /// <p>The identifier of the thesaurus. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the thesaurus. </p>
+        /// <p>The identifier of the thesaurus. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4432,12 +4432,12 @@ impl CreateThesaurusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListOutput {
-    /// <p>The unique identifier of the created block list.</p>
+    /// <p>The identifier of the created block list.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateQuerySuggestionsBlockListOutput {
-    /// <p>The unique identifier of the created block list.</p>
+    /// <p>The identifier of the created block list.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4451,12 +4451,12 @@ pub mod create_query_suggestions_block_list_output {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the created block list.</p>
+        /// <p>The identifier of the created block list.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the created block list.</p>
+        /// <p>The identifier of the created block list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4478,12 +4478,12 @@ impl CreateQuerySuggestionsBlockListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIndexOutput {
-    /// <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+    /// <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateIndexOutput {
-    /// <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+    /// <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4497,12 +4497,12 @@ pub mod create_index_output {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+        /// <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
+        /// <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4524,12 +4524,12 @@ impl CreateIndexOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFaqOutput {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateFaqOutput {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4543,12 +4543,12 @@ pub mod create_faq_output {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self

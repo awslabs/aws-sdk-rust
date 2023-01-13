@@ -101,6 +101,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerTarget
     }
 }
 
+/// Operation shape for `AttachTrafficSources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`attach_traffic_sources`](crate::client::Client::attach_traffic_sources).
+///
+/// See [`crate::client::fluent_builders::AttachTrafficSources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct AttachTrafficSources {
+    _private: (),
+}
+impl AttachTrafficSources {
+    /// Creates a new builder-style object to manufacture [`AttachTrafficSourcesInput`](crate::input::AttachTrafficSourcesInput).
+    pub fn builder() -> crate::input::attach_traffic_sources_input::Builder {
+        crate::input::attach_traffic_sources_input::Builder::default()
+    }
+    /// Creates a new `AttachTrafficSources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AttachTrafficSources {
+    type Output = std::result::Result<
+        crate::output::AttachTrafficSourcesOutput,
+        crate::error::AttachTrafficSourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_attach_traffic_sources_error(response)
+        } else {
+            crate::operation_deser::parse_attach_traffic_sources_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchDeleteScheduledAction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1251,6 +1285,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTerminationPolic
     }
 }
 
+/// Operation shape for `DescribeTrafficSources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_traffic_sources`](crate::client::Client::describe_traffic_sources).
+///
+/// See [`crate::client::fluent_builders::DescribeTrafficSources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeTrafficSources {
+    _private: (),
+}
+impl DescribeTrafficSources {
+    /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesInput`](crate::input::DescribeTrafficSourcesInput).
+    pub fn builder() -> crate::input::describe_traffic_sources_input::Builder {
+        crate::input::describe_traffic_sources_input::Builder::default()
+    }
+    /// Creates a new `DescribeTrafficSources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficSources {
+    type Output = std::result::Result<
+        crate::output::DescribeTrafficSourcesOutput,
+        crate::error::DescribeTrafficSourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_traffic_sources_error(response)
+        } else {
+            crate::operation_deser::parse_describe_traffic_sources_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeWarmPool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1383,6 +1451,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerTarget
             crate::operation_deser::parse_detach_load_balancer_target_groups_error(response)
         } else {
             crate::operation_deser::parse_detach_load_balancer_target_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DetachTrafficSources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`detach_traffic_sources`](crate::client::Client::detach_traffic_sources).
+///
+/// See [`crate::client::fluent_builders::DetachTrafficSources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DetachTrafficSources {
+    _private: (),
+}
+impl DetachTrafficSources {
+    /// Creates a new builder-style object to manufacture [`DetachTrafficSourcesInput`](crate::input::DetachTrafficSourcesInput).
+    pub fn builder() -> crate::input::detach_traffic_sources_input::Builder {
+        crate::input::detach_traffic_sources_input::Builder::default()
+    }
+    /// Creates a new `DetachTrafficSources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DetachTrafficSources {
+    type Output = std::result::Result<
+        crate::output::DetachTrafficSourcesOutput,
+        crate::error::DetachTrafficSourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_detach_traffic_sources_error(response)
+        } else {
+            crate::operation_deser::parse_detach_traffic_sources_response(response)
         }
     }
 }

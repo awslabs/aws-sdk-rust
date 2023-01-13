@@ -184,7 +184,7 @@ pub struct WorkloadShare {
     /// <p>An Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub shared_by: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
@@ -210,7 +210,7 @@ impl WorkloadShare {
     pub fn shared_by(&self) -> std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -267,12 +267,12 @@ pub mod workload_share {
             self.shared_by = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -671,6 +671,12 @@ pub struct Workload {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Discovery configuration associated to the workload.</p>
+    #[doc(hidden)]
+    pub discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+    /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+    #[doc(hidden)]
+    pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -804,6 +810,14 @@ impl Workload {
     {
         self.tags.as_ref()
     }
+    /// <p>Discovery configuration associated to the workload.</p>
+    pub fn discovery_config(&self) -> std::option::Option<&crate::model::WorkloadDiscoveryConfig> {
+        self.discovery_config.as_ref()
+    }
+    /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+        self.applications.as_deref()
+    }
 }
 /// See [`Workload`](crate::model::Workload).
 pub mod workload {
@@ -837,6 +851,8 @@ pub mod workload {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) discovery_config: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1232,6 +1248,38 @@ pub mod workload {
             self.tags = input;
             self
         }
+        /// <p>Discovery configuration associated to the workload.</p>
+        pub fn discovery_config(mut self, input: crate::model::WorkloadDiscoveryConfig) -> Self {
+            self.discovery_config = Some(input);
+            self
+        }
+        /// <p>Discovery configuration associated to the workload.</p>
+        pub fn set_discovery_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkloadDiscoveryConfig>,
+        ) -> Self {
+            self.discovery_config = input;
+            self
+        }
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.applications.unwrap_or_default();
+            v.push(input.into());
+            self.applications = Some(v);
+            self
+        }
+        /// <p>List of AppRegistry application ARNs associated to the workload.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.applications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Workload`](crate::model::Workload).
         pub fn build(self) -> crate::model::Workload {
             crate::model::Workload {
@@ -1260,6 +1308,8 @@ pub mod workload {
                 owner: self.owner,
                 share_invitation_id: self.share_invitation_id,
                 tags: self.tags,
+                discovery_config: self.discovery_config,
+                applications: self.applications,
             }
         }
     }
@@ -1268,6 +1318,156 @@ impl Workload {
     /// Creates a new builder-style object to manufacture [`Workload`](crate::model::Workload).
     pub fn builder() -> crate::model::workload::Builder {
         crate::model::workload::Builder::default()
+    }
+}
+
+/// <p>Discovery configuration associated to the workload.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WorkloadDiscoveryConfig {
+    /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
+    #[doc(hidden)]
+    pub trusted_advisor_integration_status:
+        std::option::Option<crate::model::TrustedAdvisorIntegrationStatus>,
+}
+impl WorkloadDiscoveryConfig {
+    /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
+    pub fn trusted_advisor_integration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorIntegrationStatus> {
+        self.trusted_advisor_integration_status.as_ref()
+    }
+}
+/// See [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+pub mod workload_discovery_config {
+
+    /// A builder for [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) trusted_advisor_integration_status:
+            std::option::Option<crate::model::TrustedAdvisorIntegrationStatus>,
+    }
+    impl Builder {
+        /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
+        pub fn trusted_advisor_integration_status(
+            mut self,
+            input: crate::model::TrustedAdvisorIntegrationStatus,
+        ) -> Self {
+            self.trusted_advisor_integration_status = Some(input);
+            self
+        }
+        /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
+        pub fn set_trusted_advisor_integration_status(
+            mut self,
+            input: std::option::Option<crate::model::TrustedAdvisorIntegrationStatus>,
+        ) -> Self {
+            self.trusted_advisor_integration_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+        pub fn build(self) -> crate::model::WorkloadDiscoveryConfig {
+            crate::model::WorkloadDiscoveryConfig {
+                trusted_advisor_integration_status: self.trusted_advisor_integration_status,
+            }
+        }
+    }
+}
+impl WorkloadDiscoveryConfig {
+    /// Creates a new builder-style object to manufacture [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+    pub fn builder() -> crate::model::workload_discovery_config::Builder {
+        crate::model::workload_discovery_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `TrustedAdvisorIntegrationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let trustedadvisorintegrationstatus = unimplemented!();
+/// match trustedadvisorintegrationstatus {
+///     TrustedAdvisorIntegrationStatus::Disabled => { /* ... */ },
+///     TrustedAdvisorIntegrationStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `trustedadvisorintegrationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TrustedAdvisorIntegrationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TrustedAdvisorIntegrationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TrustedAdvisorIntegrationStatus::NewFeature` is defined.
+/// Specifically, when `trustedadvisorintegrationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TrustedAdvisorIntegrationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrustedAdvisorIntegrationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TrustedAdvisorIntegrationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => TrustedAdvisorIntegrationStatus::Disabled,
+            "ENABLED" => TrustedAdvisorIntegrationStatus::Enabled,
+            other => TrustedAdvisorIntegrationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for TrustedAdvisorIntegrationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrustedAdvisorIntegrationStatus::from(s))
+    }
+}
+impl TrustedAdvisorIntegrationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrustedAdvisorIntegrationStatus::Disabled => "DISABLED",
+            TrustedAdvisorIntegrationStatus::Enabled => "ENABLED",
+            TrustedAdvisorIntegrationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for TrustedAdvisorIntegrationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3774,7 +3974,7 @@ pub struct WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
@@ -3792,7 +3992,7 @@ impl WorkloadShareSummary {
     pub fn share_id(&self) -> std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -3832,12 +4032,12 @@ pub mod workload_share_summary {
             self.share_id = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -4127,7 +4327,7 @@ pub struct ShareInvitationSummary {
     /// <p>An Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub shared_by: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
@@ -4159,7 +4359,7 @@ impl ShareInvitationSummary {
     pub fn shared_by(&self) -> std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -4229,12 +4429,12 @@ pub mod share_invitation_summary {
             self.shared_by = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -4793,7 +4993,7 @@ pub struct LensShareSummary {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>The status of a workload share.</p>
@@ -4808,7 +5008,7 @@ impl LensShareSummary {
     pub fn share_id(&self) -> std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -4843,12 +5043,12 @@ pub mod lens_share_summary {
             self.share_id = input;
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -5771,6 +5971,853 @@ impl LensStatusType {
     }
 }
 impl AsRef<str> for LensStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Trusted Advisor check summary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CheckSummary {
+    /// <p>Trusted Advisor check ID.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Trusted Advisor check name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Provider of the check related to the best practice.</p>
+    #[doc(hidden)]
+    pub provider: std::option::Option<crate::model::CheckProvider>,
+    /// <p>Trusted Advisor check description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Well-Architected Lens ARN associated to the check.</p>
+    #[doc(hidden)]
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
+    pub pillar_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the question.</p>
+    #[doc(hidden)]
+    pub question_id: std::option::Option<std::string::String>,
+    /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
+    pub choice_id: std::option::Option<std::string::String>,
+    /// <p>Status associated to the check.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CheckStatus>,
+    /// <p>Account summary associated to the check.</p>
+    #[doc(hidden)]
+    pub account_summary:
+        std::option::Option<std::collections::HashMap<crate::model::CheckStatus, i32>>,
+}
+impl CheckSummary {
+    /// <p>Trusted Advisor check ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Trusted Advisor check name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Provider of the check related to the best practice.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::CheckProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>Trusted Advisor check description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Well-Architected Lens ARN associated to the check.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>Status associated to the check.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CheckStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Account summary associated to the check.</p>
+    pub fn account_summary(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::CheckStatus, i32>> {
+        self.account_summary.as_ref()
+    }
+}
+/// See [`CheckSummary`](crate::model::CheckSummary).
+pub mod check_summary {
+
+    /// A builder for [`CheckSummary`](crate::model::CheckSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) provider: std::option::Option<crate::model::CheckProvider>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) pillar_id: std::option::Option<std::string::String>,
+        pub(crate) question_id: std::option::Option<std::string::String>,
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CheckStatus>,
+        pub(crate) account_summary:
+            std::option::Option<std::collections::HashMap<crate::model::CheckStatus, i32>>,
+    }
+    impl Builder {
+        /// <p>Trusted Advisor check ID.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check ID.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Trusted Advisor check name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Provider of the check related to the best practice.</p>
+        pub fn provider(mut self, input: crate::model::CheckProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>Provider of the check related to the best practice.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::CheckProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>Trusted Advisor check description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// <p>Well-Architected Lens ARN associated to the check.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN associated to the check.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pillar_id = Some(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pillar_id = input;
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.question_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.question_id = input;
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// <p>Status associated to the check.</p>
+        pub fn status(mut self, input: crate::model::CheckStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status associated to the check.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CheckStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `account_summary`.
+        ///
+        /// To override the contents of this collection use [`set_account_summary`](Self::set_account_summary).
+        ///
+        /// <p>Account summary associated to the check.</p>
+        pub fn account_summary(mut self, k: crate::model::CheckStatus, v: i32) -> Self {
+            let mut hash_map = self.account_summary.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.account_summary = Some(hash_map);
+            self
+        }
+        /// <p>Account summary associated to the check.</p>
+        pub fn set_account_summary(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<crate::model::CheckStatus, i32>>,
+        ) -> Self {
+            self.account_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CheckSummary`](crate::model::CheckSummary).
+        pub fn build(self) -> crate::model::CheckSummary {
+            crate::model::CheckSummary {
+                id: self.id,
+                name: self.name,
+                provider: self.provider,
+                description: self.description,
+                updated_at: self.updated_at,
+                lens_arn: self.lens_arn,
+                pillar_id: self.pillar_id,
+                question_id: self.question_id,
+                choice_id: self.choice_id,
+                status: self.status,
+                account_summary: self.account_summary,
+            }
+        }
+    }
+}
+impl CheckSummary {
+    /// Creates a new builder-style object to manufacture [`CheckSummary`](crate::model::CheckSummary).
+    pub fn builder() -> crate::model::check_summary::Builder {
+        crate::model::check_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CheckStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let checkstatus = unimplemented!();
+/// match checkstatus {
+///     CheckStatus::Error => { /* ... */ },
+///     CheckStatus::FetchFailed => { /* ... */ },
+///     CheckStatus::NotAvailable => { /* ... */ },
+///     CheckStatus::Okay => { /* ... */ },
+///     CheckStatus::Warning => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `checkstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CheckStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CheckStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CheckStatus::NewFeature` is defined.
+/// Specifically, when `checkstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CheckStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CheckStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    FetchFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    NotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    Okay,
+    #[allow(missing_docs)] // documentation missing in model
+    Warning,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CheckStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ERROR" => CheckStatus::Error,
+            "FETCH_FAILED" => CheckStatus::FetchFailed,
+            "NOT_AVAILABLE" => CheckStatus::NotAvailable,
+            "OKAY" => CheckStatus::Okay,
+            "WARNING" => CheckStatus::Warning,
+            other => CheckStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for CheckStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CheckStatus::from(s))
+    }
+}
+impl CheckStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CheckStatus::Error => "ERROR",
+            CheckStatus::FetchFailed => "FETCH_FAILED",
+            CheckStatus::NotAvailable => "NOT_AVAILABLE",
+            CheckStatus::Okay => "OKAY",
+            CheckStatus::Warning => "WARNING",
+            CheckStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ERROR", "FETCH_FAILED", "NOT_AVAILABLE", "OKAY", "WARNING"]
+    }
+}
+impl AsRef<str> for CheckStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `CheckProvider`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let checkprovider = unimplemented!();
+/// match checkprovider {
+///     CheckProvider::TrustedAdvisor => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `checkprovider` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CheckProvider::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CheckProvider::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CheckProvider::NewFeature` is defined.
+/// Specifically, when `checkprovider` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CheckProvider::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CheckProvider {
+    #[allow(missing_docs)] // documentation missing in model
+    TrustedAdvisor,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CheckProvider {
+    fn from(s: &str) -> Self {
+        match s {
+            "TRUSTED_ADVISOR" => CheckProvider::TrustedAdvisor,
+            other => CheckProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for CheckProvider {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CheckProvider::from(s))
+    }
+}
+impl CheckProvider {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CheckProvider::TrustedAdvisor => "TRUSTED_ADVISOR",
+            CheckProvider::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["TRUSTED_ADVISOR"]
+    }
+}
+impl AsRef<str> for CheckProvider {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Account details for a Well-Architected best practice in relation to Trusted Advisor checks.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CheckDetail {
+    /// <p>Trusted Advisor check ID.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>Trusted Advisor check name.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Trusted Advisor check description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Provider of the check related to the best practice.</p>
+    #[doc(hidden)]
+    pub provider: std::option::Option<crate::model::CheckProvider>,
+    /// <p>Well-Architected Lens ARN associated to the check.</p>
+    #[doc(hidden)]
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
+    pub pillar_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the question.</p>
+    #[doc(hidden)]
+    pub question_id: std::option::Option<std::string::String>,
+    /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
+    pub choice_id: std::option::Option<std::string::String>,
+    /// <p>Status associated to the check.</p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::CheckStatus>,
+    /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Count of flagged resources associated to the check.</p>
+    #[doc(hidden)]
+    pub flagged_resources: i32,
+    /// <p>Reason associated to the check.</p>
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::model::CheckFailureReason>,
+    /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl CheckDetail {
+    /// <p>Trusted Advisor check ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Trusted Advisor check name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Trusted Advisor check description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Provider of the check related to the best practice.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::CheckProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>Well-Architected Lens ARN associated to the check.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>Status associated to the check.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CheckStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Count of flagged resources associated to the check.</p>
+    pub fn flagged_resources(&self) -> i32 {
+        self.flagged_resources
+    }
+    /// <p>Reason associated to the check.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::CheckFailureReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+/// See [`CheckDetail`](crate::model::CheckDetail).
+pub mod check_detail {
+
+    /// A builder for [`CheckDetail`](crate::model::CheckDetail).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) provider: std::option::Option<crate::model::CheckProvider>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) pillar_id: std::option::Option<std::string::String>,
+        pub(crate) question_id: std::option::Option<std::string::String>,
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CheckStatus>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) flagged_resources: std::option::Option<i32>,
+        pub(crate) reason: std::option::Option<crate::model::CheckFailureReason>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Trusted Advisor check ID.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check ID.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Trusted Advisor check name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Trusted Advisor check description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Trusted Advisor check description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Provider of the check related to the best practice.</p>
+        pub fn provider(mut self, input: crate::model::CheckProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>Provider of the check related to the best practice.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::CheckProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>Well-Architected Lens ARN associated to the check.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>Well-Architected Lens ARN associated to the check.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pillar_id = Some(input.into());
+            self
+        }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pillar_id = input;
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.question_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the question.</p>
+        pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.question_id = input;
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// <p>Status associated to the check.</p>
+        pub fn status(mut self, input: crate::model::CheckStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status associated to the check.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CheckStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>An Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Count of flagged resources associated to the check.</p>
+        pub fn flagged_resources(mut self, input: i32) -> Self {
+            self.flagged_resources = Some(input);
+            self
+        }
+        /// <p>Count of flagged resources associated to the check.</p>
+        pub fn set_flagged_resources(mut self, input: std::option::Option<i32>) -> Self {
+            self.flagged_resources = input;
+            self
+        }
+        /// <p>Reason associated to the check.</p>
+        pub fn reason(mut self, input: crate::model::CheckFailureReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        /// <p>Reason associated to the check.</p>
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::CheckFailureReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CheckDetail`](crate::model::CheckDetail).
+        pub fn build(self) -> crate::model::CheckDetail {
+            crate::model::CheckDetail {
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                provider: self.provider,
+                lens_arn: self.lens_arn,
+                pillar_id: self.pillar_id,
+                question_id: self.question_id,
+                choice_id: self.choice_id,
+                status: self.status,
+                account_id: self.account_id,
+                flagged_resources: self.flagged_resources.unwrap_or_default(),
+                reason: self.reason,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl CheckDetail {
+    /// Creates a new builder-style object to manufacture [`CheckDetail`](crate::model::CheckDetail).
+    pub fn builder() -> crate::model::check_detail::Builder {
+        crate::model::check_detail::Builder::default()
+    }
+}
+
+/// When writing a match expression against `CheckFailureReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let checkfailurereason = unimplemented!();
+/// match checkfailurereason {
+///     CheckFailureReason::AccessDenied => { /* ... */ },
+///     CheckFailureReason::AssumeRoleError => { /* ... */ },
+///     CheckFailureReason::PremiumSupportRequired => { /* ... */ },
+///     CheckFailureReason::UnknownError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `checkfailurereason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CheckFailureReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CheckFailureReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CheckFailureReason::NewFeature` is defined.
+/// Specifically, when `checkfailurereason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CheckFailureReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CheckFailureReason {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    AssumeRoleError,
+    #[allow(missing_docs)] // documentation missing in model
+    PremiumSupportRequired,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownError,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for CheckFailureReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => CheckFailureReason::AccessDenied,
+            "ASSUME_ROLE_ERROR" => CheckFailureReason::AssumeRoleError,
+            "PREMIUM_SUPPORT_REQUIRED" => CheckFailureReason::PremiumSupportRequired,
+            "UNKNOWN_ERROR" => CheckFailureReason::UnknownError,
+            other => {
+                CheckFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for CheckFailureReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CheckFailureReason::from(s))
+    }
+}
+impl CheckFailureReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CheckFailureReason::AccessDenied => "ACCESS_DENIED",
+            CheckFailureReason::AssumeRoleError => "ASSUME_ROLE_ERROR",
+            CheckFailureReason::PremiumSupportRequired => "PREMIUM_SUPPORT_REQUIRED",
+            CheckFailureReason::UnknownError => "UNKNOWN_ERROR",
+            CheckFailureReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "ASSUME_ROLE_ERROR",
+            "PREMIUM_SUPPORT_REQUIRED",
+            "UNKNOWN_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for CheckFailureReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

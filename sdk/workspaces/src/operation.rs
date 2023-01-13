@@ -235,6 +235,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIpGroup {
     }
 }
 
+/// Operation shape for `CreateStandbyWorkspaces`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_standby_workspaces`](crate::client::Client::create_standby_workspaces).
+///
+/// See [`crate::client::fluent_builders::CreateStandbyWorkspaces`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateStandbyWorkspaces {
+    _private: (),
+}
+impl CreateStandbyWorkspaces {
+    /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesInput`](crate::input::CreateStandbyWorkspacesInput).
+    pub fn builder() -> crate::input::create_standby_workspaces_input::Builder {
+        crate::input::create_standby_workspaces_input::Builder::default()
+    }
+    /// Creates a new `CreateStandbyWorkspaces` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateStandbyWorkspaces {
+    type Output = std::result::Result<
+        crate::output::CreateStandbyWorkspacesOutput,
+        crate::error::CreateStandbyWorkspacesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_standby_workspaces_error(response)
+        } else {
+            crate::operation_deser::parse_create_standby_workspaces_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1445,6 +1479,42 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyAccount {
             crate::operation_deser::parse_modify_account_error(response)
         } else {
             crate::operation_deser::parse_modify_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyCertificateBasedAuthProperties`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_certificate_based_auth_properties`](crate::client::Client::modify_certificate_based_auth_properties).
+///
+/// See [`crate::client::fluent_builders::ModifyCertificateBasedAuthProperties`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ModifyCertificateBasedAuthProperties {
+    _private: (),
+}
+impl ModifyCertificateBasedAuthProperties {
+    /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesInput`](crate::input::ModifyCertificateBasedAuthPropertiesInput).
+    pub fn builder() -> crate::input::modify_certificate_based_auth_properties_input::Builder {
+        crate::input::modify_certificate_based_auth_properties_input::Builder::default()
+    }
+    /// Creates a new `ModifyCertificateBasedAuthProperties` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyCertificateBasedAuthProperties {
+    type Output = std::result::Result<
+        crate::output::ModifyCertificateBasedAuthPropertiesOutput,
+        crate::error::ModifyCertificateBasedAuthPropertiesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_certificate_based_auth_properties_error(response)
+        } else {
+            crate::operation_deser::parse_modify_certificate_based_auth_properties_response(
+                response,
+            )
         }
     }
 }

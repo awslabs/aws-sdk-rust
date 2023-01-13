@@ -144,7 +144,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateActivation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateActivation::set_description): <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
     ///   - [`default_instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateActivation::default_instance_name) / [`set_default_instance_name(Option<String>)`](crate::client::fluent_builders::CreateActivation::set_default_instance_name): <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
-    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::CreateActivation::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::CreateActivation::set_iam_role): <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::CreateActivation::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::CreateActivation::set_iam_role): <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>  </note>
     ///   - [`registration_limit(i32)`](crate::client::fluent_builders::CreateActivation::registration_limit) / [`set_registration_limit(Option<i32>)`](crate::client::fluent_builders::CreateActivation::set_registration_limit): <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
     ///   - [`expiration_date(DateTime)`](crate::client::fluent_builders::CreateActivation::expiration_date) / [`set_expiration_date(Option<DateTime>)`](crate::client::fluent_builders::CreateActivation::set_expiration_date): <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateActivation::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateActivation::set_tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>  </ul> <important>   <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>  </important>  <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
@@ -177,7 +177,7 @@ impl Client {
     ///   - [`target_locations(Vec<TargetLocation>)`](crate::client::fluent_builders::CreateAssociation::target_locations) / [`set_target_locations(Option<Vec<TargetLocation>>)`](crate::client::fluent_builders::CreateAssociation::set_target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
     ///   - [`schedule_offset(i32)`](crate::client::fluent_builders::CreateAssociation::schedule_offset) / [`set_schedule_offset(Option<i32>)`](crate::client::fluent_builders::CreateAssociation::set_schedule_offset): <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>   <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>  </note>
     ///   - [`target_maps(Vec<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateAssociation::target_maps) / [`set_target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::CreateAssociation::set_target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAssociation::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAssociation::set_tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAssociation::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAssociation::set_tags): <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::CreateAssociation::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::CreateAssociation::set_alarm_configuration): <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     /// - On success, responds with [`CreateAssociationOutput`](crate::output::CreateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::output::CreateAssociationOutput::association_description): <p>Information about the association.</p>
@@ -240,7 +240,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateOpsItem::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateOpsItem::set_description): <p>Information about the OpsItem. </p>
-    ///   - [`ops_item_type(impl Into<String>)`](crate::client::fluent_builders::CreateOpsItem::ops_item_type) / [`set_ops_item_type(Option<String>)`](crate::client::fluent_builders::CreateOpsItem::set_ops_item_type): <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    ///   - [`ops_item_type(impl Into<String>)`](crate::client::fluent_builders::CreateOpsItem::ops_item_type) / [`set_ops_item_type(Option<String>)`](crate::client::fluent_builders::CreateOpsItem::set_ops_item_type): <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>  <ul>   <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>   <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>   <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>  </ul>
     ///   - [`operational_data(HashMap<String, OpsItemDataValue>)`](crate::client::fluent_builders::CreateOpsItem::operational_data) / [`set_operational_data(Option<HashMap<String, OpsItemDataValue>>)`](crate::client::fluent_builders::CreateOpsItem::set_operational_data): <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>   <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>  </important>  <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>  <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///   - [`notifications(Vec<OpsItemNotification>)`](crate::client::fluent_builders::CreateOpsItem::notifications) / [`set_notifications(Option<Vec<OpsItemNotification>>)`](crate::client::fluent_builders::CreateOpsItem::set_notifications): <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
     ///   - [`priority(i32)`](crate::client::fluent_builders::CreateOpsItem::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateOpsItem::set_priority): <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -254,8 +254,10 @@ impl Client {
     ///   - [`actual_end_time(DateTime)`](crate::client::fluent_builders::CreateOpsItem::actual_end_time) / [`set_actual_end_time(Option<DateTime>)`](crate::client::fluent_builders::CreateOpsItem::set_actual_end_time): <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     ///   - [`planned_start_time(DateTime)`](crate::client::fluent_builders::CreateOpsItem::planned_start_time) / [`set_planned_start_time(Option<DateTime>)`](crate::client::fluent_builders::CreateOpsItem::set_planned_start_time): <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     ///   - [`planned_end_time(DateTime)`](crate::client::fluent_builders::CreateOpsItem::planned_end_time) / [`set_planned_end_time(Option<DateTime>)`](crate::client::fluent_builders::CreateOpsItem::set_planned_end_time): <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateOpsItem::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateOpsItem::set_account_id): <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// - On success, responds with [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput) with field(s):
     ///   - [`ops_item_id(Option<String>)`](crate::output::CreateOpsItemOutput::ops_item_id): <p>The ID of the OpsItem.</p>
+    ///   - [`ops_item_arn(Option<String>)`](crate::output::CreateOpsItemOutput::ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<CreateOpsItemError>`](crate::error::CreateOpsItemError)
     pub fn create_ops_item(&self) -> fluent_builders::CreateOpsItem {
         fluent_builders::CreateOpsItem::new(self.handle.clone())
@@ -418,6 +420,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteResourceDataSyncError>`](crate::error::DeleteResourceDataSyncError)
     pub fn delete_resource_data_sync(&self) -> fluent_builders::DeleteResourceDataSync {
         fluent_builders::DeleteResourceDataSync::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_resource_arn): <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_id): <p>The policy ID.</p>
+    ///   - [`policy_hash(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_hash) / [`set_policy_hash(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_hash): <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
+    pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy {
+        fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeregisterManagedInstance`](crate::client::fluent_builders::DeregisterManagedInstance) operation.
     ///
@@ -1258,6 +1272,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ops_item_id(impl Into<String>)`](crate::client::fluent_builders::GetOpsItem::ops_item_id) / [`set_ops_item_id(Option<String>)`](crate::client::fluent_builders::GetOpsItem::set_ops_item_id): <p>The ID of the OpsItem that you want to get.</p>
+    ///   - [`ops_item_arn(impl Into<String>)`](crate::client::fluent_builders::GetOpsItem::ops_item_arn) / [`set_ops_item_arn(Option<String>)`](crate::client::fluent_builders::GetOpsItem::set_ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`GetOpsItemOutput`](crate::output::GetOpsItemOutput) with field(s):
     ///   - [`ops_item(Option<OpsItem>)`](crate::output::GetOpsItemOutput::ops_item): <p>The OpsItem.</p>
     /// - On failure, responds with [`SdkError<GetOpsItemError>`](crate::error::GetOpsItemError)
@@ -1388,6 +1403,20 @@ impl Client {
         &self,
     ) -> fluent_builders::GetPatchBaselineForPatchGroup {
         fluent_builders::GetPatchBaselineForPatchGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_resource_arn): <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourcePolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourcePolicies::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourcePoliciesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    ///   - [`policies(Option<Vec<GetResourcePoliciesResponseEntry>>)`](crate::output::GetResourcePoliciesOutput::policies): <p>An array of the <code>Policy</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::error::GetResourcePoliciesError)
+    pub fn get_resource_policies(&self) -> fluent_builders::GetResourcePolicies {
+        fluent_builders::GetResourcePolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServiceSetting`](crate::client::fluent_builders::GetServiceSetting) operation.
     ///
@@ -1714,6 +1743,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutParameterError>`](crate::error::PutParameterError)
     pub fn put_parameter(&self) -> fluent_builders::PutParameter {
         fluent_builders::PutParameter::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>A policy you want to associate with a resource.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_id): <p>The policy ID.</p>
+    ///   - [`policy_hash(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_hash) / [`set_policy_hash(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_hash): <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_id): <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+    ///   - [`policy_hash(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_hash): <p>ID of the current policy version.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
+    pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy {
+        fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RegisterDefaultPatchBaseline`](crate::client::fluent_builders::RegisterDefaultPatchBaseline) operation.
     ///
@@ -2138,7 +2181,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::set_instance_id): <p>The ID of the managed node where you want to update the role.</p>
-    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::set_iam_role): <p>The IAM role you want to assign or change.</p>
+    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::UpdateManagedInstanceRole::set_iam_role): <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>  </note>
     /// - On success, responds with [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput)
 
     /// - On failure, responds with [`SdkError<UpdateManagedInstanceRoleError>`](crate::error::UpdateManagedInstanceRoleError)
@@ -2163,6 +2206,7 @@ impl Client {
     ///   - [`actual_end_time(DateTime)`](crate::client::fluent_builders::UpdateOpsItem::actual_end_time) / [`set_actual_end_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateOpsItem::set_actual_end_time): <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     ///   - [`planned_start_time(DateTime)`](crate::client::fluent_builders::UpdateOpsItem::planned_start_time) / [`set_planned_start_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateOpsItem::set_planned_start_time): <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     ///   - [`planned_end_time(DateTime)`](crate::client::fluent_builders::UpdateOpsItem::planned_end_time) / [`set_planned_end_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateOpsItem::set_planned_end_time): <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`ops_item_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateOpsItem::ops_item_arn) / [`set_ops_item_arn(Option<String>)`](crate::client::fluent_builders::UpdateOpsItem::set_ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput)
 
     /// - On failure, responds with [`SdkError<UpdateOpsItemError>`](crate::error::UpdateOpsItemError)
@@ -2760,12 +2804,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_instance_name(input);
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
@@ -3210,12 +3258,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of resource to which it applies, the environment, or the purpose of the association.</p>
+        /// <p>Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3843,12 +3891,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_type(input.into());
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+        /// <ul>
+        /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+        /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+        /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+        /// </ul>
         pub fn set_ops_item_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4050,6 +4108,16 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_end_time(input);
+            self
+        }
+        /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
             self
         }
     }
@@ -5411,6 +5479,99 @@ pub mod fluent_builders {
         /// <p>Specify the type of resource data sync to delete.</p>
         pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sync_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteResourcePolicy`.
+    ///
+    /// <p>Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_resource_policy_input::Builder,
+    }
+    impl DeleteResourcePolicy {
+        /// Creates a new `DeleteResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_id(input);
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash(input.into());
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_hash(input);
             self
         }
     }
@@ -11154,6 +11315,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_item_id(input);
             self
         }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_arn(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ops_item_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetOpsMetadata`.
     ///
@@ -12000,6 +12171,105 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::OperatingSystem>,
         ) -> Self {
             self.inner = self.inner.set_operating_system(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResourcePolicies`.
+    ///
+    /// <p>Returns an array of the <code>Policy</code> object.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourcePolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_resource_policies_input::Builder,
+    }
+    impl GetResourcePolicies {
+        /// Creates a new `GetResourcePolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetResourcePolicies,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourcePoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcePoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourcePoliciesPaginator {
+            crate::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -14726,6 +14996,109 @@ pub mod fluent_builders {
         /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourcePolicy`.
+    ///
+    /// <p>Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_resource_policy_input::Builder,
+    }
+    impl PutResourcePolicy {
+        /// Creates a new `PutResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutResourcePolicy,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>A policy you want to associate with a resource.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
+            self
+        }
+        /// <p>A policy you want to associate with a resource.</p>
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
+            self
+        }
+        /// <p>The policy ID.</p>
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_id(input);
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash(input.into());
+            self
+        }
+        /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+        pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_hash(input);
             self
         }
     }
@@ -18816,12 +19189,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The IAM role you want to assign or change.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The IAM role you want to assign or change.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+        /// </note>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
@@ -19097,6 +19474,16 @@ pub mod fluent_builders {
             input: std::option::Option<aws_smithy_types::DateTime>,
         ) -> Self {
             self.inner = self.inner.set_planned_end_time(input);
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_arn(input.into());
+            self
+        }
+        /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+        pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ops_item_arn(input);
             self
         }
     }

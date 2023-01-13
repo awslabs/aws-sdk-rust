@@ -299,6 +299,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFilter {
     }
 }
 
+/// Operation shape for `CreateMetricAttribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_metric_attribution`](crate::client::Client::create_metric_attribution).
+///
+/// See [`crate::client::fluent_builders::CreateMetricAttribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct CreateMetricAttribution {
+    _private: (),
+}
+impl CreateMetricAttribution {
+    /// Creates a new builder-style object to manufacture [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+    pub fn builder() -> crate::input::create_metric_attribution_input::Builder {
+        crate::input::create_metric_attribution_input::Builder::default()
+    }
+    /// Creates a new `CreateMetricAttribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateMetricAttribution {
+    type Output = std::result::Result<
+        crate::output::CreateMetricAttributionOutput,
+        crate::error::CreateMetricAttributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_metric_attribution_error(response)
+        } else {
+            crate::operation_deser::parse_create_metric_attribution_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateRecommender`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -591,6 +625,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFilter {
             crate::operation_deser::parse_delete_filter_error(response)
         } else {
             crate::operation_deser::parse_delete_filter_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteMetricAttribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_metric_attribution`](crate::client::Client::delete_metric_attribution).
+///
+/// See [`crate::client::fluent_builders::DeleteMetricAttribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteMetricAttribution {
+    _private: (),
+}
+impl DeleteMetricAttribution {
+    /// Creates a new builder-style object to manufacture [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+    pub fn builder() -> crate::input::delete_metric_attribution_input::Builder {
+        crate::input::delete_metric_attribution_input::Builder::default()
+    }
+    /// Creates a new `DeleteMetricAttribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricAttribution {
+    type Output = std::result::Result<
+        crate::output::DeleteMetricAttributionOutput,
+        crate::error::DeleteMetricAttributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_metric_attribution_error(response)
+        } else {
+            crate::operation_deser::parse_delete_metric_attribution_response(response)
         }
     }
 }
@@ -1061,6 +1129,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFilter {
             crate::operation_deser::parse_describe_filter_error(response)
         } else {
             crate::operation_deser::parse_describe_filter_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeMetricAttribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_metric_attribution`](crate::client::Client::describe_metric_attribution).
+///
+/// See [`crate::client::fluent_builders::DescribeMetricAttribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeMetricAttribution {
+    _private: (),
+}
+impl DescribeMetricAttribution {
+    /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+    pub fn builder() -> crate::input::describe_metric_attribution_input::Builder {
+        crate::input::describe_metric_attribution_input::Builder::default()
+    }
+    /// Creates a new `DescribeMetricAttribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMetricAttribution {
+    type Output = std::result::Result<
+        crate::output::DescribeMetricAttributionOutput,
+        crate::error::DescribeMetricAttributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_metric_attribution_error(response)
+        } else {
+            crate::operation_deser::parse_describe_metric_attribution_response(response)
         }
     }
 }
@@ -1565,6 +1667,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFilters {
     }
 }
 
+/// Operation shape for `ListMetricAttributionMetrics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_metric_attribution_metrics`](crate::client::Client::list_metric_attribution_metrics).
+///
+/// See [`crate::client::fluent_builders::ListMetricAttributionMetrics`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListMetricAttributionMetrics {
+    _private: (),
+}
+impl ListMetricAttributionMetrics {
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+    pub fn builder() -> crate::input::list_metric_attribution_metrics_input::Builder {
+        crate::input::list_metric_attribution_metrics_input::Builder::default()
+    }
+    /// Creates a new `ListMetricAttributionMetrics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributionMetrics {
+    type Output = std::result::Result<
+        crate::output::ListMetricAttributionMetricsOutput,
+        crate::error::ListMetricAttributionMetricsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_metric_attribution_metrics_error(response)
+        } else {
+            crate::operation_deser::parse_list_metric_attribution_metrics_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMetricAttributions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_metric_attributions`](crate::client::Client::list_metric_attributions).
+///
+/// See [`crate::client::fluent_builders::ListMetricAttributions`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListMetricAttributions {
+    _private: (),
+}
+impl ListMetricAttributions {
+    /// Creates a new builder-style object to manufacture [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+    pub fn builder() -> crate::input::list_metric_attributions_input::Builder {
+        crate::input::list_metric_attributions_input::Builder::default()
+    }
+    /// Creates a new `ListMetricAttributions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributions {
+    type Output = std::result::Result<
+        crate::output::ListMetricAttributionsOutput,
+        crate::error::ListMetricAttributionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_metric_attributions_error(response)
+        } else {
+            crate::operation_deser::parse_list_metric_attributions_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListRecipes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1957,6 +2127,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaign {
             crate::operation_deser::parse_update_campaign_error(response)
         } else {
             crate::operation_deser::parse_update_campaign_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateMetricAttribution`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_metric_attribution`](crate::client::Client::update_metric_attribution).
+///
+/// See [`crate::client::fluent_builders::UpdateMetricAttribution`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateMetricAttribution {
+    _private: (),
+}
+impl UpdateMetricAttribution {
+    /// Creates a new builder-style object to manufacture [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+    pub fn builder() -> crate::input::update_metric_attribution_input::Builder {
+        crate::input::update_metric_attribution_input::Builder::default()
+    }
+    /// Creates a new `UpdateMetricAttribution` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMetricAttribution {
+    type Output = std::result::Result<
+        crate::output::UpdateMetricAttributionOutput,
+        crate::error::UpdateMetricAttributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_metric_attribution_error(response)
+        } else {
+            crate::operation_deser::parse_update_metric_attribution_response(response)
         }
     }
 }

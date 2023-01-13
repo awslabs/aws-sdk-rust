@@ -768,7 +768,7 @@ pub struct InstalledComponent {
     /// <p>The lifecycle state of the component.</p>
     #[doc(hidden)]
     pub lifecycle_state: std::option::Option<crate::model::InstalledComponentLifecycleState>,
-    /// <p>The details about the lifecycle state of the component.</p>
+    /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
     #[doc(hidden)]
     pub lifecycle_state_details: std::option::Option<std::string::String>,
     /// <p>Whether or not the component is a root component.</p>
@@ -778,6 +778,18 @@ pub struct InstalledComponent {
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
     #[doc(hidden)]
     pub last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
+    /// <p>A component does not need to see a state change for this field to update.</p>
+    #[doc(hidden)]
+    pub last_reported_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
+    #[doc(hidden)]
+    pub last_installation_source: std::option::Option<std::string::String>,
+    /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
+    /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub lifecycle_status_codes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstalledComponent {
     /// <p>The name of the component.</p>
@@ -794,7 +806,7 @@ impl InstalledComponent {
     ) -> std::option::Option<&crate::model::InstalledComponentLifecycleState> {
         self.lifecycle_state.as_ref()
     }
-    /// <p>The details about the lifecycle state of the component.</p>
+    /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
     pub fn lifecycle_state_details(&self) -> std::option::Option<&str> {
         self.lifecycle_state_details.as_deref()
     }
@@ -806,6 +818,21 @@ impl InstalledComponent {
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
     pub fn last_status_change_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_timestamp.as_ref()
+    }
+    /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
+    /// <p>A component does not need to see a state change for this field to update.</p>
+    pub fn last_reported_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_reported_timestamp.as_ref()
+    }
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
+    pub fn last_installation_source(&self) -> std::option::Option<&str> {
+        self.last_installation_source.as_deref()
+    }
+    /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
+    /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+    /// </note>
+    pub fn lifecycle_status_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.lifecycle_status_codes.as_deref()
     }
 }
 /// See [`InstalledComponent`](crate::model::InstalledComponent).
@@ -821,6 +848,9 @@ pub mod installed_component {
         pub(crate) lifecycle_state_details: std::option::Option<std::string::String>,
         pub(crate) is_root: std::option::Option<bool>,
         pub(crate) last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_reported_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_installation_source: std::option::Option<std::string::String>,
+        pub(crate) lifecycle_status_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the component.</p>
@@ -865,12 +895,12 @@ pub mod installed_component {
             self.lifecycle_state = input;
             self
         }
-        /// <p>The details about the lifecycle state of the component.</p>
+        /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
         pub fn lifecycle_state_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_state_details = Some(input.into());
             self
         }
-        /// <p>The details about the lifecycle state of the component.</p>
+        /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
         pub fn set_lifecycle_state_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -903,6 +933,57 @@ pub mod installed_component {
             self.last_status_change_timestamp = input;
             self
         }
+        /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
+        /// <p>A component does not need to see a state change for this field to update.</p>
+        pub fn last_reported_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_reported_timestamp = Some(input);
+            self
+        }
+        /// <p>The last time the Greengrass core device sent a message containing a certain component to the Amazon Web Services Cloud.</p>
+        /// <p>A component does not need to see a state change for this field to update.</p>
+        pub fn set_last_reported_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_reported_timestamp = input;
+            self
+        }
+        /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
+        pub fn last_installation_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_installation_source = Some(input.into());
+            self
+        }
+        /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p>
+        pub fn set_last_installation_source(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_installation_source = input;
+            self
+        }
+        /// Appends an item to `lifecycle_status_codes`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_status_codes`](Self::set_lifecycle_status_codes).
+        ///
+        /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
+        /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+        /// </note>
+        pub fn lifecycle_status_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.lifecycle_status_codes.unwrap_or_default();
+            v.push(input.into());
+            self.lifecycle_status_codes = Some(v);
+            self
+        }
+        /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
+        /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
+        /// </note>
+        pub fn set_lifecycle_status_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.lifecycle_status_codes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstalledComponent`](crate::model::InstalledComponent).
         pub fn build(self) -> crate::model::InstalledComponent {
             crate::model::InstalledComponent {
@@ -912,6 +993,9 @@ pub mod installed_component {
                 lifecycle_state_details: self.lifecycle_state_details,
                 is_root: self.is_root.unwrap_or_default(),
                 last_status_change_timestamp: self.last_status_change_timestamp,
+                last_reported_timestamp: self.last_reported_timestamp,
+                last_installation_source: self.last_installation_source,
+                lifecycle_status_codes: self.lifecycle_status_codes,
             }
         }
     }
@@ -1181,6 +1265,9 @@ pub struct EffectiveDeployment {
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
     #[doc(hidden)]
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
+    #[doc(hidden)]
+    pub status_details: std::option::Option<crate::model::EffectiveDeploymentStatusDetails>,
 }
 impl EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
@@ -1225,6 +1312,12 @@ impl EffectiveDeployment {
     pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
+    /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
+    pub fn status_details(
+        &self,
+    ) -> std::option::Option<&crate::model::EffectiveDeploymentStatusDetails> {
+        self.status_details.as_ref()
+    }
 }
 /// See [`EffectiveDeployment`](crate::model::EffectiveDeployment).
 pub mod effective_deployment {
@@ -1243,6 +1336,8 @@ pub mod effective_deployment {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_details:
+            std::option::Option<crate::model::EffectiveDeploymentStatusDetails>,
     }
     impl Builder {
         /// <p>The ID of the deployment.</p>
@@ -1363,6 +1458,22 @@ pub mod effective_deployment {
             self.modified_timestamp = input;
             self
         }
+        /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
+        pub fn status_details(
+            mut self,
+            input: crate::model::EffectiveDeploymentStatusDetails,
+        ) -> Self {
+            self.status_details = Some(input);
+            self
+        }
+        /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
+        pub fn set_status_details(
+            mut self,
+            input: std::option::Option<crate::model::EffectiveDeploymentStatusDetails>,
+        ) -> Self {
+            self.status_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EffectiveDeployment`](crate::model::EffectiveDeployment).
         pub fn build(self) -> crate::model::EffectiveDeployment {
             crate::model::EffectiveDeployment {
@@ -1376,6 +1487,7 @@ pub mod effective_deployment {
                 reason: self.reason,
                 creation_timestamp: self.creation_timestamp,
                 modified_timestamp: self.modified_timestamp,
+                status_details: self.status_details,
             }
         }
     }
@@ -1384,6 +1496,93 @@ impl EffectiveDeployment {
     /// Creates a new builder-style object to manufacture [`EffectiveDeployment`](crate::model::EffectiveDeployment).
     pub fn builder() -> crate::model::effective_deployment::Builder {
         crate::model::effective_deployment::Builder::default()
+    }
+}
+
+/// <p>Contains all error-related information for the deployment record. The status details will be null if the deployment is in a success state.</p> <note>
+/// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code> and <code>errorTypes</code> response. This field will not be returned for earlier Greengrass nucleus versions.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EffectiveDeploymentStatusDetails {
+    /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
+    #[doc(hidden)]
+    pub error_stack: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
+    #[doc(hidden)]
+    pub error_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EffectiveDeploymentStatusDetails {
+    /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
+    pub fn error_stack(&self) -> std::option::Option<&[std::string::String]> {
+        self.error_stack.as_deref()
+    }
+    /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
+    pub fn error_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.error_types.as_deref()
+    }
+}
+/// See [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+pub mod effective_deployment_status_details {
+
+    /// A builder for [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_stack: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) error_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `error_stack`.
+        ///
+        /// To override the contents of this collection use [`set_error_stack`](Self::set_error_stack).
+        ///
+        /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
+        pub fn error_stack(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.error_stack.unwrap_or_default();
+            v.push(input.into());
+            self.error_stack = Some(v);
+            self
+        }
+        /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
+        pub fn set_error_stack(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.error_stack = input;
+            self
+        }
+        /// Appends an item to `error_types`.
+        ///
+        /// To override the contents of this collection use [`set_error_types`](Self::set_error_types).
+        ///
+        /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
+        pub fn error_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.error_types.unwrap_or_default();
+            v.push(input.into());
+            self.error_types = Some(v);
+            self
+        }
+        /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
+        pub fn set_error_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.error_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+        pub fn build(self) -> crate::model::EffectiveDeploymentStatusDetails {
+            crate::model::EffectiveDeploymentStatusDetails {
+                error_stack: self.error_stack,
+                error_types: self.error_types,
+            }
+        }
+    }
+}
+impl EffectiveDeploymentStatusDetails {
+    /// Creates a new builder-style object to manufacture [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+    pub fn builder() -> crate::model::effective_deployment_status_details::Builder {
+        crate::model::effective_deployment_status_details::Builder::default()
     }
 }
 
@@ -1516,7 +1715,7 @@ impl AsRef<str> for EffectiveDeploymentExecutionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Deployment {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the deployment.</p>
@@ -1537,9 +1736,12 @@ pub struct Deployment {
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     #[doc(hidden)]
     pub is_latest_for_target: bool,
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    #[doc(hidden)]
+    pub parent_target_arn: std::option::Option<std::string::String>,
 }
 impl Deployment {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -1567,6 +1769,10 @@ impl Deployment {
     pub fn is_latest_for_target(&self) -> bool {
         self.is_latest_for_target
     }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn parent_target_arn(&self) -> std::option::Option<&str> {
+        self.parent_target_arn.as_deref()
+    }
 }
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
@@ -1581,14 +1787,15 @@ pub mod deployment {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) is_latest_for_target: std::option::Option<bool>,
+        pub(crate) parent_target_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -1665,6 +1872,19 @@ pub mod deployment {
             self.is_latest_for_target = input;
             self
         }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_target_arn = Some(input.into());
+            self
+        }
+        /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+        pub fn set_parent_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_target_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
@@ -1675,6 +1895,7 @@ pub mod deployment {
                 creation_timestamp: self.creation_timestamp,
                 deployment_status: self.deployment_status,
                 is_latest_for_target: self.is_latest_for_target.unwrap_or_default(),
+                parent_target_arn: self.parent_target_arn,
             }
         }
     }

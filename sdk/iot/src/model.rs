@@ -3884,7 +3884,7 @@ pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
     #[doc(hidden)]
     pub thing_group_indexing_mode: std::option::Option<crate::model::ThingGroupIndexingMode>,
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
     #[doc(hidden)]
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
@@ -3899,7 +3899,7 @@ impl ThingGroupIndexingConfiguration {
     ) -> std::option::Option<&crate::model::ThingGroupIndexingMode> {
         self.thing_group_indexing_mode.as_ref()
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
     pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.managed_fields.as_deref()
     }
@@ -3941,14 +3941,14 @@ pub mod thing_group_indexing_configuration {
         ///
         /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
         ///
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
         pub fn managed_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.managed_fields.unwrap_or_default();
             v.push(input);
             self.managed_fields = Some(v);
             self
         }
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
         pub fn set_managed_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -6494,6 +6494,13 @@ pub struct ResourceIdentifier {
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
     #[doc(hidden)]
     pub role_alias_arn: std::option::Option<std::string::String>,
+    /// <p>The issuer certificate identifier.</p>
+    #[doc(hidden)]
+    pub issuer_certificate_identifier:
+        std::option::Option<crate::model::IssuerCertificateIdentifier>,
+    /// <p>The ARN of the identified device certificate.</p>
+    #[doc(hidden)]
+    pub device_certificate_arn: std::option::Option<std::string::String>,
 }
 impl ResourceIdentifier {
     /// <p>The ID of the certificate attached to the resource.</p>
@@ -6530,6 +6537,16 @@ impl ResourceIdentifier {
     pub fn role_alias_arn(&self) -> std::option::Option<&str> {
         self.role_alias_arn.as_deref()
     }
+    /// <p>The issuer certificate identifier.</p>
+    pub fn issuer_certificate_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::IssuerCertificateIdentifier> {
+        self.issuer_certificate_identifier.as_ref()
+    }
+    /// <p>The ARN of the identified device certificate.</p>
+    pub fn device_certificate_arn(&self) -> std::option::Option<&str> {
+        self.device_certificate_arn.as_deref()
+    }
 }
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
 pub mod resource_identifier {
@@ -6546,6 +6563,9 @@ pub mod resource_identifier {
         pub(crate) account: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) role_alias_arn: std::option::Option<std::string::String>,
+        pub(crate) issuer_certificate_identifier:
+            std::option::Option<crate::model::IssuerCertificateIdentifier>,
+        pub(crate) device_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the certificate attached to the resource.</p>
@@ -6646,6 +6666,35 @@ pub mod resource_identifier {
             self.role_alias_arn = input;
             self
         }
+        /// <p>The issuer certificate identifier.</p>
+        pub fn issuer_certificate_identifier(
+            mut self,
+            input: crate::model::IssuerCertificateIdentifier,
+        ) -> Self {
+            self.issuer_certificate_identifier = Some(input);
+            self
+        }
+        /// <p>The issuer certificate identifier.</p>
+        pub fn set_issuer_certificate_identifier(
+            mut self,
+            input: std::option::Option<crate::model::IssuerCertificateIdentifier>,
+        ) -> Self {
+            self.issuer_certificate_identifier = input;
+            self
+        }
+        /// <p>The ARN of the identified device certificate.</p>
+        pub fn device_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_certificate_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the identified device certificate.</p>
+        pub fn set_device_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::model::ResourceIdentifier).
         pub fn build(self) -> crate::model::ResourceIdentifier {
             crate::model::ResourceIdentifier {
@@ -6657,6 +6706,8 @@ pub mod resource_identifier {
                 account: self.account,
                 iam_role_arn: self.iam_role_arn,
                 role_alias_arn: self.role_alias_arn,
+                issuer_certificate_identifier: self.issuer_certificate_identifier,
+                device_certificate_arn: self.device_certificate_arn,
             }
         }
     }
@@ -6665,6 +6716,101 @@ impl ResourceIdentifier {
     /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
     pub fn builder() -> crate::model::resource_identifier::Builder {
         crate::model::resource_identifier::Builder::default()
+    }
+}
+
+/// <p>The certificate issuer indentifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IssuerCertificateIdentifier {
+    /// <p>The subject of the issuer certificate.</p>
+    #[doc(hidden)]
+    pub issuer_certificate_subject: std::option::Option<std::string::String>,
+    /// <p>The issuer ID.</p>
+    #[doc(hidden)]
+    pub issuer_id: std::option::Option<std::string::String>,
+    /// <p>The issuer certificate serial number.</p>
+    #[doc(hidden)]
+    pub issuer_certificate_serial_number: std::option::Option<std::string::String>,
+}
+impl IssuerCertificateIdentifier {
+    /// <p>The subject of the issuer certificate.</p>
+    pub fn issuer_certificate_subject(&self) -> std::option::Option<&str> {
+        self.issuer_certificate_subject.as_deref()
+    }
+    /// <p>The issuer ID.</p>
+    pub fn issuer_id(&self) -> std::option::Option<&str> {
+        self.issuer_id.as_deref()
+    }
+    /// <p>The issuer certificate serial number.</p>
+    pub fn issuer_certificate_serial_number(&self) -> std::option::Option<&str> {
+        self.issuer_certificate_serial_number.as_deref()
+    }
+}
+/// See [`IssuerCertificateIdentifier`](crate::model::IssuerCertificateIdentifier).
+pub mod issuer_certificate_identifier {
+
+    /// A builder for [`IssuerCertificateIdentifier`](crate::model::IssuerCertificateIdentifier).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) issuer_certificate_subject: std::option::Option<std::string::String>,
+        pub(crate) issuer_id: std::option::Option<std::string::String>,
+        pub(crate) issuer_certificate_serial_number: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The subject of the issuer certificate.</p>
+        pub fn issuer_certificate_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.issuer_certificate_subject = Some(input.into());
+            self
+        }
+        /// <p>The subject of the issuer certificate.</p>
+        pub fn set_issuer_certificate_subject(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.issuer_certificate_subject = input;
+            self
+        }
+        /// <p>The issuer ID.</p>
+        pub fn issuer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.issuer_id = Some(input.into());
+            self
+        }
+        /// <p>The issuer ID.</p>
+        pub fn set_issuer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.issuer_id = input;
+            self
+        }
+        /// <p>The issuer certificate serial number.</p>
+        pub fn issuer_certificate_serial_number(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.issuer_certificate_serial_number = Some(input.into());
+            self
+        }
+        /// <p>The issuer certificate serial number.</p>
+        pub fn set_issuer_certificate_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.issuer_certificate_serial_number = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IssuerCertificateIdentifier`](crate::model::IssuerCertificateIdentifier).
+        pub fn build(self) -> crate::model::IssuerCertificateIdentifier {
+            crate::model::IssuerCertificateIdentifier {
+                issuer_certificate_subject: self.issuer_certificate_subject,
+                issuer_id: self.issuer_id,
+                issuer_certificate_serial_number: self.issuer_certificate_serial_number,
+            }
+        }
+    }
+}
+impl IssuerCertificateIdentifier {
+    /// Creates a new builder-style object to manufacture [`IssuerCertificateIdentifier`](crate::model::IssuerCertificateIdentifier).
+    pub fn builder() -> crate::model::issuer_certificate_identifier::Builder {
+        crate::model::issuer_certificate_identifier::Builder::default()
     }
 }
 
@@ -9222,6 +9368,9 @@ pub struct Action {
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
     #[doc(hidden)]
     pub open_search: std::option::Option<crate::model::OpenSearchAction>,
+    /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
+    #[doc(hidden)]
+    pub location: std::option::Option<crate::model::LocationAction>,
 }
 impl Action {
     /// <p>Write to a DynamoDB table.</p>
@@ -9314,6 +9463,10 @@ impl Action {
     pub fn open_search(&self) -> std::option::Option<&crate::model::OpenSearchAction> {
         self.open_search.as_ref()
     }
+    /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::LocationAction> {
+        self.location.as_ref()
+    }
 }
 /// See [`Action`](crate::model::Action).
 pub mod action {
@@ -9343,6 +9496,7 @@ pub mod action {
         pub(crate) http: std::option::Option<crate::model::HttpAction>,
         pub(crate) kafka: std::option::Option<crate::model::KafkaAction>,
         pub(crate) open_search: std::option::Option<crate::model::OpenSearchAction>,
+        pub(crate) location: std::option::Option<crate::model::LocationAction>,
     }
     impl Builder {
         /// <p>Write to a DynamoDB table.</p>
@@ -9620,6 +9774,19 @@ pub mod action {
             self.open_search = input;
             self
         }
+        /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
+        pub fn location(mut self, input: crate::model::LocationAction) -> Self {
+            self.location = Some(input);
+            self
+        }
+        /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
+        pub fn set_location(
+            mut self,
+            input: std::option::Option<crate::model::LocationAction>,
+        ) -> Self {
+            self.location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Action`](crate::model::Action).
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
@@ -9645,6 +9812,7 @@ pub mod action {
                 http: self.http,
                 kafka: self.kafka,
                 open_search: self.open_search,
+                location: self.location,
             }
         }
     }
@@ -9653,6 +9821,223 @@ impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
     pub fn builder() -> crate::model::action::Builder {
         crate::model::action::Builder::default()
+    }
+}
+
+/// <p>The Amazon Location rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LocationAction {
+    /// <p>The IAM role that grants permission to write to the Amazon Location resource.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the tracker resource in Amazon Location in which the location is updated.</p>
+    #[doc(hidden)]
+    pub tracker_name: std::option::Option<std::string::String>,
+    /// <p>The unique ID of the device providing the location data.</p>
+    #[doc(hidden)]
+    pub device_id: std::option::Option<std::string::String>,
+    /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
+    #[doc(hidden)]
+    pub timestamp: std::option::Option<crate::model::LocationTimestamp>,
+    /// <p>A string that evaluates to a double value that represents the latitude of the device's location.</p>
+    #[doc(hidden)]
+    pub latitude: std::option::Option<std::string::String>,
+    /// <p>A string that evaluates to a double value that represents the longitude of the device's location.</p>
+    #[doc(hidden)]
+    pub longitude: std::option::Option<std::string::String>,
+}
+impl LocationAction {
+    /// <p>The IAM role that grants permission to write to the Amazon Location resource.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the tracker resource in Amazon Location in which the location is updated.</p>
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
+        self.tracker_name.as_deref()
+    }
+    /// <p>The unique ID of the device providing the location data.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::LocationTimestamp> {
+        self.timestamp.as_ref()
+    }
+    /// <p>A string that evaluates to a double value that represents the latitude of the device's location.</p>
+    pub fn latitude(&self) -> std::option::Option<&str> {
+        self.latitude.as_deref()
+    }
+    /// <p>A string that evaluates to a double value that represents the longitude of the device's location.</p>
+    pub fn longitude(&self) -> std::option::Option<&str> {
+        self.longitude.as_deref()
+    }
+}
+/// See [`LocationAction`](crate::model::LocationAction).
+pub mod location_action {
+
+    /// A builder for [`LocationAction`](crate::model::LocationAction).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) tracker_name: std::option::Option<std::string::String>,
+        pub(crate) device_id: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<crate::model::LocationTimestamp>,
+        pub(crate) latitude: std::option::Option<std::string::String>,
+        pub(crate) longitude: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IAM role that grants permission to write to the Amazon Location resource.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role that grants permission to write to the Amazon Location resource.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The name of the tracker resource in Amazon Location in which the location is updated.</p>
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tracker_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the tracker resource in Amazon Location in which the location is updated.</p>
+        pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracker_name = input;
+            self
+        }
+        /// <p>The unique ID of the device providing the location data.</p>
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the device providing the location data.</p>
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_id = input;
+            self
+        }
+        /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
+        pub fn timestamp(mut self, input: crate::model::LocationTimestamp) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>The time that the location data was sampled. The default value is the time the MQTT message was processed.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<crate::model::LocationTimestamp>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// <p>A string that evaluates to a double value that represents the latitude of the device's location.</p>
+        pub fn latitude(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latitude = Some(input.into());
+            self
+        }
+        /// <p>A string that evaluates to a double value that represents the latitude of the device's location.</p>
+        pub fn set_latitude(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latitude = input;
+            self
+        }
+        /// <p>A string that evaluates to a double value that represents the longitude of the device's location.</p>
+        pub fn longitude(mut self, input: impl Into<std::string::String>) -> Self {
+            self.longitude = Some(input.into());
+            self
+        }
+        /// <p>A string that evaluates to a double value that represents the longitude of the device's location.</p>
+        pub fn set_longitude(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.longitude = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LocationAction`](crate::model::LocationAction).
+        pub fn build(self) -> crate::model::LocationAction {
+            crate::model::LocationAction {
+                role_arn: self.role_arn,
+                tracker_name: self.tracker_name,
+                device_id: self.device_id,
+                timestamp: self.timestamp,
+                latitude: self.latitude,
+                longitude: self.longitude,
+            }
+        }
+    }
+}
+impl LocationAction {
+    /// Creates a new builder-style object to manufacture [`LocationAction`](crate::model::LocationAction).
+    pub fn builder() -> crate::model::location_action::Builder {
+        crate::model::location_action::Builder::default()
+    }
+}
+
+/// <p>Describes how to interpret an application-defined timestamp value from an MQTT message payload and the precision of that value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LocationTimestamp {
+    /// <p>An expression that returns a long epoch time value.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+    #[doc(hidden)]
+    pub unit: std::option::Option<std::string::String>,
+}
+impl LocationTimestamp {
+    /// <p>An expression that returns a long epoch time value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
+/// See [`LocationTimestamp`](crate::model::LocationTimestamp).
+pub mod location_timestamp {
+
+    /// A builder for [`LocationTimestamp`](crate::model::LocationTimestamp).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) unit: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An expression that returns a long epoch time value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>An expression that returns a long epoch time value.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+        /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+        pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.unit = Some(input.into());
+            self
+        }
+        /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+        /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
+        pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LocationTimestamp`](crate::model::LocationTimestamp).
+        pub fn build(self) -> crate::model::LocationTimestamp {
+            crate::model::LocationTimestamp {
+                value: self.value,
+                unit: self.unit,
+            }
+        }
+    }
+}
+impl LocationTimestamp {
+    /// Creates a new builder-style object to manufacture [`LocationTimestamp`](crate::model::LocationTimestamp).
+    pub fn builder() -> crate::model::location_timestamp::Builder {
+        crate::model::location_timestamp::Builder::default()
     }
 }
 
@@ -12212,6 +12597,9 @@ pub struct RepublishAction {
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     #[doc(hidden)]
     pub qos: std::option::Option<i32>,
+    /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
+    #[doc(hidden)]
+    pub headers: std::option::Option<crate::model::MqttHeaders>,
 }
 impl RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
@@ -12226,6 +12614,10 @@ impl RepublishAction {
     pub fn qos(&self) -> std::option::Option<i32> {
         self.qos
     }
+    /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
+    pub fn headers(&self) -> std::option::Option<&crate::model::MqttHeaders> {
+        self.headers.as_ref()
+    }
 }
 /// See [`RepublishAction`](crate::model::RepublishAction).
 pub mod republish_action {
@@ -12236,6 +12628,7 @@ pub mod republish_action {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) qos: std::option::Option<i32>,
+        pub(crate) headers: std::option::Option<crate::model::MqttHeaders>,
     }
     impl Builder {
         /// <p>The ARN of the IAM role that grants access.</p>
@@ -12268,12 +12661,26 @@ pub mod republish_action {
             self.qos = input;
             self
         }
+        /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
+        pub fn headers(mut self, input: crate::model::MqttHeaders) -> Self {
+            self.headers = Some(input);
+            self
+        }
+        /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
+        pub fn set_headers(
+            mut self,
+            input: std::option::Option<crate::model::MqttHeaders>,
+        ) -> Self {
+            self.headers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RepublishAction`](crate::model::RepublishAction).
         pub fn build(self) -> crate::model::RepublishAction {
             crate::model::RepublishAction {
                 role_arn: self.role_arn,
                 topic: self.topic,
                 qos: self.qos,
+                headers: self.headers,
             }
         }
     }
@@ -12282,6 +12689,285 @@ impl RepublishAction {
     /// Creates a new builder-style object to manufacture [`RepublishAction`](crate::model::RepublishAction).
     pub fn builder() -> crate::model::republish_action::Builder {
         crate::model::republish_action::Builder::default()
+    }
+}
+
+/// <p>Specifies MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from Amazon Web Services IoT Core Developer Guide.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MqttHeaders {
+    /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.</p>
+    /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    #[doc(hidden)]
+    pub payload_format_indicator: std::option::Option<std::string::String>,
+    /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    #[doc(hidden)]
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    #[doc(hidden)]
+    pub response_topic: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
+    /// <p> This binary data must be based64-encoded. </p>
+    /// </note>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    #[doc(hidden)]
+    pub correlation_data: std::option::Option<std::string::String>,
+    /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    #[doc(hidden)]
+    pub message_expiry: std::option::Option<std::string::String>,
+    /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
+    #[doc(hidden)]
+    pub user_properties: std::option::Option<std::vec::Vec<crate::model::UserProperty>>,
+}
+impl MqttHeaders {
+    /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.</p>
+    /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn payload_format_indicator(&self) -> std::option::Option<&str> {
+        self.payload_format_indicator.as_deref()
+    }
+    /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn response_topic(&self) -> std::option::Option<&str> {
+        self.response_topic.as_deref()
+    }
+    /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
+    /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
+    /// <p> This binary data must be based64-encoded. </p>
+    /// </note>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn correlation_data(&self) -> std::option::Option<&str> {
+        self.correlation_data.as_deref()
+    }
+    /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+    /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+    pub fn message_expiry(&self) -> std::option::Option<&str> {
+        self.message_expiry.as_deref()
+    }
+    /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
+    pub fn user_properties(&self) -> std::option::Option<&[crate::model::UserProperty]> {
+        self.user_properties.as_deref()
+    }
+}
+/// See [`MqttHeaders`](crate::model::MqttHeaders).
+pub mod mqtt_headers {
+
+    /// A builder for [`MqttHeaders`](crate::model::MqttHeaders).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) payload_format_indicator: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) response_topic: std::option::Option<std::string::String>,
+        pub(crate) correlation_data: std::option::Option<std::string::String>,
+        pub(crate) message_expiry: std::option::Option<std::string::String>,
+        pub(crate) user_properties: std::option::Option<std::vec::Vec<crate::model::UserProperty>>,
+    }
+    impl Builder {
+        /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.</p>
+        /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn payload_format_indicator(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload_format_indicator = Some(input.into());
+            self
+        }
+        /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.</p>
+        /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn set_payload_format_indicator(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.payload_format_indicator = input;
+            self
+        }
+        /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn response_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_topic = Some(input.into());
+            self
+        }
+        /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn set_response_topic(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_topic = input;
+            self
+        }
+        /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
+        /// <p> This binary data must be based64-encoded. </p>
+        /// </note>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn correlation_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.correlation_data = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
+        /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
+        /// <p> This binary data must be based64-encoded. </p>
+        /// </note>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn set_correlation_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.correlation_data = input;
+            self
+        }
+        /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn message_expiry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_expiry = Some(input.into());
+            self
+        }
+        /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
+        /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+        pub fn set_message_expiry(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_expiry = input;
+            self
+        }
+        /// Appends an item to `user_properties`.
+        ///
+        /// To override the contents of this collection use [`set_user_properties`](Self::set_user_properties).
+        ///
+        /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
+        pub fn user_properties(mut self, input: crate::model::UserProperty) -> Self {
+            let mut v = self.user_properties.unwrap_or_default();
+            v.push(input);
+            self.user_properties = Some(v);
+            self
+        }
+        /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
+        pub fn set_user_properties(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserProperty>>,
+        ) -> Self {
+            self.user_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MqttHeaders`](crate::model::MqttHeaders).
+        pub fn build(self) -> crate::model::MqttHeaders {
+            crate::model::MqttHeaders {
+                payload_format_indicator: self.payload_format_indicator,
+                content_type: self.content_type,
+                response_topic: self.response_topic,
+                correlation_data: self.correlation_data,
+                message_expiry: self.message_expiry,
+                user_properties: self.user_properties,
+            }
+        }
+    }
+}
+impl MqttHeaders {
+    /// Creates a new builder-style object to manufacture [`MqttHeaders`](crate::model::MqttHeaders).
+    pub fn builder() -> crate::model::mqtt_headers::Builder {
+        crate::model::mqtt_headers::Builder::default()
+    }
+}
+
+/// <p>A key-value pair that you define in the header. Both the key and the value are either literal strings or valid <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UserProperty {
+    /// <p>A key to be specified in <code>UserProperty</code>.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<std::string::String>,
+    /// <p>A value to be specified in <code>UserProperty</code>.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl UserProperty {
+    /// <p>A key to be specified in <code>UserProperty</code>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value to be specified in <code>UserProperty</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+/// See [`UserProperty`](crate::model::UserProperty).
+pub mod user_property {
+
+    /// A builder for [`UserProperty`](crate::model::UserProperty).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A key to be specified in <code>UserProperty</code>.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>A key to be specified in <code>UserProperty</code>.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>A value to be specified in <code>UserProperty</code>.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A value to be specified in <code>UserProperty</code>.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserProperty`](crate::model::UserProperty).
+        pub fn build(self) -> crate::model::UserProperty {
+            crate::model::UserProperty {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl UserProperty {
+    /// Creates a new builder-style object to manufacture [`UserProperty`](crate::model::UserProperty).
+    pub fn builder() -> crate::model::user_property::Builder {
+        crate::model::user_property::Builder::default()
     }
 }
 
@@ -15645,11 +16331,259 @@ impl ScheduledAuditMetadata {
     }
 }
 
+/// <p>Information about a related resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RelatedResource {
+    /// <p>The type of resource.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<crate::model::ResourceType>,
+    /// <p>Information that identifies the resource.</p>
+    #[doc(hidden)]
+    pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
+    /// <p>Other information about the resource.</p>
+    #[doc(hidden)]
+    pub additional_info:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl RelatedResource {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Information that identifies the resource.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.resource_identifier.as_ref()
+    }
+    /// <p>Other information about the resource.</p>
+    pub fn additional_info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_info.as_ref()
+    }
+}
+/// See [`RelatedResource`](crate::model::RelatedResource).
+pub mod related_resource {
+
+    /// A builder for [`RelatedResource`](crate::model::RelatedResource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
+        pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
+        pub(crate) additional_info: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The type of resource.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>Information that identifies the resource.</p>
+        pub fn resource_identifier(mut self, input: crate::model::ResourceIdentifier) -> Self {
+            self.resource_identifier = Some(input);
+            self
+        }
+        /// <p>Information that identifies the resource.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<crate::model::ResourceIdentifier>,
+        ) -> Self {
+            self.resource_identifier = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_info`.
+        ///
+        /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
+        ///
+        /// <p>Other information about the resource.</p>
+        pub fn additional_info(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_info.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_info = Some(hash_map);
+            self
+        }
+        /// <p>Other information about the resource.</p>
+        pub fn set_additional_info(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RelatedResource`](crate::model::RelatedResource).
+        pub fn build(self) -> crate::model::RelatedResource {
+            crate::model::RelatedResource {
+                resource_type: self.resource_type,
+                resource_identifier: self.resource_identifier,
+                additional_info: self.additional_info,
+            }
+        }
+    }
+}
+impl RelatedResource {
+    /// Creates a new builder-style object to manufacture [`RelatedResource`](crate::model::RelatedResource).
+    pub fn builder() -> crate::model::related_resource::Builder {
+        crate::model::related_resource::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ResourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetype = unimplemented!();
+/// match resourcetype {
+///     ResourceType::AccountSettings => { /* ... */ },
+///     ResourceType::CaCertificate => { /* ... */ },
+///     ResourceType::ClientId => { /* ... */ },
+///     ResourceType::CognitoIdentityPool => { /* ... */ },
+///     ResourceType::DeviceCertificate => { /* ... */ },
+///     ResourceType::IamRole => { /* ... */ },
+///     ResourceType::IotPolicy => { /* ... */ },
+///     ResourceType::IssuerCertificate => { /* ... */ },
+///     ResourceType::RoleAlias => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceType::NewFeature` is defined.
+/// Specifically, when `resourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountSettings,
+    #[allow(missing_docs)] // documentation missing in model
+    CaCertificate,
+    #[allow(missing_docs)] // documentation missing in model
+    ClientId,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitoIdentityPool,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceCertificate,
+    #[allow(missing_docs)] // documentation missing in model
+    IamRole,
+    #[allow(missing_docs)] // documentation missing in model
+    IotPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    IssuerCertificate,
+    #[allow(missing_docs)] // documentation missing in model
+    RoleAlias,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_SETTINGS" => ResourceType::AccountSettings,
+            "CA_CERTIFICATE" => ResourceType::CaCertificate,
+            "CLIENT_ID" => ResourceType::ClientId,
+            "COGNITO_IDENTITY_POOL" => ResourceType::CognitoIdentityPool,
+            "DEVICE_CERTIFICATE" => ResourceType::DeviceCertificate,
+            "IAM_ROLE" => ResourceType::IamRole,
+            "IOT_POLICY" => ResourceType::IotPolicy,
+            "ISSUER_CERTIFICATE" => ResourceType::IssuerCertificate,
+            "ROLE_ALIAS" => ResourceType::RoleAlias,
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceType::from(s))
+    }
+}
+impl ResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceType::AccountSettings => "ACCOUNT_SETTINGS",
+            ResourceType::CaCertificate => "CA_CERTIFICATE",
+            ResourceType::ClientId => "CLIENT_ID",
+            ResourceType::CognitoIdentityPool => "COGNITO_IDENTITY_POOL",
+            ResourceType::DeviceCertificate => "DEVICE_CERTIFICATE",
+            ResourceType::IamRole => "IAM_ROLE",
+            ResourceType::IotPolicy => "IOT_POLICY",
+            ResourceType::IssuerCertificate => "ISSUER_CERTIFICATE",
+            ResourceType::RoleAlias => "ROLE_ALIAS",
+            ResourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_SETTINGS",
+            "CA_CERTIFICATE",
+            "CLIENT_ID",
+            "COGNITO_IDENTITY_POOL",
+            "DEVICE_CERTIFICATE",
+            "IAM_ROLE",
+            "IOT_POLICY",
+            "ISSUER_CERTIFICATE",
+            "ROLE_ALIAS",
+        ]
+    }
+}
+impl AsRef<str> for ResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A summary of information about a fleet provision template version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisioningTemplateVersionSummary {
-    /// <p>The ID of the fleet privisioning template version.</p>
+    /// <p>The ID of the fleet provisioning template version.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<i32>,
     /// <p>The date when the provisioning template version was created</p>
@@ -15660,7 +16594,7 @@ pub struct ProvisioningTemplateVersionSummary {
     pub is_default_version: bool,
 }
 impl ProvisioningTemplateVersionSummary {
-    /// <p>The ID of the fleet privisioning template version.</p>
+    /// <p>The ID of the fleet provisioning template version.</p>
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
@@ -15684,12 +16618,12 @@ pub mod provisioning_template_version_summary {
         pub(crate) is_default_version: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the fleet privisioning template version.</p>
+        /// <p>The ID of the fleet provisioning template version.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.version_id = Some(input);
             self
         }
-        /// <p>The ID of the fleet privisioning template version.</p>
+        /// <p>The ID of the fleet provisioning template version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.version_id = input;
             self
@@ -17215,6 +18149,7 @@ impl JobSummary {
 ///     JobStatus::Completed => { /* ... */ },
 ///     JobStatus::DeletionInProgress => { /* ... */ },
 ///     JobStatus::InProgress => { /* ... */ },
+///     JobStatus::Scheduled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -17256,6 +18191,8 @@ pub enum JobStatus {
     DeletionInProgress,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Scheduled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -17266,6 +18203,7 @@ impl std::convert::From<&str> for JobStatus {
             "COMPLETED" => JobStatus::Completed,
             "DELETION_IN_PROGRESS" => JobStatus::DeletionInProgress,
             "IN_PROGRESS" => JobStatus::InProgress,
+            "SCHEDULED" => JobStatus::Scheduled,
             other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -17285,6 +18223,7 @@ impl JobStatus {
             JobStatus::Completed => "COMPLETED",
             JobStatus::DeletionInProgress => "DELETION_IN_PROGRESS",
             JobStatus::InProgress => "IN_PROGRESS",
+            JobStatus::Scheduled => "SCHEDULED",
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -17295,6 +18234,7 @@ impl JobStatus {
             "COMPLETED",
             "DELETION_IN_PROGRESS",
             "IN_PROGRESS",
+            "SCHEDULED",
         ]
     }
 }
@@ -20522,248 +21462,6 @@ impl AuditFinding {
     /// Creates a new builder-style object to manufacture [`AuditFinding`](crate::model::AuditFinding).
     pub fn builder() -> crate::model::audit_finding::Builder {
         crate::model::audit_finding::Builder::default()
-    }
-}
-
-/// <p>Information about a related resource.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedResource {
-    /// <p>The type of resource.</p>
-    #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information that identifies the resource.</p>
-    #[doc(hidden)]
-    pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>Other information about the resource.</p>
-    #[doc(hidden)]
-    pub additional_info:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl RelatedResource {
-    /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
-        self.resource_type.as_ref()
-    }
-    /// <p>Information that identifies the resource.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
-        self.resource_identifier.as_ref()
-    }
-    /// <p>Other information about the resource.</p>
-    pub fn additional_info(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.additional_info.as_ref()
-    }
-}
-/// See [`RelatedResource`](crate::model::RelatedResource).
-pub mod related_resource {
-
-    /// A builder for [`RelatedResource`](crate::model::RelatedResource).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-        pub(crate) additional_info: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
-            self.resource_type = Some(input);
-            self
-        }
-        /// <p>The type of resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
-        }
-        /// <p>Information that identifies the resource.</p>
-        pub fn resource_identifier(mut self, input: crate::model::ResourceIdentifier) -> Self {
-            self.resource_identifier = Some(input);
-            self
-        }
-        /// <p>Information that identifies the resource.</p>
-        pub fn set_resource_identifier(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIdentifier>,
-        ) -> Self {
-            self.resource_identifier = input;
-            self
-        }
-        /// Adds a key-value pair to `additional_info`.
-        ///
-        /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
-        ///
-        /// <p>Other information about the resource.</p>
-        pub fn additional_info(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.additional_info.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.additional_info = Some(hash_map);
-            self
-        }
-        /// <p>Other information about the resource.</p>
-        pub fn set_additional_info(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.additional_info = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RelatedResource`](crate::model::RelatedResource).
-        pub fn build(self) -> crate::model::RelatedResource {
-            crate::model::RelatedResource {
-                resource_type: self.resource_type,
-                resource_identifier: self.resource_identifier,
-                additional_info: self.additional_info,
-            }
-        }
-    }
-}
-impl RelatedResource {
-    /// Creates a new builder-style object to manufacture [`RelatedResource`](crate::model::RelatedResource).
-    pub fn builder() -> crate::model::related_resource::Builder {
-        crate::model::related_resource::Builder::default()
-    }
-}
-
-/// When writing a match expression against `ResourceType`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let resourcetype = unimplemented!();
-/// match resourcetype {
-///     ResourceType::AccountSettings => { /* ... */ },
-///     ResourceType::CaCertificate => { /* ... */ },
-///     ResourceType::ClientId => { /* ... */ },
-///     ResourceType::CognitoIdentityPool => { /* ... */ },
-///     ResourceType::DeviceCertificate => { /* ... */ },
-///     ResourceType::IamRole => { /* ... */ },
-///     ResourceType::IotPolicy => { /* ... */ },
-///     ResourceType::RoleAlias => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `resourcetype` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `ResourceType::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `ResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `ResourceType::NewFeature` is defined.
-/// Specifically, when `resourcetype` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ResourceType {
-    #[allow(missing_docs)] // documentation missing in model
-    AccountSettings,
-    #[allow(missing_docs)] // documentation missing in model
-    CaCertificate,
-    #[allow(missing_docs)] // documentation missing in model
-    ClientId,
-    #[allow(missing_docs)] // documentation missing in model
-    CognitoIdentityPool,
-    #[allow(missing_docs)] // documentation missing in model
-    DeviceCertificate,
-    #[allow(missing_docs)] // documentation missing in model
-    IamRole,
-    #[allow(missing_docs)] // documentation missing in model
-    IotPolicy,
-    #[allow(missing_docs)] // documentation missing in model
-    RoleAlias,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_SETTINGS" => ResourceType::AccountSettings,
-            "CA_CERTIFICATE" => ResourceType::CaCertificate,
-            "CLIENT_ID" => ResourceType::ClientId,
-            "COGNITO_IDENTITY_POOL" => ResourceType::CognitoIdentityPool,
-            "DEVICE_CERTIFICATE" => ResourceType::DeviceCertificate,
-            "IAM_ROLE" => ResourceType::IamRole,
-            "IOT_POLICY" => ResourceType::IotPolicy,
-            "ROLE_ALIAS" => ResourceType::RoleAlias,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
-impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::AccountSettings => "ACCOUNT_SETTINGS",
-            ResourceType::CaCertificate => "CA_CERTIFICATE",
-            ResourceType::ClientId => "CLIENT_ID",
-            ResourceType::CognitoIdentityPool => "COGNITO_IDENTITY_POOL",
-            ResourceType::DeviceCertificate => "DEVICE_CERTIFICATE",
-            ResourceType::IamRole => "IAM_ROLE",
-            ResourceType::IotPolicy => "IOT_POLICY",
-            ResourceType::RoleAlias => "ROLE_ALIAS",
-            ResourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_SETTINGS",
-            "CA_CERTIFICATE",
-            "CLIENT_ID",
-            "COGNITO_IDENTITY_POOL",
-            "DEVICE_CERTIFICATE",
-            "IAM_ROLE",
-            "IOT_POLICY",
-            "ROLE_ALIAS",
-        ]
-    }
-}
-impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -25601,6 +26299,9 @@ pub struct Job {
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     #[doc(hidden)]
     pub is_concurrent: std::option::Option<bool>,
+    /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+    #[doc(hidden)]
+    pub scheduling_config: std::option::Option<crate::model::SchedulingConfig>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -25706,6 +26407,10 @@ impl Job {
     pub fn is_concurrent(&self) -> std::option::Option<bool> {
         self.is_concurrent
     }
+    /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+    pub fn scheduling_config(&self) -> std::option::Option<&crate::model::SchedulingConfig> {
+        self.scheduling_config.as_ref()
+    }
 }
 /// See [`Job`](crate::model::Job).
 pub mod job {
@@ -25739,6 +26444,7 @@ pub mod job {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) is_concurrent: std::option::Option<bool>,
+        pub(crate) scheduling_config: std::option::Option<crate::model::SchedulingConfig>,
     }
     impl Builder {
         /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -26040,6 +26746,19 @@ pub mod job {
             self.is_concurrent = input;
             self
         }
+        /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+        pub fn scheduling_config(mut self, input: crate::model::SchedulingConfig) -> Self {
+            self.scheduling_config = Some(input);
+            self
+        }
+        /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
+        pub fn set_scheduling_config(
+            mut self,
+            input: std::option::Option<crate::model::SchedulingConfig>,
+        ) -> Self {
+            self.scheduling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -26065,6 +26784,7 @@ pub mod job {
                 job_executions_retry_config: self.job_executions_retry_config,
                 document_parameters: self.document_parameters,
                 is_concurrent: self.is_concurrent,
+                scheduling_config: self.scheduling_config,
             }
         }
     }
@@ -26073,6 +26793,190 @@ impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
     pub fn builder() -> crate::model::job::Builder {
         crate::model::job::Builder::default()
+    }
+}
+
+/// <p>Specifies the date and time that a job will begin the rollout of the job document to all devices in the target group. Additionally, you can specify the end behavior for each job execution when it reaches the scheduled end time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SchedulingConfig {
+    /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time.</p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<std::string::String>,
+    /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
+    #[doc(hidden)]
+    pub end_behavior: std::option::Option<crate::model::JobEndBehavior>,
+}
+impl SchedulingConfig {
+    /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. </p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
+    pub fn end_behavior(&self) -> std::option::Option<&crate::model::JobEndBehavior> {
+        self.end_behavior.as_ref()
+    }
+}
+/// See [`SchedulingConfig`](crate::model::SchedulingConfig).
+pub mod scheduling_config {
+
+    /// A builder for [`SchedulingConfig`](crate::model::SchedulingConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
+        pub(crate) end_behavior: std::option::Option<crate::model::JobEndBehavior>,
+    }
+    impl Builder {
+        /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time.</p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time.</p>
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. </p>
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. </p>
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
+        pub fn end_behavior(mut self, input: crate::model::JobEndBehavior) -> Self {
+            self.end_behavior = Some(input);
+            self
+        }
+        /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
+        pub fn set_end_behavior(
+            mut self,
+            input: std::option::Option<crate::model::JobEndBehavior>,
+        ) -> Self {
+            self.end_behavior = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SchedulingConfig`](crate::model::SchedulingConfig).
+        pub fn build(self) -> crate::model::SchedulingConfig {
+            crate::model::SchedulingConfig {
+                start_time: self.start_time,
+                end_time: self.end_time,
+                end_behavior: self.end_behavior,
+            }
+        }
+    }
+}
+impl SchedulingConfig {
+    /// Creates a new builder-style object to manufacture [`SchedulingConfig`](crate::model::SchedulingConfig).
+    pub fn builder() -> crate::model::scheduling_config::Builder {
+        crate::model::scheduling_config::Builder::default()
+    }
+}
+
+/// When writing a match expression against `JobEndBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jobendbehavior = unimplemented!();
+/// match jobendbehavior {
+///     JobEndBehavior::Cancel => { /* ... */ },
+///     JobEndBehavior::ForceCancel => { /* ... */ },
+///     JobEndBehavior::StopRollout => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jobendbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JobEndBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JobEndBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JobEndBehavior::NewFeature` is defined.
+/// Specifically, when `jobendbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JobEndBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobEndBehavior {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancel,
+    #[allow(missing_docs)] // documentation missing in model
+    ForceCancel,
+    #[allow(missing_docs)] // documentation missing in model
+    StopRollout,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for JobEndBehavior {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCEL" => JobEndBehavior::Cancel,
+            "FORCE_CANCEL" => JobEndBehavior::ForceCancel,
+            "STOP_ROLLOUT" => JobEndBehavior::StopRollout,
+            other => JobEndBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for JobEndBehavior {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobEndBehavior::from(s))
+    }
+}
+impl JobEndBehavior {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobEndBehavior::Cancel => "CANCEL",
+            JobEndBehavior::ForceCancel => "FORCE_CANCEL",
+            JobEndBehavior::StopRollout => "STOP_ROLLOUT",
+            JobEndBehavior::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CANCEL", "FORCE_CANCEL", "STOP_ROLLOUT"]
+    }
+}
+impl AsRef<str> for JobEndBehavior {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

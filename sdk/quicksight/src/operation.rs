@@ -633,6 +633,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountCustomizati
     }
 }
 
+/// Operation shape for `DeleteAccountSubscription`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_account_subscription`](crate::client::Client::delete_account_subscription).
+///
+/// See [`crate::client::fluent_builders::DeleteAccountSubscription`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteAccountSubscription {
+    _private: (),
+}
+impl DeleteAccountSubscription {
+    /// Creates a new builder-style object to manufacture [`DeleteAccountSubscriptionInput`](crate::input::DeleteAccountSubscriptionInput).
+    pub fn builder() -> crate::input::delete_account_subscription_input::Builder {
+        crate::input::delete_account_subscription_input::Builder::default()
+    }
+    /// Creates a new `DeleteAccountSubscription` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountSubscription {
+    type Output = std::result::Result<
+        crate::output::DeleteAccountSubscriptionOutput,
+        crate::error::DeleteAccountSubscriptionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_account_subscription_error(response)
+        } else {
+            crate::operation_deser::parse_delete_account_subscription_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1299,6 +1333,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnalysis {
     }
 }
 
+/// Operation shape for `DescribeAnalysisDefinition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_analysis_definition`](crate::client::Client::describe_analysis_definition).
+///
+/// See [`crate::client::fluent_builders::DescribeAnalysisDefinition`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeAnalysisDefinition {
+    _private: (),
+}
+impl DescribeAnalysisDefinition {
+    /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionInput`](crate::input::DescribeAnalysisDefinitionInput).
+    pub fn builder() -> crate::input::describe_analysis_definition_input::Builder {
+        crate::input::describe_analysis_definition_input::Builder::default()
+    }
+    /// Creates a new `DescribeAnalysisDefinition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeAnalysisDefinition {
+    type Output = std::result::Result<
+        crate::output::DescribeAnalysisDefinitionOutput,
+        crate::error::DescribeAnalysisDefinitionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_analysis_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_analysis_definition_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeAnalysisPermissions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1363,6 +1431,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDashboard {
             crate::operation_deser::parse_describe_dashboard_error(response)
         } else {
             crate::operation_deser::parse_describe_dashboard_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeDashboardDefinition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_dashboard_definition`](crate::client::Client::describe_dashboard_definition).
+///
+/// See [`crate::client::fluent_builders::DescribeDashboardDefinition`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeDashboardDefinition {
+    _private: (),
+}
+impl DescribeDashboardDefinition {
+    /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionInput`](crate::input::DescribeDashboardDefinitionInput).
+    pub fn builder() -> crate::input::describe_dashboard_definition_input::Builder {
+        crate::input::describe_dashboard_definition_input::Builder::default()
+    }
+    /// Creates a new `DescribeDashboardDefinition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeDashboardDefinition {
+    type Output = std::result::Result<
+        crate::output::DescribeDashboardDefinitionOutput,
+        crate::error::DescribeDashboardDefinitionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_dashboard_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_dashboard_definition_response(response)
         }
     }
 }
@@ -1903,6 +2005,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTemplateAlias {
             crate::operation_deser::parse_describe_template_alias_error(response)
         } else {
             crate::operation_deser::parse_describe_template_alias_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeTemplateDefinition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_template_definition`](crate::client::Client::describe_template_definition).
+///
+/// See [`crate::client::fluent_builders::DescribeTemplateDefinition`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeTemplateDefinition {
+    _private: (),
+}
+impl DescribeTemplateDefinition {
+    /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionInput`](crate::input::DescribeTemplateDefinitionInput).
+    pub fn builder() -> crate::input::describe_template_definition_input::Builder {
+        crate::input::describe_template_definition_input::Builder::default()
+    }
+    /// Creates a new `DescribeTemplateDefinition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTemplateDefinition {
+    type Output = std::result::Result<
+        crate::output::DescribeTemplateDefinitionOutput,
+        crate::error::DescribeTemplateDefinitionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_template_definition_error(response)
+        } else {
+            crate::operation_deser::parse_describe_template_definition_response(response)
         }
     }
 }
@@ -3062,6 +3198,72 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchDashboards {
             crate::operation_deser::parse_search_dashboards_error(response)
         } else {
             crate::operation_deser::parse_search_dashboards_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchDataSets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_data_sets`](crate::client::Client::search_data_sets).
+///
+/// See [`crate::client::fluent_builders::SearchDataSets`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct SearchDataSets {
+    _private: (),
+}
+impl SearchDataSets {
+    /// Creates a new builder-style object to manufacture [`SearchDataSetsInput`](crate::input::SearchDataSetsInput).
+    pub fn builder() -> crate::input::search_data_sets_input::Builder {
+        crate::input::search_data_sets_input::Builder::default()
+    }
+    /// Creates a new `SearchDataSets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchDataSets {
+    type Output =
+        std::result::Result<crate::output::SearchDataSetsOutput, crate::error::SearchDataSetsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_data_sets_error(response)
+        } else {
+            crate::operation_deser::parse_search_data_sets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchDataSources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_data_sources`](crate::client::Client::search_data_sources).
+///
+/// See [`crate::client::fluent_builders::SearchDataSources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct SearchDataSources {
+    _private: (),
+}
+impl SearchDataSources {
+    /// Creates a new builder-style object to manufacture [`SearchDataSourcesInput`](crate::input::SearchDataSourcesInput).
+    pub fn builder() -> crate::input::search_data_sources_input::Builder {
+        crate::input::search_data_sources_input::Builder::default()
+    }
+    /// Creates a new `SearchDataSources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchDataSources {
+    type Output = std::result::Result<
+        crate::output::SearchDataSourcesOutput,
+        crate::error::SearchDataSourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_data_sources_error(response)
+        } else {
+            crate::operation_deser::parse_search_data_sources_response(response)
         }
     }
 }

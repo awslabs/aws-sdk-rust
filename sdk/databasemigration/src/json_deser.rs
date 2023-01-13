@@ -5147,6 +5147,11 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_databasemigrationservice_replication_instance_private_ip_address_list(tokens)?
                                 );
                             }
+                            "ReplicationInstanceIpv6Addresses" => {
+                                builder = builder.set_replication_instance_ipv6_addresses(
+                                    crate::json_deser::deser_list_com_amazonaws_databasemigrationservice_replication_instance_ipv6_address_list(tokens)?
+                                );
+                            }
                             "PubliclyAccessible" => {
                                 builder = builder.set_publicly_accessible(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -5173,6 +5178,15 @@ where
                             }
                             "DnsNameServers" => {
                                 builder = builder.set_dns_name_servers(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "NetworkType" => {
+                                builder = builder.set_network_type(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -5266,6 +5280,11 @@ where
                             "Subnets" => {
                                 builder = builder.set_subnets(
                                     crate::json_deser::deser_list_com_amazonaws_databasemigrationservice_subnet_list(tokens)?
+                                );
+                            }
+                            "SupportedNetworkTypes" => {
+                                builder = builder.set_supported_network_types(
+                                    crate::json_deser::deser_list_com_amazonaws_databasemigrationservice_string_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10628,6 +10647,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "NetworkType" => {
+                                builder = builder.set_network_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -10703,6 +10731,56 @@ where
 
 #[allow(non_snake_case)]
 pub(crate) fn deser_list_com_amazonaws_databasemigrationservice_replication_instance_private_ip_address_list<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<std::string::String>>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start array or null",
+            ),
+        ),
+    }
+}
+
+#[allow(non_snake_case)]
+pub(crate) fn deser_list_com_amazonaws_databasemigrationservice_replication_instance_ipv6_address_list<
     'a,
     I,
 >(
@@ -12383,6 +12461,42 @@ where
                             }
                             "Ddls" => {
                                 builder = builder.set_ddls(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "AppliedInserts" => {
+                                builder = builder.set_applied_inserts(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "AppliedDeletes" => {
+                                builder = builder.set_applied_deletes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "AppliedUpdates" => {
+                                builder = builder.set_applied_updates(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "AppliedDdls" => {
+                                builder = builder.set_applied_ddls(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

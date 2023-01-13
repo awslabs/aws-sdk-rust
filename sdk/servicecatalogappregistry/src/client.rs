@@ -201,7 +201,7 @@ impl Client {
     ///   - [`last_update_time(Option<DateTime>)`](crate::output::GetApplicationOutput::last_update_time): <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     ///   - [`associated_resource_count(i32)`](crate::output::GetApplicationOutput::associated_resource_count): <p>The number of top-level resources that were registered as part of this application.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetApplicationOutput::tags): <p>Key-value pairs associated with the application.</p>
-    ///   - [`integrations(Option<Integrations>)`](crate::output::GetApplicationOutput::integrations): <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    ///   - [`integrations(Option<Integrations>)`](crate::output::GetApplicationOutput::integrations): <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
     pub fn get_application(&self) -> fluent_builders::GetApplication {
         fluent_builders::GetApplication::new(self.handle.clone())
@@ -234,6 +234,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetAttributeGroupError>`](crate::error::GetAttributeGroupError)
     pub fn get_attribute_group(&self) -> fluent_builders::GetAttributeGroup {
         fluent_builders::GetAttributeGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetConfiguration`](crate::client::fluent_builders::GetConfiguration) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetConfiguration::send) it.
+
+    /// - On success, responds with [`GetConfigurationOutput`](crate::output::GetConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<AppRegistryConfiguration>)`](crate::output::GetConfigurationOutput::configuration): <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// - On failure, responds with [`SdkError<GetConfigurationError>`](crate::error::GetConfigurationError)
+    pub fn get_configuration(&self) -> fluent_builders::GetConfiguration {
+        fluent_builders::GetConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
@@ -299,7 +309,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::set_next_token): <p>This token retrieves the next page of results after a previous API call.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::set_max_results): <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
     /// - On success, responds with [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput) with field(s):
-    ///   - [`attribute_groups_details(Option<Vec<AttributeGroupDetails>>)`](crate::output::ListAttributeGroupsForApplicationOutput::attribute_groups_details): <p> The details related to a specific AttributeGroup. </p>
+    ///   - [`attribute_groups_details(Option<Vec<AttributeGroupDetails>>)`](crate::output::ListAttributeGroupsForApplicationOutput::attribute_groups_details): <p> The details related to a specific attribute group. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAttributeGroupsForApplicationOutput::next_token): <p>The token to use to get the next page of results after a previous API call.</p>
     /// - On failure, responds with [`SdkError<ListAttributeGroupsForApplicationError>`](crate::error::ListAttributeGroupsForApplicationError)
     pub fn list_attribute_groups_for_application(
@@ -316,6 +326,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutConfiguration`](crate::client::fluent_builders::PutConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`configuration(AppRegistryConfiguration)`](crate::client::fluent_builders::PutConfiguration::configuration) / [`set_configuration(Option<AppRegistryConfiguration>)`](crate::client::fluent_builders::PutConfiguration::set_configuration): <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// - On success, responds with [`PutConfigurationOutput`](crate::output::PutConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutConfigurationError>`](crate::error::PutConfigurationError)
+    pub fn put_configuration(&self) -> fluent_builders::PutConfiguration {
+        fluent_builders::PutConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SyncResource`](crate::client::fluent_builders::SyncResource) operation.
     ///
@@ -1385,6 +1405,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetConfiguration`.
+    ///
+    /// <p> Retrieves a <code>TagKey</code> configuration from an account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_configuration_input::Builder,
+    }
+    impl GetConfiguration {
+        /// Creates a new `GetConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Retrieves a list of all of your applications. Results are paginated.</p>
@@ -1575,7 +1658,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssociatedResources`.
     ///
-    /// <p>Lists all resources that are associated with specified application. Results are paginated.</p>
+    /// <p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note>
+    /// <p> If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedResources {
         handle: std::sync::Arc<super::Handle>,
@@ -1935,6 +2020,82 @@ pub mod fluent_builders {
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutConfiguration`.
+    ///
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_configuration_input::Builder,
+    }
+    impl PutConfiguration {
+        /// Creates a new `PutConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutConfiguration,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutConfigurationError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+        pub fn configuration(mut self, input: crate::model::AppRegistryConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AppRegistryConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
             self
         }
     }

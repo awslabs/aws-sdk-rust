@@ -41,6 +41,102 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchCreateCustomVocabularyItemError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchCreateCustomVocabularyItemError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchCreateCustomVocabularyItemError> for Error {
+    fn from(err: crate::error::BatchCreateCustomVocabularyItemError) -> Self {
+        match err.kind {
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchCreateCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteCustomVocabularyItemError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchDeleteCustomVocabularyItemError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchDeleteCustomVocabularyItemError> for Error {
+    fn from(err: crate::error::BatchDeleteCustomVocabularyItemError) -> Self {
+        match err.kind {
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchUpdateCustomVocabularyItemError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchUpdateCustomVocabularyItemError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchUpdateCustomVocabularyItemError> for Error {
+    fn from(err: crate::error::BatchUpdateCustomVocabularyItemError) -> Self {
+        match err.kind {
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::BuildBotLocaleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1751,6 +1847,46 @@ impl From<crate::error::ListBuiltInSlotTypesError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::ListBuiltInSlotTypesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCustomVocabularyItemsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListCustomVocabularyItemsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListCustomVocabularyItemsError> for Error {
+    fn from(err: crate::error::ListCustomVocabularyItemsError) -> Self {
+        match err.kind {
+            crate::error::ListCustomVocabularyItemsErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::ListCustomVocabularyItemsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListCustomVocabularyItemsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListCustomVocabularyItemsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListCustomVocabularyItemsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

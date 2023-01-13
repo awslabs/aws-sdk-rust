@@ -373,10 +373,13 @@ impl Client {
     ///   - [`image(Image)`](crate::client::fluent_builders::DetectLabels::image) / [`set_image(Option<Image>)`](crate::client::fluent_builders::DetectLabels::set_image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     ///   - [`max_labels(i32)`](crate::client::fluent_builders::DetectLabels::max_labels) / [`set_max_labels(Option<i32>)`](crate::client::fluent_builders::DetectLabels::set_max_labels): <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
     ///   - [`min_confidence(f32)`](crate::client::fluent_builders::DetectLabels::min_confidence) / [`set_min_confidence(Option<f32>)`](crate::client::fluent_builders::DetectLabels::set_min_confidence): <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>  <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    ///   - [`features(Vec<DetectLabelsFeatureName>)`](crate::client::fluent_builders::DetectLabels::features) / [`set_features(Option<Vec<DetectLabelsFeatureName>>)`](crate::client::fluent_builders::DetectLabels::set_features): <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+    ///   - [`settings(DetectLabelsSettings)`](crate::client::fluent_builders::DetectLabels::settings) / [`set_settings(Option<DetectLabelsSettings>)`](crate::client::fluent_builders::DetectLabels::set_settings): <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
     /// - On success, responds with [`DetectLabelsOutput`](crate::output::DetectLabelsOutput) with field(s):
     ///   - [`labels(Option<Vec<Label>>)`](crate::output::DetectLabelsOutput::labels): <p>An array of labels for the real-world objects detected. </p>
     ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::DetectLabelsOutput::orientation_correction): <p>The value of <code>OrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     ///   - [`label_model_version(Option<String>)`](crate::output::DetectLabelsOutput::label_model_version): <p>Version number of the label detection model that was used to detect labels.</p>
+    ///   - [`image_properties(Option<DetectLabelsImageProperties>)`](crate::output::DetectLabelsOutput::image_properties): <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
     /// - On failure, responds with [`SdkError<DetectLabelsError>`](crate::error::DetectLabelsError)
     pub fn detect_labels(&self) -> fluent_builders::DetectLabels {
         fluent_builders::DetectLabels::new(self.handle.clone())
@@ -522,6 +525,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetLabelDetection::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetLabelDetection::set_max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLabelDetection::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLabelDetection::set_next_token): <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
     ///   - [`sort_by(LabelDetectionSortBy)`](crate::client::fluent_builders::GetLabelDetection::sort_by) / [`set_sort_by(Option<LabelDetectionSortBy>)`](crate::client::fluent_builders::GetLabelDetection::set_sort_by): <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    ///   - [`aggregate_by(LabelDetectionAggregateBy)`](crate::client::fluent_builders::GetLabelDetection::aggregate_by) / [`set_aggregate_by(Option<LabelDetectionAggregateBy>)`](crate::client::fluent_builders::GetLabelDetection::set_aggregate_by): <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
     /// - On success, responds with [`GetLabelDetectionOutput`](crate::output::GetLabelDetectionOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetLabelDetectionOutput::job_status): <p>The current status of the label detection job.</p>
     ///   - [`status_message(Option<String>)`](crate::output::GetLabelDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
@@ -822,9 +826,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`video(Video)`](crate::client::fluent_builders::StartLabelDetection::video) / [`set_video(Option<Video>)`](crate::client::fluent_builders::StartLabelDetection::set_video): <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartLabelDetection::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartLabelDetection::set_client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    ///   - [`min_confidence(f32)`](crate::client::fluent_builders::StartLabelDetection::min_confidence) / [`set_min_confidence(Option<f32>)`](crate::client::fluent_builders::StartLabelDetection::set_min_confidence): <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>  <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    ///   - [`min_confidence(f32)`](crate::client::fluent_builders::StartLabelDetection::min_confidence) / [`set_min_confidence(Option<f32>)`](crate::client::fluent_builders::StartLabelDetection::set_min_confidence): <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>  <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
     ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartLabelDetection::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartLabelDetection::set_notification_channel): <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartLabelDetection::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartLabelDetection::set_job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    ///   - [`features(Vec<LabelDetectionFeatureName>)`](crate::client::fluent_builders::StartLabelDetection::features) / [`set_features(Option<Vec<LabelDetectionFeatureName>>)`](crate::client::fluent_builders::StartLabelDetection::set_features): <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+    ///   - [`settings(LabelDetectionSettings)`](crate::client::fluent_builders::StartLabelDetection::settings) / [`set_settings(Option<LabelDetectionSettings>)`](crate::client::fluent_builders::StartLabelDetection::set_settings): <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     /// - On success, responds with [`StartLabelDetectionOutput`](crate::output::StartLabelDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartLabelDetectionOutput::job_id): <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
     /// - On failure, responds with [`SdkError<StartLabelDetectionError>`](crate::error::StartLabelDetectionError)
@@ -875,7 +881,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartStreamProcessor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartStreamProcessor::set_name): <p>The name of the stream processor to start processing.</p>
-    ///   - [`start_selector(StreamProcessingStartSelector)`](crate::client::fluent_builders::StartStreamProcessor::start_selector) / [`set_start_selector(Option<StreamProcessingStartSelector>)`](crate::client::fluent_builders::StartStreamProcessor::set_start_selector): <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>  <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
+    ///   - [`start_selector(StreamProcessingStartSelector)`](crate::client::fluent_builders::StartStreamProcessor::start_selector) / [`set_start_selector(Option<StreamProcessingStartSelector>)`](crate::client::fluent_builders::StartStreamProcessor::set_start_selector): <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>  <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     ///   - [`stop_selector(StreamProcessingStopSelector)`](crate::client::fluent_builders::StartStreamProcessor::stop_selector) / [`set_stop_selector(Option<StreamProcessingStopSelector>)`](crate::client::fluent_builders::StartStreamProcessor::set_stop_selector): <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>  <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     /// - On success, responds with [`StartStreamProcessorOutput`](crate::output::StartStreamProcessorOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::output::StartStreamProcessorOutput::session_id): <p> A unique identifier for the stream processing session. </p>
@@ -3206,24 +3212,40 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetectLabels`.
     ///
     /// <p>Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape, evening, and nature. </p>
-    /// <p>For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p> <note>
-    /// <p> <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer Guide.</p>
-    /// </note>
+    /// <p>For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p>
     /// <p>You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
-    /// <p> For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and the level of confidence that the image contains the object. For example, suppose the input image has a lighthouse, the sea, and a rock. The response includes all three labels, one for each object. </p>
+    /// <p> <b>Optional Parameters</b> </p>
+    /// <p>You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code> feature types when calling the DetectLabels API. Including <code>GENERAL_LABELS</code> will ensure the response includes the labels detected in the input image, while including <code>IMAGE_PROPERTIES </code>will ensure the response includes information about the image quality and color.</p>
+    /// <p>When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can provide filtering criteria to the Settings parameter. You can filter with sets of individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information on filtering see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting Labels in an Image</a>.</p>
+    /// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The default and upper limit is 1000 labels.</p>
+    /// <p> <b>Response Elements</b> </p>
+    /// <p> For each object, scene, and concept the API returns one or more labels. The API returns the following types of information regarding labels:</p>
+    /// <ul>
+    /// <li> <p> Name - The name of the detected label. </p> </li>
+    /// <li> <p> Confidence - The level of confidence in the label assigned to a detected object. </p> </li>
+    /// <li> <p> Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical taxonomy of detected labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as unique labels in the response. </p> </li>
+    /// <li> <p> Aliases - Possible Aliases for the label. </p> </li>
+    /// <li> <p> Categories - The label categories that the detected label belongs to. </p> </li>
+    /// <li> <p> BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label on the input image. It also includes the confidence for the accuracy of the detected bounding box. </p> </li>
+    /// </ul>
+    /// <p> The API returns the following information regarding the image, as part of the ImageProperties structure:</p>
+    /// <ul>
+    /// <li> <p>Quality - Information about the Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100. Image quality is returned for the entire image, as well as the background and the foreground. </p> </li>
+    /// <li> <p>Dominant Color - An array of the dominant colors in the image. </p> </li>
+    /// <li> <p>Foreground - Information about the sharpness, brightness, and dominant colors of the input image’s foreground. </p> </li>
+    /// <li> <p>Background - Information about the sharpness, brightness, and dominant colors of the input image’s background.</p> </li>
+    /// </ul>
+    /// <p>The list of returned labels will include at least one label for every detected object, along with information about that label. In the following example, suppose the input image has a lighthouse, the sea, and a rock. The response includes all three labels, one for each object, as well as the confidence in the label:</p>
     /// <p> <code>{Name: lighthouse, Confidence: 98.4629}</code> </p>
     /// <p> <code>{Name: rock,Confidence: 79.2097}</code> </p>
     /// <p> <code> {Name: sea,Confidence: 75.061}</code> </p>
-    /// <p>In the preceding example, the operation returns one label for each of the three objects. The operation can also return multiple labels for the same object in the image. For example, if the input image shows a flower (for example, a tulip), the operation might return the following three labels. </p>
+    /// <p>The list of labels can include multiple labels for the same object. For example, if the input image shows a flower (for example, a tulip), the operation might return the following three labels. </p>
     /// <p> <code>{Name: flower,Confidence: 99.0562}</code> </p>
     /// <p> <code>{Name: plant,Confidence: 99.0562}</code> </p>
     /// <p> <code>{Name: tulip,Confidence: 99.0562}</code> </p>
-    /// <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p>
-    /// <p>In response, the API returns an array of labels. In addition, the response also includes the orientation correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. </p> <note>
+    /// <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p> <note>
     /// <p>If the object detected is a person, the operation doesn't provide the same facial details that the <code>DetectFaces</code> operation provides.</p>
     /// </note>
-    /// <p> <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of <code>Instance</code> objects. An <code>Instance</code> object contains a <code>BoundingBox</code> object, for the location of the label on the image. It also includes the confidence by which the bounding box was detected.</p>
-    /// <p> <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example, a detected car might be assigned the label <i>car</i>. The label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent) and <i>Transportation</i> (its grandparent). The response returns the entire list of ancestors for a label. Each ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>, and <i>Transportation</i> are returned as unique labels in the response. </p>
     /// <p>This is a stateless API operation. That is, the operation does not persist any data.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3317,6 +3339,36 @@ pub mod fluent_builders {
         /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_min_confidence(input);
+            self
+        }
+        /// Appends an item to `Features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+        pub fn features(mut self, input: crate::model::DetectLabelsFeatureName) -> Self {
+            self.inner = self.inner.features(input);
+            self
+        }
+        /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
+        pub fn set_features(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DetectLabelsFeatureName>>,
+        ) -> Self {
+            self.inner = self.inner.set_features(input);
+            self
+        }
+        /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+        pub fn settings(mut self, input: crate::model::DetectLabelsSettings) -> Self {
+            self.inner = self.inner.settings(input);
+            self
+        }
+        /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see LINK HERE.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::DetectLabelsSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
             self
         }
     }
@@ -4244,11 +4296,24 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLabelDetection`.
     ///
     /// <p>Gets the label detection results of a Amazon Rekognition Video analysis started by <code>StartLabelDetection</code>. </p>
-    /// <p>The label detection operation is started by a call to <code>StartLabelDetection</code> which returns a job identifier (<code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results of the label detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetLabelDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>
-    /// <p> <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the <code>SortBy</code> input parameter.</p>
-    /// <p>The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and the time the label was detected in the video.</p>
-    /// <p>The returned labels also include bounding box information for common objects, a hierarchical taxonomy of detected labels, and the version of the label model used for detection.</p>
-    /// <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetLabelDetection</code>.</p>
+    /// <p>The label detection operation is started by a call to <code>StartLabelDetection</code> which returns a job identifier (<code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. </p>
+    /// <p>To get the results of the label detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetLabelDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>
+    /// <p> <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the <code>SortBy</code> input parameter. If there is no <code>NAME</code> specified, the default sort is by timestamp.</p>
+    /// <p>You can select how results are aggregated by using the <code>AggregateBy</code> input parameter. The default aggregation method is <code>TIMESTAMPS</code>. You can also aggregate by <code>SEGMENTS</code>, which aggregates all instances of labels detected in a given segment. </p>
+    /// <p>The returned Labels array may include the following attributes:</p>
+    /// <ul>
+    /// <li> <p>Name - The name of the detected label.</p> </li>
+    /// <li> <p>Confidence - The level of confidence in the label assigned to a detected object. </p> </li>
+    /// <li> <p>Parents - The ancestor labels for a detected label. GetLabelDetection returns a hierarchical taxonomy of detected labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as unique labels in the response. </p> </li>
+    /// <li> <p> Aliases - Possible Aliases for the label. </p> </li>
+    /// <li> <p>Categories - The label categories that the detected label belongs to.</p> </li>
+    /// <li> <p>BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label on the input image. It also includes the confidence for the accuracy of the detected bounding box.</p> </li>
+    /// <li> <p>Timestamp - Time, in milliseconds from the start of the video, that the label was detected. For aggregation by <code>SEGMENTS</code>, the <code>StartTimestampMillis</code>, <code>EndTimestampMillis</code>, and <code>DurationMillis</code> structures are what define a segment. Although the “Timestamp” structure is still returned with each label, its value is set to be the same as <code>StartTimestampMillis</code>.</p> </li>
+    /// </ul>
+    /// <p>Timestamp and Bounding box information are returned for detected Instances, only if aggregation is done by <code>TIMESTAMPS</code>. If aggregating by <code>SEGMENTS</code>, information about detected instances isn’t returned. </p>
+    /// <p>The version of the label model used for the detection is also returned.</p>
+    /// <p> <b>Note <code>DominantColors</code> isn't returned for <code>Instances</code>, although it is shown as part of the response in the sample seen below.</b> </p>
+    /// <p>Use <code>MaxResults</code> parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetLabelDetection</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLabelDetection {
         handle: std::sync::Arc<super::Handle>,
@@ -4355,6 +4420,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::LabelDetectionSortBy>,
         ) -> Self {
             self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+        pub fn aggregate_by(mut self, input: crate::model::LabelDetectionAggregateBy) -> Self {
+            self.inner = self.inner.aggregate_by(input);
+            self
+        }
+        /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
+        pub fn set_aggregate_by(
+            mut self,
+            input: std::option::Option<crate::model::LabelDetectionAggregateBy>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregate_by(input);
             self
         }
     }
@@ -6516,7 +6594,9 @@ pub mod fluent_builders {
     /// <p>Amazon Rekognition Video can detect labels in a video. Labels are instances of real-world entities. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; concepts like landscape, evening, and nature; and activities like a person getting out of a car or a person skiing.</p>
     /// <p>The video must be stored in an Amazon S3 bucket. Use <code>Video</code> to specify the bucket name and the filename of the video. <code>StartLabelDetection</code> returns a job identifier (<code>JobId</code>) which you use to get the results of the operation. When label detection is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.</p>
     /// <p>To get the results of the label detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetLabelDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>
-    /// <p></p>
+    /// <p> <i>Optional Parameters</i> </p>
+    /// <p> <code>StartLabelDetection</code> has the <code>GENERAL_LABELS</code> Feature applied by default. This feature allows you to provide filtering criteria to the <code>Settings</code> parameter. You can filter with sets of individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information on filtering, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detecting-labels-video.html">Detecting labels in a video</a>.</p>
+    /// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLabelDetection {
         handle: std::sync::Arc<super::Handle>,
@@ -6600,13 +6680,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.inner = self.inner.min_confidence(input);
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_min_confidence(input);
             self
@@ -6632,6 +6712,36 @@ pub mod fluent_builders {
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_tag(input);
+            self
+        }
+        /// Appends an item to `Features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+        pub fn features(mut self, input: crate::model::LabelDetectionFeatureName) -> Self {
+            self.inner = self.inner.features(input);
+            self
+        }
+        /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
+        pub fn set_features(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LabelDetectionFeatureName>>,
+        ) -> Self {
+            self.inner = self.inner.set_features(input);
+            self
+        }
+        /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+        pub fn settings(mut self, input: crate::model::LabelDetectionSettings) -> Self {
+            self.inner = self.inner.settings(input);
+            self
+        }
+        /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::LabelDetectionSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
             self
         }
     }
@@ -7067,7 +7177,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
         /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
         pub fn start_selector(
             mut self,
@@ -7076,7 +7186,7 @@ pub mod fluent_builders {
             self.inner = self.inner.start_selector(input);
             self
         }
-        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+        /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
         /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
         pub fn set_start_selector(
             mut self,

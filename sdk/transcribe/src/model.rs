@@ -43,10 +43,12 @@
 ///     LanguageCode::PtBr => { /* ... */ },
 ///     LanguageCode::PtPt => { /* ... */ },
 ///     LanguageCode::RuRu => { /* ... */ },
+///     LanguageCode::SvSe => { /* ... */ },
 ///     LanguageCode::TaIn => { /* ... */ },
 ///     LanguageCode::TeIn => { /* ... */ },
 ///     LanguageCode::ThTh => { /* ... */ },
 ///     LanguageCode::TrTr => { /* ... */ },
+///     LanguageCode::ViVn => { /* ... */ },
 ///     LanguageCode::ZhCn => { /* ... */ },
 ///     LanguageCode::ZhTw => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -145,6 +147,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     RuRu,
     #[allow(missing_docs)] // documentation missing in model
+    SvSe,
+    #[allow(missing_docs)] // documentation missing in model
     TaIn,
     #[allow(missing_docs)] // documentation missing in model
     TeIn,
@@ -152,6 +156,8 @@ pub enum LanguageCode {
     ThTh,
     #[allow(missing_docs)] // documentation missing in model
     TrTr,
+    #[allow(missing_docs)] // documentation missing in model
+    ViVn,
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     #[allow(missing_docs)] // documentation missing in model
@@ -193,10 +199,12 @@ impl std::convert::From<&str> for LanguageCode {
             "pt-BR" => LanguageCode::PtBr,
             "pt-PT" => LanguageCode::PtPt,
             "ru-RU" => LanguageCode::RuRu,
+            "sv-SE" => LanguageCode::SvSe,
             "ta-IN" => LanguageCode::TaIn,
             "te-IN" => LanguageCode::TeIn,
             "th-TH" => LanguageCode::ThTh,
             "tr-TR" => LanguageCode::TrTr,
+            "vi-VN" => LanguageCode::ViVn,
             "zh-CN" => LanguageCode::ZhCn,
             "zh-TW" => LanguageCode::ZhTw,
             other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
@@ -245,10 +253,12 @@ impl LanguageCode {
             LanguageCode::PtBr => "pt-BR",
             LanguageCode::PtPt => "pt-PT",
             LanguageCode::RuRu => "ru-RU",
+            LanguageCode::SvSe => "sv-SE",
             LanguageCode::TaIn => "ta-IN",
             LanguageCode::TeIn => "te-IN",
             LanguageCode::ThTh => "th-TH",
             LanguageCode::TrTr => "tr-TR",
+            LanguageCode::ViVn => "vi-VN",
             LanguageCode::ZhCn => "zh-CN",
             LanguageCode::ZhTw => "zh-TW",
             LanguageCode::Unknown(value) => value.as_str(),
@@ -260,8 +270,8 @@ impl LanguageCode {
             "af-ZA", "ar-AE", "ar-SA", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB",
             "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fa-IR",
             "fr-CA", "fr-FR", "he-IL", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY",
-            "nl-NL", "pt-BR", "pt-PT", "ru-RU", "ta-IN", "te-IN", "th-TH", "tr-TR", "zh-CN",
-            "zh-TW",
+            "nl-NL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "ta-IN", "te-IN", "th-TH", "tr-TR",
+            "vi-VN", "zh-CN", "zh-TW",
         ]
     }
 }
@@ -384,6 +394,9 @@ pub struct CategoryProperties {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
+    #[doc(hidden)]
+    pub input_type: std::option::Option<crate::model::InputType>,
 }
 impl CategoryProperties {
     /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -404,6 +417,10 @@ impl CategoryProperties {
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
+    /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
+    pub fn input_type(&self) -> std::option::Option<&crate::model::InputType> {
+        self.input_type.as_ref()
+    }
 }
 /// See [`CategoryProperties`](crate::model::CategoryProperties).
 pub mod category_properties {
@@ -415,6 +432,7 @@ pub mod category_properties {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) input_type: std::option::Option<crate::model::InputType>,
     }
     impl Builder {
         /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -479,6 +497,19 @@ pub mod category_properties {
             self.last_update_time = input;
             self
         }
+        /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
+        pub fn input_type(mut self, input: crate::model::InputType) -> Self {
+            self.input_type = Some(input);
+            self
+        }
+        /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
+        pub fn set_input_type(
+            mut self,
+            input: std::option::Option<crate::model::InputType>,
+        ) -> Self {
+            self.input_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CategoryProperties`](crate::model::CategoryProperties).
         pub fn build(self) -> crate::model::CategoryProperties {
             crate::model::CategoryProperties {
@@ -486,6 +517,7 @@ pub mod category_properties {
                 rules: self.rules,
                 create_time: self.create_time,
                 last_update_time: self.last_update_time,
+                input_type: self.input_type,
             }
         }
     }
@@ -497,9 +529,99 @@ impl CategoryProperties {
     }
 }
 
-/// <p>A rule is a set of criteria you can specify to flag an attribute in your Call Analytics output. Rules define a Call Analytics category.</p>
-/// <p>Rules can include these parameters: , , , and . To learn more about these parameters, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a>.</p>
-/// <p>To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating categories</a>.</p>
+/// When writing a match expression against `InputType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let inputtype = unimplemented!();
+/// match inputtype {
+///     InputType::PostCall => { /* ... */ },
+///     InputType::RealTime => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `inputtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InputType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InputType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InputType::NewFeature` is defined.
+/// Specifically, when `inputtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InputType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InputType {
+    #[allow(missing_docs)] // documentation missing in model
+    PostCall,
+    #[allow(missing_docs)] // documentation missing in model
+    RealTime,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for InputType {
+    fn from(s: &str) -> Self {
+        match s {
+            "POST_CALL" => InputType::PostCall,
+            "REAL_TIME" => InputType::RealTime,
+            other => InputType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for InputType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InputType::from(s))
+    }
+}
+impl InputType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InputType::PostCall => "POST_CALL",
+            InputType::RealTime => "REAL_TIME",
+            InputType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["POST_CALL", "REAL_TIME"]
+    }
+}
+impl AsRef<str> for InputType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A rule is a set of criteria that you can specify to flag an attribute in your Call Analytics output. Rules define a Call Analytics category.</p>
+/// <p>Rules can include these parameters: , , , and .</p>
+/// <p>To learn more about Call Analytics rules and categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for streaming transcriptions</a>.</p>
 /// <p>To learn more about Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio with Call Analytics</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -597,44 +719,44 @@ impl Rule {
 /// <li> <p>The presence or absence of a neutral sentiment felt by the customer, agent, or both at specified points in the call</p> </li>
 /// <li> <p>The presence or absence of a mixed sentiment felt by the customer, the agent, or both at specified points in the call</p> </li>
 /// </ul>
-/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for examples.</p>
+/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for batch categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentFilter {
-    /// <p>Specify the sentiments you want to flag.</p>
+    /// <p>Specify the sentiments that you want to flag.</p>
     #[doc(hidden)]
     pub sentiments: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     #[doc(hidden)]
     pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
     #[doc(hidden)]
     pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
-    /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     #[doc(hidden)]
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
-    /// <p>Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments you specified in your request.</p>
+    /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     #[doc(hidden)]
     pub negate: std::option::Option<bool>,
 }
 impl SentimentFilter {
-    /// <p>Specify the sentiments you want to flag.</p>
+    /// <p>Specify the sentiments that you want to flag.</p>
     pub fn sentiments(&self) -> std::option::Option<&[crate::model::SentimentValue]> {
         self.sentiments.as_deref()
     }
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
-    /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
         self.participant_role.as_ref()
     }
-    /// <p>Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments you specified in your request.</p>
+    /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     pub fn negate(&self) -> std::option::Option<bool> {
         self.negate
     }
@@ -656,14 +778,14 @@ pub mod sentiment_filter {
         ///
         /// To override the contents of this collection use [`set_sentiments`](Self::set_sentiments).
         ///
-        /// <p>Specify the sentiments you want to flag.</p>
+        /// <p>Specify the sentiments that you want to flag.</p>
         pub fn sentiments(mut self, input: crate::model::SentimentValue) -> Self {
             let mut v = self.sentiments.unwrap_or_default();
             v.push(input);
             self.sentiments = Some(v);
             self
         }
-        /// <p>Specify the sentiments you want to flag.</p>
+        /// <p>Specify the sentiments that you want to flag.</p>
         pub fn set_sentiments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
@@ -671,12 +793,12 @@ pub mod sentiment_filter {
             self.sentiments = input;
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
         pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
             self.absolute_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
         pub fn set_absolute_time_range(
             mut self,
             input: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -684,12 +806,12 @@ pub mod sentiment_filter {
             self.absolute_time_range = input;
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
         pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
             self.relative_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
         pub fn set_relative_time_range(
             mut self,
             input: std::option::Option<crate::model::RelativeTimeRange>,
@@ -697,12 +819,12 @@ pub mod sentiment_filter {
             self.relative_time_range = input;
             self
         }
-        /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
             self.participant_role = Some(input);
             self
         }
-        /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn set_participant_role(
             mut self,
             input: std::option::Option<crate::model::ParticipantRole>,
@@ -710,12 +832,12 @@ pub mod sentiment_filter {
             self.participant_role = input;
             self
         }
-        /// <p>Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments you specified in your request.</p>
+        /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
         pub fn negate(mut self, input: bool) -> Self {
             self.negate = Some(input);
             self
         }
-        /// <p>Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments you specified in your request.</p>
+        /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
         pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
             self.negate = input;
             self
@@ -831,7 +953,7 @@ impl AsRef<str> for ParticipantRole {
 
 /// <p>A time range, in percentage, between two points in your media file.</p>
 /// <p>You can use <code>StartPercentage</code> and <code>EndPercentage</code> to search a custom segment. For example, setting <code>StartPercentage</code> to 10 and <code>EndPercentage</code> to 50 only searches for your specified criteria in the audio contained between the 10 percent mark and the 50 percent mark of your media file.</p>
-/// <p>You can use also <code>First</code> to search from the start of the media file until the time you specify, or <code>Last</code> to search from the time you specify until the end of the media file. For example, setting <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of the media file.</p>
+/// <p>You can use also <code>First</code> to search from the start of the media file until the time that you specify. Or use <code>Last</code> to search from the time that you specify until the end of the media file. For example, setting <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of the media file.</p>
 /// <p>If you prefer to use milliseconds instead of percentage, see .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -842,10 +964,10 @@ pub struct RelativeTimeRange {
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
     #[doc(hidden)]
     pub end_percentage: std::option::Option<i32>,
-    /// <p>The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
     pub first: std::option::Option<i32>,
-    /// <p>The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
     pub last: std::option::Option<i32>,
 }
@@ -858,11 +980,11 @@ impl RelativeTimeRange {
     pub fn end_percentage(&self) -> std::option::Option<i32> {
         self.end_percentage
     }
-    /// <p>The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn first(&self) -> std::option::Option<i32> {
         self.first
     }
-    /// <p>The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn last(&self) -> std::option::Option<i32> {
         self.last
     }
@@ -899,22 +1021,22 @@ pub mod relative_time_range {
             self.end_percentage = input;
             self
         }
-        /// <p>The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn first(mut self, input: i32) -> Self {
             self.first = Some(input);
             self
         }
-        /// <p>The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn set_first(mut self, input: std::option::Option<i32>) -> Self {
             self.first = input;
             self
         }
-        /// <p>The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn last(mut self, input: i32) -> Self {
             self.last = Some(input);
             self
         }
-        /// <p>The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn set_last(mut self, input: std::option::Option<i32>) -> Self {
             self.last = input;
             self
@@ -939,7 +1061,7 @@ impl RelativeTimeRange {
 
 /// <p>A time range, in milliseconds, between two points in your media file.</p>
 /// <p>You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment. For example, setting <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000 only searches for your specified criteria in the audio contained between the 10,000 millisecond mark and the 50,000 millisecond mark of your media file. You must use <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include one, you must include both.</p>
-/// <p>You can use also <code>First</code> to search from the start of the audio until the time you specify, or <code>Last</code> to search from the time you specify until the end of the audio. For example, setting <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each other.</p>
+/// <p>You can use also <code>First</code> to search from the start of the audio until the time that you specify, or <code>Last</code> to search from the time that you specify until the end of the audio. For example, setting <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each other.</p>
 /// <p>If you prefer to use percentage instead of milliseconds, see .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -950,10 +1072,10 @@ pub struct AbsoluteTimeRange {
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<i64>,
-    /// <p>The time, in milliseconds, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
     pub first: std::option::Option<i64>,
-    /// <p>The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
     pub last: std::option::Option<i64>,
 }
@@ -966,11 +1088,11 @@ impl AbsoluteTimeRange {
     pub fn end_time(&self) -> std::option::Option<i64> {
         self.end_time
     }
-    /// <p>The time, in milliseconds, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn first(&self) -> std::option::Option<i64> {
         self.first
     }
-    /// <p>The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+    /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn last(&self) -> std::option::Option<i64> {
         self.last
     }
@@ -1007,22 +1129,22 @@ pub mod absolute_time_range {
             self.end_time = input;
             self
         }
-        /// <p>The time, in milliseconds, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn first(mut self, input: i64) -> Self {
             self.first = Some(input);
             self
         }
-        /// <p>The time, in milliseconds, from the start of your media file until the value you specify in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn set_first(mut self, input: std::option::Option<i64>) -> Self {
             self.first = input;
             self
         }
-        /// <p>The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn last(mut self, input: i64) -> Self {
             self.last = Some(input);
             self
         }
-        /// <p>The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe searches for your specified criteria.</p>
+        /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
         pub fn set_last(mut self, input: std::option::Option<i64>) -> Self {
             self.last = input;
             self
@@ -1152,55 +1274,55 @@ impl AsRef<str> for SentimentValue {
 /// <li> <p>Custom words or phrases <b>not</b> spoken by the agent, the customer, or either</p> </li>
 /// <li> <p>Custom words or phrases that occur at a specific time frame</p> </li>
 /// </ul>
-/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for examples.</p>
+/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for batch categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule criteria for streaming categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptFilter {
-    /// <p>Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+    /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
     #[doc(hidden)]
     pub transcript_filter_type: std::option::Option<crate::model::TranscriptFilterType>,
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     #[doc(hidden)]
     pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
     #[doc(hidden)]
     pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
-    /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     #[doc(hidden)]
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
-    /// <p>Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase you specified in your request.</p>
+    /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     #[doc(hidden)]
     pub negate: std::option::Option<bool>,
-    /// <p>Specify the phrases you want to flag.</p>
+    /// <p>Specify the phrases that you want to flag.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TranscriptFilter {
-    /// <p>Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+    /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
     pub fn transcript_filter_type(
         &self,
     ) -> std::option::Option<&crate::model::TranscriptFilterType> {
         self.transcript_filter_type.as_ref()
     }
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
-    /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
         self.participant_role.as_ref()
     }
-    /// <p>Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase you specified in your request.</p>
+    /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub fn negate(&self) -> std::option::Option<bool> {
         self.negate
     }
-    /// <p>Specify the phrases you want to flag.</p>
+    /// <p>Specify the phrases that you want to flag.</p>
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
@@ -1219,13 +1341,13 @@ pub mod transcript_filter {
         pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+        /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
         /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
         pub fn transcript_filter_type(mut self, input: crate::model::TranscriptFilterType) -> Self {
             self.transcript_filter_type = Some(input);
             self
         }
-        /// <p>Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+        /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
         /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
         pub fn set_transcript_filter_type(
             mut self,
@@ -1234,12 +1356,12 @@ pub mod transcript_filter {
             self.transcript_filter_type = input;
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
         pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
             self.absolute_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
         pub fn set_absolute_time_range(
             mut self,
             input: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -1247,12 +1369,12 @@ pub mod transcript_filter {
             self.absolute_time_range = input;
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
         pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
             self.relative_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
         pub fn set_relative_time_range(
             mut self,
             input: std::option::Option<crate::model::RelativeTimeRange>,
@@ -1260,12 +1382,12 @@ pub mod transcript_filter {
             self.relative_time_range = input;
             self
         }
-        /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
             self.participant_role = Some(input);
             self
         }
-        /// <p>Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn set_participant_role(
             mut self,
             input: std::option::Option<crate::model::ParticipantRole>,
@@ -1273,12 +1395,12 @@ pub mod transcript_filter {
             self.participant_role = input;
             self
         }
-        /// <p>Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase you specified in your request.</p>
+        /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
         pub fn negate(mut self, input: bool) -> Self {
             self.negate = Some(input);
             self
         }
-        /// <p>Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase you specified in your request.</p>
+        /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
         pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
             self.negate = input;
             self
@@ -1287,14 +1409,14 @@ pub mod transcript_filter {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>Specify the phrases you want to flag.</p>
+        /// <p>Specify the phrases that you want to flag.</p>
         pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
-        /// <p>Specify the phrases you want to flag.</p>
+        /// <p>Specify the phrases that you want to flag.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1417,20 +1539,20 @@ impl AsRef<str> for TranscriptFilterType {
 /// <li> <p>Either participant interrupting the other</p> </li>
 /// <li> <p>A lack of interruptions</p> </li>
 /// </ul>
-/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for usage examples.</p>
+/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for batch categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InterruptionFilter {
-    /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10000 milliseconds of interruptions.</p>
+    /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
     #[doc(hidden)]
     pub threshold: std::option::Option<i64>,
-    /// <p>Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     #[doc(hidden)]
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
     #[doc(hidden)]
     pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
     #[doc(hidden)]
     pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
@@ -1438,19 +1560,19 @@ pub struct InterruptionFilter {
     pub negate: std::option::Option<bool>,
 }
 impl InterruptionFilter {
-    /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10000 milliseconds of interruptions.</p>
+    /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
     pub fn threshold(&self) -> std::option::Option<i64> {
         self.threshold
     }
-    /// <p>Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
         self.participant_role.as_ref()
     }
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
     pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
     pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
@@ -1472,22 +1594,22 @@ pub mod interruption_filter {
         pub(crate) negate: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10000 milliseconds of interruptions.</p>
+        /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
         pub fn threshold(mut self, input: i64) -> Self {
             self.threshold = Some(input);
             self
         }
-        /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10000 milliseconds of interruptions.</p>
+        /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
         pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
             self.threshold = input;
             self
         }
-        /// <p>Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
             self.participant_role = Some(input);
             self
         }
-        /// <p>Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
+        /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn set_participant_role(
             mut self,
             input: std::option::Option<crate::model::ParticipantRole>,
@@ -1495,12 +1617,12 @@ pub mod interruption_filter {
             self.participant_role = input;
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
         pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
             self.absolute_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
         pub fn set_absolute_time_range(
             mut self,
             input: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -1508,12 +1630,12 @@ pub mod interruption_filter {
             self.absolute_time_range = input;
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
         pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
             self.relative_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
         pub fn set_relative_time_range(
             mut self,
             input: std::option::Option<crate::model::RelativeTimeRange>,
@@ -1556,17 +1678,17 @@ impl InterruptionFilter {
 /// <li> <p>The presence of silence at specified periods throughout the call</p> </li>
 /// <li> <p>The presence of speech at specified periods throughout the call</p> </li>
 /// </ul>
-/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule criteria</a> for usage examples.</p>
+/// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for batch categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NonTalkTimeFilter {
-    /// <p>Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a silent period that lasts 30000 milliseconds.</p>
+    /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
     #[doc(hidden)]
     pub threshold: std::option::Option<i64>,
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     #[doc(hidden)]
     pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     #[doc(hidden)]
     pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
@@ -1574,15 +1696,15 @@ pub struct NonTalkTimeFilter {
     pub negate: std::option::Option<bool>,
 }
 impl NonTalkTimeFilter {
-    /// <p>Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a silent period that lasts 30000 milliseconds.</p>
+    /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
     pub fn threshold(&self) -> std::option::Option<i64> {
         self.threshold
     }
-    /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
-    /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
@@ -1603,22 +1725,22 @@ pub mod non_talk_time_filter {
         pub(crate) negate: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a silent period that lasts 30000 milliseconds.</p>
+        /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
         pub fn threshold(mut self, input: i64) -> Self {
             self.threshold = Some(input);
             self
         }
-        /// <p>Specify the duration, in milliseconds, of the period of silence you want to flag. For example, you can flag a silent period that lasts 30000 milliseconds.</p>
+        /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
         pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
             self.threshold = input;
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
         pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
             self.absolute_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
         pub fn set_absolute_time_range(
             mut self,
             input: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -1626,12 +1748,12 @@ pub mod non_talk_time_filter {
             self.absolute_time_range = input;
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
         pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
             self.relative_time_range = Some(input);
             self
         }
-        /// <p>Allows you to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
+        /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
         pub fn set_relative_time_range(
             mut self,
             input: std::option::Option<crate::model::RelativeTimeRange>,
@@ -1753,17 +1875,16 @@ pub struct TranscriptionJob {
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     #[doc(hidden)]
     pub transcription_job_status: std::option::Option<crate::model::TranscriptionJobStatus>,
-    /// <p>The language code used to create your transcription job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
     #[doc(hidden)]
     pub media_format: std::option::Option<crate::model::MediaFormat>,
-    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
     #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
@@ -1786,25 +1907,23 @@ pub struct TranscriptionJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-    /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<crate::model::Settings>,
-    /// <p>The custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
+    /// <p>Provides information on the custom language model you included in your request.</p>
     #[doc(hidden)]
     pub model_settings: std::option::Option<crate::model::ModelSettings>,
-    /// <p>Provides information about how your transcription job is being processed. This parameter shows if your request is queued and what data access role is being used.</p>
+    /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
     #[doc(hidden)]
     pub job_execution_settings: std::option::Option<crate::model::JobExecutionSettings>,
-    /// <p>Redacts or flags specified personally identifiable information (PII) in your transcript.</p>
+    /// <p>Indicates whether redaction was enabled in your transcript.</p>
     #[doc(hidden)]
     pub content_redaction: std::option::Option<crate::model::ContentRedaction>,
     /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
@@ -1813,10 +1932,7 @@ pub struct TranscriptionJob {
     /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
     #[doc(hidden)]
     pub identify_multiple_languages: std::option::Option<bool>,
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>Provides the language codes you specified in your request.</p>
     #[doc(hidden)]
     pub language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
     /// <p>The confidence score associated with the language identified in your media file.</p>
@@ -1824,21 +1940,15 @@ pub struct TranscriptionJob {
     #[doc(hidden)]
     pub identified_language_score: std::option::Option<f32>,
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     #[doc(hidden)]
     pub language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCodeItem>>,
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
-    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Generate subtitles for your media file with your transcription request.</p>
+    /// <p>Indicates whether subtitles were generated with your transcription.</p>
     #[doc(hidden)]
     pub subtitles: std::option::Option<crate::model::SubtitlesOutput>,
-    /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-    /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-    /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
     #[doc(hidden)]
     pub language_id_settings: std::option::Option<
         std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
@@ -1856,12 +1966,11 @@ impl TranscriptionJob {
     ) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
         self.transcription_job_status.as_ref()
     }
-    /// <p>The language code used to create your transcription job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+    /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -1869,7 +1978,7 @@ impl TranscriptionJob {
     pub fn media_format(&self) -> std::option::Option<&crate::model::MediaFormat> {
         self.media_format.as_ref()
     }
-    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
     pub fn media(&self) -> std::option::Option<&crate::model::Media> {
         self.media.as_ref()
     }
@@ -1897,7 +2006,7 @@ impl TranscriptionJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -1905,23 +2014,21 @@ impl TranscriptionJob {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-    /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
         self.settings.as_ref()
     }
-    /// <p>The custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
+    /// <p>Provides information on the custom language model you included in your request.</p>
     pub fn model_settings(&self) -> std::option::Option<&crate::model::ModelSettings> {
         self.model_settings.as_ref()
     }
-    /// <p>Provides information about how your transcription job is being processed. This parameter shows if your request is queued and what data access role is being used.</p>
+    /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
     pub fn job_execution_settings(
         &self,
     ) -> std::option::Option<&crate::model::JobExecutionSettings> {
         self.job_execution_settings.as_ref()
     }
-    /// <p>Redacts or flags specified personally identifiable information (PII) in your transcript.</p>
+    /// <p>Indicates whether redaction was enabled in your transcript.</p>
     pub fn content_redaction(&self) -> std::option::Option<&crate::model::ContentRedaction> {
         self.content_redaction.as_ref()
     }
@@ -1933,10 +2040,7 @@ impl TranscriptionJob {
     pub fn identify_multiple_languages(&self) -> std::option::Option<bool> {
         self.identify_multiple_languages
     }
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
-    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-    /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>Provides the language codes you specified in your request.</p>
     pub fn language_options(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
         self.language_options.as_deref()
     }
@@ -1946,24 +2050,18 @@ impl TranscriptionJob {
         self.identified_language_score
     }
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn language_codes(&self) -> std::option::Option<&[crate::model::LanguageCodeItem]> {
         self.language_codes.as_deref()
     }
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
-    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Generate subtitles for your media file with your transcription request.</p>
+    /// <p>Indicates whether subtitles were generated with your transcription.</p>
     pub fn subtitles(&self) -> std::option::Option<&crate::model::SubtitlesOutput> {
         self.subtitles.as_ref()
     }
-    /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-    /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-    /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
     pub fn language_id_settings(
         &self,
     ) -> std::option::Option<
@@ -2038,14 +2136,12 @@ pub mod transcription_job {
             self.transcription_job_status = input;
             self
         }
-        /// <p>The language code used to create your transcription job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-        /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+        /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code used to create your transcription job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-        /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
+        /// <p>The language code used to create your transcription job. This parameter is used with single-language identification. For multi-language identification requests, refer to the plural version of this parameter, <code>LanguageCodes</code>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -2053,12 +2149,12 @@ pub mod transcription_job {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -2076,12 +2172,12 @@ pub mod transcription_job {
             self.media_format = input;
             self
         }
-        /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
         pub fn media(mut self, input: crate::model::Media) -> Self {
             self.media = Some(input);
             self
         }
-        /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>Provides the Amazon S3 location of the media file you used in your request.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -2149,7 +2245,7 @@ pub mod transcription_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -2163,7 +2259,7 @@ pub mod transcription_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -2175,26 +2271,22 @@ pub mod transcription_job {
             self.failure_reason = input;
             self
         }
-        /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-        /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-        /// <p>If you're using automatic language identification with your request and want to include a custom language model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
         pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
             self.settings = input;
             self
         }
-        /// <p>The custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
+        /// <p>Provides information on the custom language model you included in your request.</p>
         pub fn model_settings(mut self, input: crate::model::ModelSettings) -> Self {
             self.model_settings = Some(input);
             self
         }
-        /// <p>The custom language model you want to include with your transcription job. If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.</p>
+        /// <p>Provides information on the custom language model you included in your request.</p>
         pub fn set_model_settings(
             mut self,
             input: std::option::Option<crate::model::ModelSettings>,
@@ -2202,12 +2294,12 @@ pub mod transcription_job {
             self.model_settings = input;
             self
         }
-        /// <p>Provides information about how your transcription job is being processed. This parameter shows if your request is queued and what data access role is being used.</p>
+        /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
         pub fn job_execution_settings(mut self, input: crate::model::JobExecutionSettings) -> Self {
             self.job_execution_settings = Some(input);
             self
         }
-        /// <p>Provides information about how your transcription job is being processed. This parameter shows if your request is queued and what data access role is being used.</p>
+        /// <p>Provides information about how your transcription job was processed. This parameter shows if your request was queued and what data access role was used.</p>
         pub fn set_job_execution_settings(
             mut self,
             input: std::option::Option<crate::model::JobExecutionSettings>,
@@ -2215,12 +2307,12 @@ pub mod transcription_job {
             self.job_execution_settings = input;
             self
         }
-        /// <p>Redacts or flags specified personally identifiable information (PII) in your transcript.</p>
+        /// <p>Indicates whether redaction was enabled in your transcript.</p>
         pub fn content_redaction(mut self, input: crate::model::ContentRedaction) -> Self {
             self.content_redaction = Some(input);
             self
         }
-        /// <p>Redacts or flags specified personally identifiable information (PII) in your transcript.</p>
+        /// <p>Indicates whether redaction was enabled in your transcript.</p>
         pub fn set_content_redaction(
             mut self,
             input: std::option::Option<crate::model::ContentRedaction>,
@@ -2252,20 +2344,14 @@ pub mod transcription_job {
         ///
         /// To override the contents of this collection use [`set_language_options`](Self::set_language_options).
         ///
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
-        /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-        /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-        /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+        /// <p>Provides the language codes you specified in your request.</p>
         pub fn language_options(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.language_options.unwrap_or_default();
             v.push(input);
             self.language_options = Some(v);
             self
         }
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
-        /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
-        /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-        /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+        /// <p>Provides the language codes you specified in your request.</p>
         pub fn set_language_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
@@ -2290,7 +2376,6 @@ pub mod transcription_job {
         /// To override the contents of this collection use [`set_language_codes`](Self::set_language_codes).
         ///
         /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-        /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
         pub fn language_codes(mut self, input: crate::model::LanguageCodeItem) -> Self {
             let mut v = self.language_codes.unwrap_or_default();
             v.push(input);
@@ -2298,7 +2383,6 @@ pub mod transcription_job {
             self
         }
         /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-        /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
         pub fn set_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCodeItem>>,
@@ -2310,16 +2394,14 @@ pub mod transcription_job {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
-        /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+        /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
-        /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+        /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2327,12 +2409,12 @@ pub mod transcription_job {
             self.tags = input;
             self
         }
-        /// <p>Generate subtitles for your media file with your transcription request.</p>
+        /// <p>Indicates whether subtitles were generated with your transcription.</p>
         pub fn subtitles(mut self, input: crate::model::SubtitlesOutput) -> Self {
             self.subtitles = Some(input);
             self
         }
-        /// <p>Generate subtitles for your media file with your transcription request.</p>
+        /// <p>Indicates whether subtitles were generated with your transcription.</p>
         pub fn set_subtitles(
             mut self,
             input: std::option::Option<crate::model::SubtitlesOutput>,
@@ -2344,11 +2426,7 @@ pub mod transcription_job {
         ///
         /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
         ///
-        /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-        /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-        /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+        /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
         pub fn language_id_settings(
             mut self,
             k: crate::model::LanguageCode,
@@ -2359,11 +2437,7 @@ pub mod transcription_job {
             self.language_id_settings = Some(hash_map);
             self
         }
-        /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-        /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-        /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+        /// <p>Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters that you included in your request.</p>
         pub fn set_language_id_settings(
             mut self,
             input: std::option::Option<
@@ -2413,42 +2487,41 @@ impl TranscriptionJob {
     }
 }
 
-/// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-/// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-/// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-/// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-/// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+/// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
+/// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+/// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+/// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LanguageIdSettings {
-    /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Vocabulary names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Vocabulary filter names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary filter must match the language code you specify in your transcription request. If the languages don't match, the vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
 }
 impl LanguageIdSettings {
-    /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Vocabulary names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Vocabulary filter names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary filter must match the language code you specify in your transcription request. If the languages don't match, the vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
@@ -2464,14 +2537,14 @@ pub mod language_id_settings {
         pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Vocabulary names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Vocabulary names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2479,15 +2552,15 @@ pub mod language_id_settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Vocabulary filter names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary filter must match the language code you specify in your transcription request. If the languages don't match, the vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Vocabulary filter names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary filter must match the language code you specify in your transcription request. If the languages don't match, the vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
@@ -2496,14 +2569,14 @@ pub mod language_id_settings {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn set_language_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2808,7 +2881,7 @@ impl LanguageCodeItem {
     }
 }
 
-/// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+/// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentRedaction {
@@ -3246,30 +3319,30 @@ impl AsRef<str> for RedactionType {
     }
 }
 
-/// <p>Allows you to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
+/// <p>Makes it possible to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
 /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobExecutionSettings {
-    /// <p>Allows you to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
+    /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
     /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     #[doc(hidden)]
     pub allow_deferred_execution: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     /// <p>Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include <code>AllowDeferredExecution</code>.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl JobExecutionSettings {
-    /// <p>Allows you to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
+    /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
     /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
     /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
     pub fn allow_deferred_execution(&self) -> std::option::Option<bool> {
         self.allow_deferred_execution
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     /// <p>Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include <code>AllowDeferredExecution</code>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
@@ -3286,28 +3359,28 @@ pub mod job_execution_settings {
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Allows you to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
+        /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
         /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
         /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
         pub fn allow_deferred_execution(mut self, input: bool) -> Self {
             self.allow_deferred_execution = Some(input);
             self
         }
-        /// <p>Allows you to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
+        /// <p>Makes it possible to enable job queuing when your concurrent request limit is exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
         /// <p>Note that job queuing is enabled by default for Call Analytics jobs.</p>
         /// <p>If you include <code>AllowDeferredExecution</code> in your request, you must also include <code>DataAccessRoleArn</code>.</p>
         pub fn set_allow_deferred_execution(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_deferred_execution = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
         /// <p>Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include <code>AllowDeferredExecution</code>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
         /// <p>Note that if you include <code>DataAccessRoleArn</code> in your request, you must also include <code>AllowDeferredExecution</code>.</p>
         pub fn set_data_access_role_arn(
@@ -3338,14 +3411,14 @@ impl JobExecutionSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModelSettings {
-    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
 }
 impl ModelSettings {
-    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
@@ -3359,14 +3432,14 @@ pub mod model_settings {
         pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn set_language_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3389,21 +3462,21 @@ impl ModelSettings {
     }
 }
 
-/// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.</p>
+/// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Settings {
     /// <p>The name of the custom vocabulary you want to use in your transcription job request. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     #[doc(hidden)]
     pub show_speaker_labels: std::option::Option<bool>,
-    /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+    /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     #[doc(hidden)]
     pub max_speaker_labels: std::option::Option<i32>,
@@ -3429,7 +3502,7 @@ pub struct Settings {
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+    /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -3441,15 +3514,15 @@ impl Settings {
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn show_speaker_labels(&self) -> std::option::Option<bool> {
         self.show_speaker_labels
     }
-    /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+    /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     pub fn max_speaker_labels(&self) -> std::option::Option<i32> {
         self.max_speaker_labels
@@ -3480,7 +3553,7 @@ impl Settings {
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+    /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -3520,31 +3593,31 @@ pub mod settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+        /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
         /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
         /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
         pub fn show_speaker_labels(mut self, input: bool) -> Self {
             self.show_speaker_labels = Some(input);
             self
         }
-        /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+        /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
         /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
         /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
         pub fn set_show_speaker_labels(mut self, input: std::option::Option<bool>) -> Self {
             self.show_speaker_labels = input;
             self
         }
-        /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+        /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
         /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
         pub fn max_speaker_labels(mut self, input: i32) -> Self {
             self.max_speaker_labels = Some(input);
             self
         }
-        /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+        /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
         /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
         pub fn set_max_speaker_labels(mut self, input: std::option::Option<i32>) -> Self {
             self.max_speaker_labels = input;
@@ -3613,7 +3686,7 @@ pub mod settings {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+        /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
         /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
         /// <p>To delete words, choose <code>remove</code>.</p>
         /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -3624,7 +3697,7 @@ pub mod settings {
             self.vocabulary_filter_method = Some(input);
             self
         }
-        /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+        /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
         /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
         /// <p>To delete words, choose <code>remove</code>.</p>
         /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -3863,6 +3936,7 @@ impl Transcript {
 }
 
 /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+/// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Media {
@@ -3880,7 +3954,7 @@ pub struct Media {
     /// <li> <p> <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> </p> </li>
     /// </ul>
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p> <important>
-    /// <p> <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
+    /// <p> <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
     /// </important>
     #[doc(hidden)]
     pub redacted_media_file_uri: std::option::Option<std::string::String>,
@@ -3901,7 +3975,7 @@ impl Media {
     /// <li> <p> <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> </p> </li>
     /// </ul>
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p> <important>
-    /// <p> <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
+    /// <p> <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
     /// </important>
     pub fn redacted_media_file_uri(&self) -> std::option::Option<&str> {
         self.redacted_media_file_uri.as_deref()
@@ -3946,7 +4020,7 @@ pub mod media {
         /// <li> <p> <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> </p> </li>
         /// </ul>
         /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p> <important>
-        /// <p> <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
+        /// <p> <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
         /// </important>
         pub fn redacted_media_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.redacted_media_file_uri = Some(input.into());
@@ -3958,7 +4032,7 @@ pub mod media {
         /// <li> <p> <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> </p> </li>
         /// </ul>
         /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p> <important>
-        /// <p> <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
+        /// <p> <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
         /// </important>
         pub fn set_redacted_media_file_uri(
             mut self,
@@ -4297,13 +4371,14 @@ pub struct MedicalTranscriptionJob {
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
     #[doc(hidden)]
     pub media_format: std::option::Option<crate::model::MediaFormat>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
@@ -4326,17 +4401,17 @@ pub struct MedicalTranscriptionJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<crate::model::MedicalTranscriptionSetting>,
-    /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+    /// <p>Indicates whether content identification was enabled for your transcription request.</p>
     #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -4366,7 +4441,7 @@ impl MedicalTranscriptionJob {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -4375,6 +4450,7 @@ impl MedicalTranscriptionJob {
         self.media_format.as_ref()
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn media(&self) -> std::option::Option<&crate::model::Media> {
         self.media.as_ref()
     }
@@ -4402,7 +4478,7 @@ impl MedicalTranscriptionJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -4410,11 +4486,11 @@ impl MedicalTranscriptionJob {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::MedicalTranscriptionSetting> {
         self.settings.as_ref()
     }
-    /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+    /// <p>Indicates whether content identification was enabled for your transcription request.</p>
     pub fn content_identification_type(
         &self,
     ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
@@ -4506,12 +4582,12 @@ pub mod medical_transcription_job {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -4530,11 +4606,13 @@ pub mod medical_transcription_job {
             self
         }
         /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
         pub fn media(mut self, input: crate::model::Media) -> Self {
             self.media = Some(input);
             self
         }
         /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -4602,7 +4680,7 @@ pub mod medical_transcription_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -4616,7 +4694,7 @@ pub mod medical_transcription_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -4628,12 +4706,12 @@ pub mod medical_transcription_job {
             self.failure_reason = input;
             self
         }
-        /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
         pub fn settings(mut self, input: crate::model::MedicalTranscriptionSetting) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::MedicalTranscriptionSetting>,
@@ -4641,7 +4719,7 @@ pub mod medical_transcription_job {
             self.settings = input;
             self
         }
-        /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+        /// <p>Indicates whether content identification was enabled for your transcription request.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::MedicalContentIdentificationType,
@@ -4649,7 +4727,7 @@ pub mod medical_transcription_job {
             self.content_identification_type = Some(input);
             self
         }
-        /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
+        /// <p>Indicates whether content identification was enabled for your transcription request.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -4991,18 +5069,18 @@ impl AsRef<str> for MedicalContentIdentificationType {
     }
 }
 
-/// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.</p>
+/// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your medical transcription job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscriptionSetting {
-    /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
-    /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+    /// <p>You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     #[doc(hidden)]
     pub show_speaker_labels: std::option::Option<bool>,
-    /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+    /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     #[doc(hidden)]
     pub max_speaker_labels: std::option::Option<i32>,
@@ -5024,21 +5102,21 @@ pub struct MedicalTranscriptionSetting {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative transcriptions</a>.</p>
     #[doc(hidden)]
     pub max_alternatives: std::option::Option<i32>,
-    /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
+    /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl MedicalTranscriptionSetting {
-    /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
-    /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+    /// <p>You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn show_speaker_labels(&self) -> std::option::Option<bool> {
         self.show_speaker_labels
     }
-    /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+    /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+    /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     pub fn max_speaker_labels(&self) -> std::option::Option<i32> {
         self.max_speaker_labels
@@ -5064,8 +5142,8 @@ impl MedicalTranscriptionSetting {
     pub fn max_alternatives(&self) -> std::option::Option<i32> {
         self.max_alternatives
     }
-    /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary names are case sensitive.</p>
-    /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
+    /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
+    /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -5084,31 +5162,31 @@ pub mod medical_transcription_setting {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+        /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
         /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
-        /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+        /// <p>You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
         pub fn show_speaker_labels(mut self, input: bool) -> Self {
             self.show_speaker_labels = Some(input);
             self
         }
-        /// <p>Enables speaker identification (diarization) in your transcription output. Speaker identification labels the speech from individual speakers in your media file.</p>
+        /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
         /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
-        /// <p>You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers (diarization)</a>.</p>
+        /// <p>You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. Including both parameters returns a <code>BadRequestException</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
         pub fn set_show_speaker_labels(mut self, input: std::option::Option<bool>) -> Self {
             self.show_speaker_labels = input;
             self
         }
-        /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+        /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
         /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
         pub fn max_speaker_labels(mut self, input: i32) -> Self {
             self.max_speaker_labels = Some(input);
             self
         }
-        /// <p>Specify the maximum number of speakers you want to identify in your media.</p>
-        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers will be identified as a single speaker.</p>
+        /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
+        /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
         /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
         pub fn set_max_speaker_labels(mut self, input: std::option::Option<i32>) -> Self {
             self.max_speaker_labels = input;
@@ -5162,14 +5240,14 @@ pub mod medical_transcription_setting {
             self.max_alternatives = input;
             self
         }
-        /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
+        /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary names are case sensitive.</p>
-        /// <p>The language of the specified vocabulary must match the language code you specify in your transcription request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
+        /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
+        /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5202,19 +5280,13 @@ impl MedicalTranscriptionSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
-    /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
-    /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
-    /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
-    /// </note>
+    /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
     #[doc(hidden)]
     pub transcript_file_uri: std::option::Option<std::string::String>,
 }
 impl MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
-    /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
-    /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
-    /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
-    /// </note>
+    /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
     pub fn transcript_file_uri(&self) -> std::option::Option<&str> {
         self.transcript_file_uri.as_deref()
     }
@@ -5229,19 +5301,13 @@ pub mod medical_transcript {
     }
     impl Builder {
         /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
-        /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
-        /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
-        /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
-        /// </note>
+        /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
         pub fn transcript_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.transcript_file_uri = Some(input.into());
             self
         }
         /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
-        /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
-        /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your transcript.</p> <note>
-        /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
-        /// </note>
+        /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
         pub fn set_transcript_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5282,13 +5348,13 @@ pub struct CallAnalyticsJob {
     /// <p>If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     #[doc(hidden)]
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
     #[doc(hidden)]
     pub media_format: std::option::Option<crate::model::MediaFormat>,
-    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
     #[doc(hidden)]
     pub media: std::option::Option<crate::model::Media>,
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
@@ -5311,26 +5377,24 @@ pub struct CallAnalyticsJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
-    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
     #[doc(hidden)]
     pub identified_language_score: std::option::Option<f32>,
-    /// <p>Allows additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<crate::model::CallAnalyticsJobSettings>,
-    /// <p>Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+    /// <p>Indicates which speaker is on which channel.</p>
     #[doc(hidden)]
     pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
 }
@@ -5351,7 +5415,7 @@ impl CallAnalyticsJob {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -5359,7 +5423,7 @@ impl CallAnalyticsJob {
     pub fn media_format(&self) -> std::option::Option<&crate::model::MediaFormat> {
         self.media_format.as_ref()
     }
-    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
     pub fn media(&self) -> std::option::Option<&crate::model::Media> {
         self.media.as_ref()
     }
@@ -5387,7 +5451,7 @@ impl CallAnalyticsJob {
     /// <ul>
     /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
     /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
     /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -5395,9 +5459,7 @@ impl CallAnalyticsJob {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
-    /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -5406,11 +5468,11 @@ impl CallAnalyticsJob {
     pub fn identified_language_score(&self) -> std::option::Option<f32> {
         self.identified_language_score
     }
-    /// <p>Allows additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::CallAnalyticsJobSettings> {
         self.settings.as_ref()
     }
-    /// <p>Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+    /// <p>Indicates which speaker is on which channel.</p>
     pub fn channel_definitions(&self) -> std::option::Option<&[crate::model::ChannelDefinition]> {
         self.channel_definitions.as_deref()
     }
@@ -5486,12 +5548,12 @@ pub mod call_analytics_job {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+        /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -5509,12 +5571,12 @@ pub mod call_analytics_job {
             self.media_format = input;
             self
         }
-        /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
         pub fn media(mut self, input: crate::model::Media) -> Self {
             self.media = Some(input);
             self
         }
-        /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+        /// <p>Provides the Amazon S3 location of the media file you used in your Call Analytics request.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -5582,7 +5644,7 @@ pub mod call_analytics_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -5596,7 +5658,7 @@ pub mod call_analytics_job {
         /// <ul>
         /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
         /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
-        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 Hertz.</p> </li>
+        /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000 and 48,000 hertz.</p> </li>
         /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
         /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
         /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
@@ -5608,16 +5670,12 @@ pub mod call_analytics_job {
             self.failure_reason = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
-        /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
-        /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5637,12 +5695,12 @@ pub mod call_analytics_job {
             self.identified_language_score = input;
             self
         }
-        /// <p>Allows additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
         pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Allows additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
+        /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
@@ -5654,14 +5712,14 @@ pub mod call_analytics_job {
         ///
         /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
         ///
-        /// <p>Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+        /// <p>Indicates which speaker is on which channel.</p>
         pub fn channel_definitions(mut self, input: crate::model::ChannelDefinition) -> Self {
             let mut v = self.channel_definitions.unwrap_or_default();
             v.push(input);
             self.channel_definitions = Some(v);
             self
         }
-        /// <p>Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+        /// <p>Indicates which speaker is on which channel.</p>
         pub fn set_channel_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
@@ -5698,7 +5756,7 @@ impl CallAnalyticsJob {
     }
 }
 
-/// <p>Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+/// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelDefinition {
@@ -5768,56 +5826,57 @@ impl ChannelDefinition {
     }
 }
 
-/// <p>Provides additional optional settings for your request, including content redaction, automatic language identification; allows you to apply custom language models, vocabulary filters, and custom vocabularies.</p>
+/// <p>Provides additional optional settings for your request, including content redaction, automatic language identification; allows you to apply custom language models, custom vocabulary filters, and custom vocabularies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CallAnalyticsJobSettings {
-    /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary names are case sensitive.</p>
+    /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Vocabulary filter names are case sensitive.</p>
+    /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+    /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     #[doc(hidden)]
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
-    /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     #[doc(hidden)]
     pub language_model_name: std::option::Option<std::string::String>,
-    /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
     #[doc(hidden)]
     pub content_redaction: std::option::Option<crate::model::ContentRedaction>,
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     #[doc(hidden)]
     pub language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
-    /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-    /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-    /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+    /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+    /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+    /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
+    /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
     #[doc(hidden)]
     pub language_id_settings: std::option::Option<
         std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     >,
 }
 impl CallAnalyticsJobSettings {
-    /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary names are case sensitive.</p>
+    /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Vocabulary filter names are case sensitive.</p>
+    /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+    /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -5826,26 +5885,27 @@ impl CallAnalyticsJobSettings {
     ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
-    /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that language model names are case sensitive.</p>
-    /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+    /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
+    /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
-    /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
     pub fn content_redaction(&self) -> std::option::Option<&crate::model::ContentRedaction> {
         self.content_redaction.as_ref()
     }
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn language_options(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
         self.language_options.as_deref()
     }
-    /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-    /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-    /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-    /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-    /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+    /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+    /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+    /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+    /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
+    /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
     pub fn language_id_settings(
         &self,
     ) -> std::option::Option<
@@ -5872,12 +5932,12 @@ pub mod call_analytics_job_settings {
         >,
     }
     impl Builder {
-        /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary names are case sensitive.</p>
+        /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Vocabulary names are case sensitive.</p>
+        /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5885,13 +5945,13 @@ pub mod call_analytics_job_settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Vocabulary filter names are case sensitive.</p>
+        /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
         /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Vocabulary filter names are case sensitive.</p>
+        /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
         /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
@@ -5900,7 +5960,7 @@ pub mod call_analytics_job_settings {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+        /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
         /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
         /// <p>To delete words, choose <code>remove</code>.</p>
         /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -5911,7 +5971,7 @@ pub mod call_analytics_job_settings {
             self.vocabulary_filter_method = Some(input);
             self
         }
-        /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
+        /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
         /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
         /// <p>To delete words, choose <code>remove</code>.</p>
         /// <p>To flag words without changing them, choose <code>tag</code>.</p>
@@ -5922,14 +5982,14 @@ pub mod call_analytics_job_settings {
             self.vocabulary_filter_method = input;
             self
         }
-        /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that language model names are case sensitive.</p>
-        /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
+        /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
+        /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
         pub fn set_language_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5937,12 +5997,12 @@ pub mod call_analytics_job_settings {
             self.language_model_name = input;
             self
         }
-        /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+        /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
         pub fn content_redaction(mut self, input: crate::model::ContentRedaction) -> Self {
             self.content_redaction = Some(input);
             self
         }
-        /// <p>Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+        /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
         pub fn set_content_redaction(
             mut self,
             input: std::option::Option<crate::model::ContentRedaction>,
@@ -5954,18 +6014,20 @@ pub mod call_analytics_job_settings {
         ///
         /// To override the contents of this collection use [`set_language_options`](Self::set_language_options).
         ///
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
         /// <p>Including language options can improve the accuracy of language identification.</p>
         /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn language_options(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.language_options.unwrap_or_default();
             v.push(input);
             self.language_options = Some(v);
             self
         }
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
+        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
         /// <p>Including language options can improve the accuracy of language identification.</p>
         /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
         pub fn set_language_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
@@ -5977,11 +6039,11 @@ pub mod call_analytics_job_settings {
         ///
         /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
         ///
-        /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-        /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-        /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+        /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+        /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+        /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+        /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
+        /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
         pub fn language_id_settings(
             mut self,
             k: crate::model::LanguageCode,
@@ -5992,11 +6054,11 @@ pub mod call_analytics_job_settings {
             self.language_id_settings = Some(hash_map);
             self
         }
-        /// <p>If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-        /// <p>You can specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.</p>
-        /// <p>To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language identification.</p>
-        /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter.</p>
-        /// <p>If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
+        /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+        /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
+        /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
+        /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
+        /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
         pub fn set_language_id_settings(
             mut self,
             input: std::option::Option<
@@ -6132,19 +6194,19 @@ impl AsRef<str> for CallAnalyticsJobStatus {
     }
 }
 
-/// <p>Provides information about a vocabulary filter, including the language of the filter, when it was last modified, and its name.</p>
+/// <p>Provides information about a custom vocabulary filter, including the language of the filter, when it was last modified, and its name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VocabularyFilterInfo {
     /// <p>A unique name, chosen by you, for your custom vocabulary filter. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter must contain terms in only one language.</p>
-    /// <p>A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
+    /// <p>The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.</p>
+    /// <p>A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The date and time the specified vocabulary filter was last modified.</p>
+    /// <p>The date and time the specified custom vocabulary filter was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6154,13 +6216,13 @@ impl VocabularyFilterInfo {
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter must contain terms in only one language.</p>
-    /// <p>A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
+    /// <p>The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.</p>
+    /// <p>A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The date and time the specified vocabulary filter was last modified.</p>
+    /// <p>The date and time the specified custom vocabulary filter was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
@@ -6190,15 +6252,15 @@ pub mod vocabulary_filter_info {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter must contain terms in only one language.</p>
-        /// <p>A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
+        /// <p>The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.</p>
+        /// <p>A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
         /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter must contain terms in only one language.</p>
-        /// <p>A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
+        /// <p>The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.</p>
+        /// <p>A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
         /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
         pub fn set_language_code(
             mut self,
@@ -6207,13 +6269,13 @@ pub mod vocabulary_filter_info {
             self.language_code = input;
             self
         }
-        /// <p>The date and time the specified vocabulary filter was last modified.</p>
+        /// <p>The date and time the specified custom vocabulary filter was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The date and time the specified vocabulary filter was last modified.</p>
+        /// <p>The date and time the specified custom vocabulary filter was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn set_last_modified_time(
             mut self,
@@ -6239,22 +6301,22 @@ impl VocabularyFilterInfo {
     }
 }
 
-/// <p>Provides information about a custom vocabulary, including the language of the vocabulary, when it was last modified, its name, and the processing state.</p>
+/// <p>Provides information about a custom vocabulary, including the language of the custom vocabulary, when it was last modified, its name, and the processing state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VocabularyInfo {
     /// <p>A unique name, chosen by you, for your custom vocabulary. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.</p>
-    /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
+    /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
+    /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The date and time the specified vocabulary was last modified.</p>
+    /// <p>The date and time the specified custom vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
@@ -6263,17 +6325,17 @@ impl VocabularyInfo {
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.</p>
-    /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
+    /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
+    /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The date and time the specified vocabulary was last modified.</p>
+    /// <p>The date and time the specified custom vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
         self.vocabulary_state.as_ref()
     }
@@ -6303,14 +6365,14 @@ pub mod vocabulary_info {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.</p>
-        /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
+        /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
+        /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.</p>
-        /// <p>A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that contain English audio.</p>
+        /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
+        /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6318,13 +6380,13 @@ pub mod vocabulary_info {
             self.language_code = input;
             self
         }
-        /// <p>The date and time the specified vocabulary was last modified.</p>
+        /// <p>The date and time the specified custom vocabulary was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The date and time the specified vocabulary was last modified.</p>
+        /// <p>The date and time the specified custom vocabulary was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn set_last_modified_time(
             mut self,
@@ -6333,12 +6395,12 @@ pub mod vocabulary_info {
             self.last_modified_time = input;
             self
         }
-        /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+        /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
         }
-        /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+        /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
         pub fn set_vocabulary_state(
             mut self,
             input: std::option::Option<crate::model::VocabularyState>,
@@ -7149,11 +7211,11 @@ pub struct LanguageModel {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time the specified language model was last modified.</p>
+    /// <p>The date and time the specified custom language model was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The language code used to create your custom language model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
+    /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
@@ -7164,7 +7226,7 @@ pub struct LanguageModel {
     #[doc(hidden)]
     pub model_status: std::option::Option<crate::model::ModelStatus>,
     /// <p>Shows if a more current base model is available for use with the specified custom language model.</p>
-    /// <p>If <code>false</code>, your language model is using the most up-to-date base model.</p>
+    /// <p>If <code>false</code>, your custom language model is using the most up-to-date base model.</p>
     /// <p>If <code>true</code>, there is a newer base model available than the one your language model is using.</p>
     /// <p>Note that to update a base model, you must recreate the custom language model using the new base model. Base model upgrades for existing custom language models are not supported.</p>
     #[doc(hidden)]
@@ -7187,12 +7249,12 @@ impl LanguageModel {
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The date and time the specified language model was last modified.</p>
+    /// <p>The date and time the specified custom language model was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The language code used to create your custom language model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
+    /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::ClmLanguageCode> {
         self.language_code.as_ref()
@@ -7206,7 +7268,7 @@ impl LanguageModel {
         self.model_status.as_ref()
     }
     /// <p>Shows if a more current base model is available for use with the specified custom language model.</p>
-    /// <p>If <code>false</code>, your language model is using the most up-to-date base model.</p>
+    /// <p>If <code>false</code>, your custom language model is using the most up-to-date base model.</p>
     /// <p>If <code>true</code>, there is a newer base model available than the one your language model is using.</p>
     /// <p>Note that to update a base model, you must recreate the custom language model using the new base model. Base model upgrades for existing custom language models are not supported.</p>
     pub fn upgrade_availability(&self) -> std::option::Option<bool> {
@@ -7265,13 +7327,13 @@ pub mod language_model {
             self.create_time = input;
             self
         }
-        /// <p>The date and time the specified language model was last modified.</p>
+        /// <p>The date and time the specified custom language model was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>The date and time the specified language model was last modified.</p>
+        /// <p>The date and time the specified custom language model was last modified.</p>
         /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
         pub fn set_last_modified_time(
             mut self,
@@ -7280,13 +7342,13 @@ pub mod language_model {
             self.last_modified_time = input;
             self
         }
-        /// <p>The language code used to create your custom language model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
+        /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
         /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::ClmLanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code used to create your custom language model. Each language model must contain terms in only one language, and the language you select for your model must match the language of your training and tuning data.</p>
+        /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
         /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
@@ -7322,7 +7384,7 @@ pub mod language_model {
             self
         }
         /// <p>Shows if a more current base model is available for use with the specified custom language model.</p>
-        /// <p>If <code>false</code>, your language model is using the most up-to-date base model.</p>
+        /// <p>If <code>false</code>, your custom language model is using the most up-to-date base model.</p>
         /// <p>If <code>true</code>, there is a newer base model available than the one your language model is using.</p>
         /// <p>Note that to update a base model, you must recreate the custom language model using the new base model. Base model upgrades for existing custom language models are not supported.</p>
         pub fn upgrade_availability(mut self, input: bool) -> Self {
@@ -7330,7 +7392,7 @@ pub mod language_model {
             self
         }
         /// <p>Shows if a more current base model is available for use with the specified custom language model.</p>
-        /// <p>If <code>false</code>, your language model is using the most up-to-date base model.</p>
+        /// <p>If <code>false</code>, your custom language model is using the most up-to-date base model.</p>
         /// <p>If <code>true</code>, there is a newer base model available than the one your language model is using.</p>
         /// <p>Note that to update a base model, you must recreate the custom language model using the new base model. Base model upgrades for existing custom language models are not supported.</p>
         pub fn set_upgrade_availability(mut self, input: std::option::Option<bool>) -> Self {
@@ -7399,7 +7461,7 @@ pub struct InputDataConfig {
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
     #[doc(hidden)]
     pub tuning_data_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     #[doc(hidden)]
@@ -7416,7 +7478,7 @@ impl InputDataConfig {
     pub fn tuning_data_s3_uri(&self) -> std::option::Option<&str> {
         self.tuning_data_s3_uri.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
@@ -7461,14 +7523,14 @@ pub mod input_data_config {
             self.tuning_data_s3_uri = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
         pub fn set_data_access_role_arn(
@@ -7692,11 +7754,13 @@ impl AsRef<str> for BaseModelName {
 /// ```text
 /// # let clmlanguagecode = unimplemented!();
 /// match clmlanguagecode {
+///     ClmLanguageCode::DeDe => { /* ... */ },
 ///     ClmLanguageCode::EnAu => { /* ... */ },
 ///     ClmLanguageCode::EnGb => { /* ... */ },
 ///     ClmLanguageCode::EnUs => { /* ... */ },
 ///     ClmLanguageCode::EsUs => { /* ... */ },
 ///     ClmLanguageCode::HiIn => { /* ... */ },
+///     ClmLanguageCode::JaJp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -7731,6 +7795,8 @@ impl AsRef<str> for BaseModelName {
 )]
 pub enum ClmLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
+    DeDe,
+    #[allow(missing_docs)] // documentation missing in model
     EnAu,
     #[allow(missing_docs)] // documentation missing in model
     EnGb,
@@ -7740,17 +7806,21 @@ pub enum ClmLanguageCode {
     EsUs,
     #[allow(missing_docs)] // documentation missing in model
     HiIn,
+    #[allow(missing_docs)] // documentation missing in model
+    JaJp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClmLanguageCode {
     fn from(s: &str) -> Self {
         match s {
+            "de-DE" => ClmLanguageCode::DeDe,
             "en-AU" => ClmLanguageCode::EnAu,
             "en-GB" => ClmLanguageCode::EnGb,
             "en-US" => ClmLanguageCode::EnUs,
             "es-US" => ClmLanguageCode::EsUs,
             "hi-IN" => ClmLanguageCode::HiIn,
+            "ja-JP" => ClmLanguageCode::JaJp,
             other => ClmLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -7766,17 +7836,21 @@ impl ClmLanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ClmLanguageCode::DeDe => "de-DE",
             ClmLanguageCode::EnAu => "en-AU",
             ClmLanguageCode::EnGb => "en-GB",
             ClmLanguageCode::EnUs => "en-US",
             ClmLanguageCode::EsUs => "es-US",
             ClmLanguageCode::HiIn => "hi-IN",
+            ClmLanguageCode::JaJp => "ja-JP",
             ClmLanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["en-AU", "en-GB", "en-US", "es-US", "hi-IN"]
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "hi-IN", "ja-JP",
+        ]
     }
 }
 impl AsRef<str> for ClmLanguageCode {

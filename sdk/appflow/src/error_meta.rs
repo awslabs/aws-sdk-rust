@@ -777,6 +777,38 @@ impl From<crate::error::UpdateConnectorProfileError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateConnectorRegistrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateConnectorRegistrationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateConnectorRegistrationError> for Error {
+    fn from(err: crate::error::UpdateConnectorRegistrationError) -> Self {
+        match err.kind {
+            crate::error::UpdateConnectorRegistrationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ConnectorAuthenticationException(inner) => Error::ConnectorAuthenticationException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ConnectorServerException(inner) => Error::ConnectorServerException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateConnectorRegistrationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

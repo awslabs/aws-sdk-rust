@@ -37,26 +37,14 @@ pub fn serialize_structure_crate_input_create_chat_token_input(
     Ok(())
 }
 
-pub fn serialize_structure_crate_input_create_room_input(
+pub fn serialize_structure_crate_input_create_logging_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::CreateRoomInput,
+    input: &crate::input::CreateLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.maximum_message_length != 0 {
-        object.key("maximumMessageLength").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_message_length).into()),
-        );
-    }
-    if input.maximum_message_rate_per_second != 0 {
-        object.key("maximumMessageRatePerSecond").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_message_rate_per_second).into()),
-        );
-    }
-    if let Some(var_10) = &input.message_review_handler {
+    if let Some(var_10) = &input.destination_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("messageReviewHandler").start_object();
-        crate::json_ser::serialize_structure_crate_model_message_review_handler(
+        let mut object_11 = object.key("destinationConfiguration").start_object();
+        crate::json_ser::serialize_union_crate_model_destination_configuration(
             &mut object_11,
             var_10,
         )?;
@@ -78,128 +66,18 @@ pub fn serialize_structure_crate_input_create_room_input(
     Ok(())
 }
 
-pub fn serialize_structure_crate_input_delete_message_input(
+pub fn serialize_structure_crate_input_create_room_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DeleteMessageInput,
+    input: &crate::input::CreateRoomInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_17) = &input.id {
-        object.key("id").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.reason {
-        object.key("reason").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.room_identifier {
-        object.key("roomIdentifier").string(var_19.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_delete_room_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DeleteRoomInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_20) = &input.identifier {
-        object.key("identifier").string(var_20.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_disconnect_user_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DisconnectUserInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_21) = &input.reason {
-        object.key("reason").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.room_identifier {
-        object.key("roomIdentifier").string(var_22.as_str());
-    }
-    if let Some(var_23) = &input.user_id {
-        object.key("userId").string(var_23.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_get_room_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::GetRoomInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_24) = &input.identifier {
-        object.key("identifier").string(var_24.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_list_rooms_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::ListRoomsInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_results != 0 {
-        object.key("maxResults").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
-        );
-    }
-    if let Some(var_25) = &input.message_review_handler_uri {
-        object
-            .key("messageReviewHandlerUri")
-            .string(var_25.as_str());
-    }
-    if let Some(var_26) = &input.name {
-        object.key("name").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.next_token {
-        object.key("nextToken").string(var_27.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_send_event_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::SendEventInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_28) = &input.attributes {
-        #[allow(unused_mut)]
-        let mut object_29 = object.key("attributes").start_object();
-        for (key_30, value_31) in var_28 {
+    if let Some(var_17) = &input.logging_configuration_identifiers {
+        let mut array_18 = object.key("loggingConfigurationIdentifiers").start_array();
+        for item_19 in var_17 {
             {
-                object_29.key(key_30.as_str()).string(value_31.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        object_29.finish();
-    }
-    if let Some(var_32) = &input.event_name {
-        object.key("eventName").string(var_32.as_str());
-    }
-    if let Some(var_33) = &input.room_identifier {
-        object.key("roomIdentifier").string(var_33.as_str());
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_tag_resource_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_34) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_35 = object.key("tags").start_object();
-        for (key_36, value_37) in var_34 {
-            {
-                object_35.key(key_36.as_str()).string(value_37.as_str());
-            }
-        }
-        object_35.finish();
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_update_room_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::UpdateRoomInput,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_38) = &input.identifier {
-        object.key("identifier").string(var_38.as_str());
+        array_18.finish();
     }
     if input.maximum_message_length != 0 {
         object.key("maximumMessageLength").number(
@@ -213,17 +91,289 @@ pub fn serialize_structure_crate_input_update_room_input(
             aws_smithy_types::Number::NegInt((input.maximum_message_rate_per_second).into()),
         );
     }
-    if let Some(var_39) = &input.message_review_handler {
+    if let Some(var_20) = &input.message_review_handler {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("messageReviewHandler").start_object();
+        let mut object_21 = object.key("messageReviewHandler").start_object();
         crate::json_ser::serialize_structure_crate_model_message_review_handler(
-            &mut object_40,
-            var_39,
+            &mut object_21,
+            var_20,
         )?;
-        object_40.finish();
+        object_21.finish();
     }
-    if let Some(var_41) = &input.name {
-        object.key("name").string(var_41.as_str());
+    if let Some(var_22) = &input.name {
+        object.key("name").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
+            {
+                object_24.key(key_25.as_str()).string(value_26.as_str());
+            }
+        }
+        object_24.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_delete_logging_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DeleteLoggingConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_27) = &input.identifier {
+        object.key("identifier").string(var_27.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_delete_message_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DeleteMessageInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_28) = &input.id {
+        object.key("id").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.reason {
+        object.key("reason").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.room_identifier {
+        object.key("roomIdentifier").string(var_30.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_delete_room_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DeleteRoomInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_31) = &input.identifier {
+        object.key("identifier").string(var_31.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_disconnect_user_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DisconnectUserInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_32) = &input.reason {
+        object.key("reason").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.room_identifier {
+        object.key("roomIdentifier").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.user_id {
+        object.key("userId").string(var_34.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_get_logging_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::GetLoggingConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_35) = &input.identifier {
+        object.key("identifier").string(var_35.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_get_room_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::GetRoomInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_36) = &input.identifier {
+        object.key("identifier").string(var_36.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_list_logging_configurations_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListLoggingConfigurationsInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if input.max_results != 0 {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_results).into()),
+        );
+    }
+    if let Some(var_37) = &input.next_token {
+        object.key("nextToken").string(var_37.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_list_rooms_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListRoomsInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_38) = &input.logging_configuration_identifier {
+        object
+            .key("loggingConfigurationIdentifier")
+            .string(var_38.as_str());
+    }
+    if input.max_results != 0 {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_results).into()),
+        );
+    }
+    if let Some(var_39) = &input.message_review_handler_uri {
+        object
+            .key("messageReviewHandlerUri")
+            .string(var_39.as_str());
+    }
+    if let Some(var_40) = &input.name {
+        object.key("name").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.next_token {
+        object.key("nextToken").string(var_41.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_send_event_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::SendEventInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_42) = &input.attributes {
+        #[allow(unused_mut)]
+        let mut object_43 = object.key("attributes").start_object();
+        for (key_44, value_45) in var_42 {
+            {
+                object_43.key(key_44.as_str()).string(value_45.as_str());
+            }
+        }
+        object_43.finish();
+    }
+    if let Some(var_46) = &input.event_name {
+        object.key("eventName").string(var_46.as_str());
+    }
+    if let Some(var_47) = &input.room_identifier {
+        object.key("roomIdentifier").string(var_47.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_tag_resource_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::TagResourceInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_48) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_49 = object.key("tags").start_object();
+        for (key_50, value_51) in var_48 {
+            {
+                object_49.key(key_50.as_str()).string(value_51.as_str());
+            }
+        }
+        object_49.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_update_logging_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateLoggingConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_52) = &input.destination_configuration {
+        #[allow(unused_mut)]
+        let mut object_53 = object.key("destinationConfiguration").start_object();
+        crate::json_ser::serialize_union_crate_model_destination_configuration(
+            &mut object_53,
+            var_52,
+        )?;
+        object_53.finish();
+    }
+    if let Some(var_54) = &input.identifier {
+        object.key("identifier").string(var_54.as_str());
+    }
+    if let Some(var_55) = &input.name {
+        object.key("name").string(var_55.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_update_room_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateRoomInput,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_56) = &input.identifier {
+        object.key("identifier").string(var_56.as_str());
+    }
+    if let Some(var_57) = &input.logging_configuration_identifiers {
+        let mut array_58 = object.key("loggingConfigurationIdentifiers").start_array();
+        for item_59 in var_57 {
+            {
+                array_58.value().string(item_59.as_str());
+            }
+        }
+        array_58.finish();
+    }
+    if input.maximum_message_length != 0 {
+        object.key("maximumMessageLength").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.maximum_message_length).into()),
+        );
+    }
+    if input.maximum_message_rate_per_second != 0 {
+        object.key("maximumMessageRatePerSecond").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.maximum_message_rate_per_second).into()),
+        );
+    }
+    if let Some(var_60) = &input.message_review_handler {
+        #[allow(unused_mut)]
+        let mut object_61 = object.key("messageReviewHandler").start_object();
+        crate::json_ser::serialize_structure_crate_model_message_review_handler(
+            &mut object_61,
+            var_60,
+        )?;
+        object_61.finish();
+    }
+    if let Some(var_62) = &input.name {
+        object.key("name").string(var_62.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_union_crate_model_destination_configuration(
+    object_11: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DestinationConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    match input {
+        crate::model::DestinationConfiguration::S3(inner) => {
+            #[allow(unused_mut)]
+            let mut object_63 = object_11.key("s3").start_object();
+            crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
+                &mut object_63,
+                inner,
+            )?;
+            object_63.finish();
+        }
+        crate::model::DestinationConfiguration::CloudWatchLogs(inner) => {
+            #[allow(unused_mut)]
+            let mut object_64 = object_11.key("cloudWatchLogs").start_object();
+            crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_destination_configuration(&mut object_64, inner)?;
+            object_64.finish();
+        }
+        crate::model::DestinationConfiguration::Firehose(inner) => {
+            #[allow(unused_mut)]
+            let mut object_65 = object_11.key("firehose").start_object();
+            crate::json_ser::serialize_structure_crate_model_firehose_destination_configuration(
+                &mut object_65,
+                inner,
+            )?;
+            object_65.finish();
+        }
+        crate::model::DestinationConfiguration::Unknown => {
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "DestinationConfiguration",
+                ),
+            )
+        }
     }
     Ok(())
 }
@@ -232,11 +382,41 @@ pub fn serialize_structure_crate_model_message_review_handler(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MessageReviewHandler,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_42) = &input.uri {
-        object.key("uri").string(var_42.as_str());
+    if let Some(var_66) = &input.uri {
+        object.key("uri").string(var_66.as_str());
     }
-    if let Some(var_43) = &input.fallback_result {
-        object.key("fallbackResult").string(var_43.as_str());
+    if let Some(var_67) = &input.fallback_result {
+        object.key("fallbackResult").string(var_67.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_s3_destination_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::S3DestinationConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_68) = &input.bucket_name {
+        object.key("bucketName").string(var_68.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_cloud_watch_logs_destination_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::CloudWatchLogsDestinationConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_69) = &input.log_group_name {
+        object.key("logGroupName").string(var_69.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_firehose_destination_configuration(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::FirehoseDestinationConfiguration,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_70) = &input.delivery_stream_name {
+        object.key("deliveryStreamName").string(var_70.as_str());
     }
     Ok(())
 }

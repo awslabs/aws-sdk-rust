@@ -201,6 +201,66 @@ impl ServiceUnavailableException {
     }
 }
 
+/// <p>The specified document version is not in the INITIALIZED state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ProhibitedStateException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ProhibitedStateException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ProhibitedStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ProhibitedStateException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ProhibitedStateException {}
+/// See [`ProhibitedStateException`](crate::error::ProhibitedStateException).
+pub mod prohibited_state_exception {
+
+    /// A builder for [`ProhibitedStateException`](crate::error::ProhibitedStateException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProhibitedStateException`](crate::error::ProhibitedStateException).
+        pub fn build(self) -> crate::error::ProhibitedStateException {
+            crate::error::ProhibitedStateException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ProhibitedStateException {
+    /// Creates a new builder-style object to manufacture [`ProhibitedStateException`](crate::error::ProhibitedStateException).
+    pub fn builder() -> crate::error::prohibited_state_exception::Builder {
+        crate::error::prohibited_state_exception::Builder::default()
+    }
+}
+
 /// <p>The pagination marker or limit fields are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -218,9 +278,9 @@ impl InvalidArgumentException {
 impl std::fmt::Display for InvalidArgumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgumentException")?;
-        if let Some(inner_4) = &self.message {
+        if let Some(inner_5) = &self.message {
             {
-                write!(f, ": {}", inner_4)?;
+                write!(f, ": {}", inner_5)?;
             }
         }
         Ok(())
@@ -278,9 +338,9 @@ impl IllegalUserStateException {
 impl std::fmt::Display for IllegalUserStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalUserStateException")?;
-        if let Some(inner_5) = &self.message {
+        if let Some(inner_6) = &self.message {
             {
-                write!(f, ": {}", inner_5)?;
+                write!(f, ": {}", inner_6)?;
             }
         }
         Ok(())
@@ -338,9 +398,9 @@ impl FailedDependencyException {
 impl std::fmt::Display for FailedDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FailedDependencyException")?;
-        if let Some(inner_6) = &self.message {
+        if let Some(inner_7) = &self.message {
             {
-                write!(f, ": {}", inner_6)?;
+                write!(f, ": {}", inner_7)?;
             }
         }
         Ok(())
@@ -388,12 +448,12 @@ pub struct EntityNotExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The IDs of the non-existent resources.</p>
     #[doc(hidden)]
     pub entity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EntityNotExistsException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The IDs of the non-existent resources.</p>
     pub fn entity_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.entity_ids.as_deref()
     }
@@ -407,9 +467,9 @@ impl EntityNotExistsException {
 impl std::fmt::Display for EntityNotExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EntityNotExistsException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -440,13 +500,14 @@ pub mod entity_not_exists_exception {
         ///
         /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
         ///
+        /// <p>The IDs of the non-existent resources.</p>
         pub fn entity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_ids.unwrap_or_default();
             v.push(input.into());
             self.entity_ids = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The IDs of the non-existent resources.</p>
         pub fn set_entity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -496,9 +557,9 @@ impl DeactivatingLastSystemUserException {
 impl std::fmt::Display for DeactivatingLastSystemUserException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeactivatingLastSystemUserException")?;
-        if let Some(inner_8) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_8)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -551,67 +612,7 @@ impl DeactivatingLastSystemUserException {
     }
 }
 
-/// <p>The specified document version is not in the INITIALIZED state.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProhibitedStateException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl ProhibitedStateException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ProhibitedStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ProhibitedStateException")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ProhibitedStateException {}
-/// See [`ProhibitedStateException`](crate::error::ProhibitedStateException).
-pub mod prohibited_state_exception {
-
-    /// A builder for [`ProhibitedStateException`](crate::error::ProhibitedStateException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ProhibitedStateException`](crate::error::ProhibitedStateException).
-        pub fn build(self) -> crate::error::ProhibitedStateException {
-            crate::error::ProhibitedStateException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ProhibitedStateException {
-    /// Creates a new builder-style object to manufacture [`ProhibitedStateException`](crate::error::ProhibitedStateException).
-    pub fn builder() -> crate::error::prohibited_state_exception::Builder {
-        crate::error::prohibited_state_exception::Builder::default()
-    }
-}
-
-/// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
+/// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
@@ -1091,66 +1092,6 @@ impl ResourceAlreadyCheckedOutException {
     }
 }
 
-/// <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DraftUploadOutOfSyncException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl DraftUploadOutOfSyncException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DraftUploadOutOfSyncException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DraftUploadOutOfSyncException")?;
-        if let Some(inner_18) = &self.message {
-            {
-                write!(f, ": {}", inner_18)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DraftUploadOutOfSyncException {}
-/// See [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
-pub mod draft_upload_out_of_sync_exception {
-
-    /// A builder for [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
-        pub fn build(self) -> crate::error::DraftUploadOutOfSyncException {
-            crate::error::DraftUploadOutOfSyncException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl DraftUploadOutOfSyncException {
-    /// Creates a new builder-style object to manufacture [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
-    pub fn builder() -> crate::error::draft_upload_out_of_sync_exception::Builder {
-        crate::error::draft_upload_out_of_sync_exception::Builder::default()
-    }
-}
-
 /// <p>The password is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1168,9 +1109,9 @@ impl InvalidPasswordException {
 impl std::fmt::Display for InvalidPasswordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPasswordException")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1208,6 +1149,66 @@ impl InvalidPasswordException {
     /// Creates a new builder-style object to manufacture [`InvalidPasswordException`](crate::error::InvalidPasswordException).
     pub fn builder() -> crate::error::invalid_password_exception::Builder {
         crate::error::invalid_password_exception::Builder::default()
+    }
+}
+
+/// <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DraftUploadOutOfSyncException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl DraftUploadOutOfSyncException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DraftUploadOutOfSyncException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DraftUploadOutOfSyncException")?;
+        if let Some(inner_19) = &self.message {
+            {
+                write!(f, ": {}", inner_19)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DraftUploadOutOfSyncException {}
+/// See [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
+pub mod draft_upload_out_of_sync_exception {
+
+    /// A builder for [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
+        pub fn build(self) -> crate::error::DraftUploadOutOfSyncException {
+            crate::error::DraftUploadOutOfSyncException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DraftUploadOutOfSyncException {
+    /// Creates a new builder-style object to manufacture [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException).
+    pub fn builder() -> crate::error::draft_upload_out_of_sync_exception::Builder {
+        crate::error::draft_upload_out_of_sync_exception::Builder::default()
     }
 }
 
@@ -1594,6 +1595,8 @@ impl aws_smithy_http::result::CreateUnhandledError for AbortDocumentVersionUploa
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AbortDocumentVersionUploadErrorKind {
+    /// <p>The resource hierarchy is changing.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
@@ -1619,6 +1622,9 @@ pub enum AbortDocumentVersionUploadErrorKind {
 impl std::fmt::Display for AbortDocumentVersionUploadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AbortDocumentVersionUploadErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
             AbortDocumentVersionUploadErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
             AbortDocumentVersionUploadErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
             AbortDocumentVersionUploadErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
@@ -1689,6 +1695,13 @@ impl AbortDocumentVersionUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AbortDocumentVersionUploadErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
@@ -1735,6 +1748,9 @@ impl AbortDocumentVersionUploadError {
 impl std::error::Error for AbortDocumentVersionUploadError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AbortDocumentVersionUploadErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
             AbortDocumentVersionUploadErrorKind::EntityNotExistsException(_inner) => Some(_inner),
             AbortDocumentVersionUploadErrorKind::FailedDependencyException(_inner) => Some(_inner),
             AbortDocumentVersionUploadErrorKind::ProhibitedStateException(_inner) => Some(_inner),
@@ -1927,6 +1943,8 @@ impl aws_smithy_http::result::CreateUnhandledError for AddResourcePermissionsErr
 pub enum AddResourcePermissionsErrorKind {
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The specified document version is not in the INITIALIZED state.</p>
+    ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The operation is not permitted.</p>
@@ -1947,6 +1965,7 @@ impl std::fmt::Display for AddResourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             AddResourcePermissionsErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            AddResourcePermissionsErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             AddResourcePermissionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             AddResourcePermissionsErrorKind::UnauthorizedOperationException(_inner) => {
                 _inner.fmt(f)
@@ -2019,6 +2038,13 @@ impl AddResourcePermissionsError {
             AddResourcePermissionsErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::ProhibitedStateException`.
+    pub fn is_prohibited_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddResourcePermissionsErrorKind::ProhibitedStateException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -2045,6 +2071,7 @@ impl std::error::Error for AddResourcePermissionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             AddResourcePermissionsErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            AddResourcePermissionsErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             AddResourcePermissionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AddResourcePermissionsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
@@ -2447,6 +2474,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFolderErrorKind {
+    /// <p>The resource hierarchy is changing.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>Another operation is in progress on the resource that conflicts with the current operation.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>The resource already exists.</p>
@@ -2455,7 +2484,7 @@ pub enum CreateFolderErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
-    /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -2478,6 +2507,7 @@ pub enum CreateFolderErrorKind {
 impl std::fmt::Display for CreateFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateFolderErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateFolderErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
             CreateFolderErrorKind::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateFolderErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
@@ -2540,6 +2570,13 @@ impl CreateFolderError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFolderErrorKind::ConcurrentModificationException(_)
+        )
     }
     /// Returns `true` if the error kind is `CreateFolderErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
@@ -2605,6 +2642,7 @@ impl CreateFolderError {
 impl std::error::Error for CreateFolderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateFolderErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateFolderErrorKind::ConflictingOperationException(_inner) => Some(_inner),
             CreateFolderErrorKind::EntityAlreadyExistsException(_inner) => Some(_inner),
             CreateFolderErrorKind::EntityNotExistsException(_inner) => Some(_inner),
@@ -2802,6 +2840,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateNotificationSubscri
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNotificationSubscriptionErrorKind {
+    /// <p>The pagination marker or limit fields are not valid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
@@ -2821,6 +2861,9 @@ pub enum CreateNotificationSubscriptionErrorKind {
 impl std::fmt::Display for CreateNotificationSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateNotificationSubscriptionErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2891,6 +2934,13 @@ impl CreateNotificationSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateNotificationSubscriptionErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNotificationSubscriptionErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateNotificationSubscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -2916,6 +2966,9 @@ impl CreateNotificationSubscriptionError {
 impl std::error::Error for CreateNotificationSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateNotificationSubscriptionErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
             CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
@@ -3608,6 +3661,8 @@ pub enum DeleteDocumentErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
@@ -3633,6 +3688,7 @@ impl std::fmt::Display for DeleteDocumentError {
             DeleteDocumentErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
             DeleteDocumentErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
             DeleteDocumentErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            DeleteDocumentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteDocumentErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             DeleteDocumentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             DeleteDocumentErrorKind::UnauthorizedOperationException(_inner) => _inner.fmt(f),
@@ -3719,6 +3775,13 @@ impl DeleteDocumentError {
             DeleteDocumentErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteDocumentErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
@@ -3755,11 +3818,207 @@ impl std::error::Error for DeleteDocumentError {
             DeleteDocumentErrorKind::ConflictingOperationException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::EntityNotExistsException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            DeleteDocumentErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteDocumentVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDocumentVersionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDocumentVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDocumentVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteDocumentVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDocumentVersionErrorKind {
+    /// <p>The resource hierarchy is changing.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>Another operation is in progress on the resource that conflicts with the current operation.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>The resource does not exist.</p>
+    EntityNotExistsException(crate::error::EntityNotExistsException),
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The operation is invalid.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified document version is not in the INITIALIZED state.</p>
+    ProhibitedStateException(crate::error::ProhibitedStateException),
+    /// <p>The operation is not permitted.</p>
+    UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
+    /// <p>The caller does not have access to perform the action on the resource.</p>
+    UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteDocumentVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDocumentVersionErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteDocumentVersionErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::UnauthorizedOperationException(_inner) => _inner.fmt(f),
+            DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteDocumentVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDocumentVersionError {
+    fn code(&self) -> Option<&str> {
+        DeleteDocumentVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDocumentVersionError {
+    /// Creates a new `DeleteDocumentVersionError`.
+    pub fn new(kind: DeleteDocumentVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDocumentVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDocumentVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::EntityNotExistsException`.
+    pub fn is_entity_not_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::EntityNotExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::FailedDependencyException`.
+    pub fn is_failed_dependency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::FailedDependencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::ProhibitedStateException`.
+    pub fn is_prohibited_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::ProhibitedStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::UnauthorizedOperationException`.
+    pub fn is_unauthorized_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::UnauthorizedOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException`.
+    pub fn is_unauthorized_resource_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteDocumentVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDocumentVersionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::ConflictingOperationException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::EntityNotExistsException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::ProhibitedStateException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
+            DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException(_inner) => {
+                Some(_inner)
+            }
+            DeleteDocumentVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3793,6 +4052,8 @@ pub enum DeleteFolderErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
@@ -3818,6 +4079,7 @@ impl std::fmt::Display for DeleteFolderError {
             DeleteFolderErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
             DeleteFolderErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
             DeleteFolderErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            DeleteFolderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteFolderErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             DeleteFolderErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             DeleteFolderErrorKind::UnauthorizedOperationException(_inner) => _inner.fmt(f),
@@ -3904,6 +4166,10 @@ impl DeleteFolderError {
             DeleteFolderErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFolderErrorKind::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `DeleteFolderErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
@@ -3940,6 +4206,7 @@ impl std::error::Error for DeleteFolderError {
             DeleteFolderErrorKind::ConflictingOperationException(_inner) => Some(_inner),
             DeleteFolderErrorKind::EntityNotExistsException(_inner) => Some(_inner),
             DeleteFolderErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            DeleteFolderErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteFolderErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             DeleteFolderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteFolderErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
@@ -4156,6 +4423,8 @@ pub enum DeleteLabelsErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The specified document version is not in the INITIALIZED state.</p>
+    ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The operation is not permitted.</p>
@@ -4177,6 +4446,7 @@ impl std::fmt::Display for DeleteLabelsError {
         match &self.kind {
             DeleteLabelsErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
             DeleteLabelsErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            DeleteLabelsErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             DeleteLabelsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             DeleteLabelsErrorKind::UnauthorizedOperationException(_inner) => _inner.fmt(f),
             DeleteLabelsErrorKind::UnauthorizedResourceAccessException(_inner) => _inner.fmt(f),
@@ -4248,6 +4518,13 @@ impl DeleteLabelsError {
             DeleteLabelsErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::ProhibitedStateException`.
+    pub fn is_prohibited_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLabelsErrorKind::ProhibitedStateException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteLabelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -4275,6 +4552,7 @@ impl std::error::Error for DeleteLabelsError {
         match &self.kind {
             DeleteLabelsErrorKind::EntityNotExistsException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            DeleteLabelsErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
@@ -4946,6 +5224,8 @@ pub enum DescribeDocumentVersionsErrorKind {
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The password is invalid.</p>
+    InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
@@ -4970,6 +5250,7 @@ impl std::fmt::Display for DescribeDocumentVersionsError {
             DescribeDocumentVersionsErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
             DescribeDocumentVersionsErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
             DescribeDocumentVersionsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            DescribeDocumentVersionsErrorKind::InvalidPasswordException(_inner) => _inner.fmt(f),
             DescribeDocumentVersionsErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             DescribeDocumentVersionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(_inner) => {
@@ -5057,6 +5338,13 @@ impl DescribeDocumentVersionsError {
             DescribeDocumentVersionsErrorKind::InvalidArgumentException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::InvalidPasswordException`.
+    pub fn is_invalid_password_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDocumentVersionsErrorKind::InvalidPasswordException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
@@ -5092,6 +5380,7 @@ impl std::error::Error for DescribeDocumentVersionsError {
             DescribeDocumentVersionsErrorKind::EntityNotExistsException(_inner) => Some(_inner),
             DescribeDocumentVersionsErrorKind::FailedDependencyException(_inner) => Some(_inner),
             DescribeDocumentVersionsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            DescribeDocumentVersionsErrorKind::InvalidPasswordException(_inner) => Some(_inner),
             DescribeDocumentVersionsErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             DescribeDocumentVersionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(_inner) => {
@@ -5593,6 +5882,8 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeResourcePermissio
 pub enum DescribeResourcePermissionsErrorKind {
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The pagination marker or limit fields are not valid.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The operation is not permitted.</p>
@@ -5615,6 +5906,7 @@ impl std::fmt::Display for DescribeResourcePermissionsError {
             DescribeResourcePermissionsErrorKind::FailedDependencyException(_inner) => {
                 _inner.fmt(f)
             }
+            DescribeResourcePermissionsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             DescribeResourcePermissionsErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
@@ -5689,6 +5981,13 @@ impl DescribeResourcePermissionsError {
             DescribeResourcePermissionsErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePermissionsErrorKind::InvalidArgumentException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -5715,6 +6014,7 @@ impl std::error::Error for DescribeResourcePermissionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeResourcePermissionsErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            DescribeResourcePermissionsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeResourcePermissionsErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
@@ -7212,6 +7512,10 @@ pub enum InitiateDocumentVersionUploadErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The password is invalid.</p>
+    InvalidPasswordException(crate::error::InvalidPasswordException),
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>The resource is already checked out.</p>
@@ -7251,6 +7555,10 @@ impl std::fmt::Display for InitiateDocumentVersionUploadError {
             InitiateDocumentVersionUploadErrorKind::FailedDependencyException(_inner) => {
                 _inner.fmt(f)
             }
+            InitiateDocumentVersionUploadErrorKind::InvalidPasswordException(_inner) => {
+                _inner.fmt(f)
+            }
+            InitiateDocumentVersionUploadErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             InitiateDocumentVersionUploadErrorKind::ProhibitedStateException(_inner) => {
                 _inner.fmt(f)
             }
@@ -7361,6 +7669,20 @@ impl InitiateDocumentVersionUploadError {
             InitiateDocumentVersionUploadErrorKind::FailedDependencyException(_)
         )
     }
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::InvalidPasswordException`.
+    pub fn is_invalid_password_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InitiateDocumentVersionUploadErrorKind::InvalidPasswordException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InitiateDocumentVersionUploadErrorKind::LimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
@@ -7426,6 +7748,10 @@ impl std::error::Error for InitiateDocumentVersionUploadError {
             InitiateDocumentVersionUploadErrorKind::FailedDependencyException(_inner) => {
                 Some(_inner)
             }
+            InitiateDocumentVersionUploadErrorKind::InvalidPasswordException(_inner) => {
+                Some(_inner)
+            }
+            InitiateDocumentVersionUploadErrorKind::LimitExceededException(_inner) => Some(_inner),
             InitiateDocumentVersionUploadErrorKind::ProhibitedStateException(_inner) => {
                 Some(_inner)
             }
@@ -7770,6 +8096,209 @@ impl std::error::Error for RemoveResourcePermissionError {
     }
 }
 
+/// Error type for the `RestoreDocumentVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RestoreDocumentVersionsError {
+    /// Kind of error that occurred.
+    pub kind: RestoreDocumentVersionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDocumentVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RestoreDocumentVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RestoreDocumentVersionsErrorKind {
+    /// <p>The resource hierarchy is changing.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>Another operation is in progress on the resource that conflicts with the current operation.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>The resource does not exist.</p>
+    EntityNotExistsException(crate::error::EntityNotExistsException),
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
+    FailedDependencyException(crate::error::FailedDependencyException),
+    /// <p>The operation is invalid.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>The specified document version is not in the INITIALIZED state.</p>
+    ProhibitedStateException(crate::error::ProhibitedStateException),
+    /// <p>The operation is not permitted.</p>
+    UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
+    /// <p>The caller does not have access to perform the action on the resource.</p>
+    UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RestoreDocumentVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RestoreDocumentVersionsErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDocumentVersionsErrorKind::ConflictingOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDocumentVersionsErrorKind::EntityNotExistsException(_inner) => _inner.fmt(f),
+            RestoreDocumentVersionsErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
+            RestoreDocumentVersionsErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            RestoreDocumentVersionsErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
+            RestoreDocumentVersionsErrorKind::UnauthorizedOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreDocumentVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RestoreDocumentVersionsError {
+    fn code(&self) -> Option<&str> {
+        RestoreDocumentVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RestoreDocumentVersionsError {
+    /// Creates a new `RestoreDocumentVersionsError`.
+    pub fn new(kind: RestoreDocumentVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RestoreDocumentVersionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RestoreDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RestoreDocumentVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RestoreDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::EntityNotExistsException`.
+    pub fn is_entity_not_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::EntityNotExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::FailedDependencyException`.
+    pub fn is_failed_dependency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::FailedDependencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::ProhibitedStateException`.
+    pub fn is_prohibited_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::ProhibitedStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::UnauthorizedOperationException`.
+    pub fn is_unauthorized_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::UnauthorizedOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException`.
+    pub fn is_unauthorized_resource_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException(_)
+        )
+    }
+}
+impl std::error::Error for RestoreDocumentVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RestoreDocumentVersionsErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            RestoreDocumentVersionsErrorKind::ConflictingOperationException(_inner) => Some(_inner),
+            RestoreDocumentVersionsErrorKind::EntityNotExistsException(_inner) => Some(_inner),
+            RestoreDocumentVersionsErrorKind::FailedDependencyException(_inner) => Some(_inner),
+            RestoreDocumentVersionsErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            RestoreDocumentVersionsErrorKind::ProhibitedStateException(_inner) => Some(_inner),
+            RestoreDocumentVersionsErrorKind::UnauthorizedOperationException(_inner) => {
+                Some(_inner)
+            }
+            RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
+                Some(_inner)
+            }
+            RestoreDocumentVersionsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateDocument` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7801,7 +8330,7 @@ pub enum UpdateDocumentErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
-    /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -8203,7 +8732,7 @@ pub enum UpdateFolderErrorKind {
     EntityNotExistsException(crate::error::EntityNotExistsException),
     /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
-    /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
+    /// <p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -8407,6 +8936,8 @@ pub enum UpdateUserErrorKind {
     IllegalUserStateException(crate::error::IllegalUserStateException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The specified document version is not in the INITIALIZED state.</p>
+    ProhibitedStateException(crate::error::ProhibitedStateException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The operation is not permitted.</p>
@@ -8431,6 +8962,7 @@ impl std::fmt::Display for UpdateUserError {
             UpdateUserErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::IllegalUserStateException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            UpdateUserErrorKind::ProhibitedStateException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::UnauthorizedOperationException(_inner) => _inner.fmt(f),
             UpdateUserErrorKind::UnauthorizedResourceAccessException(_inner) => _inner.fmt(f),
@@ -8517,6 +9049,10 @@ impl UpdateUserError {
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InvalidArgumentException(_))
     }
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ProhibitedStateException`.
+    pub fn is_prohibited_state_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::ProhibitedStateException(_))
+    }
     /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -8547,6 +9083,7 @@ impl std::error::Error for UpdateUserError {
             UpdateUserErrorKind::FailedDependencyException(_inner) => Some(_inner),
             UpdateUserErrorKind::IllegalUserStateException(_inner) => Some(_inner),
             UpdateUserErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            UpdateUserErrorKind::ProhibitedStateException(_inner) => Some(_inner),
             UpdateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             UpdateUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),

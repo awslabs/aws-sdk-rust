@@ -201,6 +201,7 @@ impl Client {
     ///   - [`directory_name(impl Into<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::directory_name) / [`set_directory_name(Option<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_directory_name): <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     ///   - [`organizational_unit_distinguished_names(Vec<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::organizational_unit_distinguished_names) / [`set_organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
     ///   - [`service_account_credentials(ServiceAccountCredentials)`](crate::client::fluent_builders::CreateDirectoryConfig::service_account_credentials) / [`set_service_account_credentials(Option<ServiceAccountCredentials>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    ///   - [`certificate_based_auth_properties(CertificateBasedAuthProperties)`](crate::client::fluent_builders::CreateDirectoryConfig::certificate_based_auth_properties) / [`set_certificate_based_auth_properties(Option<CertificateBasedAuthProperties>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_certificate_based_auth_properties): <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     /// - On success, responds with [`CreateDirectoryConfigOutput`](crate::output::CreateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::output::CreateDirectoryConfigOutput::directory_config): <p>Information about the directory configuration.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryConfigError>`](crate::error::CreateDirectoryConfigError)
@@ -227,7 +228,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_name): <p>A unique name for the fleet.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_image_name): <p>The name of the image used to create the fleet.</p>
     ///   - [`image_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::image_arn) / [`set_image_arn(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_image_arn): <p>The ARN of the public, private, or shared image to use.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.standard.xlarge</p> </li>   <li> <p>stream.standard.2xlarge</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.standard.xlarge</p> </li>   <li> <p>stream.standard.2xlarge</p> </li>  </ul>
     ///   - [`fleet_type(FleetType)`](crate::client::fluent_builders::CreateFleet::fleet_type) / [`set_fleet_type(Option<FleetType>)`](crate::client::fluent_builders::CreateFleet::set_fleet_type): <p>The fleet type.</p>  <dl>   <dt>   ALWAYS_ON  </dt>   <dd>    <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>   </dd>   <dt>   ON_DEMAND  </dt>   <dd>    <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>   </dd>  </dl>
     ///   - [`compute_capacity(ComputeCapacity)`](crate::client::fluent_builders::CreateFleet::compute_capacity) / [`set_compute_capacity(Option<ComputeCapacity>)`](crate::client::fluent_builders::CreateFleet::set_compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateFleet::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateFleet::set_vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
@@ -883,6 +884,7 @@ impl Client {
     ///   - [`directory_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::directory_name) / [`set_directory_name(Option<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_directory_name): <p>The name of the Directory Config object.</p>
     ///   - [`organizational_unit_distinguished_names(Vec<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::organizational_unit_distinguished_names) / [`set_organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
     ///   - [`service_account_credentials(ServiceAccountCredentials)`](crate::client::fluent_builders::UpdateDirectoryConfig::service_account_credentials) / [`set_service_account_credentials(Option<ServiceAccountCredentials>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    ///   - [`certificate_based_auth_properties(CertificateBasedAuthProperties)`](crate::client::fluent_builders::UpdateDirectoryConfig::certificate_based_auth_properties) / [`set_certificate_based_auth_properties(Option<CertificateBasedAuthProperties>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_certificate_based_auth_properties): <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     /// - On success, responds with [`UpdateDirectoryConfigOutput`](crate::output::UpdateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::output::UpdateDirectoryConfigOutput::directory_config): <p>Information about the Directory Config object.</p>
     /// - On failure, responds with [`SdkError<UpdateDirectoryConfigError>`](crate::error::UpdateDirectoryConfigError)
@@ -909,7 +911,7 @@ impl Client {
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_image_name): <p>The name of the image used to create the fleet.</p>
     ///   - [`image_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::image_arn) / [`set_image_arn(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_image_arn): <p>The ARN of the public, private, or shared image to use.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_name): <p>A unique name for the fleet.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.standard.xlarge</p> </li>   <li> <p>stream.standard.2xlarge</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.standard.xlarge</p> </li>   <li> <p>stream.standard.2xlarge</p> </li>  </ul>
     ///   - [`compute_capacity(ComputeCapacity)`](crate::client::fluent_builders::UpdateFleet::compute_capacity) / [`set_compute_capacity(Option<ComputeCapacity>)`](crate::client::fluent_builders::UpdateFleet::set_compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::UpdateFleet::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::UpdateFleet::set_vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
     ///   - [`max_user_duration_in_seconds(i32)`](crate::client::fluent_builders::UpdateFleet::max_user_duration_in_seconds) / [`set_max_user_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_max_user_duration_in_seconds): <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>  <p>Specify a value between 600 and 360000.</p>
@@ -2000,6 +2002,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_account_credentials(input);
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.inner = self.inner.certificate_based_auth_properties(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_based_auth_properties(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEntitlement`.
     ///
@@ -2126,7 +2144,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or On-Demand.</p>
+    /// <p>Creates a fleet. A fleet consists of streaming instances that your users access for their applications and desktops.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -2221,6 +2239,8 @@ pub mod fluent_builders {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -2256,6 +2276,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
@@ -2266,6 +2289,8 @@ pub mod fluent_builders {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -2301,6 +2326,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -7660,6 +7688,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_account_credentials(input);
             self
         }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn certificate_based_auth_properties(
+            mut self,
+            input: crate::model::CertificateBasedAuthProperties,
+        ) -> Self {
+            self.inner = self.inner.certificate_based_auth_properties(input);
+            self
+        }
+        /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+        pub fn set_certificate_based_auth_properties(
+            mut self,
+            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_based_auth_properties(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateEntitlement`.
     ///
@@ -7888,6 +7932,8 @@ pub mod fluent_builders {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -7923,6 +7969,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
@@ -7933,6 +7982,8 @@ pub mod fluent_builders {
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
         /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// <li> <p>stream.compute.large</p> </li>
         /// <li> <p>stream.compute.xlarge</p> </li>
         /// <li> <p>stream.compute.2xlarge</p> </li>
@@ -7968,6 +8019,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>stream.standard.small</p> </li>
         /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.standard.xlarge</p> </li>
+        /// <li> <p>stream.standard.2xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,

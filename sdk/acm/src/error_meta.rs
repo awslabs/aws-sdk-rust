@@ -132,6 +132,12 @@ where
 impl From<crate::error::DeleteCertificateError> for Error {
     fn from(err: crate::error::DeleteCertificateError) -> Self {
         match err.kind {
+            crate::error::DeleteCertificateErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteCertificateErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::error::DeleteCertificateErrorKind::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
@@ -140,6 +146,9 @@ impl From<crate::error::DeleteCertificateError> for Error {
             }
             crate::error::DeleteCertificateErrorKind::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteCertificateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::error::DeleteCertificateErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
@@ -337,6 +346,9 @@ impl From<crate::error::ListCertificatesError> for Error {
         match err.kind {
             crate::error::ListCertificatesErrorKind::InvalidArgsException(inner) => {
                 Error::InvalidArgsException(inner)
+            }
+            crate::error::ListCertificatesErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::error::ListCertificatesErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))

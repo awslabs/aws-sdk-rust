@@ -60,7 +60,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+/// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
@@ -186,6 +186,8 @@ impl InternalServerException {
 /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
 /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
 /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -397,6 +399,8 @@ pub enum CreateSlackChannelConfigurationErrorKind {
     /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
     /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
     /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -568,7 +572,7 @@ pub enum DeleteAccountAliasErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -704,11 +708,13 @@ pub enum DeleteSlackChannelConfigurationErrorKind {
     /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
     /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
     /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
@@ -881,11 +887,13 @@ pub enum DeleteSlackWorkspaceConfigurationErrorKind {
     /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
     /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
     /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
@@ -1534,6 +1542,195 @@ impl std::error::Error for PutAccountAliasError {
     }
 }
 
+/// Error type for the `RegisterSlackWorkspaceForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RegisterSlackWorkspaceForOrganizationError {
+    /// Kind of error that occurred.
+    pub kind: RegisterSlackWorkspaceForOrganizationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterSlackWorkspaceForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `RegisterSlackWorkspaceForOrganization` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RegisterSlackWorkspaceForOrganizationErrorKind {
+    /// <p>You don't have sufficient permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
+    /// <ul>
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// </ul>
+    ConflictException(crate::error::ConflictException),
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for RegisterSlackWorkspaceForOrganizationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RegisterSlackWorkspaceForOrganizationError {
+    fn code(&self) -> Option<&str> {
+        RegisterSlackWorkspaceForOrganizationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RegisterSlackWorkspaceForOrganizationError {
+    /// Creates a new `RegisterSlackWorkspaceForOrganizationError`.
+    pub fn new(
+        kind: RegisterSlackWorkspaceForOrganizationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for RegisterSlackWorkspaceForOrganizationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `UpdateSlackChannelConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1565,11 +1762,13 @@ pub enum UpdateSlackChannelConfigurationErrorKind {
     /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
     /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
     /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
+    /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),

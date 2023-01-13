@@ -190,6 +190,17 @@ impl Client {
     pub fn batch_get_custom_entity_types(&self) -> fluent_builders::BatchGetCustomEntityTypes {
         fluent_builders::BatchGetCustomEntityTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchGetDataQualityResult`](crate::client::fluent_builders::BatchGetDataQualityResult) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`result_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDataQualityResult::result_ids) / [`set_result_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDataQualityResult::set_result_ids): <p>A list of unique result IDs for the data quality results.</p>
+    /// - On success, responds with [`BatchGetDataQualityResultOutput`](crate::output::BatchGetDataQualityResultOutput) with field(s):
+    ///   - [`results(Option<Vec<DataQualityResult>>)`](crate::output::BatchGetDataQualityResultOutput::results): <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+    ///   - [`results_not_found(Option<Vec<String>>)`](crate::output::BatchGetDataQualityResultOutput::results_not_found): <p>A list of result IDs for which results were not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetDataQualityResultError>`](crate::error::BatchGetDataQualityResultError)
+    pub fn batch_get_data_quality_result(&self) -> fluent_builders::BatchGetDataQualityResult {
+        fluent_builders::BatchGetDataQualityResult::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BatchGetDevEndpoints`](crate::client::fluent_builders::BatchGetDevEndpoints) operation.
     ///
     /// - The fluent builder is configurable:
@@ -273,6 +284,30 @@ impl Client {
     /// - On failure, responds with [`SdkError<BatchUpdatePartitionError>`](crate::error::BatchUpdatePartitionError)
     pub fn batch_update_partition(&self) -> fluent_builders::BatchUpdatePartition {
         fluent_builders::BatchUpdatePartition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CancelDataQualityRuleRecommendationRun`](crate::client::fluent_builders::CancelDataQualityRuleRecommendationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::CancelDataQualityRuleRecommendationRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::CancelDataQualityRuleRecommendationRun::set_run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On success, responds with [`CancelDataQualityRuleRecommendationRunOutput`](crate::output::CancelDataQualityRuleRecommendationRunOutput)
+
+    /// - On failure, responds with [`SdkError<CancelDataQualityRuleRecommendationRunError>`](crate::error::CancelDataQualityRuleRecommendationRunError)
+    pub fn cancel_data_quality_rule_recommendation_run(
+        &self,
+    ) -> fluent_builders::CancelDataQualityRuleRecommendationRun {
+        fluent_builders::CancelDataQualityRuleRecommendationRun::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CancelDataQualityRulesetEvaluationRun`](crate::client::fluent_builders::CancelDataQualityRulesetEvaluationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::CancelDataQualityRulesetEvaluationRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::CancelDataQualityRulesetEvaluationRun::set_run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On success, responds with [`CancelDataQualityRulesetEvaluationRunOutput`](crate::output::CancelDataQualityRulesetEvaluationRunOutput)
+
+    /// - On failure, responds with [`SdkError<CancelDataQualityRulesetEvaluationRunError>`](crate::error::CancelDataQualityRulesetEvaluationRunError)
+    pub fn cancel_data_quality_ruleset_evaluation_run(
+        &self,
+    ) -> fluent_builders::CancelDataQualityRulesetEvaluationRun {
+        fluent_builders::CancelDataQualityRulesetEvaluationRun::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CancelMLTaskRun`](crate::client::fluent_builders::CancelMLTaskRun) operation.
     ///
@@ -364,7 +399,7 @@ impl Client {
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::CreateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::CreateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::CreateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
     ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCrawler::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCrawler::set_tags): <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     /// - On success, responds with [`CreateCrawlerOutput`](crate::output::CreateCrawlerOutput)
@@ -397,6 +432,21 @@ impl Client {
     pub fn create_database(&self) -> fluent_builders::CreateDatabase {
         fluent_builders::CreateDatabase::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateDataQualityRuleset`](crate::client::fluent_builders::CreateDataQualityRuleset) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_name): <p>A unique name for the data quality ruleset.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_description): <p>A description of the data quality ruleset.</p>
+    ///   - [`ruleset(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::ruleset) / [`set_ruleset(Option<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_ruleset): <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_tags): <p>A list of tags applied to the data quality ruleset.</p>
+    ///   - [`target_table(DataQualityTargetTable)`](crate::client::fluent_builders::CreateDataQualityRuleset::target_table) / [`set_target_table(Option<DataQualityTargetTable>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_target_table): <p>A target table associated with the data quality ruleset.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataQualityRuleset::set_client_token): <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    /// - On success, responds with [`CreateDataQualityRulesetOutput`](crate::output::CreateDataQualityRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateDataQualityRulesetOutput::name): <p>A unique name for the data quality ruleset.</p>
+    /// - On failure, responds with [`SdkError<CreateDataQualityRulesetError>`](crate::error::CreateDataQualityRulesetError)
+    pub fn create_data_quality_ruleset(&self) -> fluent_builders::CreateDataQualityRuleset {
+        fluent_builders::CreateDataQualityRuleset::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateDevEndpoint`](crate::client::fluent_builders::CreateDevEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
@@ -427,7 +477,7 @@ impl Client {
     ///   - [`worker_type(Option<WorkerType>)`](crate::output::CreateDevEndpointOutput::worker_type): <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
     ///   - [`glue_version(Option<String>)`](crate::output::CreateDevEndpointOutput::glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     ///   - [`number_of_workers(Option<i32>)`](crate::output::CreateDevEndpointOutput::number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    ///   - [`availability_zone(Option<String>)`](crate::output::CreateDevEndpointOutput::availability_zone): <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::output::CreateDevEndpointOutput::availability_zone): <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     ///   - [`vpc_id(Option<String>)`](crate::output::CreateDevEndpointOutput::vpc_id): <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     ///   - [`extra_python_libs_s3_path(Option<String>)`](crate::output::CreateDevEndpointOutput::extra_python_libs_s3_path): <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     ///   - [`extra_jars_s3_path(Option<String>)`](crate::output::CreateDevEndpointOutput::extra_jars_s3_path): <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
@@ -463,6 +513,7 @@ impl Client {
     ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
     ///   - [`code_gen_configuration_nodes(HashMap<String, CodeGenConfigurationNode>)`](crate::client::fluent_builders::CreateJob::code_gen_configuration_nodes) / [`set_code_gen_configuration_nodes(Option<HashMap<String, CodeGenConfigurationNode>>)`](crate::client::fluent_builders::CreateJob::set_code_gen_configuration_nodes): <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     ///   - [`execution_class(ExecutionClass)`](crate::client::fluent_builders::CreateJob::execution_class) / [`set_execution_class(Option<ExecutionClass>)`](crate::client::fluent_builders::CreateJob::set_execution_class): <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>  <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>  <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    ///   - [`source_control_details(SourceControlDetails)`](crate::client::fluent_builders::CreateJob::source_control_details) / [`set_source_control_details(Option<SourceControlDetails>)`](crate::client::fluent_builders::CreateJob::set_source_control_details): <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateJobOutput::name): <p>The unique name that was provided for this job definition.</p>
     /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
@@ -761,6 +812,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::error::DeleteDatabaseError)
     pub fn delete_database(&self) -> fluent_builders::DeleteDatabase {
         fluent_builders::DeleteDatabase::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteDataQualityRuleset`](crate::client::fluent_builders::DeleteDataQualityRuleset) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataQualityRuleset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDataQualityRuleset::set_name): <p>A name for the data quality ruleset.</p>
+    /// - On success, responds with [`DeleteDataQualityRulesetOutput`](crate::output::DeleteDataQualityRulesetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDataQualityRulesetError>`](crate::error::DeleteDataQualityRulesetError)
+    pub fn delete_data_quality_ruleset(&self) -> fluent_builders::DeleteDataQualityRuleset {
+        fluent_builders::DeleteDataQualityRuleset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteDevEndpoint`](crate::client::fluent_builders::DeleteDevEndpoint) operation.
     ///
@@ -1169,6 +1230,91 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetDataflowGraphError>`](crate::error::GetDataflowGraphError)
     pub fn get_dataflow_graph(&self) -> fluent_builders::GetDataflowGraph {
         fluent_builders::GetDataflowGraph::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetDataQualityResult`](crate::client::fluent_builders::GetDataQualityResult) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`result_id(impl Into<String>)`](crate::client::fluent_builders::GetDataQualityResult::result_id) / [`set_result_id(Option<String>)`](crate::client::fluent_builders::GetDataQualityResult::set_result_id): <p>A unique result ID for the data quality result.</p>
+    /// - On success, responds with [`GetDataQualityResultOutput`](crate::output::GetDataQualityResultOutput) with field(s):
+    ///   - [`result_id(Option<String>)`](crate::output::GetDataQualityResultOutput::result_id): <p>A unique result ID for the data quality result.</p>
+    ///   - [`score(Option<f64>)`](crate::output::GetDataQualityResultOutput::score): <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::GetDataQualityResultOutput::data_source): <p>The table associated with the data quality result, if any.</p>
+    ///   - [`ruleset_name(Option<String>)`](crate::output::GetDataQualityResultOutput::ruleset_name): <p>The name of the ruleset associated with the data quality result.</p>
+    ///   - [`evaluation_context(Option<String>)`](crate::output::GetDataQualityResultOutput::evaluation_context): <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
+    ///   - [`started_on(Option<DateTime>)`](crate::output::GetDataQualityResultOutput::started_on): <p>The date and time when the run for this data quality result started.</p>
+    ///   - [`completed_on(Option<DateTime>)`](crate::output::GetDataQualityResultOutput::completed_on): <p>The date and time when the run for this data quality result was completed.</p>
+    ///   - [`job_name(Option<String>)`](crate::output::GetDataQualityResultOutput::job_name): <p>The job name associated with the data quality result, if any.</p>
+    ///   - [`job_run_id(Option<String>)`](crate::output::GetDataQualityResultOutput::job_run_id): <p>The job run ID associated with the data quality result, if any.</p>
+    ///   - [`ruleset_evaluation_run_id(Option<String>)`](crate::output::GetDataQualityResultOutput::ruleset_evaluation_run_id): <p>The unique run ID associated with the ruleset evaluation.</p>
+    ///   - [`rule_results(Option<Vec<DataQualityRuleResult>>)`](crate::output::GetDataQualityResultOutput::rule_results): <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// - On failure, responds with [`SdkError<GetDataQualityResultError>`](crate::error::GetDataQualityResultError)
+    pub fn get_data_quality_result(&self) -> fluent_builders::GetDataQualityResult {
+        fluent_builders::GetDataQualityResult::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetDataQualityRuleRecommendationRun`](crate::client::fluent_builders::GetDataQualityRuleRecommendationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetDataQualityRuleRecommendationRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetDataQualityRuleRecommendationRun::set_run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On success, responds with [`GetDataQualityRuleRecommendationRunOutput`](crate::output::GetDataQualityRuleRecommendationRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::data_source): <p>The data source (an Glue table) associated with this run.</p>
+    ///   - [`role(Option<String>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::role): <p>An IAM role supplied to encrypt the results of the run.</p>
+    ///   - [`number_of_workers(Option<i32>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::number_of_workers): <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::timeout): <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`status(Option<TaskStatusType>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::status): <p>The status for this run.</p>
+    ///   - [`error_string(Option<String>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::error_string): <p>The error strings that are associated with the run.</p>
+    ///   - [`started_on(Option<DateTime>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::started_on): <p>The date and time when this run started.</p>
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::last_modified_on): <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    ///   - [`completed_on(Option<DateTime>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::completed_on): <p>The date and time when this run was completed.</p>
+    ///   - [`execution_time(i32)`](crate::output::GetDataQualityRuleRecommendationRunOutput::execution_time): <p>The amount of time (in seconds) that the run consumed resources.</p>
+    ///   - [`recommended_ruleset(Option<String>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::recommended_ruleset): <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
+    ///   - [`created_ruleset_name(Option<String>)`](crate::output::GetDataQualityRuleRecommendationRunOutput::created_ruleset_name): <p>The name of the ruleset that was created by the run.</p>
+    /// - On failure, responds with [`SdkError<GetDataQualityRuleRecommendationRunError>`](crate::error::GetDataQualityRuleRecommendationRunError)
+    pub fn get_data_quality_rule_recommendation_run(
+        &self,
+    ) -> fluent_builders::GetDataQualityRuleRecommendationRun {
+        fluent_builders::GetDataQualityRuleRecommendationRun::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetDataQualityRuleset`](crate::client::fluent_builders::GetDataQualityRuleset) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetDataQualityRuleset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetDataQualityRuleset::set_name): <p>The name of the ruleset.</p>
+    /// - On success, responds with [`GetDataQualityRulesetOutput`](crate::output::GetDataQualityRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetDataQualityRulesetOutput::name): <p>The name of the ruleset.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetDataQualityRulesetOutput::description): <p>A description of the ruleset.</p>
+    ///   - [`ruleset(Option<String>)`](crate::output::GetDataQualityRulesetOutput::ruleset): <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    ///   - [`target_table(Option<DataQualityTargetTable>)`](crate::output::GetDataQualityRulesetOutput::target_table): <p>The name and database name of the target table.</p>
+    ///   - [`created_on(Option<DateTime>)`](crate::output::GetDataQualityRulesetOutput::created_on): <p>A timestamp. The time and date that this data quality ruleset was created.</p>
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetDataQualityRulesetOutput::last_modified_on): <p>A timestamp. The last point in time when this data quality ruleset was modified.</p>
+    ///   - [`recommendation_run_id(Option<String>)`](crate::output::GetDataQualityRulesetOutput::recommendation_run_id): <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
+    /// - On failure, responds with [`SdkError<GetDataQualityRulesetError>`](crate::error::GetDataQualityRulesetError)
+    pub fn get_data_quality_ruleset(&self) -> fluent_builders::GetDataQualityRuleset {
+        fluent_builders::GetDataQualityRuleset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetDataQualityRulesetEvaluationRun`](crate::client::fluent_builders::GetDataQualityRulesetEvaluationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetDataQualityRulesetEvaluationRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetDataQualityRulesetEvaluationRun::set_run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On success, responds with [`GetDataQualityRulesetEvaluationRunOutput`](crate::output::GetDataQualityRulesetEvaluationRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::data_source): <p>The data source (an Glue table) associated with this evaluation run.</p>
+    ///   - [`role(Option<String>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::role): <p>An IAM role supplied to encrypt the results of the run.</p>
+    ///   - [`number_of_workers(Option<i32>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::number_of_workers): <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::timeout): <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`additional_run_options(Option<DataQualityEvaluationRunAdditionalRunOptions>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::additional_run_options): <p>Additional run options you can specify for an evaluation run.</p>
+    ///   - [`status(Option<TaskStatusType>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::status): <p>The status for this run.</p>
+    ///   - [`error_string(Option<String>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::error_string): <p>The error strings that are associated with the run.</p>
+    ///   - [`started_on(Option<DateTime>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::started_on): <p>The date and time when this run started.</p>
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::last_modified_on): <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
+    ///   - [`completed_on(Option<DateTime>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::completed_on): <p>The date and time when this run was completed.</p>
+    ///   - [`execution_time(i32)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::execution_time): <p>The amount of time (in seconds) that the run consumed resources.</p>
+    ///   - [`ruleset_names(Option<Vec<String>>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::ruleset_names): <p>A list of ruleset names for the run.</p>
+    ///   - [`result_ids(Option<Vec<String>>)`](crate::output::GetDataQualityRulesetEvaluationRunOutput::result_ids): <p>A list of result IDs for the data quality results for the run.</p>
+    /// - On failure, responds with [`SdkError<GetDataQualityRulesetEvaluationRunError>`](crate::error::GetDataQualityRulesetEvaluationRunError)
+    pub fn get_data_quality_ruleset_evaluation_run(
+        &self,
+    ) -> fluent_builders::GetDataQualityRulesetEvaluationRun {
+        fluent_builders::GetDataQualityRulesetEvaluationRun::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDevEndpoint`](crate::client::fluent_builders::GetDevEndpoint) operation.
     ///
@@ -1859,6 +2005,67 @@ impl Client {
     pub fn list_custom_entity_types(&self) -> fluent_builders::ListCustomEntityTypes {
         fluent_builders::ListCustomEntityTypes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListDataQualityResults`](crate::client::fluent_builders::ListDataQualityResults) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityResults::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(DataQualityResultFilterCriteria)`](crate::client::fluent_builders::ListDataQualityResults::filter) / [`set_filter(Option<DataQualityResultFilterCriteria>)`](crate::client::fluent_builders::ListDataQualityResults::set_filter): <p>The filter criteria.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityResults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataQualityResults::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataQualityResults::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataQualityResults::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListDataQualityResultsOutput`](crate::output::ListDataQualityResultsOutput) with field(s):
+    ///   - [`results(Option<Vec<DataQualityResultDescription>>)`](crate::output::ListDataQualityResultsOutput::results): <p>A list of <code>DataQualityResultDescription</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataQualityResultsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDataQualityResultsError>`](crate::error::ListDataQualityResultsError)
+    pub fn list_data_quality_results(&self) -> fluent_builders::ListDataQualityResults {
+        fluent_builders::ListDataQualityResults::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListDataQualityRuleRecommendationRuns`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(DataQualityRuleRecommendationRunFilter)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::filter) / [`set_filter(Option<DataQualityRuleRecommendationRunFilter>)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::set_filter): <p>The filter criteria.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataQualityRuleRecommendationRuns::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListDataQualityRuleRecommendationRunsOutput`](crate::output::ListDataQualityRuleRecommendationRunsOutput) with field(s):
+    ///   - [`runs(Option<Vec<DataQualityRuleRecommendationRunDescription>>)`](crate::output::ListDataQualityRuleRecommendationRunsOutput::runs): <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataQualityRuleRecommendationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDataQualityRuleRecommendationRunsError>`](crate::error::ListDataQualityRuleRecommendationRunsError)
+    pub fn list_data_quality_rule_recommendation_runs(
+        &self,
+    ) -> fluent_builders::ListDataQualityRuleRecommendationRuns {
+        fluent_builders::ListDataQualityRuleRecommendationRuns::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListDataQualityRulesetEvaluationRuns`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(DataQualityRulesetEvaluationRunFilter)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::filter) / [`set_filter(Option<DataQualityRulesetEvaluationRunFilter>)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::set_filter): <p>The filter criteria.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataQualityRulesetEvaluationRuns::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListDataQualityRulesetEvaluationRunsOutput`](crate::output::ListDataQualityRulesetEvaluationRunsOutput) with field(s):
+    ///   - [`runs(Option<Vec<DataQualityRulesetEvaluationRunDescription>>)`](crate::output::ListDataQualityRulesetEvaluationRunsOutput::runs): <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataQualityRulesetEvaluationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDataQualityRulesetEvaluationRunsError>`](crate::error::ListDataQualityRulesetEvaluationRunsError)
+    pub fn list_data_quality_ruleset_evaluation_runs(
+        &self,
+    ) -> fluent_builders::ListDataQualityRulesetEvaluationRuns {
+        fluent_builders::ListDataQualityRulesetEvaluationRuns::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListDataQualityRulesets`](crate::client::fluent_builders::ListDataQualityRulesets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityRulesets::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityRulesets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataQualityRulesets::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataQualityRulesets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataQualityRulesets::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`filter(DataQualityRulesetFilterCriteria)`](crate::client::fluent_builders::ListDataQualityRulesets::filter) / [`set_filter(Option<DataQualityRulesetFilterCriteria>)`](crate::client::fluent_builders::ListDataQualityRulesets::set_filter): <p>The filter criteria. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListDataQualityRulesets::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListDataQualityRulesets::set_tags): <p>A list of key-value pair tags.</p>
+    /// - On success, responds with [`ListDataQualityRulesetsOutput`](crate::output::ListDataQualityRulesetsOutput) with field(s):
+    ///   - [`rulesets(Option<Vec<DataQualityRulesetListDetails>>)`](crate::output::ListDataQualityRulesetsOutput::rulesets): <p>A paginated list of rulesets for the specified list of Glue tables.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataQualityRulesetsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDataQualityRulesetsError>`](crate::error::ListDataQualityRulesetsError)
+    pub fn list_data_quality_rulesets(&self) -> fluent_builders::ListDataQualityRulesets {
+        fluent_builders::ListDataQualityRulesets::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListDevEndpoints`](crate::client::fluent_builders::ListDevEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevEndpoints::into_paginator).
     ///
@@ -2196,6 +2403,41 @@ impl Client {
     pub fn start_crawler_schedule(&self) -> fluent_builders::StartCrawlerSchedule {
         fluent_builders::StartCrawlerSchedule::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartDataQualityRuleRecommendationRun`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`data_source(DataSource)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_data_source): <p>The data source (Glue table) associated with this run.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_role): <p>An IAM role supplied to encrypt the results of the run.</p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_number_of_workers): <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_timeout): <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`created_ruleset_name(impl Into<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::created_ruleset_name) / [`set_created_ruleset_name(Option<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_created_ruleset_name): <p>A name for the ruleset.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartDataQualityRuleRecommendationRun::set_client_token): <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    /// - On success, responds with [`StartDataQualityRuleRecommendationRunOutput`](crate::output::StartDataQualityRuleRecommendationRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartDataQualityRuleRecommendationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On failure, responds with [`SdkError<StartDataQualityRuleRecommendationRunError>`](crate::error::StartDataQualityRuleRecommendationRunError)
+    pub fn start_data_quality_rule_recommendation_run(
+        &self,
+    ) -> fluent_builders::StartDataQualityRuleRecommendationRun {
+        fluent_builders::StartDataQualityRuleRecommendationRun::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartDataQualityRulesetEvaluationRun`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`data_source(DataSource)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_data_source): <p>The data source (Glue table) associated with this run.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_role): <p>An IAM role supplied to encrypt the results of the run.</p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_number_of_workers): <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_timeout): <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_client_token): <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    ///   - [`additional_run_options(DataQualityEvaluationRunAdditionalRunOptions)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::additional_run_options) / [`set_additional_run_options(Option<DataQualityEvaluationRunAdditionalRunOptions>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_additional_run_options): <p>Additional run options you can specify for an evaluation run.</p>
+    ///   - [`ruleset_names(Vec<String>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::ruleset_names) / [`set_ruleset_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartDataQualityRulesetEvaluationRun::set_ruleset_names): <p>A list of ruleset names.</p>
+    /// - On success, responds with [`StartDataQualityRulesetEvaluationRunOutput`](crate::output::StartDataQualityRulesetEvaluationRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartDataQualityRulesetEvaluationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
+    /// - On failure, responds with [`SdkError<StartDataQualityRulesetEvaluationRunError>`](crate::error::StartDataQualityRulesetEvaluationRunError)
+    pub fn start_data_quality_ruleset_evaluation_run(
+        &self,
+    ) -> fluent_builders::StartDataQualityRulesetEvaluationRun {
+        fluent_builders::StartDataQualityRulesetEvaluationRun::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartExportLabelsTaskRun`](crate::client::fluent_builders::StartExportLabelsTaskRun) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2440,7 +2682,7 @@ impl Client {
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::UpdateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
     ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     /// - On success, responds with [`UpdateCrawlerOutput`](crate::output::UpdateCrawlerOutput)
 
@@ -2471,6 +2713,21 @@ impl Client {
     pub fn update_database(&self) -> fluent_builders::UpdateDatabase {
         fluent_builders::UpdateDatabase::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateDataQualityRuleset`](crate::client::fluent_builders::UpdateDataQualityRuleset) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::set_name): <p>The name of the data quality ruleset.</p>
+    ///   - [`updated_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::updated_name) / [`set_updated_name(Option<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::set_updated_name): <p>The new name of the ruleset, if you are renaming it.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::set_description): <p>A description of the ruleset.</p>
+    ///   - [`ruleset(impl Into<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::ruleset) / [`set_ruleset(Option<String>)`](crate::client::fluent_builders::UpdateDataQualityRuleset::set_ruleset): <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    /// - On success, responds with [`UpdateDataQualityRulesetOutput`](crate::output::UpdateDataQualityRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateDataQualityRulesetOutput::name): <p>The name of the data quality ruleset.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateDataQualityRulesetOutput::description): <p>A description of the ruleset.</p>
+    ///   - [`ruleset(Option<String>)`](crate::output::UpdateDataQualityRulesetOutput::ruleset): <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    /// - On failure, responds with [`SdkError<UpdateDataQualityRulesetError>`](crate::error::UpdateDataQualityRulesetError)
+    pub fn update_data_quality_ruleset(&self) -> fluent_builders::UpdateDataQualityRuleset {
+        fluent_builders::UpdateDataQualityRuleset::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateDevEndpoint`](crate::client::fluent_builders::UpdateDevEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2498,6 +2755,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateJobError>`](crate::error::UpdateJobError)
     pub fn update_job(&self) -> fluent_builders::UpdateJob {
         fluent_builders::UpdateJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateJobFromSourceControl`](crate::client::fluent_builders::UpdateJobFromSourceControl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_job_name): <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    ///   - [`provider(SourceControlProvider)`](crate::client::fluent_builders::UpdateJobFromSourceControl::provider) / [`set_provider(Option<SourceControlProvider>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_provider): <p>The provider for the remote repository.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_repository_name): <p>The name of the remote repository that contains the job artifacts.</p>
+    ///   - [`repository_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::repository_owner) / [`set_repository_owner(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_repository_owner): <p>The owner of the remote repository that contains the job artifacts.</p>
+    ///   - [`branch_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::branch_name) / [`set_branch_name(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_branch_name): <p>An optional branch in the remote repository.</p>
+    ///   - [`folder(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::folder) / [`set_folder(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_folder): <p>An optional folder in the remote repository.</p>
+    ///   - [`commit_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::commit_id) / [`set_commit_id(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_commit_id): <p>A commit ID for a commit in the remote repository.</p>
+    ///   - [`auth_strategy(SourceControlAuthStrategy)`](crate::client::fluent_builders::UpdateJobFromSourceControl::auth_strategy) / [`set_auth_strategy(Option<SourceControlAuthStrategy>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_auth_strategy): <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    ///   - [`auth_token(impl Into<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::auth_token) / [`set_auth_token(Option<String>)`](crate::client::fluent_builders::UpdateJobFromSourceControl::set_auth_token): <p>The value of the authorization token.</p>
+    /// - On success, responds with [`UpdateJobFromSourceControlOutput`](crate::output::UpdateJobFromSourceControlOutput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::output::UpdateJobFromSourceControlOutput::job_name): <p>The name of the Glue job.</p>
+    /// - On failure, responds with [`SdkError<UpdateJobFromSourceControlError>`](crate::error::UpdateJobFromSourceControlError)
+    pub fn update_job_from_source_control(&self) -> fluent_builders::UpdateJobFromSourceControl {
+        fluent_builders::UpdateJobFromSourceControl::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateMLTransform`](crate::client::fluent_builders::UpdateMLTransform) operation.
     ///
@@ -2559,6 +2834,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::error::UpdateSchemaError)
     pub fn update_schema(&self) -> fluent_builders::UpdateSchema {
         fluent_builders::UpdateSchema::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateSourceControlFromJob`](crate::client::fluent_builders::UpdateSourceControlFromJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_job_name): <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    ///   - [`provider(SourceControlProvider)`](crate::client::fluent_builders::UpdateSourceControlFromJob::provider) / [`set_provider(Option<SourceControlProvider>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_provider): <p>The provider for the remote repository.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_repository_name): <p>The name of the remote repository that contains the job artifacts.</p>
+    ///   - [`repository_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::repository_owner) / [`set_repository_owner(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_repository_owner): <p>The owner of the remote repository that contains the job artifacts.</p>
+    ///   - [`branch_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::branch_name) / [`set_branch_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_branch_name): <p>An optional branch in the remote repository.</p>
+    ///   - [`folder(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::folder) / [`set_folder(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_folder): <p>An optional folder in the remote repository.</p>
+    ///   - [`commit_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::commit_id) / [`set_commit_id(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_commit_id): <p>A commit ID for a commit in the remote repository.</p>
+    ///   - [`auth_strategy(SourceControlAuthStrategy)`](crate::client::fluent_builders::UpdateSourceControlFromJob::auth_strategy) / [`set_auth_strategy(Option<SourceControlAuthStrategy>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_auth_strategy): <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    ///   - [`auth_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::auth_token) / [`set_auth_token(Option<String>)`](crate::client::fluent_builders::UpdateSourceControlFromJob::set_auth_token): <p>The value of the authorization token.</p>
+    /// - On success, responds with [`UpdateSourceControlFromJobOutput`](crate::output::UpdateSourceControlFromJobOutput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::output::UpdateSourceControlFromJobOutput::job_name): <p>The name of the Glue job.</p>
+    /// - On failure, responds with [`SdkError<UpdateSourceControlFromJobError>`](crate::error::UpdateSourceControlFromJobError)
+    pub fn update_source_control_from_job(&self) -> fluent_builders::UpdateSourceControlFromJob {
+        fluent_builders::UpdateSourceControlFromJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateTable`](crate::client::fluent_builders::UpdateTable) operation.
     ///
@@ -3428,6 +3721,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `BatchGetDataQualityResult`.
+    ///
+    /// <p>Retrieves a list of data quality results for the specified result IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetDataQualityResult {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_data_quality_result_input::Builder,
+    }
+    impl BatchGetDataQualityResult {
+        /// Creates a new `BatchGetDataQualityResult`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::BatchGetDataQualityResult,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetDataQualityResultError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetDataQualityResultOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetDataQualityResultError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `ResultIds`.
+        ///
+        /// To override the contents of this collection use [`set_result_ids`](Self::set_result_ids).
+        ///
+        /// <p>A list of unique result IDs for the data quality results.</p>
+        pub fn result_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_ids(input.into());
+            self
+        }
+        /// <p>A list of unique result IDs for the data quality results.</p>
+        pub fn set_result_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_result_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `BatchGetDevEndpoints`.
     ///
     /// <p>Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
@@ -4073,6 +4446,160 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_entries(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CancelDataQualityRuleRecommendationRun`.
+    ///
+    /// <p>Cancels the specified recommendation run that was being used to generate rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelDataQualityRuleRecommendationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::cancel_data_quality_rule_recommendation_run_input::Builder,
+    }
+    impl CancelDataQualityRuleRecommendationRun {
+        /// Creates a new `CancelDataQualityRuleRecommendationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CancelDataQualityRuleRecommendationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::CancelDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelDataQualityRuleRecommendationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::CancelDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_run_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CancelDataQualityRulesetEvaluationRun`.
+    ///
+    /// <p>Cancels a run where a ruleset is being evaluated against a data source.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelDataQualityRulesetEvaluationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::cancel_data_quality_ruleset_evaluation_run_input::Builder,
+    }
+    impl CancelDataQualityRulesetEvaluationRun {
+        /// Creates a new `CancelDataQualityRulesetEvaluationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CancelDataQualityRulesetEvaluationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::CancelDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelDataQualityRulesetEvaluationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::CancelDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_run_id(input);
             self
         }
     }
@@ -4897,12 +5424,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lake_formation_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5159,6 +5686,146 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateDataQualityRuleset`.
+    ///
+    /// <p>Creates a data quality ruleset with DQDL rules applied to a specified Glue table.</p>
+    /// <p>You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue developer guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateDataQualityRuleset {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_data_quality_ruleset_input::Builder,
+    }
+    impl CreateDataQualityRuleset {
+        /// Creates a new `CreateDataQualityRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::CreateDataQualityRuleset,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::CreateDataQualityRulesetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDataQualityRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateDataQualityRulesetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ruleset(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ruleset(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags applied to the data quality ruleset.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of tags applied to the data quality ruleset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A target table associated with the data quality ruleset.</p>
+        pub fn target_table(mut self, input: crate::model::DataQualityTargetTable) -> Self {
+            self.inner = self.inner.target_table(input);
+            self
+        }
+        /// <p>A target table associated with the data quality ruleset.</p>
+        pub fn set_target_table(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityTargetTable>,
+        ) -> Self {
+            self.inner = self.inner.set_target_table(input);
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -5847,6 +6514,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExecutionClass>,
         ) -> Self {
             self.inner = self.inner.set_execution_class(input);
+            self
+        }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn source_control_details(mut self, input: crate::model::SourceControlDetails) -> Self {
+            self.inner = self.inner.source_control_details(input);
+            self
+        }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn set_source_control_details(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_source_control_details(input);
             self
         }
     }
@@ -8361,6 +9041,79 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteDataQualityRuleset`.
+    ///
+    /// <p>Deletes a data quality ruleset.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteDataQualityRuleset {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_data_quality_ruleset_input::Builder,
+    }
+    impl DeleteDataQualityRuleset {
+        /// Creates a new `DeleteDataQualityRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DeleteDataQualityRuleset,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDataQualityRulesetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDataQualityRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDataQualityRulesetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the data quality ruleset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -11427,6 +12180,306 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetDataQualityResult`.
+    ///
+    /// <p>Retrieves the result of a data quality rule evaluation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataQualityResult {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_quality_result_input::Builder,
+    }
+    impl GetDataQualityResult {
+        /// Creates a new `GetDataQualityResult`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDataQualityResult,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDataQualityResultError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataQualityResultOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDataQualityResultError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_id(input.into());
+            self
+        }
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_result_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataQualityRuleRecommendationRun`.
+    ///
+    /// <p>Gets the specified recommendation run that was used to generate rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataQualityRuleRecommendationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_quality_rule_recommendation_run_input::Builder,
+    }
+    impl GetDataQualityRuleRecommendationRun {
+        /// Creates a new `GetDataQualityRuleRecommendationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDataQualityRuleRecommendationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataQualityRuleRecommendationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_run_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataQualityRuleset`.
+    ///
+    /// <p>Returns an existing ruleset by identifier or name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataQualityRuleset {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_quality_ruleset_input::Builder,
+    }
+    impl GetDataQualityRuleset {
+        /// Creates a new `GetDataQualityRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDataQualityRuleset,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetDataQualityRulesetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataQualityRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDataQualityRulesetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataQualityRulesetEvaluationRun`.
+    ///
+    /// <p>Retrieves a specific run where a ruleset is evaluated against a data source.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDataQualityRulesetEvaluationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_data_quality_ruleset_evaluation_run_input::Builder,
+    }
+    impl GetDataQualityRulesetEvaluationRun {
+        /// Creates a new `GetDataQualityRulesetEvaluationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetDataQualityRulesetEvaluationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataQualityRulesetEvaluationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_run_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetDevEndpoint`.
     ///
     /// <p>Retrieves information about a specified development endpoint.</p> <note>
@@ -11507,7 +12560,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDevEndpoints`.
     ///
-    /// <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+    /// <p>Retrieves all the development endpoints in this Amazon Web Services account.</p> <note>
     /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -11672,6 +12725,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobBookmark`.
     ///
     /// <p>Returns information on a job bookmark entry.</p>
+    /// <p>For more information about enabling and using job bookmarks, see:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job bookmarks</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters used by Glue</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job structure</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobBookmark {
         handle: std::sync::Arc<super::Handle>,
@@ -16502,6 +17561,461 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListDataQualityResults`.
+    ///
+    /// <p>Returns all data quality execution results for your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDataQualityResults {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_data_quality_results_input::Builder,
+    }
+    impl ListDataQualityResults {
+        /// Creates a new `ListDataQualityResults`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListDataQualityResults,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListDataQualityResultsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataQualityResultsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDataQualityResultsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataQualityResultsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataQualityResultsPaginator {
+            crate::paginator::ListDataQualityResultsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The filter criteria.</p>
+        pub fn filter(mut self, input: crate::model::DataQualityResultFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityResultFilterCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDataQualityRuleRecommendationRuns`.
+    ///
+    /// <p>Lists the recommendation runs meeting the filter criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDataQualityRuleRecommendationRuns {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_data_quality_rule_recommendation_runs_input::Builder,
+    }
+    impl ListDataQualityRuleRecommendationRuns {
+        /// Creates a new `ListDataQualityRuleRecommendationRuns`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListDataQualityRuleRecommendationRuns,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListDataQualityRuleRecommendationRunsError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataQualityRuleRecommendationRunsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListDataQualityRuleRecommendationRunsError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataQualityRuleRecommendationRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDataQualityRuleRecommendationRunsPaginator {
+            crate::paginator::ListDataQualityRuleRecommendationRunsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The filter criteria.</p>
+        pub fn filter(
+            mut self,
+            input: crate::model::DataQualityRuleRecommendationRunFilter,
+        ) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRuleRecommendationRunFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDataQualityRulesetEvaluationRuns`.
+    ///
+    /// <p>Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDataQualityRulesetEvaluationRuns {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_data_quality_ruleset_evaluation_runs_input::Builder,
+    }
+    impl ListDataQualityRulesetEvaluationRuns {
+        /// Creates a new `ListDataQualityRulesetEvaluationRuns`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListDataQualityRulesetEvaluationRuns,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListDataQualityRulesetEvaluationRunsError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataQualityRulesetEvaluationRunsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListDataQualityRulesetEvaluationRunsError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataQualityRulesetEvaluationRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDataQualityRulesetEvaluationRunsPaginator {
+            crate::paginator::ListDataQualityRulesetEvaluationRunsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The filter criteria.</p>
+        pub fn filter(
+            mut self,
+            input: crate::model::DataQualityRulesetEvaluationRunFilter,
+        ) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRulesetEvaluationRunFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDataQualityRulesets`.
+    ///
+    /// <p>Returns a paginated list of rulesets for the specified list of Glue tables.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDataQualityRulesets {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_data_quality_rulesets_input::Builder,
+    }
+    impl ListDataQualityRulesets {
+        /// Creates a new `ListDataQualityRulesets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::ListDataQualityRulesets,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::ListDataQualityRulesetsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataQualityRulesetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDataQualityRulesetsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataQualityRulesetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataQualityRulesetsPaginator {
+            crate::paginator::ListDataQualityRulesetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The filter criteria. </p>
+        pub fn filter(mut self, input: crate::model::DataQualityRulesetFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>The filter criteria. </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRulesetFilterCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of key-value pair tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of key-value pair tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListDevEndpoints`.
     ///
     /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
@@ -18390,6 +19904,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetJobBookmark`.
     ///
     /// <p>Resets a bookmark entry.</p>
+    /// <p>For more information about enabling and using job bookmarks, see:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job bookmarks</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters used by Glue</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job structure</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetJobBookmark {
         handle: std::sync::Arc<super::Handle>,
@@ -19074,6 +20594,292 @@ pub mod fluent_builders {
         /// <p>Name of the crawler to schedule.</p>
         pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_crawler_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartDataQualityRuleRecommendationRun`.
+    ///
+    /// <p>Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartDataQualityRuleRecommendationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_data_quality_rule_recommendation_run_input::Builder,
+    }
+    impl StartDataQualityRuleRecommendationRun {
+        /// Creates a new `StartDataQualityRuleRecommendationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartDataQualityRuleRecommendationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartDataQualityRuleRecommendationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartDataQualityRuleRecommendationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
+            self
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source(input);
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_workers(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout(input);
+            self
+        }
+        /// <p>A name for the ruleset.</p>
+        pub fn created_ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.created_ruleset_name(input.into());
+            self
+        }
+        /// <p>A name for the ruleset.</p>
+        pub fn set_created_ruleset_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_created_ruleset_name(input);
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartDataQualityRulesetEvaluationRun`.
+    ///
+    /// <p>Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the <code>GetDataQualityResult</code> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartDataQualityRulesetEvaluationRun {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_data_quality_ruleset_evaluation_run_input::Builder,
+    }
+    impl StartDataQualityRulesetEvaluationRun {
+        /// Creates a new `StartDataQualityRulesetEvaluationRun`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::StartDataQualityRulesetEvaluationRun,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartDataQualityRulesetEvaluationRunOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartDataQualityRulesetEvaluationRunError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
+            self
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source(input);
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_workers(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout(input);
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn additional_run_options(
+            mut self,
+            input: crate::model::DataQualityEvaluationRunAdditionalRunOptions,
+        ) -> Self {
+            self.inner = self.inner.additional_run_options(input);
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn set_additional_run_options(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_additional_run_options(input);
+            self
+        }
+        /// Appends an item to `RulesetNames`.
+        ///
+        /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
+        ///
+        /// <p>A list of ruleset names.</p>
+        pub fn ruleset_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ruleset_names(input.into());
+            self
+        }
+        /// <p>A list of ruleset names.</p>
+        pub fn set_ruleset_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ruleset_names(input);
             self
         }
     }
@@ -21179,12 +22985,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lake_formation_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21385,6 +23191,109 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DatabaseInput>,
         ) -> Self {
             self.inner = self.inner.set_database_input(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDataQualityRuleset`.
+    ///
+    /// <p>Updates the specified data quality ruleset.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateDataQualityRuleset {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_data_quality_ruleset_input::Builder,
+    }
+    impl UpdateDataQualityRuleset {
+        /// Creates a new `UpdateDataQualityRuleset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateDataQualityRuleset,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDataQualityRulesetError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDataQualityRulesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDataQualityRulesetError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The new name of the ruleset, if you are renaming it.</p>
+        pub fn updated_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updated_name(input.into());
+            self
+        }
+        /// <p>The new name of the ruleset, if you are renaming it.</p>
+        pub fn set_updated_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_updated_name(input);
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ruleset(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ruleset(input);
             self
         }
     }
@@ -21664,6 +23573,172 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::JobUpdate>,
         ) -> Self {
             self.inner = self.inner.set_job_update(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateJobFromSourceControl`.
+    ///
+    /// <p>Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.</p>
+    /// <p>This API supports optional parameters which take in the repository information.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateJobFromSourceControl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_job_from_source_control_input::Builder,
+    }
+    impl UpdateJobFromSourceControl {
+        /// Creates a new `UpdateJobFromSourceControl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateJobFromSourceControl,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateJobFromSourceControlError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateJobFromSourceControlOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateJobFromSourceControlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn provider(mut self, input: crate::model::SourceControlProvider) -> Self {
+            self.inner = self.inner.provider(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_provider(input);
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_name(input);
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn repository_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_owner(input.into());
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_owner(input);
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_branch_name(input);
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder(input.into());
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_folder(input);
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_commit_id(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn auth_strategy(mut self, input: crate::model::SourceControlAuthStrategy) -> Self {
+            self.inner = self.inner.auth_strategy(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn set_auth_strategy(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        ) -> Self {
+            self.inner = self.inner.set_auth_strategy(input);
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(input.into());
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_auth_token(input);
             self
         }
     }
@@ -22190,6 +24265,172 @@ pub mod fluent_builders {
         /// <p>The new description for the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSourceControlFromJob`.
+    ///
+    /// <p>Synchronizes a job to the source control repository. This operation takes the job artifacts from the Glue internal stores and makes a commit to the remote repository that is configured on the job.</p>
+    /// <p>This API supports optional parameters which take in the repository information.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateSourceControlFromJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_source_control_from_job_input::Builder,
+    }
+    impl UpdateSourceControlFromJob {
+        /// Creates a new `UpdateSourceControlFromJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateSourceControlFromJob,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSourceControlFromJobError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSourceControlFromJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSourceControlFromJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn provider(mut self, input: crate::model::SourceControlProvider) -> Self {
+            self.inner = self.inner.provider(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_provider(input);
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_name(input);
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn repository_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_owner(input.into());
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_owner(input);
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_branch_name(input);
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder(input.into());
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_folder(input);
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_commit_id(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn auth_strategy(mut self, input: crate::model::SourceControlAuthStrategy) -> Self {
+            self.inner = self.inner.auth_strategy(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn set_auth_strategy(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        ) -> Self {
+            self.inner = self.inner.set_auth_strategy(input);
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(input.into());
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_auth_token(input);
             self
         }
     }

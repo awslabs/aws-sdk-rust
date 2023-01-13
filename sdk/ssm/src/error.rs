@@ -1058,6 +1058,66 @@ impl OpsItemAlreadyExistsException {
     }
 }
 
+/// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct OpsItemAccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl OpsItemAccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OpsItemAccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OpsItemAccessDeniedException")?;
+        if let Some(inner_16) = &self.message {
+            {
+                write!(f, ": {}", inner_16)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OpsItemAccessDeniedException {}
+/// See [`OpsItemAccessDeniedException`](crate::error::OpsItemAccessDeniedException).
+pub mod ops_item_access_denied_exception {
+
+    /// A builder for [`OpsItemAccessDeniedException`](crate::error::OpsItemAccessDeniedException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpsItemAccessDeniedException`](crate::error::OpsItemAccessDeniedException).
+        pub fn build(self) -> crate::error::OpsItemAccessDeniedException {
+            crate::error::OpsItemAccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl OpsItemAccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`OpsItemAccessDeniedException`](crate::error::OpsItemAccessDeniedException).
+    pub fn builder() -> crate::error::ops_item_access_denied_exception::Builder {
+        crate::error::ops_item_access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>The following problems can cause this exception:</p>
 /// <ul>
 /// <li> <p>You don't have permission to access the managed node.</p> </li>
@@ -1081,9 +1141,9 @@ impl InvalidInstanceId {
 impl std::fmt::Display for InvalidInstanceId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInstanceId")?;
-        if let Some(inner_16) = &self.message {
+        if let Some(inner_17) = &self.message {
             {
-                write!(f, ": {}", inner_16)?;
+                write!(f, ": {}", inner_17)?;
             }
         }
         Ok(())
@@ -1141,9 +1201,9 @@ impl InvalidDocumentVersion {
 impl std::fmt::Display for InvalidDocumentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocumentVersion")?;
-        if let Some(inner_17) = &self.message {
+        if let Some(inner_18) = &self.message {
             {
-                write!(f, ": {}", inner_17)?;
+                write!(f, ": {}", inner_18)?;
             }
         }
         Ok(())
@@ -1201,9 +1261,9 @@ impl InvalidDocumentOperation {
 impl std::fmt::Display for InvalidDocumentOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocumentOperation")?;
-        if let Some(inner_18) = &self.message {
+        if let Some(inner_19) = &self.message {
             {
-                write!(f, ": {}", inner_18)?;
+                write!(f, ": {}", inner_19)?;
             }
         }
         Ok(())
@@ -1261,9 +1321,9 @@ impl InvalidDocument {
 impl std::fmt::Display for InvalidDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocument")?;
-        if let Some(inner_19) = &self.message {
+        if let Some(inner_20) = &self.message {
             {
-                write!(f, ": {}", inner_19)?;
+                write!(f, ": {}", inner_20)?;
             }
         }
         Ok(())
@@ -1321,9 +1381,9 @@ impl InvalidDocumentSchemaVersion {
 impl std::fmt::Display for InvalidDocumentSchemaVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocumentSchemaVersion")?;
-        if let Some(inner_20) = &self.message {
+        if let Some(inner_21) = &self.message {
             {
-                write!(f, ": {}", inner_20)?;
+                write!(f, ": {}", inner_21)?;
             }
         }
         Ok(())
@@ -1381,9 +1441,9 @@ impl MaxDocumentSizeExceeded {
 impl std::fmt::Display for MaxDocumentSizeExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaxDocumentSizeExceeded")?;
-        if let Some(inner_21) = &self.message {
+        if let Some(inner_22) = &self.message {
             {
-                write!(f, ": {}", inner_21)?;
+                write!(f, ": {}", inner_22)?;
             }
         }
         Ok(())
@@ -1441,9 +1501,9 @@ impl InvalidDocumentContent {
 impl std::fmt::Display for InvalidDocumentContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocumentContent")?;
-        if let Some(inner_22) = &self.message {
+        if let Some(inner_23) = &self.message {
             {
-                write!(f, ": {}", inner_22)?;
+                write!(f, ": {}", inner_23)?;
             }
         }
         Ok(())
@@ -1501,9 +1561,9 @@ impl DuplicateDocumentVersionName {
 impl std::fmt::Display for DuplicateDocumentVersionName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateDocumentVersionName")?;
-        if let Some(inner_23) = &self.message {
+        if let Some(inner_24) = &self.message {
             {
-                write!(f, ": {}", inner_23)?;
+                write!(f, ": {}", inner_24)?;
             }
         }
         Ok(())
@@ -1561,9 +1621,9 @@ impl DuplicateDocumentContent {
 impl std::fmt::Display for DuplicateDocumentContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateDocumentContent")?;
-        if let Some(inner_24) = &self.message {
+        if let Some(inner_25) = &self.message {
             {
-                write!(f, ": {}", inner_24)?;
+                write!(f, ": {}", inner_25)?;
             }
         }
         Ok(())
@@ -1621,9 +1681,9 @@ impl DocumentVersionLimitExceeded {
 impl std::fmt::Display for DocumentVersionLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DocumentVersionLimitExceeded")?;
-        if let Some(inner_25) = &self.message {
+        if let Some(inner_26) = &self.message {
             {
-                write!(f, ": {}", inner_25)?;
+                write!(f, ": {}", inner_26)?;
             }
         }
         Ok(())
@@ -1681,9 +1741,9 @@ impl StatusUnchanged {
 impl std::fmt::Display for StatusUnchanged {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StatusUnchanged")?;
-        if let Some(inner_26) = &self.message {
+        if let Some(inner_27) = &self.message {
             {
-                write!(f, ": {}", inner_26)?;
+                write!(f, ": {}", inner_27)?;
             }
         }
         Ok(())
@@ -1741,9 +1801,9 @@ impl AssociationDoesNotExist {
 impl std::fmt::Display for AssociationDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationDoesNotExist")?;
-        if let Some(inner_27) = &self.message {
+        if let Some(inner_28) = &self.message {
             {
-                write!(f, ": {}", inner_27)?;
+                write!(f, ": {}", inner_28)?;
             }
         }
         Ok(())
@@ -1801,9 +1861,9 @@ impl InvalidUpdate {
 impl std::fmt::Display for InvalidUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUpdate")?;
-        if let Some(inner_28) = &self.message {
+        if let Some(inner_29) = &self.message {
             {
-                write!(f, ": {}", inner_28)?;
+                write!(f, ": {}", inner_29)?;
             }
         }
         Ok(())
@@ -1861,9 +1921,9 @@ impl InvalidTargetMaps {
 impl std::fmt::Display for InvalidTargetMaps {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetMaps")?;
-        if let Some(inner_29) = &self.message {
+        if let Some(inner_30) = &self.message {
             {
-                write!(f, ": {}", inner_29)?;
+                write!(f, ": {}", inner_30)?;
             }
         }
         Ok(())
@@ -1921,9 +1981,9 @@ impl InvalidTarget {
 impl std::fmt::Display for InvalidTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTarget")?;
-        if let Some(inner_30) = &self.message {
+        if let Some(inner_31) = &self.message {
             {
-                write!(f, ": {}", inner_30)?;
+                write!(f, ": {}", inner_31)?;
             }
         }
         Ok(())
@@ -1981,9 +2041,9 @@ impl InvalidSchedule {
 impl std::fmt::Display for InvalidSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSchedule")?;
-        if let Some(inner_31) = &self.message {
+        if let Some(inner_32) = &self.message {
             {
-                write!(f, ": {}", inner_31)?;
+                write!(f, ": {}", inner_32)?;
             }
         }
         Ok(())
@@ -2041,9 +2101,9 @@ impl InvalidParameters {
 impl std::fmt::Display for InvalidParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameters")?;
-        if let Some(inner_32) = &self.message {
+        if let Some(inner_33) = &self.message {
             {
-                write!(f, ": {}", inner_32)?;
+                write!(f, ": {}", inner_33)?;
             }
         }
         Ok(())
@@ -2101,9 +2161,9 @@ impl InvalidOutputLocation {
 impl std::fmt::Display for InvalidOutputLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOutputLocation")?;
-        if let Some(inner_33) = &self.message {
+        if let Some(inner_34) = &self.message {
             {
-                write!(f, ": {}", inner_33)?;
+                write!(f, ": {}", inner_34)?;
             }
         }
         Ok(())
@@ -2161,9 +2221,9 @@ impl InvalidAssociationVersion {
 impl std::fmt::Display for InvalidAssociationVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAssociationVersion")?;
-        if let Some(inner_34) = &self.message {
+        if let Some(inner_35) = &self.message {
             {
-                write!(f, ": {}", inner_34)?;
+                write!(f, ": {}", inner_35)?;
             }
         }
         Ok(())
@@ -2221,9 +2281,9 @@ impl AssociationVersionLimitExceeded {
 impl std::fmt::Display for AssociationVersionLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationVersionLimitExceeded")?;
-        if let Some(inner_35) = &self.message {
+        if let Some(inner_36) = &self.message {
             {
-                write!(f, ": {}", inner_35)?;
+                write!(f, ": {}", inner_36)?;
             }
         }
         Ok(())
@@ -2281,9 +2341,9 @@ impl ParameterVersionNotFound {
 impl std::fmt::Display for ParameterVersionNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterVersionNotFound")?;
-        if let Some(inner_36) = &self.message {
+        if let Some(inner_37) = &self.message {
             {
-                write!(f, ": {}", inner_36)?;
+                write!(f, ": {}", inner_37)?;
             }
         }
         Ok(())
@@ -2341,9 +2401,9 @@ impl ParameterNotFound {
 impl std::fmt::Display for ParameterNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterNotFound")?;
-        if let Some(inner_37) = &self.message {
+        if let Some(inner_38) = &self.message {
             {
-                write!(f, ": {}", inner_37)?;
+                write!(f, ": {}", inner_38)?;
             }
         }
         Ok(())
@@ -2401,9 +2461,9 @@ impl InvalidAutomationStatusUpdateException {
 impl std::fmt::Display for InvalidAutomationStatusUpdateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAutomationStatusUpdateException")?;
-        if let Some(inner_38) = &self.message {
+        if let Some(inner_39) = &self.message {
             {
-                write!(f, ": {}", inner_38)?;
+                write!(f, ": {}", inner_39)?;
             }
         }
         Ok(())
@@ -2461,9 +2521,9 @@ impl AutomationExecutionNotFoundException {
 impl std::fmt::Display for AutomationExecutionNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationExecutionNotFoundException")?;
-        if let Some(inner_39) = &self.message {
+        if let Some(inner_40) = &self.message {
             {
-                write!(f, ": {}", inner_39)?;
+                write!(f, ": {}", inner_40)?;
             }
         }
         Ok(())
@@ -2521,9 +2581,9 @@ impl TargetNotConnected {
 impl std::fmt::Display for TargetNotConnected {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetNotConnected")?;
-        if let Some(inner_40) = &self.message {
+        if let Some(inner_41) = &self.message {
             {
-                write!(f, ": {}", inner_40)?;
+                write!(f, ": {}", inner_41)?;
             }
         }
         Ok(())
@@ -2581,9 +2641,9 @@ impl InvalidAutomationExecutionParametersException {
 impl std::fmt::Display for InvalidAutomationExecutionParametersException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAutomationExecutionParametersException")?;
-        if let Some(inner_41) = &self.message {
+        if let Some(inner_42) = &self.message {
             {
-                write!(f, ": {}", inner_41)?;
+                write!(f, ": {}", inner_42)?;
             }
         }
         Ok(())
@@ -2641,9 +2701,9 @@ impl IdempotentParameterMismatch {
 impl std::fmt::Display for IdempotentParameterMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatch")?;
-        if let Some(inner_42) = &self.message {
+        if let Some(inner_43) = &self.message {
             {
-                write!(f, ": {}", inner_42)?;
+                write!(f, ": {}", inner_43)?;
             }
         }
         Ok(())
@@ -2701,9 +2761,9 @@ impl AutomationExecutionLimitExceededException {
 impl std::fmt::Display for AutomationExecutionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationExecutionLimitExceededException")?;
-        if let Some(inner_43) = &self.message {
+        if let Some(inner_44) = &self.message {
             {
-                write!(f, ": {}", inner_43)?;
+                write!(f, ": {}", inner_44)?;
             }
         }
         Ok(())
@@ -2761,9 +2821,9 @@ impl AutomationDefinitionVersionNotFoundException {
 impl std::fmt::Display for AutomationDefinitionVersionNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationDefinitionVersionNotFoundException")?;
-        if let Some(inner_44) = &self.message {
+        if let Some(inner_45) = &self.message {
             {
-                write!(f, ": {}", inner_44)?;
+                write!(f, ": {}", inner_45)?;
             }
         }
         Ok(())
@@ -2821,9 +2881,9 @@ impl AutomationDefinitionNotFoundException {
 impl std::fmt::Display for AutomationDefinitionNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationDefinitionNotFoundException")?;
-        if let Some(inner_45) = &self.message {
+        if let Some(inner_46) = &self.message {
             {
-                write!(f, ": {}", inner_45)?;
+                write!(f, ": {}", inner_46)?;
             }
         }
         Ok(())
@@ -2881,9 +2941,9 @@ impl AutomationDefinitionNotApprovedException {
 impl std::fmt::Display for AutomationDefinitionNotApprovedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationDefinitionNotApprovedException")?;
-        if let Some(inner_46) = &self.message {
+        if let Some(inner_47) = &self.message {
             {
-                write!(f, ": {}", inner_46)?;
+                write!(f, ": {}", inner_47)?;
             }
         }
         Ok(())
@@ -2941,9 +3001,9 @@ impl InvalidAssociation {
 impl std::fmt::Display for InvalidAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAssociation")?;
-        if let Some(inner_47) = &self.message {
+        if let Some(inner_48) = &self.message {
             {
-                write!(f, ": {}", inner_47)?;
+                write!(f, ": {}", inner_48)?;
             }
         }
         Ok(())
@@ -3001,9 +3061,9 @@ impl UnsupportedPlatformType {
 impl std::fmt::Display for UnsupportedPlatformType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedPlatformType")?;
-        if let Some(inner_48) = &self.message {
+        if let Some(inner_49) = &self.message {
             {
-                write!(f, ": {}", inner_48)?;
+                write!(f, ": {}", inner_49)?;
             }
         }
         Ok(())
@@ -3061,9 +3121,9 @@ impl InvalidRole {
 impl std::fmt::Display for InvalidRole {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRole")?;
-        if let Some(inner_49) = &self.message {
+        if let Some(inner_50) = &self.message {
             {
-                write!(f, ": {}", inner_49)?;
+                write!(f, ": {}", inner_50)?;
             }
         }
         Ok(())
@@ -3121,9 +3181,9 @@ impl InvalidOutputFolder {
 impl std::fmt::Display for InvalidOutputFolder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOutputFolder")?;
-        if let Some(inner_50) = &self.message {
+        if let Some(inner_51) = &self.message {
             {
-                write!(f, ": {}", inner_50)?;
+                write!(f, ": {}", inner_51)?;
             }
         }
         Ok(())
@@ -3181,9 +3241,9 @@ impl InvalidNotificationConfig {
 impl std::fmt::Display for InvalidNotificationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNotificationConfig")?;
-        if let Some(inner_51) = &self.message {
+        if let Some(inner_52) = &self.message {
             {
-                write!(f, ": {}", inner_51)?;
+                write!(f, ": {}", inner_52)?;
             }
         }
         Ok(())
@@ -3241,9 +3301,9 @@ impl DuplicateInstanceId {
 impl std::fmt::Display for DuplicateInstanceId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateInstanceId")?;
-        if let Some(inner_52) = &self.message {
+        if let Some(inner_53) = &self.message {
             {
-                write!(f, ": {}", inner_52)?;
+                write!(f, ": {}", inner_53)?;
             }
         }
         Ok(())
@@ -3301,9 +3361,9 @@ impl InvalidAutomationSignalException {
 impl std::fmt::Display for InvalidAutomationSignalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAutomationSignalException")?;
-        if let Some(inner_53) = &self.message {
+        if let Some(inner_54) = &self.message {
             {
-                write!(f, ": {}", inner_53)?;
+                write!(f, ": {}", inner_54)?;
             }
         }
         Ok(())
@@ -3361,9 +3421,9 @@ impl AutomationStepNotFoundException {
 impl std::fmt::Display for AutomationStepNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationStepNotFoundException")?;
-        if let Some(inner_54) = &self.message {
+        if let Some(inner_55) = &self.message {
             {
-                write!(f, ": {}", inner_54)?;
+                write!(f, ": {}", inner_55)?;
             }
         }
         Ok(())
@@ -3421,9 +3481,9 @@ impl InvalidResourceType {
 impl std::fmt::Display for InvalidResourceType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceType")?;
-        if let Some(inner_55) = &self.message {
+        if let Some(inner_56) = &self.message {
             {
-                write!(f, ": {}", inner_55)?;
+                write!(f, ": {}", inner_56)?;
             }
         }
         Ok(())
@@ -3481,9 +3541,9 @@ impl InvalidResourceId {
 impl std::fmt::Display for InvalidResourceId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceId")?;
-        if let Some(inner_56) = &self.message {
+        if let Some(inner_57) = &self.message {
             {
-                write!(f, ": {}", inner_56)?;
+                write!(f, ": {}", inner_57)?;
             }
         }
         Ok(())
@@ -3542,9 +3602,9 @@ impl ResourceLimitExceededException {
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
-        if let Some(inner_57) = &self.message {
+        if let Some(inner_58) = &self.message {
             {
-                write!(f, ": {}", inner_57)?;
+                write!(f, ": {}", inner_58)?;
             }
         }
         Ok(())
@@ -3602,9 +3662,9 @@ impl FeatureNotAvailableException {
 impl std::fmt::Display for FeatureNotAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FeatureNotAvailableException")?;
-        if let Some(inner_58) = &self.message {
+        if let Some(inner_59) = &self.message {
             {
-                write!(f, ": {}", inner_58)?;
+                write!(f, ": {}", inner_59)?;
             }
         }
         Ok(())
@@ -3662,9 +3722,9 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_59) = &self.message {
+        if let Some(inner_60) = &self.message {
             {
-                write!(f, ": {}", inner_59)?;
+                write!(f, ": {}", inner_60)?;
             }
         }
         Ok(())
@@ -3705,6 +3765,255 @@ impl AlreadyExistsException {
     }
 }
 
+/// <p>The <code>PutResourcePolicy</code> API action enforces two limits. A policy can't be greater than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicyLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub limit: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub limit_type: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourcePolicyLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit_type(&self) -> std::option::Option<&str> {
+        self.limit_type.as_deref()
+    }
+}
+impl ResourcePolicyLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourcePolicyLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourcePolicyLimitExceededException")?;
+        if let Some(inner_61) = &self.message {
+            {
+                write!(f, ": {}", inner_61)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourcePolicyLimitExceededException {}
+/// See [`ResourcePolicyLimitExceededException`](crate::error::ResourcePolicyLimitExceededException).
+pub mod resource_policy_limit_exceeded_exception {
+
+    /// A builder for [`ResourcePolicyLimitExceededException`](crate::error::ResourcePolicyLimitExceededException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) limit_type: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn limit_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.limit_type = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_limit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.limit_type = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicyLimitExceededException`](crate::error::ResourcePolicyLimitExceededException).
+        pub fn build(self) -> crate::error::ResourcePolicyLimitExceededException {
+            crate::error::ResourcePolicyLimitExceededException {
+                limit: self.limit.unwrap_or_default(),
+                limit_type: self.limit_type,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourcePolicyLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicyLimitExceededException`](crate::error::ResourcePolicyLimitExceededException).
+    pub fn builder() -> crate::error::resource_policy_limit_exceeded_exception::Builder {
+        crate::error::resource_policy_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicyInvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourcePolicyInvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn parameter_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parameter_names.as_deref()
+    }
+}
+impl ResourcePolicyInvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourcePolicyInvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourcePolicyInvalidParameterException")?;
+        if let Some(inner_62) = &self.message {
+            {
+                write!(f, ": {}", inner_62)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourcePolicyInvalidParameterException {}
+/// See [`ResourcePolicyInvalidParameterException`](crate::error::ResourcePolicyInvalidParameterException).
+pub mod resource_policy_invalid_parameter_exception {
+
+    /// A builder for [`ResourcePolicyInvalidParameterException`](crate::error::ResourcePolicyInvalidParameterException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `parameter_names`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).
+        ///
+        pub fn parameter_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.parameter_names.unwrap_or_default();
+            v.push(input.into());
+            self.parameter_names = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_parameter_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.parameter_names = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicyInvalidParameterException`](crate::error::ResourcePolicyInvalidParameterException).
+        pub fn build(self) -> crate::error::ResourcePolicyInvalidParameterException {
+            crate::error::ResourcePolicyInvalidParameterException {
+                parameter_names: self.parameter_names,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourcePolicyInvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicyInvalidParameterException`](crate::error::ResourcePolicyInvalidParameterException).
+    pub fn builder() -> crate::error::resource_policy_invalid_parameter_exception::Builder {
+        crate::error::resource_policy_invalid_parameter_exception::Builder::default()
+    }
+}
+
+/// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourcePolicyConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ResourcePolicyConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourcePolicyConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourcePolicyConflictException")?;
+        if let Some(inner_63) = &self.message {
+            {
+                write!(f, ": {}", inner_63)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourcePolicyConflictException {}
+/// See [`ResourcePolicyConflictException`](crate::error::ResourcePolicyConflictException).
+pub mod resource_policy_conflict_exception {
+
+    /// A builder for [`ResourcePolicyConflictException`](crate::error::ResourcePolicyConflictException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourcePolicyConflictException`](crate::error::ResourcePolicyConflictException).
+        pub fn build(self) -> crate::error::ResourcePolicyConflictException {
+            crate::error::ResourcePolicyConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourcePolicyConflictException {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicyConflictException`](crate::error::ResourcePolicyConflictException).
+    pub fn builder() -> crate::error::resource_policy_conflict_exception::Builder {
+        crate::error::resource_policy_conflict_exception::Builder::default()
+    }
+}
+
 /// <p>The parameter type isn't supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3722,9 +4031,9 @@ impl UnsupportedParameterType {
 impl std::fmt::Display for UnsupportedParameterType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedParameterType")?;
-        if let Some(inner_60) = &self.message {
+        if let Some(inner_64) = &self.message {
             {
-                write!(f, ": {}", inner_60)?;
+                write!(f, ": {}", inner_64)?;
             }
         }
         Ok(())
@@ -3782,9 +4091,9 @@ impl PoliciesLimitExceededException {
 impl std::fmt::Display for PoliciesLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PoliciesLimitExceededException")?;
-        if let Some(inner_61) = &self.message {
+        if let Some(inner_65) = &self.message {
             {
-                write!(f, ": {}", inner_61)?;
+                write!(f, ": {}", inner_65)?;
             }
         }
         Ok(())
@@ -3842,9 +4151,9 @@ impl ParameterPatternMismatchException {
 impl std::fmt::Display for ParameterPatternMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterPatternMismatchException")?;
-        if let Some(inner_62) = &self.message {
+        if let Some(inner_66) = &self.message {
             {
-                write!(f, ": {}", inner_62)?;
+                write!(f, ": {}", inner_66)?;
             }
         }
         Ok(())
@@ -3904,9 +4213,9 @@ impl ParameterMaxVersionLimitExceeded {
 impl std::fmt::Display for ParameterMaxVersionLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterMaxVersionLimitExceeded")?;
-        if let Some(inner_63) = &self.message {
+        if let Some(inner_67) = &self.message {
             {
-                write!(f, ": {}", inner_63)?;
+                write!(f, ": {}", inner_67)?;
             }
         }
         Ok(())
@@ -3964,9 +4273,9 @@ impl ParameterLimitExceeded {
 impl std::fmt::Display for ParameterLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterLimitExceeded")?;
-        if let Some(inner_64) = &self.message {
+        if let Some(inner_68) = &self.message {
             {
-                write!(f, ": {}", inner_64)?;
+                write!(f, ": {}", inner_68)?;
             }
         }
         Ok(())
@@ -4024,9 +4333,9 @@ impl ParameterAlreadyExists {
 impl std::fmt::Display for ParameterAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterAlreadyExists")?;
-        if let Some(inner_65) = &self.message {
+        if let Some(inner_69) = &self.message {
             {
-                write!(f, ": {}", inner_65)?;
+                write!(f, ": {}", inner_69)?;
             }
         }
         Ok(())
@@ -4084,9 +4393,9 @@ impl InvalidPolicyTypeException {
 impl std::fmt::Display for InvalidPolicyTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPolicyTypeException")?;
-        if let Some(inner_66) = &self.message {
+        if let Some(inner_70) = &self.message {
             {
-                write!(f, ": {}", inner_66)?;
+                write!(f, ": {}", inner_70)?;
             }
         }
         Ok(())
@@ -4144,9 +4453,9 @@ impl InvalidPolicyAttributeException {
 impl std::fmt::Display for InvalidPolicyAttributeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPolicyAttributeException")?;
-        if let Some(inner_67) = &self.message {
+        if let Some(inner_71) = &self.message {
             {
-                write!(f, ": {}", inner_67)?;
+                write!(f, ": {}", inner_71)?;
             }
         }
         Ok(())
@@ -4204,9 +4513,9 @@ impl InvalidKeyId {
 impl std::fmt::Display for InvalidKeyId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKeyId")?;
-        if let Some(inner_68) = &self.message {
+        if let Some(inner_72) = &self.message {
             {
-                write!(f, ": {}", inner_68)?;
+                write!(f, ": {}", inner_72)?;
             }
         }
         Ok(())
@@ -4264,9 +4573,9 @@ impl InvalidAllowedPatternException {
 impl std::fmt::Display for InvalidAllowedPatternException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAllowedPatternException")?;
-        if let Some(inner_69) = &self.message {
+        if let Some(inner_73) = &self.message {
             {
-                write!(f, ": {}", inner_69)?;
+                write!(f, ": {}", inner_73)?;
             }
         }
         Ok(())
@@ -4324,9 +4633,9 @@ impl IncompatiblePolicyException {
 impl std::fmt::Display for IncompatiblePolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncompatiblePolicyException")?;
-        if let Some(inner_70) = &self.message {
+        if let Some(inner_74) = &self.message {
             {
-                write!(f, ": {}", inner_70)?;
+                write!(f, ": {}", inner_74)?;
             }
         }
         Ok(())
@@ -4384,9 +4693,9 @@ impl HierarchyTypeMismatchException {
 impl std::fmt::Display for HierarchyTypeMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HierarchyTypeMismatchException")?;
-        if let Some(inner_71) = &self.message {
+        if let Some(inner_75) = &self.message {
             {
-                write!(f, ": {}", inner_71)?;
+                write!(f, ": {}", inner_75)?;
             }
         }
         Ok(())
@@ -4444,9 +4753,9 @@ impl HierarchyLevelLimitExceededException {
 impl std::fmt::Display for HierarchyLevelLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HierarchyLevelLimitExceededException")?;
-        if let Some(inner_72) = &self.message {
+        if let Some(inner_76) = &self.message {
             {
-                write!(f, ": {}", inner_72)?;
+                write!(f, ": {}", inner_76)?;
             }
         }
         Ok(())
@@ -4504,9 +4813,9 @@ impl UnsupportedInventorySchemaVersionException {
 impl std::fmt::Display for UnsupportedInventorySchemaVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedInventorySchemaVersionException")?;
-        if let Some(inner_73) = &self.message {
+        if let Some(inner_77) = &self.message {
             {
-                write!(f, ": {}", inner_73)?;
+                write!(f, ": {}", inner_77)?;
             }
         }
         Ok(())
@@ -4573,9 +4882,9 @@ impl UnsupportedInventoryItemContextException {
 impl std::fmt::Display for UnsupportedInventoryItemContextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedInventoryItemContextException")?;
-        if let Some(inner_74) = &self.message {
+        if let Some(inner_78) = &self.message {
             {
-                write!(f, ": {}", inner_74)?;
+                write!(f, ": {}", inner_78)?;
             }
         }
         Ok(())
@@ -4645,9 +4954,9 @@ impl TotalSizeLimitExceededException {
 impl std::fmt::Display for TotalSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TotalSizeLimitExceededException")?;
-        if let Some(inner_75) = &self.message {
+        if let Some(inner_79) = &self.message {
             {
-                write!(f, ": {}", inner_75)?;
+                write!(f, ": {}", inner_79)?;
             }
         }
         Ok(())
@@ -4705,9 +5014,9 @@ impl SubTypeCountLimitExceededException {
 impl std::fmt::Display for SubTypeCountLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubTypeCountLimitExceededException")?;
-        if let Some(inner_76) = &self.message {
+        if let Some(inner_80) = &self.message {
             {
-                write!(f, ": {}", inner_76)?;
+                write!(f, ": {}", inner_80)?;
             }
         }
         Ok(())
@@ -4774,9 +5083,9 @@ impl ItemSizeLimitExceededException {
 impl std::fmt::Display for ItemSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ItemSizeLimitExceededException")?;
-        if let Some(inner_77) = &self.message {
+        if let Some(inner_81) = &self.message {
             {
-                write!(f, ": {}", inner_77)?;
+                write!(f, ": {}", inner_81)?;
             }
         }
         Ok(())
@@ -4855,9 +5164,9 @@ impl ItemContentMismatchException {
 impl std::fmt::Display for ItemContentMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ItemContentMismatchException")?;
-        if let Some(inner_78) = &self.message {
+        if let Some(inner_82) = &self.message {
             {
-                write!(f, ": {}", inner_78)?;
+                write!(f, ": {}", inner_82)?;
             }
         }
         Ok(())
@@ -4927,9 +5236,9 @@ impl InvalidTypeNameException {
 impl std::fmt::Display for InvalidTypeNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTypeNameException")?;
-        if let Some(inner_79) = &self.message {
+        if let Some(inner_83) = &self.message {
             {
-                write!(f, ": {}", inner_79)?;
+                write!(f, ": {}", inner_83)?;
             }
         }
         Ok(())
@@ -4996,9 +5305,9 @@ impl InvalidItemContentException {
 impl std::fmt::Display for InvalidItemContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidItemContentException")?;
-        if let Some(inner_80) = &self.message {
+        if let Some(inner_84) = &self.message {
             {
-                write!(f, ": {}", inner_80)?;
+                write!(f, ": {}", inner_84)?;
             }
         }
         Ok(())
@@ -5068,9 +5377,9 @@ impl InvalidInventoryItemContextException {
 impl std::fmt::Display for InvalidInventoryItemContextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInventoryItemContextException")?;
-        if let Some(inner_81) = &self.message {
+        if let Some(inner_85) = &self.message {
             {
-                write!(f, ": {}", inner_81)?;
+                write!(f, ": {}", inner_85)?;
             }
         }
         Ok(())
@@ -5128,9 +5437,9 @@ impl CustomSchemaCountLimitExceededException {
 impl std::fmt::Display for CustomSchemaCountLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomSchemaCountLimitExceededException")?;
-        if let Some(inner_82) = &self.message {
+        if let Some(inner_86) = &self.message {
             {
-                write!(f, ": {}", inner_82)?;
+                write!(f, ": {}", inner_86)?;
             }
         }
         Ok(())
@@ -5188,9 +5497,9 @@ impl ComplianceTypeCountLimitExceededException {
 impl std::fmt::Display for ComplianceTypeCountLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ComplianceTypeCountLimitExceededException")?;
-        if let Some(inner_83) = &self.message {
+        if let Some(inner_87) = &self.message {
             {
-                write!(f, ": {}", inner_83)?;
+                write!(f, ": {}", inner_87)?;
             }
         }
         Ok(())
@@ -5248,9 +5557,9 @@ impl InvalidPermissionType {
 impl std::fmt::Display for InvalidPermissionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPermissionType")?;
-        if let Some(inner_84) = &self.message {
+        if let Some(inner_88) = &self.message {
             {
-                write!(f, ": {}", inner_84)?;
+                write!(f, ": {}", inner_88)?;
             }
         }
         Ok(())
@@ -5291,7 +5600,9 @@ impl InvalidPermissionType {
     }
 }
 
-/// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
+/// <p>The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20 accounts per API operation to share a private document.</p>
+/// <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to five documents.</p>
+/// <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentPermissionLimit {
@@ -5308,9 +5619,9 @@ impl DocumentPermissionLimit {
 impl std::fmt::Display for DocumentPermissionLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DocumentPermissionLimit")?;
-        if let Some(inner_85) = &self.message {
+        if let Some(inner_89) = &self.message {
             {
-                write!(f, ": {}", inner_85)?;
+                write!(f, ": {}", inner_89)?;
             }
         }
         Ok(())
@@ -5368,9 +5679,9 @@ impl DocumentLimitExceeded {
 impl std::fmt::Display for DocumentLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DocumentLimitExceeded")?;
-        if let Some(inner_86) = &self.message {
+        if let Some(inner_90) = &self.message {
             {
-                write!(f, ": {}", inner_86)?;
+                write!(f, ": {}", inner_90)?;
             }
         }
         Ok(())
@@ -5428,9 +5739,9 @@ impl InvalidNextToken {
 impl std::fmt::Display for InvalidNextToken {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextToken")?;
-        if let Some(inner_87) = &self.message {
+        if let Some(inner_91) = &self.message {
             {
-                write!(f, ": {}", inner_87)?;
+                write!(f, ": {}", inner_91)?;
             }
         }
         Ok(())
@@ -5488,9 +5799,9 @@ impl InvalidFilter {
 impl std::fmt::Display for InvalidFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilter")?;
-        if let Some(inner_88) = &self.message {
+        if let Some(inner_92) = &self.message {
             {
-                write!(f, ": {}", inner_88)?;
+                write!(f, ": {}", inner_92)?;
             }
         }
         Ok(())
@@ -5548,9 +5859,9 @@ impl InvalidFilterKey {
 impl std::fmt::Display for InvalidFilterKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilterKey")?;
-        if let Some(inner_89) = &self.message {
+        if let Some(inner_93) = &self.message {
             {
-                write!(f, ": {}", inner_89)?;
+                write!(f, ": {}", inner_93)?;
             }
         }
         Ok(())
@@ -5608,9 +5919,9 @@ impl InvalidCommandId {
 impl std::fmt::Display for InvalidCommandId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommandId")?;
-        if let Some(inner_90) = &self.message {
+        if let Some(inner_94) = &self.message {
             {
-                write!(f, ": {}", inner_90)?;
+                write!(f, ": {}", inner_94)?;
             }
         }
         Ok(())
@@ -5668,9 +5979,9 @@ impl ParameterVersionLabelLimitExceeded {
 impl std::fmt::Display for ParameterVersionLabelLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParameterVersionLabelLimitExceeded")?;
-        if let Some(inner_91) = &self.message {
+        if let Some(inner_95) = &self.message {
             {
-                write!(f, ": {}", inner_91)?;
+                write!(f, ": {}", inner_95)?;
             }
         }
         Ok(())
@@ -5728,9 +6039,9 @@ impl InvalidFilterValue {
 impl std::fmt::Display for InvalidFilterValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilterValue")?;
-        if let Some(inner_92) = &self.message {
+        if let Some(inner_96) = &self.message {
             {
-                write!(f, ": {}", inner_92)?;
+                write!(f, ": {}", inner_96)?;
             }
         }
         Ok(())
@@ -5788,9 +6099,9 @@ impl InvalidFilterOption {
 impl std::fmt::Display for InvalidFilterOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilterOption")?;
-        if let Some(inner_93) = &self.message {
+        if let Some(inner_97) = &self.message {
             {
-                write!(f, ": {}", inner_93)?;
+                write!(f, ": {}", inner_97)?;
             }
         }
         Ok(())
@@ -5848,9 +6159,9 @@ impl InvalidAggregatorException {
 impl std::fmt::Display for InvalidAggregatorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAggregatorException")?;
-        if let Some(inner_94) = &self.message {
+        if let Some(inner_98) = &self.message {
             {
-                write!(f, ": {}", inner_94)?;
+                write!(f, ": {}", inner_98)?;
             }
         }
         Ok(())
@@ -5908,9 +6219,9 @@ impl InvalidResultAttributeException {
 impl std::fmt::Display for InvalidResultAttributeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResultAttributeException")?;
-        if let Some(inner_95) = &self.message {
+        if let Some(inner_99) = &self.message {
             {
-                write!(f, ": {}", inner_95)?;
+                write!(f, ": {}", inner_99)?;
             }
         }
         Ok(())
@@ -5968,9 +6279,9 @@ impl InvalidInventoryGroupException {
 impl std::fmt::Display for InvalidInventoryGroupException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInventoryGroupException")?;
-        if let Some(inner_96) = &self.message {
+        if let Some(inner_100) = &self.message {
             {
-                write!(f, ": {}", inner_96)?;
+                write!(f, ": {}", inner_100)?;
             }
         }
         Ok(())
@@ -6028,9 +6339,9 @@ impl UnsupportedOperatingSystem {
 impl std::fmt::Display for UnsupportedOperatingSystem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperatingSystem")?;
-        if let Some(inner_97) = &self.message {
+        if let Some(inner_101) = &self.message {
             {
-                write!(f, ": {}", inner_97)?;
+                write!(f, ": {}", inner_101)?;
             }
         }
         Ok(())
@@ -6088,9 +6399,9 @@ impl UnsupportedFeatureRequiredException {
 impl std::fmt::Display for UnsupportedFeatureRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedFeatureRequiredException")?;
-        if let Some(inner_98) = &self.message {
+        if let Some(inner_102) = &self.message {
             {
-                write!(f, ": {}", inner_98)?;
+                write!(f, ": {}", inner_102)?;
             }
         }
         Ok(())
@@ -6148,9 +6459,9 @@ impl InvocationDoesNotExist {
 impl std::fmt::Display for InvocationDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvocationDoesNotExist")?;
-        if let Some(inner_99) = &self.message {
+        if let Some(inner_103) = &self.message {
             {
-                write!(f, ": {}", inner_99)?;
+                write!(f, ": {}", inner_103)?;
             }
         }
         Ok(())
@@ -6208,9 +6519,9 @@ impl InvalidPluginName {
 impl std::fmt::Display for InvalidPluginName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPluginName")?;
-        if let Some(inner_100) = &self.message {
+        if let Some(inner_104) = &self.message {
             {
-                write!(f, ": {}", inner_100)?;
+                write!(f, ": {}", inner_104)?;
             }
         }
         Ok(())
@@ -6268,9 +6579,9 @@ impl UnsupportedCalendarException {
 impl std::fmt::Display for UnsupportedCalendarException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedCalendarException")?;
-        if let Some(inner_101) = &self.message {
+        if let Some(inner_105) = &self.message {
             {
-                write!(f, ": {}", inner_101)?;
+                write!(f, ": {}", inner_105)?;
             }
         }
         Ok(())
@@ -6328,9 +6639,9 @@ impl InvalidDocumentType {
 impl std::fmt::Display for InvalidDocumentType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDocumentType")?;
-        if let Some(inner_102) = &self.message {
+        if let Some(inner_106) = &self.message {
             {
-                write!(f, ": {}", inner_102)?;
+                write!(f, ": {}", inner_106)?;
             }
         }
         Ok(())
@@ -6388,9 +6699,9 @@ impl OpsItemRelatedItemAssociationNotFoundException {
 impl std::fmt::Display for OpsItemRelatedItemAssociationNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsItemRelatedItemAssociationNotFoundException")?;
-        if let Some(inner_103) = &self.message {
+        if let Some(inner_107) = &self.message {
             {
-                write!(f, ": {}", inner_103)?;
+                write!(f, ": {}", inner_107)?;
             }
         }
         Ok(())
@@ -6449,9 +6760,9 @@ impl InvalidDeletionIdException {
 impl std::fmt::Display for InvalidDeletionIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeletionIdException")?;
-        if let Some(inner_104) = &self.message {
+        if let Some(inner_108) = &self.message {
             {
-                write!(f, ": {}", inner_104)?;
+                write!(f, ": {}", inner_108)?;
             }
         }
         Ok(())
@@ -6509,9 +6820,9 @@ impl InvalidInstanceInformationFilterValue {
 impl std::fmt::Display for InvalidInstanceInformationFilterValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInstanceInformationFilterValue")?;
-        if let Some(inner_105) = &self.message {
+        if let Some(inner_109) = &self.message {
             {
-                write!(f, ": {}", inner_105)?;
+                write!(f, ": {}", inner_109)?;
             }
         }
         Ok(())
@@ -6569,9 +6880,9 @@ impl AssociationExecutionDoesNotExist {
 impl std::fmt::Display for AssociationExecutionDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationExecutionDoesNotExist")?;
-        if let Some(inner_106) = &self.message {
+        if let Some(inner_110) = &self.message {
             {
-                write!(f, ": {}", inner_106)?;
+                write!(f, ": {}", inner_110)?;
             }
         }
         Ok(())
@@ -6629,9 +6940,9 @@ impl TargetInUseException {
 impl std::fmt::Display for TargetInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetInUseException")?;
-        if let Some(inner_107) = &self.message {
+        if let Some(inner_111) = &self.message {
             {
-                write!(f, ": {}", inner_107)?;
+                write!(f, ": {}", inner_111)?;
             }
         }
         Ok(())
@@ -6689,9 +7000,9 @@ impl ResourceInUseException {
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
-        if let Some(inner_108) = &self.message {
+        if let Some(inner_112) = &self.message {
             {
-                write!(f, ": {}", inner_108)?;
+                write!(f, ": {}", inner_112)?;
             }
         }
         Ok(())
@@ -6749,9 +7060,9 @@ impl InvalidOptionException {
 impl std::fmt::Display for InvalidOptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOptionException")?;
-        if let Some(inner_109) = &self.message {
+        if let Some(inner_113) = &self.message {
             {
-                write!(f, ": {}", inner_109)?;
+                write!(f, ": {}", inner_113)?;
             }
         }
         Ok(())
@@ -6809,9 +7120,9 @@ impl InvalidInventoryRequestException {
 impl std::fmt::Display for InvalidInventoryRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInventoryRequestException")?;
-        if let Some(inner_110) = &self.message {
+        if let Some(inner_114) = &self.message {
             {
-                write!(f, ": {}", inner_110)?;
+                write!(f, ": {}", inner_114)?;
             }
         }
         Ok(())
@@ -6869,9 +7180,9 @@ impl InvalidDeleteInventoryParametersException {
 impl std::fmt::Display for InvalidDeleteInventoryParametersException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeleteInventoryParametersException")?;
-        if let Some(inner_111) = &self.message {
+        if let Some(inner_115) = &self.message {
             {
-                write!(f, ": {}", inner_111)?;
+                write!(f, ": {}", inner_115)?;
             }
         }
         Ok(())
@@ -6929,9 +7240,9 @@ impl AssociatedInstances {
 impl std::fmt::Display for AssociatedInstances {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociatedInstances")?;
-        if let Some(inner_112) = &self.message {
+        if let Some(inner_116) = &self.message {
             {
-                write!(f, ": {}", inner_112)?;
+                write!(f, ": {}", inner_116)?;
             }
         }
         Ok(())
@@ -6989,9 +7300,9 @@ impl InvalidActivationId {
 impl std::fmt::Display for InvalidActivationId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidActivationId")?;
-        if let Some(inner_113) = &self.message {
+        if let Some(inner_117) = &self.message {
             {
-                write!(f, ": {}", inner_113)?;
+                write!(f, ": {}", inner_117)?;
             }
         }
         Ok(())
@@ -7049,9 +7360,9 @@ impl InvalidActivation {
 impl std::fmt::Display for InvalidActivation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidActivation")?;
-        if let Some(inner_114) = &self.message {
+        if let Some(inner_118) = &self.message {
             {
-                write!(f, ": {}", inner_114)?;
+                write!(f, ": {}", inner_118)?;
             }
         }
         Ok(())
@@ -7109,9 +7420,9 @@ impl ResourceDataSyncCountExceededException {
 impl std::fmt::Display for ResourceDataSyncCountExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceDataSyncCountExceededException")?;
-        if let Some(inner_115) = &self.message {
+        if let Some(inner_119) = &self.message {
             {
-                write!(f, ": {}", inner_115)?;
+                write!(f, ": {}", inner_119)?;
             }
         }
         Ok(())
@@ -7178,9 +7489,9 @@ impl ResourceDataSyncAlreadyExistsException {
 impl std::fmt::Display for ResourceDataSyncAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceDataSyncAlreadyExistsException")?;
-        if let Some(inner_116) = &self.message {
+        if let Some(inner_120) = &self.message {
             {
-                write!(f, ": {}", inner_116)?;
+                write!(f, ": {}", inner_120)?;
             }
         }
         Ok(())
@@ -7250,9 +7561,9 @@ impl OpsMetadataLimitExceededException {
 impl std::fmt::Display for OpsMetadataLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsMetadataLimitExceededException")?;
-        if let Some(inner_117) = &self.message {
+        if let Some(inner_121) = &self.message {
             {
-                write!(f, ": {}", inner_117)?;
+                write!(f, ": {}", inner_121)?;
             }
         }
         Ok(())
@@ -7310,9 +7621,9 @@ impl OpsMetadataAlreadyExistsException {
 impl std::fmt::Display for OpsMetadataAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsMetadataAlreadyExistsException")?;
-        if let Some(inner_118) = &self.message {
+        if let Some(inner_122) = &self.message {
             {
-                write!(f, ": {}", inner_118)?;
+                write!(f, ": {}", inner_122)?;
             }
         }
         Ok(())
@@ -7370,9 +7681,9 @@ impl DocumentAlreadyExists {
 impl std::fmt::Display for DocumentAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DocumentAlreadyExists")?;
-        if let Some(inner_119) = &self.message {
+        if let Some(inner_123) = &self.message {
             {
-                write!(f, ": {}", inner_119)?;
+                write!(f, ": {}", inner_123)?;
             }
         }
         Ok(())
@@ -7430,9 +7741,9 @@ impl AssociationLimitExceeded {
 impl std::fmt::Display for AssociationLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationLimitExceeded")?;
-        if let Some(inner_120) = &self.message {
+        if let Some(inner_124) = &self.message {
             {
-                write!(f, ": {}", inner_120)?;
+                write!(f, ": {}", inner_124)?;
             }
         }
         Ok(())
@@ -7473,7 +7784,7 @@ impl AssociationLimitExceeded {
     }
 }
 
-/// <p>The tag key or value isn't valid.</p>
+/// <p>The specified tag key or value isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTag {
@@ -7490,9 +7801,9 @@ impl InvalidTag {
 impl std::fmt::Display for InvalidTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTag")?;
-        if let Some(inner_121) = &self.message {
+        if let Some(inner_125) = &self.message {
             {
-                write!(f, ": {}", inner_121)?;
+                write!(f, ": {}", inner_125)?;
             }
         }
         Ok(())
@@ -7550,9 +7861,9 @@ impl AssociationAlreadyExists {
 impl std::fmt::Display for AssociationAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociationAlreadyExists")?;
-        if let Some(inner_122) = &self.message {
+        if let Some(inner_126) = &self.message {
             {
-                write!(f, ": {}", inner_122)?;
+                write!(f, ": {}", inner_126)?;
             }
         }
         Ok(())
@@ -7626,9 +7937,9 @@ impl OpsItemRelatedItemAlreadyExistsException {
 impl std::fmt::Display for OpsItemRelatedItemAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsItemRelatedItemAlreadyExistsException")?;
-        if let Some(inner_123) = &self.message {
+        if let Some(inner_127) = &self.message {
             {
-                write!(f, ": {}", inner_123)?;
+                write!(f, ": {}", inner_127)?;
             }
         }
         Ok(())
@@ -7710,9 +8021,9 @@ impl TooManyTagsError {
 impl std::fmt::Display for TooManyTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsError")?;
-        if let Some(inner_124) = &self.message {
+        if let Some(inner_128) = &self.message {
             {
-                write!(f, ": {}", inner_124)?;
+                write!(f, ": {}", inner_128)?;
             }
         }
         Ok(())
@@ -8497,7 +8808,7 @@ pub enum CreateAssociationErrorKind {
     InvalidParameters(crate::error::InvalidParameters),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The tag key or value isn't valid.</p>
+    /// <p>The specified tag key or value isn't valid.</p>
     InvalidTag(crate::error::InvalidTag),
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
@@ -9238,6 +9549,8 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateOpsItemError {
 pub enum CreateOpsItemErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
+    OpsItemAccessDeniedException(crate::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
@@ -9258,6 +9571,7 @@ impl std::fmt::Display for CreateOpsItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateOpsItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => _inner.fmt(f),
             CreateOpsItemErrorKind::OpsItemAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateOpsItemErrorKind::OpsItemInvalidParameterException(_inner) => _inner.fmt(f),
             CreateOpsItemErrorKind::OpsItemLimitExceededException(_inner) => _inner.fmt(f),
@@ -9319,6 +9633,13 @@ impl CreateOpsItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateOpsItemErrorKind::InternalServerError(_))
     }
+    /// Returns `true` if the error kind is `CreateOpsItemErrorKind::OpsItemAccessDeniedException`.
+    pub fn is_ops_item_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpsItemErrorKind::OpsItemAccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateOpsItemErrorKind::OpsItemAlreadyExistsException`.
     pub fn is_ops_item_already_exists_exception(&self) -> bool {
         matches!(
@@ -9345,6 +9666,7 @@ impl std::error::Error for CreateOpsItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateOpsItemErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => Some(_inner),
             CreateOpsItemErrorKind::OpsItemAlreadyExistsException(_inner) => Some(_inner),
             CreateOpsItemErrorKind::OpsItemInvalidParameterException(_inner) => Some(_inner),
             CreateOpsItemErrorKind::OpsItemLimitExceededException(_inner) => Some(_inner),
@@ -11092,6 +11414,144 @@ impl std::error::Error for DeleteResourceDataSyncError {
                 Some(_inner)
             }
             DeleteResourceDataSyncErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResourcePolicyErrorKind {
+    /// <p>An error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
+    ResourcePolicyConflictException(crate::error::ResourcePolicyConflictException),
+    /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
+    ResourcePolicyInvalidParameterException(crate::error::ResourcePolicyInvalidParameterException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DeleteResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ResourcePolicyConflictException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResourcePolicyError {
+    /// Creates a new `DeleteResourcePolicyError`.
+    pub fn new(kind: DeleteResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourcePolicyConflictException`.
+    pub fn is_resource_policy_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ResourcePolicyConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourcePolicyInvalidParameterException`.
+    pub fn is_resource_policy_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ResourcePolicyConflictException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18093,6 +18553,8 @@ impl aws_smithy_http::result::CreateUnhandledError for GetOpsItemError {
 pub enum GetOpsItemErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
+    OpsItemAccessDeniedException(crate::error::OpsItemAccessDeniedException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
     ///
@@ -18109,6 +18571,7 @@ impl std::fmt::Display for GetOpsItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetOpsItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => _inner.fmt(f),
             GetOpsItemErrorKind::OpsItemNotFoundException(_inner) => _inner.fmt(f),
             GetOpsItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -18168,6 +18631,13 @@ impl GetOpsItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetOpsItemErrorKind::InternalServerError(_))
     }
+    /// Returns `true` if the error kind is `GetOpsItemErrorKind::OpsItemAccessDeniedException`.
+    pub fn is_ops_item_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpsItemErrorKind::OpsItemAccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `GetOpsItemErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOpsItemErrorKind::OpsItemNotFoundException(_))
@@ -18177,6 +18647,7 @@ impl std::error::Error for GetOpsItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetOpsItemErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => Some(_inner),
             GetOpsItemErrorKind::OpsItemNotFoundException(_inner) => Some(_inner),
             GetOpsItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
@@ -19248,6 +19719,129 @@ impl std::error::Error for GetPatchBaselineForPatchGroupError {
         match &self.kind {
             GetPatchBaselineForPatchGroupErrorKind::InternalServerError(_inner) => Some(_inner),
             GetPatchBaselineForPatchGroupErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetResourcePolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResourcePoliciesError {
+    /// Kind of error that occurred.
+    pub kind: GetResourcePoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetResourcePoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetResourcePolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResourcePoliciesErrorKind {
+    /// <p>An error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
+    ResourcePolicyInvalidParameterException(crate::error::ResourcePolicyInvalidParameterException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetResourcePoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResourcePoliciesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            GetResourcePoliciesErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetResourcePoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResourcePoliciesError {
+    fn code(&self) -> Option<&str> {
+        GetResourcePoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResourcePoliciesError {
+    /// Creates a new `GetResourcePoliciesError`.
+    pub fn new(kind: GetResourcePoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResourcePoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResourcePoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePoliciesErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ResourcePolicyInvalidParameterException`.
+    pub fn is_resource_policy_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePoliciesErrorKind::ResourcePolicyInvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for GetResourcePoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResourcePoliciesErrorKind::InternalServerError(_inner) => Some(_inner),
+            GetResourcePoliciesErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            GetResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21748,7 +22342,9 @@ impl aws_smithy_http::result::CreateUnhandledError for ModifyDocumentPermissionE
 pub enum ModifyDocumentPermissionErrorKind {
     /// <p>You can have at most 500 active SSM documents.</p>
     DocumentLimitExceeded(crate::error::DocumentLimitExceeded),
-    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
+    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20 accounts per API operation to share a private document.</p>
+    /// <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to five documents.</p>
+    /// <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact Amazon Web Services Support.</p>
     DocumentPermissionLimit(crate::error::DocumentPermissionLimit),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -22545,6 +23141,155 @@ impl std::error::Error for PutParameterError {
             PutParameterErrorKind::TooManyUpdates(_inner) => Some(_inner),
             PutParameterErrorKind::UnsupportedParameterType(_inner) => Some(_inner),
             PutParameterErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutResourcePolicyErrorKind {
+    /// <p>An error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
+    ResourcePolicyConflictException(crate::error::ResourcePolicyConflictException),
+    /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
+    ResourcePolicyInvalidParameterException(crate::error::ResourcePolicyInvalidParameterException),
+    /// <p>The <code>PutResourcePolicy</code> API action enforces two limits. A policy can't be greater than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try again.</p>
+    ResourcePolicyLimitExceededException(crate::error::ResourcePolicyLimitExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ResourcePolicyConflictException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutResourcePolicyErrorKind::ResourcePolicyLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        PutResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutResourcePolicyError {
+    /// Creates a new `PutResourcePolicyError`.
+    pub fn new(kind: PutResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourcePolicyConflictException`.
+    pub fn is_resource_policy_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ResourcePolicyConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourcePolicyInvalidParameterException`.
+    pub fn is_resource_policy_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourcePolicyLimitExceededException`.
+    pub fn is_resource_policy_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ResourcePolicyLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for PutResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InternalServerError(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ResourcePolicyConflictException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ResourcePolicyInvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutResourcePolicyErrorKind::ResourcePolicyLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -26420,6 +27165,8 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateOpsItemError {
 pub enum UpdateOpsItemErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
+    OpsItemAccessDeniedException(crate::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
@@ -26442,6 +27189,7 @@ impl std::fmt::Display for UpdateOpsItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateOpsItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => _inner.fmt(f),
             UpdateOpsItemErrorKind::OpsItemAlreadyExistsException(_inner) => _inner.fmt(f),
             UpdateOpsItemErrorKind::OpsItemInvalidParameterException(_inner) => _inner.fmt(f),
             UpdateOpsItemErrorKind::OpsItemLimitExceededException(_inner) => _inner.fmt(f),
@@ -26504,6 +27252,13 @@ impl UpdateOpsItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateOpsItemErrorKind::InternalServerError(_))
     }
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemAccessDeniedException`.
+    pub fn is_ops_item_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpsItemErrorKind::OpsItemAccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemAlreadyExistsException`.
     pub fn is_ops_item_already_exists_exception(&self) -> bool {
         matches!(
@@ -26537,6 +27292,7 @@ impl std::error::Error for UpdateOpsItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateOpsItemErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateOpsItemErrorKind::OpsItemAccessDeniedException(_inner) => Some(_inner),
             UpdateOpsItemErrorKind::OpsItemAlreadyExistsException(_inner) => Some(_inner),
             UpdateOpsItemErrorKind::OpsItemInvalidParameterException(_inner) => Some(_inner),
             UpdateOpsItemErrorKind::OpsItemLimitExceededException(_inner) => Some(_inner),

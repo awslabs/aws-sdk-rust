@@ -1502,6 +1502,21 @@ pub fn serialize_structure_crate_model_workflow_details(
         }
         array_311.finish();
     }
+    if let Some(var_314) = &input.on_partial_upload {
+        let mut array_315 = object.key("OnPartialUpload").start_array();
+        for item_316 in var_314 {
+            {
+                #[allow(unused_mut)]
+                let mut object_317 = array_315.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_workflow_detail(
+                    &mut object_317,
+                    item_316,
+                )?;
+                object_317.finish();
+            }
+        }
+        array_315.finish();
+    }
     Ok(())
 }
 
@@ -1509,44 +1524,53 @@ pub fn serialize_structure_crate_model_workflow_step(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowStep,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_314) = &input.r#type {
-        object.key("Type").string(var_314.as_str());
+    if let Some(var_318) = &input.r#type {
+        object.key("Type").string(var_318.as_str());
     }
-    if let Some(var_315) = &input.copy_step_details {
+    if let Some(var_319) = &input.copy_step_details {
         #[allow(unused_mut)]
-        let mut object_316 = object.key("CopyStepDetails").start_object();
+        let mut object_320 = object.key("CopyStepDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_copy_step_details(
-            &mut object_316,
-            var_315,
-        )?;
-        object_316.finish();
-    }
-    if let Some(var_317) = &input.custom_step_details {
-        #[allow(unused_mut)]
-        let mut object_318 = object.key("CustomStepDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_custom_step_details(
-            &mut object_318,
-            var_317,
-        )?;
-        object_318.finish();
-    }
-    if let Some(var_319) = &input.delete_step_details {
-        #[allow(unused_mut)]
-        let mut object_320 = object.key("DeleteStepDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_delete_step_details(
             &mut object_320,
             var_319,
         )?;
         object_320.finish();
     }
-    if let Some(var_321) = &input.tag_step_details {
+    if let Some(var_321) = &input.custom_step_details {
         #[allow(unused_mut)]
-        let mut object_322 = object.key("TagStepDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_tag_step_details(
+        let mut object_322 = object.key("CustomStepDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_custom_step_details(
             &mut object_322,
             var_321,
         )?;
         object_322.finish();
+    }
+    if let Some(var_323) = &input.delete_step_details {
+        #[allow(unused_mut)]
+        let mut object_324 = object.key("DeleteStepDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_delete_step_details(
+            &mut object_324,
+            var_323,
+        )?;
+        object_324.finish();
+    }
+    if let Some(var_325) = &input.tag_step_details {
+        #[allow(unused_mut)]
+        let mut object_326 = object.key("TagStepDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_tag_step_details(
+            &mut object_326,
+            var_325,
+        )?;
+        object_326.finish();
+    }
+    if let Some(var_327) = &input.decrypt_step_details {
+        #[allow(unused_mut)]
+        let mut object_328 = object.key("DecryptStepDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_decrypt_step_details(
+            &mut object_328,
+            var_327,
+        )?;
+        object_328.finish();
     }
     Ok(())
 }
@@ -1555,11 +1579,11 @@ pub fn serialize_structure_crate_model_workflow_detail(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowDetail,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_323) = &input.workflow_id {
-        object.key("WorkflowId").string(var_323.as_str());
+    if let Some(var_329) = &input.workflow_id {
+        object.key("WorkflowId").string(var_329.as_str());
     }
-    if let Some(var_324) = &input.execution_role {
-        object.key("ExecutionRole").string(var_324.as_str());
+    if let Some(var_330) = &input.execution_role {
+        object.key("ExecutionRole").string(var_330.as_str());
     }
     Ok(())
 }
@@ -1568,23 +1592,23 @@ pub fn serialize_structure_crate_model_copy_step_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CopyStepDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_325) = &input.name {
-        object.key("Name").string(var_325.as_str());
+    if let Some(var_331) = &input.name {
+        object.key("Name").string(var_331.as_str());
     }
-    if let Some(var_326) = &input.destination_file_location {
+    if let Some(var_332) = &input.destination_file_location {
         #[allow(unused_mut)]
-        let mut object_327 = object.key("DestinationFileLocation").start_object();
+        let mut object_333 = object.key("DestinationFileLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_input_file_location(
-            &mut object_327,
-            var_326,
+            &mut object_333,
+            var_332,
         )?;
-        object_327.finish();
+        object_333.finish();
     }
-    if let Some(var_328) = &input.overwrite_existing {
-        object.key("OverwriteExisting").string(var_328.as_str());
+    if let Some(var_334) = &input.overwrite_existing {
+        object.key("OverwriteExisting").string(var_334.as_str());
     }
-    if let Some(var_329) = &input.source_file_location {
-        object.key("SourceFileLocation").string(var_329.as_str());
+    if let Some(var_335) = &input.source_file_location {
+        object.key("SourceFileLocation").string(var_335.as_str());
     }
     Ok(())
 }
@@ -1593,20 +1617,20 @@ pub fn serialize_structure_crate_model_custom_step_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomStepDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_330) = &input.name {
-        object.key("Name").string(var_330.as_str());
+    if let Some(var_336) = &input.name {
+        object.key("Name").string(var_336.as_str());
     }
-    if let Some(var_331) = &input.target {
-        object.key("Target").string(var_331.as_str());
+    if let Some(var_337) = &input.target {
+        object.key("Target").string(var_337.as_str());
     }
-    if let Some(var_332) = &input.timeout_seconds {
+    if let Some(var_338) = &input.timeout_seconds {
         object.key("TimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_332).into()),
+            aws_smithy_types::Number::NegInt((*var_338).into()),
         );
     }
-    if let Some(var_333) = &input.source_file_location {
-        object.key("SourceFileLocation").string(var_333.as_str());
+    if let Some(var_339) = &input.source_file_location {
+        object.key("SourceFileLocation").string(var_339.as_str());
     }
     Ok(())
 }
@@ -1615,11 +1639,11 @@ pub fn serialize_structure_crate_model_delete_step_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeleteStepDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_334) = &input.name {
-        object.key("Name").string(var_334.as_str());
+    if let Some(var_340) = &input.name {
+        object.key("Name").string(var_340.as_str());
     }
-    if let Some(var_335) = &input.source_file_location {
-        object.key("SourceFileLocation").string(var_335.as_str());
+    if let Some(var_341) = &input.source_file_location {
+        object.key("SourceFileLocation").string(var_341.as_str());
     }
     Ok(())
 }
@@ -1628,23 +1652,51 @@ pub fn serialize_structure_crate_model_tag_step_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagStepDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_336) = &input.name {
-        object.key("Name").string(var_336.as_str());
+    if let Some(var_342) = &input.name {
+        object.key("Name").string(var_342.as_str());
     }
-    if let Some(var_337) = &input.tags {
-        let mut array_338 = object.key("Tags").start_array();
-        for item_339 in var_337 {
+    if let Some(var_343) = &input.tags {
+        let mut array_344 = object.key("Tags").start_array();
+        for item_345 in var_343 {
             {
                 #[allow(unused_mut)]
-                let mut object_340 = array_338.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_s3_tag(&mut object_340, item_339)?;
-                object_340.finish();
+                let mut object_346 = array_344.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_s3_tag(&mut object_346, item_345)?;
+                object_346.finish();
             }
         }
-        array_338.finish();
+        array_344.finish();
     }
-    if let Some(var_341) = &input.source_file_location {
-        object.key("SourceFileLocation").string(var_341.as_str());
+    if let Some(var_347) = &input.source_file_location {
+        object.key("SourceFileLocation").string(var_347.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_decrypt_step_details(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DecryptStepDetails,
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_348) = &input.name {
+        object.key("Name").string(var_348.as_str());
+    }
+    if let Some(var_349) = &input.r#type {
+        object.key("Type").string(var_349.as_str());
+    }
+    if let Some(var_350) = &input.source_file_location {
+        object.key("SourceFileLocation").string(var_350.as_str());
+    }
+    if let Some(var_351) = &input.overwrite_existing {
+        object.key("OverwriteExisting").string(var_351.as_str());
+    }
+    if let Some(var_352) = &input.destination_file_location {
+        #[allow(unused_mut)]
+        let mut object_353 = object.key("DestinationFileLocation").start_object();
+        crate::json_ser::serialize_structure_crate_model_input_file_location(
+            &mut object_353,
+            var_352,
+        )?;
+        object_353.finish();
     }
     Ok(())
 }
@@ -1653,23 +1705,23 @@ pub fn serialize_structure_crate_model_input_file_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputFileLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_342) = &input.s3_file_location {
+    if let Some(var_354) = &input.s3_file_location {
         #[allow(unused_mut)]
-        let mut object_343 = object.key("S3FileLocation").start_object();
+        let mut object_355 = object.key("S3FileLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_input_file_location(
-            &mut object_343,
-            var_342,
+            &mut object_355,
+            var_354,
         )?;
-        object_343.finish();
+        object_355.finish();
     }
-    if let Some(var_344) = &input.efs_file_location {
+    if let Some(var_356) = &input.efs_file_location {
         #[allow(unused_mut)]
-        let mut object_345 = object.key("EfsFileLocation").start_object();
+        let mut object_357 = object.key("EfsFileLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_efs_file_location(
-            &mut object_345,
-            var_344,
+            &mut object_357,
+            var_356,
         )?;
-        object_345.finish();
+        object_357.finish();
     }
     Ok(())
 }
@@ -1678,11 +1730,11 @@ pub fn serialize_structure_crate_model_s3_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Tag,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_346) = &input.key {
-        object.key("Key").string(var_346.as_str());
+    if let Some(var_358) = &input.key {
+        object.key("Key").string(var_358.as_str());
     }
-    if let Some(var_347) = &input.value {
-        object.key("Value").string(var_347.as_str());
+    if let Some(var_359) = &input.value {
+        object.key("Value").string(var_359.as_str());
     }
     Ok(())
 }
@@ -1691,11 +1743,11 @@ pub fn serialize_structure_crate_model_s3_input_file_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3InputFileLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_348) = &input.bucket {
-        object.key("Bucket").string(var_348.as_str());
+    if let Some(var_360) = &input.bucket {
+        object.key("Bucket").string(var_360.as_str());
     }
-    if let Some(var_349) = &input.key {
-        object.key("Key").string(var_349.as_str());
+    if let Some(var_361) = &input.key {
+        object.key("Key").string(var_361.as_str());
     }
     Ok(())
 }
@@ -1704,11 +1756,11 @@ pub fn serialize_structure_crate_model_efs_file_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EfsFileLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_350) = &input.file_system_id {
-        object.key("FileSystemId").string(var_350.as_str());
+    if let Some(var_362) = &input.file_system_id {
+        object.key("FileSystemId").string(var_362.as_str());
     }
-    if let Some(var_351) = &input.path {
-        object.key("Path").string(var_351.as_str());
+    if let Some(var_363) = &input.path {
+        object.key("Path").string(var_363.as_str());
     }
     Ok(())
 }

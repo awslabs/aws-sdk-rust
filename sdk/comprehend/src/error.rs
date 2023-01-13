@@ -307,6 +307,34 @@ pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub reason: std::option::Option<crate::model::InvalidRequestReason>,
+    /// <p>Provides additional detail about why the request failed:</p>
+    /// <ul>
+    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
+    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
+    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
+    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub detail: std::option::Option<crate::model::InvalidRequestDetail>,
+}
+impl InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::InvalidRequestReason> {
+        self.reason.as_ref()
+    }
+    /// <p>Provides additional detail about why the request failed:</p>
+    /// <ul>
+    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
+    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
+    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
+    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
+    /// </ul>
+    pub fn detail(&self) -> std::option::Option<&crate::model::InvalidRequestDetail> {
+        self.detail.as_ref()
+    }
 }
 impl InvalidRequestException {
     /// Returns the error message.
@@ -333,6 +361,8 @@ pub mod invalid_request_exception {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::InvalidRequestReason>,
+        pub(crate) detail: std::option::Option<crate::model::InvalidRequestDetail>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -345,10 +375,50 @@ pub mod invalid_request_exception {
             self.message = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn reason(mut self, input: crate::model::InvalidRequestReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::InvalidRequestReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>Provides additional detail about why the request failed:</p>
+        /// <ul>
+        /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
+        /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
+        /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
+        /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
+        /// </ul>
+        pub fn detail(mut self, input: crate::model::InvalidRequestDetail) -> Self {
+            self.detail = Some(input);
+            self
+        }
+        /// <p>Provides additional detail about why the request failed:</p>
+        /// <ul>
+        /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
+        /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
+        /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
+        /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
+        /// </ul>
+        pub fn set_detail(
+            mut self,
+            input: std::option::Option<crate::model::InvalidRequestDetail>,
+        ) -> Self {
+            self.detail = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
                 message: self.message,
+                reason: self.reason,
+                detail: self.detail,
             }
         }
     }

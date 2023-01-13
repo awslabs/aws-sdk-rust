@@ -955,6 +955,182 @@ impl CreateNamedQueryInput {
     }
 }
 
+/// See [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+pub mod create_notebook_input {
+
+    /// A builder for [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateNotebookInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::CreateNotebookInput {
+                work_group: self.work_group,
+                name: self.name,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+impl CreateNotebookInput {
+    /// Consumes the builder and constructs an Operation<[`CreateNotebook`](crate::operation::CreateNotebook)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateNotebookInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateNotebookInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.CreateNotebook",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_notebook(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateNotebook::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateNotebook",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateNotebookInput`](crate::input::CreateNotebookInput).
+    pub fn builder() -> crate::input::create_notebook_input::Builder {
+        crate::input::create_notebook_input::Builder::default()
+    }
+}
+
 /// See [`CreatePreparedStatementInput`](crate::input::CreatePreparedStatementInput).
 pub mod create_prepared_statement_input {
 
@@ -1146,6 +1322,152 @@ impl CreatePreparedStatementInput {
     }
 }
 
+/// See [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+pub mod create_presigned_notebook_url_input {
+
+    /// A builder for [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreatePresignedNotebookUrlInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreatePresignedNotebookUrlInput {
+                session_id: self.session_id,
+            })
+        }
+    }
+}
+impl CreatePresignedNotebookUrlInput {
+    /// Consumes the builder and constructs an Operation<[`CreatePresignedNotebookUrl`](crate::operation::CreatePresignedNotebookUrl)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreatePresignedNotebookUrl,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreatePresignedNotebookUrlInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreatePresignedNotebookUrlInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.CreatePresignedNotebookUrl",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_url(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePresignedNotebookUrl::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePresignedNotebookUrl",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlInput`](crate::input::CreatePresignedNotebookUrlInput).
+    pub fn builder() -> crate::input::create_presigned_notebook_url_input::Builder {
+        crate::input::create_presigned_notebook_url_input::Builder::default()
+    }
+}
+
 /// See [`CreateWorkGroupInput`](crate::input::CreateWorkGroupInput).
 pub mod create_work_group_input {
 
@@ -1168,12 +1490,12 @@ pub mod create_work_group_input {
             self.name = input;
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1637,6 +1959,151 @@ impl DeleteNamedQueryInput {
     }
 }
 
+/// See [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+pub mod delete_notebook_input {
+
+    /// A builder for [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to delete.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to delete.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteNotebookInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::DeleteNotebookInput {
+                notebook_id: self.notebook_id,
+            })
+        }
+    }
+}
+impl DeleteNotebookInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteNotebook`](crate::operation::DeleteNotebook)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteNotebookInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteNotebookInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.DeleteNotebook",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_notebook(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteNotebook::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteNotebook",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteNotebookInput`](crate::input::DeleteNotebookInput).
+    pub fn builder() -> crate::input::delete_notebook_input::Builder {
+        crate::input::delete_notebook_input::Builder::default()
+    }
+}
+
 /// See [`DeletePreparedStatementInput`](crate::input::DeletePreparedStatementInput).
 pub mod delete_prepared_statement_input {
 
@@ -1955,6 +2422,601 @@ impl DeleteWorkGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkGroupInput`](crate::input::DeleteWorkGroupInput).
     pub fn builder() -> crate::input::delete_work_group_input::Builder {
         crate::input::delete_work_group_input::Builder::default()
+    }
+}
+
+/// See [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+pub mod export_notebook_input {
+
+    /// A builder for [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to export.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to export.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ExportNotebookInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ExportNotebookInput {
+                notebook_id: self.notebook_id,
+            })
+        }
+    }
+}
+impl ExportNotebookInput {
+    /// Consumes the builder and constructs an Operation<[`ExportNotebook`](crate::operation::ExportNotebook)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ExportNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ExportNotebookInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ExportNotebookInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ExportNotebook",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_export_notebook(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExportNotebook::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExportNotebook",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ExportNotebookInput`](crate::input::ExportNotebookInput).
+    pub fn builder() -> crate::input::export_notebook_input::Builder {
+        crate::input::export_notebook_input::Builder::default()
+    }
+}
+
+/// See [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+pub mod get_calculation_execution_input {
+
+    /// A builder for [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetCalculationExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetCalculationExecutionInput {
+                calculation_execution_id: self.calculation_execution_id,
+            })
+        }
+    }
+}
+impl GetCalculationExecutionInput {
+    /// Consumes the builder and constructs an Operation<[`GetCalculationExecution`](crate::operation::GetCalculationExecution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCalculationExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCalculationExecutionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCalculationExecutionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetCalculationExecution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_calculation_execution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCalculationExecution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCalculationExecution",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionInput`](crate::input::GetCalculationExecutionInput).
+    pub fn builder() -> crate::input::get_calculation_execution_input::Builder {
+        crate::input::get_calculation_execution_input::Builder::default()
+    }
+}
+
+/// See [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+pub mod get_calculation_execution_code_input {
+
+    /// A builder for [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetCalculationExecutionCodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetCalculationExecutionCodeInput {
+                calculation_execution_id: self.calculation_execution_id,
+            })
+        }
+    }
+}
+impl GetCalculationExecutionCodeInput {
+    /// Consumes the builder and constructs an Operation<[`GetCalculationExecutionCode`](crate::operation::GetCalculationExecutionCode)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCalculationExecutionCode,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCalculationExecutionCodeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCalculationExecutionCodeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetCalculationExecutionCode",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_calculation_execution_code(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCalculationExecutionCode::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCalculationExecutionCode",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionCodeInput`](crate::input::GetCalculationExecutionCodeInput).
+    pub fn builder() -> crate::input::get_calculation_execution_code_input::Builder {
+        crate::input::get_calculation_execution_code_input::Builder::default()
+    }
+}
+
+/// See [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+pub mod get_calculation_execution_status_input {
+
+    /// A builder for [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetCalculationExecutionStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetCalculationExecutionStatusInput {
+                calculation_execution_id: self.calculation_execution_id,
+            })
+        }
+    }
+}
+impl GetCalculationExecutionStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetCalculationExecutionStatus`](crate::operation::GetCalculationExecutionStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCalculationExecutionStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCalculationExecutionStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCalculationExecutionStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetCalculationExecutionStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_calculation_execution_status(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCalculationExecutionStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCalculationExecutionStatus",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusInput`](crate::input::GetCalculationExecutionStatusInput).
+    pub fn builder() -> crate::input::get_calculation_execution_status_input::Builder {
+        crate::input::get_calculation_execution_status_input::Builder::default()
     }
 }
 
@@ -2406,6 +3468,153 @@ impl GetNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`GetNamedQueryInput`](crate::input::GetNamedQueryInput).
     pub fn builder() -> crate::input::get_named_query_input::Builder {
         crate::input::get_named_query_input::Builder::default()
+    }
+}
+
+/// See [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+pub mod get_notebook_metadata_input {
+
+    /// A builder for [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetNotebookMetadataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetNotebookMetadataInput {
+                notebook_id: self.notebook_id,
+            })
+        }
+    }
+}
+impl GetNotebookMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetNotebookMetadata`](crate::operation::GetNotebookMetadata)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNotebookMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetNotebookMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetNotebookMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetNotebookMetadata",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_notebook_metadata(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNotebookMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNotebookMetadata",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetNotebookMetadataInput`](crate::input::GetNotebookMetadataInput).
+    pub fn builder() -> crate::input::get_notebook_metadata_input::Builder {
+        crate::input::get_notebook_metadata_input::Builder::default()
     }
 }
 
@@ -3047,6 +4256,298 @@ impl GetQueryRuntimeStatisticsInput {
     }
 }
 
+/// See [`GetSessionInput`](crate::input::GetSessionInput).
+pub mod get_session_input {
+
+    /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionInput`](crate::input::GetSessionInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetSessionInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::GetSessionInput {
+                session_id: self.session_id,
+            })
+        }
+    }
+}
+impl GetSessionInput {
+    /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSession,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSession",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput).
+    pub fn builder() -> crate::input::get_session_input::Builder {
+        crate::input::get_session_input::Builder::default()
+    }
+}
+
+/// See [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+pub mod get_session_status_input {
+
+    /// A builder for [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetSessionStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetSessionStatusInput {
+                session_id: self.session_id,
+            })
+        }
+    }
+}
+impl GetSessionStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetSessionStatus`](crate::operation::GetSessionStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSessionStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSessionStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSessionStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.GetSessionStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_session_status(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSessionStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSessionStatus",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSessionStatusInput`](crate::input::GetSessionStatusInput).
+    pub fn builder() -> crate::input::get_session_status_input::Builder {
+        crate::input::get_session_status_input::Builder::default()
+    }
+}
+
 /// See [`GetTableMetadataInput`](crate::input::GetTableMetadataInput).
 pub mod get_table_metadata_input {
 
@@ -3363,6 +4864,571 @@ impl GetWorkGroupInput {
     /// Creates a new builder-style object to manufacture [`GetWorkGroupInput`](crate::input::GetWorkGroupInput).
     pub fn builder() -> crate::input::get_work_group_input::Builder {
         crate::input::get_work_group_input::Builder::default()
+    }
+}
+
+/// See [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+pub mod import_notebook_input {
+
+    /// A builder for [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) payload: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::NotebookType>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>The name of the notebook to import.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the notebook to import.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The notebook content to be imported.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload = Some(input.into());
+            self
+        }
+        /// <p>The notebook content to be imported.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payload = input;
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn r#type(mut self, input: crate::model::NotebookType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NotebookType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ImportNotebookInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ImportNotebookInput {
+                work_group: self.work_group,
+                name: self.name,
+                payload: self.payload,
+                r#type: self.r#type,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+impl ImportNotebookInput {
+    /// Consumes the builder and constructs an Operation<[`ImportNotebook`](crate::operation::ImportNotebook)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportNotebookInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportNotebookInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ImportNotebook",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_notebook(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportNotebook::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportNotebook",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportNotebookInput`](crate::input::ImportNotebookInput).
+    pub fn builder() -> crate::input::import_notebook_input::Builder {
+        crate::input::import_notebook_input::Builder::default()
+    }
+}
+
+/// See [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+pub mod list_application_dpu_sizes_input {
+
+    /// A builder for [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListApplicationDpuSizesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListApplicationDpuSizesInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListApplicationDpuSizesInput {
+    /// Consumes the builder and constructs an Operation<[`ListApplicationDPUSizes`](crate::operation::ListApplicationDPUSizes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListApplicationDPUSizes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListApplicationDpuSizesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListApplicationDpuSizesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListApplicationDPUSizes",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_application_dpu_sizes(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListApplicationDPUSizes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListApplicationDPUSizes",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListApplicationDpuSizesInput`](crate::input::ListApplicationDpuSizesInput).
+    pub fn builder() -> crate::input::list_application_dpu_sizes_input::Builder {
+        crate::input::list_application_dpu_sizes_input::Builder::default()
+    }
+}
+
+/// See [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+pub mod list_calculation_executions_input {
+
+    /// A builder for [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) state_filter: std::option::Option<crate::model::CalculationExecutionState>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn state_filter(mut self, input: crate::model::CalculationExecutionState) -> Self {
+            self.state_filter = Some(input);
+            self
+        }
+        /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+        /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+        /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+        /// <p> <code>RUNNING</code> - The calculation is running.</p>
+        /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+        /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+        /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+        /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+        pub fn set_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::CalculationExecutionState>,
+        ) -> Self {
+            self.state_filter = input;
+            self
+        }
+        /// <p>The maximum number of calculation executions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of calculation executions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListCalculationExecutionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListCalculationExecutionsInput {
+                session_id: self.session_id,
+                state_filter: self.state_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListCalculationExecutionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCalculationExecutions`](crate::operation::ListCalculationExecutions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCalculationExecutions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCalculationExecutionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCalculationExecutionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListCalculationExecutions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_calculation_executions(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCalculationExecutions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCalculationExecutions",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsInput`](crate::input::ListCalculationExecutionsInput).
+    pub fn builder() -> crate::input::list_calculation_executions_input::Builder {
+        crate::input::list_calculation_executions_input::Builder::default()
     }
 }
 
@@ -3853,6 +5919,202 @@ impl ListEngineVersionsInput {
     }
 }
 
+/// See [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+pub mod list_executors_input {
+
+    /// A builder for [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) executor_state_filter: std::option::Option<crate::model::ExecutorState>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>A filter for a specific executor state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn executor_state_filter(mut self, input: crate::model::ExecutorState) -> Self {
+            self.executor_state_filter = Some(input);
+            self
+        }
+        /// <p>A filter for a specific executor state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The executor has been started.</p>
+        /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+        /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+        pub fn set_executor_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::ExecutorState>,
+        ) -> Self {
+            self.executor_state_filter = input;
+            self
+        }
+        /// <p>The maximum number of executors to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of executors to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListExecutorsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListExecutorsInput {
+                session_id: self.session_id,
+                executor_state_filter: self.executor_state_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListExecutorsInput {
+    /// Consumes the builder and constructs an Operation<[`ListExecutors`](crate::operation::ListExecutors)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListExecutors,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListExecutorsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListExecutorsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListExecutors",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_executors(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListExecutors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListExecutors",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListExecutorsInput`](crate::input::ListExecutorsInput).
+    pub fn builder() -> crate::input::list_executors_input::Builder {
+        crate::input::list_executors_input::Builder::default()
+    }
+}
+
 /// See [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput).
 pub mod list_named_queries_input {
 
@@ -4021,6 +6283,367 @@ impl ListNamedQueriesInput {
     /// Creates a new builder-style object to manufacture [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput).
     pub fn builder() -> crate::input::list_named_queries_input::Builder {
         crate::input::list_named_queries_input::Builder::default()
+    }
+}
+
+/// See [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+pub mod list_notebook_metadata_input {
+
+    /// A builder for [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<crate::model::FilterDefinition>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) work_group: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Search filter string.</p>
+        pub fn filters(mut self, input: crate::model::FilterDefinition) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>Search filter string.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::FilterDefinition>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Specifies the maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListNotebookMetadataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListNotebookMetadataInput {
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                work_group: self.work_group,
+            })
+        }
+    }
+}
+impl ListNotebookMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`ListNotebookMetadata`](crate::operation::ListNotebookMetadata)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListNotebookMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListNotebookMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListNotebookMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListNotebookMetadata",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_notebook_metadata(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListNotebookMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListNotebookMetadata",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListNotebookMetadataInput`](crate::input::ListNotebookMetadataInput).
+    pub fn builder() -> crate::input::list_notebook_metadata_input::Builder {
+        crate::input::list_notebook_metadata_input::Builder::default()
+    }
+}
+
+/// See [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+pub mod list_notebook_sessions_input {
+
+    /// A builder for [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to list sessions for.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to list sessions for.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// <p>The maximum number of notebook sessions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of notebook sessions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListNotebookSessionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListNotebookSessionsInput {
+                notebook_id: self.notebook_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListNotebookSessionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListNotebookSessions`](crate::operation::ListNotebookSessions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListNotebookSessions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListNotebookSessionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListNotebookSessionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListNotebookSessions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_notebook_sessions(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListNotebookSessions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListNotebookSessions",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListNotebookSessionsInput`](crate::input::ListNotebookSessionsInput).
+    pub fn builder() -> crate::input::list_notebook_sessions_input::Builder {
+        crate::input::list_notebook_sessions_input::Builder::default()
     }
 }
 
@@ -4365,6 +6988,206 @@ impl ListQueryExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListQueryExecutionsInput`](crate::input::ListQueryExecutionsInput).
     pub fn builder() -> crate::input::list_query_executions_input::Builder {
         crate::input::list_query_executions_input::Builder::default()
+    }
+}
+
+/// See [`ListSessionsInput`](crate::input::ListSessionsInput).
+pub mod list_sessions_input {
+
+    /// A builder for [`ListSessionsInput`](crate::input::ListSessionsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) state_filter: std::option::Option<crate::model::SessionState>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>A filter for a specific session state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn state_filter(mut self, input: crate::model::SessionState) -> Self {
+            self.state_filter = Some(input);
+            self
+        }
+        /// <p>A filter for a specific session state. A description of each state follows.</p>
+        /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+        /// <p> <code>CREATED</code> - The session has been started.</p>
+        /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+        /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+        /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+        /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+        /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+        /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+        pub fn set_state_filter(
+            mut self,
+            input: std::option::Option<crate::model::SessionState>,
+        ) -> Self {
+            self.state_filter = input;
+            self
+        }
+        /// <p>The maximum number of sessions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of sessions to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSessionsInput`](crate::input::ListSessionsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSessionsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListSessionsInput {
+                work_group: self.work_group,
+                state_filter: self.state_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+impl ListSessionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSessions`](crate::operation::ListSessions)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSessions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSessionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSessionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.ListSessions",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_sessions(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSessions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSessions",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSessionsInput`](crate::input::ListSessionsInput).
+    pub fn builder() -> crate::input::list_sessions_input::Builder {
+        crate::input::list_sessions_input::Builder::default()
     }
 }
 
@@ -4896,6 +7719,219 @@ impl ListWorkGroupsInput {
     }
 }
 
+/// See [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+pub mod start_calculation_execution_input {
+
+    /// A builder for [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) calculation_configuration:
+            std::option::Option<crate::model::CalculationConfiguration>,
+        pub(crate) code_block: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the calculation.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Contains configuration information for the calculation.</p>
+        #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+        pub fn calculation_configuration(
+            mut self,
+            input: crate::model::CalculationConfiguration,
+        ) -> Self {
+            self.calculation_configuration = Some(input);
+            self
+        }
+        /// <p>Contains configuration information for the calculation.</p>
+        #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+        pub fn set_calculation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CalculationConfiguration>,
+        ) -> Self {
+            self.calculation_configuration = input;
+            self
+        }
+        /// <p>A string that contains the code of the calculation.</p>
+        pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code_block = Some(input.into());
+            self
+        }
+        /// <p>A string that contains the code of the calculation.</p>
+        pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_block = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartCalculationExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartCalculationExecutionInput {
+                session_id: self.session_id,
+                description: self.description,
+                calculation_configuration: self.calculation_configuration,
+                code_block: self.code_block,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+impl StartCalculationExecutionInput {
+    /// Consumes the builder and constructs an Operation<[`StartCalculationExecution`](crate::operation::StartCalculationExecution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartCalculationExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartCalculationExecutionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartCalculationExecutionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.StartCalculationExecution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_calculation_execution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartCalculationExecution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartCalculationExecution",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartCalculationExecutionInput`](crate::input::StartCalculationExecutionInput).
+    pub fn builder() -> crate::input::start_calculation_execution_input::Builder {
+        crate::input::start_calculation_execution_input::Builder::default()
+    }
+}
+
 /// See [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
 pub mod start_query_execution_input {
 
@@ -4909,6 +7945,8 @@ pub mod start_query_execution_input {
         pub(crate) result_configuration: std::option::Option<crate::model::ResultConfiguration>,
         pub(crate) work_group: std::option::Option<std::string::String>,
         pub(crate) execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) result_reuse_configuration:
+            std::option::Option<crate::model::ResultReuseConfiguration>,
     }
     impl Builder {
         /// <p>The SQL query statements to be executed.</p>
@@ -4996,6 +8034,22 @@ pub mod start_query_execution_input {
             self.execution_parameters = input;
             self
         }
+        /// <p>Specifies the query result reuse behavior for the query.</p>
+        pub fn result_reuse_configuration(
+            mut self,
+            input: crate::model::ResultReuseConfiguration,
+        ) -> Self {
+            self.result_reuse_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies the query result reuse behavior for the query.</p>
+        pub fn set_result_reuse_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ResultReuseConfiguration>,
+        ) -> Self {
+            self.result_reuse_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
         pub fn build(
             self,
@@ -5010,6 +8064,7 @@ pub mod start_query_execution_input {
                 result_configuration: self.result_configuration,
                 work_group: self.work_group,
                 execution_parameters: self.execution_parameters,
+                result_reuse_configuration: self.result_reuse_configuration,
             })
         }
     }
@@ -5129,6 +8184,379 @@ impl StartQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
     pub fn builder() -> crate::input::start_query_execution_input::Builder {
         crate::input::start_query_execution_input::Builder::default()
+    }
+}
+
+/// See [`StartSessionInput`](crate::input::StartSessionInput).
+pub mod start_session_input {
+
+    /// A builder for [`StartSessionInput`](crate::input::StartSessionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) engine_configuration: std::option::Option<crate::model::EngineConfiguration>,
+        pub(crate) notebook_version: std::option::Option<std::string::String>,
+        pub(crate) session_idle_timeout_in_minutes: std::option::Option<i32>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The session description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The workgroup to which the session belongs.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+        pub fn engine_configuration(mut self, input: crate::model::EngineConfiguration) -> Self {
+            self.engine_configuration = Some(input);
+            self
+        }
+        /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+        pub fn set_engine_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EngineConfiguration>,
+        ) -> Self {
+            self.engine_configuration = input;
+            self
+        }
+        /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+        pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_version = Some(input.into());
+            self
+        }
+        /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+        pub fn set_notebook_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.notebook_version = input;
+            self
+        }
+        /// <p>The idle timeout in minutes for the session.</p>
+        pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.session_idle_timeout_in_minutes = Some(input);
+            self
+        }
+        /// <p>The idle timeout in minutes for the session.</p>
+        pub fn set_session_idle_timeout_in_minutes(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.session_idle_timeout_in_minutes = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartSessionInput`](crate::input::StartSessionInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartSessionInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::StartSessionInput {
+                description: self.description,
+                work_group: self.work_group,
+                engine_configuration: self.engine_configuration,
+                notebook_version: self.notebook_version,
+                session_idle_timeout_in_minutes: self.session_idle_timeout_in_minutes,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+impl StartSessionInput {
+    /// Consumes the builder and constructs an Operation<[`StartSession`](crate::operation::StartSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartSession,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.StartSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartSession",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartSessionInput`](crate::input::StartSessionInput).
+    pub fn builder() -> crate::input::start_session_input::Builder {
+        crate::input::start_session_input::Builder::default()
+    }
+}
+
+/// See [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+pub mod stop_calculation_execution_input {
+
+    /// A builder for [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculation_execution_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The calculation execution UUID.</p>
+        pub fn calculation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculation_execution_id = Some(input.into());
+            self
+        }
+        /// <p>The calculation execution UUID.</p>
+        pub fn set_calculation_execution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculation_execution_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StopCalculationExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StopCalculationExecutionInput {
+                calculation_execution_id: self.calculation_execution_id,
+            })
+        }
+    }
+}
+impl StopCalculationExecutionInput {
+    /// Consumes the builder and constructs an Operation<[`StopCalculationExecution`](crate::operation::StopCalculationExecution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopCalculationExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopCalculationExecutionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopCalculationExecutionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.StopCalculationExecution",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_calculation_execution(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopCalculationExecution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopCalculationExecution",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopCalculationExecutionInput`](crate::input::StopCalculationExecutionInput).
+    pub fn builder() -> crate::input::stop_calculation_execution_input::Builder {
+        crate::input::stop_calculation_execution_input::Builder::default()
     }
 }
 
@@ -5448,6 +8876,153 @@ impl TagResourceInput {
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+pub mod terminate_session_input {
+
+    /// A builder for [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) session_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The session ID.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The session ID.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::TerminateSessionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::TerminateSessionInput {
+                session_id: self.session_id,
+            })
+        }
+    }
+}
+impl TerminateSessionInput {
+    /// Consumes the builder and constructs an Operation<[`TerminateSession`](crate::operation::TerminateSession)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TerminateSession,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::TerminateSessionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TerminateSessionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.TerminateSession",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_terminate_session(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TerminateSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TerminateSession",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+    pub fn builder() -> crate::input::terminate_session_input::Builder {
+        crate::input::terminate_session_input::Builder::default()
     }
 }
 
@@ -6022,6 +9597,386 @@ impl UpdateNamedQueryInput {
     }
 }
 
+/// See [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+pub mod update_notebook_input {
+
+    /// A builder for [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+        pub(crate) payload: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::NotebookType>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to update.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to update.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// <p>The updated content for the notebook.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload = Some(input.into());
+            self
+        }
+        /// <p>The updated content for the notebook.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payload = input;
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn r#type(mut self, input: crate::model::NotebookType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NotebookType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The ID of the session in which the notebook will be updated.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the session in which the notebook will be updated.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateNotebookInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::UpdateNotebookInput {
+                notebook_id: self.notebook_id,
+                payload: self.payload,
+                r#type: self.r#type,
+                session_id: self.session_id,
+                client_request_token: self.client_request_token,
+            })
+        }
+    }
+}
+impl UpdateNotebookInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateNotebook`](crate::operation::UpdateNotebook)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateNotebookInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateNotebookInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.UpdateNotebook",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_notebook(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateNotebook::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateNotebook",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookInput`](crate::input::UpdateNotebookInput).
+    pub fn builder() -> crate::input::update_notebook_input::Builder {
+        crate::input::update_notebook_input::Builder::default()
+    }
+}
+
+/// See [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+pub mod update_notebook_metadata_input {
+
+    /// A builder for [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notebook_id: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the notebook to update the metadata for.</p>
+        pub fn notebook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notebook_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the notebook to update the metadata for.</p>
+        pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_id = input;
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The name to update the notebook to.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name to update the notebook to.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateNotebookMetadataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateNotebookMetadataInput {
+                notebook_id: self.notebook_id,
+                client_request_token: self.client_request_token,
+                name: self.name,
+            })
+        }
+    }
+}
+impl UpdateNotebookMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateNotebookMetadata`](crate::operation::UpdateNotebookMetadata)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateNotebookMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateNotebookMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateNotebookMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.UpdateNotebookMetadata",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_notebook_metadata(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateNotebookMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateNotebookMetadata",
+            "athena",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataInput`](crate::input::UpdateNotebookMetadataInput).
+    pub fn builder() -> crate::input::update_notebook_metadata_input::Builder {
+        crate::input::update_notebook_metadata_input::Builder::default()
+    }
+}
+
 /// See [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput).
 pub mod update_prepared_statement_input {
 
@@ -6246,7 +10201,7 @@ pub mod update_work_group_input {
             self.description = input;
             self
         }
-        /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+        /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
         pub fn configuration_updates(
             mut self,
             input: crate::model::WorkGroupConfigurationUpdates,
@@ -6254,7 +10209,7 @@ pub mod update_work_group_input {
             self.configuration_updates = Some(input);
             self
         }
-        /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+        /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
         pub fn set_configuration_updates(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfigurationUpdates>,
@@ -6414,7 +10369,7 @@ pub struct UpdateWorkGroupInput {
     /// <p>The workgroup description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
     #[doc(hidden)]
     pub configuration_updates: std::option::Option<crate::model::WorkGroupConfigurationUpdates>,
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
@@ -6430,7 +10385,7 @@ impl UpdateWorkGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
     pub fn configuration_updates(
         &self,
     ) -> std::option::Option<&crate::model::WorkGroupConfigurationUpdates> {
@@ -6475,6 +10430,86 @@ impl UpdatePreparedStatementInput {
     /// <p>The description of the prepared statement.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateNotebookMetadataInput {
+    /// <p>The ID of the notebook to update the metadata for.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The name to update the notebook to.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl UpdateNotebookMetadataInput {
+    /// <p>The ID of the notebook to update the metadata for.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The name to update the notebook to.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateNotebookInput {
+    /// <p>The ID of the notebook to update.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+    /// <p>The updated content for the notebook.</p>
+    #[doc(hidden)]
+    pub payload: std::option::Option<std::string::String>,
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::NotebookType>,
+    /// <p>The ID of the session in which the notebook will be updated.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl UpdateNotebookInput {
+    /// <p>The ID of the notebook to update.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+    /// <p>The updated content for the notebook.</p>
+    pub fn payload(&self) -> std::option::Option<&str> {
+        self.payload.as_deref()
+    }
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NotebookType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ID of the session in which the notebook will be updated.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
     }
 }
 
@@ -6595,6 +10630,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TerminateSessionInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+}
+impl TerminateSessionInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     #[doc(hidden)]
@@ -6632,6 +10682,75 @@ impl StopQueryExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StopCalculationExecutionInput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+}
+impl StopCalculationExecutionInput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartSessionInput {
+    /// <p>The session description.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The workgroup to which the session belongs.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+    #[doc(hidden)]
+    pub engine_configuration: std::option::Option<crate::model::EngineConfiguration>,
+    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    #[doc(hidden)]
+    pub notebook_version: std::option::Option<std::string::String>,
+    /// <p>The idle timeout in minutes for the session.</p>
+    #[doc(hidden)]
+    pub session_idle_timeout_in_minutes: std::option::Option<i32>,
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl StartSessionInput {
+    /// <p>The session description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The workgroup to which the session belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+    pub fn engine_configuration(&self) -> std::option::Option<&crate::model::EngineConfiguration> {
+        self.engine_configuration.as_ref()
+    }
+    /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
+    pub fn notebook_version(&self) -> std::option::Option<&str> {
+        self.notebook_version.as_deref()
+    }
+    /// <p>The idle timeout in minutes for the session.</p>
+    pub fn session_idle_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.session_idle_timeout_in_minutes
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
     #[doc(hidden)]
@@ -6653,6 +10772,9 @@ pub struct StartQueryExecutionInput {
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     #[doc(hidden)]
     pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies the query result reuse behavior for the query.</p>
+    #[doc(hidden)]
+    pub result_reuse_configuration: std::option::Option<crate::model::ResultReuseConfiguration>,
 }
 impl StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
@@ -6682,6 +10804,63 @@ impl StartQueryExecutionInput {
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.execution_parameters.as_deref()
+    }
+    /// <p>Specifies the query result reuse behavior for the query.</p>
+    pub fn result_reuse_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ResultReuseConfiguration> {
+        self.result_reuse_configuration.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartCalculationExecutionInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>A description of the calculation.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Contains configuration information for the calculation.</p>
+    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[doc(hidden)]
+    pub calculation_configuration: std::option::Option<crate::model::CalculationConfiguration>,
+    /// <p>A string that contains the code of the calculation.</p>
+    #[doc(hidden)]
+    pub code_block: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl StartCalculationExecutionInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A description of the calculation.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Contains configuration information for the calculation.</p>
+    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    pub fn calculation_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CalculationConfiguration> {
+        self.calculation_configuration.as_ref()
+    }
+    /// <p>A string that contains the code of the calculation.</p>
+    pub fn code_block(&self) -> std::option::Option<&str> {
+        self.code_block.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
     }
 }
 
@@ -6782,6 +10961,58 @@ impl ListTableMetadataInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListSessionsInput {
+    /// <p>The workgroup to which the session belongs.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>A filter for a specific session state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    #[doc(hidden)]
+    pub state_filter: std::option::Option<crate::model::SessionState>,
+    /// <p>The maximum number of sessions to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSessionsInput {
+    /// <p>The workgroup to which the session belongs.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>A filter for a specific session state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    pub fn state_filter(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state_filter.as_ref()
+    }
+    /// <p>The maximum number of sessions to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueryExecutionsInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -6840,6 +11071,71 @@ impl ListPreparedStatementsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListNotebookSessionsInput {
+    /// <p>The ID of the notebook to list sessions for.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of notebook sessions to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNotebookSessionsInput {
+    /// <p>The ID of the notebook to list sessions for.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+    /// <p>The maximum number of notebook sessions to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListNotebookMetadataInput {
+    /// <p>Search filter string.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<crate::model::FilterDefinition>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Specifies the maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+}
+impl ListNotebookMetadataInput {
+    /// <p>Search filter string.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::FilterDefinition> {
+        self.filters.as_ref()
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamedQueriesInput {
     /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     #[doc(hidden)]
@@ -6863,6 +11159,54 @@ impl ListNamedQueriesInput {
     /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListExecutorsInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>A filter for a specific executor state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    #[doc(hidden)]
+    pub executor_state_filter: std::option::Option<crate::model::ExecutorState>,
+    /// <p>The maximum number of executors to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExecutorsInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A filter for a specific executor state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The executor has been started.</p>
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
+    pub fn executor_state_filter(&self) -> std::option::Option<&crate::model::ExecutorState> {
+        self.executor_state_filter.as_ref()
+    }
+    /// <p>The maximum number of executors to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 
@@ -6942,6 +11286,127 @@ impl ListDatabasesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListCalculationExecutionsInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+    /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    #[doc(hidden)]
+    pub state_filter: std::option::Option<crate::model::CalculationExecutionState>,
+    /// <p>The maximum number of calculation executions to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCalculationExecutionsInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>A filter for a specific calculation execution state. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn state_filter(&self) -> std::option::Option<&crate::model::CalculationExecutionState> {
+        self.state_filter.as_ref()
+    }
+    /// <p>The maximum number of calculation executions to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListApplicationDpuSizesInput {
+    /// <p>Specifies the maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationDpuSizesInput {
+    /// <p>Specifies the maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ImportNotebookInput {
+    /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>The name of the notebook to import.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The notebook content to be imported.</p>
+    #[doc(hidden)]
+    pub payload: std::option::Option<std::string::String>,
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::NotebookType>,
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl ImportNotebookInput {
+    /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The name of the notebook to import.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The notebook content to be imported.</p>
+    pub fn payload(&self) -> std::option::Option<&str> {
+        self.payload.as_deref()
+    }
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NotebookType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
     #[doc(hidden)]
@@ -6980,6 +11445,36 @@ impl GetTableMetadataInput {
     /// <p>The name of the table for which metadata is returned.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSessionStatusInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+}
+impl GetSessionStatusInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetSessionInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+}
+impl GetSessionInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
     }
 }
 
@@ -7067,6 +11562,21 @@ impl GetPreparedStatementInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetNotebookMetadataInput {
+    /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+}
+impl GetNotebookMetadataInput {
+    /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     #[doc(hidden)]
@@ -7119,6 +11629,66 @@ impl GetDatabaseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionStatusInput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+}
+impl GetCalculationExecutionStatusInput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionCodeInput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+}
+impl GetCalculationExecutionCodeInput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetCalculationExecutionInput {
+    /// <p>The calculation execution UUID.</p>
+    #[doc(hidden)]
+    pub calculation_execution_id: std::option::Option<std::string::String>,
+}
+impl GetCalculationExecutionInput {
+    /// <p>The calculation execution UUID.</p>
+    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+        self.calculation_execution_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ExportNotebookInput {
+    /// <p>The ID of the notebook to export.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+}
+impl ExportNotebookInput {
+    /// <p>The ID of the notebook to export.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
     #[doc(hidden)]
@@ -7163,6 +11733,21 @@ impl DeletePreparedStatementInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteNotebookInput {
+    /// <p>The ID of the notebook to delete.</p>
+    #[doc(hidden)]
+    pub notebook_id: std::option::Option<std::string::String>,
+}
+impl DeleteNotebookInput {
+    /// <p>The ID of the notebook to delete.</p>
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
+        self.notebook_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
     #[doc(hidden)]
@@ -7197,7 +11782,7 @@ pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
@@ -7212,7 +11797,7 @@ impl CreateWorkGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
@@ -7223,6 +11808,21 @@ impl CreateWorkGroupInput {
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreatePresignedNotebookUrlInput {
+    /// <p>The session ID.</p>
+    #[doc(hidden)]
+    pub session_id: std::option::Option<std::string::String>,
+}
+impl CreatePresignedNotebookUrlInput {
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
     }
 }
 
@@ -7259,6 +11859,39 @@ impl CreatePreparedStatementInput {
     /// <p>The description of the prepared statement.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateNotebookInput {
+    /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+    #[doc(hidden)]
+    pub work_group: std::option::Option<std::string::String>,
+    /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateNotebookInput {
+    /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+    /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
     }
 }
 

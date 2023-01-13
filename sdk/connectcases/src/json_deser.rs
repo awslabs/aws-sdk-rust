@@ -1159,6 +1159,18 @@ pub(crate) fn deser_operation_crate_operation_get_template(
                             crate::json_deser::deser_list_com_amazonaws_connectcases_required_field_list(tokens)?
                         );
                     }
+                    "status" => {
+                        builder = builder.set_status(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::TemplateStatus::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_connectcases_tags(tokens)?,
@@ -3408,6 +3420,18 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "status" => {
+                                builder = builder.set_status(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::TemplateStatus::from(u.as_ref()))
+                                    })
                                     .transpose()?,
                                 );
                             }

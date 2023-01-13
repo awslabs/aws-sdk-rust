@@ -693,7 +693,7 @@ pub mod delete_secret_input {
         }
         /// <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
         /// <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>
-        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
         /// </important>
         pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
             self.force_delete_without_recovery = Some(input);
@@ -701,7 +701,7 @@ pub mod delete_secret_input {
         }
         /// <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
         /// <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>
-        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
         /// </important>
         pub fn set_force_delete_without_recovery(
             mut self,
@@ -1552,12 +1552,23 @@ pub mod list_secrets_input {
     /// A builder for [`ListSecretsInput`](crate::input::ListSecretsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) include_planned_deletion: std::option::Option<bool>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn include_planned_deletion(mut self, input: bool) -> Self {
+            self.include_planned_deletion = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_include_planned_deletion(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_planned_deletion = input;
+            self
+        }
         /// <p>The number of results to include in the response.</p>
         /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1599,12 +1610,12 @@ pub mod list_secrets_input {
             self.filters = input;
             self
         }
-        /// <p>Lists secrets in the requested order. </p>
+        /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
         pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Lists secrets in the requested order. </p>
+        /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -1618,6 +1629,7 @@ pub mod list_secrets_input {
         ) -> Result<crate::input::ListSecretsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSecretsInput {
+                include_planned_deletion: self.include_planned_deletion,
                 max_results: self.max_results,
                 next_token: self.next_token,
                 filters: self.filters,
@@ -4685,6 +4697,9 @@ impl ListSecretVersionIdsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretsInput {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub include_planned_deletion: std::option::Option<bool>,
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
     #[doc(hidden)]
@@ -4695,11 +4710,15 @@ pub struct ListSecretsInput {
     /// <p>The filters to apply to the list of secrets.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>Lists secrets in the requested order. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
 }
 impl ListSecretsInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn include_planned_deletion(&self) -> std::option::Option<bool> {
+        self.include_planned_deletion
+    }
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -4713,7 +4732,7 @@ impl ListSecretsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>Lists secrets in the requested order. </p>
+    /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
         self.sort_order.as_ref()
     }
@@ -4865,7 +4884,7 @@ pub struct DeleteSecretInput {
     pub recovery_window_in_days: std::option::Option<i64>,
     /// <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
     /// <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>
-    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
     /// </important>
     #[doc(hidden)]
     pub force_delete_without_recovery: std::option::Option<bool>,
@@ -4882,7 +4901,7 @@ impl DeleteSecretInput {
     }
     /// <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
     /// <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>
-    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
     /// </important>
     pub fn force_delete_without_recovery(&self) -> std::option::Option<bool> {
         self.force_delete_without_recovery

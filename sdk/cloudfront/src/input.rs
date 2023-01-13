@@ -11,12 +11,12 @@ pub mod associate_alias_input {
         pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the distribution that you’re associating the alias with.</p>
+        /// <p>The ID of the distribution that you're associating the alias with.</p>
         pub fn target_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_distribution_id = Some(input.into());
             self
         }
-        /// <p>The ID of the distribution that you’re associating the alias with.</p>
+        /// <p>The ID of the distribution that you're associating the alias with.</p>
         pub fn set_target_distribution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -187,6 +187,215 @@ impl AssociateAliasInput {
     /// Creates a new builder-style object to manufacture [`AssociateAliasInput`](crate::input::AssociateAliasInput).
     pub fn builder() -> crate::input::associate_alias_input::Builder {
         crate::input::associate_alias_input::Builder::default()
+    }
+}
+
+/// See [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+pub mod copy_distribution_input {
+
+    /// A builder for [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) primary_distribution_id: std::option::Option<std::string::String>,
+        pub(crate) staging: std::option::Option<bool>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+        pub(crate) caller_reference: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+        pub fn primary_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.primary_distribution_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+        pub fn set_primary_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.primary_distribution_id = input;
+            self
+        }
+        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+        pub fn staging(mut self, input: bool) -> Self {
+            self.staging = Some(input);
+            self
+        }
+        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+        pub fn set_staging(mut self, input: std::option::Option<bool>) -> Self {
+            self.staging = input;
+            self
+        }
+        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
+            self
+        }
+        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+        pub fn set_caller_reference(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.caller_reference = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CopyDistributionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CopyDistributionInput {
+                primary_distribution_id: self.primary_distribution_id,
+                staging: self.staging,
+                if_match: self.if_match,
+                caller_reference: self.caller_reference,
+            })
+        }
+    }
+}
+impl CopyDistributionInput {
+    /// Consumes the builder and constructs an Operation<[`CopyDistribution`](crate::operation::CopyDistribution)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CopyDistribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CopyDistributionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_3 = &_input.primary_distribution_id;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "primary_distribution_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let primary_distribution_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if primary_distribution_id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "primary_distribution_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/distribution/{PrimaryDistributionId}/copy",
+                    PrimaryDistributionId = primary_distribution_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CopyDistributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_copy_distribution(input, builder)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_copy_distribution(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CopyDistribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CopyDistribution",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+    pub fn builder() -> crate::input::copy_distribution_input::Builder {
+        crate::input::copy_distribution_input::Builder::default()
     }
 }
 
@@ -487,6 +696,158 @@ impl CreateCloudFrontOriginAccessIdentityInput {
     }
 }
 
+/// See [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+pub mod create_continuous_deployment_policy_input {
+
+    /// A builder for [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy_config:
+            std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+    }
+    impl Builder {
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn continuous_deployment_policy_config(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyConfig,
+        ) -> Self {
+            self.continuous_deployment_policy_config = Some(input);
+            self
+        }
+        /// <p>Contains the configuration for a continuous deployment policy.</p>
+        pub fn set_continuous_deployment_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        ) -> Self {
+            self.continuous_deployment_policy_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateContinuousDeploymentPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateContinuousDeploymentPolicyInput {
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+            })
+        }
+    }
+}
+impl CreateContinuousDeploymentPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateContinuousDeploymentPolicy`](crate::operation::CreateContinuousDeploymentPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateContinuousDeploymentPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateContinuousDeploymentPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2020-05-31/continuous-deployment-policy")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateContinuousDeploymentPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_create_continuous_deployment_policy_input(
+                &self.continuous_deployment_policy_config,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateContinuousDeploymentPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateContinuousDeploymentPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::create_continuous_deployment_policy_input::Builder {
+        crate::input::create_continuous_deployment_policy_input::Builder::default()
+    }
+}
+
 /// See [`CreateDistributionInput`](crate::input::CreateDistributionInput).
 pub mod create_distribution_input {
 
@@ -644,7 +1005,7 @@ pub mod create_distribution_with_tags_input {
             std::option::Option<crate::model::DistributionConfigWithTags>,
     }
     impl Builder {
-        /// <p>The distribution's configuration information. </p>
+        /// <p>The distribution's configuration information.</p>
         pub fn distribution_config_with_tags(
             mut self,
             input: crate::model::DistributionConfigWithTags,
@@ -652,7 +1013,7 @@ pub mod create_distribution_with_tags_input {
             self.distribution_config_with_tags = Some(input);
             self
         }
-        /// <p>The distribution's configuration information. </p>
+        /// <p>The distribution's configuration information.</p>
         pub fn set_distribution_config_with_tags(
             mut self,
             input: std::option::Option<crate::model::DistributionConfigWithTags>,
@@ -1119,12 +1480,12 @@ pub mod create_function_input {
             self.name = input;
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
         pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
             self.function_config = Some(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
         pub fn set_function_config(
             mut self,
             input: std::option::Option<crate::model::FunctionConfig>,
@@ -1347,15 +1708,15 @@ impl CreateInvalidationInput {
                 _input: &crate::input::CreateInvalidationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_3 = &_input.distribution_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
+                let input_4 = &_input.distribution_id;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_3,
+                    input_4,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -1680,15 +2041,15 @@ impl CreateMonitoringSubscriptionInput {
                 _input: &crate::input::CreateMonitoringSubscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_4 = &_input.distribution_id;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
+                let input_5 = &_input.distribution_id;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_4,
+                    input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -2456,7 +2817,7 @@ pub mod create_response_headers_policy_input {
             std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     }
     impl Builder {
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
         pub fn response_headers_policy_config(
             mut self,
             input: crate::model::ResponseHeadersPolicyConfig,
@@ -2464,7 +2825,7 @@ pub mod create_response_headers_policy_input {
             self.response_headers_policy_config = Some(input);
             self
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
         pub fn set_response_headers_policy_config(
             mut self,
             input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
@@ -2760,7 +3121,7 @@ pub mod create_streaming_distribution_with_tags_input {
             std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
     }
     impl Builder {
-        /// <p> The streaming distribution's configuration information. </p>
+        /// <p>The streaming distribution's configuration information.</p>
         pub fn streaming_distribution_config_with_tags(
             mut self,
             input: crate::model::StreamingDistributionConfigWithTags,
@@ -2768,7 +3129,7 @@ pub mod create_streaming_distribution_with_tags_input {
             self.streaming_distribution_config_with_tags = Some(input);
             self
         }
-        /// <p> The streaming distribution's configuration information. </p>
+        /// <p>The streaming distribution's configuration information.</p>
         pub fn set_streaming_distribution_config_with_tags(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
@@ -2932,12 +3293,12 @@ pub mod delete_cache_policy_input {
             self.id = input;
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -2976,15 +3337,15 @@ impl DeleteCachePolicyInput {
                 _input: &crate::input::DeleteCachePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_5 = &_input.id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
+                let input_6 = &_input.id;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_5,
+                    input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -3137,15 +3498,15 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
                 _input: &crate::input::DeleteCloudFrontOriginAccessIdentityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
+                let input_7 = &_input.id;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_6,
+                    input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -3241,6 +3602,173 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
     }
 }
 
+/// See [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+pub mod delete_continuous_deployment_policy_input {
+
+    /// A builder for [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteContinuousDeploymentPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteContinuousDeploymentPolicyInput {
+                id: self.id,
+                if_match: self.if_match,
+            })
+        }
+    }
+}
+impl DeleteContinuousDeploymentPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteContinuousDeploymentPolicy`](crate::operation::DeleteContinuousDeploymentPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteContinuousDeploymentPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteContinuousDeploymentPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_8 = &_input.id;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/continuous-deployment-policy/{Id}",
+                    Id = id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteContinuousDeploymentPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_delete_continuous_deployment_policy(
+                    input, builder,
+                )?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteContinuousDeploymentPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteContinuousDeploymentPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::delete_continuous_deployment_policy_input::Builder {
+        crate::input::delete_continuous_deployment_policy_input::Builder::default()
+    }
+}
+
 /// See [`DeleteDistributionInput`](crate::input::DeleteDistributionInput).
 pub mod delete_distribution_input {
 
@@ -3251,22 +3779,22 @@ pub mod delete_distribution_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3305,15 +3833,15 @@ impl DeleteDistributionInput {
                 _input: &crate::input::DeleteDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
+                let input_9 = &_input.id;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_7,
+                    input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -3466,15 +3994,15 @@ impl DeleteFieldLevelEncryptionConfigInput {
                 _input: &crate::input::DeleteFieldLevelEncryptionConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_8 = &_input.id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_10 = &_input.id;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -3629,15 +4157,15 @@ impl DeleteFieldLevelEncryptionProfileInput {
                 _input: &crate::input::DeleteFieldLevelEncryptionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
+                let input_11 = &_input.id;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_9,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -3794,15 +4322,15 @@ impl DeleteFunctionInput {
                 _input: &crate::input::DeleteFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_10 = &_input.name;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
+                let input_12 = &_input.name;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_10,
+                    input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -3911,12 +4439,12 @@ pub mod delete_key_group_input {
             self.id = input;
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3953,15 +4481,15 @@ impl DeleteKeyGroupInput {
                 _input: &crate::input::DeleteKeyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_11 = &_input.id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_13 = &_input.id;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -4105,15 +4633,15 @@ impl DeleteMonitoringSubscriptionInput {
                 _input: &crate::input::DeleteMonitoringSubscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_12 = &_input.distribution_id;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
+                let input_14 = &_input.distribution_id;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_12,
+                    input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -4269,15 +4797,15 @@ impl DeleteOriginAccessControlInput {
                 _input: &crate::input::DeleteOriginAccessControlInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_13 = &_input.id;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
+                let input_15 = &_input.id;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_13,
+                    input_15,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -4387,12 +4915,12 @@ pub mod delete_origin_request_policy_input {
             self.id = input;
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4431,15 +4959,15 @@ impl DeleteOriginRequestPolicyInput {
                 _input: &crate::input::DeleteOriginRequestPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_14 = &_input.id;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
+                let input_16 = &_input.id;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_14,
+                    input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -4591,15 +5119,15 @@ impl DeletePublicKeyInput {
                 _input: &crate::input::DeletePublicKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_15 = &_input.id;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
+                let input_17 = &_input.id;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_15,
+                    input_17,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -4868,13 +5396,13 @@ pub mod delete_response_headers_policy_input {
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4913,15 +5441,15 @@ impl DeleteResponseHeadersPolicyInput {
                 _input: &crate::input::DeleteResponseHeadersPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_16 = &_input.id;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
+                let input_18 = &_input.id;
+                let input_18 = input_18.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_16,
+                    input_18,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5021,12 +5549,12 @@ pub mod delete_streaming_distribution_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The distribution ID. </p>
+        /// <p>The distribution ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5075,15 +5603,15 @@ impl DeleteStreamingDistributionInput {
                 _input: &crate::input::DeleteStreamingDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_17 = &_input.id;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
+                let input_19 = &_input.id;
+                let input_19 = input_19.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_17,
+                    input_19,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5193,12 +5721,12 @@ pub mod describe_function_input {
             self.name = input;
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.stage = Some(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -5240,15 +5768,15 @@ impl DescribeFunctionInput {
                 _input: &crate::input::DescribeFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_18 = &_input.name;
-                let input_18 = input_18.as_ref().ok_or_else(|| {
+                let input_20 = &_input.name;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_18,
+                    input_20,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -5268,9 +5796,9 @@ impl DescribeFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_19) = &_input.stage {
+                if let Some(inner_21) = &_input.stage {
                     {
-                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_19));
+                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_21));
                     }
                 }
                 Ok(())
@@ -5358,12 +5886,12 @@ pub mod get_cache_policy_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5397,15 +5925,15 @@ impl GetCachePolicyInput {
                 _input: &crate::input::GetCachePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_20 = &_input.id;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
+                let input_22 = &_input.id;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_20,
+                    input_22,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5502,12 +6030,12 @@ pub mod get_cache_policy_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5543,15 +6071,15 @@ impl GetCachePolicyConfigInput {
                 _input: &crate::input::GetCachePolicyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.id;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
+                let input_23 = &_input.id;
+                let input_23 = input_23.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_21,
+                    input_23,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5689,15 +6217,15 @@ impl GetCloudFrontOriginAccessIdentityInput {
                 _input: &crate::input::GetCloudFrontOriginAccessIdentityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_22 = &_input.id;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
+                let input_24 = &_input.id;
+                let input_24 = input_24.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_22,
+                    input_24,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5798,12 +6326,12 @@ pub mod get_cloud_front_origin_access_identity_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity's ID. </p>
+        /// <p>The identity's ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identity's ID. </p>
+        /// <p>The identity's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5839,15 +6367,15 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
                 _input: &crate::input::GetCloudFrontOriginAccessIdentityConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_23 = &_input.id;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
+                let input_25 = &_input.id;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_23,
+                    input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -5939,6 +6467,306 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
     }
 }
 
+/// See [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+pub mod get_continuous_deployment_policy_input {
+
+    /// A builder for [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetContinuousDeploymentPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetContinuousDeploymentPolicyInput { id: self.id })
+        }
+    }
+}
+impl GetContinuousDeploymentPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetContinuousDeploymentPolicy`](crate::operation::GetContinuousDeploymentPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetContinuousDeploymentPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetContinuousDeploymentPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_26 = &_input.id;
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/continuous-deployment-policy/{Id}",
+                    Id = id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetContinuousDeploymentPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetContinuousDeploymentPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetContinuousDeploymentPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::get_continuous_deployment_policy_input::Builder {
+        crate::input::get_continuous_deployment_policy_input::Builder::default()
+    }
+}
+
+/// See [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+pub mod get_continuous_deployment_policy_config_input {
+
+    /// A builder for [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetContinuousDeploymentPolicyConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetContinuousDeploymentPolicyConfigInput { id: self.id })
+        }
+    }
+}
+impl GetContinuousDeploymentPolicyConfigInput {
+    /// Consumes the builder and constructs an Operation<[`GetContinuousDeploymentPolicyConfig`](crate::operation::GetContinuousDeploymentPolicyConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetContinuousDeploymentPolicyConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetContinuousDeploymentPolicyConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_27 = &_input.id;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/continuous-deployment-policy/{Id}/config",
+                    Id = id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetContinuousDeploymentPolicyConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetContinuousDeploymentPolicyConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetContinuousDeploymentPolicyConfig",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+    pub fn builder() -> crate::input::get_continuous_deployment_policy_config_input::Builder {
+        crate::input::get_continuous_deployment_policy_config_input::Builder::default()
+    }
+}
+
 /// See [`GetDistributionInput`](crate::input::GetDistributionInput).
 pub mod get_distribution_input {
 
@@ -5987,15 +6815,15 @@ impl GetDistributionInput {
                 _input: &crate::input::GetDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.id;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
+                let input_28 = &_input.id;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_24,
+                    input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6133,15 +6961,15 @@ impl GetDistributionConfigInput {
                 _input: &crate::input::GetDistributionConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
+                let input_29 = &_input.id;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_25,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6279,15 +7107,15 @@ impl GetFieldLevelEncryptionInput {
                 _input: &crate::input::GetFieldLevelEncryptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_26 = &_input.id;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
+                let input_30 = &_input.id;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_26,
+                    input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6425,15 +7253,15 @@ impl GetFieldLevelEncryptionConfigInput {
                 _input: &crate::input::GetFieldLevelEncryptionConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
+                let input_31 = &_input.id;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_27,
+                    input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6575,15 +7403,15 @@ impl GetFieldLevelEncryptionProfileInput {
                 _input: &crate::input::GetFieldLevelEncryptionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_28 = &_input.id;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
+                let input_32 = &_input.id;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_28,
+                    input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6725,15 +7553,15 @@ impl GetFieldLevelEncryptionProfileConfigInput {
                 _input: &crate::input::GetFieldLevelEncryptionProfileConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_29 = &_input.id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
+                let input_33 = &_input.id;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_29,
+                    input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -6845,12 +7673,12 @@ pub mod get_function_input {
             self.name = input;
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.stage = Some(input);
             self
         }
-        /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -6890,15 +7718,15 @@ impl GetFunctionInput {
                 _input: &crate::input::GetFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_30 = &_input.name;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_34 = &_input.name;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -6918,9 +7746,9 @@ impl GetFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.stage {
+                if let Some(inner_35) = &_input.stage {
                     {
-                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_31));
+                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
                 Ok(())
@@ -7064,15 +7892,15 @@ impl GetInvalidationInput {
                 _input: &crate::input::GetInvalidationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_32 = &_input.distribution_id;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
+                let input_36 = &_input.distribution_id;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_32,
+                    input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -7083,15 +7911,15 @@ impl GetInvalidationInput {
                         ),
                     );
                 }
-                let input_33 = &_input.id;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
+                let input_37 = &_input.id;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_33,
+                    input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -7232,15 +8060,15 @@ impl GetKeyGroupInput {
                 _input: &crate::input::GetKeyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_34 = &_input.id;
-                let input_34 = input_34.as_ref().ok_or_else(|| {
+                let input_38 = &_input.id;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_34,
+                    input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -7378,15 +8206,15 @@ impl GetKeyGroupConfigInput {
                 _input: &crate::input::GetKeyGroupConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_35 = &_input.id;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
+                let input_39 = &_input.id;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_35,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -7529,15 +8357,15 @@ impl GetMonitoringSubscriptionInput {
                 _input: &crate::input::GetMonitoringSubscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_36 = &_input.distribution_id;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
+                let input_40 = &_input.distribution_id;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_36,
+                    input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -7679,15 +8507,15 @@ impl GetOriginAccessControlInput {
                 _input: &crate::input::GetOriginAccessControlInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_37 = &_input.id;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
+                let input_41 = &_input.id;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_37,
+                    input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -7825,15 +8653,15 @@ impl GetOriginAccessControlConfigInput {
                 _input: &crate::input::GetOriginAccessControlConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_38 = &_input.id;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
+                let input_42 = &_input.id;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_38,
+                    input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -7934,12 +8762,12 @@ pub mod get_origin_request_policy_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7975,15 +8803,15 @@ impl GetOriginRequestPolicyInput {
                 _input: &crate::input::GetOriginRequestPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.id;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
+                let input_43 = &_input.id;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_39,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8080,12 +8908,12 @@ pub mod get_origin_request_policy_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8121,15 +8949,15 @@ impl GetOriginRequestPolicyConfigInput {
                 _input: &crate::input::GetOriginRequestPolicyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_40 = &_input.id;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
+                let input_44 = &_input.id;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_40,
+                    input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8269,15 +9097,15 @@ impl GetPublicKeyInput {
                 _input: &crate::input::GetPublicKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.id;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
+                let input_45 = &_input.id;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_41,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8415,15 +9243,15 @@ impl GetPublicKeyConfigInput {
                 _input: &crate::input::GetPublicKeyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_42 = &_input.id;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
+                let input_46 = &_input.id;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_42,
+                    input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8678,13 +9506,13 @@ pub mod get_response_headers_policy_input {
     }
     impl Builder {
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8720,15 +9548,15 @@ impl GetResponseHeadersPolicyInput {
                 _input: &crate::input::GetResponseHeadersPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_43 = &_input.id;
-                let input_43 = input_43.as_ref().ok_or_else(|| {
+                let input_47 = &_input.id;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_43,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -8826,13 +9654,13 @@ pub mod get_response_headers_policy_config_input {
     }
     impl Builder {
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8868,15 +9696,15 @@ impl GetResponseHeadersPolicyConfigInput {
                 _input: &crate::input::GetResponseHeadersPolicyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_44 = &_input.id;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
+                let input_48 = &_input.id;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_44,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9018,15 +9846,15 @@ impl GetStreamingDistributionInput {
                 _input: &crate::input::GetStreamingDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.id;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
+                let input_49 = &_input.id;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_45,
+                    input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9164,15 +9992,15 @@ impl GetStreamingDistributionConfigInput {
                 _input: &crate::input::GetStreamingDistributionConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_46 = &_input.id;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
+                let input_50 = &_input.id;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_46,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -9296,12 +10124,12 @@ pub mod list_cache_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9359,21 +10187,21 @@ impl ListCachePoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.r#type {
+                if let Some(inner_51) = &_input.r#type {
                     {
-                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_47));
+                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_51));
                     }
                 }
-                if let Some(inner_48) = &_input.marker {
+                if let Some(inner_52) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_48));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_52));
                     }
                 }
-                if let Some(inner_49) = &_input.max_items {
-                    if *inner_49 != 0 {
+                if let Some(inner_53) = &_input.max_items {
+                    if *inner_53 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
                         );
                     }
                 }
@@ -9473,12 +10301,12 @@ pub mod list_cloud_front_origin_access_identities_input {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body. </p>
+        /// <p>The maximum number of origin access identities you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body. </p>
+        /// <p>The maximum number of origin access identities you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -9526,16 +10354,16 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.marker {
+                if let Some(inner_54) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_50));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
-                if let Some(inner_51) = &_input.max_items {
-                    if *inner_51 != 0 {
+                if let Some(inner_55) = &_input.max_items {
+                    if *inner_55 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
                         );
                     }
                 }
@@ -9650,12 +10478,12 @@ pub mod list_conflicting_aliases_input {
             self.alias = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9714,14 +10542,14 @@ impl ListConflictingAliasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_52 = &_input.distribution_id;
-                let inner_52 = inner_52.as_ref().ok_or_else(|| {
+                let inner_56 = &_input.distribution_id;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_52.is_empty() {
+                if inner_56.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "distribution_id",
@@ -9731,16 +10559,16 @@ impl ListConflictingAliasesInput {
                 }
                 query.push_kv(
                     "DistributionId",
-                    &aws_smithy_http::query::fmt_string(&inner_52),
+                    &aws_smithy_http::query::fmt_string(&inner_56),
                 );
-                let inner_53 = &_input.alias;
-                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                let inner_57 = &_input.alias;
+                let inner_57 = inner_57.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "alias",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_53.is_empty() {
+                if inner_57.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "alias",
@@ -9748,17 +10576,17 @@ impl ListConflictingAliasesInput {
                         ),
                     );
                 }
-                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_53));
-                if let Some(inner_54) = &_input.marker {
+                query.push_kv("Alias", &aws_smithy_http::query::fmt_string(&inner_57));
+                if let Some(inner_58) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_54));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_58));
                     }
                 }
-                if let Some(inner_55) = &_input.max_items {
-                    if *inner_55 != 0 {
+                if let Some(inner_59) = &_input.max_items {
+                    if *inner_59 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
                         );
                     }
                 }
@@ -9838,6 +10666,168 @@ impl ListConflictingAliasesInput {
     }
 }
 
+/// See [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+pub mod list_continuous_deployment_policies_input {
+
+    /// A builder for [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListContinuousDeploymentPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListContinuousDeploymentPoliciesInput {
+                marker: self.marker,
+                max_items: self.max_items,
+            })
+        }
+    }
+}
+impl ListContinuousDeploymentPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListContinuousDeploymentPolicies`](crate::operation::ListContinuousDeploymentPolicies)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListContinuousDeploymentPolicies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListContinuousDeploymentPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2020-05-31/continuous-deployment-policy")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListContinuousDeploymentPoliciesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_60) = &_input.marker {
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
+                }
+                if let Some(inner_61) = &_input.max_items {
+                    if *inner_61 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        );
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListContinuousDeploymentPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListContinuousDeploymentPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListContinuousDeploymentPolicies",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+    pub fn builder() -> crate::input::list_continuous_deployment_policies_input::Builder {
+        crate::input::list_continuous_deployment_policies_input::Builder::default()
+    }
+}
+
 /// See [`ListDistributionsInput`](crate::input::ListDistributionsInput).
 pub mod list_distributions_input {
 
@@ -9910,16 +10900,16 @@ impl ListDistributionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.marker {
+                if let Some(inner_62) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_56));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
                     }
                 }
-                if let Some(inner_57) = &_input.max_items {
-                    if *inner_57 != 0 {
+                if let Some(inner_63) = &_input.max_items {
+                    if *inner_63 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
                         );
                     }
                 }
@@ -10010,12 +11000,12 @@ pub mod list_distributions_by_cache_policy_id_input {
         pub(crate) cache_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10078,15 +11068,15 @@ impl ListDistributionsByCachePolicyIdInput {
                 _input: &crate::input::ListDistributionsByCachePolicyIdInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_58 = &_input.cache_policy_id;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
+                let input_64 = &_input.cache_policy_id;
+                let input_64 = input_64.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "cache_policy_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let cache_policy_id = aws_smithy_http::label::fmt_string(
-                    input_58,
+                    input_64,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cache_policy_id.is_empty() {
@@ -10110,16 +11100,16 @@ impl ListDistributionsByCachePolicyIdInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.marker {
+                if let Some(inner_65) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_65));
                     }
                 }
-                if let Some(inner_60) = &_input.max_items {
-                    if *inner_60 != 0 {
+                if let Some(inner_66) = &_input.max_items {
+                    if *inner_66 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
                         );
                     }
                 }
@@ -10210,12 +11200,12 @@ pub mod list_distributions_by_key_group_input {
         pub(crate) key_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10275,15 +11265,15 @@ impl ListDistributionsByKeyGroupInput {
                 _input: &crate::input::ListDistributionsByKeyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_61 = &_input.key_group_id;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
+                let input_67 = &_input.key_group_id;
+                let input_67 = input_67.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key_group_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key_group_id = aws_smithy_http::label::fmt_string(
-                    input_61,
+                    input_67,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if key_group_id.is_empty() {
@@ -10307,16 +11297,16 @@ impl ListDistributionsByKeyGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_62) = &_input.marker {
+                if let Some(inner_68) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
-                if let Some(inner_63) = &_input.max_items {
-                    if *inner_63 != 0 {
+                if let Some(inner_69) = &_input.max_items {
+                    if *inner_69 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
                         );
                     }
                 }
@@ -10407,12 +11397,12 @@ pub mod list_distributions_by_origin_request_policy_id_input {
         pub(crate) origin_request_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10477,15 +11467,15 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
                 _input: &crate::input::ListDistributionsByOriginRequestPolicyIdInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_64 = &_input.origin_request_policy_id;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
+                let input_70 = &_input.origin_request_policy_id;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "origin_request_policy_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let origin_request_policy_id = aws_smithy_http::label::fmt_string(
-                    input_64,
+                    input_70,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if origin_request_policy_id.is_empty() {
@@ -10509,16 +11499,16 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_65) = &_input.marker {
+                if let Some(inner_71) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_65));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
-                if let Some(inner_66) = &_input.max_items {
-                    if *inner_66 != 0 {
+                if let Some(inner_72) = &_input.max_items {
+                    if *inner_72 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                         );
                     }
                 }
@@ -10611,12 +11601,12 @@ pub mod list_distributions_by_realtime_log_config_input {
         pub(crate) realtime_log_config_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10794,12 +11784,12 @@ pub mod list_distributions_by_response_headers_policy_id_input {
         pub(crate) response_headers_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10864,15 +11854,15 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
                 _input: &crate::input::ListDistributionsByResponseHeadersPolicyIdInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_67 = &_input.response_headers_policy_id;
-                let input_67 = input_67.as_ref().ok_or_else(|| {
+                let input_73 = &_input.response_headers_policy_id;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "response_headers_policy_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let response_headers_policy_id = aws_smithy_http::label::fmt_string(
-                    input_67,
+                    input_73,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if response_headers_policy_id.is_empty() {
@@ -10896,16 +11886,16 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_68) = &_input.marker {
+                if let Some(inner_74) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_68));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_74));
                     }
                 }
-                if let Some(inner_69) = &_input.max_items {
-                    if *inner_69 != 0 {
+                if let Some(inner_75) = &_input.max_items {
+                    if *inner_75 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
                         );
                     }
                 }
@@ -10997,12 +11987,12 @@ pub mod list_distributions_by_web_acl_id_input {
         pub(crate) web_acl_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11062,15 +12052,15 @@ impl ListDistributionsByWebAclIdInput {
                 _input: &crate::input::ListDistributionsByWebAclIdInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_70 = &_input.web_acl_id;
-                let input_70 = input_70.as_ref().ok_or_else(|| {
+                let input_76 = &_input.web_acl_id;
+                let input_76 = input_76.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "web_acl_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let web_acl_id = aws_smithy_http::label::fmt_string(
-                    input_70,
+                    input_76,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if web_acl_id.is_empty() {
@@ -11094,16 +12084,16 @@ impl ListDistributionsByWebAclIdInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_71) = &_input.marker {
+                if let Some(inner_77) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_71));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_77));
                     }
                 }
-                if let Some(inner_72) = &_input.max_items {
-                    if *inner_72 != 0 {
+                if let Some(inner_78) = &_input.max_items {
+                    if *inner_78 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
                         );
                     }
                 }
@@ -11193,22 +12183,22 @@ pub mod list_field_level_encryption_configs_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -11256,16 +12246,16 @@ impl ListFieldLevelEncryptionConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_73) = &_input.marker {
+                if let Some(inner_79) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_73));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_79));
                     }
                 }
-                if let Some(inner_74) = &_input.max_items {
-                    if *inner_74 != 0 {
+                if let Some(inner_80) = &_input.max_items {
+                    if *inner_80 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
                         );
                     }
                 }
@@ -11355,12 +12345,12 @@ pub mod list_field_level_encryption_profiles_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11418,16 +12408,16 @@ impl ListFieldLevelEncryptionProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_75) = &_input.marker {
+                if let Some(inner_81) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_81));
                     }
                 }
-                if let Some(inner_76) = &_input.max_items {
-                    if *inner_76 != 0 {
+                if let Some(inner_82) = &_input.max_items {
+                    if *inner_82 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_82).encode(),
                         );
                     }
                 }
@@ -11518,12 +12508,12 @@ pub mod list_functions_input {
         pub(crate) stage: std::option::Option<crate::model::FunctionStage>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11592,22 +12582,22 @@ impl ListFunctionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_77) = &_input.marker {
+                if let Some(inner_83) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_77));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_83));
                     }
                 }
-                if let Some(inner_78) = &_input.max_items {
-                    if *inner_78 != 0 {
+                if let Some(inner_84) = &_input.max_items {
+                    if *inner_84 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
                         );
                     }
                 }
-                if let Some(inner_79) = &_input.stage {
+                if let Some(inner_85) = &_input.stage {
                     {
-                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_79));
+                        query.push_kv("Stage", &aws_smithy_http::query::fmt_string(&inner_85));
                     }
                 }
                 Ok(())
@@ -11710,12 +12700,12 @@ pub mod list_invalidations_input {
             self.distribution_id = input;
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11765,15 +12755,15 @@ impl ListInvalidationsInput {
                 _input: &crate::input::ListInvalidationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_80 = &_input.distribution_id;
-                let input_80 = input_80.as_ref().ok_or_else(|| {
+                let input_86 = &_input.distribution_id;
+                let input_86 = input_86.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let distribution_id = aws_smithy_http::label::fmt_string(
-                    input_80,
+                    input_86,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if distribution_id.is_empty() {
@@ -11797,16 +12787,16 @@ impl ListInvalidationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_81) = &_input.marker {
+                if let Some(inner_87) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_81));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_87));
                     }
                 }
-                if let Some(inner_82) = &_input.max_items {
-                    if *inner_82 != 0 {
+                if let Some(inner_88) = &_input.max_items {
+                    if *inner_88 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_82).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
                         );
                     }
                 }
@@ -11896,12 +12886,12 @@ pub mod list_key_groups_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11956,16 +12946,16 @@ impl ListKeyGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_83) = &_input.marker {
+                if let Some(inner_89) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_83));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_89));
                     }
                 }
-                if let Some(inner_84) = &_input.max_items {
-                    if *inner_84 != 0 {
+                if let Some(inner_90) = &_input.max_items {
+                    if *inner_90 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
                         );
                     }
                 }
@@ -12118,16 +13108,16 @@ impl ListOriginAccessControlsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_85) = &_input.marker {
+                if let Some(inner_91) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_85));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_91));
                     }
                 }
-                if let Some(inner_86) = &_input.max_items {
-                    if *inner_86 != 0 {
+                if let Some(inner_92) = &_input.max_items {
+                    if *inner_92 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_86).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
                         );
                     }
                 }
@@ -12239,12 +13229,12 @@ pub mod list_origin_request_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12303,21 +13293,21 @@ impl ListOriginRequestPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_87) = &_input.r#type {
+                if let Some(inner_93) = &_input.r#type {
                     {
-                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_87));
+                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_93));
                     }
                 }
-                if let Some(inner_88) = &_input.marker {
+                if let Some(inner_94) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_94));
                     }
                 }
-                if let Some(inner_89) = &_input.max_items {
-                    if *inner_89 != 0 {
+                if let Some(inner_95) = &_input.max_items {
+                    if *inner_95 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_95).encode(),
                         );
                     }
                 }
@@ -12407,22 +13397,22 @@ pub mod list_public_keys_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of public keys you want in the response body. </p>
+        /// <p>The maximum number of public keys you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of public keys you want in the response body. </p>
+        /// <p>The maximum number of public keys you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -12467,16 +13457,16 @@ impl ListPublicKeysInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.marker {
+                if let Some(inner_96) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_90));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_96));
                     }
                 }
-                if let Some(inner_91) = &_input.max_items {
-                    if *inner_91 != 0 {
+                if let Some(inner_97) = &_input.max_items {
+                    if *inner_97 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_97).encode(),
                         );
                     }
                 }
@@ -12576,12 +13566,12 @@ pub mod list_realtime_log_configs_input {
             self.max_items = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12629,17 +13619,17 @@ impl ListRealtimeLogConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.max_items {
-                    if *inner_92 != 0 {
+                if let Some(inner_98) = &_input.max_items {
+                    if *inner_98 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
                         );
                     }
                 }
-                if let Some(inner_93) = &_input.marker {
+                if let Some(inner_99) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_93));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_99));
                     }
                 }
                 Ok(())
@@ -12750,12 +13740,12 @@ pub mod list_response_headers_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12814,21 +13804,21 @@ impl ListResponseHeadersPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.r#type {
+                if let Some(inner_100) = &_input.r#type {
                     {
-                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_94));
+                        query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_100));
                     }
                 }
-                if let Some(inner_95) = &_input.marker {
+                if let Some(inner_101) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_95));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_101));
                     }
                 }
-                if let Some(inner_96) = &_input.max_items {
-                    if *inner_96 != 0 {
+                if let Some(inner_102) = &_input.max_items {
+                    if *inner_102 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_102).encode(),
                         );
                     }
                 }
@@ -12981,16 +13971,16 @@ impl ListStreamingDistributionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_97) = &_input.marker {
+                if let Some(inner_103) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_97));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_103));
                     }
                 }
-                if let Some(inner_98) = &_input.max_items {
-                    if *inner_98 != 0 {
+                if let Some(inner_104) = &_input.max_items {
+                    if *inner_104 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
                         );
                     }
                 }
@@ -13079,12 +14069,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -13130,14 +14120,14 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_99 = &_input.resource;
-                let inner_99 = inner_99.as_ref().ok_or_else(|| {
+                let inner_105 = &_input.resource;
+                let inner_105 = inner_105.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_99.is_empty() {
+                if inner_105.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource",
@@ -13145,7 +14135,7 @@ impl ListTagsForResourceInput {
                         ),
                     );
                 }
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_99));
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_105));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -13284,15 +14274,15 @@ impl PublishFunctionInput {
                 _input: &crate::input::PublishFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_100 = &_input.name;
-                let input_100 = input_100.as_ref().ok_or_else(|| {
+                let input_106 = &_input.name;
+                let input_106 = input_106.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_100,
+                    input_106,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -13391,22 +14381,22 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<crate::model::Tags>,
     }
     impl Builder {
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn tags(mut self, input: crate::model::Tags) -> Self {
             self.tags = Some(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.tags = input;
             self
@@ -13452,14 +14442,14 @@ impl TagResourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("Operation", "Tag");
-                let inner_101 = &_input.resource;
-                let inner_101 = inner_101.as_ref().ok_or_else(|| {
+                let inner_107 = &_input.resource;
+                let inner_107 = inner_107.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_101.is_empty() {
+                if inner_107.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource",
@@ -13467,7 +14457,7 @@ impl TagResourceInput {
                         ),
                     );
                 }
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_101));
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_107));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -13660,15 +14650,15 @@ impl TestFunctionInput {
                 _input: &crate::input::TestFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_102 = &_input.name;
-                let input_102 = input_102.as_ref().ok_or_else(|| {
+                let input_108 = &_input.name;
+                let input_108 = input_108.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_102,
+                    input_108,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -13781,22 +14771,22 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<crate::model::TagKeys>,
     }
     impl Builder {
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p> An ARN of a CloudFront resource.</p>
+        /// <p>An ARN of a CloudFront resource.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
         pub fn tag_keys(mut self, input: crate::model::TagKeys) -> Self {
             self.tag_keys = Some(input);
             self
         }
-        /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
         pub fn set_tag_keys(mut self, input: std::option::Option<crate::model::TagKeys>) -> Self {
             self.tag_keys = input;
             self
@@ -13842,14 +14832,14 @@ impl UntagResourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("Operation", "Untag");
-                let inner_103 = &_input.resource;
-                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                let inner_109 = &_input.resource;
+                let inner_109 = inner_109.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_103.is_empty() {
+                if inner_109.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "resource",
@@ -13857,7 +14847,7 @@ impl UntagResourceInput {
                         ),
                     );
                 }
-                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_103));
+                query.push_kv("Resource", &aws_smithy_http::query::fmt_string(&inner_109));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -13972,22 +14962,22 @@ pub mod update_cache_policy_input {
             self.cache_policy_config = input;
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14027,15 +15017,15 @@ impl UpdateCachePolicyInput {
                 _input: &crate::input::UpdateCachePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_104 = &_input.id;
-                let input_104 = input_104.as_ref().ok_or_else(|| {
+                let input_110 = &_input.id;
+                let input_110 = input_110.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_104,
+                    input_110,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14224,15 +15214,15 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
                 _input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_105 = &_input.id;
-                let input_105 = input_105.as_ref().ok_or_else(|| {
+                let input_111 = &_input.id;
+                let input_111 = input_111.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_105,
+                    input_111,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14341,6 +15331,208 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
     }
 }
 
+/// See [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+pub mod update_continuous_deployment_policy_input {
+
+    /// A builder for [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) continuous_deployment_policy_config:
+            std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The continuous deployment policy configuration.</p>
+        pub fn continuous_deployment_policy_config(
+            mut self,
+            input: crate::model::ContinuousDeploymentPolicyConfig,
+        ) -> Self {
+            self.continuous_deployment_policy_config = Some(input);
+            self
+        }
+        /// <p>The continuous deployment policy configuration.</p>
+        pub fn set_continuous_deployment_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+        ) -> Self {
+            self.continuous_deployment_policy_config = input;
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateContinuousDeploymentPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateContinuousDeploymentPolicyInput {
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+                id: self.id,
+                if_match: self.if_match,
+            })
+        }
+    }
+}
+impl UpdateContinuousDeploymentPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateContinuousDeploymentPolicy`](crate::operation::UpdateContinuousDeploymentPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateContinuousDeploymentPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateContinuousDeploymentPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_112 = &_input.id;
+                let input_112 = input_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_112,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/continuous-deployment-policy/{Id}",
+                    Id = id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateContinuousDeploymentPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_update_continuous_deployment_policy(
+                    input, builder,
+                )?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_update_continuous_deployment_policy_input(
+                &self.continuous_deployment_policy_config,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateContinuousDeploymentPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateContinuousDeploymentPolicy",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+    pub fn builder() -> crate::input::update_continuous_deployment_policy_input::Builder {
+        crate::input::update_continuous_deployment_policy_input::Builder::default()
+    }
+}
+
 /// See [`UpdateDistributionInput`](crate::input::UpdateDistributionInput).
 pub mod update_distribution_input {
 
@@ -14420,15 +15612,15 @@ impl UpdateDistributionInput {
                 _input: &crate::input::UpdateDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_106 = &_input.id;
-                let input_106 = input_106.as_ref().ok_or_else(|| {
+                let input_113 = &_input.id;
+                let input_113 = input_113.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_106,
+                    input_113,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14533,6 +15725,215 @@ impl UpdateDistributionInput {
     }
 }
 
+/// See [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+pub mod update_distribution_with_staging_config_input {
+
+    /// A builder for [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) staging_distribution_id: std::option::Option<std::string::String>,
+        pub(crate) if_match: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+        pub fn staging_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.staging_distribution_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+        pub fn set_staging_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.staging_distribution_id = input;
+            self
+        }
+        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+        /// <p> <code>
+        /// <primary etag>
+        /// ,
+        /// <staging etag></staging>
+        /// </primary></code> </p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.if_match = Some(input.into());
+            self
+        }
+        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+        /// <p> <code>
+        /// <primary etag>
+        /// ,
+        /// <staging etag></staging>
+        /// </primary></code> </p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.if_match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateDistributionWithStagingConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateDistributionWithStagingConfigInput {
+                id: self.id,
+                staging_distribution_id: self.staging_distribution_id,
+                if_match: self.if_match,
+            })
+        }
+    }
+}
+impl UpdateDistributionWithStagingConfigInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDistributionWithStagingConfig`](crate::operation::UpdateDistributionWithStagingConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateDistributionWithStagingConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateDistributionWithStagingConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_114 = &_input.id;
+                let input_114 = input_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_114,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if id.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2020-05-31/distribution/{Id}/promote-staging-config",
+                    Id = id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UpdateDistributionWithStagingConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_115) = &_input.staging_distribution_id {
+                    {
+                        query.push_kv(
+                            "StagingDistributionId",
+                            &aws_smithy_http::query::fmt_string(&inner_115),
+                        );
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateDistributionWithStagingConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                let builder =
+                    crate::http_serde::add_headers_update_distribution_with_staging_config(
+                        input, builder,
+                    )?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDistributionWithStagingConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDistributionWithStagingConfig",
+            "cloudfront",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+    pub fn builder() -> crate::input::update_distribution_with_staging_config_input::Builder {
+        crate::input::update_distribution_with_staging_config_input::Builder::default()
+    }
+}
+
 /// See [`UpdateFieldLevelEncryptionConfigInput`](crate::input::UpdateFieldLevelEncryptionConfigInput).
 pub mod update_field_level_encryption_config_input {
 
@@ -14545,7 +15946,7 @@ pub mod update_field_level_encryption_config_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Request to update a field-level encryption configuration. </p>
+        /// <p>Request to update a field-level encryption configuration.</p>
         pub fn field_level_encryption_config(
             mut self,
             input: crate::model::FieldLevelEncryptionConfig,
@@ -14553,7 +15954,7 @@ pub mod update_field_level_encryption_config_input {
             self.field_level_encryption_config = Some(input);
             self
         }
-        /// <p>Request to update a field-level encryption configuration. </p>
+        /// <p>Request to update a field-level encryption configuration.</p>
         pub fn set_field_level_encryption_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -14616,15 +16017,15 @@ impl UpdateFieldLevelEncryptionConfigInput {
                 _input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_107 = &_input.id;
-                let input_107 = input_107.as_ref().ok_or_else(|| {
+                let input_116 = &_input.id;
+                let input_116 = input_116.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_107,
+                    input_116,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -14747,7 +16148,7 @@ pub mod update_field_level_encryption_profile_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Request to update a field-level encryption profile. </p>
+        /// <p>Request to update a field-level encryption profile.</p>
         pub fn field_level_encryption_profile_config(
             mut self,
             input: crate::model::FieldLevelEncryptionProfileConfig,
@@ -14755,7 +16156,7 @@ pub mod update_field_level_encryption_profile_input {
             self.field_level_encryption_profile_config = Some(input);
             self
         }
-        /// <p>Request to update a field-level encryption profile. </p>
+        /// <p>Request to update a field-level encryption profile.</p>
         pub fn set_field_level_encryption_profile_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -14763,12 +16164,12 @@ pub mod update_field_level_encryption_profile_input {
             self.field_level_encryption_profile_config = input;
             self
         }
-        /// <p>The ID of the field-level encryption profile request. </p>
+        /// <p>The ID of the field-level encryption profile request.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID of the field-level encryption profile request. </p>
+        /// <p>The ID of the field-level encryption profile request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14818,15 +16219,15 @@ impl UpdateFieldLevelEncryptionProfileInput {
                 _input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_108 = &_input.id;
-                let input_108 = input_108.as_ref().ok_or_else(|| {
+                let input_117 = &_input.id;
+                let input_117 = input_117.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_108,
+                    input_117,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -15039,15 +16440,15 @@ impl UpdateFunctionInput {
                 _input: &crate::input::UpdateFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_109 = &_input.name;
-                let input_109 = input_109.as_ref().ok_or_else(|| {
+                let input_118 = &_input.name;
+                let input_118 = input_118.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_109,
+                    input_118,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -15184,12 +16585,12 @@ pub mod update_key_group_input {
             self.id = input;
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15227,15 +16628,15 @@ impl UpdateKeyGroupInput {
                 _input: &crate::input::UpdateKeyGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_110 = &_input.id;
-                let input_110 = input_110.as_ref().ok_or_else(|| {
+                let input_119 = &_input.id;
+                let input_119 = input_119.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_110,
+                    input_119,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -15421,15 +16822,15 @@ impl UpdateOriginAccessControlInput {
                 _input: &crate::input::UpdateOriginAccessControlInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_111 = &_input.id;
-                let input_111 = input_111.as_ref().ok_or_else(|| {
+                let input_120 = &_input.id;
+                let input_120 = input_120.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_111,
+                    input_120,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -15567,22 +16968,22 @@ pub mod update_origin_request_policy_input {
             self.origin_request_policy_config = input;
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15622,15 +17023,15 @@ impl UpdateOriginRequestPolicyInput {
                 _input: &crate::input::UpdateOriginRequestPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_112 = &_input.id;
-                let input_112 = input_112.as_ref().ok_or_else(|| {
+                let input_121 = &_input.id;
+                let input_121 = input_121.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_112,
+                    input_121,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -15813,15 +17214,15 @@ impl UpdatePublicKeyInput {
                 _input: &crate::input::UpdatePublicKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_113 = &_input.id;
-                let input_113 = input_113.as_ref().ok_or_else(|| {
+                let input_122 = &_input.id;
+                let input_122 = input_122.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_113,
+                    input_122,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -16178,13 +17579,13 @@ pub mod update_response_headers_policy_input {
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -16224,15 +17625,15 @@ impl UpdateResponseHeadersPolicyInput {
                 _input: &crate::input::UpdateResponseHeadersPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_114 = &_input.id;
-                let input_114 = input_114.as_ref().ok_or_else(|| {
+                let input_123 = &_input.id;
+                let input_123 = input_123.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_114,
+                    input_123,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -16421,15 +17822,15 @@ impl UpdateStreamingDistributionInput {
                 _input: &crate::input::UpdateStreamingDistributionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_115 = &_input.id;
-                let input_115 = input_115.as_ref().ok_or_else(|| {
+                let input_124 = &_input.id;
+                let input_124 = input_124.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let id = aws_smithy_http::label::fmt_string(
-                    input_115,
+                    input_124,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
@@ -16583,7 +17984,7 @@ pub struct UpdateResponseHeadersPolicyInput {
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are updating.</p>
-    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -16599,7 +18000,7 @@ impl UpdateResponseHeadersPolicyInput {
         self.id.as_deref()
     }
     /// <p>The version of the response headers policy that you are updating.</p>
-    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16686,10 +18087,10 @@ pub struct UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     #[doc(hidden)]
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
-    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -16700,11 +18101,11 @@ impl UpdateOriginRequestPolicyInput {
     ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
-    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16751,7 +18152,7 @@ pub struct UpdateKeyGroupInput {
     /// <p>The identifier of the key group that you are updating.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+    /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -16764,7 +18165,7 @@ impl UpdateKeyGroupInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+    /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16820,11 +18221,11 @@ impl std::fmt::Debug for UpdateFunctionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileInput {
-    /// <p>Request to update a field-level encryption profile. </p>
+    /// <p>Request to update a field-level encryption profile.</p>
     #[doc(hidden)]
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
-    /// <p>The ID of the field-level encryption profile request. </p>
+    /// <p>The ID of the field-level encryption profile request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -16832,13 +18233,13 @@ pub struct UpdateFieldLevelEncryptionProfileInput {
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileInput {
-    /// <p>Request to update a field-level encryption profile. </p>
+    /// <p>Request to update a field-level encryption profile.</p>
     pub fn field_level_encryption_profile_config(
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileConfig> {
         self.field_level_encryption_profile_config.as_ref()
     }
-    /// <p>The ID of the field-level encryption profile request. </p>
+    /// <p>The ID of the field-level encryption profile request.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -16852,7 +18253,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigInput {
-    /// <p>Request to update a field-level encryption configuration. </p>
+    /// <p>Request to update a field-level encryption configuration.</p>
     #[doc(hidden)]
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -16864,7 +18265,7 @@ pub struct UpdateFieldLevelEncryptionConfigInput {
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigInput {
-    /// <p>Request to update a field-level encryption configuration. </p>
+    /// <p>Request to update a field-level encryption configuration.</p>
     pub fn field_level_encryption_config(
         &self,
     ) -> std::option::Option<&crate::model::FieldLevelEncryptionConfig> {
@@ -16875,6 +18276,45 @@ impl UpdateFieldLevelEncryptionConfigInput {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDistributionWithStagingConfigInput {
+    /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+    #[doc(hidden)]
+    pub staging_distribution_id: std::option::Option<std::string::String>,
+    /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+    /// <p> <code>
+    /// <primary etag>
+    /// ,
+    /// <staging etag></staging>
+    /// </primary></code> </p>
+    #[doc(hidden)]
+    pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateDistributionWithStagingConfigInput {
+    /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+    pub fn staging_distribution_id(&self) -> std::option::Option<&str> {
+        self.staging_distribution_id.as_deref()
+    }
+    /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+    /// <p> <code>
+    /// <primary etag>
+    /// ,
+    /// <staging etag></staging>
+    /// </primary></code> </p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16904,6 +18344,38 @@ impl UpdateDistributionInput {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateContinuousDeploymentPolicyInput {
+    /// <p>The continuous deployment policy configuration.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy_config:
+        std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+    /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
+    #[doc(hidden)]
+    pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateContinuousDeploymentPolicyInput {
+    /// <p>The continuous deployment policy configuration.</p>
+    pub fn continuous_deployment_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicyConfig> {
+        self.continuous_deployment_policy_config.as_ref()
+    }
+    /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16948,10 +18420,10 @@ pub struct UpdateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
-    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -16960,33 +18432,33 @@ impl UpdateCachePolicyInput {
     pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
     }
-    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
 
-/// <p> The request to remove tags from a CloudFront resource.</p>
+/// <p>The request to remove tags from a CloudFront resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
-    /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<crate::model::TagKeys>,
 }
 impl UntagResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub fn tag_keys(&self) -> std::option::Option<&crate::model::TagKeys> {
         self.tag_keys.as_ref()
     }
@@ -17038,23 +18510,23 @@ impl std::fmt::Debug for TestFunctionInput {
     }
 }
 
-/// <p> The request to add tags to a CloudFront resource.</p>
+/// <p>The request to add tags to a CloudFront resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
-    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl TagResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
         self.tags.as_ref()
     }
@@ -17082,22 +18554,22 @@ impl PublishFunctionInput {
     }
 }
 
-/// <p> The request to list tags for a CloudFront resource.</p>
+/// <p>The request to list tags for a CloudFront resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p> An ARN of a CloudFront resource.</p>
+    /// <p>An ARN of a CloudFront resource.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
 }
 
-/// <p>The request to list your streaming distributions. </p>
+/// <p>The request to list your streaming distributions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingDistributionsInput {
@@ -17130,7 +18602,7 @@ pub struct ListResponseHeadersPoliciesInput {
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
@@ -17146,7 +18618,7 @@ impl ListResponseHeadersPoliciesInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResponseHeadersPolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17163,7 +18635,7 @@ pub struct ListRealtimeLogConfigsInput {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
@@ -17172,7 +18644,7 @@ impl ListRealtimeLogConfigsInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17182,19 +18654,19 @@ impl ListRealtimeLogConfigsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublicKeysInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of public keys you want in the response body. </p>
+    /// <p>The maximum number of public keys you want in the response body.</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListPublicKeysInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of public keys you want in the response body. </p>
+    /// <p>The maximum number of public keys you want in the response body.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -17211,7 +18683,7 @@ pub struct ListOriginRequestPoliciesInput {
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin request policies that you want in the response.</p>
@@ -17227,7 +18699,7 @@ impl ListOriginRequestPoliciesInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::OriginRequestPolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17263,7 +18735,7 @@ impl ListOriginAccessControlsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyGroupsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of key groups that you want in the response.</p>
@@ -17271,7 +18743,7 @@ pub struct ListKeyGroupsInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ListKeyGroupsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17281,14 +18753,14 @@ impl ListKeyGroupsInput {
     }
 }
 
-/// <p>The request to list invalidations. </p>
+/// <p>The request to list invalidations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
     #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
-    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
@@ -17300,7 +18772,7 @@ impl ListInvalidationsInput {
     pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
-    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17314,7 +18786,7 @@ impl ListInvalidationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of functions that you want in the response.</p>
@@ -17325,7 +18797,7 @@ pub struct ListFunctionsInput {
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
 impl ListFunctionsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17343,7 +18815,7 @@ impl ListFunctionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionProfilesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
@@ -17351,7 +18823,7 @@ pub struct ListFieldLevelEncryptionProfilesInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionProfilesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17365,19 +18837,19 @@ impl ListFieldLevelEncryptionProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionConfigsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+    /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -17387,7 +18859,7 @@ impl ListFieldLevelEncryptionConfigsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdInput {
-    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
@@ -17398,7 +18870,7 @@ pub struct ListDistributionsByWebAclIdInput {
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByWebAclIdInput {
-    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17416,7 +18888,7 @@ impl ListDistributionsByWebAclIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByResponseHeadersPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
@@ -17427,7 +18899,7 @@ pub struct ListDistributionsByResponseHeadersPolicyIdInput {
     pub response_headers_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByResponseHeadersPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17445,7 +18917,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions that you want in the response.</p>
@@ -17459,7 +18931,7 @@ pub struct ListDistributionsByRealtimeLogConfigInput {
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByRealtimeLogConfigInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17481,7 +18953,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByOriginRequestPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -17492,7 +18964,7 @@ pub struct ListDistributionsByOriginRequestPolicyIdInput {
     pub origin_request_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByOriginRequestPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17510,7 +18982,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -17521,7 +18993,7 @@ pub struct ListDistributionsByKeyGroupInput {
     pub key_group_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByKeyGroupInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17539,7 +19011,7 @@ impl ListDistributionsByKeyGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -17550,7 +19022,7 @@ pub struct ListDistributionsByCachePolicyIdInput {
     pub cache_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByCachePolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17564,7 +19036,7 @@ impl ListDistributionsByCachePolicyIdInput {
     }
 }
 
-/// <p>The request to list your distributions. </p>
+/// <p>The request to list your distributions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDistributionsInput {
@@ -17589,6 +19061,28 @@ impl ListDistributionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListContinuousDeploymentPoliciesInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+    #[doc(hidden)]
+    pub max_items: std::option::Option<i32>,
+}
+impl ListContinuousDeploymentPoliciesInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConflictingAliasesInput {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
     #[doc(hidden)]
@@ -17596,7 +19090,7 @@ pub struct ListConflictingAliasesInput {
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
-    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
@@ -17612,7 +19106,7 @@ impl ListConflictingAliasesInput {
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17622,14 +19116,14 @@ impl ListConflictingAliasesInput {
     }
 }
 
-/// <p>The request to list origin access identities. </p>
+/// <p>The request to list origin access identities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of origin access identities you want in the response body. </p>
+    /// <p>The maximum number of origin access identities you want in the response body.</p>
     #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
@@ -17638,7 +19132,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of origin access identities you want in the response body. </p>
+    /// <p>The maximum number of origin access identities you want in the response body.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -17655,7 +19149,7 @@ pub struct ListCachePoliciesInput {
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of cache policies that you want in the response.</p>
@@ -17671,7 +19165,7 @@ impl ListCachePoliciesInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::CachePolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17716,13 +19210,13 @@ impl GetStreamingDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -17733,13 +19227,13 @@ impl GetResponseHeadersPolicyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -17801,12 +19295,12 @@ impl GetPublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyConfigInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -17816,12 +19310,12 @@ impl GetOriginRequestPolicyConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -17902,7 +19396,7 @@ impl GetKeyGroupInput {
     }
 }
 
-/// <p>The request to get an invalidation's information. </p>
+/// <p>The request to get an invalidation's information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInvalidationInput {
@@ -17931,7 +19425,7 @@ pub struct GetFunctionInput {
     /// <p>The name of the function whose code you are getting.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
@@ -17940,7 +19434,7 @@ impl GetFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
         self.stage.as_ref()
     }
@@ -18036,16 +19530,46 @@ impl GetDistributionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyConfigInput {
+    /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetContinuousDeploymentPolicyConfigInput {
+    /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetContinuousDeploymentPolicyInput {
+    /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl GetContinuousDeploymentPolicyInput {
+    /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+
 /// <p>The origin access identity's configuration information. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html">CloudFrontOriginAccessIdentityConfig</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigInput {
-    /// <p>The identity's ID. </p>
+    /// <p>The identity's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigInput {
-    /// <p>The identity's ID. </p>
+    /// <p>The identity's ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18070,12 +19594,12 @@ impl GetCloudFrontOriginAccessIdentityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyConfigInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyConfigInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18085,12 +19609,12 @@ impl GetCachePolicyConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCachePolicyInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18103,7 +19627,7 @@ pub struct DescribeFunctionInput {
     /// <p>The name of the function that you are getting information about.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
@@ -18112,7 +19636,7 @@ impl DescribeFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
         self.stage.as_ref()
     }
@@ -18122,7 +19646,7 @@ impl DescribeFunctionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingDistributionInput {
-    /// <p>The distribution ID. </p>
+    /// <p>The distribution ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -18130,7 +19654,7 @@ pub struct DeleteStreamingDistributionInput {
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingDistributionInput {
-    /// <p>The distribution ID. </p>
+    /// <p>The distribution ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18149,7 +19673,7 @@ pub struct DeleteResponseHeadersPolicyInput {
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are deleting.</p>
-    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -18160,7 +19684,7 @@ impl DeleteResponseHeadersPolicyInput {
         self.id.as_deref()
     }
     /// <p>The version of the response headers policy that you are deleting.</p>
-    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18217,7 +19741,7 @@ pub struct DeleteOriginRequestPolicyInput {
     /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -18226,7 +19750,7 @@ impl DeleteOriginRequestPolicyInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18276,7 +19800,7 @@ pub struct DeleteKeyGroupInput {
     /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -18285,7 +19809,7 @@ impl DeleteKeyGroupInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18360,7 +19884,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
 /// <p>This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.</p>
 /// <p> <b>To delete a web distribution using the CloudFront API:</b> </p>
 /// <ol>
-/// <li> <p>Disable the web distribution </p> </li>
+/// <li> <p>Disable the web distribution</p> </li>
 /// <li> <p>Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution.</p> </li>
 /// <li> <p>Update the XML document that was returned in the response to your <code>GET Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.</p> </li>
 /// <li> <p>Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 2.</p> </li>
@@ -18373,19 +19897,41 @@ impl DeleteFieldLevelEncryptionConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDistributionInput {
-    /// <p>The distribution ID. </p>
+    /// <p>The distribution ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionInput {
-    /// <p>The distribution ID. </p>
+    /// <p>The distribution ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteContinuousDeploymentPolicyInput {
+    /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
+    #[doc(hidden)]
+    pub if_match: std::option::Option<std::string::String>,
+}
+impl DeleteContinuousDeploymentPolicyInput {
+    /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18420,7 +19966,7 @@ pub struct DeleteCachePolicyInput {
     /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
     #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
@@ -18429,7 +19975,7 @@ impl DeleteCachePolicyInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18439,13 +19985,13 @@ impl DeleteCachePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsInput {
-    /// <p> The streaming distribution's configuration information. </p>
+    /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
     pub streaming_distribution_config_with_tags:
         std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
 }
 impl CreateStreamingDistributionWithTagsInput {
-    /// <p> The streaming distribution's configuration information. </p>
+    /// <p>The streaming distribution's configuration information.</p>
     pub fn streaming_distribution_config_with_tags(
         &self,
     ) -> std::option::Option<&crate::model::StreamingDistributionConfigWithTags> {
@@ -18475,13 +20021,13 @@ impl CreateStreamingDistributionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResponseHeadersPolicyInput {
-    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     #[doc(hidden)]
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
 }
 impl CreateResponseHeadersPolicyInput {
-    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     pub fn response_headers_policy_config(
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
@@ -18644,7 +20190,7 @@ pub struct CreateFunctionInput {
     /// <p>A name to identify the function.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+    /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
     #[doc(hidden)]
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -18656,7 +20202,7 @@ impl CreateFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+    /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
     pub fn function_config(&self) -> std::option::Option<&crate::model::FunctionConfig> {
         self.function_config.as_ref()
     }
@@ -18711,17 +20257,17 @@ impl CreateFieldLevelEncryptionConfigInput {
     }
 }
 
-/// <p>The request to create a new distribution with tags. </p>
+/// <p>The request to create a new distribution with tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDistributionWithTagsInput {
-    /// <p>The distribution's configuration information. </p>
+    /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
     pub distribution_config_with_tags:
         std::option::Option<crate::model::DistributionConfigWithTags>,
 }
 impl CreateDistributionWithTagsInput {
-    /// <p>The distribution's configuration information. </p>
+    /// <p>The distribution's configuration information.</p>
     pub fn distribution_config_with_tags(
         &self,
     ) -> std::option::Option<&crate::model::DistributionConfigWithTags> {
@@ -18744,7 +20290,25 @@ impl CreateDistributionInput {
     }
 }
 
-/// <p>The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateContinuousDeploymentPolicyInput {
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    #[doc(hidden)]
+    pub continuous_deployment_policy_config:
+        std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>,
+}
+impl CreateContinuousDeploymentPolicyInput {
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    pub fn continuous_deployment_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ContinuousDeploymentPolicyConfig> {
+        self.continuous_deployment_policy_config.as_ref()
+    }
+}
+
+/// <p>The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityInput {
@@ -18780,8 +20344,44 @@ impl CreateCachePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CopyDistributionInput {
+    /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+    #[doc(hidden)]
+    pub primary_distribution_id: std::option::Option<std::string::String>,
+    /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+    #[doc(hidden)]
+    pub staging: std::option::Option<bool>,
+    /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+    #[doc(hidden)]
+    pub if_match: std::option::Option<std::string::String>,
+    /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+    #[doc(hidden)]
+    pub caller_reference: std::option::Option<std::string::String>,
+}
+impl CopyDistributionInput {
+    /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+    pub fn primary_distribution_id(&self) -> std::option::Option<&str> {
+        self.primary_distribution_id.as_deref()
+    }
+    /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
+    pub fn staging(&self) -> std::option::Option<bool> {
+        self.staging
+    }
+    /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+    pub fn caller_reference(&self) -> std::option::Option<&str> {
+        self.caller_reference.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAliasInput {
-    /// <p>The ID of the distribution that you’re associating the alias with.</p>
+    /// <p>The ID of the distribution that you're associating the alias with.</p>
     #[doc(hidden)]
     pub target_distribution_id: std::option::Option<std::string::String>,
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
@@ -18789,7 +20389,7 @@ pub struct AssociateAliasInput {
     pub alias: std::option::Option<std::string::String>,
 }
 impl AssociateAliasInput {
-    /// <p>The ID of the distribution that you’re associating the alias with.</p>
+    /// <p>The ID of the distribution that you're associating the alias with.</p>
     pub fn target_distribution_id(&self) -> std::option::Option<&str> {
         self.target_distribution_id.as_deref()
     }

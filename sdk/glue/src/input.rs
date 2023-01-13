@@ -1451,6 +1451,161 @@ impl BatchGetCustomEntityTypesInput {
     }
 }
 
+/// See [`BatchGetDataQualityResultInput`](crate::input::BatchGetDataQualityResultInput).
+pub mod batch_get_data_quality_result_input {
+
+    /// A builder for [`BatchGetDataQualityResultInput`](crate::input::BatchGetDataQualityResultInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `result_ids`.
+        ///
+        /// To override the contents of this collection use [`set_result_ids`](Self::set_result_ids).
+        ///
+        /// <p>A list of unique result IDs for the data quality results.</p>
+        pub fn result_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.result_ids.unwrap_or_default();
+            v.push(input.into());
+            self.result_ids = Some(v);
+            self
+        }
+        /// <p>A list of unique result IDs for the data quality results.</p>
+        pub fn set_result_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.result_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetDataQualityResultInput`](crate::input::BatchGetDataQualityResultInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchGetDataQualityResultInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::BatchGetDataQualityResultInput {
+                result_ids: self.result_ids,
+            })
+        }
+    }
+}
+impl BatchGetDataQualityResultInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetDataQualityResult`](crate::operation::BatchGetDataQualityResult)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetDataQualityResult,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetDataQualityResultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetDataQualityResultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.BatchGetDataQualityResult",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_data_quality_result(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetDataQualityResult::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetDataQualityResult",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultInput`](crate::input::BatchGetDataQualityResultInput).
+    pub fn builder() -> crate::input::batch_get_data_quality_result_input::Builder {
+        crate::input::batch_get_data_quality_result_input::Builder::default()
+    }
+}
+
 /// See [`BatchGetDevEndpointsInput`](crate::input::BatchGetDevEndpointsInput).
 pub mod batch_get_dev_endpoints_input {
 
@@ -2646,6 +2801,298 @@ impl BatchUpdatePartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdatePartitionInput`](crate::input::BatchUpdatePartitionInput).
     pub fn builder() -> crate::input::batch_update_partition_input::Builder {
         crate::input::batch_update_partition_input::Builder::default()
+    }
+}
+
+/// See [`CancelDataQualityRuleRecommendationRunInput`](crate::input::CancelDataQualityRuleRecommendationRunInput).
+pub mod cancel_data_quality_rule_recommendation_run_input {
+
+    /// A builder for [`CancelDataQualityRuleRecommendationRunInput`](crate::input::CancelDataQualityRuleRecommendationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelDataQualityRuleRecommendationRunInput`](crate::input::CancelDataQualityRuleRecommendationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CancelDataQualityRuleRecommendationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CancelDataQualityRuleRecommendationRunInput {
+                run_id: self.run_id,
+            })
+        }
+    }
+}
+impl CancelDataQualityRuleRecommendationRunInput {
+    /// Consumes the builder and constructs an Operation<[`CancelDataQualityRuleRecommendationRun`](crate::operation::CancelDataQualityRuleRecommendationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelDataQualityRuleRecommendationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CancelDataQualityRuleRecommendationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelDataQualityRuleRecommendationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CancelDataQualityRuleRecommendationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_data_quality_rule_recommendation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelDataQualityRuleRecommendationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelDataQualityRuleRecommendationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRuleRecommendationRunInput`](crate::input::CancelDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::cancel_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::cancel_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+}
+
+/// See [`CancelDataQualityRulesetEvaluationRunInput`](crate::input::CancelDataQualityRulesetEvaluationRunInput).
+pub mod cancel_data_quality_ruleset_evaluation_run_input {
+
+    /// A builder for [`CancelDataQualityRulesetEvaluationRunInput`](crate::input::CancelDataQualityRulesetEvaluationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelDataQualityRulesetEvaluationRunInput`](crate::input::CancelDataQualityRulesetEvaluationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CancelDataQualityRulesetEvaluationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CancelDataQualityRulesetEvaluationRunInput {
+                run_id: self.run_id,
+            })
+        }
+    }
+}
+impl CancelDataQualityRulesetEvaluationRunInput {
+    /// Consumes the builder and constructs an Operation<[`CancelDataQualityRulesetEvaluationRun`](crate::operation::CancelDataQualityRulesetEvaluationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelDataQualityRulesetEvaluationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CancelDataQualityRulesetEvaluationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelDataQualityRulesetEvaluationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CancelDataQualityRulesetEvaluationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_data_quality_ruleset_evaluation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelDataQualityRulesetEvaluationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelDataQualityRulesetEvaluationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CancelDataQualityRulesetEvaluationRunInput`](crate::input::CancelDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::cancel_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::cancel_data_quality_ruleset_evaluation_run_input::Builder::default()
     }
 }
 
@@ -3905,12 +4352,12 @@ pub mod create_crawler_input {
             self.lake_formation_configuration = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4472,6 +4919,235 @@ impl CreateDatabaseInput {
     }
 }
 
+/// See [`CreateDataQualityRulesetInput`](crate::input::CreateDataQualityRulesetInput).
+pub mod create_data_quality_ruleset_input {
+
+    /// A builder for [`CreateDataQualityRulesetInput`](crate::input::CreateDataQualityRulesetInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) ruleset: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name for the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the data quality ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset = Some(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags applied to the data quality ruleset.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A list of tags applied to the data quality ruleset.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>A target table associated with the data quality ruleset.</p>
+        pub fn target_table(mut self, input: crate::model::DataQualityTargetTable) -> Self {
+            self.target_table = Some(input);
+            self
+        }
+        /// <p>A target table associated with the data quality ruleset.</p>
+        pub fn set_target_table(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityTargetTable>,
+        ) -> Self {
+            self.target_table = input;
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDataQualityRulesetInput`](crate::input::CreateDataQualityRulesetInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateDataQualityRulesetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::CreateDataQualityRulesetInput {
+                name: self.name,
+                description: self.description,
+                ruleset: self.ruleset,
+                tags: self.tags,
+                target_table: self.target_table,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl CreateDataQualityRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDataQualityRuleset`](crate::operation::CreateDataQualityRuleset)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDataQualityRuleset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateDataQualityRulesetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateDataQualityRulesetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.CreateDataQualityRuleset",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_data_quality_ruleset(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataQualityRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDataQualityRuleset",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetInput`](crate::input::CreateDataQualityRulesetInput).
+    pub fn builder() -> crate::input::create_data_quality_ruleset_input::Builder {
+        crate::input::create_data_quality_ruleset_input::Builder::default()
+    }
+}
+
 /// See [`CreateDevEndpointInput`](crate::input::CreateDevEndpointInput).
 pub mod create_dev_endpoint_input {
 
@@ -4917,6 +5593,7 @@ pub mod create_job_input {
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
         pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
+        pub(crate) source_control_details: std::option::Option<crate::model::SourceControlDetails>,
     }
     impl Builder {
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -5256,6 +5933,19 @@ pub mod create_job_input {
             self.execution_class = input;
             self
         }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn source_control_details(mut self, input: crate::model::SourceControlDetails) -> Self {
+            self.source_control_details = Some(input);
+            self
+        }
+        /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+        pub fn set_source_control_details(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlDetails>,
+        ) -> Self {
+            self.source_control_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput).
         pub fn build(
             self,
@@ -5283,6 +5973,7 @@ pub mod create_job_input {
                 worker_type: self.worker_type,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
                 execution_class: self.execution_class,
+                source_control_details: self.source_control_details,
             })
         }
     }
@@ -5313,6 +6004,7 @@ pub mod create_job_input {
                 &"*** Sensitive Data Redacted ***",
             );
             formatter.field("execution_class", &self.execution_class);
+            formatter.field("source_control_details", &self.source_control_details);
             formatter.finish()
         }
     }
@@ -9572,6 +10264,153 @@ impl DeleteDatabaseInput {
     /// Creates a new builder-style object to manufacture [`DeleteDatabaseInput`](crate::input::DeleteDatabaseInput).
     pub fn builder() -> crate::input::delete_database_input::Builder {
         crate::input::delete_database_input::Builder::default()
+    }
+}
+
+/// See [`DeleteDataQualityRulesetInput`](crate::input::DeleteDataQualityRulesetInput).
+pub mod delete_data_quality_ruleset_input {
+
+    /// A builder for [`DeleteDataQualityRulesetInput`](crate::input::DeleteDataQualityRulesetInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A name for the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDataQualityRulesetInput`](crate::input::DeleteDataQualityRulesetInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteDataQualityRulesetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::DeleteDataQualityRulesetInput { name: self.name })
+        }
+    }
+}
+impl DeleteDataQualityRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDataQualityRuleset`](crate::operation::DeleteDataQualityRuleset)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDataQualityRuleset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteDataQualityRulesetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDataQualityRulesetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.DeleteDataQualityRuleset",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_quality_ruleset(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataQualityRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataQualityRuleset",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetInput`](crate::input::DeleteDataQualityRulesetInput).
+    pub fn builder() -> crate::input::delete_data_quality_ruleset_input::Builder {
+        crate::input::delete_data_quality_ruleset_input::Builder::default()
     }
 }
 
@@ -15159,6 +15998,594 @@ impl GetDataflowGraphInput {
     /// Creates a new builder-style object to manufacture [`GetDataflowGraphInput`](crate::input::GetDataflowGraphInput).
     pub fn builder() -> crate::input::get_dataflow_graph_input::Builder {
         crate::input::get_dataflow_graph_input::Builder::default()
+    }
+}
+
+/// See [`GetDataQualityResultInput`](crate::input::GetDataQualityResultInput).
+pub mod get_data_quality_result_input {
+
+    /// A builder for [`GetDataQualityResultInput`](crate::input::GetDataQualityResultInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result_id = Some(input.into());
+            self
+        }
+        /// <p>A unique result ID for the data quality result.</p>
+        pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::input::GetDataQualityResultInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDataQualityResultInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetDataQualityResultInput {
+                result_id: self.result_id,
+            })
+        }
+    }
+}
+impl GetDataQualityResultInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataQualityResult`](crate::operation::GetDataQualityResult)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataQualityResult,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataQualityResultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataQualityResultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetDataQualityResult",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_quality_result(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataQualityResult::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataQualityResult",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataQualityResultInput`](crate::input::GetDataQualityResultInput).
+    pub fn builder() -> crate::input::get_data_quality_result_input::Builder {
+        crate::input::get_data_quality_result_input::Builder::default()
+    }
+}
+
+/// See [`GetDataQualityRuleRecommendationRunInput`](crate::input::GetDataQualityRuleRecommendationRunInput).
+pub mod get_data_quality_rule_recommendation_run_input {
+
+    /// A builder for [`GetDataQualityRuleRecommendationRunInput`](crate::input::GetDataQualityRuleRecommendationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRuleRecommendationRunInput`](crate::input::GetDataQualityRuleRecommendationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDataQualityRuleRecommendationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetDataQualityRuleRecommendationRunInput {
+                run_id: self.run_id,
+            })
+        }
+    }
+}
+impl GetDataQualityRuleRecommendationRunInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataQualityRuleRecommendationRun`](crate::operation::GetDataQualityRuleRecommendationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataQualityRuleRecommendationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataQualityRuleRecommendationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataQualityRuleRecommendationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetDataQualityRuleRecommendationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_quality_rule_recommendation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataQualityRuleRecommendationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataQualityRuleRecommendationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRuleRecommendationRunInput`](crate::input::GetDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::get_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::get_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+}
+
+/// See [`GetDataQualityRulesetInput`](crate::input::GetDataQualityRulesetInput).
+pub mod get_data_quality_ruleset_input {
+
+    /// A builder for [`GetDataQualityRulesetInput`](crate::input::GetDataQualityRulesetInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRulesetInput`](crate::input::GetDataQualityRulesetInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDataQualityRulesetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetDataQualityRulesetInput { name: self.name })
+        }
+    }
+}
+impl GetDataQualityRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataQualityRuleset`](crate::operation::GetDataQualityRuleset)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataQualityRuleset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataQualityRulesetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataQualityRulesetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetDataQualityRuleset",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_quality_ruleset(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataQualityRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataQualityRuleset",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetInput`](crate::input::GetDataQualityRulesetInput).
+    pub fn builder() -> crate::input::get_data_quality_ruleset_input::Builder {
+        crate::input::get_data_quality_ruleset_input::Builder::default()
+    }
+}
+
+/// See [`GetDataQualityRulesetEvaluationRunInput`](crate::input::GetDataQualityRulesetEvaluationRunInput).
+pub mod get_data_quality_ruleset_evaluation_run_input {
+
+    /// A builder for [`GetDataQualityRulesetEvaluationRunInput`](crate::input::GetDataQualityRulesetEvaluationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) run_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique run identifier associated with this run.</p>
+        pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.run_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunInput`](crate::input::GetDataQualityRulesetEvaluationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDataQualityRulesetEvaluationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetDataQualityRulesetEvaluationRunInput {
+                run_id: self.run_id,
+            })
+        }
+    }
+}
+impl GetDataQualityRulesetEvaluationRunInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataQualityRulesetEvaluationRun`](crate::operation::GetDataQualityRulesetEvaluationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataQualityRulesetEvaluationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataQualityRulesetEvaluationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataQualityRulesetEvaluationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetDataQualityRulesetEvaluationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_quality_ruleset_evaluation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataQualityRulesetEvaluationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataQualityRulesetEvaluationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunInput`](crate::input::GetDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::get_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::get_data_quality_ruleset_evaluation_run_input::Builder::default()
     }
 }
 
@@ -23830,6 +25257,740 @@ impl ListCustomEntityTypesInput {
     }
 }
 
+/// See [`ListDataQualityResultsInput`](crate::input::ListDataQualityResultsInput).
+pub mod list_data_quality_results_input {
+
+    /// A builder for [`ListDataQualityResultsInput`](crate::input::ListDataQualityResultsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<crate::model::DataQualityResultFilterCriteria>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The filter criteria.</p>
+        pub fn filter(mut self, input: crate::model::DataQualityResultFilterCriteria) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityResultFilterCriteria>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityResultsInput`](crate::input::ListDataQualityResultsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListDataQualityResultsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListDataQualityResultsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListDataQualityResultsInput {
+    /// Consumes the builder and constructs an Operation<[`ListDataQualityResults`](crate::operation::ListDataQualityResults)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataQualityResults,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListDataQualityResultsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDataQualityResultsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListDataQualityResults",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_results(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataQualityResults::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataQualityResults",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListDataQualityResultsInput`](crate::input::ListDataQualityResultsInput).
+    pub fn builder() -> crate::input::list_data_quality_results_input::Builder {
+        crate::input::list_data_quality_results_input::Builder::default()
+    }
+}
+
+/// See [`ListDataQualityRuleRecommendationRunsInput`](crate::input::ListDataQualityRuleRecommendationRunsInput).
+pub mod list_data_quality_rule_recommendation_runs_input {
+
+    /// A builder for [`ListDataQualityRuleRecommendationRunsInput`](crate::input::ListDataQualityRuleRecommendationRunsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter:
+            std::option::Option<crate::model::DataQualityRuleRecommendationRunFilter>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The filter criteria.</p>
+        pub fn filter(
+            mut self,
+            input: crate::model::DataQualityRuleRecommendationRunFilter,
+        ) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRuleRecommendationRunFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsInput`](crate::input::ListDataQualityRuleRecommendationRunsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListDataQualityRuleRecommendationRunsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListDataQualityRuleRecommendationRunsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListDataQualityRuleRecommendationRunsInput {
+    /// Consumes the builder and constructs an Operation<[`ListDataQualityRuleRecommendationRuns`](crate::operation::ListDataQualityRuleRecommendationRuns)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataQualityRuleRecommendationRuns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListDataQualityRuleRecommendationRunsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDataQualityRuleRecommendationRunsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListDataQualityRuleRecommendationRuns",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_rule_recommendation_runs(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataQualityRuleRecommendationRuns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataQualityRuleRecommendationRuns",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsInput`](crate::input::ListDataQualityRuleRecommendationRunsInput).
+    pub fn builder() -> crate::input::list_data_quality_rule_recommendation_runs_input::Builder {
+        crate::input::list_data_quality_rule_recommendation_runs_input::Builder::default()
+    }
+}
+
+/// See [`ListDataQualityRulesetEvaluationRunsInput`](crate::input::ListDataQualityRulesetEvaluationRunsInput).
+pub mod list_data_quality_ruleset_evaluation_runs_input {
+
+    /// A builder for [`ListDataQualityRulesetEvaluationRunsInput`](crate::input::ListDataQualityRulesetEvaluationRunsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<crate::model::DataQualityRulesetEvaluationRunFilter>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The filter criteria.</p>
+        pub fn filter(
+            mut self,
+            input: crate::model::DataQualityRulesetEvaluationRunFilter,
+        ) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>The filter criteria.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRulesetEvaluationRunFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRulesetEvaluationRunsInput`](crate::input::ListDataQualityRulesetEvaluationRunsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListDataQualityRulesetEvaluationRunsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListDataQualityRulesetEvaluationRunsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+impl ListDataQualityRulesetEvaluationRunsInput {
+    /// Consumes the builder and constructs an Operation<[`ListDataQualityRulesetEvaluationRuns`](crate::operation::ListDataQualityRulesetEvaluationRuns)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataQualityRulesetEvaluationRuns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListDataQualityRulesetEvaluationRunsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDataQualityRulesetEvaluationRunsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListDataQualityRulesetEvaluationRuns",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_ruleset_evaluation_runs(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataQualityRulesetEvaluationRuns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataQualityRulesetEvaluationRuns",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetEvaluationRunsInput`](crate::input::ListDataQualityRulesetEvaluationRunsInput).
+    pub fn builder() -> crate::input::list_data_quality_ruleset_evaluation_runs_input::Builder {
+        crate::input::list_data_quality_ruleset_evaluation_runs_input::Builder::default()
+    }
+}
+
+/// See [`ListDataQualityRulesetsInput`](crate::input::ListDataQualityRulesetsInput).
+pub mod list_data_quality_rulesets_input {
+
+    /// A builder for [`ListDataQualityRulesetsInput`](crate::input::ListDataQualityRulesetsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filter: std::option::Option<crate::model::DataQualityRulesetFilterCriteria>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>A paginated token to offset the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A paginated token to offset the results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The filter criteria. </p>
+        pub fn filter(mut self, input: crate::model::DataQualityRulesetFilterCriteria) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>The filter criteria. </p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityRulesetFilterCriteria>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of key-value pair tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A list of key-value pair tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataQualityRulesetsInput`](crate::input::ListDataQualityRulesetsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListDataQualityRulesetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::ListDataQualityRulesetsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filter: self.filter,
+                tags: self.tags,
+            })
+        }
+    }
+}
+impl ListDataQualityRulesetsInput {
+    /// Consumes the builder and constructs an Operation<[`ListDataQualityRulesets`](crate::operation::ListDataQualityRulesets)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataQualityRulesets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListDataQualityRulesetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDataQualityRulesetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListDataQualityRulesets",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_rulesets(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataQualityRulesets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataQualityRulesets",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetsInput`](crate::input::ListDataQualityRulesetsInput).
+    pub fn builder() -> crate::input::list_data_quality_rulesets_input::Builder {
+        crate::input::list_data_quality_rulesets_input::Builder::default()
+    }
+}
+
 /// See [`ListDevEndpointsInput`](crate::input::ListDevEndpointsInput).
 pub mod list_dev_endpoints_input {
 
@@ -28236,6 +30397,455 @@ impl StartCrawlerScheduleInput {
     }
 }
 
+/// See [`StartDataQualityRuleRecommendationRunInput`](crate::input::StartDataQualityRuleRecommendationRunInput).
+pub mod start_data_quality_rule_recommendation_run_input {
+
+    /// A builder for [`StartDataQualityRuleRecommendationRunInput`](crate::input::StartDataQualityRuleRecommendationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) created_ruleset_name: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.number_of_workers = Some(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_workers = input;
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
+            self
+        }
+        /// <p>A name for the ruleset.</p>
+        pub fn created_ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_ruleset_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the ruleset.</p>
+        pub fn set_created_ruleset_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.created_ruleset_name = input;
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunInput`](crate::input::StartDataQualityRuleRecommendationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartDataQualityRuleRecommendationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartDataQualityRuleRecommendationRunInput {
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                created_ruleset_name: self.created_ruleset_name,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+impl StartDataQualityRuleRecommendationRunInput {
+    /// Consumes the builder and constructs an Operation<[`StartDataQualityRuleRecommendationRun`](crate::operation::StartDataQualityRuleRecommendationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartDataQualityRuleRecommendationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartDataQualityRuleRecommendationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartDataQualityRuleRecommendationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.StartDataQualityRuleRecommendationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_data_quality_rule_recommendation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartDataQualityRuleRecommendationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartDataQualityRuleRecommendationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::input::StartDataQualityRuleRecommendationRunInput).
+    pub fn builder() -> crate::input::start_data_quality_rule_recommendation_run_input::Builder {
+        crate::input::start_data_quality_rule_recommendation_run_input::Builder::default()
+    }
+}
+
+/// See [`StartDataQualityRulesetEvaluationRunInput`](crate::input::StartDataQualityRulesetEvaluationRunInput).
+pub mod start_data_quality_ruleset_evaluation_run_input {
+
+    /// A builder for [`StartDataQualityRulesetEvaluationRunInput`](crate::input::StartDataQualityRulesetEvaluationRunInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) timeout: std::option::Option<i32>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) additional_run_options:
+            std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+        pub(crate) ruleset_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The data source (Glue table) associated with this run.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        /// <p>An IAM role supplied to encrypt the results of the run.</p>
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.number_of_workers = Some(input);
+            self
+        }
+        /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+        pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_workers = input;
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.timeout = Some(input);
+            self
+        }
+        /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout = input;
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn additional_run_options(
+            mut self,
+            input: crate::model::DataQualityEvaluationRunAdditionalRunOptions,
+        ) -> Self {
+            self.additional_run_options = Some(input);
+            self
+        }
+        /// <p>Additional run options you can specify for an evaluation run.</p>
+        pub fn set_additional_run_options(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+        ) -> Self {
+            self.additional_run_options = input;
+            self
+        }
+        /// Appends an item to `ruleset_names`.
+        ///
+        /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
+        ///
+        /// <p>A list of ruleset names.</p>
+        pub fn ruleset_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ruleset_names.unwrap_or_default();
+            v.push(input.into());
+            self.ruleset_names = Some(v);
+            self
+        }
+        /// <p>A list of ruleset names.</p>
+        pub fn set_ruleset_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ruleset_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunInput`](crate::input::StartDataQualityRulesetEvaluationRunInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartDataQualityRulesetEvaluationRunInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::StartDataQualityRulesetEvaluationRunInput {
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                client_token: self.client_token,
+                additional_run_options: self.additional_run_options,
+                ruleset_names: self.ruleset_names,
+            })
+        }
+    }
+}
+impl StartDataQualityRulesetEvaluationRunInput {
+    /// Consumes the builder and constructs an Operation<[`StartDataQualityRulesetEvaluationRun`](crate::operation::StartDataQualityRulesetEvaluationRun)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartDataQualityRulesetEvaluationRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartDataQualityRulesetEvaluationRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartDataQualityRulesetEvaluationRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.StartDataQualityRulesetEvaluationRun",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_data_quality_ruleset_evaluation_run(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartDataQualityRulesetEvaluationRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartDataQualityRulesetEvaluationRun",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunInput`](crate::input::StartDataQualityRulesetEvaluationRunInput).
+    pub fn builder() -> crate::input::start_data_quality_ruleset_evaluation_run_input::Builder {
+        crate::input::start_data_quality_ruleset_evaluation_run_input::Builder::default()
+    }
+}
+
 /// See [`StartExportLabelsTaskRunInput`](crate::input::StartExportLabelsTaskRunInput).
 pub mod start_export_labels_task_run_input {
 
@@ -31756,12 +34366,12 @@ pub mod update_crawler_input {
             self.lake_formation_configuration = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32257,6 +34867,191 @@ impl UpdateDatabaseInput {
     }
 }
 
+/// See [`UpdateDataQualityRulesetInput`](crate::input::UpdateDataQualityRulesetInput).
+pub mod update_data_quality_ruleset_input {
+
+    /// A builder for [`UpdateDataQualityRulesetInput`](crate::input::UpdateDataQualityRulesetInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) updated_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) ruleset: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data quality ruleset.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The new name of the ruleset, if you are renaming it.</p>
+        pub fn updated_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.updated_name = Some(input.into());
+            self
+        }
+        /// <p>The new name of the ruleset, if you are renaming it.</p>
+        pub fn set_updated_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.updated_name = input;
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the ruleset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ruleset = Some(input.into());
+            self
+        }
+        /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+        pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ruleset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDataQualityRulesetInput`](crate::input::UpdateDataQualityRulesetInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateDataQualityRulesetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateDataQualityRulesetInput {
+                name: self.name,
+                updated_name: self.updated_name,
+                description: self.description,
+                ruleset: self.ruleset,
+            })
+        }
+    }
+}
+impl UpdateDataQualityRulesetInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDataQualityRuleset`](crate::operation::UpdateDataQualityRuleset)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateDataQualityRuleset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateDataQualityRulesetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateDataQualityRulesetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.UpdateDataQualityRuleset",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_data_quality_ruleset(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDataQualityRuleset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDataQualityRuleset",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetInput`](crate::input::UpdateDataQualityRulesetInput).
+    pub fn builder() -> crate::input::update_data_quality_ruleset_input::Builder {
+        crate::input::update_data_quality_ruleset_input::Builder::default()
+    }
+}
+
 /// See [`UpdateDevEndpointInput`](crate::input::UpdateDevEndpointInput).
 pub mod update_dev_endpoint_input {
 
@@ -32703,6 +35498,260 @@ impl UpdateJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobInput`](crate::input::UpdateJobInput).
     pub fn builder() -> crate::input::update_job_input::Builder {
         crate::input::update_job_input::Builder::default()
+    }
+}
+
+/// See [`UpdateJobFromSourceControlInput`](crate::input::UpdateJobFromSourceControlInput).
+pub mod update_job_from_source_control_input {
+
+    /// A builder for [`UpdateJobFromSourceControlInput`](crate::input::UpdateJobFromSourceControlInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) provider: std::option::Option<crate::model::SourceControlProvider>,
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) repository_owner: std::option::Option<std::string::String>,
+        pub(crate) branch_name: std::option::Option<std::string::String>,
+        pub(crate) folder: std::option::Option<std::string::String>,
+        pub(crate) commit_id: std::option::Option<std::string::String>,
+        pub(crate) auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        pub(crate) auth_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn provider(mut self, input: crate::model::SourceControlProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn repository_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_owner = Some(input.into());
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_owner = input;
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.branch_name = Some(input.into());
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch_name = input;
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.folder = Some(input.into());
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.folder = input;
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.commit_id = Some(input.into());
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.commit_id = input;
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn auth_strategy(mut self, input: crate::model::SourceControlAuthStrategy) -> Self {
+            self.auth_strategy = Some(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn set_auth_strategy(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        ) -> Self {
+            self.auth_strategy = input;
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_token = Some(input.into());
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateJobFromSourceControlInput`](crate::input::UpdateJobFromSourceControlInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateJobFromSourceControlInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateJobFromSourceControlInput {
+                job_name: self.job_name,
+                provider: self.provider,
+                repository_name: self.repository_name,
+                repository_owner: self.repository_owner,
+                branch_name: self.branch_name,
+                folder: self.folder,
+                commit_id: self.commit_id,
+                auth_strategy: self.auth_strategy,
+                auth_token: self.auth_token,
+            })
+        }
+    }
+}
+impl UpdateJobFromSourceControlInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateJobFromSourceControl`](crate::operation::UpdateJobFromSourceControl)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateJobFromSourceControl,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateJobFromSourceControlInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateJobFromSourceControlInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.UpdateJobFromSourceControl",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_job_from_source_control(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateJobFromSourceControl::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateJobFromSourceControl",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateJobFromSourceControlInput`](crate::input::UpdateJobFromSourceControlInput).
+    pub fn builder() -> crate::input::update_job_from_source_control_input::Builder {
+        crate::input::update_job_from_source_control_input::Builder::default()
     }
 }
 
@@ -33553,6 +36602,260 @@ impl UpdateSchemaInput {
     /// Creates a new builder-style object to manufacture [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
     pub fn builder() -> crate::input::update_schema_input::Builder {
         crate::input::update_schema_input::Builder::default()
+    }
+}
+
+/// See [`UpdateSourceControlFromJobInput`](crate::input::UpdateSourceControlFromJobInput).
+pub mod update_source_control_from_job_input {
+
+    /// A builder for [`UpdateSourceControlFromJobInput`](crate::input::UpdateSourceControlFromJobInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) provider: std::option::Option<crate::model::SourceControlProvider>,
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) repository_owner: std::option::Option<std::string::String>,
+        pub(crate) branch_name: std::option::Option<std::string::String>,
+        pub(crate) folder: std::option::Option<std::string::String>,
+        pub(crate) commit_id: std::option::Option<std::string::String>,
+        pub(crate) auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        pub(crate) auth_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn provider(mut self, input: crate::model::SourceControlProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>The provider for the remote repository.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn repository_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_owner = Some(input.into());
+            self
+        }
+        /// <p>The owner of the remote repository that contains the job artifacts.</p>
+        pub fn set_repository_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_owner = input;
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.branch_name = Some(input.into());
+            self
+        }
+        /// <p>An optional branch in the remote repository.</p>
+        pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.branch_name = input;
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.folder = Some(input.into());
+            self
+        }
+        /// <p>An optional folder in the remote repository.</p>
+        pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.folder = input;
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.commit_id = Some(input.into());
+            self
+        }
+        /// <p>A commit ID for a commit in the remote repository.</p>
+        pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.commit_id = input;
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn auth_strategy(mut self, input: crate::model::SourceControlAuthStrategy) -> Self {
+            self.auth_strategy = Some(input);
+            self
+        }
+        /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+        pub fn set_auth_strategy(
+            mut self,
+            input: std::option::Option<crate::model::SourceControlAuthStrategy>,
+        ) -> Self {
+            self.auth_strategy = input;
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_token = Some(input.into());
+            self
+        }
+        /// <p>The value of the authorization token.</p>
+        pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSourceControlFromJobInput`](crate::input::UpdateSourceControlFromJobInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateSourceControlFromJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::UpdateSourceControlFromJobInput {
+                job_name: self.job_name,
+                provider: self.provider,
+                repository_name: self.repository_name,
+                repository_owner: self.repository_owner,
+                branch_name: self.branch_name,
+                folder: self.folder,
+                commit_id: self.commit_id,
+                auth_strategy: self.auth_strategy,
+                auth_token: self.auth_token,
+            })
+        }
+    }
+}
+impl UpdateSourceControlFromJobInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSourceControlFromJob`](crate::operation::UpdateSourceControlFromJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSourceControlFromJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateSourceControlFromJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSourceControlFromJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.UpdateSourceControlFromJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_source_control_from_job(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSourceControlFromJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSourceControlFromJob",
+            "glue",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSourceControlFromJobInput`](crate::input::UpdateSourceControlFromJobInput).
+    pub fn builder() -> crate::input::update_source_control_from_job_input::Builder {
+        crate::input::update_source_control_from_job_input::Builder::default()
     }
 }
 
@@ -34473,6 +37776,77 @@ impl UpdateTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateSourceControlFromJobInput {
+    /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The provider for the remote repository.</p>
+    #[doc(hidden)]
+    pub provider: std::option::Option<crate::model::SourceControlProvider>,
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub repository_owner: std::option::Option<std::string::String>,
+    /// <p>An optional branch in the remote repository.</p>
+    #[doc(hidden)]
+    pub branch_name: std::option::Option<std::string::String>,
+    /// <p>An optional folder in the remote repository.</p>
+    #[doc(hidden)]
+    pub folder: std::option::Option<std::string::String>,
+    /// <p>A commit ID for a commit in the remote repository.</p>
+    #[doc(hidden)]
+    pub commit_id: std::option::Option<std::string::String>,
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    #[doc(hidden)]
+    pub auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+    /// <p>The value of the authorization token.</p>
+    #[doc(hidden)]
+    pub auth_token: std::option::Option<std::string::String>,
+}
+impl UpdateSourceControlFromJobInput {
+    /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The provider for the remote repository.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::SourceControlProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    pub fn repository_owner(&self) -> std::option::Option<&str> {
+        self.repository_owner.as_deref()
+    }
+    /// <p>An optional branch in the remote repository.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>An optional folder in the remote repository.</p>
+    pub fn folder(&self) -> std::option::Option<&str> {
+        self.folder.as_deref()
+    }
+    /// <p>A commit ID for a commit in the remote repository.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    pub fn auth_strategy(&self) -> std::option::Option<&crate::model::SourceControlAuthStrategy> {
+        self.auth_strategy.as_ref()
+    }
+    /// <p>The value of the authorization token.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchemaInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
@@ -34681,6 +38055,77 @@ impl UpdateMlTransformInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateJobFromSourceControlInput {
+    /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    #[doc(hidden)]
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The provider for the remote repository.</p>
+    #[doc(hidden)]
+    pub provider: std::option::Option<crate::model::SourceControlProvider>,
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    #[doc(hidden)]
+    pub repository_owner: std::option::Option<std::string::String>,
+    /// <p>An optional branch in the remote repository.</p>
+    #[doc(hidden)]
+    pub branch_name: std::option::Option<std::string::String>,
+    /// <p>An optional folder in the remote repository.</p>
+    #[doc(hidden)]
+    pub folder: std::option::Option<std::string::String>,
+    /// <p>A commit ID for a commit in the remote repository.</p>
+    #[doc(hidden)]
+    pub commit_id: std::option::Option<std::string::String>,
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    #[doc(hidden)]
+    pub auth_strategy: std::option::Option<crate::model::SourceControlAuthStrategy>,
+    /// <p>The value of the authorization token.</p>
+    #[doc(hidden)]
+    pub auth_token: std::option::Option<std::string::String>,
+}
+impl UpdateJobFromSourceControlInput {
+    /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The provider for the remote repository.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::SourceControlProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>The name of the remote repository that contains the job artifacts.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The owner of the remote repository that contains the job artifacts.</p>
+    pub fn repository_owner(&self) -> std::option::Option<&str> {
+        self.repository_owner.as_deref()
+    }
+    /// <p>An optional branch in the remote repository.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>An optional folder in the remote repository.</p>
+    pub fn folder(&self) -> std::option::Option<&str> {
+        self.folder.as_deref()
+    }
+    /// <p>A commit ID for a commit in the remote repository.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
+    pub fn auth_strategy(&self) -> std::option::Option<&crate::model::SourceControlAuthStrategy> {
+        self.auth_strategy.as_ref()
+    }
+    /// <p>The value of the authorization token.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobInput {
     /// <p>The name of the job definition to update.</p>
     #[doc(hidden)]
@@ -34783,6 +38228,42 @@ impl UpdateDevEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateDataQualityRulesetInput {
+    /// <p>The name of the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The new name of the ruleset, if you are renaming it.</p>
+    #[doc(hidden)]
+    pub updated_name: std::option::Option<std::string::String>,
+    /// <p>A description of the ruleset.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    #[doc(hidden)]
+    pub ruleset: std::option::Option<std::string::String>,
+}
+impl UpdateDataQualityRulesetInput {
+    /// <p>The name of the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new name of the ruleset, if you are renaming it.</p>
+    pub fn updated_name(&self) -> std::option::Option<&str> {
+        self.updated_name.as_deref()
+    }
+    /// <p>A description of the ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn ruleset(&self) -> std::option::Option<&str> {
+        self.ruleset.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatabaseInput {
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
@@ -34871,7 +38352,7 @@ pub struct UpdateCrawlerInput {
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     #[doc(hidden)]
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
@@ -34931,7 +38412,7 @@ impl UpdateCrawlerInput {
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
     }
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
@@ -35514,6 +38995,116 @@ impl StartExportLabelsTaskRunInput {
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartDataQualityRulesetEvaluationRunInput {
+    /// <p>The data source (Glue table) associated with this run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    #[doc(hidden)]
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    #[doc(hidden)]
+    pub number_of_workers: std::option::Option<i32>,
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
+    pub timeout: std::option::Option<i32>,
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    #[doc(hidden)]
+    pub additional_run_options:
+        std::option::Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+    /// <p>A list of ruleset names.</p>
+    #[doc(hidden)]
+    pub ruleset_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StartDataQualityRulesetEvaluationRunInput {
+    /// <p>The data source (Glue table) associated with this run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Additional run options you can specify for an evaluation run.</p>
+    pub fn additional_run_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityEvaluationRunAdditionalRunOptions> {
+        self.additional_run_options.as_ref()
+    }
+    /// <p>A list of ruleset names.</p>
+    pub fn ruleset_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.ruleset_names.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StartDataQualityRuleRecommendationRunInput {
+    /// <p>The data source (Glue table) associated with this run.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    #[doc(hidden)]
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    #[doc(hidden)]
+    pub number_of_workers: std::option::Option<i32>,
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    #[doc(hidden)]
+    pub timeout: std::option::Option<i32>,
+    /// <p>A name for the ruleset.</p>
+    #[doc(hidden)]
+    pub created_ruleset_name: std::option::Option<std::string::String>,
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl StartDataQualityRuleRecommendationRunInput {
+    /// <p>The data source (Glue table) associated with this run.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>A name for the ruleset.</p>
+    pub fn created_ruleset_name(&self) -> std::option::Option<&str> {
+        self.created_ruleset_name.as_deref()
+    }
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 
@@ -36317,6 +39908,137 @@ impl ListDevEndpointsInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRulesetsInput {
+    /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The filter criteria. </p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::DataQualityRulesetFilterCriteria>,
+    /// <p>A list of key-value pair tags.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListDataQualityRulesetsInput {
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filter criteria. </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DataQualityRulesetFilterCriteria> {
+        self.filter.as_ref()
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRulesetEvaluationRunsInput {
+    /// <p>The filter criteria.</p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::DataQualityRulesetEvaluationRunFilter>,
+    /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListDataQualityRulesetEvaluationRunsInput {
+    /// <p>The filter criteria.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityRulesetEvaluationRunFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityRuleRecommendationRunsInput {
+    /// <p>The filter criteria.</p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::DataQualityRuleRecommendationRunFilter>,
+    /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListDataQualityRuleRecommendationRunsInput {
+    /// <p>The filter criteria.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityRuleRecommendationRunFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDataQualityResultsInput {
+    /// <p>The filter criteria.</p>
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::DataQualityResultFilterCriteria>,
+    /// <p>A paginated token to offset the results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListDataQualityResultsInput {
+    /// <p>The filter criteria.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DataQualityResultFilterCriteria> {
+        self.filter.as_ref()
+    }
+    /// <p>A paginated token to offset the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
     }
 }
 
@@ -37979,6 +41701,66 @@ impl GetDevEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRulesetEvaluationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl GetDataQualityRulesetEvaluationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRulesetInput {
+    /// <p>The name of the ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl GetDataQualityRulesetInput {
+    /// <p>The name of the ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityRuleRecommendationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl GetDataQualityRuleRecommendationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetDataQualityResultInput {
+    /// <p>A unique result ID for the data quality result.</p>
+    #[doc(hidden)]
+    pub result_id: std::option::Option<std::string::String>,
+}
+impl GetDataQualityResultInput {
+    /// <p>A unique result ID for the data quality result.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataflowGraphInput {
     /// <p>The Python script to transform.</p>
     #[doc(hidden)]
@@ -38800,6 +42582,21 @@ impl DeleteDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteDataQualityRulesetInput {
+    /// <p>A name for the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDataQualityRulesetInput {
+    /// <p>A name for the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 
@@ -39825,6 +43622,9 @@ pub struct CreateJobInput {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     #[doc(hidden)]
     pub execution_class: std::option::Option<crate::model::ExecutionClass>,
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    #[doc(hidden)]
+    pub source_control_details: std::option::Option<crate::model::SourceControlDetails>,
 }
 impl CreateJobInput {
     /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -39949,6 +43749,12 @@ impl CreateJobInput {
     pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
         self.execution_class.as_ref()
     }
+    /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
+    pub fn source_control_details(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceControlDetails> {
+        self.source_control_details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39977,6 +43783,7 @@ impl std::fmt::Debug for CreateJobInput {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("execution_class", &self.execution_class);
+        formatter.field("source_control_details", &self.source_control_details);
         formatter.finish()
     }
 }
@@ -40133,6 +43940,60 @@ impl CreateDevEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateDataQualityRulesetInput {
+    /// <p>A unique name for the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    #[doc(hidden)]
+    pub ruleset: std::option::Option<std::string::String>,
+    /// <p>A list of tags applied to the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A target table associated with the data quality ruleset.</p>
+    #[doc(hidden)]
+    pub target_table: std::option::Option<crate::model::DataQualityTargetTable>,
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateDataQualityRulesetInput {
+    /// <p>A unique name for the data quality ruleset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the data quality ruleset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn ruleset(&self) -> std::option::Option<&str> {
+        self.ruleset.as_deref()
+    }
+    /// <p>A list of tags applied to the data quality ruleset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A target table associated with the data quality ruleset.</p>
+    pub fn target_table(&self) -> std::option::Option<&crate::model::DataQualityTargetTable> {
+        self.target_table.as_ref()
+    }
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatabaseInput {
     /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
@@ -40234,7 +44095,7 @@ pub struct CreateCrawlerInput {
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     #[doc(hidden)]
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
@@ -40298,7 +44159,7 @@ impl CreateCrawlerInput {
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
     }
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
@@ -40504,6 +44365,36 @@ impl CancelMlTaskRunInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelDataQualityRulesetEvaluationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl CancelDataQualityRulesetEvaluationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CancelDataQualityRuleRecommendationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    #[doc(hidden)]
+    pub run_id: std::option::Option<std::string::String>,
+}
+impl CancelDataQualityRuleRecommendationRunInput {
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -40661,6 +44552,21 @@ impl BatchGetDevEndpointsInput {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
         self.dev_endpoint_names.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BatchGetDataQualityResultInput {
+    /// <p>A list of unique result IDs for the data quality results.</p>
+    #[doc(hidden)]
+    pub result_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetDataQualityResultInput {
+    /// <p>A list of unique result IDs for the data quality results.</p>
+    pub fn result_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.result_ids.as_deref()
     }
 }
 

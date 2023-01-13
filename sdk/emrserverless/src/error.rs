@@ -452,6 +452,8 @@ pub enum CreateApplicationErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     ///
@@ -469,6 +471,7 @@ impl std::fmt::Display for CreateApplicationError {
         match &self.kind {
             CreateApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateApplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -535,6 +538,13 @@ impl CreateApplicationError {
             CreateApplicationErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateApplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -548,6 +558,7 @@ impl std::error::Error for CreateApplicationError {
         match &self.kind {
             CreateApplicationErrorKind::ConflictException(_inner) => Some(_inner),
             CreateApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateApplicationErrorKind::ValidationException(_inner) => Some(_inner),
             CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }

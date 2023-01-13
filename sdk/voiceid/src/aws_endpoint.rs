@@ -12,7 +12,7 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
-                "fips-us-east-1",
+                "ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "voiceid.{region}.amazonaws.com",
                     protocol: aws_endpoint::partition::endpoint::Protocol::Https,
@@ -21,12 +21,36 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
-                "fips-us-west-2",
+                "fips-ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "voiceid.{region}.amazonaws.com",
+                    uri_template: "voiceid-fips.ca-central-1.amazonaws.com",
                     protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "voiceid-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "voiceid-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
                 },
             )
             .endpoint(

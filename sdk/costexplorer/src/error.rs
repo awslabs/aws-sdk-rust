@@ -408,6 +408,66 @@ impl TooManyTagsException {
     }
 }
 
+/// <p>A request to generate a recommendation is already in progress.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GenerationExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl GenerationExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for GenerationExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "GenerationExistsException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for GenerationExistsException {}
+/// See [`GenerationExistsException`](crate::error::GenerationExistsException).
+pub mod generation_exists_exception {
+
+    /// A builder for [`GenerationExistsException`](crate::error::GenerationExistsException).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerationExistsException`](crate::error::GenerationExistsException).
+        pub fn build(self) -> crate::error::GenerationExistsException {
+            crate::error::GenerationExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl GenerationExistsException {
+    /// Creates a new builder-style object to manufacture [`GenerationExistsException`](crate::error::GenerationExistsException).
+    pub fn builder() -> crate::error::generation_exists_exception::Builder {
+        crate::error::generation_exists_exception::Builder::default()
+    }
+}
+
 /// <p>The pagination token is invalid. Try again without a pagination token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -425,9 +485,9 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_7) = &self.message {
+        if let Some(inner_8) = &self.message {
             {
-                write!(f, ": {}", inner_7)?;
+                write!(f, ": {}", inner_8)?;
             }
         }
         Ok(())
@@ -485,9 +545,9 @@ impl UnresolvableUsageUnitException {
 impl std::fmt::Display for UnresolvableUsageUnitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnresolvableUsageUnitException")?;
-        if let Some(inner_8) = &self.message {
+        if let Some(inner_9) = &self.message {
             {
-                write!(f, ": {}", inner_8)?;
+                write!(f, ": {}", inner_9)?;
             }
         }
         Ok(())
@@ -545,9 +605,9 @@ impl DataUnavailableException {
 impl std::fmt::Display for DataUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataUnavailableException")?;
-        if let Some(inner_9) = &self.message {
+        if let Some(inner_10) = &self.message {
             {
-                write!(f, ": {}", inner_9)?;
+                write!(f, ": {}", inner_10)?;
             }
         }
         Ok(())
@@ -605,9 +665,9 @@ impl RequestChangedException {
 impl std::fmt::Display for RequestChangedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestChangedException")?;
-        if let Some(inner_10) = &self.message {
+        if let Some(inner_11) = &self.message {
             {
-                write!(f, ": {}", inner_10)?;
+                write!(f, ": {}", inner_11)?;
             }
         }
         Ok(())
@@ -665,9 +725,9 @@ impl BillExpirationException {
 impl std::fmt::Display for BillExpirationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BillExpirationException")?;
-        if let Some(inner_11) = &self.message {
+        if let Some(inner_12) = &self.message {
             {
-                write!(f, ": {}", inner_11)?;
+                write!(f, ": {}", inner_12)?;
             }
         }
         Ok(())
@@ -4308,6 +4368,150 @@ impl std::error::Error for ListCostCategoryDefinitionsError {
     }
 }
 
+/// Error type for the `ListSavingsPlansPurchaseRecommendationGeneration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSavingsPlansPurchaseRecommendationGenerationError {
+    /// Kind of error that occurred.
+    pub kind: ListSavingsPlansPurchaseRecommendationGenerationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListSavingsPlansPurchaseRecommendationGenerationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListSavingsPlansPurchaseRecommendationGeneration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSavingsPlansPurchaseRecommendationGenerationErrorKind {
+    /// <p>The pagination token is invalid. Try again without a pagination token.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>You made too many calls in a short period of time. Try again later.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListSavingsPlansPurchaseRecommendationGenerationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for ListSavingsPlansPurchaseRecommendationGenerationError
+{
+    fn code(&self) -> Option<&str> {
+        ListSavingsPlansPurchaseRecommendationGenerationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSavingsPlansPurchaseRecommendationGenerationError {
+    /// Creates a new `ListSavingsPlansPurchaseRecommendationGenerationError`.
+    pub fn new(
+        kind: ListSavingsPlansPurchaseRecommendationGenerationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSavingsPlansPurchaseRecommendationGenerationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSavingsPlansPurchaseRecommendationGenerationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for ListSavingsPlansPurchaseRecommendationGenerationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
+        }
+    }
+}
+
 /// Error type for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4535,6 +4739,164 @@ impl std::error::Error for ProvideAnomalyFeedbackError {
         match &self.kind {
             ProvideAnomalyFeedbackErrorKind::LimitExceededException(_inner) => Some(_inner),
             ProvideAnomalyFeedbackErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `StartSavingsPlansPurchaseRecommendationGeneration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartSavingsPlansPurchaseRecommendationGenerationError {
+    /// Kind of error that occurred.
+    pub kind: StartSavingsPlansPurchaseRecommendationGenerationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for StartSavingsPlansPurchaseRecommendationGenerationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `StartSavingsPlansPurchaseRecommendationGeneration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartSavingsPlansPurchaseRecommendationGenerationErrorKind {
+    /// <p>A request to generate a recommendation is already in progress.</p>
+    GenerationExistsException(crate::error::GenerationExistsException),
+    /// <p>You made too many calls in a short period of time. Try again later.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for StartSavingsPlansPurchaseRecommendationGenerationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for StartSavingsPlansPurchaseRecommendationGenerationError
+{
+    fn code(&self) -> Option<&str> {
+        StartSavingsPlansPurchaseRecommendationGenerationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartSavingsPlansPurchaseRecommendationGenerationError {
+    /// Creates a new `StartSavingsPlansPurchaseRecommendationGenerationError`.
+    pub fn new(
+        kind: StartSavingsPlansPurchaseRecommendationGenerationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartSavingsPlansPurchaseRecommendationGenerationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartSavingsPlansPurchaseRecommendationGenerationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException`.
+    pub fn is_generation_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException(_))
+    }
+}
+impl std::error::Error for StartSavingsPlansPurchaseRecommendationGenerationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException(_inner) =>
+            Some(_inner)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartSavingsPlansPurchaseRecommendationGenerationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }

@@ -67,6 +67,74 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateThirdPartyFirew
     }
 }
 
+/// Operation shape for `BatchAssociateResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_associate_resource`](crate::client::Client::batch_associate_resource).
+///
+/// See [`crate::client::fluent_builders::BatchAssociateResource`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct BatchAssociateResource {
+    _private: (),
+}
+impl BatchAssociateResource {
+    /// Creates a new builder-style object to manufacture [`BatchAssociateResourceInput`](crate::input::BatchAssociateResourceInput).
+    pub fn builder() -> crate::input::batch_associate_resource_input::Builder {
+        crate::input::batch_associate_resource_input::Builder::default()
+    }
+    /// Creates a new `BatchAssociateResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateResource {
+    type Output = std::result::Result<
+        crate::output::BatchAssociateResourceOutput,
+        crate::error::BatchAssociateResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_associate_resource_error(response)
+        } else {
+            crate::operation_deser::parse_batch_associate_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `BatchDisassociateResource`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_disassociate_resource`](crate::client::Client::batch_disassociate_resource).
+///
+/// See [`crate::client::fluent_builders::BatchDisassociateResource`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct BatchDisassociateResource {
+    _private: (),
+}
+impl BatchDisassociateResource {
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateResourceInput`](crate::input::BatchDisassociateResourceInput).
+    pub fn builder() -> crate::input::batch_disassociate_resource_input::Builder {
+        crate::input::batch_disassociate_resource_input::Builder::default()
+    }
+    /// Creates a new `BatchDisassociateResource` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateResource {
+    type Output = std::result::Result<
+        crate::output::BatchDisassociateResourceOutput,
+        crate::error::BatchDisassociateResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_disassociate_resource_error(response)
+        } else {
+            crate::operation_deser::parse_batch_disassociate_resource_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAppsList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -195,6 +263,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProtocolsList {
             crate::operation_deser::parse_delete_protocols_list_error(response)
         } else {
             crate::operation_deser::parse_delete_protocols_list_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteResourceSet`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_resource_set`](crate::client::Client::delete_resource_set).
+///
+/// See [`crate::client::fluent_builders::DeleteResourceSet`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DeleteResourceSet {
+    _private: (),
+}
+impl DeleteResourceSet {
+    /// Creates a new builder-style object to manufacture [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput).
+    pub fn builder() -> crate::input::delete_resource_set_input::Builder {
+        crate::input::delete_resource_set_input::Builder::default()
+    }
+    /// Creates a new `DeleteResourceSet` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceSet {
+    type Output = std::result::Result<
+        crate::output::DeleteResourceSetOutput,
+        crate::error::DeleteResourceSetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_resource_set_error(response)
+        } else {
+            crate::operation_deser::parse_delete_resource_set_response(response)
         }
     }
 }
@@ -500,6 +602,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProtocolsList {
     }
 }
 
+/// Operation shape for `GetResourceSet`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_resource_set`](crate::client::Client::get_resource_set).
+///
+/// See [`crate::client::fluent_builders::GetResourceSet`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetResourceSet {
+    _private: (),
+}
+impl GetResourceSet {
+    /// Creates a new builder-style object to manufacture [`GetResourceSetInput`](crate::input::GetResourceSetInput).
+    pub fn builder() -> crate::input::get_resource_set_input::Builder {
+        crate::input::get_resource_set_input::Builder::default()
+    }
+    /// Creates a new `GetResourceSet` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetResourceSet {
+    type Output =
+        std::result::Result<crate::output::GetResourceSetOutput, crate::error::GetResourceSetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_resource_set_error(response)
+        } else {
+            crate::operation_deser::parse_get_resource_set_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetThirdPartyFirewallAssociationStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -638,6 +772,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComplianceStatus {
     }
 }
 
+/// Operation shape for `ListDiscoveredResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_discovered_resources`](crate::client::Client::list_discovered_resources).
+///
+/// See [`crate::client::fluent_builders::ListDiscoveredResources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListDiscoveredResources {
+    _private: (),
+}
+impl ListDiscoveredResources {
+    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
+    pub fn builder() -> crate::input::list_discovered_resources_input::Builder {
+        crate::input::list_discovered_resources_input::Builder::default()
+    }
+    /// Creates a new `ListDiscoveredResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources {
+    type Output = std::result::Result<
+        crate::output::ListDiscoveredResourcesOutput,
+        crate::error::ListDiscoveredResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_discovered_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_discovered_resources_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListMemberAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -734,6 +902,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProtocolsLists {
             crate::operation_deser::parse_list_protocols_lists_error(response)
         } else {
             crate::operation_deser::parse_list_protocols_lists_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResourceSetResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resource_set_resources`](crate::client::Client::list_resource_set_resources).
+///
+/// See [`crate::client::fluent_builders::ListResourceSetResources`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListResourceSetResources {
+    _private: (),
+}
+impl ListResourceSetResources {
+    /// Creates a new builder-style object to manufacture [`ListResourceSetResourcesInput`](crate::input::ListResourceSetResourcesInput).
+    pub fn builder() -> crate::input::list_resource_set_resources_input::Builder {
+        crate::input::list_resource_set_resources_input::Builder::default()
+    }
+    /// Creates a new `ListResourceSetResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResourceSetResources {
+    type Output = std::result::Result<
+        crate::output::ListResourceSetResourcesOutput,
+        crate::error::ListResourceSetResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resource_set_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_resource_set_resources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListResourceSets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_resource_sets`](crate::client::Client::list_resource_sets).
+///
+/// See [`crate::client::fluent_builders::ListResourceSets`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListResourceSets {
+    _private: (),
+}
+impl ListResourceSets {
+    /// Creates a new builder-style object to manufacture [`ListResourceSetsInput`](crate::input::ListResourceSetsInput).
+    pub fn builder() -> crate::input::list_resource_sets_input::Builder {
+        crate::input::list_resource_sets_input::Builder::default()
+    }
+    /// Creates a new `ListResourceSets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListResourceSets {
+    type Output = std::result::Result<
+        crate::output::ListResourceSetsOutput,
+        crate::error::ListResourceSetsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_resource_sets_error(response)
+        } else {
+            crate::operation_deser::parse_list_resource_sets_response(response)
         }
     }
 }
@@ -937,6 +1173,38 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProtocolsList {
             crate::operation_deser::parse_put_protocols_list_error(response)
         } else {
             crate::operation_deser::parse_put_protocols_list_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutResourceSet`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_resource_set`](crate::client::Client::put_resource_set).
+///
+/// See [`crate::client::fluent_builders::PutResourceSet`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutResourceSet {
+    _private: (),
+}
+impl PutResourceSet {
+    /// Creates a new builder-style object to manufacture [`PutResourceSetInput`](crate::input::PutResourceSetInput).
+    pub fn builder() -> crate::input::put_resource_set_input::Builder {
+        crate::input::put_resource_set_input::Builder::default()
+    }
+    /// Creates a new `PutResourceSet` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutResourceSet {
+    type Output =
+        std::result::Result<crate::output::PutResourceSetOutput, crate::error::PutResourceSetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_resource_set_error(response)
+        } else {
+            crate::operation_deser::parse_put_resource_set_response(response)
         }
     }
 }

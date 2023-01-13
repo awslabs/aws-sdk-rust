@@ -378,6 +378,82 @@ impl ListManagedEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListJobTemplatesOutput {
+    /// <p>This output lists information about the specified job templates.</p>
+    #[doc(hidden)]
+    pub templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
+    /// <p> This output displays the token for the next set of job templates.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobTemplatesOutput {
+    /// <p>This output lists information about the specified job templates.</p>
+    pub fn templates(&self) -> std::option::Option<&[crate::model::JobTemplate]> {
+        self.templates.as_deref()
+    }
+    /// <p> This output displays the token for the next set of job templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
+pub mod list_job_templates_output {
+
+    /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `templates`.
+        ///
+        /// To override the contents of this collection use [`set_templates`](Self::set_templates).
+        ///
+        /// <p>This output lists information about the specified job templates.</p>
+        pub fn templates(mut self, input: crate::model::JobTemplate) -> Self {
+            let mut v = self.templates.unwrap_or_default();
+            v.push(input);
+            self.templates = Some(v);
+            self
+        }
+        /// <p>This output lists information about the specified job templates.</p>
+        pub fn set_templates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
+        ) -> Self {
+            self.templates = input;
+            self
+        }
+        /// <p> This output displays the token for the next set of job templates.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> This output displays the token for the next set of job templates.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
+        pub fn build(self) -> crate::output::ListJobTemplatesOutput {
+            crate::output::ListJobTemplatesOutput {
+                templates: self.templates,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListJobTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
+    pub fn builder() -> crate::output::list_job_templates_output::Builder {
+        crate::output::list_job_templates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobRunsOutput {
     /// <p>This output lists information about the specified job runs.</p>
     #[doc(hidden)]
@@ -553,6 +629,57 @@ impl DescribeManagedEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeJobTemplateOutput {
+    /// <p>This output displays information about the specified job template.</p>
+    #[doc(hidden)]
+    pub job_template: std::option::Option<crate::model::JobTemplate>,
+}
+impl DescribeJobTemplateOutput {
+    /// <p>This output displays information about the specified job template.</p>
+    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+        self.job_template.as_ref()
+    }
+}
+/// See [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
+pub mod describe_job_template_output {
+
+    /// A builder for [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
+    }
+    impl Builder {
+        /// <p>This output displays information about the specified job template.</p>
+        pub fn job_template(mut self, input: crate::model::JobTemplate) -> Self {
+            self.job_template = Some(input);
+            self
+        }
+        /// <p>This output displays information about the specified job template.</p>
+        pub fn set_job_template(
+            mut self,
+            input: std::option::Option<crate::model::JobTemplate>,
+        ) -> Self {
+            self.job_template = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
+        pub fn build(self) -> crate::output::DescribeJobTemplateOutput {
+            crate::output::DescribeJobTemplateOutput {
+                job_template: self.job_template,
+            }
+        }
+    }
+}
+impl DescribeJobTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
+    pub fn builder() -> crate::output::describe_job_template_output::Builder {
+        crate::output::describe_job_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
     #[doc(hidden)]
@@ -711,6 +838,52 @@ impl DeleteManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
     pub fn builder() -> crate::output::delete_managed_endpoint_output::Builder {
         crate::output::delete_managed_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DeleteJobTemplateOutput {
+    /// <p>This output contains the ID of the job template that was deleted.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteJobTemplateOutput {
+    /// <p>This output contains the ID of the job template that was deleted.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+/// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
+pub mod delete_job_template_output {
+
+    /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>This output contains the ID of the job template that was deleted.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>This output contains the ID of the job template that was deleted.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
+        pub fn build(self) -> crate::output::DeleteJobTemplateOutput {
+            crate::output::DeleteJobTemplateOutput { id: self.id }
+        }
+    }
+}
+impl DeleteJobTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
+    pub fn builder() -> crate::output::delete_job_template_output::Builder {
+        crate::output::delete_job_template_output::Builder::default()
     }
 }
 
@@ -905,6 +1078,114 @@ impl CreateManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
     pub fn builder() -> crate::output::create_managed_endpoint_output::Builder {
         crate::output::create_managed_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CreateJobTemplateOutput {
+    /// <p>This output display the created job template ID.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>This output displays the name of the created job template.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>This output display the ARN of the created job template.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>This output displays the date and time when the job template was created.</p>
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl CreateJobTemplateOutput {
+    /// <p>This output display the created job template ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>This output displays the name of the created job template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This output display the ARN of the created job template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>This output displays the date and time when the job template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+}
+/// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
+pub mod create_job_template_output {
+
+    /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>This output display the created job template ID.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>This output display the created job template ID.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>This output displays the name of the created job template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>This output displays the name of the created job template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>This output display the ARN of the created job template.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>This output display the ARN of the created job template.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>This output displays the date and time when the job template was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>This output displays the date and time when the job template was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
+        pub fn build(self) -> crate::output::CreateJobTemplateOutput {
+            crate::output::CreateJobTemplateOutput {
+                id: self.id,
+                name: self.name,
+                arn: self.arn,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl CreateJobTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
+    pub fn builder() -> crate::output::create_job_template_output::Builder {
+        crate::output::create_job_template_output::Builder::default()
     }
 }
 

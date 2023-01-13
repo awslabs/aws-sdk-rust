@@ -799,6 +799,239 @@ impl Tag {
     }
 }
 
+/// <p>The summary of a stream.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct StreamSummary {
+    /// <p>The name of a stream.</p>
+    #[doc(hidden)]
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the stream.</p>
+    #[doc(hidden)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the stream.</p>
+    #[doc(hidden)]
+    pub stream_status: std::option::Option<crate::model::StreamStatus>,
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    #[doc(hidden)]
+    pub stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
+    /// <p>The timestamp at which the stream was created.</p>
+    #[doc(hidden)]
+    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl StreamSummary {
+    /// <p>The name of a stream.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The status of the stream.</p>
+    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+        self.stream_status.as_ref()
+    }
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+        self.stream_mode_details.as_ref()
+    }
+    /// <p>The timestamp at which the stream was created.</p>
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.stream_creation_timestamp.as_ref()
+    }
+}
+/// See [`StreamSummary`](crate::model::StreamSummary).
+pub mod stream_summary {
+
+    /// A builder for [`StreamSummary`](crate::model::StreamSummary).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
+        pub(crate) stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
+        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The name of a stream.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a stream.</p>
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the stream.</p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p>The status of the stream.</p>
+        pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
+            self.stream_status = Some(input);
+            self
+        }
+        /// <p>The status of the stream.</p>
+        pub fn set_stream_status(
+            mut self,
+            input: std::option::Option<crate::model::StreamStatus>,
+        ) -> Self {
+            self.stream_status = input;
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
+            self.stream_mode_details = Some(input);
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn set_stream_mode_details(
+            mut self,
+            input: std::option::Option<crate::model::StreamModeDetails>,
+        ) -> Self {
+            self.stream_mode_details = input;
+            self
+        }
+        /// <p>The timestamp at which the stream was created.</p>
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.stream_creation_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp at which the stream was created.</p>
+        pub fn set_stream_creation_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.stream_creation_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamSummary`](crate::model::StreamSummary).
+        pub fn build(self) -> crate::model::StreamSummary {
+            crate::model::StreamSummary {
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                stream_status: self.stream_status,
+                stream_mode_details: self.stream_mode_details,
+                stream_creation_timestamp: self.stream_creation_timestamp,
+            }
+        }
+    }
+}
+impl StreamSummary {
+    /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
+    pub fn builder() -> crate::model::stream_summary::Builder {
+        crate::model::stream_summary::Builder::default()
+    }
+}
+
+/// When writing a match expression against `StreamStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let streamstatus = unimplemented!();
+/// match streamstatus {
+///     StreamStatus::Active => { /* ... */ },
+///     StreamStatus::Creating => { /* ... */ },
+///     StreamStatus::Deleting => { /* ... */ },
+///     StreamStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `streamstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StreamStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StreamStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StreamStatus::NewFeature` is defined.
+/// Specifically, when `streamstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StreamStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StreamStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for StreamStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => StreamStatus::Active,
+            "CREATING" => StreamStatus::Creating,
+            "DELETING" => StreamStatus::Deleting,
+            "UPDATING" => StreamStatus::Updating,
+            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for StreamStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StreamStatus::from(s))
+    }
+}
+impl StreamStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StreamStatus::Active => "ACTIVE",
+            StreamStatus::Creating => "CREATING",
+            StreamStatus::Deleting => "DELETING",
+            StreamStatus::Updating => "UPDATING",
+            StreamStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
+    }
+}
+impl AsRef<str> for StreamStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A uniquely identified group of data records in a Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2251,106 +2484,6 @@ impl EnhancedMetrics {
     /// Creates a new builder-style object to manufacture [`EnhancedMetrics`](crate::model::EnhancedMetrics).
     pub fn builder() -> crate::model::enhanced_metrics::Builder {
         crate::model::enhanced_metrics::Builder::default()
-    }
-}
-
-/// When writing a match expression against `StreamStatus`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let streamstatus = unimplemented!();
-/// match streamstatus {
-///     StreamStatus::Active => { /* ... */ },
-///     StreamStatus::Creating => { /* ... */ },
-///     StreamStatus::Deleting => { /* ... */ },
-///     StreamStatus::Updating => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `streamstatus` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `StreamStatus::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `StreamStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `StreamStatus::NewFeature` is defined.
-/// Specifically, when `streamstatus` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `StreamStatus::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum StreamStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Active,
-    #[allow(missing_docs)] // documentation missing in model
-    Creating,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleting,
-    #[allow(missing_docs)] // documentation missing in model
-    Updating,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for StreamStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => StreamStatus::Active,
-            "CREATING" => StreamStatus::Creating,
-            "DELETING" => StreamStatus::Deleting,
-            "UPDATING" => StreamStatus::Updating,
-            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for StreamStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamStatus::from(s))
-    }
-}
-impl StreamStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamStatus::Active => "ACTIVE",
-            StreamStatus::Creating => "CREATING",
-            StreamStatus::Deleting => "DELETING",
-            StreamStatus::Updating => "UPDATING",
-            StreamStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
-    }
-}
-impl AsRef<str> for StreamStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
