@@ -3,6 +3,7 @@ on:
     branches:
       # A bot pushes changes from smithy-rs to `next`, so run CI when that happens
       - next
+      - main
   pull_request:
     branches:
       - main
