@@ -1,6 +1,7 @@
 $version: "1.0"
 
 namespace com.amazonaws.s3
+
 use smithy.test#httpResponseTests
 use smithy.test#httpRequestTests
 
@@ -84,20 +85,20 @@ apply ListObjects @httpResponseTests([
             Name: "bucketname",
             Prefix: "",
             Contents: [{
-                Key: "    ",
-                LastModified: 1626452453,
-                ETag: "\"etag123\"",
-                Size: 0,
-                Owner: { ID: "owner" },
-                StorageClass: "STANDARD"
-            }, {
-               Key: " a ",
-               LastModified: 1626451330,
-               ETag: "\"etag123\"",
-               Size: 0,
-               Owner: { ID: "owner" },
-               StorageClass: "STANDARD"
-           }]
+                           Key: "    ",
+                           LastModified: 1626452453,
+                           ETag: "\"etag123\"",
+                           Size: 0,
+                           Owner: { ID: "owner" },
+                           StorageClass: "STANDARD"
+                       }, {
+                           Key: " a ",
+                           LastModified: 1626451330,
+                           ETag: "\"etag123\"",
+                           Size: 0,
+                           Owner: { ID: "owner" },
+                           StorageClass: "STANDARD"
+                       }]
         }
     }
 ])
@@ -108,7 +109,7 @@ apply PutBucketLifecycleConfiguration @httpRequestTests([
         documentation: "This test validates that the content md5 header is set correctly",
         method: "PUT",
         protocol: "aws.protocols#restXml",
-        uri: "/test-bucket",
+        uri: "/",
         headers: {
             // we can assert this, but when this test is promoted, it can't assert
             // on the exact contents
@@ -133,6 +134,13 @@ apply PutBucketLifecycleConfiguration @httpRequestTests([
                     {"Expiration": { "Days": 1 }, "Status": "Enabled", "ID": "Expire" },
                 ]
             }
+        },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     }
 ])
@@ -143,7 +151,7 @@ apply CreateMultipartUpload @httpRequestTests([
         documentation: "This test validates that the URI for CreateMultipartUpload is created correctly",
         method: "POST",
         protocol: "aws.protocols#restXml",
-        uri: "/test-bucket/object.txt",
+        uri: "/object.txt",
         queryParams: [
             "uploads",
             "x-id=CreateMultipartUpload"
@@ -151,6 +159,13 @@ apply CreateMultipartUpload @httpRequestTests([
         params: {
             "Bucket": "test-bucket",
             "Key": "object.txt"
+        },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     }
 ])
@@ -161,12 +176,19 @@ apply PutObject @httpRequestTests([
         documentation: "This test validates that if a content-type is specified, that only one content-type header is sent",
         method: "PUT",
         protocol: "aws.protocols#restXml",
-        uri: "/test-bucket/test-key",
+        uri: "/test-key",
         headers: { "content-type": "text/html" },
         params: {
             Bucket: "test-bucket",
             Key: "test-key",
             ContentType: "text/html"
+        },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     },
     {
@@ -174,13 +196,20 @@ apply PutObject @httpRequestTests([
         documentation: "This test validates that if a content-length is specified, that only one content-length header is sent",
         method: "PUT",
         protocol: "aws.protocols#restXml",
-        uri: "/test-bucket/test-key",
+        uri: "/test-key",
         headers: { "content-length": "2" },
         params: {
             Bucket: "test-bucket",
             Key: "test-key",
             ContentLength: 2,
             Body: "ab"
+        },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     }
 ])
@@ -192,10 +221,17 @@ apply HeadObject @httpRequestTests([
 
         method: "HEAD",
         protocol: "aws.protocols#restXml",
-        uri: "/test-bucket/%3C%3E%20%60%3F%F0%9F%90%B1",
+        uri: "/%3C%3E%20%60%3F%F0%9F%90%B1",
         params: {
             Bucket: "test-bucket",
             Key: "<> `?🐱",
+        },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     }
 ])

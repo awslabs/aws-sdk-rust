@@ -20,6 +20,13 @@ apply UploadArchive @httpRequestTests([
             accountId: "foo",
             vaultName: "bar",
         },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
     },
     {
         id: "GlacierChecksums",
@@ -38,6 +45,13 @@ apply UploadArchive @httpRequestTests([
             vaultName: "bar",
             body: "hello world"
         },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
         appliesTo: "client",
     },
     {
@@ -57,6 +71,13 @@ apply UploadArchive @httpRequestTests([
             accountId: "",
             vaultName: "bar",
         },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
         appliesTo: "client",
     },
     {
@@ -76,6 +97,13 @@ apply UploadArchive @httpRequestTests([
             vaultName: "bar",
             accountId: null
         },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
         appliesTo: "client",
     }
 ])
@@ -99,6 +127,13 @@ apply UploadMultipartPart @httpRequestTests([
             uploadId: "baz",
             body: "hello world"
         },
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
         appliesTo: "client",
     }
 ])

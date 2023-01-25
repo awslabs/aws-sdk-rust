@@ -16,6 +16,13 @@ apply ListResourceRecordSets @httpRequestTests([
         params: {
             "HostedZoneId": "/hostedzone/IDOFMYHOSTEDZONE"
         }
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
     }
 ])
 
@@ -30,6 +37,13 @@ apply GetChange @httpRequestTests([
         params: {
             "Id": "/change/SOMECHANGEID"
         }
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
+        }
     },
 ])
 
@@ -43,6 +57,13 @@ apply GetReusableDelegationSet @httpRequestTests([
         bodyMediaType: "application/xml",
         params: {
             "Id": "/delegationset/DELEGATIONSETID"
+        }
+        vendorParams: {
+            "endpointParams": {
+                "builtInParams": {
+                    "AWS::Region": "us-east-1"
+                }
+            }
         }
     },
 ])
