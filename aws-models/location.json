@@ -5484,84 +5484,6 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://geo.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
                             "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
@@ -5569,9 +5491,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -5582,9 +5504,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -5595,9 +5517,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -5608,9 +5530,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -5621,9 +5543,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -5634,9 +5556,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -5647,9 +5569,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -5660,9 +5582,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -5673,9 +5595,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -5686,9 +5608,87 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://geo.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -5699,9 +5699,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -5711,9 +5711,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -5723,9 +5723,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }

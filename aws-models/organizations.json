@@ -283,15 +283,6 @@
                                                     "ref": "Endpoint"
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "fn": "parseURL",
-                                            "argv": [
-                                                {
-                                                    "ref": "Endpoint"
-                                                }
-                                            ],
-                                            "assign": "url"
                                         }
                                     ],
                                     "type": "tree",
@@ -427,15 +418,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations-fips.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-east-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -547,15 +530,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-east-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -670,15 +645,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations-fips.{Region}.api.amazonwebservices.com.cn",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "cn-northwest-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -730,15 +697,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations-fips.{Region}.amazonaws.com.cn",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "cn-northwest-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -790,15 +749,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations.{Region}.api.amazonwebservices.com.cn",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "cn-northwest-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -913,15 +864,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations-fips.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-gov-west-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -1033,15 +976,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://organizations.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-gov-west-1",
-                                                                            "signingName": "organizations"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -1134,12 +1069,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://organizations-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://organizations-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -1202,7 +1143,15 @@
                                                             ],
                                                             "endpoint": {
                                                                 "url": "https://organizations-fips.us-east-1.amazonaws.com",
-                                                                "properties": {},
+                                                                "properties": {
+                                                                    "authSchemes": [
+                                                                        {
+                                                                            "name": "sigv4",
+                                                                            "signingRegion": "us-east-1",
+                                                                            "signingName": "organizations"
+                                                                        }
+                                                                    ]
+                                                                },
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -1221,7 +1170,15 @@
                                                             ],
                                                             "endpoint": {
                                                                 "url": "https://organizations.us-gov-west-1.amazonaws.com",
-                                                                "properties": {},
+                                                                "properties": {
+                                                                    "authSchemes": [
+                                                                        {
+                                                                            "name": "sigv4",
+                                                                            "signingRegion": "us-gov-west-1",
+                                                                            "signingName": "organizations"
+                                                                        }
+                                                                    ]
+                                                                },
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -1282,12 +1239,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://organizations.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://organizations.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -1401,36 +1364,14 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region aws-cn-global with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "properties": {
-                                        "authSchemes": [
-                                            {
-                                                "name": "sigv4",
-                                                "signingName": "organizations",
-                                                "signingRegion": "cn-northwest-1"
-                                            }
-                                        ]
-                                    },
-                                    "url": "https://organizations.cn-northwest-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "aws-cn-global",
-                                "UseFIPS": false,
-                                "UseDualStack": false
-                            }
-                        },
-                        {
                             "documentation": "For region aws-global with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
                                     "properties": {
                                         "authSchemes": [
                                             {
-                                                "name": "sigv4",
                                                 "signingName": "organizations",
+                                                "name": "sigv4",
                                                 "signingRegion": "us-east-1"
                                             }
                                         ]
@@ -1439,9 +1380,101 @@
                                 }
                             },
                             "params": {
-                                "Region": "aws-global",
                                 "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "Region": "aws-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region aws-global with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-east-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "aws-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-east-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-east-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1451,8 +1484,8 @@
                                     "properties": {
                                         "authSchemes": [
                                             {
-                                                "name": "sigv4",
                                                 "signingName": "organizations",
+                                                "name": "sigv4",
                                                 "signingRegion": "us-gov-west-1"
                                             }
                                         ]
@@ -1461,9 +1494,236 @@
                                 }
                             },
                             "params": {
-                                "Region": "aws-us-gov-global",
                                 "UseFIPS": false,
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "Region": "aws-us-gov-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region aws-us-gov-global with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-gov-west-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "aws-us-gov-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-gov-west-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-gov-west-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region aws-cn-global with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "cn-northwest-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.cn-northwest-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "aws-cn-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "organizations",
+                                                "name": "sigv4",
+                                                "signingRegion": "cn-northwest-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://organizations.cn-northwest-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://organizations.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -1474,9 +1734,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1486,9 +1746,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseFIPS": true,
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1498,9 +1758,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }

@@ -5681,7 +5681,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -5730,15 +5730,6 @@
                                                     "ref": "Endpoint"
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "fn": "parseURL",
-                                            "argv": [
-                                                {
-                                                    "ref": "Endpoint"
-                                                }
-                                            ],
-                                            "assign": "url"
                                         }
                                     ],
                                     "type": "tree",
@@ -5852,12 +5843,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://opsworks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://opsworks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -5962,12 +5959,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://opsworks.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://opsworks.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -5980,12 +5983,18 @@
                                 },
                                 {
                                     "conditions": [],
-                                    "endpoint": {
-                                        "url": "https://opsworks.{Region}.{PartitionResult#dnsSuffix}",
-                                        "properties": {},
-                                        "headers": {}
-                                    },
-                                    "type": "endpoint"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://opsworks.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -5994,305 +6003,6 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region ap-south-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-south-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-south-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ca-central-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ca-central-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ca-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ca-central-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ca-central-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ca-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-central-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-central-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-west-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-west-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-west-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-2",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-west-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-2",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-west-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-3.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-3",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-3",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-west-3.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-3",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
                             "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
@@ -6300,412 +6010,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-2",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-west-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-2",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.eu-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-west-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.eu-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-northeast-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-northeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-northeast-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-northeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-northeast-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-northeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-northeast-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-northeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region sa-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.sa-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "sa-east-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region sa-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.sa-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "sa-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.sa-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "sa-east-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.sa-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "sa-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-southeast-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-southeast-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-southeast-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-southeast-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -6716,48 +6023,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-east-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks-fips.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://opsworks.us-east-2.api.aws"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -6768,9 +6036,360 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-2",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-east-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ca-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ca-central-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.eu-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-central-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.sa-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "sa-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ap-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-south-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ap-northeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ap-southeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-southeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-southeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.eu-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://opsworks.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -6781,9 +6400,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -6793,9 +6412,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -6805,9 +6424,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }

@@ -8187,7 +8187,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -8236,15 +8236,6 @@
                                                     "ref": "Endpoint"
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "fn": "parseURL",
-                                            "argv": [
-                                                {
-                                                    "ref": "Endpoint"
-                                                }
-                                            ],
-                                            "assign": "url"
                                         }
                                     ],
                                     "type": "tree",
@@ -8380,15 +8371,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager-fips.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-west-2",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8440,15 +8423,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager-fips.{Region}.amazonaws.com",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-west-2",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8500,15 +8475,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-west-2",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8623,15 +8590,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager-fips.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-gov-west-1",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8683,15 +8642,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager-fips.{Region}.amazonaws.com",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-gov-west-1",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8743,15 +8694,7 @@
                                                             "conditions": [],
                                                             "endpoint": {
                                                                 "url": "https://networkmanager.{Region}.api.aws",
-                                                                "properties": {
-                                                                    "authSchemes": [
-                                                                        {
-                                                                            "name": "sigv4",
-                                                                            "signingRegion": "us-gov-west-1",
-                                                                            "signingName": "networkmanager"
-                                                                        }
-                                                                    ]
-                                                                },
+                                                                "properties": {},
                                                                 "headers": {}
                                                             },
                                                             "type": "endpoint"
@@ -8844,12 +8787,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://networkmanager-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://networkmanager-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -8954,12 +8903,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://networkmanager.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://networkmanager.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -9052,9 +9007,9 @@
                                     "properties": {
                                         "authSchemes": [
                                             {
-                                                "signingRegion": "us-west-2",
                                                 "signingName": "networkmanager",
-                                                "name": "sigv4"
+                                                "name": "sigv4",
+                                                "signingRegion": "us-west-2"
                                             }
                                         ]
                                     },
@@ -9063,8 +9018,69 @@
                             },
                             "params": {
                                 "UseFIPS": false,
-                                "Region": "aws-global",
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "Region": "aws-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "networkmanager",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-west-2"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://networkmanager.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -9074,9 +9090,9 @@
                                     "properties": {
                                         "authSchemes": [
                                             {
-                                                "signingRegion": "us-gov-west-1",
                                                 "signingName": "networkmanager",
-                                                "name": "sigv4"
+                                                "name": "sigv4",
+                                                "signingRegion": "us-gov-west-1"
                                             }
                                         ]
                                     },
@@ -9085,8 +9101,173 @@
                             },
                             "params": {
                                 "UseFIPS": false,
-                                "Region": "aws-us-gov-global",
-                                "UseDualStack": false
+                                "UseDualStack": false,
+                                "Region": "aws-us-gov-global"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "properties": {
+                                        "authSchemes": [
+                                            {
+                                                "signingName": "networkmanager",
+                                                "name": "sigv4",
+                                                "signingRegion": "us-gov-west-1"
+                                            }
+                                        ]
+                                    },
+                                    "url": "https://networkmanager.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-isob-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://networkmanager.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -9098,8 +9279,8 @@
                             },
                             "params": {
                                 "UseFIPS": false,
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -9110,8 +9291,8 @@
                             },
                             "params": {
                                 "UseFIPS": true,
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -9122,8 +9303,8 @@
                             },
                             "params": {
                                 "UseFIPS": false,
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }

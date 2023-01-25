@@ -202,12 +202,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://scheduler-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://scheduler-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -254,12 +260,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://scheduler-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://scheduler-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -306,12 +318,18 @@
                                             "rules": [
                                                 {
                                                     "conditions": [],
-                                                    "endpoint": {
-                                                        "url": "https://scheduler.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://scheduler.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
@@ -324,12 +342,18 @@
                                 },
                                 {
                                     "conditions": [],
-                                    "endpoint": {
-                                        "url": "https://scheduler.{Region}.{PartitionResult#dnsSuffix}",
-                                        "properties": {},
-                                        "headers": {}
-                                    },
-                                    "type": "endpoint"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://scheduler.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -345,8 +369,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-gov-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -358,8 +382,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-gov-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -371,8 +395,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-gov-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -384,8 +408,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-gov-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -397,8 +421,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "cn-north-1",
                                 "UseDualStack": true,
+                                "Region": "cn-north-1",
                                 "UseFIPS": true
                             }
                         },
@@ -410,8 +434,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "cn-north-1",
                                 "UseDualStack": false,
+                                "Region": "cn-north-1",
                                 "UseFIPS": true
                             }
                         },
@@ -423,8 +447,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "cn-north-1",
                                 "UseDualStack": true,
+                                "Region": "cn-north-1",
                                 "UseFIPS": false
                             }
                         },
@@ -436,8 +460,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "cn-north-1",
                                 "UseDualStack": false,
+                                "Region": "cn-north-1",
                                 "UseFIPS": false
                             }
                         },
@@ -447,8 +471,8 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
-                                "Region": "us-iso-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -460,8 +484,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-iso-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -471,8 +495,8 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
-                                "Region": "us-iso-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -484,8 +508,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-iso-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -497,8 +521,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -510,8 +534,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -523,8 +547,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -536,8 +560,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -547,8 +571,8 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-isob-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -560,8 +584,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-isob-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -571,8 +595,8 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-isob-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -584,8 +608,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-isob-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -597,8 +621,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
@@ -609,8 +633,8 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
                                 "Endpoint": "https://example.com"
                             }
@@ -621,8 +645,8 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
