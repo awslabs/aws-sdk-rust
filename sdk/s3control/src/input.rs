@@ -723,8 +723,8 @@ impl CreateBucketInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
-            .set_bucket(self.bucket.clone())
             .set_outpost_id(self.outpost_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1870,8 +1870,8 @@ impl DeleteAccessPointPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_access_point_name(self.name.clone())
             .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2265,8 +2265,8 @@ impl DeleteBucketInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2685,8 +2685,8 @@ impl DeleteBucketPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5366,8 +5366,8 @@ impl GetAccessPointPolicyStatusInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_access_point_name(self.name.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5765,8 +5765,8 @@ impl GetBucketInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5970,8 +5970,8 @@ impl GetBucketLifecycleConfigurationInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6388,8 +6388,8 @@ impl GetBucketTaggingInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8319,8 +8319,8 @@ impl ListAccessPointsInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9160,8 +9160,8 @@ impl ListRegionalBucketsInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_outpost_id(self.outpost_id.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10481,8 +10481,8 @@ impl PutBucketPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
