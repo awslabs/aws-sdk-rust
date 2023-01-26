@@ -27,7 +27,7 @@ fastrand = "1.8.0"
 
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"

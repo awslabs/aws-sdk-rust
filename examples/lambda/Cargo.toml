@@ -12,7 +12,7 @@ time = "0.3"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"

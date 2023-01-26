@@ -10,7 +10,7 @@ http = "0.2"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"

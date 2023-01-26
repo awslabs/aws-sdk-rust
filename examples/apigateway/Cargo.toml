@@ -9,7 +9,7 @@ thiserror = "1.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-sdk-apigateway]
 path = "../../sdk/apigateway"
@@ -18,7 +18,7 @@ version = "0.24.0"
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.structopt]
 version = "0.3"

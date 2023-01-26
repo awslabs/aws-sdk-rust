@@ -20,16 +20,16 @@ http = "0.2.8"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-credential-types]
 features = ["hardcoded-credentials"]
 path = "../../sdk/aws-credential-types"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-hyper]
 path = "../../sdk/aws-hyper"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-sdk-iam]
 path = "../../sdk/iam"
@@ -46,15 +46,15 @@ version = "0.24.0"
 [dependencies.aws-smithy-client]
 features = ["test-util"]
 path = "../../sdk/aws-smithy-client"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.sdk-examples-test-utils]
 path = "../test-utils"

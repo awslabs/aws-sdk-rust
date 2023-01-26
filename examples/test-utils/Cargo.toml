@@ -10,20 +10,20 @@ http = "0.2"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-smithy-client]
 features = ["test-util"]
 path = "../../sdk/aws-smithy-client"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.53.1"
+version = "0.54.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.53.1"
+version = "0.54.0"
 
 [lib]
 path = "src/mod.rs"
