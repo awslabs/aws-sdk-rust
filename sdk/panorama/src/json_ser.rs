@@ -427,6 +427,11 @@ pub fn serialize_structure_crate_model_ota_job_config(
     if let Some(var_85) = &input.image_version {
         object.key("ImageVersion").string(var_85.as_str());
     }
+    if input.allow_major_version_update {
+        object
+            .key("AllowMajorVersionUpdate")
+            .boolean(input.allow_major_version_update);
+    }
     Ok(())
 }
 

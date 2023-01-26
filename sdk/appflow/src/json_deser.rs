@@ -2932,6 +2932,13 @@ where
                                     crate::json_deser::deser_structure_crate_model_sapo_data_metadata(tokens)?
                                 );
                             }
+                            "Pardot" => {
+                                builder = builder.set_pardot(
+                                    crate::json_deser::deser_structure_crate_model_pardot_metadata(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4076,6 +4083,11 @@ where
                             "CustomConnector" => {
                                 builder = builder.set_custom_connector(
                                     crate::json_deser::deser_structure_crate_model_custom_connector_source_properties(tokens)?
+                                );
+                            }
+                            "Pardot" => {
+                                builder = builder.set_pardot(
+                                    crate::json_deser::deser_structure_crate_model_pardot_source_properties(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5396,6 +5408,36 @@ where
     }
 }
 
+pub(crate) fn deser_structure_crate_model_pardot_metadata<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::PardotMetadata>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::pardot_metadata::Builder::default();
+            aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
 pub(crate) fn deser_structure_crate_model_o_auth2_defaults<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -6047,6 +6089,11 @@ where
                             "CustomConnector" => {
                                 builder = builder.set_custom_connector(
                                     crate::json_deser::deser_structure_crate_model_custom_connector_profile_properties(tokens)?
+                                );
+                            }
+                            "Pardot" => {
+                                builder = builder.set_pardot(
+                                    crate::json_deser::deser_structure_crate_model_pardot_connector_profile_properties(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7317,6 +7364,62 @@ where
     }
 }
 
+pub(crate) fn deser_structure_crate_model_pardot_source_properties<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::PardotSourceProperties>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::pardot_source_properties::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "object" => {
+                                builder = builder.set_object(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
 #[allow(non_snake_case)]
 pub(crate) fn deser_list_com_amazonaws_appflow_source_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -7609,6 +7712,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped()
                                             .map(|u| crate::model::Operator::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "Pardot" => {
+                                builder = builder.set_pardot(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::PardotConnectorOperator::from(u.as_ref())
+                                        })
                                     })
                                     .transpose()?,
                                 );
@@ -9548,6 +9664,78 @@ where
                             "oAuth2Properties" => {
                                 builder = builder.set_o_auth2_properties(
                                     crate::json_deser::deser_structure_crate_model_o_auth2_properties(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_pardot_connector_profile_properties<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::PardotConnectorProfileProperties>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::pardot_connector_profile_properties::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "instanceUrl" => {
+                                builder = builder.set_instance_url(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "isSandboxEnvironment" => {
+                                builder = builder.set_is_sandbox_environment(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "businessUnitId" => {
+                                builder = builder.set_business_unit_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

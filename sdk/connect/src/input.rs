@@ -27715,6 +27715,7 @@ pub mod start_chat_contact_input {
         pub(crate) chat_duration_in_minutes: std::option::Option<i32>,
         pub(crate) supported_messaging_content_types:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) persistent_chat: std::option::Option<crate::model::PersistentChat>,
     }
     impl Builder {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -27837,6 +27838,19 @@ pub mod start_chat_contact_input {
             self.supported_messaging_content_types = input;
             self
         }
+        /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn persistent_chat(mut self, input: crate::model::PersistentChat) -> Self {
+            self.persistent_chat = Some(input);
+            self
+        }
+        /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn set_persistent_chat(
+            mut self,
+            input: std::option::Option<crate::model::PersistentChat>,
+        ) -> Self {
+            self.persistent_chat = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartChatContactInput`](crate::input::StartChatContactInput).
         pub fn build(
             self,
@@ -27853,6 +27867,7 @@ pub mod start_chat_contact_input {
                 client_token: self.client_token,
                 chat_duration_in_minutes: self.chat_duration_in_minutes,
                 supported_messaging_content_types: self.supported_messaging_content_types,
+                persistent_chat: self.persistent_chat,
             })
         }
     }
@@ -40848,6 +40863,9 @@ pub struct StartChatContactInput {
     /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
     #[doc(hidden)]
     pub supported_messaging_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+    #[doc(hidden)]
+    pub persistent_chat: std::option::Option<crate::model::PersistentChat>,
 }
 impl StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -40886,6 +40904,10 @@ impl StartChatContactInput {
     /// <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
     pub fn supported_messaging_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_messaging_content_types.as_deref()
+    }
+    /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+    pub fn persistent_chat(&self) -> std::option::Option<&crate::model::PersistentChat> {
+        self.persistent_chat.as_ref()
     }
 }
 

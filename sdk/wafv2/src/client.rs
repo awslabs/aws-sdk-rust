@@ -409,7 +409,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_web_acl_arn): <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
-    ///   - [`rule_metric_name(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::rule_metric_name) / [`set_rule_metric_name(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_rule_metric_name): <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+    ///   - [`rule_metric_name(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::rule_metric_name) / [`set_rule_metric_name(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_rule_metric_name): <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     ///   - [`scope(Scope)`](crate::client::fluent_builders::GetSampledRequests::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetSampledRequests::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`time_window(TimeWindow)`](crate::client::fluent_builders::GetSampledRequests::time_window) / [`set_time_window(Option<TimeWindow>)`](crate::client::fluent_builders::GetSampledRequests::set_time_window): <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
     ///   - [`max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::max_items) / [`set_max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::set_max_items): <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
@@ -3546,12 +3546,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
         pub fn rule_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.rule_metric_name(input.into());
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
         pub fn set_rule_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4927,6 +4927,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingConfiguration`.
     ///
     /// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided. </p> <note>
+    /// <p>This operation completely replaces any mutable specifications that you already have for a logging configuration with the ones that you provide to this call. </p>
+    /// <p>To modify an existing logging configuration, do the following: </p>
+    /// <ol>
+    /// <li> <p>Retrieve it by calling <code>GetLoggingConfiguration</code> </p> </li>
+    /// <li> <p>Update its settings as needed</p> </li>
+    /// <li> <p>Provide the complete logging configuration specification to this call</p> </li>
+    /// </ol>
+    /// </note> <note>
     /// <p>You can define one logging destination per web ACL.</p>
     /// </note>
     /// <p>You can access information about the traffic that WAF inspects using the following steps:</p>
@@ -4935,9 +4943,7 @@ pub mod fluent_builders {
     /// <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li>
     /// </ol>
     /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
-    /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <code>GetLoggingConfiguration</code>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
-    /// </note>
+    /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -5459,7 +5465,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIPSet`.
     ///
     /// <p>Updates the specified <code>IPSet</code>. </p> <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. To modify the IP set, retrieve it by calling <code>GetIPSet</code>, update the settings as needed, and then provide the complete IP set specification to this call.</p>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. </p>
+    /// <p>To modify an IP set, do the following: </p>
+    /// <ol>
+    /// <li> <p>Retrieve it by calling <code>GetIPSet</code> </p> </li>
+    /// <li> <p>Update its settings as needed</p> </li>
+    /// <li> <p>Provide the complete IP set specification to this call</p> </li>
+    /// </ol>
     /// </note>
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -5782,7 +5794,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRegexPatternSet`.
     ///
     /// <p>Updates the specified <code>RegexPatternSet</code>.</p> <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. To modify the regex pattern set, retrieve it by calling <code>GetRegexPatternSet</code>, update the settings as needed, and then provide the complete regex pattern set specification to this call.</p>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. </p>
+    /// <p>To modify a regex pattern set, do the following: </p>
+    /// <ol>
+    /// <li> <p>Retrieve it by calling <code>GetRegexPatternSet</code> </p> </li>
+    /// <li> <p>Update its settings as needed</p> </li>
+    /// <li> <p>Provide the complete regex pattern set specification to this call</p> </li>
+    /// </ol>
     /// </note>
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -5925,7 +5943,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRuleGroup`.
     ///
     /// <p>Updates the specified <code>RuleGroup</code>.</p> <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. To modify the rule group, retrieve it by calling <code>GetRuleGroup</code>, update the settings as needed, and then provide the complete rule group specification to this call.</p>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. </p>
+    /// <p>To modify a rule group, do the following: </p>
+    /// <ol>
+    /// <li> <p>Retrieve it by calling <code>GetRuleGroup</code> </p> </li>
+    /// <li> <p>Update its settings as needed</p> </li>
+    /// <li> <p>Provide the complete rule group specification to this call</p> </li>
+    /// </ol>
     /// </note>
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
     /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
@@ -6108,10 +6132,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWebACL`.
     ///
-    /// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continuous coverage to the resources that you have associated with the web ACL. </p>
-    /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p> <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <code>GetWebACL</code>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
+    /// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continuous coverage to the resources that you have associated with the web ACL. </p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. </p>
+    /// <p>To modify a web ACL, do the following: </p>
+    /// <ol>
+    /// <li> <p>Retrieve it by calling <code>GetWebACL</code> </p> </li>
+    /// <li> <p>Update its settings as needed</p> </li>
+    /// <li> <p>Provide the complete web ACL specification to this call</p> </li>
+    /// </ol>
     /// </note>
+    /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
     /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebACL {

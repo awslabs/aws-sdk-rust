@@ -71,9 +71,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://streams.dynamodb.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dns_suffix());
+                            out.push_str(".amazonaws.com");
                             out
                         })
                         .build());
@@ -128,6 +126,66 @@ pub(super) fn resolve_endpoint(
                         out
                     })],
                 )
+                .build());
+        }
+        if ("aws") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://streams.dynamodb.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".amazonaws.com");
+                    out
+                })
+                .build());
+        }
+        if ("aws-cn") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://streams.dynamodb.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".amazonaws.com.cn");
+                    out
+                })
+                .build());
+        }
+        if ("aws-us-gov") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://streams.dynamodb.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".amazonaws.com");
+                    out
+                })
+                .build());
+        }
+        if ("aws-iso") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://streams.dynamodb.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".c2s.ic.gov");
+                    out
+                })
+                .build());
+        }
+        if ("aws-iso-b") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://streams.dynamodb.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".sc2s.sgov.gov");
+                    out
+                })
                 .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()

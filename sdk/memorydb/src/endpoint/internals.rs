@@ -103,6 +103,17 @@ pub(super) fn resolve_endpoint(
         if (region) == ("fips") {
             return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://memory-db-fips.us-west-1.amazonaws.com".to_string())
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "memorydb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-1".to_string().into());
+                        out
+                    })],
+                )
                 .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()

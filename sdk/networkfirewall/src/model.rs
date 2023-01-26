@@ -2227,22 +2227,26 @@ impl PortRange {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     #[doc(hidden)]
     pub address_definition: std::option::Option<std::string::String>,
 }
 impl Address {
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn address_definition(&self) -> std::option::Option<&str> {
@@ -2258,22 +2262,26 @@ pub mod address {
         pub(crate) address_definition: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn address_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.address_definition = Some(input.into());
             self
         }
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_address_definition(
@@ -2508,11 +2516,13 @@ pub struct Header {
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::StatefulRuleProtocol>,
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     #[doc(hidden)]
@@ -2524,11 +2534,13 @@ pub struct Header {
     #[doc(hidden)]
     pub direction: std::option::Option<crate::model::StatefulRuleDirection>,
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     #[doc(hidden)]
@@ -2543,11 +2555,13 @@ impl Header {
         self.protocol.as_ref()
     }
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn source(&self) -> std::option::Option<&str> {
@@ -2562,11 +2576,13 @@ impl Header {
         self.direction.as_ref()
     }
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+    /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
     /// <ul>
     /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
@@ -2605,11 +2621,13 @@ pub mod header {
             self
         }
         /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2617,11 +2635,13 @@ pub mod header {
             self
         }
         /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2652,11 +2672,13 @@ pub mod header {
             self
         }
         /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2664,11 +2686,13 @@ pub mod header {
             self
         }
         /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
-        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
         /// <p>Examples: </p>
         /// <ul>
         /// <li> <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5579,11 +5603,18 @@ pub struct SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
+    /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
+    #[doc(hidden)]
+    pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
+    }
+    /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
 }
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
@@ -5593,6 +5624,7 @@ pub mod subnet_mapping {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
+        pub(crate) ip_address_type: std::option::Option<crate::model::IpAddressType>,
     }
     impl Builder {
         /// <p>The unique identifier for the subnet. </p>
@@ -5605,10 +5637,24 @@ pub mod subnet_mapping {
             self.subnet_id = input;
             self
         }
+        /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.ip_address_type = Some(input);
+            self
+        }
+        /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
+        pub fn set_ip_address_type(
+            mut self,
+            input: std::option::Option<crate::model::IpAddressType>,
+        ) -> Self {
+            self.ip_address_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SubnetMapping`](crate::model::SubnetMapping).
         pub fn build(self) -> crate::model::SubnetMapping {
             crate::model::SubnetMapping {
                 subnet_id: self.subnet_id,
+                ip_address_type: self.ip_address_type,
             }
         }
     }
@@ -5617,6 +5663,96 @@ impl SubnetMapping {
     /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::model::SubnetMapping).
     pub fn builder() -> crate::model::subnet_mapping::Builder {
         crate::model::subnet_mapping::Builder::default()
+    }
+}
+
+/// When writing a match expression against `IpAddressType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ipaddresstype = unimplemented!();
+/// match ipaddresstype {
+///     IpAddressType::Dualstack => { /* ... */ },
+///     IpAddressType::Ipv4 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ipaddresstype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IpAddressType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IpAddressType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IpAddressType::NewFeature` is defined.
+/// Specifically, when `ipaddresstype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IpAddressType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IpAddressType {
+    #[allow(missing_docs)] // documentation missing in model
+    Dualstack,
+    #[allow(missing_docs)] // documentation missing in model
+    Ipv4,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for IpAddressType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DUALSTACK" => IpAddressType::Dualstack,
+            "IPV4" => IpAddressType::Ipv4,
+            other => IpAddressType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for IpAddressType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpAddressType::from(s))
+    }
+}
+impl IpAddressType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpAddressType::Dualstack => "DUALSTACK",
+            IpAddressType::Ipv4 => "IPV4",
+            IpAddressType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DUALSTACK", "IPV4"]
+    }
+}
+impl AsRef<str> for IpAddressType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

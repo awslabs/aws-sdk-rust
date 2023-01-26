@@ -18,256 +18,14 @@ impl From<crate::endpoint::Params> for aws_endpoint::Params {
 #[cfg(test)]
 mod test {
 
-    /// For region ap-south-2 with FIPS enabled and DualStack enabled
+    /// For region eu-south-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_1() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-south-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.ap-south-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-south-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-south-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_2() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-south-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-south-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-south-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-south-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_3() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-south-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-south-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-south-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-south-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_4() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-south-2".to_string())
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-south-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-south-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-south-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_5() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.ap-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_6() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-south-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-south-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_7() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_8() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-south-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-south-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_9() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
             .region("eu-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_10() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-south-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-south-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_11() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_12() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-south-1".to_string())
-            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -282,1403 +40,14 @@ mod test {
         );
     }
 
-    /// For region eu-south-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_13() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-south-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-south-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-south-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-south-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_14() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-south-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-south-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-south-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-south-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_15() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-south-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-south-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-south-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-south-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_16() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-south-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-south-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-south-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_17() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-gov-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-gov-east-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-gov-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_19() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-gov-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_20() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-gov-east-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.us-gov-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-gov-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region me-central-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_21() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("me-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.me-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.me-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region me-central-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_22() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("me-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.me-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.me-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region me-central-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_23() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("me-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.me-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.me-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region me-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_24() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("me-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.me-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.me-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ca-central-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_25() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ca-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ca-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ca-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ca-central-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_26() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ca-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ca-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ca-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ca-central-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_27() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ca-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ca-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ca-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ca-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_28() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ca-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.ca-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ca-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_29() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_30() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_31() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-central-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-central-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-central-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_32() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-central-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.eu-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_33() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-central-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-central-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-central-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-central-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_34() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-central-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-central-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-central-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_35() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-central-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-central-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-central-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-central-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_36() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-central-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.eu-central-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-central-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_37() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.us-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_38() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_39() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_40() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-west-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_41() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-west-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.us-west-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-west-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-west-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_42() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-west-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-west-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-west-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_43() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-west-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-west-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-west-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_44() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-west-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-west-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region af-south-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_45() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("af-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.af-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.af-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region af-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_46() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("af-south-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.af-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.af-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region af-south-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_47() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("af-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.af-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.af-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region af-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_48() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("af-south-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.af-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.af-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-north-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_49() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-north-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-north-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-north-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-north-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_50() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-north-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-north-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-north-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-north-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_51() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-north-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-north-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-north-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-north-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_52() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-north-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-north-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-north-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-3 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_53() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-3".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-west-3.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-3.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-3 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_54() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-3".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-west-3.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-3 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_55() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-3".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-3.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-3.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-3 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_56() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-3".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-3.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_57() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-west-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_58() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_59() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_60() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_61() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.eu-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_62() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("eu-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.eu-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.eu-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_63() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_64() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("eu-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.eu-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-3 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_65() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-3".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-northeast-3.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-3.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-3 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_66() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-3".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-northeast-3.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-3 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_67() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-northeast-3".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-northeast-3.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-northeast-3.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-3 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_68() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-northeast-3".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.ap-northeast-3.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-northeast-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_69() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-northeast-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_70() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-northeast-2.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_71() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-northeast-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-northeast-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-northeast-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_72() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-northeast-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.ap-northeast-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-northeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_73() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-northeast-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_74() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-northeast-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-northeast-1.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-northeast-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_75() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-northeast-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-northeast-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-northeast-1.api.aws")
-                .build()
-        );
-    }
-
     /// For region ap-northeast-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_76() {
+    fn test_2() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-northeast-1".to_string())
             .use_dual_stack(false)
+            .region("ap-northeast-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -1693,521 +62,146 @@ mod test {
         );
     }
 
-    /// For region me-south-1 with FIPS enabled and DualStack enabled
+    /// For region ap-south-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_77() {
+    fn test_3() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("me-south-1".to_string())
-            .use_dual_stack(true)
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-south-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.me-south-1.api.aws");
+            endpoint.expect("Expected valid endpoint: https://apigateway.ap-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.me-south-1.api.aws")
+                .url("https://apigateway.ap-south-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region me-south-1 with FIPS enabled and DualStack disabled
+    /// For region ap-northeast-3 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_78() {
+    fn test_4() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("me-south-1".to_string())
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("ap-northeast-3".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.me-south-1.amazonaws.com");
+            .expect("Expected valid endpoint: https://apigateway.ap-northeast-3.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.me-south-1.amazonaws.com")
+                .url("https://apigateway.ap-northeast-3.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region me-south-1 with FIPS disabled and DualStack enabled
+    /// For region ap-northeast-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_79() {
+    fn test_5() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("me-south-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.me-south-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.me-south-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region me-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_80() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("me-south-1".to_string())
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.me-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.me-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region sa-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_81() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("sa-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.sa-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.sa-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region sa-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_82() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("sa-east-1".to_string())
-            .use_dual_stack(false)
+            .region("ap-northeast-2".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.sa-east-1.amazonaws.com");
+            .expect("Expected valid endpoint: https://apigateway.ap-northeast-2.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.sa-east-1.amazonaws.com")
+                .url("https://apigateway.ap-northeast-2.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region sa-east-1 with FIPS disabled and DualStack enabled
+    /// For region us-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_83() {
+    fn test_6() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("sa-east-1".to_string())
-            .use_dual_stack(true)
+            .use_dual_stack(false)
+            .region("us-west-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.sa-east-1.api.aws");
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.sa-east-1.api.aws")
+                .url("https://apigateway.us-west-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region sa-east-1 with FIPS disabled and DualStack disabled
+    /// For region us-west-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_84() {
+    fn test_7() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("sa-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-west-2".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.sa-east-1.amazonaws.com");
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.sa-east-1.amazonaws.com")
+                .url("https://apigateway.us-west-2.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region ap-east-1 with FIPS enabled and DualStack enabled
+    /// For region eu-north-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_85() {
+    fn test_8() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-east-1".to_string())
-            .use_dual_stack(true)
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-north-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.ap-east-1.api.aws");
+            endpoint.expect("Expected valid endpoint: https://apigateway.eu-north-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_86() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-east-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_87() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_88() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-east-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_89() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("cn-north-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://apigateway-fips.cn-north-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.cn-north-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_90() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("cn-north-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.cn-north-1.amazonaws.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.cn-north-1.amazonaws.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_91() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("cn-north-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway.cn-north-1.api.amazonwebservices.com.cn",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.cn-north-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_92() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("cn-north-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.cn-north-1.amazonaws.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.cn-north-1.amazonaws.com.cn")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_93() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-gov-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-gov-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_94() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-gov-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-gov-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_95() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-gov-west-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-gov-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_96() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-gov-west-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-gov-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_97() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-southeast-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_98() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-southeast-1.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_99() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-southeast-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-southeast-1.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-1.api.aws")
+                .url("https://apigateway.eu-north-1.amazonaws.com")
                 .build()
         );
     }
 
     /// For region ap-southeast-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_100() {
+    fn test_9() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-southeast-1".to_string())
             .use_dual_stack(false)
+            .region("ap-southeast-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2222,81 +216,14 @@ mod test {
         );
     }
 
-    /// For region ap-southeast-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_101() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-southeast-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_102() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-2".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-southeast-2.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-2 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_103() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-southeast-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-southeast-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-2.api.aws")
-                .build()
-        );
-    }
-
     /// For region ap-southeast-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_104() {
+    fn test_10() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-southeast-2".to_string())
             .use_dual_stack(false)
+            .region("ap-southeast-2".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2311,274 +238,256 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
+    /// For region eu-central-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_105() {
+    fn test_11() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
-    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_106() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-iso-east-1".to_string())
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("eu-central-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-iso-east-1.c2s.ic.gov");
+            .expect("Expected valid endpoint: https://apigateway.eu-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-iso-east-1.c2s.ic.gov")
+                .url("https://apigateway.eu-central-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
+    /// For region af-south-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_107() {
+    fn test_12() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_108() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-iso-east-1".to_string())
             .use_dual_stack(false)
+            .region("af-south-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-iso-east-1.c2s.ic.gov");
+            endpoint.expect("Expected valid endpoint: https://apigateway.af-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-iso-east-1.c2s.ic.gov")
+                .url("https://apigateway.af-south-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region ap-southeast-3 with FIPS enabled and DualStack enabled
+    /// For region sa-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_109() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-3".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-southeast-3.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-3.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-3 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_110() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-3".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-southeast-3.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-3 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_111() {
+    fn test_13() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-southeast-3".to_string())
-            .use_dual_stack(true)
+            .use_dual_stack(false)
+            .region("sa-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-southeast-3.api.aws");
+            endpoint.expect("Expected valid endpoint: https://apigateway.sa-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-3.api.aws")
+                .url("https://apigateway.sa-east-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region ap-southeast-3 with FIPS disabled and DualStack disabled
+    /// For region us-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_112() {
+    fn test_14() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-southeast-3".to_string())
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.ap-southeast-3.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-4 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_113() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-4".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.ap-southeast-4.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-4.api.aws")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-4 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_114() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("ap-southeast-4".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.ap-southeast-4.amazonaws.com",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.ap-southeast-4.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-4 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_115() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("ap-southeast-4".to_string())
-            .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.ap-southeast-4.api.aws");
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-4.api.aws")
+                .url("https://apigateway.us-east-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region ap-southeast-4 with FIPS disabled and DualStack disabled
+    /// For region us-east-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_116() {
+    fn test_15() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("ap-southeast-4".to_string())
             .use_dual_stack(false)
+            .region("us-east-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region me-south-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_16() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("me-south-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.me-south-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.me-south-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ca-central-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ca-central-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.ap-southeast-4.amazonaws.com");
+            .expect("Expected valid endpoint: https://apigateway.ca-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.ap-southeast-4.amazonaws.com")
+                .url("https://apigateway.ca-central-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.ap-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.ap-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_19() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.eu-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.eu-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-3 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_21() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-3".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.eu-west-3.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.eu-west-3.amazonaws.com")
                 .build()
         );
     }
 
     /// For region us-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_117() {
+    fn test_22() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2595,12 +504,12 @@ mod test {
 
     /// For region us-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_118() {
+    fn test_23() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2617,12 +526,12 @@ mod test {
 
     /// For region us-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_119() {
+    fn test_24() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2637,230 +546,124 @@ mod test {
         );
     }
 
-    /// For region us-east-1 with FIPS disabled and DualStack disabled
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_120() {
+    fn test_25() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-east-2 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_121() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-east-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway-fips.us-east-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-east-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-east-2 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_122() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-east-2".to_string())
-            .use_dual_stack(false)
+            .region("us-gov-west-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway-fips.us-east-2.amazonaws.com");
+            .expect("Expected valid endpoint: https://apigateway.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.us-east-2.amazonaws.com")
+                .url("https://apigateway.us-gov-west-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-east-2 with FIPS disabled and DualStack enabled
+    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_123() {
+    fn test_26() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-2".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-east-2.api.aws");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-east-2.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-east-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_124() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-east-2".to_string())
             .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://apigateway.us-east-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.us-east-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region cn-northwest-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_125() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("cn-northwest-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://apigateway-fips.cn-northwest-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.cn-northwest-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-northwest-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_126() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("cn-northwest-1".to_string())
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://apigateway-fips.cn-northwest-1.amazonaws.com.cn",
-        );
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway-fips.cn-northwest-1.amazonaws.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-northwest-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_127() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("cn-northwest-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://apigateway.cn-northwest-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.cn-northwest-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-northwest-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_128() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("cn-northwest-1".to_string())
-            .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://apigateway.cn-northwest-1.amazonaws.com.cn");
+            .expect("Expected valid endpoint: https://apigateway.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://apigateway.cn-northwest-1.amazonaws.com.cn")
+                .url("https://apigateway.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
+    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_129() {
+    fn test_27() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-isob-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isob-east-1 with FIPS enabled and DualStack enabled]");
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-east-1.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway-fips.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_28() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway-fips.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway-fips.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_29() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.us-gov-east-1.api.aws")
+                .build()
+        );
     }
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_130() {
+    fn test_30() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-isob-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2876,33 +679,14 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_131() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-isob-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
-    }
-
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_132() {
+    fn test_31() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-isob-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -2917,14 +701,168 @@ mod test {
         );
     }
 
-    /// For custom endpoint with fips disabled and dualstack disabled
+    /// For region cn-northwest-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_133() {
+    fn test_32() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
+            .region("cn-northwest-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway.cn-northwest-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.cn-northwest-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_33() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_34() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://apigateway-fips.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_35() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway-fips.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway-fips.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_36() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://apigateway.cn-north-1.api.amazonwebservices.com.cn",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_37() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://apigateway.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_38() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://apigateway-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apigateway-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For custom endpoint with fips disabled and dualstack disabled
+    #[test]
+    fn test_39() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -2941,12 +879,12 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_134() {
+    fn test_40() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -2961,12 +899,12 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_135() {
+    fn test_41() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");

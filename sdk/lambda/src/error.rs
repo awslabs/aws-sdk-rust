@@ -2793,6 +2793,168 @@ impl std::error::Error for RemoveLayerVersionPermissionError {
     }
 }
 
+/// Error type for the `PutRuntimeManagementConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutRuntimeManagementConfigError {
+    /// Kind of error that occurred.
+    pub kind: PutRuntimeManagementConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutRuntimeManagementConfigError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `PutRuntimeManagementConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutRuntimeManagementConfigErrorKind {
+    /// <p>One of the parameters in the request is not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for PutRuntimeManagementConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutRuntimeManagementConfigErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            PutRuntimeManagementConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutRuntimeManagementConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutRuntimeManagementConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutRuntimeManagementConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutRuntimeManagementConfigError {
+    fn code(&self) -> Option<&str> {
+        PutRuntimeManagementConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutRuntimeManagementConfigError {
+    /// Creates a new `PutRuntimeManagementConfigError`.
+    pub fn new(kind: PutRuntimeManagementConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutRuntimeManagementConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutRuntimeManagementConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutRuntimeManagementConfigErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRuntimeManagementConfigErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRuntimeManagementConfigErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRuntimeManagementConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRuntimeManagementConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRuntimeManagementConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRuntimeManagementConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRuntimeManagementConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRuntimeManagementConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for PutRuntimeManagementConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            PutRuntimeManagementConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            PutRuntimeManagementConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutRuntimeManagementConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            PutRuntimeManagementConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutRuntimeManagementConfigErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `PutProvisionedConcurrencyConfig` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5883,11 +6045,11 @@ pub enum InvokeErrorKind {
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The runtime restore hook encountered an error. For more information, check the Amazon CloudWatch logs.</p>
+    /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::error::SnapStartException),
     /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
     SnapStartNotReadyException(crate::error::SnapStartNotReadyException),
-    /// <p>The runtime restore hook failed to complete within the timeout limit (2 seconds).</p>
+    /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
     SnapStartTimeoutException(crate::error::SnapStartTimeoutException),
     /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
     SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
@@ -6328,7 +6490,7 @@ impl SubnetIpAddressLimitReachedException {
     }
 }
 
-/// <p>The runtime restore hook failed to complete within the timeout limit (2 seconds).</p>
+/// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapStartTimeoutException {
@@ -6490,7 +6652,7 @@ impl SnapStartNotReadyException {
     }
 }
 
-/// <p>The runtime restore hook encountered an error. For more information, check the Amazon CloudWatch logs.</p>
+/// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapStartException {
@@ -7973,6 +8135,157 @@ impl Ec2AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`Ec2AccessDeniedException`](crate::error::Ec2AccessDeniedException).
     pub fn builder() -> crate::error::ec2_access_denied_exception::Builder {
         crate::error::ec2_access_denied_exception::Builder::default()
+    }
+}
+
+/// Error type for the `GetRuntimeManagementConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetRuntimeManagementConfigError {
+    /// Kind of error that occurred.
+    pub kind: GetRuntimeManagementConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRuntimeManagementConfigError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetRuntimeManagementConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetRuntimeManagementConfigErrorKind {
+    /// <p>One of the parameters in the request is not valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetRuntimeManagementConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetRuntimeManagementConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetRuntimeManagementConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetRuntimeManagementConfigErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetRuntimeManagementConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetRuntimeManagementConfigError {
+    fn code(&self) -> Option<&str> {
+        GetRuntimeManagementConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetRuntimeManagementConfigError {
+    /// Creates a new `GetRuntimeManagementConfigError`.
+    pub fn new(kind: GetRuntimeManagementConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetRuntimeManagementConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetRuntimeManagementConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetRuntimeManagementConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetRuntimeManagementConfigErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRuntimeManagementConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRuntimeManagementConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRuntimeManagementConfigErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRuntimeManagementConfigErrorKind::ServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRuntimeManagementConfigErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRuntimeManagementConfigErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetRuntimeManagementConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            GetRuntimeManagementConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetRuntimeManagementConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            GetRuntimeManagementConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetRuntimeManagementConfigErrorKind::Unhandled(_inner) => Some(_inner),
+        }
     }
 }
 

@@ -71,9 +71,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://fips.eks.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dns_suffix());
+                            out.push_str(".amazonaws.com");
                             out
                         })
                         .build());
@@ -85,9 +83,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://eks.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dns_suffix());
+                            out.push_str(".amazonaws.com");
                             out
                         })
                         .build());

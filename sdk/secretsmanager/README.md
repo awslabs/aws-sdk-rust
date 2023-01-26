@@ -11,6 +11,8 @@ __API Version__
 
 This version of the Secrets Manager API Reference documents the Secrets Manager API version 2017-10-17.
 
+For a list of endpoints, see [Amazon Web Services Secrets Manager endpoints](https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints).
+
 __Support and Feedback for Amazon Web Services Secrets Manager__
 
 We welcome your feedback. Send your comments to [awssecretsmanager-feedback@amazon.com](mailto:awssecretsmanager-feedback@amazon.com), or post your feedback and questions in the [Amazon Web Services Secrets Manager Discussion Forum](http://forums.aws.amazon.com/forum.jspa?forumID=296). For more information about the Amazon Web Services Discussion Forums, see [Forums Help](http://forums.aws.amazon.com/help.jspa).
@@ -31,7 +33,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.53.0"
-aws-sdk-secretsmanager = "0.23.0"
+aws-sdk-secretsmanager = "0.24.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

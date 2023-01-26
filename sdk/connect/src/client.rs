@@ -1765,10 +1765,12 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     ///   - [`chat_duration_in_minutes(i32)`](crate::client::fluent_builders::StartChatContact::chat_duration_in_minutes) / [`set_chat_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::StartChatContact::set_chat_duration_in_minutes): <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     ///   - [`supported_messaging_content_types(Vec<String>)`](crate::client::fluent_builders::StartChatContact::supported_messaging_content_types) / [`set_supported_messaging_content_types(Option<Vec<String>>)`](crate::client::fluent_builders::StartChatContact::set_supported_messaging_content_types): <p>The supported chat message content types. Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json]</code>.</p>
+    ///   - [`persistent_chat(PersistentChat)`](crate::client::fluent_builders::StartChatContact::persistent_chat) / [`set_persistent_chat(Option<PersistentChat>)`](crate::client::fluent_builders::StartChatContact::set_persistent_chat): <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     /// - On success, responds with [`StartChatContactOutput`](crate::output::StartChatContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::StartChatContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance. </p>
     ///   - [`participant_id(Option<String>)`](crate::output::StartChatContactOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     ///   - [`participant_token(Option<String>)`](crate::output::StartChatContactOutput::participant_token): <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
+    ///   - [`continued_from_contact_id(Option<String>)`](crate::output::StartChatContactOutput::continued_from_contact_id): <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     /// - On failure, responds with [`SdkError<StartChatContactError>`](crate::error::StartChatContactError)
     pub fn start_chat_contact(&self) -> fluent_builders::StartChatContact {
         fluent_builders::StartChatContact::new(self.handle.clone())
@@ -16165,6 +16167,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_supported_messaging_content_types(input);
+            self
+        }
+        /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn persistent_chat(mut self, input: crate::model::PersistentChat) -> Self {
+            self.inner = self.inner.persistent_chat(input);
+            self
+        }
+        /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn set_persistent_chat(
+            mut self,
+            input: std::option::Option<crate::model::PersistentChat>,
+        ) -> Self {
+            self.inner = self.inner.set_persistent_chat(input);
             self
         }
     }

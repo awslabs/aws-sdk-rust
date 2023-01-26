@@ -12,12 +12,12 @@ pub mod delete_resource_permission_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Delete or restore the permissions on the target database.</p>
         pub fn action_type(mut self, input: crate::model::PermissionActionType) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Delete or restore the permissions on the target database.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::PermissionActionType>,
@@ -25,12 +25,12 @@ pub mod delete_resource_permission_input {
             self.action_type = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
         pub fn source_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
         pub fn set_source_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38,12 +38,12 @@ pub mod delete_resource_permission_input {
             self.source_resource_arn = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -201,12 +201,12 @@ pub mod deregister_application_input {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -364,14 +364,15 @@ pub mod get_application_input {
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
+        pub(crate) app_registry_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -379,17 +380,30 @@ pub mod get_application_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.application_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
+        pub fn app_registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_registry_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
+        pub fn set_app_registry_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_registry_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetApplicationInput`](crate::input::GetApplicationInput).
@@ -400,6 +414,7 @@ pub mod get_application_input {
             Ok(crate::input::GetApplicationInput {
                 application_id: self.application_id,
                 application_arn: self.application_arn,
+                app_registry_arn: self.app_registry_arn,
             })
         }
     }
@@ -541,12 +556,12 @@ pub mod get_component_input {
         pub(crate) component_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,12 +569,12 @@ pub mod get_component_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.component_id = input;
             self
@@ -715,12 +730,12 @@ pub mod get_database_input {
         pub(crate) database_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -728,32 +743,32 @@ pub mod get_database_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.component_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The ID of the database.</p>
         pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the database.</p>
         pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the database.</p>
         pub fn database_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the database.</p>
         pub fn set_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database_arn = input;
             self
@@ -908,12 +923,12 @@ pub mod get_operation_input {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the operation.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1079,12 +1094,12 @@ pub mod get_resource_permission_input {
             self.action_type = input;
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1242,22 +1257,22 @@ pub mod list_applications_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1414,12 +1429,12 @@ pub mod list_components_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1427,22 +1442,24 @@ pub mod list_components_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+        /// <p>If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+        /// <p>If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1599,12 +1616,12 @@ pub mod list_databases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,32 +1629,32 @@ pub mod list_databases_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the component.</p>
         pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.component_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The token for the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token for the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1783,6 +1800,211 @@ impl ListDatabasesInput {
     }
 }
 
+/// See [`ListOperationsInput`](crate::input::ListOperationsInput).
+pub mod list_operations_input {
+
+    /// A builder for [`ListOperationsInput`](crate::input::ListOperationsInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// <p>The ID of the application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the application.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters of an operation.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>The filters of an operation.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOperationsInput`](crate::input::ListOperationsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListOperationsInput, aws_smithy_http::operation::error::BuildError>
+        {
+            Ok(crate::input::ListOperationsInput {
+                application_id: self.application_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+            })
+        }
+    }
+}
+impl ListOperationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListOperations`](crate::operation::ListOperations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListOperations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListOperationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-operations").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListOperationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListOperations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListOperations",
+            "ssmsap",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
+    pub fn builder() -> crate::input::list_operations_input::Builder {
+        crate::input::list_operations_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -1792,12 +2014,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2157,12 +2379,12 @@ pub mod register_application_input {
             std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2170,12 +2392,12 @@ pub mod register_application_input {
             self.application_id = input;
             self
         }
-        /// <p></p>
+        /// <p>The type of the application.</p>
         pub fn application_type(mut self, input: crate::model::ApplicationType) -> Self {
             self.application_type = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The type of the application.</p>
         pub fn set_application_type(
             mut self,
             input: std::option::Option<crate::model::ApplicationType>,
@@ -2187,14 +2409,14 @@ pub mod register_application_input {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p></p>
+        /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
         pub fn instances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2202,12 +2424,12 @@ pub mod register_application_input {
             self.instances = input;
             self
         }
-        /// <p></p>
+        /// <p>The SAP instance number of the application.</p>
         pub fn sap_instance_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.sap_instance_number = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The SAP instance number of the application.</p>
         pub fn set_sap_instance_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2215,12 +2437,12 @@ pub mod register_application_input {
             self.sap_instance_number = input;
             self
         }
-        /// <p></p>
+        /// <p>The System ID of the application.</p>
         pub fn sid(mut self, input: impl Into<std::string::String>) -> Self {
             self.sid = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The System ID of the application.</p>
         pub fn set_sid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sid = input;
             self
@@ -2229,7 +2451,7 @@ pub mod register_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p></p>
+        /// <p>The tags to be attached to the SAP application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2240,7 +2462,7 @@ pub mod register_application_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p></p>
+        /// <p>The tags to be attached to the SAP application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2254,14 +2476,14 @@ pub mod register_application_input {
         ///
         /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
         ///
-        /// <p></p>
+        /// <p>The credentials of the SAP application.</p>
         pub fn credentials(mut self, input: crate::model::ApplicationCredential) -> Self {
             let mut v = self.credentials.unwrap_or_default();
             v.push(input);
             self.credentials = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The credentials of the SAP application.</p>
         pub fn set_credentials(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
@@ -2427,12 +2649,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2441,7 +2663,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p></p>
+        /// <p>The tags on a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2452,7 +2674,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p></p>
+        /// <p>The tags on a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2631,12 +2853,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2836,12 +3058,12 @@ pub mod update_application_settings_input {
             std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2853,7 +3075,7 @@ pub mod update_application_settings_input {
         ///
         /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
         ///
-        /// <p></p>
+        /// <p>The credentials to be added or updated.</p>
         pub fn credentials_to_add_or_update(
             mut self,
             input: crate::model::ApplicationCredential,
@@ -2863,7 +3085,7 @@ pub mod update_application_settings_input {
             self.credentials_to_add_or_update = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The credentials to be added or updated.</p>
         pub fn set_credentials_to_add_or_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
@@ -2875,14 +3097,14 @@ pub mod update_application_settings_input {
         ///
         /// To override the contents of this collection use [`set_credentials_to_remove`](Self::set_credentials_to_remove).
         ///
-        /// <p></p>
+        /// <p>The credentials to be removed.</p>
         pub fn credentials_to_remove(mut self, input: crate::model::ApplicationCredential) -> Self {
             let mut v = self.credentials_to_remove.unwrap_or_default();
             v.push(input);
             self.credentials_to_remove = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The credentials to be removed.</p>
         pub fn set_credentials_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
@@ -3038,30 +3260,30 @@ impl UpdateApplicationSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The credentials to be added or updated.</p>
     #[doc(hidden)]
     pub credentials_to_add_or_update:
         std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
-    /// <p></p>
+    /// <p>The credentials to be removed.</p>
     #[doc(hidden)]
     pub credentials_to_remove:
         std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
 }
 impl UpdateApplicationSettingsInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The credentials to be added or updated.</p>
     pub fn credentials_to_add_or_update(
         &self,
     ) -> std::option::Option<&[crate::model::ApplicationCredential]> {
         self.credentials_to_add_or_update.as_deref()
     }
-    /// <p></p>
+    /// <p>The credentials to be removed.</p>
     pub fn credentials_to_remove(
         &self,
     ) -> std::option::Option<&[crate::model::ApplicationCredential]> {
@@ -3073,7 +3295,7 @@ impl UpdateApplicationSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Adds/updates or removes credentials for applications registered with AWS Systems Manager for SAP.</p>
@@ -3081,7 +3303,7 @@ pub struct UntagResourceInput {
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3095,20 +3317,20 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The tags on a resource.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p></p>
+    /// <p>The tags on a resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3121,58 +3343,58 @@ impl TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The type of the application.</p>
     #[doc(hidden)]
     pub application_type: std::option::Option<crate::model::ApplicationType>,
-    /// <p></p>
+    /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p></p>
+    /// <p>The SAP instance number of the application.</p>
     #[doc(hidden)]
     pub sap_instance_number: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The System ID of the application.</p>
     #[doc(hidden)]
     pub sid: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The tags to be attached to the SAP application.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p></p>
+    /// <p>The credentials of the SAP application.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<std::vec::Vec<crate::model::ApplicationCredential>>,
 }
 impl RegisterApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The type of the application.</p>
     pub fn application_type(&self) -> std::option::Option<&crate::model::ApplicationType> {
         self.application_type.as_ref()
     }
-    /// <p></p>
+    /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
     pub fn instances(&self) -> std::option::Option<&[std::string::String]> {
         self.instances.as_deref()
     }
-    /// <p></p>
+    /// <p>The SAP instance number of the application.</p>
     pub fn sap_instance_number(&self) -> std::option::Option<&str> {
         self.sap_instance_number.as_deref()
     }
-    /// <p></p>
+    /// <p>The System ID of the application.</p>
     pub fn sid(&self) -> std::option::Option<&str> {
         self.sid.as_deref()
     }
-    /// <p></p>
+    /// <p>The tags to be attached to the SAP application.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p></p>
+    /// <p>The credentials of the SAP application.</p>
     pub fn credentials(&self) -> std::option::Option<&[crate::model::ApplicationCredential]> {
         self.credentials.as_deref()
     }
@@ -3211,12 +3433,12 @@ impl PutResourcePermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3225,34 +3447,70 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatabasesInput {
-    /// <p></p>
+pub struct ListOperationsInput {
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     #[doc(hidden)]
-    pub component_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The filters of an operation.</p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListOperationsInput {
+    /// <p>The ID of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The filters of an operation.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListDatabasesInput {
+    /// <p>The ID of the application.</p>
+    #[doc(hidden)]
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the component.</p>
+    #[doc(hidden)]
+    pub component_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatabasesInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The ID of the component.</p>
     pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The token for the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3262,26 +3520,28 @@ impl ListDatabasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+    /// <p>If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComponentsInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+    /// <p>If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3291,19 +3551,19 @@ impl ListComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsInput {
-    /// <p></p>
+    /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationsInput {
-    /// <p></p>
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3316,7 +3576,7 @@ pub struct GetResourcePermissionInput {
     /// <p></p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::PermissionActionType>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
@@ -3325,7 +3585,7 @@ impl GetResourcePermissionInput {
     pub fn action_type(&self) -> std::option::Option<&crate::model::PermissionActionType> {
         self.action_type.as_ref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3335,12 +3595,12 @@ impl GetResourcePermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOperationInput {
-    /// <p></p>
+    /// <p>The ID of the operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl GetOperationInput {
-    /// <p></p>
+    /// <p>The ID of the operation.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -3350,33 +3610,33 @@ impl GetOperationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatabaseInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The ID of the database.</p>
     #[doc(hidden)]
     pub database_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
     pub database_arn: std::option::Option<std::string::String>,
 }
 impl GetDatabaseInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The ID of the component.</p>
     pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The ID of the database.</p>
     pub fn database_id(&self) -> std::option::Option<&str> {
         self.database_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn(&self) -> std::option::Option<&str> {
         self.database_arn.as_deref()
     }
@@ -3386,19 +3646,19 @@ impl GetDatabaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The ID of the component.</p>
     pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
@@ -3408,21 +3668,28 @@ impl GetComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the application. </p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
+    #[doc(hidden)]
+    pub app_registry_arn: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the application. </p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
+    pub fn app_registry_arn(&self) -> std::option::Option<&str> {
+        self.app_registry_arn.as_deref()
     }
 }
 
@@ -3430,12 +3697,12 @@ impl GetApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeregisterApplicationInput {
-    /// <p></p>
+    /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -3445,26 +3712,26 @@ impl DeregisterApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePermissionInput {
-    /// <p></p>
+    /// <p>Delete or restore the permissions on the target database.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::PermissionActionType>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     #[doc(hidden)]
     pub source_resource_arn: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePermissionInput {
-    /// <p></p>
+    /// <p>Delete or restore the permissions on the target database.</p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::PermissionActionType> {
         self.action_type.as_ref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub fn source_resource_arn(&self) -> std::option::Option<&str> {
         self.source_resource_arn.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }

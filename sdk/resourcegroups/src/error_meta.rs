@@ -118,6 +118,45 @@ impl From<crate::error::DeleteGroupError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetAccountSettingsError> for Error {
+    fn from(err: crate::error::GetAccountSettingsError) -> Self {
+        match err.kind {
+            crate::error::GetAccountSettingsErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::GetAccountSettingsErrorKind::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::GetAccountSettingsErrorKind::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::GetAccountSettingsErrorKind::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::error::GetAccountSettingsErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -601,6 +640,46 @@ impl From<crate::error::UntagError> for Error {
                 Error::TooManyRequestsException(inner)
             }
             crate::error::UntagErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateAccountSettingsError> for Error {
+    fn from(err: crate::error::UpdateAccountSettingsError) -> Self {
+        match err.kind {
+            crate::error::UpdateAccountSettingsErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::UpdateAccountSettingsErrorKind::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::UpdateAccountSettingsErrorKind::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::UpdateAccountSettingsErrorKind::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::error::UpdateAccountSettingsErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::UpdateAccountSettingsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

@@ -581,6 +581,162 @@ impl OnSuccess {
     }
 }
 
+/// <p>The ARN of the runtime and any errors that occured.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct RuntimeVersionConfig {
+    /// <p>The ARN of the runtime version you want the function to use.</p>
+    #[doc(hidden)]
+    pub runtime_version_arn: std::option::Option<std::string::String>,
+    /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
+    #[doc(hidden)]
+    pub error: std::option::Option<crate::model::RuntimeVersionError>,
+}
+impl RuntimeVersionConfig {
+    /// <p>The ARN of the runtime version you want the function to use.</p>
+    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
+        self.runtime_version_arn.as_deref()
+    }
+    /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::RuntimeVersionError> {
+        self.error.as_ref()
+    }
+}
+/// See [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
+pub mod runtime_version_config {
+
+    /// A builder for [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) runtime_version_arn: std::option::Option<std::string::String>,
+        pub(crate) error: std::option::Option<crate::model::RuntimeVersionError>,
+    }
+    impl Builder {
+        /// <p>The ARN of the runtime version you want the function to use.</p>
+        pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the runtime version you want the function to use.</p>
+        pub fn set_runtime_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_version_arn = input;
+            self
+        }
+        /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
+        pub fn error(mut self, input: crate::model::RuntimeVersionError) -> Self {
+            self.error = Some(input);
+            self
+        }
+        /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
+        pub fn set_error(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionError>,
+        ) -> Self {
+            self.error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
+        pub fn build(self) -> crate::model::RuntimeVersionConfig {
+            crate::model::RuntimeVersionConfig {
+                runtime_version_arn: self.runtime_version_arn,
+                error: self.error,
+            }
+        }
+    }
+}
+impl RuntimeVersionConfig {
+    /// Creates a new builder-style object to manufacture [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
+    pub fn builder() -> crate::model::runtime_version_config::Builder {
+        crate::model::runtime_version_config::Builder::default()
+    }
+}
+
+/// <p>Any error returned when the runtime version information for the function could not be retrieved.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuntimeVersionError {
+    /// <p>The error code.</p>
+    #[doc(hidden)]
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl RuntimeVersionError {
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for RuntimeVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuntimeVersionError");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("message", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`RuntimeVersionError`](crate::model::RuntimeVersionError).
+pub mod runtime_version_error {
+
+    /// A builder for [`RuntimeVersionError`](crate::model::RuntimeVersionError).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>The error code.</p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimeVersionError`](crate::model::RuntimeVersionError).
+        pub fn build(self) -> crate::model::RuntimeVersionError {
+            crate::model::RuntimeVersionError {
+                error_code: self.error_code,
+                message: self.message,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error_code", &self.error_code);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
+}
+impl RuntimeVersionError {
+    /// Creates a new builder-style object to manufacture [`RuntimeVersionError`](crate::model::RuntimeVersionError).
+    pub fn builder() -> crate::model::runtime_version_error::Builder {
+        crate::model::runtime_version_error::Builder::default()
+    }
+}
+
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2875,7 +3031,8 @@ impl AsRef<str> for Runtime {
     }
 }
 
-/// <p>The function's SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+/// <p>The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+/// <p>SnapStart is supported with the <code>java11</code> runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnapStart {
@@ -3137,6 +3294,54 @@ impl VpcConfig {
     /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
     pub fn builder() -> crate::model::vpc_config::Builder {
         crate::model::vpc_config::Builder::default()
+    }
+}
+
+/// <p>(Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScalingConfig {
+    /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
+    #[doc(hidden)]
+    pub maximum_concurrency: std::option::Option<i32>,
+}
+impl ScalingConfig {
+    /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
+    pub fn maximum_concurrency(&self) -> std::option::Option<i32> {
+        self.maximum_concurrency
+    }
+}
+/// See [`ScalingConfig`](crate::model::ScalingConfig).
+pub mod scaling_config {
+
+    /// A builder for [`ScalingConfig`](crate::model::ScalingConfig).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maximum_concurrency: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
+        pub fn maximum_concurrency(mut self, input: i32) -> Self {
+            self.maximum_concurrency = Some(input);
+            self
+        }
+        /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
+        pub fn set_maximum_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_concurrency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScalingConfig`](crate::model::ScalingConfig).
+        pub fn build(self) -> crate::model::ScalingConfig {
+            crate::model::ScalingConfig {
+                maximum_concurrency: self.maximum_concurrency,
+            }
+        }
+    }
+}
+impl ScalingConfig {
+    /// Creates a new builder-style object to manufacture [`ScalingConfig`](crate::model::ScalingConfig).
+    pub fn builder() -> crate::model::scaling_config::Builder {
+        crate::model::scaling_config::Builder::default()
     }
 }
 
@@ -3497,15 +3702,15 @@ impl AsRef<str> for EndPointType {
 pub struct SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
-    /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-    /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceAccessType>,
@@ -3516,15 +3721,15 @@ pub struct SourceAccessConfiguration {
 impl SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
-    /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-    /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::SourceAccessType> {
         self.r#type.as_ref()
@@ -3546,15 +3751,15 @@ pub mod source_access_configuration {
     impl Builder {
         /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
         /// <ul>
-        /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-        /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::SourceAccessType) -> Self {
             self.r#type = Some(input);
@@ -3562,15 +3767,15 @@ pub mod source_access_configuration {
         }
         /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
         /// <ul>
-        /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-        /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -4373,6 +4578,101 @@ impl AliasRoutingConfiguration {
     }
 }
 
+/// When writing a match expression against `UpdateRuntimeOn`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updateruntimeon = unimplemented!();
+/// match updateruntimeon {
+///     UpdateRuntimeOn::Auto => { /* ... */ },
+///     UpdateRuntimeOn::FunctionUpdate => { /* ... */ },
+///     UpdateRuntimeOn::Manual => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updateruntimeon` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateRuntimeOn::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateRuntimeOn::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateRuntimeOn::NewFeature` is defined.
+/// Specifically, when `updateruntimeon` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateRuntimeOn::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateRuntimeOn {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    Manual,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for UpdateRuntimeOn {
+    fn from(s: &str) -> Self {
+        match s {
+            "Auto" => UpdateRuntimeOn::Auto,
+            "FunctionUpdate" => UpdateRuntimeOn::FunctionUpdate,
+            "Manual" => UpdateRuntimeOn::Manual,
+            other => UpdateRuntimeOn::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for UpdateRuntimeOn {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateRuntimeOn::from(s))
+    }
+}
+impl UpdateRuntimeOn {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateRuntimeOn::Auto => "Auto",
+            UpdateRuntimeOn::FunctionUpdate => "FunctionUpdate",
+            UpdateRuntimeOn::Manual => "Manual",
+            UpdateRuntimeOn::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Auto", "FunctionUpdate", "Manual"]
+    }
+}
+impl AsRef<str> for UpdateRuntimeOn {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// When writing a match expression against `ProvisionedConcurrencyStatusEnum`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
 /// feature that is supported by the service but has not been represented as an enum
@@ -4835,9 +5135,12 @@ pub struct FunctionConfiguration {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl FunctionConfiguration {
     /// <p>The name of the function.</p>
@@ -4974,9 +5277,15 @@ impl FunctionConfiguration {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -5021,6 +5330,7 @@ pub mod function_configuration {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -5431,17 +5741,30 @@ pub mod function_configuration {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -5481,6 +5804,7 @@ pub mod function_configuration {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -6436,6 +6760,9 @@ pub struct EventSourceMappingConfiguration {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
@@ -6552,6 +6879,10 @@ impl EventSourceMappingConfiguration {
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
+    }
 }
 /// See [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
 pub mod event_source_mapping_configuration {
@@ -6589,6 +6920,7 @@ pub mod event_source_mapping_configuration {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -6942,6 +7274,19 @@ pub mod event_source_mapping_configuration {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
         pub fn build(self) -> crate::model::EventSourceMappingConfiguration {
             crate::model::EventSourceMappingConfiguration {
@@ -6971,6 +7316,7 @@ pub mod event_source_mapping_configuration {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             }
         }
     }
@@ -6982,7 +7328,7 @@ impl EventSourceMappingConfiguration {
     }
 }
 
-/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasConfiguration {

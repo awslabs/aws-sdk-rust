@@ -252,12 +252,12 @@ pub mod create_component_input {
             self.semantic_version = input;
             self
         }
-        /// <p>The description of the component. Describes the contents of the component.</p>
+        /// <p>Describes the contents of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the component. Describes the contents of the component.</p>
+        /// <p>Describes the contents of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -275,12 +275,12 @@ pub mod create_component_input {
             self.change_description = input;
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -326,12 +326,12 @@ pub mod create_component_input {
             self.uri = input;
             self
         }
-        /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+        /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+        /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -340,7 +340,7 @@ pub mod create_component_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -351,7 +351,7 @@ pub mod create_component_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags of the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -629,14 +629,14 @@ pub mod create_container_recipe_input {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input);
             self.components = Some(v);
             self
         }
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -1911,14 +1911,14 @@ pub mod create_image_recipe_input {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components included in the image recipe.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input);
             self.components = Some(v);
             self
         }
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components included in the image recipe.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -6558,12 +6558,12 @@ pub mod list_components_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+        /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+        /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.owner = input;
             self
@@ -6603,12 +6603,12 @@ pub mod list_components_input {
             self.filters = input;
             self
         }
-        /// <p>Returns the list of component build versions for the specified name.</p>
+        /// <p>Returns the list of components for the specified name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
             self.by_name = Some(input);
             self
         }
-        /// <p>Returns the list of component build versions for the specified name.</p>
+        /// <p>Returns the list of components for the specified name.</p>
         pub fn set_by_name(mut self, input: std::option::Option<bool>) -> Self {
             self.by_name = input;
             self
@@ -11819,7 +11819,7 @@ impl ListContainerRecipesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsInput {
-    /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
@@ -11833,7 +11833,7 @@ pub struct ListComponentsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>Returns the list of component build versions for the specified name.</p>
+    /// <p>Returns the list of components for the specified name.</p>
     #[doc(hidden)]
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
@@ -11844,7 +11844,7 @@ pub struct ListComponentsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
-    /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
         self.owner.as_ref()
     }
@@ -11860,7 +11860,7 @@ impl ListComponentsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>Returns the list of component build versions for the specified name.</p>
+    /// <p>Returns the list of components for the specified name.</p>
     pub fn by_name(&self) -> bool {
         self.by_name
     }
@@ -12543,7 +12543,7 @@ pub struct CreateImageRecipeInput {
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>The components of the image recipe.</p>
+    /// <p>The components included in the image recipe.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
@@ -12596,7 +12596,7 @@ impl CreateImageRecipeInput {
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>The components of the image recipe.</p>
+    /// <p>The components included in the image recipe.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
@@ -12879,7 +12879,7 @@ pub struct CreateContainerRecipeInput {
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>Components for build and test that are included in the container recipe.</p>
+    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -12949,7 +12949,7 @@ impl CreateContainerRecipeInput {
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>Components for build and test that are included in the container recipe.</p>
+    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
@@ -13031,13 +13031,13 @@ pub struct CreateComponentInput {
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>The description of the component. Describes the contents of the component.</p>
+    /// <p>Describes the contents of the component.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
@@ -13050,10 +13050,10 @@ pub struct CreateComponentInput {
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
-    /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    /// <p>The ID of the KMS key that is used to encrypt this component.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The tags of the component.</p>
+    /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13085,7 +13085,7 @@ impl CreateComponentInput {
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>The description of the component. Describes the contents of the component.</p>
+    /// <p>Describes the contents of the component.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -13093,7 +13093,7 @@ impl CreateComponentInput {
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
@@ -13110,11 +13110,11 @@ impl CreateComponentInput {
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
-    /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    /// <p>The ID of the KMS key that is used to encrypt this component.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The tags of the component.</p>
+    /// <p>The tags that apply to the component.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

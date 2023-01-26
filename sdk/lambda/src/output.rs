@@ -413,9 +413,12 @@ pub struct UpdateFunctionConfigurationOutput {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl UpdateFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
@@ -552,9 +555,15 @@ impl UpdateFunctionConfigurationOutput {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
@@ -599,6 +608,7 @@ pub mod update_function_configuration_output {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -1009,17 +1019,30 @@ pub mod update_function_configuration_output {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
@@ -1059,6 +1082,7 @@ pub mod update_function_configuration_output {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -1174,9 +1198,12 @@ pub struct UpdateFunctionCodeOutput {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl UpdateFunctionCodeOutput {
     /// <p>The name of the function.</p>
@@ -1313,9 +1340,15 @@ impl UpdateFunctionCodeOutput {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
@@ -1360,6 +1393,7 @@ pub mod update_function_code_output {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -1770,17 +1804,30 @@ pub mod update_function_code_output {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
@@ -1820,6 +1867,7 @@ pub mod update_function_code_output {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -1918,6 +1966,9 @@ pub struct UpdateEventSourceMappingOutput {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -2034,6 +2085,10 @@ impl UpdateEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
+    }
 }
 /// See [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
 pub mod update_event_source_mapping_output {
@@ -2071,6 +2126,7 @@ pub mod update_event_source_mapping_output {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -2424,6 +2480,19 @@ pub mod update_event_source_mapping_output {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::UpdateEventSourceMappingOutput {
             crate::output::UpdateEventSourceMappingOutput {
@@ -2453,6 +2522,7 @@ pub mod update_event_source_mapping_output {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             }
         }
     }
@@ -2515,7 +2585,7 @@ impl UpdateCodeSigningConfigOutput {
     }
 }
 
-/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasOutput {
@@ -2757,6 +2827,98 @@ impl RemoveLayerVersionPermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput).
     pub fn builder() -> crate::output::remove_layer_version_permission_output::Builder {
         crate::output::remove_layer_version_permission_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutRuntimeManagementConfigOutput {
+    /// <p>The runtime update mode.</p>
+    #[doc(hidden)]
+    pub update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+    /// <p>The ARN of the function</p>
+    #[doc(hidden)]
+    pub function_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    #[doc(hidden)]
+    pub runtime_version_arn: std::option::Option<std::string::String>,
+}
+impl PutRuntimeManagementConfigOutput {
+    /// <p>The runtime update mode.</p>
+    pub fn update_runtime_on(&self) -> std::option::Option<&crate::model::UpdateRuntimeOn> {
+        self.update_runtime_on.as_ref()
+    }
+    /// <p>The ARN of the function</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
+        self.runtime_version_arn.as_deref()
+    }
+}
+/// See [`PutRuntimeManagementConfigOutput`](crate::output::PutRuntimeManagementConfigOutput).
+pub mod put_runtime_management_config_output {
+
+    /// A builder for [`PutRuntimeManagementConfigOutput`](crate::output::PutRuntimeManagementConfigOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+        pub(crate) function_arn: std::option::Option<std::string::String>,
+        pub(crate) runtime_version_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The runtime update mode.</p>
+        pub fn update_runtime_on(mut self, input: crate::model::UpdateRuntimeOn) -> Self {
+            self.update_runtime_on = Some(input);
+            self
+        }
+        /// <p>The runtime update mode.</p>
+        pub fn set_update_runtime_on(
+            mut self,
+            input: std::option::Option<crate::model::UpdateRuntimeOn>,
+        ) -> Self {
+            self.update_runtime_on = input;
+            self
+        }
+        /// <p>The ARN of the function</p>
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the function</p>
+        pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_arn = input;
+            self
+        }
+        /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+        pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+        pub fn set_runtime_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_version_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutRuntimeManagementConfigOutput`](crate::output::PutRuntimeManagementConfigOutput).
+        pub fn build(self) -> crate::output::PutRuntimeManagementConfigOutput {
+            crate::output::PutRuntimeManagementConfigOutput {
+                update_runtime_on: self.update_runtime_on,
+                function_arn: self.function_arn,
+                runtime_version_arn: self.runtime_version_arn,
+            }
+        }
+    }
+}
+impl PutRuntimeManagementConfigOutput {
+    /// Creates a new builder-style object to manufacture [`PutRuntimeManagementConfigOutput`](crate::output::PutRuntimeManagementConfigOutput).
+    pub fn builder() -> crate::output::put_runtime_management_config_output::Builder {
+        crate::output::put_runtime_management_config_output::Builder::default()
     }
 }
 
@@ -3338,9 +3500,12 @@ pub struct PublishVersionOutput {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl PublishVersionOutput {
     /// <p>The name of the function.</p>
@@ -3477,9 +3642,15 @@ impl PublishVersionOutput {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`PublishVersionOutput`](crate::output::PublishVersionOutput).
@@ -3524,6 +3695,7 @@ pub mod publish_version_output {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -3934,17 +4106,30 @@ pub mod publish_version_output {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`PublishVersionOutput`](crate::output::PublishVersionOutput).
@@ -3984,6 +4169,7 @@ pub mod publish_version_output {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -5357,6 +5543,79 @@ impl InvokeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetRuntimeManagementConfigOutput {
+    /// <p>The current runtime update mode of the function.</p>
+    #[doc(hidden)]
+    pub update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+    /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    #[doc(hidden)]
+    pub runtime_version_arn: std::option::Option<std::string::String>,
+}
+impl GetRuntimeManagementConfigOutput {
+    /// <p>The current runtime update mode of the function.</p>
+    pub fn update_runtime_on(&self) -> std::option::Option<&crate::model::UpdateRuntimeOn> {
+        self.update_runtime_on.as_ref()
+    }
+    /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
+        self.runtime_version_arn.as_deref()
+    }
+}
+/// See [`GetRuntimeManagementConfigOutput`](crate::output::GetRuntimeManagementConfigOutput).
+pub mod get_runtime_management_config_output {
+
+    /// A builder for [`GetRuntimeManagementConfigOutput`](crate::output::GetRuntimeManagementConfigOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+        pub(crate) runtime_version_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The current runtime update mode of the function.</p>
+        pub fn update_runtime_on(mut self, input: crate::model::UpdateRuntimeOn) -> Self {
+            self.update_runtime_on = Some(input);
+            self
+        }
+        /// <p>The current runtime update mode of the function.</p>
+        pub fn set_update_runtime_on(
+            mut self,
+            input: std::option::Option<crate::model::UpdateRuntimeOn>,
+        ) -> Self {
+            self.update_runtime_on = input;
+            self
+        }
+        /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+        pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+        pub fn set_runtime_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_version_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRuntimeManagementConfigOutput`](crate::output::GetRuntimeManagementConfigOutput).
+        pub fn build(self) -> crate::output::GetRuntimeManagementConfigOutput {
+            crate::output::GetRuntimeManagementConfigOutput {
+                update_runtime_on: self.update_runtime_on,
+                runtime_version_arn: self.runtime_version_arn,
+            }
+        }
+    }
+}
+impl GetRuntimeManagementConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetRuntimeManagementConfigOutput`](crate::output::GetRuntimeManagementConfigOutput).
+    pub fn builder() -> crate::output::get_runtime_management_config_output::Builder {
+        crate::output::get_runtime_management_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfigOutput {
     /// <p>The amount of provisioned concurrency requested.</p>
     #[doc(hidden)]
@@ -6516,9 +6775,12 @@ pub struct GetFunctionConfigurationOutput {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl GetFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
@@ -6655,9 +6917,15 @@ impl GetFunctionConfigurationOutput {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
@@ -6702,6 +6970,7 @@ pub mod get_function_configuration_output {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -7112,17 +7381,30 @@ pub mod get_function_configuration_output {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
@@ -7162,6 +7444,7 @@ pub mod get_function_configuration_output {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -7547,6 +7830,9 @@ pub struct GetEventSourceMappingOutput {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl GetEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -7663,6 +7949,10 @@ impl GetEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
+    }
 }
 /// See [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
 pub mod get_event_source_mapping_output {
@@ -7700,6 +7990,7 @@ pub mod get_event_source_mapping_output {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -8053,6 +8344,19 @@ pub mod get_event_source_mapping_output {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
         pub fn build(self) -> crate::output::GetEventSourceMappingOutput {
             crate::output::GetEventSourceMappingOutput {
@@ -8082,6 +8386,7 @@ pub mod get_event_source_mapping_output {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             }
         }
     }
@@ -8144,7 +8449,7 @@ impl GetCodeSigningConfigOutput {
     }
 }
 
-/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAliasOutput {
@@ -8621,6 +8926,9 @@ pub struct DeleteEventSourceMappingOutput {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl DeleteEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -8737,6 +9045,10 @@ impl DeleteEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
+    }
 }
 /// See [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
 pub mod delete_event_source_mapping_output {
@@ -8774,6 +9086,7 @@ pub mod delete_event_source_mapping_output {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -9127,6 +9440,19 @@ pub mod delete_event_source_mapping_output {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
         pub fn build(self) -> crate::output::DeleteEventSourceMappingOutput {
             crate::output::DeleteEventSourceMappingOutput {
@@ -9156,6 +9482,7 @@ pub mod delete_event_source_mapping_output {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             }
         }
     }
@@ -9449,9 +9776,12 @@ pub struct CreateFunctionOutput {
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     #[doc(hidden)]
     pub snap_start: std::option::Option<crate::model::SnapStartResponse>,
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    #[doc(hidden)]
+    pub runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
 }
 impl CreateFunctionOutput {
     /// <p>The name of the function.</p>
@@ -9588,9 +9918,15 @@ impl CreateFunctionOutput {
     pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn runtime_version_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+        self.runtime_version_config.as_ref()
     }
 }
 /// See [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
@@ -9635,6 +9971,7 @@ pub mod create_function_output {
         pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
         pub(crate) snap_start: std::option::Option<crate::model::SnapStartResponse>,
+        pub(crate) runtime_version_config: std::option::Option<crate::model::RuntimeVersionConfig>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -10045,17 +10382,30 @@ pub mod create_function_output {
             self.ephemeral_storage = input;
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
             self.snap_start = Some(input);
             self
         }
-        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+        /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn set_snap_start(
             mut self,
             input: std::option::Option<crate::model::SnapStartResponse>,
         ) -> Self {
             self.snap_start = input;
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
+            self.runtime_version_config = Some(input);
+            self
+        }
+        /// <p>The ARN of the runtime and any errors that occured.</p>
+        pub fn set_runtime_version_config(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeVersionConfig>,
+        ) -> Self {
+            self.runtime_version_config = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
@@ -10095,6 +10445,7 @@ pub mod create_function_output {
                 architectures: self.architectures,
                 ephemeral_storage: self.ephemeral_storage,
                 snap_start: self.snap_start,
+                runtime_version_config: self.runtime_version_config,
             }
         }
     }
@@ -10193,6 +10544,9 @@ pub struct CreateEventSourceMappingOutput {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl CreateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -10309,6 +10663,10 @@ impl CreateEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
+    }
 }
 /// See [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
 pub mod create_event_source_mapping_output {
@@ -10346,6 +10704,7 @@ pub mod create_event_source_mapping_output {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -10699,6 +11058,19 @@ pub mod create_event_source_mapping_output {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::CreateEventSourceMappingOutput {
             crate::output::CreateEventSourceMappingOutput {
@@ -10728,6 +11100,7 @@ pub mod create_event_source_mapping_output {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             }
         }
     }
@@ -10790,7 +11163,7 @@ impl CreateCodeSigningConfigOutput {
     }
 }
 
-/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+/// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasOutput {

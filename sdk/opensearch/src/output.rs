@@ -285,18 +285,27 @@ pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     #[doc(hidden)]
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
-    /// <p>Results of a dry run performed in an update domain request.</p>
+    /// <p>Results of the dry run performed in the update domain request.</p>
     #[doc(hidden)]
     pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
+    /// <p>The status of the dry run being performed on the domain, if any.</p>
+    #[doc(hidden)]
+    pub dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
 }
 impl UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
         self.domain_config.as_ref()
     }
-    /// <p>Results of a dry run performed in an update domain request.</p>
+    /// <p>Results of the dry run performed in the update domain request.</p>
     pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
         self.dry_run_results.as_ref()
+    }
+    /// <p>The status of the dry run being performed on the domain, if any.</p>
+    pub fn dry_run_progress_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DryRunProgressStatus> {
+        self.dry_run_progress_status.as_ref()
     }
 }
 /// See [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
@@ -307,6 +316,7 @@ pub mod update_domain_config_output {
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
         pub(crate) dry_run_results: std::option::Option<crate::model::DryRunResults>,
+        pub(crate) dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
     }
     impl Builder {
         /// <p>The status of the updated domain.</p>
@@ -322,12 +332,12 @@ pub mod update_domain_config_output {
             self.domain_config = input;
             self
         }
-        /// <p>Results of a dry run performed in an update domain request.</p>
+        /// <p>Results of the dry run performed in the update domain request.</p>
         pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
             self.dry_run_results = Some(input);
             self
         }
-        /// <p>Results of a dry run performed in an update domain request.</p>
+        /// <p>Results of the dry run performed in the update domain request.</p>
         pub fn set_dry_run_results(
             mut self,
             input: std::option::Option<crate::model::DryRunResults>,
@@ -335,11 +345,28 @@ pub mod update_domain_config_output {
             self.dry_run_results = input;
             self
         }
+        /// <p>The status of the dry run being performed on the domain, if any.</p>
+        pub fn dry_run_progress_status(
+            mut self,
+            input: crate::model::DryRunProgressStatus,
+        ) -> Self {
+            self.dry_run_progress_status = Some(input);
+            self
+        }
+        /// <p>The status of the dry run being performed on the domain, if any.</p>
+        pub fn set_dry_run_progress_status(
+            mut self,
+            input: std::option::Option<crate::model::DryRunProgressStatus>,
+        ) -> Self {
+            self.dry_run_progress_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
         pub fn build(self) -> crate::output::UpdateDomainConfigOutput {
             crate::output::UpdateDomainConfigOutput {
                 domain_config: self.domain_config,
                 dry_run_results: self.dry_run_results,
+                dry_run_progress_status: self.dry_run_progress_status,
             }
         }
     }
@@ -2192,6 +2219,106 @@ impl DescribeInboundConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
     pub fn builder() -> crate::output::describe_inbound_connections_output::Builder {
         crate::output::describe_inbound_connections_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DescribeDryRunProgressOutput {
+    /// <p>The current status of the dry run, including any validation errors.</p>
+    #[doc(hidden)]
+    pub dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
+    /// <p>Details about the changes you're planning to make on the domain.</p>
+    #[doc(hidden)]
+    pub dry_run_config: std::option::Option<crate::model::DomainStatus>,
+    /// <p>The results of the dry run. </p>
+    #[doc(hidden)]
+    pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
+}
+impl DescribeDryRunProgressOutput {
+    /// <p>The current status of the dry run, including any validation errors.</p>
+    pub fn dry_run_progress_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DryRunProgressStatus> {
+        self.dry_run_progress_status.as_ref()
+    }
+    /// <p>Details about the changes you're planning to make on the domain.</p>
+    pub fn dry_run_config(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.dry_run_config.as_ref()
+    }
+    /// <p>The results of the dry run. </p>
+    pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
+        self.dry_run_results.as_ref()
+    }
+}
+/// See [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
+pub mod describe_dry_run_progress_output {
+
+    /// A builder for [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dry_run_progress_status: std::option::Option<crate::model::DryRunProgressStatus>,
+        pub(crate) dry_run_config: std::option::Option<crate::model::DomainStatus>,
+        pub(crate) dry_run_results: std::option::Option<crate::model::DryRunResults>,
+    }
+    impl Builder {
+        /// <p>The current status of the dry run, including any validation errors.</p>
+        pub fn dry_run_progress_status(
+            mut self,
+            input: crate::model::DryRunProgressStatus,
+        ) -> Self {
+            self.dry_run_progress_status = Some(input);
+            self
+        }
+        /// <p>The current status of the dry run, including any validation errors.</p>
+        pub fn set_dry_run_progress_status(
+            mut self,
+            input: std::option::Option<crate::model::DryRunProgressStatus>,
+        ) -> Self {
+            self.dry_run_progress_status = input;
+            self
+        }
+        /// <p>Details about the changes you're planning to make on the domain.</p>
+        pub fn dry_run_config(mut self, input: crate::model::DomainStatus) -> Self {
+            self.dry_run_config = Some(input);
+            self
+        }
+        /// <p>Details about the changes you're planning to make on the domain.</p>
+        pub fn set_dry_run_config(
+            mut self,
+            input: std::option::Option<crate::model::DomainStatus>,
+        ) -> Self {
+            self.dry_run_config = input;
+            self
+        }
+        /// <p>The results of the dry run. </p>
+        pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
+            self.dry_run_results = Some(input);
+            self
+        }
+        /// <p>The results of the dry run. </p>
+        pub fn set_dry_run_results(
+            mut self,
+            input: std::option::Option<crate::model::DryRunResults>,
+        ) -> Self {
+            self.dry_run_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
+        pub fn build(self) -> crate::output::DescribeDryRunProgressOutput {
+            crate::output::DescribeDryRunProgressOutput {
+                dry_run_progress_status: self.dry_run_progress_status,
+                dry_run_config: self.dry_run_config,
+                dry_run_results: self.dry_run_results,
+            }
+        }
+    }
+}
+impl DescribeDryRunProgressOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput).
+    pub fn builder() -> crate::output::describe_dry_run_progress_output::Builder {
+        crate::output::describe_dry_run_progress_output::Builder::default()
     }
 }
 

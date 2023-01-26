@@ -18,115 +18,520 @@ impl From<crate::endpoint::Params> for aws_endpoint::Params {
 #[cfg(test)]
 mod test {
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
+    /// For region eu-central-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_1() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
-    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_2() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-iso-east-1".to_string())
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("eu-central-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint
-            .expect("Expected valid endpoint: https://medialive-fips.us-iso-east-1.c2s.ic.gov");
+            .expect("Expected valid endpoint: https://medialive.eu-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://medialive-fips.us-iso-east-1.c2s.ic.gov")
+                .url("https://medialive.eu-central-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
+    /// For region ap-south-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_3() {
+    fn test_2() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_4() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-iso-east-1".to_string())
             .use_dual_stack(false)
+            .region("ap-south-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://medialive.us-iso-east-1.c2s.ic.gov");
+            endpoint.expect("Expected valid endpoint: https://medialive.ap-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://medialive.us-iso-east-1.c2s.ic.gov")
+                .url("https://medialive.ap-south-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
+    /// For region sa-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_3() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("sa-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.sa-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.sa-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_4() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS enabled and DualStack disabled
     #[test]
     fn test_5() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-isob-east-1".to_string())
-            .use_dual_stack(true)
+            .use_dual_stack(false)
+            .region("us-west-2".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isob-east-1 with FIPS enabled and DualStack enabled]");
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-west-2.amazonaws.com");
         assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-west-2.amazonaws.com")
+                .build()
+        );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
+    /// For region eu-north-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_6() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-            .use_fips(true)
-            .region("us-isob-east-1".to_string())
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("eu-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.eu-north-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.eu-north-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_7() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.eu-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.eu-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_8() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.eu-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.eu-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-3 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_9() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("eu-west-3".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.eu-west-3.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.eu-west-3.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-southeast-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_10() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-southeast-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.ap-southeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.ap-southeast-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-northeast-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_11() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-northeast-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.ap-northeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.ap-northeast-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-northeast-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_12() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-northeast-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.ap-northeast-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.ap-northeast-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-southeast-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_13() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("ap-southeast-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.ap-southeast-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.ap-southeast-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_14() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_15() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_16() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-east-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_18() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_19() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_20() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_21() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_22() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_23() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_24() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -141,33 +546,14 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_7() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .use_fips(false)
-            .region("us-isob-east-1".to_string())
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
-    }
-
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_8() {
+    fn test_25() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-isob-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -182,14 +568,146 @@ mod test {
         );
     }
 
-    /// For custom endpoint with fips disabled and dualstack disabled
+    /// For region cn-north-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_9() {
+    fn test_26() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://medialive-fips.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_27() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_28() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://medialive.cn-north-1.api.amazonwebservices.com.cn",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_29() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_30() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://medialive.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_31() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://medialive-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://medialive-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For custom endpoint with fips disabled and dualstack disabled
+    #[test]
+    fn test_32() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -206,12 +724,12 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_10() {
+    fn test_33() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -226,12 +744,12 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_11() {
+    fn test_34() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");

@@ -2459,6 +2459,7 @@ impl AlarmIdentifier {
 ///     CloudWatchRegion::ApSoutheast1 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast2 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast3 => { /* ... */ },
+///     CloudWatchRegion::ApSoutheast4 => { /* ... */ },
 ///     CloudWatchRegion::CaCentral1 => { /* ... */ },
 ///     CloudWatchRegion::CnNorth1 => { /* ... */ },
 ///     CloudWatchRegion::CnNorthwest1 => { /* ... */ },
@@ -2536,6 +2537,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast3,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast4,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
@@ -2597,6 +2600,7 @@ impl std::convert::From<&str> for CloudWatchRegion {
             "ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
             "ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
             "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
+            "ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
             "ca-central-1" => CloudWatchRegion::CaCentral1,
             "cn-north-1" => CloudWatchRegion::CnNorth1,
             "cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
@@ -2645,6 +2649,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
             CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
             CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
+            CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
             CloudWatchRegion::CaCentral1 => "ca-central-1",
             CloudWatchRegion::CnNorth1 => "cn-north-1",
             CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
@@ -2684,6 +2689,7 @@ impl CloudWatchRegion {
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
+            "ap-southeast-4",
             "ca-central-1",
             "cn-north-1",
             "cn-northwest-1",
@@ -3176,6 +3182,7 @@ impl Vpc {
 ///     VpcRegion::ApSoutheast1 => { /* ... */ },
 ///     VpcRegion::ApSoutheast2 => { /* ... */ },
 ///     VpcRegion::ApSoutheast3 => { /* ... */ },
+///     VpcRegion::ApSoutheast4 => { /* ... */ },
 ///     VpcRegion::CaCentral1 => { /* ... */ },
 ///     VpcRegion::CnNorth1 => { /* ... */ },
 ///     VpcRegion::EuCentral1 => { /* ... */ },
@@ -3252,6 +3259,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast3,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast4,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
@@ -3311,6 +3320,7 @@ impl std::convert::From<&str> for VpcRegion {
             "ap-southeast-1" => VpcRegion::ApSoutheast1,
             "ap-southeast-2" => VpcRegion::ApSoutheast2,
             "ap-southeast-3" => VpcRegion::ApSoutheast3,
+            "ap-southeast-4" => VpcRegion::ApSoutheast4,
             "ca-central-1" => VpcRegion::CaCentral1,
             "cn-north-1" => VpcRegion::CnNorth1,
             "eu-central-1" => VpcRegion::EuCentral1,
@@ -3358,6 +3368,7 @@ impl VpcRegion {
             VpcRegion::ApSoutheast1 => "ap-southeast-1",
             VpcRegion::ApSoutheast2 => "ap-southeast-2",
             VpcRegion::ApSoutheast3 => "ap-southeast-3",
+            VpcRegion::ApSoutheast4 => "ap-southeast-4",
             VpcRegion::CaCentral1 => "ca-central-1",
             VpcRegion::CnNorth1 => "cn-north-1",
             VpcRegion::EuCentral1 => "eu-central-1",
@@ -3396,6 +3407,7 @@ impl VpcRegion {
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
+            "ap-southeast-4",
             "ca-central-1",
             "cn-north-1",
             "eu-central-1",
@@ -6118,6 +6130,7 @@ impl GeoLocation {
 ///     ResourceRecordSetRegion::ApSoutheast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast3 => { /* ... */ },
+///     ResourceRecordSetRegion::ApSoutheast4 => { /* ... */ },
 ///     ResourceRecordSetRegion::CaCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CnNorth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CnNorthwest1 => { /* ... */ },
@@ -6190,6 +6203,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast3,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast4,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
@@ -6241,6 +6256,7 @@ impl std::convert::From<&str> for ResourceRecordSetRegion {
             "ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
             "ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
             "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
+            "ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
             "ca-central-1" => ResourceRecordSetRegion::CaCentral1,
             "cn-north-1" => ResourceRecordSetRegion::CnNorth1,
             "cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
@@ -6286,6 +6302,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
             ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
             ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
+            ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
             ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
             ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
             ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
@@ -6320,6 +6337,7 @@ impl ResourceRecordSetRegion {
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
+            "ap-southeast-4",
             "ca-central-1",
             "cn-north-1",
             "cn-northwest-1",

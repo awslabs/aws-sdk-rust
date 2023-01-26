@@ -14,7 +14,7 @@ version = "0.53.0"
 
 [dependencies.aws-sdk-sagemaker]
 path = "../../sdk/sagemaker"
-version = "0.23.0"
+version = "0.24.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]

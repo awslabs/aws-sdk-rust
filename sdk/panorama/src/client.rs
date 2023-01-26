@@ -111,7 +111,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateJobForDevices`](crate::client::fluent_builders::CreateJobForDevices) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_ids(Vec<String>)`](crate::client::fluent_builders::CreateJobForDevices::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_ids): <p>IDs of target devices.</p>
+    ///   - [`device_ids(Vec<String>)`](crate::client::fluent_builders::CreateJobForDevices::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_ids): <p>ID of target device.</p>
     ///   - [`device_job_config(DeviceJobConfig)`](crate::client::fluent_builders::CreateJobForDevices::device_job_config) / [`set_device_job_config(Option<DeviceJobConfig>)`](crate::client::fluent_builders::CreateJobForDevices::set_device_job_config): <p>Configuration settings for a software update job.</p>
     ///   - [`job_type(JobType)`](crate::client::fluent_builders::CreateJobForDevices::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::CreateJobForDevices::set_job_type): <p>The type of job to run.</p>
     /// - On success, responds with [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput) with field(s):
@@ -814,7 +814,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateJobForDevices`.
     ///
-    /// <p>Creates a job to run on one or more devices. A job can update a device's software or reboot it.</p>
+    /// <p>Creates a job to run on a device. A job can update a device's software or reboot it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJobForDevices {
         handle: std::sync::Arc<super::Handle>,
@@ -878,12 +878,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
         ///
-        /// <p>IDs of target devices.</p>
+        /// <p>ID of target device.</p>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.device_ids(input.into());
             self
         }
-        /// <p>IDs of target devices.</p>
+        /// <p>ID of target device.</p>
         pub fn set_device_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

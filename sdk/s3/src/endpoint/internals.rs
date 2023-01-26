@@ -40,196 +40,6 @@ pub(super) fn resolve_endpoint(
         #[allow(unused)]
         if let Some(bucket) = bucket {
             #[allow(unused)]
-            if let Some(hardware_type) = crate::endpoint_lib::substring::substring(
-                bucket,
-                49,
-                50,
-                true,
-                _diagnostic_collector,
-            ) {
-                #[allow(unused)]
-                if let Some(region_prefix) = crate::endpoint_lib::substring::substring(
-                    bucket,
-                    8,
-                    12,
-                    true,
-                    _diagnostic_collector,
-                ) {
-                    #[allow(unused)]
-                    if let Some(abba_suffix) = crate::endpoint_lib::substring::substring(
-                        bucket,
-                        0,
-                        7,
-                        true,
-                        _diagnostic_collector,
-                    ) {
-                        #[allow(unused)]
-                        if let Some(outpost_id) = crate::endpoint_lib::substring::substring(
-                            bucket,
-                            32,
-                            49,
-                            true,
-                            _diagnostic_collector,
-                        ) {
-                            #[allow(unused)]
-                            if let Some(region_partition) =
-                                partition_resolver.resolve_partition(region, _diagnostic_collector)
-                            {
-                                if (abba_suffix) == ("--op-s3") {
-                                    if crate::endpoint_lib::host::is_valid_host_label(
-                                        outpost_id,
-                                        false,
-                                        _diagnostic_collector,
-                                    ) {
-                                        if (hardware_type) == ("e") {
-                                            if (region_prefix) == ("beta") {
-                                                if !(endpoint.is_some()) {
-                                                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Expected a endpoint to be specified but no endpoint was found"
-.to_string()));
-                                                }
-                                                #[allow(unused)]
-                                                if let Some(endpoint) = endpoint {
-                                                    #[allow(unused)]
-                                                    if let Some(url) =
-                                                        crate::endpoint_lib::parse_url::parse_url(
-                                                            endpoint,
-                                                            _diagnostic_collector,
-                                                        )
-                                                    {
-                                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
-out.push_str("https://");
-#[allow(clippy::needless_borrow)]
-out.push_str(&bucket);
-out.push_str(".ec2.");
-#[allow(clippy::needless_borrow)]
-out.push_str(&url.authority());
-out })
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-    out.insert("disableDoubleEncoding".to_string(), true.into());
-    out.insert("name".to_string(), "sigv4"
-    .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("signingRegion".to_string(), region.to_owned().into());
-    out
-}),])
-.build());
-                                                    }
-                                                }
-                                                #[allow(unreachable_code)]
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No rules matched these parameters. This is a bug. {:?}", _params)));
-                                            }
-                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
-out.push_str("https://");
-#[allow(clippy::needless_borrow)]
-out.push_str(&bucket);
-out.push_str(".ec2.s3-outposts.");
-#[allow(clippy::needless_borrow)]
-out.push_str(&region);
-out.push('.');
-#[allow(clippy::needless_borrow)]
-out.push_str(&region_partition.dns_suffix());
-out })
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-    out.insert("disableDoubleEncoding".to_string(), true.into());
-    out.insert("name".to_string(), "sigv4"
-    .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("signingRegion".to_string(), region.to_owned().into());
-    out
-}),])
-.build());
-                                        }
-                                        if (hardware_type) == ("o") {
-                                            if (region_prefix) == ("beta") {
-                                                if !(endpoint.is_some()) {
-                                                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Expected a endpoint to be specified but no endpoint was found"
-.to_string()));
-                                                }
-                                                #[allow(unused)]
-                                                if let Some(endpoint) = endpoint {
-                                                    #[allow(unused)]
-                                                    if let Some(url) =
-                                                        crate::endpoint_lib::parse_url::parse_url(
-                                                            endpoint,
-                                                            _diagnostic_collector,
-                                                        )
-                                                    {
-                                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
-out.push_str("https://");
-#[allow(clippy::needless_borrow)]
-out.push_str(&bucket);
-out.push_str(".op-");
-#[allow(clippy::needless_borrow)]
-out.push_str(&outpost_id);
-out.push('.');
-#[allow(clippy::needless_borrow)]
-out.push_str(&url.authority());
-out })
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-    out.insert("disableDoubleEncoding".to_string(), true.into());
-    out.insert("name".to_string(), "sigv4"
-    .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("signingRegion".to_string(), region.to_owned().into());
-    out
-}),])
-.build());
-                                                    }
-                                                }
-                                                #[allow(unreachable_code)]
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No rules matched these parameters. This is a bug. {:?}", _params)));
-                                            }
-                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
-out.push_str("https://");
-#[allow(clippy::needless_borrow)]
-out.push_str(&bucket);
-out.push_str(".op-");
-#[allow(clippy::needless_borrow)]
-out.push_str(&outpost_id);
-out.push_str(".s3-outposts.");
-#[allow(clippy::needless_borrow)]
-out.push_str(&region);
-out.push('.');
-#[allow(clippy::needless_borrow)]
-out.push_str(&region_partition.dns_suffix());
-out })
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-    out.insert("disableDoubleEncoding".to_string(), true.into());
-    out.insert("name".to_string(), "sigv4"
-    .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("signingRegion".to_string(), region.to_owned().into());
-    out
-}),])
-.build());
-                                        }
-                                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
-out.push_str("Unrecognized hardware type: \"Expected hardware type o or e but got ");
-#[allow(clippy::needless_borrow)]
-out.push_str(&hardware_type);
-out.push('"');
-out }));
-                                    }
-                                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`."
-.to_string()));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #[allow(unused)]
-        if let Some(bucket) = bucket {
-            #[allow(unused)]
             if let Some(endpoint) = endpoint {
                 if !(crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
                     .is_some())
@@ -271,9 +81,403 @@ out }));
                         partition_resolver.resolve_partition(region, _diagnostic_collector)
                     {
                         if (*accelerate) == (false) {
-                            if (*use_fips) == (false) {
-                                if (*use_dual_stack) == (true) {
-                                    if !(endpoint.is_some()) {
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if (region) == ("aws-global") {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.dualstack.us-east-1.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if (region) == ("aws-global") {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.dualstack.us-east-1.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if !((region) == ("aws-global")) {
+                                            if (*use_global_endpoint) == (true) {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.dualstack.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region);
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if !((region) == ("aws-global")) {
+                                            if (*use_global_endpoint) == (false) {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.dualstack.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region);
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
+                                    #[allow(unused)]
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (true) {
+                                            if (region) == ("aws-global") {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
+                                    #[allow(unused)]
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (true) {
+                                            if (region) == ("aws-global") {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
+                                    #[allow(unused)]
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (true) {
+                                            if !((region) == ("aws-global")) {
+                                                if (*use_global_endpoint) == (true) {
+                                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
+                                    #[allow(unused)]
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (true) {
+                                            if !((region) == ("aws-global")) {
+                                                if (*use_global_endpoint) == (false) {
+                                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if (region) == ("aws-global") {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.us-east-1.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if (region) == ("aws-global") {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.us-east-1.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), "us-east-1"
+    .to_string().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if !((region) == ("aws-global")) {
+                                            if (*use_global_endpoint) == (true) {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region);
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (true) {
+                                        if !((region) == ("aws-global")) {
+                                            if (*use_global_endpoint) == (false) {
+                                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://s3-fips.");
+#[allow(clippy::needless_borrow)]
+out.push_str(&region);
+out.push('.');
+#[allow(clippy::needless_borrow)]
+out.push_str(&partition_result.dns_suffix());
+out.push('/');
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if (region) == ("aws-global") {
                                             return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3.dualstack.us-east-1.");
@@ -298,8 +502,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (true) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if (region) == ("aws-global") {
                                             return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3.dualstack.us-east-1.");
@@ -324,8 +530,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (true) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if !((region) == ("aws-global")) {
                                             if (*use_global_endpoint) == (true) {
                                                 return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
@@ -354,8 +562,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (true) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (true) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if !((region) == ("aws-global")) {
                                             if (*use_global_endpoint) == (false) {
                                                 return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
@@ -384,14 +594,16 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
                                     #[allow(unused)]
-                                    if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
-                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                            endpoint,
-                                            _diagnostic_collector,
-                                        ) {
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (false) {
                                             if (region) == ("aws-global") {
                                                 return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
@@ -420,14 +632,16 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
                                     #[allow(unused)]
-                                    if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
-                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                            endpoint,
-                                            _diagnostic_collector,
-                                        ) {
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (false) {
                                             if (region) == ("aws-global") {
                                                 return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
@@ -456,14 +670,16 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
                                     #[allow(unused)]
-                                    if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
-                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                            endpoint,
-                                            _diagnostic_collector,
-                                        ) {
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (false) {
                                             if !((region) == ("aws-global")) {
                                                 if (*use_global_endpoint) == (true) {
                                                     if (region) == ("us-east-1") {
@@ -517,14 +733,16 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                #[allow(unused)]
+                                if let Some(endpoint) = endpoint {
                                     #[allow(unused)]
-                                    if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
-                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                            endpoint,
-                                            _diagnostic_collector,
-                                        ) {
+                                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                        endpoint,
+                                        _diagnostic_collector,
+                                    ) {
+                                        if (*use_fips) == (false) {
                                             if !((region) == ("aws-global")) {
                                                 if (*use_global_endpoint) == (false) {
                                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
@@ -554,8 +772,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if (region) == ("aws-global") {
                                             return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3.");
@@ -580,8 +800,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if (region) == ("aws-global") {
                                             return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3.");
@@ -606,8 +828,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if !((region) == ("aws-global")) {
                                             if (*use_global_endpoint) == (true) {
                                                 if (region) == ("us-east-1") {
@@ -657,8 +881,10 @@ out })
                                         }
                                     }
                                 }
-                                if (*use_dual_stack) == (false) {
-                                    if !(endpoint.is_some()) {
+                            }
+                            if (*use_dual_stack) == (false) {
+                                if !(endpoint.is_some()) {
+                                    if (*use_fips) == (false) {
                                         if !((region) == ("aws-global")) {
                                             if (*use_global_endpoint) == (false) {
                                                 return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
@@ -687,11 +913,13 @@ out })
                                         }
                                     }
                                 }
-                                #[allow(unreachable_code)]
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No rules matched these parameters. This is a bug. {:?}", _params)));
                             }
+                            #[allow(unreachable_code)]
                             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "Path-style addressing cannot be used with FIPS".to_string(),
+                                format!(
+                                    "No rules matched these parameters. This is a bug. {:?}",
+                                    _params
+                                ),
                             ));
                         }
                         return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -2888,9 +3116,597 @@ out }));
                 partition_resolver.resolve_partition(region, _diagnostic_collector)
             {
                 if (*accelerate) == (false) {
-                    if (*use_fips) == (false) {
-                        if (*use_dual_stack) == (true) {
-                            if !(endpoint.is_some()) {
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if (region) == ("aws-global") {
+                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3-fips.dualstack.us-east-1.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out.push('/');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&uri_encoded_bucket);
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![aws_smithy_types::Document::from({
+                                                let mut out = std::collections::HashMap::<
+                                                    String,
+                                                    aws_smithy_types::Document,
+                                                >::new(
+                                                );
+                                                out.insert(
+                                                    "disableDoubleEncoding".to_string(),
+                                                    true.into(),
+                                                );
+                                                out.insert(
+                                                    "name".to_string(),
+                                                    "sigv4".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingRegion".to_string(),
+                                                    "us-east-1".to_string().into(),
+                                                );
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if (region) == ("aws-global") {
+                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3-fips.dualstack.us-east-1.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out.push('/');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&uri_encoded_bucket);
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![aws_smithy_types::Document::from({
+                                                let mut out = std::collections::HashMap::<
+                                                    String,
+                                                    aws_smithy_types::Document,
+                                                >::new(
+                                                );
+                                                out.insert(
+                                                    "disableDoubleEncoding".to_string(),
+                                                    true.into(),
+                                                );
+                                                out.insert(
+                                                    "name".to_string(),
+                                                    "sigv4".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingRegion".to_string(),
+                                                    "us-east-1".to_string().into(),
+                                                );
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if !((region) == ("aws-global")) {
+                                    if (*use_global_endpoint) == (true) {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3-fips.dualstack.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out.push('/');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        region.to_owned().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if !((region) == ("aws-global")) {
+                                    if (*use_global_endpoint) == (false) {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3-fips.dualstack.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out.push('/');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        region.to_owned().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
+                            #[allow(unused)]
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (true) {
+                                    if (region) == ("aws-global") {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.scheme());
+                                                out.push_str("://");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.authority());
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.normalized_path());
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        "us-east-1".to_string().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
+                            #[allow(unused)]
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (true) {
+                                    if (region) == ("aws-global") {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.scheme());
+                                                out.push_str("://");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.authority());
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&url.normalized_path());
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        "us-east-1".to_string().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
+                            #[allow(unused)]
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (true) {
+                                    if !((region) == ("aws-global")) {
+                                        if (*use_global_endpoint) == (true) {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
+                            #[allow(unused)]
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (true) {
+                                    if !((region) == ("aws-global")) {
+                                        if (*use_global_endpoint) == (false) {
+                                            return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.scheme());
+out.push_str("://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.authority());
+#[allow(clippy::needless_borrow)]
+out.push_str(&url.normalized_path());
+#[allow(clippy::needless_borrow)]
+out.push_str(&uri_encoded_bucket);
+out })
+.property("authSchemes", vec![aws_smithy_types::Document::from( {
+    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("name".to_string(), "sigv4"
+    .to_string().into());
+    out.insert("signingName".to_string(), "s3"
+    .to_string().into());
+    out.insert("signingRegion".to_string(), region.to_owned().into());
+    out
+}),])
+.build());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if (region) == ("aws-global") {
+                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3-fips.us-east-1.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out.push('/');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&uri_encoded_bucket);
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![aws_smithy_types::Document::from({
+                                                let mut out = std::collections::HashMap::<
+                                                    String,
+                                                    aws_smithy_types::Document,
+                                                >::new(
+                                                );
+                                                out.insert(
+                                                    "disableDoubleEncoding".to_string(),
+                                                    true.into(),
+                                                );
+                                                out.insert(
+                                                    "name".to_string(),
+                                                    "sigv4".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingRegion".to_string(),
+                                                    "us-east-1".to_string().into(),
+                                                );
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if (region) == ("aws-global") {
+                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3-fips.us-east-1.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out.push('/');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&uri_encoded_bucket);
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![aws_smithy_types::Document::from({
+                                                let mut out = std::collections::HashMap::<
+                                                    String,
+                                                    aws_smithy_types::Document,
+                                                >::new(
+                                                );
+                                                out.insert(
+                                                    "disableDoubleEncoding".to_string(),
+                                                    true.into(),
+                                                );
+                                                out.insert(
+                                                    "name".to_string(),
+                                                    "sigv4".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
+                                                );
+                                                out.insert(
+                                                    "signingRegion".to_string(),
+                                                    "us-east-1".to_string().into(),
+                                                );
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if !((region) == ("aws-global")) {
+                                    if (*use_global_endpoint) == (true) {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out.push('/');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        region.to_owned().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (true) {
+                                if !((region) == ("aws-global")) {
+                                    if (*use_global_endpoint) == (false) {
+                                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out.push('/');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&uri_encoded_bucket);
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![aws_smithy_types::Document::from({
+                                                    let mut out = std::collections::HashMap::<
+                                                        String,
+                                                        aws_smithy_types::Document,
+                                                    >::new(
+                                                    );
+                                                    out.insert(
+                                                        "disableDoubleEncoding".to_string(),
+                                                        true.into(),
+                                                    );
+                                                    out.insert(
+                                                        "name".to_string(),
+                                                        "sigv4".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingName".to_string(),
+                                                        "s3".to_string().into(),
+                                                    );
+                                                    out.insert(
+                                                        "signingRegion".to_string(),
+                                                        region.to_owned().into(),
+                                                    );
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if (region) == ("aws-global") {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -2934,8 +3750,10 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (true) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if (region) == ("aws-global") {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -2979,8 +3797,10 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (true) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if !((region) == ("aws-global")) {
                                     if (*use_global_endpoint) == (true) {
                                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
@@ -3029,8 +3849,10 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (true) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (true) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if !((region) == ("aws-global")) {
                                     if (*use_global_endpoint) == (false) {
                                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
@@ -3079,14 +3901,16 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
                             #[allow(unused)]
-                            if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
-                                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                    endpoint,
-                                    _diagnostic_collector,
-                                ) {
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (false) {
                                     if (region) == ("aws-global") {
                                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                             .url({
@@ -3134,14 +3958,16 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
                             #[allow(unused)]
-                            if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
-                                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                    endpoint,
-                                    _diagnostic_collector,
-                                ) {
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (false) {
                                     if (region) == ("aws-global") {
                                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                             .url({
@@ -3189,14 +4015,16 @@ out }));
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
                             #[allow(unused)]
-                            if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
-                                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                    endpoint,
-                                    _diagnostic_collector,
-                                ) {
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (false) {
                                     if !((region) == ("aws-global")) {
                                         if (*use_global_endpoint) == (true) {
                                             if (region) == ("us-east-1") {
@@ -3250,14 +4078,16 @@ out })
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        #[allow(unused)]
+                        if let Some(endpoint) = endpoint {
                             #[allow(unused)]
-                            if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
-                                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                    endpoint,
-                                    _diagnostic_collector,
-                                ) {
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                endpoint,
+                                _diagnostic_collector,
+                            ) {
+                                if (*use_fips) == (false) {
                                     if !((region) == ("aws-global")) {
                                         if (*use_global_endpoint) == (false) {
                                             return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
@@ -3287,8 +4117,10 @@ out })
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if (region) == ("aws-global") {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -3332,8 +4164,10 @@ out })
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if (region) == ("aws-global") {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -3377,8 +4211,10 @@ out })
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if !((region) == ("aws-global")) {
                                     if (*use_global_endpoint) == (true) {
                                         if (region) == ("us-east-1") {
@@ -3448,8 +4284,10 @@ out })
                                 }
                             }
                         }
-                        if (*use_dual_stack) == (false) {
-                            if !(endpoint.is_some()) {
+                    }
+                    if (*use_dual_stack) == (false) {
+                        if !(endpoint.is_some()) {
+                            if (*use_fips) == (false) {
                                 if !((region) == ("aws-global")) {
                                     if (*use_global_endpoint) == (false) {
                                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
@@ -3498,16 +4336,13 @@ out })
                                 }
                             }
                         }
-                        #[allow(unreachable_code)]
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            format!(
-                                "No rules matched these parameters. This is a bug. {:?}",
-                                _params
-                            ),
-                        ));
                     }
+                    #[allow(unreachable_code)]
                     return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Path-style addressing cannot be used with FIPS".to_string(),
+                        format!(
+                            "No rules matched these parameters. This is a bug. {:?}",
+                            _params
+                        ),
                     ));
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(

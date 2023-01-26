@@ -100,6 +100,96 @@ pub(super) fn resolve_endpoint(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
         }
+        if (region) == ("ap-northeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ap-northeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ap-northeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ap-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ap-southeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ap-southeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ca-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.ca-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.eu-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.eu-north-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.eu-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.eu-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.eu-west-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("sa-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.sa-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.us-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.us-east-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.us-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.us-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("cn-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.cn-north-1.amazonaws.com.cn".to_string())
+                .build());
+        }
+        if (region) == ("cn-northwest-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://compute-optimizer.cn-northwest-1.amazonaws.com.cn".to_string())
+                .build());
+        }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({
                 let mut out = String::new();

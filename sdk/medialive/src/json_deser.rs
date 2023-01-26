@@ -24516,6 +24516,14 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "scte35PrerollPullupMilliseconds" => {
+                                builder = builder.set_scte35_preroll_pullup_milliseconds(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

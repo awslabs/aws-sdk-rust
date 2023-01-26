@@ -25,26 +25,20 @@ pub(super) fn resolve_endpoint(
     {
         #[allow(unused)]
         if let Some(endpoint) = endpoint {
-            #[allow(unused)]
-            if let Some(url) =
-                crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-            {
-                if (*use_fips) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: FIPS and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                if (*use_dual_stack) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url(endpoint.to_owned())
-                    .build());
+            if (*use_fips) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                ));
             }
+            if (*use_dual_stack) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                        .to_string(),
+                ));
+            }
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url(endpoint.to_owned())
+                .build());
         }
         if (*use_fips) == (true) {
             if (*use_dual_stack) == (true) {
@@ -70,6 +64,16 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
+                if (region) == ("us-gov-east-1") {
+                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        .url("https://greengrass.us-gov-east-1.amazonaws.com".to_string())
+                        .build());
+                }
+                if (region) == ("us-gov-west-1") {
+                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        .url("https://greengrass.us-gov-west-1.amazonaws.com".to_string())
+                        .build());
+                }
                 return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
@@ -109,11 +113,49 @@ pub(super) fn resolve_endpoint(
         if (region) == ("dataplane-us-gov-east-1") {
             return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://greengrass-ats.iot.us-gov-east-1.amazonaws.com".to_string())
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "greengrass".to_string().into());
+                        out.insert(
+                            "signingRegion".to_string(),
+                            "us-gov-east-1".to_string().into(),
+                        );
+                        out
+                    })],
+                )
                 .build());
         }
         if (region) == ("dataplane-us-gov-west-1") {
             return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://greengrass-ats.iot.us-gov-west-1.amazonaws.com".to_string())
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "greengrass".to_string().into());
+                        out.insert(
+                            "signingRegion".to_string(),
+                            "us-gov-west-1".to_string().into(),
+                        );
+                        out
+                    })],
+                )
+                .build());
+        }
+        if (region) == ("us-gov-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://greengrass.us-gov-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://greengrass.us-gov-west-1.amazonaws.com".to_string())
                 .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()

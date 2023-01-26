@@ -54,26 +54,6 @@ pub(super) fn resolve_endpoint(
                                     out.push_str(".api.aws");
                                     out
                                 })
-                                .property(
-                                    "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
-                                            String,
-                                            aws_smithy_types::Document,
-                                        >::new(
-                                        );
-                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                        out.insert(
-                                            "signingName".to_string(),
-                                            "cloudfront".to_string().into(),
-                                        );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "us-east-1".to_string().into(),
-                                        );
-                                        out
-                                    })],
-                                )
                                 .build());
                         }
                     }
@@ -84,14 +64,7 @@ pub(super) fn resolve_endpoint(
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url({
-                            let mut out = String::new();
-                            out.push_str("https://cloudfront-fips.");
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
-                            out.push_str(".amazonaws.com");
-                            out
-                        })
+                        .url("https://cloudfront-fips.amazonaws.com".to_string())
                         .property(
                             "authSchemes",
                             vec![aws_smithy_types::Document::from({
@@ -128,25 +101,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".api.aws");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert(
-                                    "signingName".to_string(),
-                                    "cloudfront".to_string().into(),
-                                );
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -183,26 +137,6 @@ pub(super) fn resolve_endpoint(
                                     out.push_str(".api.amazonwebservices.com.cn");
                                     out
                                 })
-                                .property(
-                                    "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
-                                            String,
-                                            aws_smithy_types::Document,
-                                        >::new(
-                                        );
-                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                        out.insert(
-                                            "signingName".to_string(),
-                                            "cloudfront".to_string().into(),
-                                        );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "cn-northwest-1".to_string().into(),
-                                        );
-                                        out
-                                    })],
-                                )
                                 .build());
                         }
                     }
@@ -221,25 +155,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".amazonaws.com.cn");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert(
-                                    "signingName".to_string(),
-                                    "cloudfront".to_string().into(),
-                                );
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "cn-northwest-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -257,25 +172,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".api.amazonwebservices.com.cn");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert(
-                                    "signingName".to_string(),
-                                    "cloudfront".to_string().into(),
-                                );
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "cn-northwest-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -325,6 +221,30 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
+                if (region) == ("aws-global") {
+                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        .url("https://cloudfront-fips.amazonaws.com".to_string())
+                        .property(
+                            "authSchemes",
+                            vec![aws_smithy_types::Document::from({
+                                let mut out = std::collections::HashMap::<
+                                    String,
+                                    aws_smithy_types::Document,
+                                >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert(
+                                    "signingName".to_string(),
+                                    "cloudfront".to_string().into(),
+                                );
+                                out.insert(
+                                    "signingRegion".to_string(),
+                                    "us-east-1".to_string().into(),
+                                );
+                                out
+                            })],
+                        )
+                        .build());
+                }
                 return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();

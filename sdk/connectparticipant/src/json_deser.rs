@@ -1000,6 +1000,24 @@ where
                                     crate::json_deser::deser_structure_crate_model_message_metadata(tokens)?
                                 );
                             }
+                            "RelatedContactId" => {
+                                builder = builder.set_related_contact_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ContactId" => {
+                                builder = builder.set_contact_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

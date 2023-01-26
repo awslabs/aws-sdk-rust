@@ -6354,6 +6354,12 @@ pub fn serialize_structure_crate_model_m2ts_settings(
     if let Some(var_1011) = &input.video_pid {
         object.key("videoPid").string(var_1011.as_str());
     }
+    if input.scte35_preroll_pullup_milliseconds != 0.0 {
+        object.key("scte35PrerollPullupMilliseconds").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((input.scte35_preroll_pullup_milliseconds).into()),
+        );
+    }
     Ok(())
 }
 

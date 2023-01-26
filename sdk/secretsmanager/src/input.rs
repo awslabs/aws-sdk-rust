@@ -1695,12 +1695,12 @@ pub mod list_secrets_input {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether to include secrets scheduled for deletion.</p>
         pub fn include_planned_deletion(mut self, input: bool) -> Self {
             self.include_planned_deletion = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies whether to include secrets scheduled for deletion.</p>
         pub fn set_include_planned_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.include_planned_deletion = input;
             self
@@ -3177,12 +3177,14 @@ pub mod rotate_secret_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+        /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
+        /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rotation_lambda_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+        /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
+        /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
         pub fn set_rotation_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3204,14 +3206,14 @@ pub mod rotate_secret_input {
             self
         }
         /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-        /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+        /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
         /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
         pub fn rotate_immediately(mut self, input: bool) -> Self {
             self.rotate_immediately = Some(input);
             self
         }
         /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-        /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+        /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
         /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
         pub fn set_rotate_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.rotate_immediately = input;
@@ -4801,14 +4803,15 @@ pub struct RotateSecretInput {
     /// <p>You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+    /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
+    /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>A structure that defines the rotation configuration for this secret.</p>
     #[doc(hidden)]
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-    /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
     /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
     #[doc(hidden)]
     pub rotate_immediately: std::option::Option<bool>,
@@ -4825,7 +4828,8 @@ impl RotateSecretInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+    /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
+    /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
     pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
@@ -4834,7 +4838,7 @@ impl RotateSecretInput {
         self.rotation_rules.as_ref()
     }
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-    /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
     /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
     pub fn rotate_immediately(&self) -> std::option::Option<bool> {
         self.rotate_immediately
@@ -5072,7 +5076,7 @@ impl ListSecretVersionIdsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecretsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether to include secrets scheduled for deletion.</p>
     #[doc(hidden)]
     pub include_planned_deletion: std::option::Option<bool>,
     /// <p>The number of results to include in the response.</p>
@@ -5090,7 +5094,7 @@ pub struct ListSecretsInput {
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
 }
 impl ListSecretsInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specifies whether to include secrets scheduled for deletion.</p>
     pub fn include_planned_deletion(&self) -> std::option::Option<bool> {
         self.include_planned_deletion
     }

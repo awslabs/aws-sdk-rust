@@ -1103,6 +1103,24 @@ pub(crate) fn deser_operation_crate_operation_get_dataflow_endpoint_group(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "contactPostPassDurationSeconds" => {
+                        builder = builder.set_contact_post_pass_duration_seconds(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
+                    "contactPrePassDurationSeconds" => {
+                        builder = builder.set_contact_pre_pass_duration_seconds(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "dataflowEndpointGroupArn" => {
                         builder = builder.set_dataflow_endpoint_group_arn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

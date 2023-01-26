@@ -12,7 +12,7 @@ pub struct InstanceMetadataOptions {
     /// <p>The default setting is <b>optional</b>.</p>
     #[doc(hidden)]
     pub http_tokens: std::option::Option<std::string::String>,
-    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
+    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     #[doc(hidden)]
     pub http_put_response_hop_limit: std::option::Option<i32>,
 }
@@ -26,7 +26,7 @@ impl InstanceMetadataOptions {
     pub fn http_tokens(&self) -> std::option::Option<&str> {
         self.http_tokens.as_deref()
     }
-    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
+    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
@@ -61,12 +61,12 @@ pub mod instance_metadata_options {
             self.http_tokens = input;
             self
         }
-        /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
+        /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
         pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
             self.http_put_response_hop_limit = Some(input);
             self
         }
-        /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination.</p>
+        /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
         pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.http_put_response_hop_limit = input;
             self
@@ -507,7 +507,9 @@ pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     #[doc(hidden)]
     pub image_tests_enabled: std::option::Option<bool>,
-    /// <p>The maximum time in minutes that tests are permitted to run.</p>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+    /// </note>
     #[doc(hidden)]
     pub timeout_minutes: std::option::Option<i32>,
 }
@@ -516,7 +518,9 @@ impl ImageTestsConfiguration {
     pub fn image_tests_enabled(&self) -> std::option::Option<bool> {
         self.image_tests_enabled
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+    /// </note>
     pub fn timeout_minutes(&self) -> std::option::Option<i32> {
         self.timeout_minutes
     }
@@ -541,12 +545,16 @@ pub mod image_tests_configuration {
             self.image_tests_enabled = input;
             self
         }
-        /// <p>The maximum time in minutes that tests are permitted to run.</p>
+        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+        /// </note>
         pub fn timeout_minutes(mut self, input: i32) -> Self {
             self.timeout_minutes = Some(input);
             self
         }
-        /// <p>The maximum time in minutes that tests are permitted to run.</p>
+        /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+        /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
+        /// </note>
         pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_minutes = input;
             self
@@ -2336,7 +2344,7 @@ pub struct ImageVersion {
     /// <p>The name of this specific version of an Image Builder image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this image is an AMI or a container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
@@ -2358,7 +2366,7 @@ pub struct ImageVersion {
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+    /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
@@ -2378,6 +2386,9 @@ pub struct ImageVersion {
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    #[doc(hidden)]
+    pub image_source: std::option::Option<crate::model::ImageSource>,
 }
 impl ImageVersion {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
@@ -2401,7 +2412,7 @@ impl ImageVersion {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this image is an AMI or a container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
         self.r#type.as_ref()
     }
@@ -2425,7 +2436,7 @@ impl ImageVersion {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+    /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
@@ -2450,6 +2461,10 @@ impl ImageVersion {
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
     }
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+        self.image_source.as_ref()
+    }
 }
 /// See [`ImageVersion`](crate::model::ImageVersion).
 pub mod image_version {
@@ -2466,6 +2481,7 @@ pub mod image_version {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) date_created: std::option::Option<std::string::String>,
         pub(crate) build_type: std::option::Option<crate::model::BuildType>,
+        pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
@@ -2514,12 +2530,12 @@ pub mod image_version {
             self.name = input;
             self
         }
-        /// <p>Specifies whether this image is an AMI or a container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies whether this image is an AMI or a container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -2566,12 +2582,12 @@ pub mod image_version {
             self.version = input;
             self
         }
-        /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+        /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
+        /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -2629,6 +2645,19 @@ pub mod image_version {
             self.build_type = input;
             self
         }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
+            self.image_source = Some(input);
+            self
+        }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn set_image_source(
+            mut self,
+            input: std::option::Option<crate::model::ImageSource>,
+        ) -> Self {
+            self.image_source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImageVersion`](crate::model::ImageVersion).
         pub fn build(self) -> crate::model::ImageVersion {
             crate::model::ImageVersion {
@@ -2641,6 +2670,7 @@ pub mod image_version {
                 owner: self.owner,
                 date_created: self.date_created,
                 build_type: self.build_type,
+                image_source: self.image_source,
             }
         }
     }
@@ -2649,6 +2679,106 @@ impl ImageVersion {
     /// Creates a new builder-style object to manufacture [`ImageVersion`](crate::model::ImageVersion).
     pub fn builder() -> crate::model::image_version::Builder {
         crate::model::image_version::Builder::default()
+    }
+}
+
+/// When writing a match expression against `ImageSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imagesource = unimplemented!();
+/// match imagesource {
+///     ImageSource::AmazonManaged => { /* ... */ },
+///     ImageSource::AwsMarketplace => { /* ... */ },
+///     ImageSource::Custom => { /* ... */ },
+///     ImageSource::Imported => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imagesource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageSource::NewFeature` is defined.
+/// Specifically, when `imagesource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImageSource {
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonManaged,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplace,
+    #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    Imported,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for ImageSource {
+    fn from(s: &str) -> Self {
+        match s {
+            "AMAZON_MANAGED" => ImageSource::AmazonManaged,
+            "AWS_MARKETPLACE" => ImageSource::AwsMarketplace,
+            "CUSTOM" => ImageSource::Custom,
+            "IMPORTED" => ImageSource::Imported,
+            other => ImageSource::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for ImageSource {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImageSource::from(s))
+    }
+}
+impl ImageSource {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImageSource::AmazonManaged => "AMAZON_MANAGED",
+            ImageSource::AwsMarketplace => "AWS_MARKETPLACE",
+            ImageSource::Custom => "CUSTOM",
+            ImageSource::Imported => "IMPORTED",
+            ImageSource::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AMAZON_MANAGED", "AWS_MARKETPLACE", "CUSTOM", "IMPORTED"]
+    }
+}
+impl AsRef<str> for ImageSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2942,6 +3072,7 @@ impl AsRef<str> for ImageType {
 ///     Ownership::Amazon => { /* ... */ },
 ///     Ownership::SelfValue => { /* ... */ },
 ///     Ownership::Shared => { /* ... */ },
+///     Ownership::Thirdparty => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -2981,6 +3112,8 @@ pub enum Ownership {
     SelfValue,
     #[allow(missing_docs)] // documentation missing in model
     Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    Thirdparty,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
@@ -2990,6 +3123,7 @@ impl std::convert::From<&str> for Ownership {
             "Amazon" => Ownership::Amazon,
             "Self" => Ownership::SelfValue,
             "Shared" => Ownership::Shared,
+            "ThirdParty" => Ownership::Thirdparty,
             other => Ownership::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -3008,12 +3142,13 @@ impl Ownership {
             Ownership::Amazon => "Amazon",
             Ownership::SelfValue => "Self",
             Ownership::Shared => "Shared",
+            Ownership::Thirdparty => "ThirdParty",
             Ownership::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Amazon", "Self", "Shared"]
+        &["Amazon", "Self", "Shared", "ThirdParty"]
     }
 }
 impl AsRef<str> for Ownership {
@@ -3251,10 +3386,10 @@ pub struct ImagePipeline {
     /// <p>The date on which this image pipeline was last updated.</p>
     #[doc(hidden)]
     pub date_updated: std::option::Option<std::string::String>,
-    /// <p>The date on which this image pipeline was last run.</p>
+    /// <p>This is no longer supported, and does not return a value.</p>
     #[doc(hidden)]
     pub date_last_run: std::option::Option<std::string::String>,
-    /// <p>The date on which this image pipeline will next be run.</p>
+    /// <p>This is no longer supported, and does not return a value.</p>
     #[doc(hidden)]
     pub date_next_run: std::option::Option<std::string::String>,
     /// <p>The tags of this image pipeline.</p>
@@ -3321,11 +3456,11 @@ impl ImagePipeline {
     pub fn date_updated(&self) -> std::option::Option<&str> {
         self.date_updated.as_deref()
     }
-    /// <p>The date on which this image pipeline was last run.</p>
+    /// <p>This is no longer supported, and does not return a value.</p>
     pub fn date_last_run(&self) -> std::option::Option<&str> {
         self.date_last_run.as_deref()
     }
-    /// <p>The date on which this image pipeline will next be run.</p>
+    /// <p>This is no longer supported, and does not return a value.</p>
     pub fn date_next_run(&self) -> std::option::Option<&str> {
         self.date_next_run.as_deref()
     }
@@ -3535,12 +3670,12 @@ pub mod image_pipeline {
             self.date_updated = input;
             self
         }
-        /// <p>The date on which this image pipeline was last run.</p>
+        /// <p>This is no longer supported, and does not return a value.</p>
         pub fn date_last_run(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_last_run = Some(input.into());
             self
         }
-        /// <p>The date on which this image pipeline was last run.</p>
+        /// <p>This is no longer supported, and does not return a value.</p>
         pub fn set_date_last_run(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3548,12 +3683,12 @@ pub mod image_pipeline {
             self.date_last_run = input;
             self
         }
-        /// <p>The date on which this image pipeline will next be run.</p>
+        /// <p>This is no longer supported, and does not return a value.</p>
         pub fn date_next_run(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_next_run = Some(input.into());
             self
         }
-        /// <p>The date on which this image pipeline will next be run.</p>
+        /// <p>This is no longer supported, and does not return a value.</p>
         pub fn set_date_next_run(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3627,16 +3762,16 @@ pub struct ImageSummary {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this is an AMI or container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The version of the image.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The platform of the image.</p>
+    /// <p>The image operating system platform, such as Linux or Windows.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The state of the image.</p>
@@ -3645,13 +3780,13 @@ pub struct ImageSummary {
     /// <p>The owner of the image.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The date on which this image was created.</p>
+    /// <p>The date on which Image Builder created this image.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
-    /// <p>The output resources produced when creating this image.</p>
+    /// <p>The output resources that Image Builder produced when it created this image.</p>
     #[doc(hidden)]
     pub output_resources: std::option::Option<crate::model::OutputResources>,
-    /// <p>The tags of the image.</p>
+    /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3663,6 +3798,9 @@ pub struct ImageSummary {
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    #[doc(hidden)]
+    pub image_source: std::option::Option<crate::model::ImageSource>,
 }
 impl ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -3673,7 +3811,7 @@ impl ImageSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is an AMI or container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
         self.r#type.as_ref()
     }
@@ -3681,11 +3819,11 @@ impl ImageSummary {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The platform of the image.</p>
+    /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn os_version(&self) -> std::option::Option<&str> {
         self.os_version.as_deref()
     }
@@ -3697,15 +3835,15 @@ impl ImageSummary {
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The date on which this image was created.</p>
+    /// <p>The date on which Image Builder created this image.</p>
     pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
-    /// <p>The output resources produced when creating this image.</p>
+    /// <p>The output resources that Image Builder produced when it created this image.</p>
     pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
         self.output_resources.as_ref()
     }
-    /// <p>The tags of the image.</p>
+    /// <p>The tags that apply to this image.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3720,6 +3858,10 @@ impl ImageSummary {
     /// </ul>
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
+    }
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+        self.image_source.as_ref()
     }
 }
 /// See [`ImageSummary`](crate::model::ImageSummary).
@@ -3742,6 +3884,7 @@ pub mod image_summary {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) build_type: std::option::Option<crate::model::BuildType>,
+        pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -3764,12 +3907,12 @@ pub mod image_summary {
             self.name = input;
             self
         }
-        /// <p>Specifies whether this is an AMI or container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies whether this is an AMI or container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -3784,22 +3927,22 @@ pub mod image_summary {
             self.version = input;
             self
         }
-        /// <p>The platform of the image.</p>
+        /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the image.</p>
+        /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
-        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+        /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.os_version = Some(input.into());
             self
         }
-        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+        /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os_version = input;
             self
@@ -3824,22 +3967,22 @@ pub mod image_summary {
             self.owner = input;
             self
         }
-        /// <p>The date on which this image was created.</p>
+        /// <p>The date on which Image Builder created this image.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_created = Some(input.into());
             self
         }
-        /// <p>The date on which this image was created.</p>
+        /// <p>The date on which Image Builder created this image.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
-        /// <p>The output resources produced when creating this image.</p>
+        /// <p>The output resources that Image Builder produced when it created this image.</p>
         pub fn output_resources(mut self, input: crate::model::OutputResources) -> Self {
             self.output_resources = Some(input);
             self
         }
-        /// <p>The output resources produced when creating this image.</p>
+        /// <p>The output resources that Image Builder produced when it created this image.</p>
         pub fn set_output_resources(
             mut self,
             input: std::option::Option<crate::model::OutputResources>,
@@ -3851,7 +3994,7 @@ pub mod image_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the image.</p>
+        /// <p>The tags that apply to this image.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3862,7 +4005,7 @@ pub mod image_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags of the image.</p>
+        /// <p>The tags that apply to this image.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3895,6 +4038,19 @@ pub mod image_summary {
             self.build_type = input;
             self
         }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
+            self.image_source = Some(input);
+            self
+        }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn set_image_source(
+            mut self,
+            input: std::option::Option<crate::model::ImageSource>,
+        ) -> Self {
+            self.image_source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImageSummary`](crate::model::ImageSummary).
         pub fn build(self) -> crate::model::ImageSummary {
             crate::model::ImageSummary {
@@ -3910,6 +4066,7 @@ pub mod image_summary {
                 output_resources: self.output_resources,
                 tags: self.tags,
                 build_type: self.build_type,
+                image_source: self.image_source,
             }
         }
     }
@@ -5419,16 +5576,16 @@ pub struct ComponentSummary {
     /// <p>The version of the component.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes the current status of the component.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ComponentState>,
-    /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The owner of the component.</p>
@@ -5437,16 +5594,22 @@ pub struct ComponentSummary {
     /// <p>The description of the component.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The change description of the component.</p>
+    /// <p>The change description for the current version of the component.</p>
     #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
-    /// <p>The date that the component was created.</p>
+    /// <p>The original creation date of the component.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
-    /// <p>The tags associated with the component.</p>
+    /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+    #[doc(hidden)]
+    pub publisher: std::option::Option<std::string::String>,
+    /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+    #[doc(hidden)]
+    pub obfuscate: bool,
 }
 impl ComponentSummary {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -5461,11 +5624,11 @@ impl ComponentSummary {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_os_versions.as_deref()
     }
@@ -5473,7 +5636,7 @@ impl ComponentSummary {
     pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
         self.state.as_ref()
     }
-    /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
         self.r#type.as_ref()
     }
@@ -5485,20 +5648,28 @@ impl ComponentSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description of the component.</p>
+    /// <p>The change description for the current version of the component.</p>
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The date that the component was created.</p>
+    /// <p>The original creation date of the component.</p>
     pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
-    /// <p>The tags associated with the component.</p>
+    /// <p>The tags that apply to the component.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+    pub fn publisher(&self) -> std::option::Option<&str> {
+        self.publisher.as_deref()
+    }
+    /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+    pub fn obfuscate(&self) -> bool {
+        self.obfuscate
     }
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
@@ -5521,6 +5692,8 @@ pub mod component_summary {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) publisher: std::option::Option<std::string::String>,
+        pub(crate) obfuscate: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -5553,12 +5726,12 @@ pub mod component_summary {
             self.version = input;
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -5567,14 +5740,14 @@ pub mod component_summary {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         ///
-        /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+        /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
-        /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+        /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5595,12 +5768,12 @@ pub mod component_summary {
             self.state = input;
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+        /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+        /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
@@ -5625,12 +5798,12 @@ pub mod component_summary {
             self.description = input;
             self
         }
-        /// <p>The change description of the component.</p>
+        /// <p>The change description for the current version of the component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_description = Some(input.into());
             self
         }
-        /// <p>The change description of the component.</p>
+        /// <p>The change description for the current version of the component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5638,12 +5811,12 @@ pub mod component_summary {
             self.change_description = input;
             self
         }
-        /// <p>The date that the component was created.</p>
+        /// <p>The original creation date of the component.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_created = Some(input.into());
             self
         }
-        /// <p>The date that the component was created.</p>
+        /// <p>The original creation date of the component.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -5652,7 +5825,7 @@ pub mod component_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5663,7 +5836,7 @@ pub mod component_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags associated with the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5671,6 +5844,26 @@ pub mod component_summary {
             >,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+        pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher = Some(input.into());
+            self
+        }
+        /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+        pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher = input;
+            self
+        }
+        /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+        pub fn obfuscate(mut self, input: bool) -> Self {
+            self.obfuscate = Some(input);
+            self
+        }
+        /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+        pub fn set_obfuscate(mut self, input: std::option::Option<bool>) -> Self {
+            self.obfuscate = input;
             self
         }
         /// Consumes the builder and constructs a [`ComponentSummary`](crate::model::ComponentSummary).
@@ -5688,6 +5881,8 @@ pub mod component_summary {
                 change_description: self.change_description,
                 date_created: self.date_created,
                 tags: self.tags,
+                publisher: self.publisher,
+                obfuscate: self.obfuscate.unwrap_or_default(),
             }
         }
     }
@@ -6383,7 +6578,7 @@ pub struct ImageRecipe {
     /// <p>The version of the image recipe.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The components of the image recipe.</p>
+    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>The base image of the image recipe.</p>
@@ -6437,7 +6632,7 @@ impl ImageRecipe {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The components of the image recipe.</p>
+    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
@@ -6574,14 +6769,14 @@ pub mod image_recipe {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input);
             self.components = Some(v);
             self
         }
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -6713,7 +6908,8 @@ impl ImageRecipe {
     }
 }
 
-/// <p>In addition to your infrastruction configuration, these settings provide an extra layer of control over your build instances. For instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create. You can also specify commands to run on launch for all of your build instances.</p>
+/// <p>In addition to your infrastructure configuration, these settings provide an extra layer of control over your build instances. You can also specify commands to run on launch for all of your build instances.</p>
+/// <p>Image Builder does not automatically install the Systems Manager agent on Windows instances. If your base image includes the Systems Manager agent, then the AMI that you create will also include the agent. For Linux instances, if the base image does not already include the Systems Manager agent, Image Builder installs it. For Linux instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalInstanceConfiguration {
@@ -7272,7 +7468,7 @@ pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
-    /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+    /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
 }
@@ -7281,7 +7477,7 @@ impl ComponentConfiguration {
     pub fn component_arn(&self) -> std::option::Option<&str> {
         self.component_arn.as_deref()
     }
-    /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+    /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameter]> {
         self.parameters.as_deref()
     }
@@ -7313,14 +7509,14 @@ pub mod component_configuration {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+        /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
         pub fn parameters(mut self, input: crate::model::ComponentParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+        /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
@@ -7440,7 +7636,7 @@ pub struct Image {
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this is an AMI or container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The name of the image.</p>
@@ -7465,22 +7661,22 @@ pub struct Image {
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>The platform of the image.</p>
+    /// <p>The image operating system platform, such as Linux or Windows.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
     #[doc(hidden)]
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
-    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     #[doc(hidden)]
     pub os_version: std::option::Option<std::string::String>,
     /// <p>The state of the image.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ImageState>,
-    /// <p>The image recipe used when creating the image.</p>
+    /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
     #[doc(hidden)]
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
-    /// <p>The recipe that is used to create an Image Builder container image.</p>
+    /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
     #[doc(hidden)]
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
     /// <p>The name of the image pipeline that created this image.</p>
@@ -7489,23 +7685,23 @@ pub struct Image {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
     #[doc(hidden)]
     pub source_pipeline_arn: std::option::Option<std::string::String>,
-    /// <p>The infrastructure used when creating this image.</p>
+    /// <p>The infrastructure that Image Builder used to create this image.</p>
     #[doc(hidden)]
     pub infrastructure_configuration:
         std::option::Option<crate::model::InfrastructureConfiguration>,
-    /// <p>The distribution configuration used when creating this image.</p>
+    /// <p>The distribution configuration that Image Builder used to create this image.</p>
     #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
-    /// <p>The image tests configuration used when creating this image.</p>
+    /// <p>The image tests that ran when that Image Builder created this image.</p>
     #[doc(hidden)]
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
-    /// <p>The date on which this image was created.</p>
+    /// <p>The date on which Image Builder created this image.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
-    /// <p>The output resources produced when creating this image.</p>
+    /// <p>The output resources that Image Builder produces for this image.</p>
     #[doc(hidden)]
     pub output_resources: std::option::Option<crate::model::OutputResources>,
-    /// <p>The tags of the image.</p>
+    /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7517,6 +7713,9 @@ pub struct Image {
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::BuildType>,
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    #[doc(hidden)]
+    pub image_source: std::option::Option<crate::model::ImageSource>,
 }
 impl Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -7536,7 +7735,7 @@ impl Image {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Specifies whether this is an AMI or container image.</p>
+    /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ImageType> {
         self.r#type.as_ref()
     }
@@ -7564,15 +7763,15 @@ impl Image {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The platform of the image.</p>
+    /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
     pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
-    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn os_version(&self) -> std::option::Option<&str> {
         self.os_version.as_deref()
     }
@@ -7580,11 +7779,11 @@ impl Image {
     pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
         self.state.as_ref()
     }
-    /// <p>The image recipe used when creating the image.</p>
+    /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
     pub fn image_recipe(&self) -> std::option::Option<&crate::model::ImageRecipe> {
         self.image_recipe.as_ref()
     }
-    /// <p>The recipe that is used to create an Image Builder container image.</p>
+    /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
     pub fn container_recipe(&self) -> std::option::Option<&crate::model::ContainerRecipe> {
         self.container_recipe.as_ref()
     }
@@ -7596,33 +7795,33 @@ impl Image {
     pub fn source_pipeline_arn(&self) -> std::option::Option<&str> {
         self.source_pipeline_arn.as_deref()
     }
-    /// <p>The infrastructure used when creating this image.</p>
+    /// <p>The infrastructure that Image Builder used to create this image.</p>
     pub fn infrastructure_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
-    /// <p>The distribution configuration used when creating this image.</p>
+    /// <p>The distribution configuration that Image Builder used to create this image.</p>
     pub fn distribution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DistributionConfiguration> {
         self.distribution_configuration.as_ref()
     }
-    /// <p>The image tests configuration used when creating this image.</p>
+    /// <p>The image tests that ran when that Image Builder created this image.</p>
     pub fn image_tests_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
-    /// <p>The date on which this image was created.</p>
+    /// <p>The date on which Image Builder created this image.</p>
     pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
-    /// <p>The output resources produced when creating this image.</p>
+    /// <p>The output resources that Image Builder produces for this image.</p>
     pub fn output_resources(&self) -> std::option::Option<&crate::model::OutputResources> {
         self.output_resources.as_ref()
     }
-    /// <p>The tags of the image.</p>
+    /// <p>The tags that apply to this image.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7637,6 +7836,10 @@ impl Image {
     /// </ul>
     pub fn build_type(&self) -> std::option::Option<&crate::model::BuildType> {
         self.build_type.as_ref()
+    }
+    /// <p>The origin of the base image that Image Builder used to build this image.</p>
+    pub fn image_source(&self) -> std::option::Option<&crate::model::ImageSource> {
+        self.image_source.as_ref()
     }
 }
 /// See [`Image`](crate::model::Image).
@@ -7669,6 +7872,7 @@ pub mod image {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) build_type: std::option::Option<crate::model::BuildType>,
+        pub(crate) image_source: std::option::Option<crate::model::ImageSource>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -7707,12 +7911,12 @@ pub mod image {
             self.arn = input;
             self
         }
-        /// <p>Specifies whether this is an AMI or container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies whether this is an AMI or container image.</p>
+        /// <p>Specifies whether this image produces an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -7769,22 +7973,22 @@ pub mod image {
             self.version = input;
             self
         }
-        /// <p>The platform of the image.</p>
+        /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the image.</p>
+        /// <p>The image operating system platform, such as Linux or Windows.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -7792,12 +7996,12 @@ pub mod image {
             self.enhanced_image_metadata_enabled = input;
             self
         }
-        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+        /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.os_version = Some(input.into());
             self
         }
-        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+        /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os_version = input;
             self
@@ -7812,12 +8016,12 @@ pub mod image {
             self.state = input;
             self
         }
-        /// <p>The image recipe used when creating the image.</p>
+        /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
         pub fn image_recipe(mut self, input: crate::model::ImageRecipe) -> Self {
             self.image_recipe = Some(input);
             self
         }
-        /// <p>The image recipe used when creating the image.</p>
+        /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
         pub fn set_image_recipe(
             mut self,
             input: std::option::Option<crate::model::ImageRecipe>,
@@ -7825,12 +8029,12 @@ pub mod image {
             self.image_recipe = input;
             self
         }
-        /// <p>The recipe that is used to create an Image Builder container image.</p>
+        /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
         pub fn container_recipe(mut self, input: crate::model::ContainerRecipe) -> Self {
             self.container_recipe = Some(input);
             self
         }
-        /// <p>The recipe that is used to create an Image Builder container image.</p>
+        /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
         pub fn set_container_recipe(
             mut self,
             input: std::option::Option<crate::model::ContainerRecipe>,
@@ -7864,7 +8068,7 @@ pub mod image {
             self.source_pipeline_arn = input;
             self
         }
-        /// <p>The infrastructure used when creating this image.</p>
+        /// <p>The infrastructure that Image Builder used to create this image.</p>
         pub fn infrastructure_configuration(
             mut self,
             input: crate::model::InfrastructureConfiguration,
@@ -7872,7 +8076,7 @@ pub mod image {
             self.infrastructure_configuration = Some(input);
             self
         }
-        /// <p>The infrastructure used when creating this image.</p>
+        /// <p>The infrastructure that Image Builder used to create this image.</p>
         pub fn set_infrastructure_configuration(
             mut self,
             input: std::option::Option<crate::model::InfrastructureConfiguration>,
@@ -7880,7 +8084,7 @@ pub mod image {
             self.infrastructure_configuration = input;
             self
         }
-        /// <p>The distribution configuration used when creating this image.</p>
+        /// <p>The distribution configuration that Image Builder used to create this image.</p>
         pub fn distribution_configuration(
             mut self,
             input: crate::model::DistributionConfiguration,
@@ -7888,7 +8092,7 @@ pub mod image {
             self.distribution_configuration = Some(input);
             self
         }
-        /// <p>The distribution configuration used when creating this image.</p>
+        /// <p>The distribution configuration that Image Builder used to create this image.</p>
         pub fn set_distribution_configuration(
             mut self,
             input: std::option::Option<crate::model::DistributionConfiguration>,
@@ -7896,7 +8100,7 @@ pub mod image {
             self.distribution_configuration = input;
             self
         }
-        /// <p>The image tests configuration used when creating this image.</p>
+        /// <p>The image tests that ran when that Image Builder created this image.</p>
         pub fn image_tests_configuration(
             mut self,
             input: crate::model::ImageTestsConfiguration,
@@ -7904,7 +8108,7 @@ pub mod image {
             self.image_tests_configuration = Some(input);
             self
         }
-        /// <p>The image tests configuration used when creating this image.</p>
+        /// <p>The image tests that ran when that Image Builder created this image.</p>
         pub fn set_image_tests_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageTestsConfiguration>,
@@ -7912,22 +8116,22 @@ pub mod image {
             self.image_tests_configuration = input;
             self
         }
-        /// <p>The date on which this image was created.</p>
+        /// <p>The date on which Image Builder created this image.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_created = Some(input.into());
             self
         }
-        /// <p>The date on which this image was created.</p>
+        /// <p>The date on which Image Builder created this image.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
-        /// <p>The output resources produced when creating this image.</p>
+        /// <p>The output resources that Image Builder produces for this image.</p>
         pub fn output_resources(mut self, input: crate::model::OutputResources) -> Self {
             self.output_resources = Some(input);
             self
         }
-        /// <p>The output resources produced when creating this image.</p>
+        /// <p>The output resources that Image Builder produces for this image.</p>
         pub fn set_output_resources(
             mut self,
             input: std::option::Option<crate::model::OutputResources>,
@@ -7939,7 +8143,7 @@ pub mod image {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the image.</p>
+        /// <p>The tags that apply to this image.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7950,7 +8154,7 @@ pub mod image {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags of the image.</p>
+        /// <p>The tags that apply to this image.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7983,6 +8187,19 @@ pub mod image {
             self.build_type = input;
             self
         }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn image_source(mut self, input: crate::model::ImageSource) -> Self {
+            self.image_source = Some(input);
+            self
+        }
+        /// <p>The origin of the base image that Image Builder used to build this image.</p>
+        pub fn set_image_source(
+            mut self,
+            input: std::option::Option<crate::model::ImageSource>,
+        ) -> Self {
+            self.image_source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
@@ -8005,6 +8222,7 @@ pub mod image {
                 output_resources: self.output_resources,
                 tags: self.tags,
                 build_type: self.build_type,
+                image_source: self.image_source,
             }
         }
     }
@@ -8281,7 +8499,7 @@ pub struct ContainerRecipe {
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
-    /// <p>Components for build and test that are included in the container recipe.</p>
+    /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -8371,7 +8589,7 @@ impl ContainerRecipe {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>Components for build and test that are included in the container recipe.</p>
+    /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
@@ -8582,14 +8800,14 @@ pub mod container_recipe {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input);
             self.components = Some(v);
             self
         }
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -8850,19 +9068,19 @@ pub struct Component {
     /// <p>The change description of the component.</p>
     #[doc(hidden)]
     pub change_description: std::option::Option<std::string::String>,
-    /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentType>,
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     #[doc(hidden)]
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ComponentState>,
-    /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+    /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
     /// <p>The owner of the component.</p>
@@ -8877,13 +9095,19 @@ pub struct Component {
     /// <p>The encryption status of the component.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The date that the component was created.</p>
+    /// <p>The date that Image Builder created the component.</p>
     #[doc(hidden)]
     pub date_created: std::option::Option<std::string::String>,
-    /// <p>The tags associated with the component.</p>
+    /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+    #[doc(hidden)]
+    pub publisher: std::option::Option<std::string::String>,
+    /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+    #[doc(hidden)]
+    pub obfuscate: bool,
 }
 impl Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -8906,15 +9130,15 @@ impl Component {
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>The platform of the component.</p>
+    /// <p>The operating system platform of the component.</p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_os_versions.as_deref()
     }
@@ -8922,7 +9146,7 @@ impl Component {
     pub fn state(&self) -> std::option::Option<&crate::model::ComponentState> {
         self.state.as_ref()
     }
-    /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+    /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::ComponentParameterDetail]> {
         self.parameters.as_deref()
     }
@@ -8942,16 +9166,24 @@ impl Component {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The date that the component was created.</p>
+    /// <p>The date that Image Builder created the component.</p>
     pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
-    /// <p>The tags associated with the component.</p>
+    /// <p>The tags that apply to the component.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+    pub fn publisher(&self) -> std::option::Option<&str> {
+        self.publisher.as_deref()
+    }
+    /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+    pub fn obfuscate(&self) -> bool {
+        self.obfuscate
     }
 }
 /// See [`Component`](crate::model::Component).
@@ -8979,6 +9211,8 @@ pub mod component {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) publisher: std::option::Option<std::string::String>,
+        pub(crate) obfuscate: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -9034,22 +9268,22 @@ pub mod component {
             self.change_description = input;
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+        /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+        /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -9058,14 +9292,14 @@ pub mod component {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         ///
-        /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+        /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
-        /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+        /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9090,14 +9324,14 @@ pub mod component {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+        /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
         pub fn parameters(mut self, input: crate::model::ComponentParameterDetail) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+        /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
@@ -9145,12 +9379,12 @@ pub mod component {
             self.encrypted = input;
             self
         }
-        /// <p>The date that the component was created.</p>
+        /// <p>The date that Image Builder created the component.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_created = Some(input.into());
             self
         }
-        /// <p>The date that the component was created.</p>
+        /// <p>The date that Image Builder created the component.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -9159,7 +9393,7 @@ pub mod component {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9170,7 +9404,7 @@ pub mod component {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags associated with the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9178,6 +9412,26 @@ pub mod component {
             >,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+        pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher = Some(input.into());
+            self
+        }
+        /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
+        pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher = input;
+            self
+        }
+        /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+        pub fn obfuscate(mut self, input: bool) -> Self {
+            self.obfuscate = Some(input);
+            self
+        }
+        /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
+        pub fn set_obfuscate(mut self, input: std::option::Option<bool>) -> Self {
+            self.obfuscate = input;
             self
         }
         /// Consumes the builder and constructs a [`Component`](crate::model::Component).
@@ -9199,6 +9453,8 @@ pub mod component {
                 encrypted: self.encrypted,
                 date_created: self.date_created,
                 tags: self.tags,
+                publisher: self.publisher,
+                obfuscate: self.obfuscate.unwrap_or_default(),
             }
         }
     }

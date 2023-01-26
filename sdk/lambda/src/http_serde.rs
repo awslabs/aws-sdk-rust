@@ -347,6 +347,16 @@ pub(crate) fn deser_header_get_provisioned_concurrency_config_too_many_requests_
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn deser_header_get_runtime_management_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn deser_header_invoke_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -546,6 +556,16 @@ pub(crate) fn deser_header_put_function_event_invoke_config_too_many_requests_ex
 }
 
 pub(crate) fn deser_header_put_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Retry-After").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn deser_header_put_runtime_management_config_too_many_requests_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

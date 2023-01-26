@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_list_databases_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_operations_output_next_token(
+    input: &crate::output::ListOperationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_applications_output_applications(
     input: crate::output::ListApplicationsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>> {
@@ -53,6 +63,16 @@ pub(crate) fn lens_structure_crate_output_list_databases_output_databases(
     input: crate::output::ListDatabasesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>> {
     let input = match input.databases {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_operations_output_operations(
+    input: crate::output::ListOperationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Operation>> {
+    let input = match input.operations {
         None => return None,
         Some(t) => t,
     };

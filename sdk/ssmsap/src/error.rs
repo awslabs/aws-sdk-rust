@@ -22,11 +22,11 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateApplicationSettings
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationSettingsErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -135,7 +135,7 @@ impl std::error::Error for UpdateApplicationSettingsError {
     }
 }
 
-/// <p></p>
+/// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
@@ -195,7 +195,7 @@ impl ValidationException {
     }
 }
 
-/// <p></p>
+/// <p>The resource is not available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
@@ -255,7 +255,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p></p>
+/// <p>An internal error has occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
@@ -336,11 +336,11 @@ impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p></p>
+    /// <p>A conflict has occurred.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -439,7 +439,7 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p></p>
+/// <p>A conflict has occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
@@ -520,11 +520,11 @@ impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p></p>
+    /// <p>A conflict has occurred.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -644,11 +644,11 @@ impl aws_smithy_http::result::CreateUnhandledError for RegisterApplicationError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterApplicationErrorKind {
-    /// <p></p>
+    /// <p>A conflict has occurred.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -774,11 +774,11 @@ impl aws_smithy_http::result::CreateUnhandledError for PutResourcePermissionErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutResourcePermissionErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -908,11 +908,11 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p></p>
+    /// <p>A conflict has occurred.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1017,6 +1017,122 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `ListOperations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListOperationsError {
+    /// Kind of error that occurred.
+    pub kind: ListOperationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListOperationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `ListOperations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListOperationsErrorKind {
+    /// <p>An internal error has occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for ListOperationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListOperationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListOperationsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListOperationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListOperationsError {
+    fn code(&self) -> Option<&str> {
+        ListOperationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListOperationsError {
+    /// Creates a new `ListOperationsError`.
+    pub fn new(kind: ListOperationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListOperationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListOperationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOperationsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListOperationsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListOperationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListOperationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListOperationsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListOperationsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `ListDatabases` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1038,11 +1154,11 @@ impl aws_smithy_http::result::CreateUnhandledError for ListDatabasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatabasesErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1165,11 +1281,11 @@ impl aws_smithy_http::result::CreateUnhandledError for ListComponentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListComponentsErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1292,11 +1408,11 @@ impl aws_smithy_http::result::CreateUnhandledError for ListApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApplicationsErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1422,11 +1538,11 @@ impl aws_smithy_http::result::CreateUnhandledError for GetResourcePermissionErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcePermissionErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1556,9 +1672,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1672,9 +1788,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDatabaseErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1785,9 +1901,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetComponentErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -1901,9 +2017,9 @@ impl aws_smithy_http::result::CreateUnhandledError for GetApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApplicationErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -2017,9 +2133,9 @@ impl aws_smithy_http::result::CreateUnhandledError for DeregisterApplicationErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterApplicationErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -2142,11 +2258,11 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePermissionE
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePermissionErrorKind {
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

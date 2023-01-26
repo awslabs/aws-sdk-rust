@@ -100,6 +100,136 @@ pub(super) fn resolve_endpoint(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
         }
+        if (region) == ("af-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.af-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-northeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-northeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-northeast-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-southeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-southeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ap-southeast-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ca-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.ca-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-north-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.eu-west-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("me-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.me-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("sa-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.sa-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-east-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("cn-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.cn-north-1.amazonaws.com.cn".to_string())
+                .build());
+        }
+        if (region) == ("cn-northwest-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.cn-northwest-1.amazonaws.com.cn".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-gov-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://wafv2.us-gov-west-1.amazonaws.com".to_string())
+                .build());
+        }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({
                 let mut out = String::new();

@@ -327,6 +327,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatabases {
     }
 }
 
+/// Operation shape for `ListOperations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_operations`](crate::client::Client::list_operations).
+///
+/// See [`crate::client::fluent_builders::ListOperations`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct ListOperations {
+    _private: (),
+}
+impl ListOperations {
+    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
+    pub fn builder() -> crate::input::list_operations_input::Builder {
+        crate::input::list_operations_input::Builder::default()
+    }
+    /// Creates a new `ListOperations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
+    type Output =
+        std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_operations_error(response)
+        } else {
+            crate::operation_deser::parse_list_operations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

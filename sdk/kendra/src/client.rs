@@ -6104,7 +6104,7 @@ pub mod fluent_builders {
     /// <li> <p>Matching FAQs</p> </li>
     /// <li> <p>Relevant documents</p> </li>
     /// </ul>
-    /// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code> parameter.</p>
+    /// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code> parameter.</p>
     /// <p>Each query returns the 100 most relevant results. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Query {

@@ -25,26 +25,20 @@ pub(super) fn resolve_endpoint(
     {
         #[allow(unused)]
         if let Some(endpoint) = endpoint {
-            #[allow(unused)]
-            if let Some(url) =
-                crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-            {
-                if (*use_fips) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: FIPS and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                if (*use_dual_stack) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url(endpoint.to_owned())
-                    .build());
+            if (*use_fips) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                ));
             }
+            if (*use_dual_stack) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                        .to_string(),
+                ));
+            }
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url(endpoint.to_owned())
+                .build());
         }
         if (*use_fips) == (true) {
             if (*use_dual_stack) == (true) {
@@ -70,18 +64,6 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
-                if (region) == ("servicediscovery") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://servicediscovery-fips.ca-central-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("servicediscovery") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url(
-                            "https://servicediscovery-fips.us-gov-west-1.amazonaws.com".to_string(),
-                        )
-                        .build());
-                }
                 return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();

@@ -172,7 +172,7 @@ mod create_multipart_upload_request_test {
     #[tokio::test]
     async fn create_multipart_upload_uri_construction_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::CreateMultipartUploadInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
@@ -184,7 +184,7 @@ mod create_multipart_upload_request_test {
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         pretty_assertions::assert_eq!(http_request.method(), "POST");
-        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/object.txt");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/object.txt");
         let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_query_string(
             &http_request,
@@ -1911,7 +1911,7 @@ mod head_object_request_test {
     #[tokio::test]
     async fn head_object_uri_encoding_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::HeadObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
@@ -1923,10 +1923,7 @@ mod head_object_request_test {
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         pretty_assertions::assert_eq!(http_request.method(), "HEAD");
-        pretty_assertions::assert_eq!(
-            http_request.uri().path(),
-            "/test-bucket/%3C%3E%20%60%3F%F0%9F%90%B1"
-        );
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/%3C%3E%20%60%3F%F0%9F%90%B1");
     }
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
@@ -2687,7 +2684,7 @@ mod put_bucket_lifecycle_configuration_request_test {
     #[tokio::test]
     async fn put_bucket_lifecycle_configuration_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutBucketLifecycleConfigurationInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
@@ -2711,7 +2708,7 @@ mod put_bucket_lifecycle_configuration_request_test {
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         pretty_assertions::assert_eq!(http_request.method(), "PUT");
-        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let expected_headers = [("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request.headers(),
@@ -3102,7 +3099,7 @@ mod put_object_request_test {
     #[tokio::test]
     async fn dont_send_duplicate_content_type_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
@@ -3115,7 +3112,7 @@ mod put_object_request_test {
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         pretty_assertions::assert_eq!(http_request.method(), "PUT");
-        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-type", "text/html")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request.headers(),
@@ -3127,7 +3124,7 @@ mod put_object_request_test {
     #[tokio::test]
     async fn dont_send_duplicate_content_length_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
@@ -3143,7 +3140,7 @@ mod put_object_request_test {
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         pretty_assertions::assert_eq!(http_request.method(), "PUT");
-        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-length", "2")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request.headers(),

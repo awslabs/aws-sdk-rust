@@ -94,16 +94,16 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_name): <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_name): <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
-    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::CreateGroup::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::CreateGroup::set_resource_query): <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>   <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>  </note>
+    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::CreateGroup::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::CreateGroup::set_resource_query): <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>   <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>  </note>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGroup::set_tags): <p>The tags to add to the group. A tag is key-value pair string.</p>
-    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::CreateGroup::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::CreateGroup::set_configuration): <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::CreateGroup::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::CreateGroup::set_configuration): <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
     /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The description of the resource group.</p>
     ///   - [`resource_query(Option<ResourceQuery>)`](crate::output::CreateGroupOutput::resource_query): <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateGroupOutput::tags): <p>The tags associated with the group.</p>
-    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::CreateGroupOutput::group_configuration): <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::CreateGroupOutput::group_configuration): <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup {
         fluent_builders::CreateGroup::new(self.handle.clone())
@@ -119,13 +119,23 @@ impl Client {
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountSettings::send) it.
+
+    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::GetAccountSettingsOutput::account_settings): <p>The current settings for the optional features in Resource Groups.</p>
+    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
+    pub fn get_account_settings(&self) -> fluent_builders::GetAccountSettings {
+        fluent_builders::GetAccountSettings::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_name): <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
     ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group): <p>The name or the ARN of the resource group to retrieve.</p>
     /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
-    ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>A full description of the resource group.</p>
+    ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
     pub fn get_group(&self) -> fluent_builders::GetGroup {
         fluent_builders::GetGroup::new(self.handle.clone())
@@ -133,9 +143,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetGroupConfiguration`](crate::client::fluent_builders::GetGroupConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroupConfiguration::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroupConfiguration::set_group): <p>The name or the ARN of the resource group.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroupConfiguration::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroupConfiguration::set_group): <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
     /// - On success, responds with [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput) with field(s):
-    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::GetGroupConfigurationOutput::group_configuration): <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::GetGroupConfigurationOutput::group_configuration): <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// - On failure, responds with [`SdkError<GetGroupConfigurationError>`](crate::error::GetGroupConfigurationError)
     pub fn get_group_configuration(&self) -> fluent_builders::GetGroupConfiguration {
         fluent_builders::GetGroupConfiguration::new(self.handle.clone())
@@ -166,11 +176,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GroupResources::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GroupResources::set_group): <p>The name or the ARN of the resource group to add resources to.</p>
-    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::GroupResources::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GroupResources::set_resource_arns): <p>The list of ARNs for resources to be added to the group. </p>
+    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::GroupResources::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GroupResources::set_resource_arns): <p>The list of ARNs of the resources to be added to the group. </p>
     /// - On success, responds with [`GroupResourcesOutput`](crate::output::GroupResourcesOutput) with field(s):
-    ///   - [`succeeded(Option<Vec<String>>)`](crate::output::GroupResourcesOutput::succeeded): <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
-    ///   - [`failed(Option<Vec<FailedResource>>)`](crate::output::GroupResourcesOutput::failed): <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
-    ///   - [`pending(Option<Vec<PendingResource>>)`](crate::output::GroupResourcesOutput::pending): <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    ///   - [`succeeded(Option<Vec<String>>)`](crate::output::GroupResourcesOutput::succeeded): <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    ///   - [`failed(Option<Vec<FailedResource>>)`](crate::output::GroupResourcesOutput::failed): <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    ///   - [`pending(Option<Vec<PendingResource>>)`](crate::output::GroupResourcesOutput::pending): <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     /// - On failure, responds with [`SdkError<GroupResourcesError>`](crate::error::GroupResourcesError)
     pub fn group_resources(&self) -> fluent_builders::GroupResources {
         fluent_builders::GroupResources::new(self.handle.clone())
@@ -181,7 +191,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_group_name): <important>   <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>  </important>
     ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_group): <p>The name or the ARN of the resource group</p>
-    ///   - [`filters(Vec<ResourceFilter>)`](crate::client::fluent_builders::ListGroupResources::filters) / [`set_filters(Option<Vec<ResourceFilter>>)`](crate::client::fluent_builders::ListGroupResources::set_filters): <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>  </ul>  <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>  <p> <code>The resource types specified as filters in the request are not valid.</code> </p>  <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
+    ///   - [`filters(Vec<ResourceFilter>)`](crate::client::fluent_builders::ListGroupResources::filters) / [`set_filters(Option<Vec<ResourceFilter>>)`](crate::client::fluent_builders::ListGroupResources::set_filters): <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>  </ul>  <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>  <p> <code>The resource types specified as filters in the request are not valid.</code> </p>  <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupResources::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     /// - On success, responds with [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput) with field(s):
@@ -197,7 +207,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<GroupFilter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<GroupFilter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>   <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>    <ul>     <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>     <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>    </ul> </li>  </ul>
+    ///   - [`filters(Vec<GroupFilter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<GroupFilter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>   <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>    <ul>     <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>     <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>    </ul> </li>  </ul>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
@@ -212,7 +222,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::PutGroupConfiguration::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::PutGroupConfiguration::set_group): <p>The name or ARN of the resource group with the configuration that you want to update.</p>
-    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::PutGroupConfiguration::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::PutGroupConfiguration::set_configuration): <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>  <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::PutGroupConfiguration::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::PutGroupConfiguration::set_configuration): <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>  <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
     /// - On success, responds with [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<PutGroupConfigurationError>`](crate::error::PutGroupConfigurationError)
@@ -229,7 +239,7 @@ impl Client {
     /// - On success, responds with [`SearchResourcesOutput`](crate::output::SearchResourcesOutput) with field(s):
     ///   - [`resource_identifiers(Option<Vec<ResourceIdentifier>>)`](crate::output::SearchResourcesOutput::resource_identifiers): <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchResourcesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    ///   - [`query_errors(Option<Vec<QueryError>>)`](crate::output::SearchResourcesOutput::query_errors): <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    ///   - [`query_errors(Option<Vec<QueryError>>)`](crate::output::SearchResourcesOutput::query_errors): <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>  <p>Possible values for <code>ErrorCode</code>:</p>  <ul>   <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>   <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::error::SearchResourcesError)
     pub fn search_resources(&self) -> fluent_builders::SearchResources {
         fluent_builders::SearchResources::new(self.handle.clone())
@@ -271,6 +281,16 @@ impl Client {
     pub fn untag(&self) -> fluent_builders::Untag {
         fluent_builders::Untag::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`group_lifecycle_events_desired_status(GroupLifecycleEventsDesiredStatus)`](crate::client::fluent_builders::UpdateAccountSettings::group_lifecycle_events_desired_status) / [`set_group_lifecycle_events_desired_status(Option<GroupLifecycleEventsDesiredStatus>)`](crate::client::fluent_builders::UpdateAccountSettings::set_group_lifecycle_events_desired_status): <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+    /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::UpdateAccountSettingsOutput::account_settings): <p>A structure that displays the status of the optional features in the account.</p>
+    /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
+    pub fn update_account_settings(&self) -> fluent_builders::UpdateAccountSettings {
+        fluent_builders::UpdateAccountSettings::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
     /// - The fluent builder is configurable:
@@ -288,7 +308,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroupQuery::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroupQuery::set_group_name): <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::UpdateGroupQuery::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::UpdateGroupQuery::set_group): <p>The name or the ARN of the resource group to query.</p>
-    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::UpdateGroupQuery::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::UpdateGroupQuery::set_resource_query): <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::UpdateGroupQuery::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::UpdateGroupQuery::set_resource_query): <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
     /// - On success, responds with [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput) with field(s):
     ///   - [`group_query(Option<GroupQuery>)`](crate::output::UpdateGroupQueryOutput::group_query): <p>The updated resource query associated with the resource group after the update.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupQueryError>`](crate::error::UpdateGroupQueryError)
@@ -305,7 +325,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates a resource group with the specified name and description. You can optionally include a resource query, or a service configuration. For more information about constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>Creates a resource group with the specified name and description. You can optionally include either a resource query or a service configuration. For more information about constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i>. For more information about service-linked groups and service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -370,12 +390,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
+        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
+        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -390,14 +410,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
+        /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
         /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
         /// </note>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.inner = self.inner.resource_query(input);
             self
         }
-        /// <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
+        /// <p>The resource query that determines which Amazon Web Services resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
         /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
         /// </note>
         pub fn set_resource_query(
@@ -434,14 +454,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_configuration(
@@ -542,6 +562,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetAccountSettings`.
+    ///
+    /// <p>Retrieves the current status of optional features in Resource Groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetAccountSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_account_settings_input::Builder,
+    }
+    impl GetAccountSettings {
+        /// Creates a new `GetAccountSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetAccountSettings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAccountSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// <p>Returns information about a specified resource group.</p>
@@ -634,7 +717,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGroupConfiguration`.
     ///
-    /// <p>Returns the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -699,12 +782,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name or the ARN of the resource group.</p>
+        /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group(input.into());
             self
         }
-        /// <p>The name or the ARN of the resource group.</p>
+        /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group(input);
             self
@@ -880,7 +963,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GroupResources`.
     ///
-    /// <p>Adds the specified resources to the specified group.</p>
+    /// <p>Adds the specified resources to the specified group.</p> <important>
+    /// <p>You can use this operation with only resource groups that are configured with the following types:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// </ul>
+    /// <p>Other resource group type and resource types aren't currently supported by this operation.</p>
+    /// </important>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -959,12 +1049,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The list of ARNs for resources to be added to the group. </p>
+        /// <p>The list of ARNs of the resources to be added to the group. </p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The list of ARNs for resources to be added to the group. </p>
+        /// <p>The list of ARNs of the resources to be added to the group. </p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1083,9 +1173,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
         /// </ul>
-        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
+        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
         /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
-        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
+        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
         pub fn filters(mut self, input: crate::model::ResourceFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
@@ -1094,9 +1184,9 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
         /// </ul>
-        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
+        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
         /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
-        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
+        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceFilter>>,
@@ -1127,7 +1217,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroups`.
     ///
-    /// <p>Returns a list of existing resource groups in your account.</p>
+    /// <p>Returns a list of existing Resource Groups in your account.</p>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -1207,8 +1297,8 @@ pub mod fluent_builders {
         /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
         /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
         /// <ul>
-        /// <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>
-        /// <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::GroupFilter) -> Self {
@@ -1220,8 +1310,8 @@ pub mod fluent_builders {
         /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
         /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
         /// <ul>
-        /// <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>
-        /// <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn set_filters(
@@ -1333,16 +1423,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
-        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
-        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_configuration(
@@ -1355,7 +1445,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchResources`.
     ///
-    /// <p>Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.</p>
+    /// <p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <code>CreateGroup</code> or <code>UpdateGroupQuery</code> operation.</p>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -1568,7 +1658,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UngroupResources`.
     ///
-    /// <p>Removes the specified resources from the specified group.</p>
+    /// <p>Removes the specified resources from the specified group. This operation works only with static groups that you populated using the <code>GroupResources</code> operation. It doesn't work with any resource groups that are automatically populated by tag-based or CloudFormation stack-based queries.</p>
     /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
@@ -1753,6 +1843,86 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateAccountSettings`.
+    ///
+    /// <p>Turns on or turns off optional features in Resource Groups.</p>
+    /// <p>The preceding example shows that the request to turn on group lifecycle events is <code>IN_PROGRESS</code>. You can call the <code>GetAccountSettings</code> operation to check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change to <code>ACTIVE</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAccountSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_account_settings_input::Builder,
+    }
+    impl UpdateAccountSettings {
+        /// Creates a new `UpdateAccountSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::UpdateAccountSettings,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAccountSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+        pub fn group_lifecycle_events_desired_status(
+            mut self,
+            input: crate::model::GroupLifecycleEventsDesiredStatus,
+        ) -> Self {
+            self.inner = self.inner.group_lifecycle_events_desired_status(input);
+            self
+        }
+        /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
+        pub fn set_group_lifecycle_events_desired_status(
+            mut self,
+            input: std::option::Option<crate::model::GroupLifecycleEventsDesiredStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_group_lifecycle_events_desired_status(input);
             self
         }
     }
@@ -1945,14 +2115,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group(input);
             self
         }
-        /// <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>
+        /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.inner = self.inner.resource_query(input);
             self
         }
-        /// <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>
+        /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
         /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_resource_query(

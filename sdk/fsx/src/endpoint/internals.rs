@@ -64,41 +64,6 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
-                if (region) == ("prod-ca-central-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.ca-central-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-east-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-east-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-east-2") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-east-2.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-west-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-west-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-west-2") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-west-2.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-gov-east-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-gov-east-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("prod-us-gov-west-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://fsx-fips.us-gov-west-1.amazonaws.com".to_string())
-                        .build());
-                }
                 return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();

@@ -8531,6 +8531,14 @@ where
                                     .map(|v| v.to_f64_lossy()),
                                 );
                             }
+                            "truePeakLimiterThreshold" => {
+                                builder = builder.set_true_peak_limiter_threshold(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -12079,6 +12087,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "clipLimits" => {
+                                builder = builder.set_clip_limits(
+                                    crate::json_deser::deser_structure_crate_model_clip_limits(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "colorSpaceConversion" => {
                                 builder = builder.set_color_space_conversion(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -13358,6 +13373,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "dashManifestStyle" => {
+                                builder = builder.set_dash_manifest_style(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DashManifestStyle::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "destination" => {
                                 builder = builder.set_destination(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -13671,6 +13699,19 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "dashManifestStyle" => {
+                                builder = builder.set_dash_manifest_style(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DashManifestStyle::from(u.as_ref())
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }
@@ -17713,6 +17754,86 @@ where
                                             crate::model::XavcHdProfileTelecine::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_clip_limits<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::ClipLimits>, aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::clip_limits::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "maximumRGBTolerance" => {
+                                builder = builder.set_maximum_rgb_tolerance(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "maximumYUV" => {
+                                builder = builder.set_maximum_yuv(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "minimumRGBTolerance" => {
+                                builder = builder.set_minimum_rgb_tolerance(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "minimumYUV" => {
+                                builder = builder.set_minimum_yuv(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
                                     .transpose()?,
                                 );
                             }

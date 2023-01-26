@@ -25,26 +25,20 @@ pub(super) fn resolve_endpoint(
     {
         #[allow(unused)]
         if let Some(endpoint) = endpoint {
-            #[allow(unused)]
-            if let Some(url) =
-                crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-            {
-                if (*use_fips) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: FIPS and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                if (*use_dual_stack) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url(endpoint.to_owned())
-                    .build());
+            if (*use_fips) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                ));
             }
+            if (*use_dual_stack) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                        .to_string(),
+                ));
+            }
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url(endpoint.to_owned())
+                .build());
         }
         if (*use_fips) == (true) {
             if (*use_dual_stack) == (true) {
@@ -105,6 +99,136 @@ pub(super) fn resolve_endpoint(
             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
+        }
+        if (region) == ("af-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.af-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-northeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-northeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-northeast-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-northeast-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-southeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-southeast-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ap-southeast-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ap-southeast-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("ca-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.ca-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-central-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-central-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-north-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-3") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.eu-west-3.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("me-south-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.me-south-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("sa-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.sa-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-east-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-west-2.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("cn-north-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.cn-north-1.amazonaws.com.cn".to_string())
+                .build());
+        }
+        if (region) == ("cn-northwest-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.cn-northwest-1.amazonaws.com.cn".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-gov-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://waf-regional.us-gov-west-1.amazonaws.com".to_string())
+                .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({

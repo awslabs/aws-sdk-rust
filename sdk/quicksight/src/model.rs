@@ -53359,6 +53359,10 @@ pub struct TableConfiguration {
     /// <p>The paginated report options for a table visual.</p>
     #[doc(hidden)]
     pub paginated_report_options: std::option::Option<crate::model::TablePaginatedReportOptions>,
+    /// <p>A collection of inline visualizations to display within a chart.</p>
+    #[doc(hidden)]
+    pub table_inline_visualizations:
+        std::option::Option<std::vec::Vec<crate::model::TableInlineVisualization>>,
 }
 impl TableConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -53387,6 +53391,12 @@ impl TableConfiguration {
     ) -> std::option::Option<&crate::model::TablePaginatedReportOptions> {
         self.paginated_report_options.as_ref()
     }
+    /// <p>A collection of inline visualizations to display within a chart.</p>
+    pub fn table_inline_visualizations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TableInlineVisualization]> {
+        self.table_inline_visualizations.as_deref()
+    }
 }
 /// See [`TableConfiguration`](crate::model::TableConfiguration).
 pub mod table_configuration {
@@ -53401,6 +53411,8 @@ pub mod table_configuration {
         pub(crate) field_options: std::option::Option<crate::model::TableFieldOptions>,
         pub(crate) paginated_report_options:
             std::option::Option<crate::model::TablePaginatedReportOptions>,
+        pub(crate) table_inline_visualizations:
+            std::option::Option<std::vec::Vec<crate::model::TableInlineVisualization>>,
     }
     impl Builder {
         /// <p>The field wells of the visual.</p>
@@ -53484,6 +53496,28 @@ pub mod table_configuration {
             self.paginated_report_options = input;
             self
         }
+        /// Appends an item to `table_inline_visualizations`.
+        ///
+        /// To override the contents of this collection use [`set_table_inline_visualizations`](Self::set_table_inline_visualizations).
+        ///
+        /// <p>A collection of inline visualizations to display within a chart.</p>
+        pub fn table_inline_visualizations(
+            mut self,
+            input: crate::model::TableInlineVisualization,
+        ) -> Self {
+            let mut v = self.table_inline_visualizations.unwrap_or_default();
+            v.push(input);
+            self.table_inline_visualizations = Some(v);
+            self
+        }
+        /// <p>A collection of inline visualizations to display within a chart.</p>
+        pub fn set_table_inline_visualizations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TableInlineVisualization>>,
+        ) -> Self {
+            self.table_inline_visualizations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TableConfiguration`](crate::model::TableConfiguration).
         pub fn build(self) -> crate::model::TableConfiguration {
             crate::model::TableConfiguration {
@@ -53493,6 +53527,7 @@ pub mod table_configuration {
                 total_options: self.total_options,
                 field_options: self.field_options,
                 paginated_report_options: self.paginated_report_options,
+                table_inline_visualizations: self.table_inline_visualizations,
             }
         }
     }
@@ -53501,6 +53536,149 @@ impl TableConfiguration {
     /// Creates a new builder-style object to manufacture [`TableConfiguration`](crate::model::TableConfiguration).
     pub fn builder() -> crate::model::table_configuration::Builder {
         crate::model::table_configuration::Builder::default()
+    }
+}
+
+/// <p>The inline visualization of a specific type to display within a chart.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TableInlineVisualization {
+    /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
+    #[doc(hidden)]
+    pub data_bars: std::option::Option<crate::model::DataBarsOptions>,
+}
+impl TableInlineVisualization {
+    /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
+    pub fn data_bars(&self) -> std::option::Option<&crate::model::DataBarsOptions> {
+        self.data_bars.as_ref()
+    }
+}
+/// See [`TableInlineVisualization`](crate::model::TableInlineVisualization).
+pub mod table_inline_visualization {
+
+    /// A builder for [`TableInlineVisualization`](crate::model::TableInlineVisualization).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_bars: std::option::Option<crate::model::DataBarsOptions>,
+    }
+    impl Builder {
+        /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
+        pub fn data_bars(mut self, input: crate::model::DataBarsOptions) -> Self {
+            self.data_bars = Some(input);
+            self
+        }
+        /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
+        pub fn set_data_bars(
+            mut self,
+            input: std::option::Option<crate::model::DataBarsOptions>,
+        ) -> Self {
+            self.data_bars = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableInlineVisualization`](crate::model::TableInlineVisualization).
+        pub fn build(self) -> crate::model::TableInlineVisualization {
+            crate::model::TableInlineVisualization {
+                data_bars: self.data_bars,
+            }
+        }
+    }
+}
+impl TableInlineVisualization {
+    /// Creates a new builder-style object to manufacture [`TableInlineVisualization`](crate::model::TableInlineVisualization).
+    pub fn builder() -> crate::model::table_inline_visualization::Builder {
+        crate::model::table_inline_visualization::Builder::default()
+    }
+}
+
+/// <p>The options for data bars.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DataBarsOptions {
+    /// <p>The field ID for the data bars options.</p>
+    #[doc(hidden)]
+    pub field_id: std::option::Option<std::string::String>,
+    /// <p>The color of the positive data bar.</p>
+    #[doc(hidden)]
+    pub positive_color: std::option::Option<std::string::String>,
+    /// <p>The color of the negative data bar.</p>
+    #[doc(hidden)]
+    pub negative_color: std::option::Option<std::string::String>,
+}
+impl DataBarsOptions {
+    /// <p>The field ID for the data bars options.</p>
+    pub fn field_id(&self) -> std::option::Option<&str> {
+        self.field_id.as_deref()
+    }
+    /// <p>The color of the positive data bar.</p>
+    pub fn positive_color(&self) -> std::option::Option<&str> {
+        self.positive_color.as_deref()
+    }
+    /// <p>The color of the negative data bar.</p>
+    pub fn negative_color(&self) -> std::option::Option<&str> {
+        self.negative_color.as_deref()
+    }
+}
+/// See [`DataBarsOptions`](crate::model::DataBarsOptions).
+pub mod data_bars_options {
+
+    /// A builder for [`DataBarsOptions`](crate::model::DataBarsOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) field_id: std::option::Option<std::string::String>,
+        pub(crate) positive_color: std::option::Option<std::string::String>,
+        pub(crate) negative_color: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The field ID for the data bars options.</p>
+        pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_id = Some(input.into());
+            self
+        }
+        /// <p>The field ID for the data bars options.</p>
+        pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field_id = input;
+            self
+        }
+        /// <p>The color of the positive data bar.</p>
+        pub fn positive_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.positive_color = Some(input.into());
+            self
+        }
+        /// <p>The color of the positive data bar.</p>
+        pub fn set_positive_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.positive_color = input;
+            self
+        }
+        /// <p>The color of the negative data bar.</p>
+        pub fn negative_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.negative_color = Some(input.into());
+            self
+        }
+        /// <p>The color of the negative data bar.</p>
+        pub fn set_negative_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.negative_color = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataBarsOptions`](crate::model::DataBarsOptions).
+        pub fn build(self) -> crate::model::DataBarsOptions {
+            crate::model::DataBarsOptions {
+                field_id: self.field_id,
+                positive_color: self.positive_color,
+                negative_color: self.negative_color,
+            }
+        }
+    }
+}
+impl DataBarsOptions {
+    /// Creates a new builder-style object to manufacture [`DataBarsOptions`](crate::model::DataBarsOptions).
+    pub fn builder() -> crate::model::data_bars_options::Builder {
+        crate::model::data_bars_options::Builder::default()
     }
 }
 
@@ -63429,7 +63607,7 @@ pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
-    /// <p>Transform operations that act on this logical table.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     #[doc(hidden)]
     pub data_transforms: std::option::Option<std::vec::Vec<crate::model::TransformOperation>>,
     /// <p>Source of this logical table.</p>
@@ -63441,7 +63619,7 @@ impl LogicalTable {
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>Transform operations that act on this logical table.</p>
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub fn data_transforms(&self) -> std::option::Option<&[crate::model::TransformOperation]> {
         self.data_transforms.as_deref()
     }
@@ -63476,14 +63654,14 @@ pub mod logical_table {
         ///
         /// To override the contents of this collection use [`set_data_transforms`](Self::set_data_transforms).
         ///
-        /// <p>Transform operations that act on this logical table.</p>
+        /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
         pub fn data_transforms(mut self, input: crate::model::TransformOperation) -> Self {
             let mut v = self.data_transforms.unwrap_or_default();
             v.push(input);
             self.data_transforms = Some(v);
             self
         }
-        /// <p>Transform operations that act on this logical table.</p>
+        /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
         pub fn set_data_transforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransformOperation>>,
@@ -75721,7 +75899,7 @@ pub struct TemplateError {
     /// <p>Description of the error type.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>An error path that shows which entities caused the template error.</p>
     #[doc(hidden)]
     pub violated_entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
@@ -75734,7 +75912,7 @@ impl TemplateError {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p></p>
+    /// <p>An error path that shows which entities caused the template error.</p>
     pub fn violated_entities(&self) -> std::option::Option<&[crate::model::Entity]> {
         self.violated_entities.as_deref()
     }
@@ -75777,14 +75955,14 @@ pub mod template_error {
         ///
         /// To override the contents of this collection use [`set_violated_entities`](Self::set_violated_entities).
         ///
-        /// <p></p>
+        /// <p>An error path that shows which entities caused the template error.</p>
         pub fn violated_entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.violated_entities.unwrap_or_default();
             v.push(input);
             self.violated_entities = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>An error path that shows which entities caused the template error.</p>
         pub fn set_violated_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -76128,7 +76306,16 @@ pub struct TemplateVersion {
     /// <p>The version number of the template version.</p>
     #[doc(hidden)]
     pub version_number: std::option::Option<i64>,
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The status that is associated with the template.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
@@ -76161,7 +76348,16 @@ impl TemplateVersion {
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
-    /// <p>The HTTP status of the request.</p>
+    /// <p>The status that is associated with the template.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.status.as_ref()
     }
@@ -76248,12 +76444,30 @@ pub mod template_version {
             self.version_number = input;
             self
         }
-        /// <p>The HTTP status of the request.</p>
+        /// <p>The status that is associated with the template.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: crate::model::ResourceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The HTTP status of the request.</p>
+        /// <p>The status that is associated with the template.</p>
+        /// <ul>
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceStatus>,

@@ -3871,6 +3871,127 @@ pub fn parse_get_provisioned_concurrency_config_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_runtime_management_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRuntimeManagementConfigOutput,
+    crate::error::GetRuntimeManagementConfigError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetRuntimeManagementConfigError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::GetRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_value_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::GetRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::GetRuntimeManagementConfigErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => {
+            crate::error::GetRuntimeManagementConfigError {
+                meta: generic,
+                kind: crate::error::GetRuntimeManagementConfigErrorKind::ServiceException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "TooManyRequestsException" => crate::error::GetRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::GetRuntimeManagementConfigErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_get_runtime_management_config_too_many_requests_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::GetRuntimeManagementConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetRuntimeManagementConfigError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_runtime_management_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRuntimeManagementConfigOutput,
+    crate::error::GetRuntimeManagementConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_runtime_management_config_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_runtime_management_config(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_invoke_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError> {
@@ -6650,6 +6771,144 @@ pub fn parse_put_provisioned_concurrency_config_response(
                 output,
             )
             .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_runtime_management_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutRuntimeManagementConfigOutput,
+    crate::error::PutRuntimeManagementConfigError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutRuntimeManagementConfigError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::PutRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_value_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceConflictException" => crate::error::PutRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::PutRuntimeManagementConfigErrorKind::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::PutRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::PutRuntimeManagementConfigErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceException" => {
+            crate::error::PutRuntimeManagementConfigError {
+                meta: generic,
+                kind: crate::error::PutRuntimeManagementConfigErrorKind::ServiceException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "TooManyRequestsException" => crate::error::PutRuntimeManagementConfigError {
+            meta: generic,
+            kind: crate::error::PutRuntimeManagementConfigErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_put_runtime_management_config_too_many_requests_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::PutRuntimeManagementConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::PutRuntimeManagementConfigError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_runtime_management_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutRuntimeManagementConfigOutput,
+    crate::error::PutRuntimeManagementConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_runtime_management_config_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_put_runtime_management_config(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
         output.build()
     })
 }

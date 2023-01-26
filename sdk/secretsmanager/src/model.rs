@@ -141,7 +141,7 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RotationRulesType {
-    /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+    /// <p>The number of days between rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated. If you use this field to set the rotation schedule, Secrets Manager calculates the next rotation date based on the previous rotation. Manually updating the secret value by calling <code>PutSecretValue</code> or <code>UpdateSecret</code> is considered a valid rotation.</p>
     /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
     #[doc(hidden)]
     pub automatically_after_days: std::option::Option<i64>,
@@ -155,7 +155,7 @@ pub struct RotationRulesType {
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl RotationRulesType {
-    /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+    /// <p>The number of days between rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated. If you use this field to set the rotation schedule, Secrets Manager calculates the next rotation date based on the previous rotation. Manually updating the secret value by calling <code>PutSecretValue</code> or <code>UpdateSecret</code> is considered a valid rotation.</p>
     /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
     pub fn automatically_after_days(&self) -> std::option::Option<i64> {
         self.automatically_after_days
@@ -182,13 +182,13 @@ pub mod rotation_rules_type {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+        /// <p>The number of days between rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated. If you use this field to set the rotation schedule, Secrets Manager calculates the next rotation date based on the previous rotation. Manually updating the secret value by calling <code>PutSecretValue</code> or <code>UpdateSecret</code> is considered a valid rotation.</p>
         /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
         pub fn automatically_after_days(mut self, input: i64) -> Self {
             self.automatically_after_days = Some(input);
             self
         }
-        /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+        /// <p>The number of days between rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated. If you use this field to set the rotation schedule, Secrets Manager calculates the next rotation date based on the previous rotation. Manually updating the secret value by calling <code>PutSecretValue</code> or <code>UpdateSecret</code> is considered a valid rotation.</p>
         /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both. To set a rotation schedule in hours, use <code>ScheduleExpression</code>.</p>
         pub fn set_automatically_after_days(mut self, input: std::option::Option<i64>) -> Self {
             self.automatically_after_days = input;
@@ -715,7 +715,7 @@ pub struct SecretListEntry {
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
     #[doc(hidden)]
     pub next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
@@ -783,7 +783,7 @@ impl SecretListEntry {
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
     pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
@@ -969,12 +969,12 @@ pub mod secret_list_entry {
             self.deleted_date = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
         pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.next_rotation_date = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
         pub fn set_next_rotation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1201,6 +1201,7 @@ pub struct Filter {
     /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -1218,6 +1219,7 @@ impl Filter {
     /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&crate::model::FilterNameStringType> {
@@ -1246,6 +1248,7 @@ pub mod filter {
         /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
         /// </ul>
         pub fn key(mut self, input: crate::model::FilterNameStringType) -> Self {
@@ -1259,6 +1262,7 @@ pub mod filter {
         /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
         /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
         /// </ul>
         pub fn set_key(

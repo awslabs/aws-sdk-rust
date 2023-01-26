@@ -670,6 +670,162 @@ impl std::error::Error for UpdateGroupError {
     }
 }
 
+/// Error type for the `UpdateAccountSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateAccountSettingsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAccountSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAccountSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `UpdateAccountSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAccountSettingsErrorKind {
+    /// <p>The request includes one or more parameters that violate validation rules.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The caller isn't authorized to make the request. Check permissions.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>An internal error occurred while processing the request. Try again later.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for UpdateAccountSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAccountSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAccountSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateAccountSettingsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateAccountSettingsErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            UpdateAccountSettingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateAccountSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAccountSettingsError {
+    fn code(&self) -> Option<&str> {
+        UpdateAccountSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAccountSettingsError {
+    /// Creates a new `UpdateAccountSettingsError`.
+    pub fn new(kind: UpdateAccountSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAccountSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAccountSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountSettingsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountSettingsErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountSettingsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::MethodNotAllowedException`.
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountSettingsErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountSettingsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAccountSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAccountSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAccountSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateAccountSettingsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateAccountSettingsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            UpdateAccountSettingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `Untag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2585,6 +2741,158 @@ impl std::error::Error for GetGroupError {
             GetGroupErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetGroupErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
+/// Error type for the `GetAccountSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetAccountSettingsError {
+    /// Kind of error that occurred.
+    pub kind: GetAccountSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAccountSettingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `GetAccountSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetAccountSettingsErrorKind {
+    /// <p>The request includes one or more parameters that violate validation rules.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The caller isn't authorized to make the request. Check permissions.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>An internal error occurred while processing the request. Try again later.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for GetAccountSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetAccountSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetAccountSettingsError {
+    fn code(&self) -> Option<&str> {
+        GetAccountSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetAccountSettingsError {
+    /// Creates a new `GetAccountSettingsError`.
+    pub fn new(kind: GetAccountSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetAccountSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetAccountSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::MethodNotAllowedException`.
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetAccountSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetAccountSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

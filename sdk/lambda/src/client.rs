@@ -162,10 +162,10 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateEventSourceMapping`](crate::client::fluent_builders::CreateEventSourceMapping) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_source_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::event_source_arn) / [`set_event_source_arn(Option<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>   <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>  </ul>
-    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`event_source_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::event_source_arn) / [`set_event_source_arn(Option<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>   <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>  </ul>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateEventSourceMapping::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_enabled): <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>  <p>Default: True</p>
-    ///   - [`batch_size(i32)`](crate::client::fluent_builders::CreateEventSourceMapping::batch_size) / [`set_batch_size(Option<i32>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>  </ul>
+    ///   - [`batch_size(i32)`](crate::client::fluent_builders::CreateEventSourceMapping::batch_size) / [`set_batch_size(Option<i32>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>  </ul>
     ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::CreateEventSourceMapping::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_filter_criteria): <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     ///   - [`maximum_batching_window_in_seconds(i32)`](crate::client::fluent_builders::CreateEventSourceMapping::maximum_batching_window_in_seconds) / [`set_maximum_batching_window_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_maximum_batching_window_in_seconds): <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>  <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>  <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     ///   - [`parallelization_factor(i32)`](crate::client::fluent_builders::CreateEventSourceMapping::parallelization_factor) / [`set_parallelization_factor(Option<i32>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_parallelization_factor): <p>(Streams only) The number of batches to process from each shard concurrently.</p>
@@ -183,6 +183,7 @@ impl Client {
     ///   - [`function_response_types(Vec<FunctionResponseType>)`](crate::client::fluent_builders::CreateEventSourceMapping::function_response_types) / [`set_function_response_types(Option<Vec<FunctionResponseType>>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     ///   - [`amazon_managed_kafka_event_source_config(AmazonManagedKafkaEventSourceConfig)`](crate::client::fluent_builders::CreateEventSourceMapping::amazon_managed_kafka_event_source_config) / [`set_amazon_managed_kafka_event_source_config(Option<AmazonManagedKafkaEventSourceConfig>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_amazon_managed_kafka_event_source_config): <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     ///   - [`self_managed_kafka_event_source_config(SelfManagedKafkaEventSourceConfig)`](crate::client::fluent_builders::CreateEventSourceMapping::self_managed_kafka_event_source_config) / [`set_self_managed_kafka_event_source_config(Option<SelfManagedKafkaEventSourceConfig>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_self_managed_kafka_event_source_config): <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    ///   - [`scaling_config(ScalingConfig)`](crate::client::fluent_builders::CreateEventSourceMapping::scaling_config) / [`set_scaling_config(Option<ScalingConfig>)`](crate::client::fluent_builders::CreateEventSourceMapping::set_scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On success, responds with [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput) with field(s):
     ///   - [`uuid(Option<String>)`](crate::output::CreateEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
     ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::CreateEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
@@ -209,6 +210,7 @@ impl Client {
     ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::CreateEventSourceMappingOutput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     ///   - [`amazon_managed_kafka_event_source_config(Option<AmazonManagedKafkaEventSourceConfig>)`](crate::output::CreateEventSourceMappingOutput::amazon_managed_kafka_event_source_config): <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     ///   - [`self_managed_kafka_event_source_config(Option<SelfManagedKafkaEventSourceConfig>)`](crate::output::CreateEventSourceMappingOutput::self_managed_kafka_event_source_config): <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    ///   - [`scaling_config(Option<ScalingConfig>)`](crate::output::CreateEventSourceMappingOutput::scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On failure, responds with [`SdkError<CreateEventSourceMappingError>`](crate::error::CreateEventSourceMappingError)
     pub fn create_event_source_mapping(&self) -> fluent_builders::CreateEventSourceMapping {
         fluent_builders::CreateEventSourceMapping::new(self.handle.clone())
@@ -273,7 +275,8 @@ impl Client {
     ///   - [`signing_job_arn(Option<String>)`](crate::output::CreateFunctionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::CreateFunctionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::CreateFunctionOutput::ephemeral_storage): <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::CreateFunctionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::CreateFunctionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::output::CreateFunctionOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
     pub fn create_function(&self) -> fluent_builders::CreateFunction {
         fluent_builders::CreateFunction::new(self.handle.clone())
@@ -346,6 +349,7 @@ impl Client {
     ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::DeleteEventSourceMappingOutput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     ///   - [`amazon_managed_kafka_event_source_config(Option<AmazonManagedKafkaEventSourceConfig>)`](crate::output::DeleteEventSourceMappingOutput::amazon_managed_kafka_event_source_config): <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     ///   - [`self_managed_kafka_event_source_config(Option<SelfManagedKafkaEventSourceConfig>)`](crate::output::DeleteEventSourceMappingOutput::self_managed_kafka_event_source_config): <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    ///   - [`scaling_config(Option<ScalingConfig>)`](crate::output::DeleteEventSourceMappingOutput::scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On failure, responds with [`SdkError<DeleteEventSourceMappingError>`](crate::error::DeleteEventSourceMappingError)
     pub fn delete_event_source_mapping(&self) -> fluent_builders::DeleteEventSourceMapping {
         fluent_builders::DeleteEventSourceMapping::new(self.handle.clone())
@@ -498,6 +502,7 @@ impl Client {
     ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::GetEventSourceMappingOutput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     ///   - [`amazon_managed_kafka_event_source_config(Option<AmazonManagedKafkaEventSourceConfig>)`](crate::output::GetEventSourceMappingOutput::amazon_managed_kafka_event_source_config): <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     ///   - [`self_managed_kafka_event_source_config(Option<SelfManagedKafkaEventSourceConfig>)`](crate::output::GetEventSourceMappingOutput::self_managed_kafka_event_source_config): <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    ///   - [`scaling_config(Option<ScalingConfig>)`](crate::output::GetEventSourceMappingOutput::scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On failure, responds with [`SdkError<GetEventSourceMappingError>`](crate::error::GetEventSourceMappingError)
     pub fn get_event_source_mapping(&self) -> fluent_builders::GetEventSourceMapping {
         fluent_builders::GetEventSourceMapping::new(self.handle.clone())
@@ -578,7 +583,8 @@ impl Client {
     ///   - [`signing_job_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::GetFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::GetFunctionConfigurationOutput::ephemeral_storage): <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::GetFunctionConfigurationOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::GetFunctionConfigurationOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::output::GetFunctionConfigurationOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<GetFunctionConfigurationError>`](crate::error::GetFunctionConfigurationError)
     pub fn get_function_configuration(&self) -> fluent_builders::GetFunctionConfiguration {
         fluent_builders::GetFunctionConfiguration::new(self.handle.clone())
@@ -695,6 +701,18 @@ impl Client {
     ) -> fluent_builders::GetProvisionedConcurrencyConfig {
         fluent_builders::GetProvisionedConcurrencyConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetRuntimeManagementConfig`](crate::client::fluent_builders::GetRuntimeManagementConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::GetRuntimeManagementConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::GetRuntimeManagementConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::GetRuntimeManagementConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::GetRuntimeManagementConfig::set_qualifier): <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    /// - On success, responds with [`GetRuntimeManagementConfigOutput`](crate::output::GetRuntimeManagementConfigOutput) with field(s):
+    ///   - [`update_runtime_on(Option<UpdateRuntimeOn>)`](crate::output::GetRuntimeManagementConfigOutput::update_runtime_on): <p>The current runtime update mode of the function.</p>
+    ///   - [`runtime_version_arn(Option<String>)`](crate::output::GetRuntimeManagementConfigOutput::runtime_version_arn): <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    /// - On failure, responds with [`SdkError<GetRuntimeManagementConfigError>`](crate::error::GetRuntimeManagementConfigError)
+    pub fn get_runtime_management_config(&self) -> fluent_builders::GetRuntimeManagementConfig {
+        fluent_builders::GetRuntimeManagementConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`Invoke`](crate::client::fluent_builders::Invoke) operation.
     ///
     /// - The fluent builder is configurable:
@@ -757,8 +775,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventSourceMappings::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_source_arn(impl Into<String>)`](crate::client::fluent_builders::ListEventSourceMappings::event_source_arn) / [`set_event_source_arn(Option<String>)`](crate::client::fluent_builders::ListEventSourceMappings::set_event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>   <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>  </ul>
-    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::ListEventSourceMappings::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::ListEventSourceMappings::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`event_source_arn(impl Into<String>)`](crate::client::fluent_builders::ListEventSourceMappings::event_source_arn) / [`set_event_source_arn(Option<String>)`](crate::client::fluent_builders::ListEventSourceMappings::set_event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>   <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>  </ul>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::ListEventSourceMappings::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::ListEventSourceMappings::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListEventSourceMappings::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListEventSourceMappings::set_marker): <p>A pagination token returned by a previous call.</p>
     ///   - [`max_items(i32)`](crate::client::fluent_builders::ListEventSourceMappings::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListEventSourceMappings::set_max_items): <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     /// - On success, responds with [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput) with field(s):
@@ -964,7 +982,8 @@ impl Client {
     ///   - [`signing_job_arn(Option<String>)`](crate::output::PublishVersionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::PublishVersionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::PublishVersionOutput::ephemeral_storage): <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::PublishVersionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::PublishVersionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::output::PublishVersionOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<PublishVersionError>`](crate::error::PublishVersionError)
     pub fn publish_version(&self) -> fluent_builders::PublishVersion {
         fluent_builders::PublishVersion::new(self.handle.clone())
@@ -1032,6 +1051,21 @@ impl Client {
         &self,
     ) -> fluent_builders::PutProvisionedConcurrencyConfig {
         fluent_builders::PutProvisionedConcurrencyConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutRuntimeManagementConfig`](crate::client::fluent_builders::PutRuntimeManagementConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::set_qualifier): <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    ///   - [`update_runtime_on(UpdateRuntimeOn)`](crate::client::fluent_builders::PutRuntimeManagementConfig::update_runtime_on) / [`set_update_runtime_on(Option<UpdateRuntimeOn>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::set_update_runtime_on): <p>Specify the runtime update mode.</p>  <ul>   <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>   <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>   <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>  </ul>
+    ///   - [`runtime_version_arn(impl Into<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::runtime_version_arn) / [`set_runtime_version_arn(Option<String>)`](crate::client::fluent_builders::PutRuntimeManagementConfig::set_runtime_version_arn): <p>The ARN of the runtime version you want the function to use.</p> <note>   <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>  </note>
+    /// - On success, responds with [`PutRuntimeManagementConfigOutput`](crate::output::PutRuntimeManagementConfigOutput) with field(s):
+    ///   - [`update_runtime_on(Option<UpdateRuntimeOn>)`](crate::output::PutRuntimeManagementConfigOutput::update_runtime_on): <p>The runtime update mode.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::PutRuntimeManagementConfigOutput::function_arn): <p>The ARN of the function</p>
+    ///   - [`runtime_version_arn(Option<String>)`](crate::output::PutRuntimeManagementConfigOutput::runtime_version_arn): <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    /// - On failure, responds with [`SdkError<PutRuntimeManagementConfigError>`](crate::error::PutRuntimeManagementConfigError)
+    pub fn put_runtime_management_config(&self) -> fluent_builders::PutRuntimeManagementConfig {
+        fluent_builders::PutRuntimeManagementConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RemoveLayerVersionPermission`](crate::client::fluent_builders::RemoveLayerVersionPermission) operation.
     ///
@@ -1118,9 +1152,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`uuid(impl Into<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::uuid) / [`set_uuid(Option<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_uuid): <p>The identifier of the event source mapping.</p>
-    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateEventSourceMapping::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_enabled): <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>  <p>Default: True</p>
-    ///   - [`batch_size(i32)`](crate::client::fluent_builders::UpdateEventSourceMapping::batch_size) / [`set_batch_size(Option<i32>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>  </ul>
+    ///   - [`batch_size(i32)`](crate::client::fluent_builders::UpdateEventSourceMapping::batch_size) / [`set_batch_size(Option<i32>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>  </ul>
     ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::UpdateEventSourceMapping::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_filter_criteria): <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     ///   - [`maximum_batching_window_in_seconds(i32)`](crate::client::fluent_builders::UpdateEventSourceMapping::maximum_batching_window_in_seconds) / [`set_maximum_batching_window_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_maximum_batching_window_in_seconds): <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>  <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>  <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     ///   - [`destination_config(DestinationConfig)`](crate::client::fluent_builders::UpdateEventSourceMapping::destination_config) / [`set_destination_config(Option<DestinationConfig>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
@@ -1131,6 +1165,7 @@ impl Client {
     ///   - [`source_access_configurations(Vec<SourceAccessConfiguration>)`](crate::client::fluent_builders::UpdateEventSourceMapping::source_access_configurations) / [`set_source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_source_access_configurations): <p>An array of authentication protocols or VPC components required to secure your event source.</p>
     ///   - [`tumbling_window_in_seconds(i32)`](crate::client::fluent_builders::UpdateEventSourceMapping::tumbling_window_in_seconds) / [`set_tumbling_window_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     ///   - [`function_response_types(Vec<FunctionResponseType>)`](crate::client::fluent_builders::UpdateEventSourceMapping::function_response_types) / [`set_function_response_types(Option<Vec<FunctionResponseType>>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    ///   - [`scaling_config(ScalingConfig)`](crate::client::fluent_builders::UpdateEventSourceMapping::scaling_config) / [`set_scaling_config(Option<ScalingConfig>)`](crate::client::fluent_builders::UpdateEventSourceMapping::set_scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On success, responds with [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput) with field(s):
     ///   - [`uuid(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
     ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::UpdateEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
@@ -1157,6 +1192,7 @@ impl Client {
     ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::UpdateEventSourceMappingOutput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     ///   - [`amazon_managed_kafka_event_source_config(Option<AmazonManagedKafkaEventSourceConfig>)`](crate::output::UpdateEventSourceMappingOutput::amazon_managed_kafka_event_source_config): <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     ///   - [`self_managed_kafka_event_source_config(Option<SelfManagedKafkaEventSourceConfig>)`](crate::output::UpdateEventSourceMappingOutput::self_managed_kafka_event_source_config): <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    ///   - [`scaling_config(Option<ScalingConfig>)`](crate::output::UpdateEventSourceMappingOutput::scaling_config): <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateEventSourceMappingError>`](crate::error::UpdateEventSourceMappingError)
     pub fn update_event_source_mapping(&self) -> fluent_builders::UpdateEventSourceMapping {
         fluent_builders::UpdateEventSourceMapping::new(self.handle.clone())
@@ -1208,7 +1244,8 @@ impl Client {
     ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionCodeOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::UpdateFunctionCodeOutput::ephemeral_storage): <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::UpdateFunctionCodeOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::UpdateFunctionCodeOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::output::UpdateFunctionCodeOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionCodeError>`](crate::error::UpdateFunctionCodeError)
     pub fn update_function_code(&self) -> fluent_builders::UpdateFunctionCode {
         fluent_builders::UpdateFunctionCode::new(self.handle.clone())
@@ -1268,7 +1305,8 @@ impl Client {
     ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
     ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     ///   - [`ephemeral_storage(Option<EphemeralStorage>)`](crate::output::UpdateFunctionConfigurationOutput::ephemeral_storage): <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::UpdateFunctionConfigurationOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
+    ///   - [`snap_start(Option<SnapStartResponse>)`](crate::output::UpdateFunctionConfigurationOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::output::UpdateFunctionConfigurationOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionConfigurationError>`](crate::error::UpdateFunctionConfigurationError)
     pub fn update_function_configuration(&self) -> fluent_builders::UpdateFunctionConfiguration {
         fluent_builders::UpdateFunctionConfiguration::new(self.handle.clone())
@@ -1664,7 +1702,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
-    /// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a Lambda function version. Use aliases to provide clients with a function identifier that you can update to invoke a different version.</p>
+    /// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a> for a Lambda function version. Use aliases to provide clients with a function identifier that you can update to invoke a different version.</p>
     /// <p>You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests that it receives.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias {
@@ -1912,11 +1950,11 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>The following error handling options are available only for stream sources (DynamoDB and Kinesis):</p>
     /// <ul>
-    /// <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li>
-    /// <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li>
-    /// <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p> </li>
-    /// <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p> </li>
-    /// <li> <p> <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p> </li>
+    /// <li> <p> <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.</p> </li>
+    /// <li> <p> <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p> </li>
+    /// <li> <p> <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p> </li>
+    /// <li> <p> <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.</p> </li>
     /// </ul>
     /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
     /// <ul>
@@ -1988,11 +2026,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_source_arn(input.into());
@@ -2000,11 +2038,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -2016,10 +2054,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2029,10 +2067,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -2056,12 +2094,12 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.inner = self.inner.batch_size(input);
@@ -2069,12 +2107,12 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_batch_size(input);
@@ -2327,6 +2365,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
         ) -> Self {
             self.inner = self.inner.set_self_managed_kafka_event_source_config(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.inner = self.inner.scaling_config(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_scaling_config(input);
             self
         }
     }
@@ -2834,7 +2885,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
-    /// <p>Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+    /// <p>Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias {
         handle: std::sync::Arc<super::Handle>,
@@ -3816,7 +3867,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAlias`.
     ///
-    /// <p>Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+    /// <p>Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlias {
         handle: std::sync::Arc<super::Handle>,
@@ -5084,6 +5135,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetRuntimeManagementConfig`.
+    ///
+    /// <p>Retrieves the runtime management configuration for a function's version. If the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is returned for the ARN. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetRuntimeManagementConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_runtime_management_config_input::Builder,
+    }
+    impl GetRuntimeManagementConfig {
+        /// Creates a new `GetRuntimeManagementConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::GetRuntimeManagementConfig,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::GetRuntimeManagementConfigError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRuntimeManagementConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRuntimeManagementConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `Invoke`.
     ///
     /// <p>Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.</p>
@@ -5357,7 +5508,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAliases`.
     ///
-    /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a> for a Lambda function.</p>
+    /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a> for a Lambda function.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases {
         handle: std::sync::Arc<super::Handle>,
@@ -5643,11 +5794,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_source_arn(input.into());
@@ -5655,11 +5806,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -5671,10 +5822,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5684,10 +5835,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -5839,7 +5990,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of Lambda functions, with the version-specific configuration of each. Lambda returns up to 50 functions per call.</p>
     /// <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in addition to the unpublished version.</p> <note>
-    /// <p>The <code>ListFunctions</code> operation returns a subset of the <code>FunctionConfiguration</code> fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use <code>GetFunction</code>.</p>
+    /// <p>The <code>ListFunctions</code> operation returns a subset of the <code>FunctionConfiguration</code> fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function or version, use <code>GetFunction</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctions {
@@ -7467,6 +7618,146 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutRuntimeManagementConfig`.
+    ///
+    /// <p>Sets the runtime management configuration for a function's version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutRuntimeManagementConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_runtime_management_config_input::Builder,
+    }
+    impl PutRuntimeManagementConfig {
+        /// Creates a new `PutRuntimeManagementConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::PutRuntimeManagementConfig,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::PutRuntimeManagementConfigError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutRuntimeManagementConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutRuntimeManagementConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_function_name(input);
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(input.into());
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_qualifier(input);
+            self
+        }
+        /// <p>Specify the runtime update mode.</p>
+        /// <ul>
+        /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+        /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+        /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+        /// </ul>
+        pub fn update_runtime_on(mut self, input: crate::model::UpdateRuntimeOn) -> Self {
+            self.inner = self.inner.update_runtime_on(input);
+            self
+        }
+        /// <p>Specify the runtime update mode.</p>
+        /// <ul>
+        /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+        /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+        /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+        /// </ul>
+        pub fn set_update_runtime_on(
+            mut self,
+            input: std::option::Option<crate::model::UpdateRuntimeOn>,
+        ) -> Self {
+            self.inner = self.inner.set_update_runtime_on(input);
+            self
+        }
+        /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+        /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+        /// </note>
+        pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_version_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+        /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+        /// </note>
+        pub fn set_runtime_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime_version_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RemoveLayerVersionPermission`.
     ///
     /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <code>AddLayerVersionPermission</code>.</p>
@@ -7878,7 +8169,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAlias`.
     ///
-    /// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+    /// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlias {
         handle: std::sync::Arc<super::Handle>,
@@ -8148,11 +8439,11 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>The following error handling options are available only for stream sources (DynamoDB and Kinesis):</p>
     /// <ul>
-    /// <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li>
-    /// <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li>
-    /// <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p> </li>
-    /// <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p> </li>
-    /// <li> <p> <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p> </li>
+    /// <li> <p> <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.</p> </li>
+    /// <li> <p> <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p> </li>
+    /// <li> <p> <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p> </li>
+    /// <li> <p> <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.</p> </li>
     /// </ul>
     /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
     /// <ul>
@@ -8235,10 +8526,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8248,10 +8539,10 @@ pub mod fluent_builders {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -8275,12 +8566,12 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.inner = self.inner.batch_size(input);
@@ -8288,12 +8579,12 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_batch_size(input);
@@ -8436,6 +8727,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
         ) -> Self {
             self.inner = self.inner.set_function_response_types(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.inner = self.inner.scaling_config(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_scaling_config(input);
             self
         }
     }

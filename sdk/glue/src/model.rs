@@ -5461,6 +5461,21 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies your data quality evaluation criteria.</p>
     #[doc(hidden)]
     pub evaluate_data_quality: std::option::Option<crate::model::EvaluateDataQuality>,
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_catalog_hudi_source: std::option::Option<crate::model::S3CatalogHudiSource>,
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub catalog_hudi_source: std::option::Option<crate::model::CatalogHudiSource>,
+    /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_hudi_source: std::option::Option<crate::model::S3HudiSource>,
+    /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+    #[doc(hidden)]
+    pub s3_hudi_catalog_target: std::option::Option<crate::model::S3HudiCatalogTarget>,
+    /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+    #[doc(hidden)]
+    pub s3_hudi_direct_target: std::option::Option<crate::model::S3HudiDirectTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -5703,6 +5718,30 @@ impl CodeGenConfigurationNode {
     pub fn evaluate_data_quality(&self) -> std::option::Option<&crate::model::EvaluateDataQuality> {
         self.evaluate_data_quality.as_ref()
     }
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+    pub fn s3_catalog_hudi_source(
+        &self,
+    ) -> std::option::Option<&crate::model::S3CatalogHudiSource> {
+        self.s3_catalog_hudi_source.as_ref()
+    }
+    /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+    pub fn catalog_hudi_source(&self) -> std::option::Option<&crate::model::CatalogHudiSource> {
+        self.catalog_hudi_source.as_ref()
+    }
+    /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+    pub fn s3_hudi_source(&self) -> std::option::Option<&crate::model::S3HudiSource> {
+        self.s3_hudi_source.as_ref()
+    }
+    /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+    pub fn s3_hudi_catalog_target(
+        &self,
+    ) -> std::option::Option<&crate::model::S3HudiCatalogTarget> {
+        self.s3_hudi_catalog_target.as_ref()
+    }
+    /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+    pub fn s3_hudi_direct_target(&self) -> std::option::Option<&crate::model::S3HudiDirectTarget> {
+        self.s3_hudi_direct_target.as_ref()
+    }
 }
 /// See [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
 pub mod code_gen_configuration_node {
@@ -5773,6 +5812,11 @@ pub mod code_gen_configuration_node {
             std::option::Option<crate::model::PostgreSqlCatalogTarget>,
         pub(crate) dynamic_transform: std::option::Option<crate::model::DynamicTransform>,
         pub(crate) evaluate_data_quality: std::option::Option<crate::model::EvaluateDataQuality>,
+        pub(crate) s3_catalog_hudi_source: std::option::Option<crate::model::S3CatalogHudiSource>,
+        pub(crate) catalog_hudi_source: std::option::Option<crate::model::CatalogHudiSource>,
+        pub(crate) s3_hudi_source: std::option::Option<crate::model::S3HudiSource>,
+        pub(crate) s3_hudi_catalog_target: std::option::Option<crate::model::S3HudiCatalogTarget>,
+        pub(crate) s3_hudi_direct_target: std::option::Option<crate::model::S3HudiDirectTarget>,
     }
     impl Builder {
         /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -6466,6 +6510,71 @@ pub mod code_gen_configuration_node {
             self.evaluate_data_quality = input;
             self
         }
+        /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+        pub fn s3_catalog_hudi_source(mut self, input: crate::model::S3CatalogHudiSource) -> Self {
+            self.s3_catalog_hudi_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+        pub fn set_s3_catalog_hudi_source(
+            mut self,
+            input: std::option::Option<crate::model::S3CatalogHudiSource>,
+        ) -> Self {
+            self.s3_catalog_hudi_source = input;
+            self
+        }
+        /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+        pub fn catalog_hudi_source(mut self, input: crate::model::CatalogHudiSource) -> Self {
+            self.catalog_hudi_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+        pub fn set_catalog_hudi_source(
+            mut self,
+            input: std::option::Option<crate::model::CatalogHudiSource>,
+        ) -> Self {
+            self.catalog_hudi_source = input;
+            self
+        }
+        /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+        pub fn s3_hudi_source(mut self, input: crate::model::S3HudiSource) -> Self {
+            self.s3_hudi_source = Some(input);
+            self
+        }
+        /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+        pub fn set_s3_hudi_source(
+            mut self,
+            input: std::option::Option<crate::model::S3HudiSource>,
+        ) -> Self {
+            self.s3_hudi_source = input;
+            self
+        }
+        /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+        pub fn s3_hudi_catalog_target(mut self, input: crate::model::S3HudiCatalogTarget) -> Self {
+            self.s3_hudi_catalog_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+        pub fn set_s3_hudi_catalog_target(
+            mut self,
+            input: std::option::Option<crate::model::S3HudiCatalogTarget>,
+        ) -> Self {
+            self.s3_hudi_catalog_target = input;
+            self
+        }
+        /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+        pub fn s3_hudi_direct_target(mut self, input: crate::model::S3HudiDirectTarget) -> Self {
+            self.s3_hudi_direct_target = Some(input);
+            self
+        }
+        /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+        pub fn set_s3_hudi_direct_target(
+            mut self,
+            input: std::option::Option<crate::model::S3HudiDirectTarget>,
+        ) -> Self {
+            self.s3_hudi_direct_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
         pub fn build(self) -> crate::model::CodeGenConfigurationNode {
             crate::model::CodeGenConfigurationNode {
@@ -6521,6 +6630,11 @@ pub mod code_gen_configuration_node {
                 postgre_sql_catalog_target: self.postgre_sql_catalog_target,
                 dynamic_transform: self.dynamic_transform,
                 evaluate_data_quality: self.evaluate_data_quality,
+                s3_catalog_hudi_source: self.s3_catalog_hudi_source,
+                catalog_hudi_source: self.catalog_hudi_source,
+                s3_hudi_source: self.s3_hudi_source,
+                s3_hudi_catalog_target: self.s3_hudi_catalog_target,
+                s3_hudi_direct_target: self.s3_hudi_direct_target,
             }
         }
     }
@@ -6529,6 +6643,1644 @@ impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::model::CodeGenConfigurationNode).
     pub fn builder() -> crate::model::code_gen_configuration_node::Builder {
         crate::model::code_gen_configuration_node::Builder::default()
+    }
+}
+
+/// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3HudiDirectTarget {
+    /// <p>The name of the data target.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
+    #[doc(hidden)]
+    pub path: std::option::Option<std::string::String>,
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    #[doc(hidden)]
+    pub compression: std::option::Option<crate::model::HudiTargetCompressionType>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>Specifies the data output format for the target.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::TargetFormat>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    #[doc(hidden)]
+    pub schema_change_policy: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+}
+impl S3HudiDirectTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn compression(&self) -> std::option::Option<&crate::model::HudiTargetCompressionType> {
+        self.compression.as_ref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>Specifies the data output format for the target.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TargetFormat> {
+        self.format.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+/// See [`S3HudiDirectTarget`](crate::model::S3HudiDirectTarget).
+pub mod s3_hudi_direct_target {
+
+    /// A builder for [`S3HudiDirectTarget`](crate::model::S3HudiDirectTarget).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) compression: std::option::Option<crate::model::HudiTargetCompressionType>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) format: std::option::Option<crate::model::TargetFormat>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::DirectSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn compression(mut self, input: crate::model::HudiTargetCompressionType) -> Self {
+            self.compression = Some(input);
+            self
+        }
+        /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+        pub fn set_compression(
+            mut self,
+            input: std::option::Option<crate::model::HudiTargetCompressionType>,
+        ) -> Self {
+            self.compression = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>Specifies the data output format for the target.</p>
+        pub fn format(mut self, input: crate::model::TargetFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>Specifies the data output format for the target.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::TargetFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::DirectSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::DirectSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3HudiDirectTarget`](crate::model::S3HudiDirectTarget).
+        pub fn build(self) -> crate::model::S3HudiDirectTarget {
+            crate::model::S3HudiDirectTarget {
+                name: self.name,
+                inputs: self.inputs,
+                path: self.path,
+                compression: self.compression,
+                partition_keys: self.partition_keys,
+                format: self.format,
+                additional_options: self.additional_options,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl S3HudiDirectTarget {
+    /// Creates a new builder-style object to manufacture [`S3HudiDirectTarget`](crate::model::S3HudiDirectTarget).
+    pub fn builder() -> crate::model::s3_hudi_direct_target::Builder {
+        crate::model::s3_hudi_direct_target::Builder::default()
+    }
+}
+
+/// <p>A policy that specifies update behavior for the crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DirectSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
+    pub enable_update_catalog: std::option::Option<bool>,
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
+    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Specifies the database that the schema change policy applies to.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
+}
+impl DirectSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
+        self.enable_update_catalog
+    }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
+        self.update_behavior.as_ref()
+    }
+    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Specifies the database that the schema change policy applies to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
+/// See [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
+pub mod direct_schema_change_policy {
+
+    /// A builder for [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_update_catalog: std::option::Option<bool>,
+        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn enable_update_catalog(mut self, input: bool) -> Self {
+            self.enable_update_catalog = Some(input);
+            self
+        }
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_update_catalog = input;
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
+            self.update_behavior = Some(input);
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn set_update_behavior(
+            mut self,
+            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        ) -> Self {
+            self.update_behavior = input;
+            self
+        }
+        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>Specifies the database that the schema change policy applies to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>Specifies the database that the schema change policy applies to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
+        pub fn build(self) -> crate::model::DirectSchemaChangePolicy {
+            crate::model::DirectSchemaChangePolicy {
+                enable_update_catalog: self.enable_update_catalog,
+                update_behavior: self.update_behavior,
+                table: self.table,
+                database: self.database,
+            }
+        }
+    }
+}
+impl DirectSchemaChangePolicy {
+    /// Creates a new builder-style object to manufacture [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
+    pub fn builder() -> crate::model::direct_schema_change_policy::Builder {
+        crate::model::direct_schema_change_policy::Builder::default()
+    }
+}
+
+/// When writing a match expression against `UpdateCatalogBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let updatecatalogbehavior = unimplemented!();
+/// match updatecatalogbehavior {
+///     UpdateCatalogBehavior::Log => { /* ... */ },
+///     UpdateCatalogBehavior::UpdateInDatabase => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `updatecatalogbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UpdateCatalogBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UpdateCatalogBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UpdateCatalogBehavior::NewFeature` is defined.
+/// Specifically, when `updatecatalogbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UpdateCatalogBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UpdateCatalogBehavior {
+    #[allow(missing_docs)] // documentation missing in model
+    Log,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInDatabase,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for UpdateCatalogBehavior {
+    fn from(s: &str) -> Self {
+        match s {
+            "LOG" => UpdateCatalogBehavior::Log,
+            "UPDATE_IN_DATABASE" => UpdateCatalogBehavior::UpdateInDatabase,
+            other => {
+                UpdateCatalogBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
+}
+impl std::str::FromStr for UpdateCatalogBehavior {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateCatalogBehavior::from(s))
+    }
+}
+impl UpdateCatalogBehavior {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateCatalogBehavior::Log => "LOG",
+            UpdateCatalogBehavior::UpdateInDatabase => "UPDATE_IN_DATABASE",
+            UpdateCatalogBehavior::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["LOG", "UPDATE_IN_DATABASE"]
+    }
+}
+impl AsRef<str> for UpdateCatalogBehavior {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `TargetFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targetformat = unimplemented!();
+/// match targetformat {
+///     TargetFormat::Avro => { /* ... */ },
+///     TargetFormat::Csv => { /* ... */ },
+///     TargetFormat::Hudi => { /* ... */ },
+///     TargetFormat::Json => { /* ... */ },
+///     TargetFormat::Orc => { /* ... */ },
+///     TargetFormat::Parquet => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targetformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetFormat::NewFeature` is defined.
+/// Specifically, when `targetformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Avro,
+    #[allow(missing_docs)] // documentation missing in model
+    Csv,
+    #[allow(missing_docs)] // documentation missing in model
+    Hudi,
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    Orc,
+    #[allow(missing_docs)] // documentation missing in model
+    Parquet,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for TargetFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "avro" => TargetFormat::Avro,
+            "csv" => TargetFormat::Csv,
+            "hudi" => TargetFormat::Hudi,
+            "json" => TargetFormat::Json,
+            "orc" => TargetFormat::Orc,
+            "parquet" => TargetFormat::Parquet,
+            other => TargetFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for TargetFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetFormat::from(s))
+    }
+}
+impl TargetFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetFormat::Avro => "avro",
+            TargetFormat::Csv => "csv",
+            TargetFormat::Hudi => "hudi",
+            TargetFormat::Json => "json",
+            TargetFormat::Orc => "orc",
+            TargetFormat::Parquet => "parquet",
+            TargetFormat::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["avro", "csv", "hudi", "json", "orc", "parquet"]
+    }
+}
+impl AsRef<str> for TargetFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When writing a match expression against `HudiTargetCompressionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let huditargetcompressiontype = unimplemented!();
+/// match huditargetcompressiontype {
+///     HudiTargetCompressionType::Gzip => { /* ... */ },
+///     HudiTargetCompressionType::Lzo => { /* ... */ },
+///     HudiTargetCompressionType::Snappy => { /* ... */ },
+///     HudiTargetCompressionType::Uncompressed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `huditargetcompressiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HudiTargetCompressionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HudiTargetCompressionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HudiTargetCompressionType::NewFeature` is defined.
+/// Specifically, when `huditargetcompressiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HudiTargetCompressionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HudiTargetCompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    Lzo,
+    #[allow(missing_docs)] // documentation missing in model
+    Snappy,
+    #[allow(missing_docs)] // documentation missing in model
+    Uncompressed,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for HudiTargetCompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "gzip" => HudiTargetCompressionType::Gzip,
+            "lzo" => HudiTargetCompressionType::Lzo,
+            "snappy" => HudiTargetCompressionType::Snappy,
+            "uncompressed" => HudiTargetCompressionType::Uncompressed,
+            other => HudiTargetCompressionType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for HudiTargetCompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HudiTargetCompressionType::from(s))
+    }
+}
+impl HudiTargetCompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HudiTargetCompressionType::Gzip => "gzip",
+            HudiTargetCompressionType::Lzo => "lzo",
+            HudiTargetCompressionType::Snappy => "snappy",
+            HudiTargetCompressionType::Uncompressed => "uncompressed",
+            HudiTargetCompressionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["gzip", "lzo", "snappy", "uncompressed"]
+    }
+}
+impl AsRef<str> for HudiTargetCompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3HudiCatalogTarget {
+    /// <p>The name of the data target.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The nodes that are inputs to the data target.</p>
+    #[doc(hidden)]
+    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    #[doc(hidden)]
+    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    /// <p>The name of the table in the database to write to.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<std::string::String>,
+    /// <p>The name of the database to write to.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
+    /// <p>Specifies additional connection options for the connector.</p>
+    #[doc(hidden)]
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    #[doc(hidden)]
+    pub schema_change_policy: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+}
+impl S3HudiCatalogTarget {
+    /// <p>The name of the data target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+        self.inputs.as_deref()
+    }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>The name of the table in the database to write to.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>The name of the database to write to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>Specifies additional connection options for the connector.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_options.as_ref()
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogSchemaChangePolicy> {
+        self.schema_change_policy.as_ref()
+    }
+}
+/// See [`S3HudiCatalogTarget`](crate::model::S3HudiCatalogTarget).
+pub mod s3_hudi_catalog_target {
+
+    /// A builder for [`S3HudiCatalogTarget`](crate::model::S3HudiCatalogTarget).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) partition_keys:
+            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) additional_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) schema_change_policy:
+            std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+    }
+    impl Builder {
+        /// <p>The name of the data target.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the data target.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inputs.unwrap_or_default();
+            v.push(input.into());
+            self.inputs = Some(v);
+            self
+        }
+        /// <p>The nodes that are inputs to the data target.</p>
+        pub fn set_inputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inputs = input;
+            self
+        }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            let mut v = self.partition_keys.unwrap_or_default();
+            v.push(input);
+            self.partition_keys = Some(v);
+            self
+        }
+        /// <p>Specifies native partitioning using a sequence of keys.</p>
+        pub fn set_partition_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        ) -> Self {
+            self.partition_keys = input;
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to write to.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to write to.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
+        ///
+        /// <p>Specifies additional connection options for the connector.</p>
+        pub fn additional_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_options = Some(hash_map);
+            self
+        }
+        /// <p>Specifies additional connection options for the connector.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn schema_change_policy(
+            mut self,
+            input: crate::model::CatalogSchemaChangePolicy,
+        ) -> Self {
+            self.schema_change_policy = Some(input);
+            self
+        }
+        /// <p>A policy that specifies update behavior for the crawler.</p>
+        pub fn set_schema_change_policy(
+            mut self,
+            input: std::option::Option<crate::model::CatalogSchemaChangePolicy>,
+        ) -> Self {
+            self.schema_change_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3HudiCatalogTarget`](crate::model::S3HudiCatalogTarget).
+        pub fn build(self) -> crate::model::S3HudiCatalogTarget {
+            crate::model::S3HudiCatalogTarget {
+                name: self.name,
+                inputs: self.inputs,
+                partition_keys: self.partition_keys,
+                table: self.table,
+                database: self.database,
+                additional_options: self.additional_options,
+                schema_change_policy: self.schema_change_policy,
+            }
+        }
+    }
+}
+impl S3HudiCatalogTarget {
+    /// Creates a new builder-style object to manufacture [`S3HudiCatalogTarget`](crate::model::S3HudiCatalogTarget).
+    pub fn builder() -> crate::model::s3_hudi_catalog_target::Builder {
+        crate::model::s3_hudi_catalog_target::Builder::default()
+    }
+}
+
+/// <p>A policy that specifies update behavior for the crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CatalogSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
+    pub enable_update_catalog: std::option::Option<bool>,
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    #[doc(hidden)]
+    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+}
+impl CatalogSchemaChangePolicy {
+    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
+        self.enable_update_catalog
+    }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
+        self.update_behavior.as_ref()
+    }
+}
+/// See [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
+pub mod catalog_schema_change_policy {
+
+    /// A builder for [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_update_catalog: std::option::Option<bool>,
+        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
+    }
+    impl Builder {
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn enable_update_catalog(mut self, input: bool) -> Self {
+            self.enable_update_catalog = Some(input);
+            self
+        }
+        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
+        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_update_catalog = input;
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
+            self.update_behavior = Some(input);
+            self
+        }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
+        pub fn set_update_behavior(
+            mut self,
+            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
+        ) -> Self {
+            self.update_behavior = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
+        pub fn build(self) -> crate::model::CatalogSchemaChangePolicy {
+            crate::model::CatalogSchemaChangePolicy {
+                enable_update_catalog: self.enable_update_catalog,
+                update_behavior: self.update_behavior,
+            }
+        }
+    }
+}
+impl CatalogSchemaChangePolicy {
+    /// Creates a new builder-style object to manufacture [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
+    pub fn builder() -> crate::model::catalog_schema_change_policy::Builder {
+        crate::model::catalog_schema_change_policy::Builder::default()
+    }
+}
+
+/// <p>Specifies a Hudi data source stored in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3HudiSource {
+    /// <p>The name of the Hudi source.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    #[doc(hidden)]
+    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
+    pub additional_hudi_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    #[doc(hidden)]
+    pub additional_options: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    #[doc(hidden)]
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl S3HudiSource {
+    /// <p>The name of the Hudi source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_hudi_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_hudi_options.as_ref()
+    }
+    /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DirectSourceAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+/// See [`S3HudiSource`](crate::model::S3HudiSource).
+pub mod s3_hudi_source {
+
+    /// A builder for [`S3HudiSource`](crate::model::S3HudiSource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_hudi_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) additional_options:
+            std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the Hudi source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Hudi source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.paths.unwrap_or_default();
+            v.push(input.into());
+            self.paths = Some(v);
+            self
+        }
+        /// <p>A list of the Amazon S3 paths to read from.</p>
+        pub fn set_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.paths = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_hudi_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_hudi_options`](Self::set_additional_hudi_options).
+        ///
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_hudi_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_hudi_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_hudi_options = Some(hash_map);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_hudi_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_hudi_options = input;
+            self
+        }
+        /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+        pub fn additional_options(
+            mut self,
+            input: crate::model::S3DirectSourceAdditionalOptions,
+        ) -> Self {
+            self.additional_options = Some(input);
+            self
+        }
+        /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+        pub fn set_additional_options(
+            mut self,
+            input: std::option::Option<crate::model::S3DirectSourceAdditionalOptions>,
+        ) -> Self {
+            self.additional_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3HudiSource`](crate::model::S3HudiSource).
+        pub fn build(self) -> crate::model::S3HudiSource {
+            crate::model::S3HudiSource {
+                name: self.name,
+                paths: self.paths,
+                additional_hudi_options: self.additional_hudi_options,
+                additional_options: self.additional_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl S3HudiSource {
+    /// Creates a new builder-style object to manufacture [`S3HudiSource`](crate::model::S3HudiSource).
+    pub fn builder() -> crate::model::s3_hudi_source::Builder {
+        crate::model::s3_hudi_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a user-defined schema when a schema cannot be determined by Glue.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GlueSchema {
+    /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    #[doc(hidden)]
+    pub columns: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+}
+impl GlueSchema {
+    /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::GlueStudioSchemaColumn]> {
+        self.columns.as_deref()
+    }
+}
+/// See [`GlueSchema`](crate::model::GlueSchema).
+pub mod glue_schema {
+
+    /// A builder for [`GlueSchema`](crate::model::GlueSchema).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) columns:
+            std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+    }
+    impl Builder {
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>Specifies the column definitions that make up a Glue schema.</p>
+        pub fn columns(mut self, input: crate::model::GlueStudioSchemaColumn) -> Self {
+            let mut v = self.columns.unwrap_or_default();
+            v.push(input);
+            self.columns = Some(v);
+            self
+        }
+        /// <p>Specifies the column definitions that make up a Glue schema.</p>
+        pub fn set_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+        ) -> Self {
+            self.columns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueSchema`](crate::model::GlueSchema).
+        pub fn build(self) -> crate::model::GlueSchema {
+            crate::model::GlueSchema {
+                columns: self.columns,
+            }
+        }
+    }
+}
+impl GlueSchema {
+    /// Creates a new builder-style object to manufacture [`GlueSchema`](crate::model::GlueSchema).
+    pub fn builder() -> crate::model::glue_schema::Builder {
+        crate::model::glue_schema::Builder::default()
+    }
+}
+
+/// <p>Specifies a single column in a Glue schema definition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GlueStudioSchemaColumn {
+    /// <p>The name of the column in the Glue Studio schema.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The hive type for this column in the Glue Studio schema.</p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl GlueStudioSchemaColumn {
+    /// <p>The name of the column in the Glue Studio schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The hive type for this column in the Glue Studio schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+/// See [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
+pub mod glue_studio_schema_column {
+
+    /// A builder for [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column in the Glue Studio schema.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column in the Glue Studio schema.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The hive type for this column in the Glue Studio schema.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The hive type for this column in the Glue Studio schema.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
+        pub fn build(self) -> crate::model::GlueStudioSchemaColumn {
+            crate::model::GlueStudioSchemaColumn {
+                name: self.name,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl GlueStudioSchemaColumn {
+    /// Creates a new builder-style object to manufacture [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
+    pub fn builder() -> crate::model::glue_studio_schema_column::Builder {
+        crate::model::glue_studio_schema_column::Builder::default()
+    }
+}
+
+/// <p>Specifies additional connection options for the Amazon S3 data store.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3DirectSourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    #[doc(hidden)]
+    pub bounded_size: std::option::Option<i64>,
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    #[doc(hidden)]
+    pub bounded_files: std::option::Option<i64>,
+    /// <p>Sets option to enable a sample path.</p>
+    #[doc(hidden)]
+    pub enable_sample_path: std::option::Option<bool>,
+    /// <p>If enabled, specifies the sample path.</p>
+    #[doc(hidden)]
+    pub sample_path: std::option::Option<std::string::String>,
+}
+impl S3DirectSourceAdditionalOptions {
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub fn bounded_size(&self) -> std::option::Option<i64> {
+        self.bounded_size
+    }
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub fn bounded_files(&self) -> std::option::Option<i64> {
+        self.bounded_files
+    }
+    /// <p>Sets option to enable a sample path.</p>
+    pub fn enable_sample_path(&self) -> std::option::Option<bool> {
+        self.enable_sample_path
+    }
+    /// <p>If enabled, specifies the sample path.</p>
+    pub fn sample_path(&self) -> std::option::Option<&str> {
+        self.sample_path.as_deref()
+    }
+}
+/// See [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
+pub mod s3_direct_source_additional_options {
+
+    /// A builder for [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bounded_size: std::option::Option<i64>,
+        pub(crate) bounded_files: std::option::Option<i64>,
+        pub(crate) enable_sample_path: std::option::Option<bool>,
+        pub(crate) sample_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn bounded_size(mut self, input: i64) -> Self {
+            self.bounded_size = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+        pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_size = input;
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn bounded_files(mut self, input: i64) -> Self {
+            self.bounded_files = Some(input);
+            self
+        }
+        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+        pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
+            self.bounded_files = input;
+            self
+        }
+        /// <p>Sets option to enable a sample path.</p>
+        pub fn enable_sample_path(mut self, input: bool) -> Self {
+            self.enable_sample_path = Some(input);
+            self
+        }
+        /// <p>Sets option to enable a sample path.</p>
+        pub fn set_enable_sample_path(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_sample_path = input;
+            self
+        }
+        /// <p>If enabled, specifies the sample path.</p>
+        pub fn sample_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_path = Some(input.into());
+            self
+        }
+        /// <p>If enabled, specifies the sample path.</p>
+        pub fn set_sample_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sample_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
+        pub fn build(self) -> crate::model::S3DirectSourceAdditionalOptions {
+            crate::model::S3DirectSourceAdditionalOptions {
+                bounded_size: self.bounded_size,
+                bounded_files: self.bounded_files,
+                enable_sample_path: self.enable_sample_path,
+                sample_path: self.sample_path,
+            }
+        }
+    }
+}
+impl S3DirectSourceAdditionalOptions {
+    /// Creates a new builder-style object to manufacture [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
+    pub fn builder() -> crate::model::s3_direct_source_additional_options::Builder {
+        crate::model::s3_direct_source_additional_options::Builder::default()
+    }
+}
+
+/// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CatalogHudiSource {
+    /// <p>The name of the Hudi data source.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
+    pub additional_hudi_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    #[doc(hidden)]
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl CatalogHudiSource {
+    /// <p>The name of the Hudi data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_hudi_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_hudi_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+/// See [`CatalogHudiSource`](crate::model::CatalogHudiSource).
+pub mod catalog_hudi_source {
+
+    /// A builder for [`CatalogHudiSource`](crate::model::CatalogHudiSource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) additional_hudi_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the Hudi data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Hudi data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_hudi_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_hudi_options`](Self::set_additional_hudi_options).
+        ///
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_hudi_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_hudi_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_hudi_options = Some(hash_map);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_hudi_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_hudi_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CatalogHudiSource`](crate::model::CatalogHudiSource).
+        pub fn build(self) -> crate::model::CatalogHudiSource {
+            crate::model::CatalogHudiSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+                additional_hudi_options: self.additional_hudi_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl CatalogHudiSource {
+    /// Creates a new builder-style object to manufacture [`CatalogHudiSource`](crate::model::CatalogHudiSource).
+    pub fn builder() -> crate::model::catalog_hudi_source::Builder {
+        crate::model::catalog_hudi_source::Builder::default()
+    }
+}
+
+/// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct S3CatalogHudiSource {
+    /// <p>The name of the Hudi data source.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the database to read from.</p>
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
+    /// <p>The name of the table in the database to read from.</p>
+    #[doc(hidden)]
+    pub table: std::option::Option<std::string::String>,
+    /// <p>Specifies additional connection options.</p>
+    #[doc(hidden)]
+    pub additional_hudi_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    #[doc(hidden)]
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+}
+impl S3CatalogHudiSource {
+    /// <p>The name of the Hudi data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the database to read from.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn additional_hudi_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_hudi_options.as_ref()
+    }
+    /// <p>Specifies the data schema for the Hudi source.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::model::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
+}
+/// See [`S3CatalogHudiSource`](crate::model::S3CatalogHudiSource).
+pub mod s3_catalog_hudi_source {
+
+    /// A builder for [`S3CatalogHudiSource`](crate::model::S3CatalogHudiSource).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) database: std::option::Option<std::string::String>,
+        pub(crate) table: std::option::Option<std::string::String>,
+        pub(crate) additional_hudi_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+    }
+    impl Builder {
+        /// <p>The name of the Hudi data source.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Hudi data source.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
+            self
+        }
+        /// <p>The name of the database to read from.</p>
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table = Some(input.into());
+            self
+        }
+        /// <p>The name of the table in the database to read from.</p>
+        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Adds a key-value pair to `additional_hudi_options`.
+        ///
+        /// To override the contents of this collection use [`set_additional_hudi_options`](Self::set_additional_hudi_options).
+        ///
+        /// <p>Specifies additional connection options.</p>
+        pub fn additional_hudi_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.additional_hudi_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.additional_hudi_options = Some(hash_map);
+            self
+        }
+        /// <p>Specifies additional connection options.</p>
+        pub fn set_additional_hudi_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.additional_hudi_options = input;
+            self
+        }
+        /// Appends an item to `output_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+        ///
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn output_schemas(mut self, input: crate::model::GlueSchema) -> Self {
+            let mut v = self.output_schemas.unwrap_or_default();
+            v.push(input);
+            self.output_schemas = Some(v);
+            self
+        }
+        /// <p>Specifies the data schema for the Hudi source.</p>
+        pub fn set_output_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlueSchema>>,
+        ) -> Self {
+            self.output_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3CatalogHudiSource`](crate::model::S3CatalogHudiSource).
+        pub fn build(self) -> crate::model::S3CatalogHudiSource {
+            crate::model::S3CatalogHudiSource {
+                name: self.name,
+                database: self.database,
+                table: self.table,
+                additional_hudi_options: self.additional_hudi_options,
+                output_schemas: self.output_schemas,
+            }
+        }
+    }
+}
+impl S3CatalogHudiSource {
+    /// Creates a new builder-style object to manufacture [`S3CatalogHudiSource`](crate::model::S3CatalogHudiSource).
+    pub fn builder() -> crate::model::s3_catalog_hudi_source::Builder {
+        crate::model::s3_catalog_hudi_source::Builder::default()
     }
 }
 
@@ -8709,168 +10461,6 @@ impl GovernedCatalogTarget {
     /// Creates a new builder-style object to manufacture [`GovernedCatalogTarget`](crate::model::GovernedCatalogTarget).
     pub fn builder() -> crate::model::governed_catalog_target::Builder {
         crate::model::governed_catalog_target::Builder::default()
-    }
-}
-
-/// <p>A policy that specifies update behavior for the crawler.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogSchemaChangePolicy {
-    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
-    pub enable_update_catalog: std::option::Option<bool>,
-    /// <p>The update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
-    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
-}
-impl CatalogSchemaChangePolicy {
-    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
-        self.enable_update_catalog
-    }
-    /// <p>The update behavior when the crawler finds a changed schema.</p>
-    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
-        self.update_behavior.as_ref()
-    }
-}
-/// See [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
-pub mod catalog_schema_change_policy {
-
-    /// A builder for [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) enable_update_catalog: std::option::Option<bool>,
-        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
-    }
-    impl Builder {
-        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-        pub fn enable_update_catalog(mut self, input: bool) -> Self {
-            self.enable_update_catalog = Some(input);
-            self
-        }
-        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_update_catalog = input;
-            self
-        }
-        /// <p>The update behavior when the crawler finds a changed schema.</p>
-        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
-            self.update_behavior = Some(input);
-            self
-        }
-        /// <p>The update behavior when the crawler finds a changed schema.</p>
-        pub fn set_update_behavior(
-            mut self,
-            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
-        ) -> Self {
-            self.update_behavior = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
-        pub fn build(self) -> crate::model::CatalogSchemaChangePolicy {
-            crate::model::CatalogSchemaChangePolicy {
-                enable_update_catalog: self.enable_update_catalog,
-                update_behavior: self.update_behavior,
-            }
-        }
-    }
-}
-impl CatalogSchemaChangePolicy {
-    /// Creates a new builder-style object to manufacture [`CatalogSchemaChangePolicy`](crate::model::CatalogSchemaChangePolicy).
-    pub fn builder() -> crate::model::catalog_schema_change_policy::Builder {
-        crate::model::catalog_schema_change_policy::Builder::default()
-    }
-}
-
-/// When writing a match expression against `UpdateCatalogBehavior`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let updatecatalogbehavior = unimplemented!();
-/// match updatecatalogbehavior {
-///     UpdateCatalogBehavior::Log => { /* ... */ },
-///     UpdateCatalogBehavior::UpdateInDatabase => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `updatecatalogbehavior` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `UpdateCatalogBehavior::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `UpdateCatalogBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `UpdateCatalogBehavior::NewFeature` is defined.
-/// Specifically, when `updatecatalogbehavior` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `UpdateCatalogBehavior::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum UpdateCatalogBehavior {
-    #[allow(missing_docs)] // documentation missing in model
-    Log,
-    #[allow(missing_docs)] // documentation missing in model
-    UpdateInDatabase,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for UpdateCatalogBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "LOG" => UpdateCatalogBehavior::Log,
-            "UPDATE_IN_DATABASE" => UpdateCatalogBehavior::UpdateInDatabase,
-            other => {
-                UpdateCatalogBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
-impl std::str::FromStr for UpdateCatalogBehavior {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateCatalogBehavior::from(s))
-    }
-}
-impl UpdateCatalogBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateCatalogBehavior::Log => "LOG",
-            UpdateCatalogBehavior::UpdateInDatabase => "UPDATE_IN_DATABASE",
-            UpdateCatalogBehavior::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["LOG", "UPDATE_IN_DATABASE"]
-    }
-}
-impl AsRef<str> for UpdateCatalogBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -12023,131 +13613,6 @@ impl SparkSql {
     }
 }
 
-/// <p>Specifies a user-defined schema when a schema cannot be determined by Glue.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueSchema {
-    /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    #[doc(hidden)]
-    pub columns: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
-}
-impl GlueSchema {
-    /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::model::GlueStudioSchemaColumn]> {
-        self.columns.as_deref()
-    }
-}
-/// See [`GlueSchema`](crate::model::GlueSchema).
-pub mod glue_schema {
-
-    /// A builder for [`GlueSchema`](crate::model::GlueSchema).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) columns:
-            std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
-    }
-    impl Builder {
-        /// Appends an item to `columns`.
-        ///
-        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
-        ///
-        /// <p>Specifies the column definitions that make up a Glue schema.</p>
-        pub fn columns(mut self, input: crate::model::GlueStudioSchemaColumn) -> Self {
-            let mut v = self.columns.unwrap_or_default();
-            v.push(input);
-            self.columns = Some(v);
-            self
-        }
-        /// <p>Specifies the column definitions that make up a Glue schema.</p>
-        pub fn set_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
-        ) -> Self {
-            self.columns = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GlueSchema`](crate::model::GlueSchema).
-        pub fn build(self) -> crate::model::GlueSchema {
-            crate::model::GlueSchema {
-                columns: self.columns,
-            }
-        }
-    }
-}
-impl GlueSchema {
-    /// Creates a new builder-style object to manufacture [`GlueSchema`](crate::model::GlueSchema).
-    pub fn builder() -> crate::model::glue_schema::Builder {
-        crate::model::glue_schema::Builder::default()
-    }
-}
-
-/// <p>Specifies a single column in a Glue schema definition.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueStudioSchemaColumn {
-    /// <p>The name of the column in the Glue Studio schema.</p>
-    #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The hive type for this column in the Glue Studio schema.</p>
-    #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
-}
-impl GlueStudioSchemaColumn {
-    /// <p>The name of the column in the Glue Studio schema.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The hive type for this column in the Glue Studio schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
-        self.r#type.as_deref()
-    }
-}
-/// See [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
-pub mod glue_studio_schema_column {
-
-    /// A builder for [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column in the Glue Studio schema.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column in the Glue Studio schema.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The hive type for this column in the Glue Studio schema.</p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        /// <p>The hive type for this column in the Glue Studio schema.</p>
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
-        pub fn build(self) -> crate::model::GlueStudioSchemaColumn {
-            crate::model::GlueStudioSchemaColumn {
-                name: self.name,
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl GlueStudioSchemaColumn {
-    /// Creates a new builder-style object to manufacture [`GlueStudioSchemaColumn`](crate::model::GlueStudioSchemaColumn).
-    pub fn builder() -> crate::model::glue_studio_schema_column::Builder {
-        crate::model::glue_studio_schema_column::Builder::default()
-    }
-}
-
 /// <p>Represents a single entry in the list of values for <code>SqlAliases</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14526,219 +15991,6 @@ impl S3DirectTarget {
     }
 }
 
-/// <p>A policy that specifies update behavior for the crawler.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectSchemaChangePolicy {
-    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
-    pub enable_update_catalog: std::option::Option<bool>,
-    /// <p>The update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
-    pub update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
-    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-    #[doc(hidden)]
-    pub table: std::option::Option<std::string::String>,
-    /// <p>Specifies the database that the schema change policy applies to.</p>
-    #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
-}
-impl DirectSchemaChangePolicy {
-    /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
-        self.enable_update_catalog
-    }
-    /// <p>The update behavior when the crawler finds a changed schema.</p>
-    pub fn update_behavior(&self) -> std::option::Option<&crate::model::UpdateCatalogBehavior> {
-        self.update_behavior.as_ref()
-    }
-    /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
-        self.table.as_deref()
-    }
-    /// <p>Specifies the database that the schema change policy applies to.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
-        self.database.as_deref()
-    }
-}
-/// See [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
-pub mod direct_schema_change_policy {
-
-    /// A builder for [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) enable_update_catalog: std::option::Option<bool>,
-        pub(crate) update_behavior: std::option::Option<crate::model::UpdateCatalogBehavior>,
-        pub(crate) table: std::option::Option<std::string::String>,
-        pub(crate) database: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-        pub fn enable_update_catalog(mut self, input: bool) -> Self {
-            self.enable_update_catalog = Some(input);
-            self
-        }
-        /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-        pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_update_catalog = input;
-            self
-        }
-        /// <p>The update behavior when the crawler finds a changed schema.</p>
-        pub fn update_behavior(mut self, input: crate::model::UpdateCatalogBehavior) -> Self {
-            self.update_behavior = Some(input);
-            self
-        }
-        /// <p>The update behavior when the crawler finds a changed schema.</p>
-        pub fn set_update_behavior(
-            mut self,
-            input: std::option::Option<crate::model::UpdateCatalogBehavior>,
-        ) -> Self {
-            self.update_behavior = input;
-            self
-        }
-        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
-            self.table = Some(input.into());
-            self
-        }
-        /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-        pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table = input;
-            self
-        }
-        /// <p>Specifies the database that the schema change policy applies to.</p>
-        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-            self.database = Some(input.into());
-            self
-        }
-        /// <p>Specifies the database that the schema change policy applies to.</p>
-        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
-        pub fn build(self) -> crate::model::DirectSchemaChangePolicy {
-            crate::model::DirectSchemaChangePolicy {
-                enable_update_catalog: self.enable_update_catalog,
-                update_behavior: self.update_behavior,
-                table: self.table,
-                database: self.database,
-            }
-        }
-    }
-}
-impl DirectSchemaChangePolicy {
-    /// Creates a new builder-style object to manufacture [`DirectSchemaChangePolicy`](crate::model::DirectSchemaChangePolicy).
-    pub fn builder() -> crate::model::direct_schema_change_policy::Builder {
-        crate::model::direct_schema_change_policy::Builder::default()
-    }
-}
-
-/// When writing a match expression against `TargetFormat`, it is important to ensure
-/// your code is forward-compatible. That is, if a match arm handles a case for a
-/// feature that is supported by the service but has not been represented as an enum
-/// variant in a current version of SDK, your code should continue to work when you
-/// upgrade SDK to a future version in which the enum does include a variant for that
-/// feature.
-///
-/// Here is an example of how you can make a match expression forward-compatible:
-///
-/// ```text
-/// # let targetformat = unimplemented!();
-/// match targetformat {
-///     TargetFormat::Avro => { /* ... */ },
-///     TargetFormat::Csv => { /* ... */ },
-///     TargetFormat::Json => { /* ... */ },
-///     TargetFormat::Orc => { /* ... */ },
-///     TargetFormat::Parquet => { /* ... */ },
-///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
-///     _ => { /* ... */ },
-/// }
-/// ```
-/// The above code demonstrates that when `targetformat` represents
-/// `NewFeature`, the execution path will lead to the second last match arm,
-/// even though the enum does not contain a variant `TargetFormat::NewFeature`
-/// in the current version of SDK. The reason is that the variable `other`,
-/// created by the `@` operator, is bound to
-/// `TargetFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
-/// and calling `as_str` on it yields `"NewFeature"`.
-/// This match expression is forward-compatible when executed with a newer
-/// version of SDK where the variant `TargetFormat::NewFeature` is defined.
-/// Specifically, when `targetformat` represents `NewFeature`,
-/// the execution path will hit the second last match arm as before by virtue of
-/// calling `as_str` on `TargetFormat::NewFeature` also yielding `"NewFeature"`.
-///
-/// Explicitly matching on the `Unknown` variant should
-/// be avoided for two reasons:
-/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
-/// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TargetFormat {
-    #[allow(missing_docs)] // documentation missing in model
-    Avro,
-    #[allow(missing_docs)] // documentation missing in model
-    Csv,
-    #[allow(missing_docs)] // documentation missing in model
-    Json,
-    #[allow(missing_docs)] // documentation missing in model
-    Orc,
-    #[allow(missing_docs)] // documentation missing in model
-    Parquet,
-    /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
-}
-impl std::convert::From<&str> for TargetFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "avro" => TargetFormat::Avro,
-            "csv" => TargetFormat::Csv,
-            "json" => TargetFormat::Json,
-            "orc" => TargetFormat::Orc,
-            "parquet" => TargetFormat::Parquet,
-            other => TargetFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
-impl std::str::FromStr for TargetFormat {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetFormat::from(s))
-    }
-}
-impl TargetFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetFormat::Avro => "avro",
-            TargetFormat::Csv => "csv",
-            TargetFormat::Json => "json",
-            TargetFormat::Orc => "orc",
-            TargetFormat::Parquet => "parquet",
-            TargetFormat::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["avro", "csv", "json", "orc", "parquet"]
-    }
-}
-impl AsRef<str> for TargetFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -16480,111 +17732,6 @@ impl S3ParquetSource {
     /// Creates a new builder-style object to manufacture [`S3ParquetSource`](crate::model::S3ParquetSource).
     pub fn builder() -> crate::model::s3_parquet_source::Builder {
         crate::model::s3_parquet_source::Builder::default()
-    }
-}
-
-/// <p>Specifies additional connection options for the Amazon S3 data store.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DirectSourceAdditionalOptions {
-    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    #[doc(hidden)]
-    pub bounded_size: std::option::Option<i64>,
-    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    #[doc(hidden)]
-    pub bounded_files: std::option::Option<i64>,
-    /// <p>Sets option to enable a sample path.</p>
-    #[doc(hidden)]
-    pub enable_sample_path: std::option::Option<bool>,
-    /// <p>If enabled, specifies the sample path.</p>
-    #[doc(hidden)]
-    pub sample_path: std::option::Option<std::string::String>,
-}
-impl S3DirectSourceAdditionalOptions {
-    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    pub fn bounded_size(&self) -> std::option::Option<i64> {
-        self.bounded_size
-    }
-    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    pub fn bounded_files(&self) -> std::option::Option<i64> {
-        self.bounded_files
-    }
-    /// <p>Sets option to enable a sample path.</p>
-    pub fn enable_sample_path(&self) -> std::option::Option<bool> {
-        self.enable_sample_path
-    }
-    /// <p>If enabled, specifies the sample path.</p>
-    pub fn sample_path(&self) -> std::option::Option<&str> {
-        self.sample_path.as_deref()
-    }
-}
-/// See [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
-pub mod s3_direct_source_additional_options {
-
-    /// A builder for [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) bounded_size: std::option::Option<i64>,
-        pub(crate) bounded_files: std::option::Option<i64>,
-        pub(crate) enable_sample_path: std::option::Option<bool>,
-        pub(crate) sample_path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-        pub fn bounded_size(mut self, input: i64) -> Self {
-            self.bounded_size = Some(input);
-            self
-        }
-        /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-        pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.bounded_size = input;
-            self
-        }
-        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-        pub fn bounded_files(mut self, input: i64) -> Self {
-            self.bounded_files = Some(input);
-            self
-        }
-        /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-        pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
-            self.bounded_files = input;
-            self
-        }
-        /// <p>Sets option to enable a sample path.</p>
-        pub fn enable_sample_path(mut self, input: bool) -> Self {
-            self.enable_sample_path = Some(input);
-            self
-        }
-        /// <p>Sets option to enable a sample path.</p>
-        pub fn set_enable_sample_path(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_sample_path = input;
-            self
-        }
-        /// <p>If enabled, specifies the sample path.</p>
-        pub fn sample_path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.sample_path = Some(input.into());
-            self
-        }
-        /// <p>If enabled, specifies the sample path.</p>
-        pub fn set_sample_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sample_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
-        pub fn build(self) -> crate::model::S3DirectSourceAdditionalOptions {
-            crate::model::S3DirectSourceAdditionalOptions {
-                bounded_size: self.bounded_size,
-                bounded_files: self.bounded_files,
-                enable_sample_path: self.enable_sample_path,
-                sample_path: self.sample_path,
-            }
-        }
-    }
-}
-impl S3DirectSourceAdditionalOptions {
-    /// Creates a new builder-style object to manufacture [`S3DirectSourceAdditionalOptions`](crate::model::S3DirectSourceAdditionalOptions).
-    pub fn builder() -> crate::model::s3_direct_source_additional_options::Builder {
-        crate::model::s3_direct_source_additional_options::Builder::default()
     }
 }
 

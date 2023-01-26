@@ -99,6 +99,57 @@ impl UpdateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UpdateAccountSettingsOutput {
+    /// <p>A structure that displays the status of the optional features in the account.</p>
+    #[doc(hidden)]
+    pub account_settings: std::option::Option<crate::model::AccountSettings>,
+}
+impl UpdateAccountSettingsOutput {
+    /// <p>A structure that displays the status of the optional features in the account.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
+}
+/// See [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+pub mod update_account_settings_output {
+
+    /// A builder for [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
+    }
+    impl Builder {
+        /// <p>A structure that displays the status of the optional features in the account.</p>
+        pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
+            self.account_settings = Some(input);
+            self
+        }
+        /// <p>A structure that displays the status of the optional features in the account.</p>
+        pub fn set_account_settings(
+            mut self,
+            input: std::option::Option<crate::model::AccountSettings>,
+        ) -> Self {
+            self.account_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+        pub fn build(self) -> crate::output::UpdateAccountSettingsOutput {
+            crate::output::UpdateAccountSettingsOutput {
+                account_settings: self.account_settings,
+            }
+        }
+    }
+}
+impl UpdateAccountSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
+    pub fn builder() -> crate::output::update_account_settings_output::Builder {
+        crate::output::update_account_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagOutput {
     /// <p>The ARN of the resource group from which tags have been removed.</p>
     #[doc(hidden)]
@@ -383,7 +434,12 @@ pub struct SearchResourcesOutput {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>Possible values for <code>ErrorCode</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
 }
@@ -396,7 +452,12 @@ impl SearchResourcesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>Possible values for <code>ErrorCode</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
+    /// </ul>
     pub fn query_errors(&self) -> std::option::Option<&[crate::model::QueryError]> {
         self.query_errors.as_deref()
     }
@@ -446,14 +507,24 @@ pub mod search_resources_output {
         ///
         /// To override the contents of this collection use [`set_query_errors`](Self::set_query_errors).
         ///
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+        /// <p>Possible values for <code>ErrorCode</code>:</p>
+        /// <ul>
+        /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+        /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
+        /// </ul>
         pub fn query_errors(mut self, input: crate::model::QueryError) -> Self {
             let mut v = self.query_errors.unwrap_or_default();
             v.push(input);
             self.query_errors = Some(v);
             self
         }
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+        /// <p>Possible values for <code>ErrorCode</code>:</p>
+        /// <ul>
+        /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+        /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
+        /// </ul>
         pub fn set_query_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
@@ -769,26 +840,26 @@ impl ListGroupResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupResourcesOutput {
-    /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
     #[doc(hidden)]
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
-    /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     #[doc(hidden)]
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
 impl GroupResourcesOutput {
-    /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
     pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
         self.succeeded.as_deref()
     }
-    /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::FailedResource]> {
         self.failed.as_deref()
     }
-    /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     pub fn pending(&self) -> std::option::Option<&[crate::model::PendingResource]> {
         self.pending.as_deref()
     }
@@ -808,14 +879,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
         ///
-        /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+        /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
         pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded.unwrap_or_default();
             v.push(input.into());
             self.succeeded = Some(v);
             self
         }
-        /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+        /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
         pub fn set_succeeded(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -827,14 +898,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+        /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
         pub fn failed(mut self, input: crate::model::FailedResource) -> Self {
             let mut v = self.failed.unwrap_or_default();
             v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+        /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
@@ -846,14 +917,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_pending`](Self::set_pending).
         ///
-        /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+        /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
         pub fn pending(mut self, input: crate::model::PendingResource) -> Self {
             let mut v = self.pending.unwrap_or_default();
             v.push(input);
             self.pending = Some(v);
             self
         }
-        /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+        /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
         pub fn set_pending(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
@@ -1021,12 +1092,12 @@ impl GetGroupQueryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupConfigurationOutput {
-    /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
 impl GetGroupConfigurationOutput {
-    /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
         self.group_configuration.as_ref()
     }
@@ -1040,12 +1111,12 @@ pub mod get_group_configuration_output {
         pub(crate) group_configuration: std::option::Option<crate::model::GroupConfiguration>,
     }
     impl Builder {
-        /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+        /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
         pub fn group_configuration(mut self, input: crate::model::GroupConfiguration) -> Self {
             self.group_configuration = Some(input);
             self
         }
-        /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+        /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
         pub fn set_group_configuration(
             mut self,
             input: std::option::Option<crate::model::GroupConfiguration>,
@@ -1072,12 +1143,12 @@ impl GetGroupConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGroupOutput {
-    /// <p>A full description of the resource group.</p>
+    /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
-    /// <p>A full description of the resource group.</p>
+    /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
     }
@@ -1091,12 +1162,12 @@ pub mod get_group_output {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
     impl Builder {
-        /// <p>A full description of the resource group.</p>
+        /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
         pub fn group(mut self, input: crate::model::Group) -> Self {
             self.group = Some(input);
             self
         }
-        /// <p>A full description of the resource group.</p>
+        /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
@@ -1111,6 +1182,57 @@ impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
     pub fn builder() -> crate::output::get_group_output::Builder {
         crate::output::get_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetAccountSettingsOutput {
+    /// <p>The current settings for the optional features in Resource Groups.</p>
+    #[doc(hidden)]
+    pub account_settings: std::option::Option<crate::model::AccountSettings>,
+}
+impl GetAccountSettingsOutput {
+    /// <p>The current settings for the optional features in Resource Groups.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
+}
+/// See [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+pub mod get_account_settings_output {
+
+    /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
+    }
+    impl Builder {
+        /// <p>The current settings for the optional features in Resource Groups.</p>
+        pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
+            self.account_settings = Some(input);
+            self
+        }
+        /// <p>The current settings for the optional features in Resource Groups.</p>
+        pub fn set_account_settings(
+            mut self,
+            input: std::option::Option<crate::model::AccountSettings>,
+        ) -> Self {
+            self.account_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+        pub fn build(self) -> crate::output::GetAccountSettingsOutput {
+            crate::output::GetAccountSettingsOutput {
+                account_settings: self.account_settings,
+            }
+        }
+    }
+}
+impl GetAccountSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
+    pub fn builder() -> crate::output::get_account_settings_output::Builder {
+        crate::output::get_account_settings_output::Builder::default()
     }
 }
 
@@ -1174,7 +1296,7 @@ pub struct CreateGroupOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
@@ -1194,7 +1316,7 @@ impl CreateGroupOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
         self.group_configuration.as_ref()
     }
@@ -1261,12 +1383,12 @@ pub mod create_group_output {
             self.tags = input;
             self
         }
-        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
         pub fn group_configuration(mut self, input: crate::model::GroupConfiguration) -> Self {
             self.group_configuration = Some(input);
             self
         }
-        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
         pub fn set_group_configuration(
             mut self,
             input: std::option::Option<crate::model::GroupConfiguration>,

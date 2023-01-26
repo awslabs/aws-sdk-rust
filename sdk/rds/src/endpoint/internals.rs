@@ -64,31 +64,6 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
-                if (region) == ("rds.ca-central-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://rds-fips.ca-central-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("rds.us-east-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://rds-fips.us-east-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("rds.us-east-2") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://rds-fips.us-east-2.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("rds.us-west-1") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://rds-fips.us-west-1.amazonaws.com".to_string())
-                        .build());
-                }
-                if (region) == ("rds.us-west-2") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://rds-fips.us-west-2.amazonaws.com".to_string())
-                        .build());
-                }
                 if ("aws-us-gov") == (partition_result.name()) {
                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
@@ -96,9 +71,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://rds.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dns_suffix());
+                            out.push_str(".amazonaws.com");
                             out
                         })
                         .build());

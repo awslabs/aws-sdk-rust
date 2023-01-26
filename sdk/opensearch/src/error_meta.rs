@@ -754,6 +754,46 @@ impl From<crate::error::DescribeDomainsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDryRunProgressError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeDryRunProgressError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeDryRunProgressError> for Error {
+    fn from(err: crate::error::DescribeDryRunProgressError) -> Self {
+        match err.kind {
+            crate::error::DescribeDryRunProgressErrorKind::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::error::DescribeDryRunProgressErrorKind::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::error::DescribeDryRunProgressErrorKind::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::error::DescribeDryRunProgressErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeDryRunProgressErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DescribeDryRunProgressErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInboundConnectionsError, R>>
     for Error
 where

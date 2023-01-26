@@ -1071,7 +1071,7 @@ mod upload_archive_request_test {
     #[tokio::test]
     async fn glacier_version_header_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("foo".to_owned()))
@@ -1098,7 +1098,7 @@ mod upload_archive_request_test {
     #[tokio::test]
     async fn glacier_checksums_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("foo".to_owned()))
@@ -1143,7 +1143,7 @@ mod upload_archive_request_test {
     #[tokio::test]
     async fn glacier_account_id_empty_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("".to_owned()))
@@ -1172,7 +1172,7 @@ mod upload_archive_request_test {
     #[tokio::test]
     async fn glacier_account_id_unset_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_vault_name(Some("bar".to_owned()))
@@ -1237,7 +1237,7 @@ mod upload_multipart_part_request_test {
     #[tokio::test]
     async fn glacier_multipart_checksums_request() {
         let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
-
+        let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadMultipartPartInput::builder()
             .set_account_id(Some("foo".to_owned()))

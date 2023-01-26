@@ -896,6 +896,9 @@ pub struct GetMetricStreamOutput {
     #[doc(hidden)]
     pub statistics_configurations:
         std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+    /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
+    #[doc(hidden)]
+    pub include_linked_accounts_metrics: std::option::Option<bool>,
 }
 impl GetMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
@@ -944,6 +947,10 @@ impl GetMetricStreamOutput {
     ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
         self.statistics_configurations.as_deref()
     }
+    /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
+    pub fn include_linked_accounts_metrics(&self) -> std::option::Option<bool> {
+        self.include_linked_accounts_metrics
+    }
 }
 /// See [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
 pub mod get_metric_stream_output {
@@ -965,6 +972,7 @@ pub mod get_metric_stream_output {
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
         pub(crate) statistics_configurations:
             std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+        pub(crate) include_linked_accounts_metrics: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ARN of the metric stream.</p>
@@ -1118,6 +1126,19 @@ pub mod get_metric_stream_output {
             self.statistics_configurations = input;
             self
         }
+        /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
+        pub fn include_linked_accounts_metrics(mut self, input: bool) -> Self {
+            self.include_linked_accounts_metrics = Some(input);
+            self
+        }
+        /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
+        pub fn set_include_linked_accounts_metrics(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.include_linked_accounts_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput).
         pub fn build(self) -> crate::output::GetMetricStreamOutput {
             crate::output::GetMetricStreamOutput {
@@ -1132,6 +1153,7 @@ pub mod get_metric_stream_output {
                 last_update_date: self.last_update_date,
                 output_format: self.output_format,
                 statistics_configurations: self.statistics_configurations,
+                include_linked_accounts_metrics: self.include_linked_accounts_metrics,
             }
         }
     }

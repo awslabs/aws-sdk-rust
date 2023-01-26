@@ -24,8 +24,110 @@ mod test {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("aws-global".to_string())
             .use_dual_stack(false)
+            .region("aws-global".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-west-2.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert(
+                            "signingName".to_string(),
+                            "networkmanager".to_string().into(),
+                        );
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_2() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_3() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_4() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://networkmanager.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_5() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -56,12 +158,12 @@ mod test {
 
     /// For region aws-us-gov-global with FIPS disabled and DualStack disabled
     #[test]
-    fn test_2() {
+    fn test_6() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("aws-us-gov-global".to_string())
             .use_dual_stack(false)
+            .region("aws-us-gov-global".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
@@ -93,14 +195,297 @@ mod test {
         );
     }
 
-    /// For custom endpoint with fips disabled and dualstack disabled
+    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_3() {
+    fn test_7() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager-fips.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_8() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://networkmanager-fips.us-gov-east-1.amazonaws.com",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_9() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
+            .use_dual_stack(true)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-gov-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_10() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
             .use_dual_stack(false)
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-gov-west-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert(
+                            "signingName".to_string(),
+                            "networkmanager".to_string().into(),
+                        );
+                        out.insert(
+                            "signingRegion".to_string(),
+                            "us-gov-west-1".to_string().into(),
+                        );
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_11() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://networkmanager-fips.us-isob-east-1.sc2s.sgov.gov",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_12() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-isob-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_13() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://networkmanager-fips.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_14() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://networkmanager-fips.cn-north-1.amazonaws.com.cn",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_15() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://networkmanager.cn-north-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.cn-north-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-north-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_16() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.cn-north-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://networkmanager-fips.us-iso-east-1.c2s.ic.gov",
+        );
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://networkmanager.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://networkmanager.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For custom endpoint with fips disabled and dualstack disabled
+    #[test]
+    fn test_19() {
+        use aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -117,12 +502,12 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_4() {
+    fn test_20() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(true)
-            .region("us-east-1".to_string())
             .use_dual_stack(false)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -137,12 +522,12 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_5() {
+    fn test_21() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_fips(false)
-            .region("us-east-1".to_string())
             .use_dual_stack(true)
+            .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");

@@ -97,7 +97,7 @@ impl Client {
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain): <p>The name of the domain that contains the repository.</p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_repository): <p> The name of the repository to which the external connection is added. </p>
-    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
+    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
     /// - On success, responds with [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::AssociateExternalConnectionOutput::repository): <p> Information about the connected repository after processing the request. </p>
     /// - On failure, responds with [`SdkError<AssociateExternalConnectionError>`](crate::error::AssociateExternalConnectionError)
@@ -361,7 +361,7 @@ impl Client {
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain): <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_repository): <p> The repository that contains the package with the requested readme file. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. </p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. </p> <note>   <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>  </note>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_namespace): <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package): <p> The name of the package version that contains the requested readme file. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
@@ -424,7 +424,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackages::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackages::set_repository): <p> The name of the repository that contains the requested packages. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackages::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackages::set_format): <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackages::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackages::set_namespace): <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackages::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackages::set_namespace): <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>  <p>Each package format uses namespace as follows:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPackages::package_prefix) / [`set_package_prefix(Option<String>)`](crate::client::fluent_builders::ListPackages::set_package_prefix): <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackages::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackages::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
@@ -762,6 +762,7 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -775,6 +776,7 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -1437,7 +1439,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePackageVersions`.
     ///
-    /// <p> Deletes one or more versions of a package. A deleted package version cannot be restored in your repository. If you want to remove a package version from your repository and be able to restore it later, set its status to <code>Archived</code>. Archived packages cannot be downloaded from a repository and don't show up with list package APIs (for example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>), but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>. </p>
+    /// <p> Deletes one or more versions of a package. A deleted package version cannot be restored in your repository. If you want to remove a package version from your repository and be able to restore it later, set its status to <code>Archived</code>. Archived packages cannot be downloaded from a repository and don't show up with list package APIs (for example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>), but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackageVersions {
         handle: std::sync::Arc<super::Handle>,
@@ -2916,8 +2918,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionReadme`.
     ///
-    /// <p> Gets the readme file or descriptive text for a package version. For packages that do not contain a readme file, CodeArtifact extracts a description from a metadata file. For example, from the <code>
-    /// <description></description></code> element in the <code>pom.xml</code> file of a Maven package. </p>
+    /// <p> Gets the readme file or descriptive text for a package version. </p>
     /// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionReadme {
@@ -3008,12 +3009,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3470,7 +3475,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+        /// <p>Each package format uses namespace as follows:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
@@ -3480,7 +3486,8 @@ pub mod fluent_builders {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+        /// <p>Each package format uses namespace as follows:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>

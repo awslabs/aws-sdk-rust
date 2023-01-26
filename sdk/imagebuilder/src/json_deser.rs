@@ -3929,6 +3929,22 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_imagebuilder_tag_map(tokens)?
                                 );
                             }
+                            "publisher" => {
+                                builder = builder.set_publisher(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "obfuscate" => {
+                                builder = builder.set_obfuscate(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4418,6 +4434,18 @@ where
                                     .map(|s| {
                                         s.to_unescaped()
                                             .map(|u| crate::model::BuildType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "imageSource" => {
+                                builder = builder.set_image_source(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ImageSource::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -6609,6 +6637,22 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_imagebuilder_tag_map(tokens)?
                                 );
                             }
+                            "publisher" => {
+                                builder = builder.set_publisher(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "obfuscate" => {
+                                builder = builder.set_obfuscate(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -7113,6 +7157,18 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "imageSource" => {
+                                builder = builder.set_image_source(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ImageSource::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -7414,6 +7470,18 @@ where
                                     .map(|s| {
                                         s.to_unescaped()
                                             .map(|u| crate::model::BuildType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "imageSource" => {
+                                builder = builder.set_image_source(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ImageSource::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

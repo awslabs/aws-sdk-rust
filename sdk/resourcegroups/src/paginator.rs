@@ -27,6 +27,14 @@ impl ListGroupResourcesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `resource_identifiers`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListGroupResourcesPaginatorItems {
+        crate::paginator::ListGroupResourcesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -135,6 +143,14 @@ impl ListGroupsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `group_identifiers`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListGroupsPaginatorItems {
+        crate::paginator::ListGroupsPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -247,6 +263,14 @@ impl SearchResourcesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `resource_identifiers`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::SearchResourcesPaginatorItems {
+        crate::paginator::SearchResourcesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -325,6 +349,85 @@ impl SearchResourcesPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListGroupResourcesPaginator`
+///
+/// This is created with [`.items()`](ListGroupResourcesPaginator::items)
+pub struct ListGroupResourcesPaginatorItems(ListGroupResourcesPaginator);
+
+impl ListGroupResourcesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ResourceIdentifier,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupResourcesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_group_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListGroupsPaginator`
+///
+/// This is created with [`.items()`](ListGroupsPaginator::items)
+pub struct ListGroupsPaginatorItems(ListGroupsPaginator);
+
+impl ListGroupsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::GroupIdentifier,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_groups_output_group_identifiers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `SearchResourcesPaginator`
+///
+/// This is created with [`.items()`](SearchResourcesPaginator::items)
+pub struct SearchResourcesPaginatorItems(SearchResourcesPaginator);
+
+impl SearchResourcesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ResourceIdentifier,
+            aws_smithy_http::result::SdkError<crate::error::SearchResourcesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_search_resources_output_resource_identifiers(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
         })
     }
 }

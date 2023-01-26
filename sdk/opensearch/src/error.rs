@@ -5036,6 +5036,162 @@ impl std::error::Error for DescribeInboundConnectionsError {
     }
 }
 
+/// Error type for the `DescribeDryRunProgress` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDryRunProgressError {
+    /// Kind of error that occurred.
+    pub kind: DescribeDryRunProgressErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDryRunProgressError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDryRunProgressErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
+/// Types of errors that can occur for the `DescribeDryRunProgress` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDryRunProgressErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>
+    DisabledOperationException(crate::error::DisabledOperationException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
+}
+impl std::fmt::Display for DescribeDryRunProgressError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDryRunProgressErrorKind::BaseException(_inner) => _inner.fmt(f),
+            DescribeDryRunProgressErrorKind::DisabledOperationException(_inner) => _inner.fmt(f),
+            DescribeDryRunProgressErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeDryRunProgressErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeDryRunProgressErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeDryRunProgressErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeDryRunProgressError {
+    fn code(&self) -> Option<&str> {
+        DescribeDryRunProgressError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDryRunProgressError {
+    /// Creates a new `DescribeDryRunProgressError`.
+    pub fn new(kind: DescribeDryRunProgressErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeDryRunProgressError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDryRunProgressErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeDryRunProgressError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDryRunProgressErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeDryRunProgressErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDryRunProgressErrorKind::BaseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDryRunProgressErrorKind::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDryRunProgressErrorKind::DisabledOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDryRunProgressErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDryRunProgressErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDryRunProgressErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDryRunProgressErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDryRunProgressErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDryRunProgressErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDryRunProgressError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDryRunProgressErrorKind::BaseException(_inner) => Some(_inner),
+            DescribeDryRunProgressErrorKind::DisabledOperationException(_inner) => Some(_inner),
+            DescribeDryRunProgressErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeDryRunProgressErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeDryRunProgressErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeDryRunProgressErrorKind::Unhandled(_inner) => Some(_inner),
+        }
+    }
+}
+
 /// Error type for the `DescribeDomains` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

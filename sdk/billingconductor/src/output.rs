@@ -348,6 +348,14 @@ pub struct UpdatePricingRuleOutput {
     /// <p> The set of tiering configurations for the pricing rule. </p>
     #[doc(hidden)]
     pub tiering: std::option::Option<crate::model::UpdateTieringInput>,
+    /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    #[doc(hidden)]
+    pub usage_type: std::option::Option<std::string::String>,
+    /// <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    #[doc(hidden)]
+    pub operation: std::option::Option<std::string::String>,
 }
 impl UpdatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -394,6 +402,16 @@ impl UpdatePricingRuleOutput {
     pub fn tiering(&self) -> std::option::Option<&crate::model::UpdateTieringInput> {
         self.tiering.as_ref()
     }
+    /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    pub fn usage_type(&self) -> std::option::Option<&str> {
+        self.usage_type.as_deref()
+    }
+    /// <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePricingRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -412,6 +430,8 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
         formatter.field("tiering", &self.tiering);
+        formatter.field("usage_type", &self.usage_type);
+        formatter.field("operation", &self.operation);
         formatter.finish()
     }
 }
@@ -432,6 +452,8 @@ pub mod update_pricing_rule_output {
         pub(crate) last_modified_time: std::option::Option<i64>,
         pub(crate) billing_entity: std::option::Option<std::string::String>,
         pub(crate) tiering: std::option::Option<crate::model::UpdateTieringInput>,
+        pub(crate) usage_type: std::option::Option<std::string::String>,
+        pub(crate) operation: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -559,6 +581,30 @@ pub mod update_pricing_rule_output {
             self.tiering = input;
             self
         }
+        /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+        pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_type = Some(input.into());
+            self
+        }
+        /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+        pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_type = input;
+            self
+        }
+        /// <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation = Some(input.into());
+            self
+        }
+        /// <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+        pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
         pub fn build(self) -> crate::output::UpdatePricingRuleOutput {
             crate::output::UpdatePricingRuleOutput {
@@ -575,6 +621,8 @@ pub mod update_pricing_rule_output {
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
                 billing_entity: self.billing_entity,
                 tiering: self.tiering,
+                usage_type: self.usage_type,
+                operation: self.operation,
             }
         }
     }
@@ -595,6 +643,8 @@ pub mod update_pricing_rule_output {
             formatter.field("last_modified_time", &self.last_modified_time);
             formatter.field("billing_entity", &self.billing_entity);
             formatter.field("tiering", &self.tiering);
+            formatter.field("usage_type", &self.usage_type);
+            formatter.field("operation", &self.operation);
             formatter.finish()
         }
     }

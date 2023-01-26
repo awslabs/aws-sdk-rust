@@ -4919,13 +4919,13 @@ impl SaaSConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JiraConfiguration {
-    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
     #[doc(hidden)]
     pub jira_account_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira username.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
+    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
@@ -4944,23 +4944,23 @@ pub struct JiraConfiguration {
     /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
     #[doc(hidden)]
     pub issue_sub_entity_filter: std::option::Option<std::vec::Vec<crate::model::IssueSubEntity>>,
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     #[doc(hidden)]
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     #[doc(hidden)]
     pub comment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     #[doc(hidden)]
     pub issue_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     #[doc(hidden)]
     pub project_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     #[doc(hidden)]
     pub work_log_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -4970,19 +4970,19 @@ pub struct JiraConfiguration {
     /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
     #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl JiraConfiguration {
-    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
     pub fn jira_account_url(&self) -> std::option::Option<&str> {
         self.jira_account_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jiraId—The Jira username.</p> </li>
-    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
+    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -5007,31 +5007,31 @@ impl JiraConfiguration {
     pub fn issue_sub_entity_filter(&self) -> std::option::Option<&[crate::model::IssueSubEntity]> {
         self.issue_sub_entity_filter.as_deref()
     }
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     pub fn attachment_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.attachment_field_mappings.as_deref()
     }
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     pub fn comment_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.comment_field_mappings.as_deref()
     }
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     pub fn issue_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.issue_field_mappings.as_deref()
     }
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     pub fn project_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.project_field_mappings.as_deref()
     }
-    /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
     pub fn work_log_field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -5045,7 +5045,7 @@ impl JiraConfiguration {
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
-    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
@@ -5081,12 +5081,12 @@ pub mod jira_configuration {
         pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     }
     impl Builder {
-        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
         pub fn jira_account_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.jira_account_url = Some(input.into());
             self
         }
-        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
         pub fn set_jira_account_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5096,8 +5096,8 @@ pub mod jira_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jiraId—The Jira username.</p> </li>
-        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
+        /// <li> <p>jiraId—The Jira user name or email.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
@@ -5105,8 +5105,8 @@ pub mod jira_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jiraId—The Jira username.</p> </li>
-        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using a Jira data source</a>.</p> </li>
+        /// <li> <p>jiraId—The Jira user name or email.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
@@ -5202,7 +5202,7 @@ pub mod jira_configuration {
         ///
         /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
         ///
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn attachment_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -5212,7 +5212,7 @@ pub mod jira_configuration {
             self.attachment_field_mappings = Some(v);
             self
         }
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn set_attachment_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5224,7 +5224,7 @@ pub mod jira_configuration {
         ///
         /// To override the contents of this collection use [`set_comment_field_mappings`](Self::set_comment_field_mappings).
         ///
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn comment_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -5234,7 +5234,7 @@ pub mod jira_configuration {
             self.comment_field_mappings = Some(v);
             self
         }
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn set_comment_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5246,7 +5246,7 @@ pub mod jira_configuration {
         ///
         /// To override the contents of this collection use [`set_issue_field_mappings`](Self::set_issue_field_mappings).
         ///
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn issue_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -5256,7 +5256,7 @@ pub mod jira_configuration {
             self.issue_field_mappings = Some(v);
             self
         }
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn set_issue_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5268,7 +5268,7 @@ pub mod jira_configuration {
         ///
         /// To override the contents of this collection use [`set_project_field_mappings`](Self::set_project_field_mappings).
         ///
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn project_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -5278,7 +5278,7 @@ pub mod jira_configuration {
             self.project_field_mappings = Some(v);
             self
         }
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn set_project_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5290,7 +5290,7 @@ pub mod jira_configuration {
         ///
         /// To override the contents of this collection use [`set_work_log_field_mappings`](Self::set_work_log_field_mappings).
         ///
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn work_log_field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -5300,7 +5300,7 @@ pub mod jira_configuration {
             self.work_log_field_mappings = Some(v);
             self
         }
-        /// <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the UpdateIndex API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
         pub fn set_work_log_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5346,7 +5346,7 @@ pub mod jira_configuration {
             self.exclusion_patterns = input;
             self
         }
-        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn vpc_configuration(
             mut self,
             input: crate::model::DataSourceVpcConfiguration,
@@ -5354,7 +5354,7 @@ pub mod jira_configuration {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. Your Jira account must reside inside your VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -9553,7 +9553,7 @@ impl ConfluencePageConfiguration {
     }
 }
 
-/// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+/// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluencePageToIndexFieldMapping {
@@ -9973,7 +9973,7 @@ impl ConfluenceSpaceConfiguration {
     }
 }
 
-/// <p>&gt;Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+/// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceSpaceToIndexFieldMapping {
@@ -11065,7 +11065,7 @@ pub struct OneDriveConfiguration {
     /// <p>The Azure Active Directory domain of the organization. </p>
     #[doc(hidden)]
     pub tenant_domain: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>A list of user accounts whose documents should be indexed.</p>
@@ -11092,7 +11092,7 @@ impl OneDriveConfiguration {
     pub fn tenant_domain(&self) -> std::option::Option<&str> {
         self.tenant_domain.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -11150,12 +11150,12 @@ pub mod one_drive_configuration {
             self.tenant_domain = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -23316,11 +23316,18 @@ impl Document {
 /// ```text
 /// # let contenttype = unimplemented!();
 /// match contenttype {
+///     ContentType::Csv => { /* ... */ },
 ///     ContentType::Html => { /* ... */ },
+///     ContentType::Json => { /* ... */ },
+///     ContentType::Md => { /* ... */ },
+///     ContentType::MsExcel => { /* ... */ },
 ///     ContentType::MsWord => { /* ... */ },
 ///     ContentType::Pdf => { /* ... */ },
 ///     ContentType::PlainText => { /* ... */ },
 ///     ContentType::Ppt => { /* ... */ },
+///     ContentType::Rtf => { /* ... */ },
+///     ContentType::Xml => { /* ... */ },
+///     ContentType::Xslt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -23355,7 +23362,15 @@ impl Document {
 )]
 pub enum ContentType {
     #[allow(missing_docs)] // documentation missing in model
+    Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Html,
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    Md,
+    #[allow(missing_docs)] // documentation missing in model
+    MsExcel,
     #[allow(missing_docs)] // documentation missing in model
     MsWord,
     #[allow(missing_docs)] // documentation missing in model
@@ -23364,17 +23379,30 @@ pub enum ContentType {
     PlainText,
     #[allow(missing_docs)] // documentation missing in model
     Ppt,
+    #[allow(missing_docs)] // documentation missing in model
+    Rtf,
+    #[allow(missing_docs)] // documentation missing in model
+    Xml,
+    #[allow(missing_docs)] // documentation missing in model
+    Xslt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContentType {
     fn from(s: &str) -> Self {
         match s {
+            "CSV" => ContentType::Csv,
             "HTML" => ContentType::Html,
+            "JSON" => ContentType::Json,
+            "MD" => ContentType::Md,
+            "MS_EXCEL" => ContentType::MsExcel,
             "MS_WORD" => ContentType::MsWord,
             "PDF" => ContentType::Pdf,
             "PLAIN_TEXT" => ContentType::PlainText,
             "PPT" => ContentType::Ppt,
+            "RTF" => ContentType::Rtf,
+            "XML" => ContentType::Xml,
+            "XSLT" => ContentType::Xslt,
             other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -23390,17 +23418,37 @@ impl ContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContentType::Csv => "CSV",
             ContentType::Html => "HTML",
+            ContentType::Json => "JSON",
+            ContentType::Md => "MD",
+            ContentType::MsExcel => "MS_EXCEL",
             ContentType::MsWord => "MS_WORD",
             ContentType::Pdf => "PDF",
             ContentType::PlainText => "PLAIN_TEXT",
             ContentType::Ppt => "PPT",
+            ContentType::Rtf => "RTF",
+            ContentType::Xml => "XML",
+            ContentType::Xslt => "XSLT",
             ContentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTML", "MS_WORD", "PDF", "PLAIN_TEXT", "PPT"]
+        &[
+            "CSV",
+            "HTML",
+            "JSON",
+            "MD",
+            "MS_EXCEL",
+            "MS_WORD",
+            "PDF",
+            "PLAIN_TEXT",
+            "PPT",
+            "RTF",
+            "XML",
+            "XSLT",
+        ]
     }
 }
 impl AsRef<str> for ContentType {

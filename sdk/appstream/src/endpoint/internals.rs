@@ -25,26 +25,20 @@ pub(super) fn resolve_endpoint(
     {
         #[allow(unused)]
         if let Some(endpoint) = endpoint {
-            #[allow(unused)]
-            if let Some(url) =
-                crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-            {
-                if (*use_fips) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: FIPS and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                if (*use_dual_stack) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url(endpoint.to_owned())
-                    .build());
+            if (*use_fips) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                ));
             }
+            if (*use_dual_stack) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                        .to_string(),
+                ));
+            }
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url(endpoint.to_owned())
+                .build());
         }
         if (*use_fips) == (true) {
             if (*use_dual_stack) == (true) {
@@ -105,6 +99,30 @@ pub(super) fn resolve_endpoint(
             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
+        }
+        if ("aws") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://appstream2.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".amazonaws.com");
+                    out
+                })
+                .build());
+        }
+        if ("aws-us-gov") == (partition_result.name()) {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url({
+                    let mut out = String::new();
+                    out.push_str("https://appstream2.");
+                    #[allow(clippy::needless_borrow)]
+                    out.push_str(&region);
+                    out.push_str(".amazonaws.com");
+                    out
+                })
+                .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({

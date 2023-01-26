@@ -784,6 +784,74 @@ pub fn parse_list_databases_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_operations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListOperationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListOperationsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListOperationsError {
+            meta: generic,
+            kind: crate::error::ListOperationsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOperationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListOperationsError {
+            meta: generic,
+            kind: crate::error::ListOperationsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOperationsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListOperationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_operations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_operations_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_operations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListOperationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

@@ -2280,6 +2280,142 @@ pub fn parse_describe_domains_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_dry_run_progress_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDryRunProgressOutput,
+    crate::error::DescribeDryRunProgressError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeDryRunProgressError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BaseException" => crate::error::DescribeDryRunProgressError {
+            meta: generic,
+            kind: crate::error::DescribeDryRunProgressErrorKind::BaseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::base_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_base_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DisabledOperationException" => crate::error::DescribeDryRunProgressError {
+            meta: generic,
+            kind: crate::error::DescribeDryRunProgressErrorKind::DisabledOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalException" => {
+            crate::error::DescribeDryRunProgressError {
+                meta: generic,
+                kind: crate::error::DescribeDryRunProgressErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFoundException" => crate::error::DescribeDryRunProgressError {
+            meta: generic,
+            kind: crate::error::DescribeDryRunProgressErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DescribeDryRunProgressError {
+            meta: generic,
+            kind: crate::error::DescribeDryRunProgressErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeDryRunProgressError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_dry_run_progress_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDryRunProgressOutput,
+    crate::error::DescribeDryRunProgressError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_dry_run_progress_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_dry_run_progress(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDryRunProgressError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_inbound_connections_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

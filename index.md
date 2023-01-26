@@ -23,6 +23,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
 | AWS Certificate Manager | [aws-sdk-acm](https://crates.io/crates/aws-sdk-acm) ([docs](https://docs.rs/aws-sdk-acm)) |
 | AWS Certificate Manager Private Certificate Authority | [aws-sdk-acmpca](https://crates.io/crates/aws-sdk-acmpca) ([docs](https://docs.rs/aws-sdk-acmpca)) |
+| AWS Clean Rooms Service | [aws-sdk-cleanrooms](https://crates.io/crates/aws-sdk-cleanrooms) ([docs](https://docs.rs/aws-sdk-cleanrooms)) |
 | AWS Cloud Control API | [aws-sdk-cloudcontrol](https://crates.io/crates/aws-sdk-cloudcontrol) ([docs](https://docs.rs/aws-sdk-cloudcontrol)) |
 | AWS Cloud Map | [aws-sdk-servicediscovery](https://crates.io/crates/aws-sdk-servicediscovery) ([docs](https://docs.rs/aws-sdk-servicediscovery)) |
 | AWS Cloud9 | [aws-sdk-cloud9](https://crates.io/crates/aws-sdk-cloud9) ([docs](https://docs.rs/aws-sdk-cloud9)) |

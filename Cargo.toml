@@ -116,6 +116,7 @@ members = [
     "sdk/chimesdkmeetings",
     "sdk/chimesdkmessaging",
     "sdk/chimesdkvoice",
+    "sdk/cleanrooms",
     "sdk/cloud9",
     "sdk/cloudcontrol",
     "sdk/clouddirectory",

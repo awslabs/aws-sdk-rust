@@ -814,6 +814,9 @@ pub struct ConnectorOperator {
     /// <p>Operators supported by the custom connector.</p>
     #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::Operator>,
+    /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
+    #[doc(hidden)]
+    pub pardot: std::option::Option<crate::model::PardotConnectorOperator>,
 }
 impl ConnectorOperator {
     /// <p> The operation to be performed on the provided Amplitude source fields. </p>
@@ -882,6 +885,10 @@ impl ConnectorOperator {
     pub fn custom_connector(&self) -> std::option::Option<&crate::model::Operator> {
         self.custom_connector.as_ref()
     }
+    /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
+    pub fn pardot(&self) -> std::option::Option<&crate::model::PardotConnectorOperator> {
+        self.pardot.as_ref()
+    }
 }
 /// See [`ConnectorOperator`](crate::model::ConnectorOperator).
 pub mod connector_operator {
@@ -906,6 +913,7 @@ pub mod connector_operator {
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
         pub(crate) sapo_data: std::option::Option<crate::model::SapoDataConnectorOperator>,
         pub(crate) custom_connector: std::option::Option<crate::model::Operator>,
+        pub(crate) pardot: std::option::Option<crate::model::PardotConnectorOperator>,
     }
     impl Builder {
         /// <p> The operation to be performed on the provided Amplitude source fields. </p>
@@ -1119,6 +1127,19 @@ pub mod connector_operator {
             self.custom_connector = input;
             self
         }
+        /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
+        pub fn pardot(mut self, input: crate::model::PardotConnectorOperator) -> Self {
+            self.pardot = Some(input);
+            self
+        }
+        /// <p>The operation to be performed on the provided Salesforce Pardot source fields.</p>
+        pub fn set_pardot(
+            mut self,
+            input: std::option::Option<crate::model::PardotConnectorOperator>,
+        ) -> Self {
+            self.pardot = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorOperator`](crate::model::ConnectorOperator).
         pub fn build(self) -> crate::model::ConnectorOperator {
             crate::model::ConnectorOperator {
@@ -1138,6 +1159,7 @@ pub mod connector_operator {
                 zendesk: self.zendesk,
                 sapo_data: self.sapo_data,
                 custom_connector: self.custom_connector,
+                pardot: self.pardot,
             }
         }
     }
@@ -1146,6 +1168,173 @@ impl ConnectorOperator {
     /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator).
     pub fn builder() -> crate::model::connector_operator::Builder {
         crate::model::connector_operator::Builder::default()
+    }
+}
+
+/// When writing a match expression against `PardotConnectorOperator`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pardotconnectoroperator = unimplemented!();
+/// match pardotconnectoroperator {
+///     PardotConnectorOperator::Addition => { /* ... */ },
+///     PardotConnectorOperator::Division => { /* ... */ },
+///     PardotConnectorOperator::EqualTo => { /* ... */ },
+///     PardotConnectorOperator::MaskAll => { /* ... */ },
+///     PardotConnectorOperator::MaskFirstN => { /* ... */ },
+///     PardotConnectorOperator::MaskLastN => { /* ... */ },
+///     PardotConnectorOperator::Multiplication => { /* ... */ },
+///     PardotConnectorOperator::NoOp => { /* ... */ },
+///     PardotConnectorOperator::Projection => { /* ... */ },
+///     PardotConnectorOperator::Subtraction => { /* ... */ },
+///     PardotConnectorOperator::ValidateNonNegative => { /* ... */ },
+///     PardotConnectorOperator::ValidateNonNull => { /* ... */ },
+///     PardotConnectorOperator::ValidateNonZero => { /* ... */ },
+///     PardotConnectorOperator::ValidateNumeric => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pardotconnectoroperator` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PardotConnectorOperator::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PardotConnectorOperator::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PardotConnectorOperator::NewFeature` is defined.
+/// Specifically, when `pardotconnectoroperator` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PardotConnectorOperator::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PardotConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    Addition,
+    #[allow(missing_docs)] // documentation missing in model
+    Division,
+    #[allow(missing_docs)] // documentation missing in model
+    EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
+    MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
+    MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
+    MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
+    Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
+    NoOp,
+    #[allow(missing_docs)] // documentation missing in model
+    Projection,
+    #[allow(missing_docs)] // documentation missing in model
+    Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateNumeric,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for PardotConnectorOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDITION" => PardotConnectorOperator::Addition,
+            "DIVISION" => PardotConnectorOperator::Division,
+            "EQUAL_TO" => PardotConnectorOperator::EqualTo,
+            "MASK_ALL" => PardotConnectorOperator::MaskAll,
+            "MASK_FIRST_N" => PardotConnectorOperator::MaskFirstN,
+            "MASK_LAST_N" => PardotConnectorOperator::MaskLastN,
+            "MULTIPLICATION" => PardotConnectorOperator::Multiplication,
+            "NO_OP" => PardotConnectorOperator::NoOp,
+            "PROJECTION" => PardotConnectorOperator::Projection,
+            "SUBTRACTION" => PardotConnectorOperator::Subtraction,
+            "VALIDATE_NON_NEGATIVE" => PardotConnectorOperator::ValidateNonNegative,
+            "VALIDATE_NON_NULL" => PardotConnectorOperator::ValidateNonNull,
+            "VALIDATE_NON_ZERO" => PardotConnectorOperator::ValidateNonZero,
+            "VALIDATE_NUMERIC" => PardotConnectorOperator::ValidateNumeric,
+            other => PardotConnectorOperator::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
+}
+impl std::str::FromStr for PardotConnectorOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PardotConnectorOperator::from(s))
+    }
+}
+impl PardotConnectorOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PardotConnectorOperator::Addition => "ADDITION",
+            PardotConnectorOperator::Division => "DIVISION",
+            PardotConnectorOperator::EqualTo => "EQUAL_TO",
+            PardotConnectorOperator::MaskAll => "MASK_ALL",
+            PardotConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+            PardotConnectorOperator::MaskLastN => "MASK_LAST_N",
+            PardotConnectorOperator::Multiplication => "MULTIPLICATION",
+            PardotConnectorOperator::NoOp => "NO_OP",
+            PardotConnectorOperator::Projection => "PROJECTION",
+            PardotConnectorOperator::Subtraction => "SUBTRACTION",
+            PardotConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+            PardotConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+            PardotConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+            PardotConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+            PardotConnectorOperator::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADDITION",
+            "DIVISION",
+            "EQUAL_TO",
+            "MASK_ALL",
+            "MASK_FIRST_N",
+            "MASK_LAST_N",
+            "MULTIPLICATION",
+            "NO_OP",
+            "PROJECTION",
+            "SUBTRACTION",
+            "VALIDATE_NON_NEGATIVE",
+            "VALIDATE_NON_NULL",
+            "VALIDATE_NON_ZERO",
+            "VALIDATE_NUMERIC",
+        ]
+    }
+}
+impl AsRef<str> for PardotConnectorOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7158,6 +7347,7 @@ impl RedshiftDestinationProperties {
 ///     ConnectorType::Infornexus => { /* ... */ },
 ///     ConnectorType::Lookoutmetrics => { /* ... */ },
 ///     ConnectorType::Marketo => { /* ... */ },
+///     ConnectorType::Pardot => { /* ... */ },
 ///     ConnectorType::Redshift => { /* ... */ },
 ///     ConnectorType::S3 => { /* ... */ },
 ///     ConnectorType::Sapodata => { /* ... */ },
@@ -7226,6 +7416,8 @@ pub enum ConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Marketo,
     #[allow(missing_docs)] // documentation missing in model
+    Pardot,
+    #[allow(missing_docs)] // documentation missing in model
     Redshift,
     #[allow(missing_docs)] // documentation missing in model
     S3,
@@ -7266,6 +7458,7 @@ impl std::convert::From<&str> for ConnectorType {
             "Infornexus" => ConnectorType::Infornexus,
             "LookoutMetrics" => ConnectorType::Lookoutmetrics,
             "Marketo" => ConnectorType::Marketo,
+            "Pardot" => ConnectorType::Pardot,
             "Redshift" => ConnectorType::Redshift,
             "S3" => ConnectorType::S3,
             "SAPOData" => ConnectorType::Sapodata,
@@ -7304,6 +7497,7 @@ impl ConnectorType {
             ConnectorType::Infornexus => "Infornexus",
             ConnectorType::Lookoutmetrics => "LookoutMetrics",
             ConnectorType::Marketo => "Marketo",
+            ConnectorType::Pardot => "Pardot",
             ConnectorType::Redshift => "Redshift",
             ConnectorType::S3 => "S3",
             ConnectorType::Sapodata => "SAPOData",
@@ -7333,6 +7527,7 @@ impl ConnectorType {
             "Infornexus",
             "LookoutMetrics",
             "Marketo",
+            "Pardot",
             "Redshift",
             "S3",
             "SAPOData",
@@ -7605,6 +7800,9 @@ pub struct SourceConnectorProperties {
     /// <p>The properties that are applied when the custom connector is being used as a source.</p>
     #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorSourceProperties>,
+    /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
+    #[doc(hidden)]
+    pub pardot: std::option::Option<crate::model::PardotSourceProperties>,
 }
 impl SourceConnectorProperties {
     /// <p> Specifies the information that is required for querying Amplitude. </p>
@@ -7675,6 +7873,10 @@ impl SourceConnectorProperties {
     ) -> std::option::Option<&crate::model::CustomConnectorSourceProperties> {
         self.custom_connector.as_ref()
     }
+    /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
+    pub fn pardot(&self) -> std::option::Option<&crate::model::PardotSourceProperties> {
+        self.pardot.as_ref()
+    }
 }
 /// See [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
 pub mod source_connector_properties {
@@ -7700,6 +7902,7 @@ pub mod source_connector_properties {
         pub(crate) sapo_data: std::option::Option<crate::model::SapoDataSourceProperties>,
         pub(crate) custom_connector:
             std::option::Option<crate::model::CustomConnectorSourceProperties>,
+        pub(crate) pardot: std::option::Option<crate::model::PardotSourceProperties>,
     }
     impl Builder {
         /// <p> Specifies the information that is required for querying Amplitude. </p>
@@ -7916,6 +8119,19 @@ pub mod source_connector_properties {
             self.custom_connector = input;
             self
         }
+        /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
+        pub fn pardot(mut self, input: crate::model::PardotSourceProperties) -> Self {
+            self.pardot = Some(input);
+            self
+        }
+        /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
+        pub fn set_pardot(
+            mut self,
+            input: std::option::Option<crate::model::PardotSourceProperties>,
+        ) -> Self {
+            self.pardot = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
         pub fn build(self) -> crate::model::SourceConnectorProperties {
             crate::model::SourceConnectorProperties {
@@ -7935,6 +8151,7 @@ pub mod source_connector_properties {
                 zendesk: self.zendesk,
                 sapo_data: self.sapo_data,
                 custom_connector: self.custom_connector,
+                pardot: self.pardot,
             }
         }
     }
@@ -7943,6 +8160,54 @@ impl SourceConnectorProperties {
     /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
     pub fn builder() -> crate::model::source_connector_properties::Builder {
         crate::model::source_connector_properties::Builder::default()
+    }
+}
+
+/// <p>The properties that are applied when Salesforce Pardot is being used as a source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PardotSourceProperties {
+    /// <p>The object specified in the Salesforce Pardot flow source.</p>
+    #[doc(hidden)]
+    pub object: std::option::Option<std::string::String>,
+}
+impl PardotSourceProperties {
+    /// <p>The object specified in the Salesforce Pardot flow source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
+/// See [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+pub mod pardot_source_properties {
+
+    /// A builder for [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The object specified in the Salesforce Pardot flow source.</p>
+        pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object = Some(input.into());
+            self
+        }
+        /// <p>The object specified in the Salesforce Pardot flow source.</p>
+        pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+        pub fn build(self) -> crate::model::PardotSourceProperties {
+            crate::model::PardotSourceProperties {
+                object: self.object,
+            }
+        }
+    }
+}
+impl PardotSourceProperties {
+    /// Creates a new builder-style object to manufacture [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+    pub fn builder() -> crate::model::pardot_source_properties::Builder {
+        crate::model::pardot_source_properties::Builder::default()
     }
 }
 
@@ -9930,6 +10195,9 @@ pub struct ConnectorProfileCredentials {
     /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
     #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorProfileCredentials>,
+    /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+    #[doc(hidden)]
+    pub pardot: std::option::Option<crate::model::PardotConnectorProfileCredentials>,
 }
 impl ConnectorProfileCredentials {
     /// <p> The connector-specific credentials required when using Amplitude. </p>
@@ -10036,6 +10304,10 @@ impl ConnectorProfileCredentials {
     ) -> std::option::Option<&crate::model::CustomConnectorProfileCredentials> {
         self.custom_connector.as_ref()
     }
+    /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+    pub fn pardot(&self) -> std::option::Option<&crate::model::PardotConnectorProfileCredentials> {
+        self.pardot.as_ref()
+    }
 }
 /// See [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
 pub mod connector_profile_credentials {
@@ -10072,6 +10344,7 @@ pub mod connector_profile_credentials {
             std::option::Option<crate::model::SapoDataConnectorProfileCredentials>,
         pub(crate) custom_connector:
             std::option::Option<crate::model::CustomConnectorProfileCredentials>,
+        pub(crate) pardot: std::option::Option<crate::model::PardotConnectorProfileCredentials>,
     }
     impl Builder {
         /// <p> The connector-specific credentials required when using Amplitude. </p>
@@ -10347,6 +10620,19 @@ pub mod connector_profile_credentials {
             self.custom_connector = input;
             self
         }
+        /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+        pub fn pardot(mut self, input: crate::model::PardotConnectorProfileCredentials) -> Self {
+            self.pardot = Some(input);
+            self
+        }
+        /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+        pub fn set_pardot(
+            mut self,
+            input: std::option::Option<crate::model::PardotConnectorProfileCredentials>,
+        ) -> Self {
+            self.pardot = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
         pub fn build(self) -> crate::model::ConnectorProfileCredentials {
             crate::model::ConnectorProfileCredentials {
@@ -10368,6 +10654,7 @@ pub mod connector_profile_credentials {
                 zendesk: self.zendesk,
                 sapo_data: self.sapo_data,
                 custom_connector: self.custom_connector,
+                pardot: self.pardot,
             }
         }
     }
@@ -10376,6 +10663,207 @@ impl ConnectorProfileCredentials {
     /// Creates a new builder-style object to manufacture [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
     pub fn builder() -> crate::model::connector_profile_credentials::Builder {
         crate::model::connector_profile_credentials::Builder::default()
+    }
+}
+
+/// <p>The connector-specific profile credentials required when using Salesforce Pardot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PardotConnectorProfileCredentials {
+    /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
+    #[doc(hidden)]
+    pub access_token: std::option::Option<std::string::String>,
+    /// <p>The credentials used to acquire new access tokens.</p>
+    #[doc(hidden)]
+    pub refresh_token: std::option::Option<std::string::String>,
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    #[doc(hidden)]
+    pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+    /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
+    #[doc(hidden)]
+    pub client_credentials_arn: std::option::Option<std::string::String>,
+}
+impl PardotConnectorProfileCredentials {
+    /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The credentials used to acquire new access tokens.</p>
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
+        self.refresh_token.as_deref()
+    }
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
+        self.o_auth_request.as_ref()
+    }
+    /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
+    pub fn client_credentials_arn(&self) -> std::option::Option<&str> {
+        self.client_credentials_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for PardotConnectorProfileCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PardotConnectorProfileCredentials");
+        formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("refresh_token", &self.refresh_token);
+        formatter.field("o_auth_request", &self.o_auth_request);
+        formatter.field("client_credentials_arn", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+pub mod pardot_connector_profile_credentials {
+
+    /// A builder for [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+    pub struct Builder {
+        pub(crate) access_token: std::option::Option<std::string::String>,
+        pub(crate) refresh_token: std::option::Option<std::string::String>,
+        pub(crate) o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
+        pub(crate) client_credentials_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_token = Some(input.into());
+            self
+        }
+        /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
+        pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_token = input;
+            self
+        }
+        /// <p>The credentials used to acquire new access tokens.</p>
+        pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.refresh_token = Some(input.into());
+            self
+        }
+        /// <p>The credentials used to acquire new access tokens.</p>
+        pub fn set_refresh_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.refresh_token = input;
+            self
+        }
+        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+        pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
+            self.o_auth_request = Some(input);
+            self
+        }
+        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+        pub fn set_o_auth_request(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorOAuthRequest>,
+        ) -> Self {
+            self.o_auth_request = input;
+            self
+        }
+        /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
+        pub fn client_credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_credentials_arn = Some(input.into());
+            self
+        }
+        /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
+        pub fn set_client_credentials_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_credentials_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+        pub fn build(self) -> crate::model::PardotConnectorProfileCredentials {
+            crate::model::PardotConnectorProfileCredentials {
+                access_token: self.access_token,
+                refresh_token: self.refresh_token,
+                o_auth_request: self.o_auth_request,
+                client_credentials_arn: self.client_credentials_arn,
+            }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("refresh_token", &self.refresh_token);
+            formatter.field("o_auth_request", &self.o_auth_request);
+            formatter.field("client_credentials_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
+}
+impl PardotConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+    pub fn builder() -> crate::model::pardot_connector_profile_credentials::Builder {
+        crate::model::pardot_connector_profile_credentials::Builder::default()
+    }
+}
+
+/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConnectorOAuthRequest {
+    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+    #[doc(hidden)]
+    pub auth_code: std::option::Option<std::string::String>,
+    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+    #[doc(hidden)]
+    pub redirect_uri: std::option::Option<std::string::String>,
+}
+impl ConnectorOAuthRequest {
+    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+    pub fn auth_code(&self) -> std::option::Option<&str> {
+        self.auth_code.as_deref()
+    }
+    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+    pub fn redirect_uri(&self) -> std::option::Option<&str> {
+        self.redirect_uri.as_deref()
+    }
+}
+/// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+pub mod connector_o_auth_request {
+
+    /// A builder for [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auth_code: std::option::Option<std::string::String>,
+        pub(crate) redirect_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+        pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_code = Some(input.into());
+            self
+        }
+        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
+        pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_code = input;
+            self
+        }
+        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+        pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.redirect_uri = Some(input.into());
+            self
+        }
+        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
+        pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.redirect_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+        pub fn build(self) -> crate::model::ConnectorOAuthRequest {
+            crate::model::ConnectorOAuthRequest {
+                auth_code: self.auth_code,
+                redirect_uri: self.redirect_uri,
+            }
+        }
+    }
+}
+impl ConnectorOAuthRequest {
+    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
+        crate::model::connector_o_auth_request::Builder::default()
     }
 }
 
@@ -10847,73 +11335,6 @@ impl OAuth2Credentials {
     /// Creates a new builder-style object to manufacture [`OAuth2Credentials`](crate::model::OAuth2Credentials).
     pub fn builder() -> crate::model::o_auth2_credentials::Builder {
         crate::model::o_auth2_credentials::Builder::default()
-    }
-}
-
-/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorOAuthRequest {
-    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-    #[doc(hidden)]
-    pub auth_code: std::option::Option<std::string::String>,
-    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-    #[doc(hidden)]
-    pub redirect_uri: std::option::Option<std::string::String>,
-}
-impl ConnectorOAuthRequest {
-    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-    pub fn auth_code(&self) -> std::option::Option<&str> {
-        self.auth_code.as_deref()
-    }
-    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-    pub fn redirect_uri(&self) -> std::option::Option<&str> {
-        self.redirect_uri.as_deref()
-    }
-}
-/// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
-pub mod connector_o_auth_request {
-
-    /// A builder for [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) auth_code: std::option::Option<std::string::String>,
-        pub(crate) redirect_uri: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-        pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.auth_code = Some(input.into());
-            self
-        }
-        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-        pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_code = input;
-            self
-        }
-        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-        pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.redirect_uri = Some(input.into());
-            self
-        }
-        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-        pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.redirect_uri = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
-        pub fn build(self) -> crate::model::ConnectorOAuthRequest {
-            crate::model::ConnectorOAuthRequest {
-                auth_code: self.auth_code,
-                redirect_uri: self.redirect_uri,
-            }
-        }
-    }
-}
-impl ConnectorOAuthRequest {
-    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
-    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
-        crate::model::connector_o_auth_request::Builder::default()
     }
 }
 
@@ -12990,6 +13411,9 @@ pub struct ConnectorProfileProperties {
     /// <p>The properties required by the custom connector.</p>
     #[doc(hidden)]
     pub custom_connector: std::option::Option<crate::model::CustomConnectorProfileProperties>,
+    /// <p>The connector-specific properties required by Salesforce Pardot.</p>
+    #[doc(hidden)]
+    pub pardot: std::option::Option<crate::model::PardotConnectorProfileProperties>,
 }
 impl ConnectorProfileProperties {
     /// <p> The connector-specific properties required by Amplitude. </p>
@@ -13090,6 +13514,10 @@ impl ConnectorProfileProperties {
     ) -> std::option::Option<&crate::model::CustomConnectorProfileProperties> {
         self.custom_connector.as_ref()
     }
+    /// <p>The connector-specific properties required by Salesforce Pardot.</p>
+    pub fn pardot(&self) -> std::option::Option<&crate::model::PardotConnectorProfileProperties> {
+        self.pardot.as_ref()
+    }
 }
 /// See [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
 pub mod connector_profile_properties {
@@ -13125,6 +13553,7 @@ pub mod connector_profile_properties {
         pub(crate) sapo_data: std::option::Option<crate::model::SapoDataConnectorProfileProperties>,
         pub(crate) custom_connector:
             std::option::Option<crate::model::CustomConnectorProfileProperties>,
+        pub(crate) pardot: std::option::Option<crate::model::PardotConnectorProfileProperties>,
     }
     impl Builder {
         /// <p> The connector-specific properties required by Amplitude. </p>
@@ -13394,6 +13823,19 @@ pub mod connector_profile_properties {
             self.custom_connector = input;
             self
         }
+        /// <p>The connector-specific properties required by Salesforce Pardot.</p>
+        pub fn pardot(mut self, input: crate::model::PardotConnectorProfileProperties) -> Self {
+            self.pardot = Some(input);
+            self
+        }
+        /// <p>The connector-specific properties required by Salesforce Pardot.</p>
+        pub fn set_pardot(
+            mut self,
+            input: std::option::Option<crate::model::PardotConnectorProfileProperties>,
+        ) -> Self {
+            self.pardot = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
         pub fn build(self) -> crate::model::ConnectorProfileProperties {
             crate::model::ConnectorProfileProperties {
@@ -13415,6 +13857,7 @@ pub mod connector_profile_properties {
                 zendesk: self.zendesk,
                 sapo_data: self.sapo_data,
                 custom_connector: self.custom_connector,
+                pardot: self.pardot,
             }
         }
     }
@@ -13423,6 +13866,95 @@ impl ConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
     pub fn builder() -> crate::model::connector_profile_properties::Builder {
         crate::model::connector_profile_properties::Builder::default()
+    }
+}
+
+/// <p>The connector-specific profile properties required when using Salesforce Pardot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PardotConnectorProfileProperties {
+    /// <p>The location of the Salesforce Pardot resource.</p>
+    #[doc(hidden)]
+    pub instance_url: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
+    #[doc(hidden)]
+    pub is_sandbox_environment: bool,
+    /// <p>The business unit id of Salesforce Pardot instance.</p>
+    #[doc(hidden)]
+    pub business_unit_id: std::option::Option<std::string::String>,
+}
+impl PardotConnectorProfileProperties {
+    /// <p>The location of the Salesforce Pardot resource.</p>
+    pub fn instance_url(&self) -> std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
+    /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
+    pub fn is_sandbox_environment(&self) -> bool {
+        self.is_sandbox_environment
+    }
+    /// <p>The business unit id of Salesforce Pardot instance.</p>
+    pub fn business_unit_id(&self) -> std::option::Option<&str> {
+        self.business_unit_id.as_deref()
+    }
+}
+/// See [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+pub mod pardot_connector_profile_properties {
+
+    /// A builder for [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_url: std::option::Option<std::string::String>,
+        pub(crate) is_sandbox_environment: std::option::Option<bool>,
+        pub(crate) business_unit_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The location of the Salesforce Pardot resource.</p>
+        pub fn instance_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_url = Some(input.into());
+            self
+        }
+        /// <p>The location of the Salesforce Pardot resource.</p>
+        pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_url = input;
+            self
+        }
+        /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
+        pub fn is_sandbox_environment(mut self, input: bool) -> Self {
+            self.is_sandbox_environment = Some(input);
+            self
+        }
+        /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
+        pub fn set_is_sandbox_environment(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_sandbox_environment = input;
+            self
+        }
+        /// <p>The business unit id of Salesforce Pardot instance.</p>
+        pub fn business_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.business_unit_id = Some(input.into());
+            self
+        }
+        /// <p>The business unit id of Salesforce Pardot instance.</p>
+        pub fn set_business_unit_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.business_unit_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+        pub fn build(self) -> crate::model::PardotConnectorProfileProperties {
+            crate::model::PardotConnectorProfileProperties {
+                instance_url: self.instance_url,
+                is_sandbox_environment: self.is_sandbox_environment.unwrap_or_default(),
+                business_unit_id: self.business_unit_id,
+            }
+        }
+    }
+}
+impl PardotConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+    pub fn builder() -> crate::model::pardot_connector_profile_properties::Builder {
+        crate::model::pardot_connector_profile_properties::Builder::default()
     }
 }
 
@@ -18766,6 +19298,9 @@ pub struct ConnectorMetadata {
     /// <p> The connector metadata specific to SAPOData. </p>
     #[doc(hidden)]
     pub sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
+    /// <p>The connector metadata specific to Salesforce Pardot.</p>
+    #[doc(hidden)]
+    pub pardot: std::option::Option<crate::model::PardotMetadata>,
 }
 impl ConnectorMetadata {
     /// <p> The connector metadata specific to Amplitude. </p>
@@ -18854,6 +19389,10 @@ impl ConnectorMetadata {
     pub fn sapo_data(&self) -> std::option::Option<&crate::model::SapoDataMetadata> {
         self.sapo_data.as_ref()
     }
+    /// <p>The connector metadata specific to Salesforce Pardot.</p>
+    pub fn pardot(&self) -> std::option::Option<&crate::model::PardotMetadata> {
+        self.pardot.as_ref()
+    }
 }
 /// See [`ConnectorMetadata`](crate::model::ConnectorMetadata).
 pub mod connector_metadata {
@@ -18882,6 +19421,7 @@ pub mod connector_metadata {
         pub(crate) customer_profiles: std::option::Option<crate::model::CustomerProfilesMetadata>,
         pub(crate) honeycode: std::option::Option<crate::model::HoneycodeMetadata>,
         pub(crate) sapo_data: std::option::Option<crate::model::SapoDataMetadata>,
+        pub(crate) pardot: std::option::Option<crate::model::PardotMetadata>,
     }
     impl Builder {
         /// <p> The connector metadata specific to Amplitude. </p>
@@ -19154,6 +19694,19 @@ pub mod connector_metadata {
             self.sapo_data = input;
             self
         }
+        /// <p>The connector metadata specific to Salesforce Pardot.</p>
+        pub fn pardot(mut self, input: crate::model::PardotMetadata) -> Self {
+            self.pardot = Some(input);
+            self
+        }
+        /// <p>The connector metadata specific to Salesforce Pardot.</p>
+        pub fn set_pardot(
+            mut self,
+            input: std::option::Option<crate::model::PardotMetadata>,
+        ) -> Self {
+            self.pardot = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConnectorMetadata`](crate::model::ConnectorMetadata).
         pub fn build(self) -> crate::model::ConnectorMetadata {
             crate::model::ConnectorMetadata {
@@ -19178,6 +19731,7 @@ pub mod connector_metadata {
                 customer_profiles: self.customer_profiles,
                 honeycode: self.honeycode,
                 sapo_data: self.sapo_data,
+                pardot: self.pardot,
             }
         }
     }
@@ -19186,6 +19740,30 @@ impl ConnectorMetadata {
     /// Creates a new builder-style object to manufacture [`ConnectorMetadata`](crate::model::ConnectorMetadata).
     pub fn builder() -> crate::model::connector_metadata::Builder {
         crate::model::connector_metadata::Builder::default()
+    }
+}
+
+/// <p>The connector metadata specific to Salesforce Pardot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PardotMetadata {}
+/// See [`PardotMetadata`](crate::model::PardotMetadata).
+pub mod pardot_metadata {
+
+    /// A builder for [`PardotMetadata`](crate::model::PardotMetadata).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PardotMetadata`](crate::model::PardotMetadata).
+        pub fn build(self) -> crate::model::PardotMetadata {
+            crate::model::PardotMetadata {}
+        }
+    }
+}
+impl PardotMetadata {
+    /// Creates a new builder-style object to manufacture [`PardotMetadata`](crate::model::PardotMetadata).
+    pub fn builder() -> crate::model::pardot_metadata::Builder {
+        crate::model::pardot_metadata::Builder::default()
     }
 }
 

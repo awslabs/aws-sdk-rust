@@ -1369,6 +1369,11 @@ pub fn serialize_operation_crate_operation_put_metric_stream(
         }
         list_402.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_404 = writer.prefix("IncludeLinkedAccountsMetrics");
+    if let Some(var_405) = &input.include_linked_accounts_metrics {
+        scope_404.boolean(*var_405);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -1380,24 +1385,24 @@ pub fn serialize_operation_crate_operation_set_alarm_state(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "SetAlarmState", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_404 = writer.prefix("AlarmName");
-    if let Some(var_405) = &input.alarm_name {
-        scope_404.string(var_405);
+    let mut scope_406 = writer.prefix("AlarmName");
+    if let Some(var_407) = &input.alarm_name {
+        scope_406.string(var_407);
     }
     #[allow(unused_mut)]
-    let mut scope_406 = writer.prefix("StateValue");
-    if let Some(var_407) = &input.state_value {
-        scope_406.string(var_407.as_str());
+    let mut scope_408 = writer.prefix("StateValue");
+    if let Some(var_409) = &input.state_value {
+        scope_408.string(var_409.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_408 = writer.prefix("StateReason");
-    if let Some(var_409) = &input.state_reason {
-        scope_408.string(var_409);
-    }
-    #[allow(unused_mut)]
-    let mut scope_410 = writer.prefix("StateReasonData");
-    if let Some(var_411) = &input.state_reason_data {
+    let mut scope_410 = writer.prefix("StateReason");
+    if let Some(var_411) = &input.state_reason {
         scope_410.string(var_411);
+    }
+    #[allow(unused_mut)]
+    let mut scope_412 = writer.prefix("StateReasonData");
+    if let Some(var_413) = &input.state_reason_data {
+        scope_412.string(var_413);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1411,15 +1416,15 @@ pub fn serialize_operation_crate_operation_start_metric_streams(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "StartMetricStreams", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_412 = writer.prefix("Names");
-    if let Some(var_413) = &input.names {
-        let mut list_415 = scope_412.start_list(false, None);
-        for item_414 in var_413 {
+    let mut scope_414 = writer.prefix("Names");
+    if let Some(var_415) = &input.names {
+        let mut list_417 = scope_414.start_list(false, None);
+        for item_416 in var_415 {
             #[allow(unused_mut)]
-            let mut entry_416 = list_415.entry();
-            entry_416.string(item_414);
+            let mut entry_418 = list_417.entry();
+            entry_418.string(item_416);
         }
-        list_415.finish();
+        list_417.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1433,15 +1438,15 @@ pub fn serialize_operation_crate_operation_stop_metric_streams(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "StopMetricStreams", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_417 = writer.prefix("Names");
-    if let Some(var_418) = &input.names {
-        let mut list_420 = scope_417.start_list(false, None);
-        for item_419 in var_418 {
+    let mut scope_419 = writer.prefix("Names");
+    if let Some(var_420) = &input.names {
+        let mut list_422 = scope_419.start_list(false, None);
+        for item_421 in var_420 {
             #[allow(unused_mut)]
-            let mut entry_421 = list_420.entry();
-            entry_421.string(item_419);
+            let mut entry_423 = list_422.entry();
+            entry_423.string(item_421);
         }
-        list_420.finish();
+        list_422.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1454,20 +1459,20 @@ pub fn serialize_operation_crate_operation_tag_resource(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "TagResource", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_422 = writer.prefix("ResourceARN");
-    if let Some(var_423) = &input.resource_arn {
-        scope_422.string(var_423);
+    let mut scope_424 = writer.prefix("ResourceARN");
+    if let Some(var_425) = &input.resource_arn {
+        scope_424.string(var_425);
     }
     #[allow(unused_mut)]
-    let mut scope_424 = writer.prefix("Tags");
-    if let Some(var_425) = &input.tags {
-        let mut list_427 = scope_424.start_list(false, None);
-        for item_426 in var_425 {
+    let mut scope_426 = writer.prefix("Tags");
+    if let Some(var_427) = &input.tags {
+        let mut list_429 = scope_426.start_list(false, None);
+        for item_428 in var_427 {
             #[allow(unused_mut)]
-            let mut entry_428 = list_427.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_428, item_426)?;
+            let mut entry_430 = list_429.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_430, item_428)?;
         }
-        list_427.finish();
+        list_429.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -1480,20 +1485,20 @@ pub fn serialize_operation_crate_operation_untag_resource(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "UntagResource", "2010-08-01");
     #[allow(unused_mut)]
-    let mut scope_429 = writer.prefix("ResourceARN");
-    if let Some(var_430) = &input.resource_arn {
-        scope_429.string(var_430);
+    let mut scope_431 = writer.prefix("ResourceARN");
+    if let Some(var_432) = &input.resource_arn {
+        scope_431.string(var_432);
     }
     #[allow(unused_mut)]
-    let mut scope_431 = writer.prefix("TagKeys");
-    if let Some(var_432) = &input.tag_keys {
-        let mut list_434 = scope_431.start_list(false, None);
-        for item_433 in var_432 {
+    let mut scope_433 = writer.prefix("TagKeys");
+    if let Some(var_434) = &input.tag_keys {
+        let mut list_436 = scope_433.start_list(false, None);
+        for item_435 in var_434 {
             #[allow(unused_mut)]
-            let mut entry_435 = list_434.entry();
-            entry_435.string(item_433);
+            let mut entry_437 = list_436.entry();
+            entry_437.string(item_435);
         }
-        list_434.finish();
+        list_436.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

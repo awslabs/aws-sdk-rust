@@ -632,6 +632,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomains {
     }
 }
 
+/// Operation shape for `DescribeDryRunProgress`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_dry_run_progress`](crate::client::Client::describe_dry_run_progress).
+///
+/// See [`crate::client::fluent_builders::DescribeDryRunProgress`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct DescribeDryRunProgress {
+    _private: (),
+}
+impl DescribeDryRunProgress {
+    /// Creates a new builder-style object to manufacture [`DescribeDryRunProgressInput`](crate::input::DescribeDryRunProgressInput).
+    pub fn builder() -> crate::input::describe_dry_run_progress_input::Builder {
+        crate::input::describe_dry_run_progress_input::Builder::default()
+    }
+    /// Creates a new `DescribeDryRunProgress` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeDryRunProgress {
+    type Output = std::result::Result<
+        crate::output::DescribeDryRunProgressOutput,
+        crate::error::DescribeDryRunProgressError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_dry_run_progress_error(response)
+        } else {
+            crate::operation_deser::parse_describe_dry_run_progress_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeInboundConnections`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

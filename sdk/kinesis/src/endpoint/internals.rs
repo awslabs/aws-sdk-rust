@@ -428,6 +428,18 @@ out }));
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
+                if ("aws-us-gov") == (partition_result.name()) {
+                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        .url({
+                            let mut out = String::new();
+                            out.push_str("https://kinesis.");
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&region);
+                            out.push_str(".amazonaws.com");
+                            out
+                        })
+                        .build());
+                }
                 return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
@@ -463,6 +475,16 @@ out }));
             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
+        }
+        if (region) == ("us-gov-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-gov-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-gov-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-gov-west-1.amazonaws.com".to_string())
+                .build());
         }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({

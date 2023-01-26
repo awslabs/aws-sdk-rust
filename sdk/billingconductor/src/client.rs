@@ -198,10 +198,12 @@ impl Client {
     ///   - [`scope(PricingRuleScope)`](crate::client::fluent_builders::CreatePricingRule::scope) / [`set_scope(Option<PricingRuleScope>)`](crate::client::fluent_builders::CreatePricingRule::set_scope): <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     ///   - [`r#type(PricingRuleType)`](crate::client::fluent_builders::CreatePricingRule::type) / [`set_type(Option<PricingRuleType>)`](crate::client::fluent_builders::CreatePricingRule::set_type): <p> The type of pricing rule. </p>
     ///   - [`modifier_percentage(f64)`](crate::client::fluent_builders::CreatePricingRule::modifier_percentage) / [`set_modifier_percentage(Option<f64>)`](crate::client::fluent_builders::CreatePricingRule::set_modifier_percentage): <p> A percentage modifier that's applied on the public pricing rates. </p>
-    ///   - [`service(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::service) / [`set_service(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_service): <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    ///   - [`service(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::service) / [`set_service(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_service): <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePricingRule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePricingRule::set_tags): <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
     ///   - [`billing_entity(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::billing_entity) / [`set_billing_entity(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_billing_entity): <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     ///   - [`tiering(CreateTieringInput)`](crate::client::fluent_builders::CreatePricingRule::tiering) / [`set_tiering(Option<CreateTieringInput>)`](crate::client::fluent_builders::CreatePricingRule::set_tiering): <p> The set of tiering configurations for the pricing rule. </p>
+    ///   - [`usage_type(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::usage_type) / [`set_usage_type(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_usage_type): <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>  <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    ///   - [`operation(impl Into<String>)`](crate::client::fluent_builders::CreatePricingRule::operation) / [`set_operation(Option<String>)`](crate::client::fluent_builders::CreatePricingRule::set_operation): <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>  <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     /// - On success, responds with [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreatePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     /// - On failure, responds with [`SdkError<CreatePricingRuleError>`](crate::error::CreatePricingRuleError)
@@ -545,6 +547,8 @@ impl Client {
     ///   - [`last_modified_time(i64)`](crate::output::UpdatePricingRuleOutput::last_modified_time): <p> The most recent time the pricing rule was modified. </p>
     ///   - [`billing_entity(Option<String>)`](crate::output::UpdatePricingRuleOutput::billing_entity): <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     ///   - [`tiering(Option<UpdateTieringInput>)`](crate::output::UpdatePricingRuleOutput::tiering): <p> The set of tiering configurations for the pricing rule. </p>
+    ///   - [`usage_type(Option<String>)`](crate::output::UpdatePricingRuleOutput::usage_type): <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>  <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    ///   - [`operation(Option<String>)`](crate::output::UpdatePricingRuleOutput::operation): <p>Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage of the line item.</p>  <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     /// - On failure, responds with [`SdkError<UpdatePricingRuleError>`](crate::error::UpdatePricingRuleError)
     pub fn update_pricing_rule(&self) -> fluent_builders::UpdatePricingRule {
         fluent_builders::UpdatePricingRule::new(self.handle.clone())
@@ -1534,12 +1538,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_modifier_percentage(input);
             self
         }
-        /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service(input.into());
             self
         }
-        /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service(input);
             self
@@ -1591,6 +1595,30 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CreateTieringInput>,
         ) -> Self {
             self.inner = self.inner.set_tiering(input);
+            self
+        }
+        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+        pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_type(input.into());
+            self
+        }
+        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+        pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_usage_type(input);
+            self
+        }
+        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation(input.into());
+            self
+        }
+        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+        pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation(input);
             self
         }
     }

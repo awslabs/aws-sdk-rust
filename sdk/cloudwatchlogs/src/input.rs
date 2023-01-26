@@ -3183,14 +3183,14 @@ pub mod describe_log_streams_input {
     }
     impl Builder {
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -3199,14 +3199,16 @@ pub mod describe_log_streams_input {
             self.log_group_name = input;
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_identifier = Some(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4627,14 +4629,14 @@ pub mod filter_log_events_input {
     }
     impl Builder {
         /// <p>The name of the log group to search.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
         /// <p>The name of the log group to search.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -4643,14 +4645,16 @@ pub mod filter_log_events_input {
             self.log_group_name = input;
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_identifier = Some(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5119,14 +5123,14 @@ pub mod get_log_events_input {
     }
     impl Builder {
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -5135,14 +5139,16 @@ pub mod get_log_events_input {
             self.log_group_name = input;
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_identifier = Some(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5389,14 +5395,16 @@ pub mod get_log_group_fields_input {
         pub(crate) log_group_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the log group to search.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the log group to search.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5416,14 +5424,16 @@ pub mod get_log_group_fields_input {
             self.time = input;
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_identifier = Some(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10177,22 +10187,25 @@ impl GetLogRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogGroupFieldsInput {
-    /// <p>The name of the log group to search.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>The name of the log group to search.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub time: std::option::Option<i64>,
-    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     #[doc(hidden)]
     pub log_group_identifier: std::option::Option<std::string::String>,
 }
 impl GetLogGroupFieldsInput {
-    /// <p>The name of the log group to search.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>The name of the log group to search.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -10201,8 +10214,9 @@ impl GetLogGroupFieldsInput {
     pub fn time(&self) -> std::option::Option<i64> {
         self.time
     }
-    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     pub fn log_group_identifier(&self) -> std::option::Option<&str> {
         self.log_group_identifier.as_deref()
     }
@@ -10213,12 +10227,13 @@ impl GetLogGroupFieldsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogEventsInput {
     /// <p>The name of the log group.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     #[doc(hidden)]
     pub log_group_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the log stream.</p>
@@ -10247,13 +10262,14 @@ pub struct GetLogEventsInput {
 }
 impl GetLogEventsInput {
     /// <p>The name of the log group.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     pub fn log_group_identifier(&self) -> std::option::Option<&str> {
         self.log_group_identifier.as_deref()
     }
@@ -10309,12 +10325,13 @@ impl GetDataProtectionPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilterLogEventsInput {
     /// <p>The name of the log group to search.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     #[doc(hidden)]
     pub log_group_identifier: std::option::Option<std::string::String>,
     /// <p>Filters the results to only logs from the log streams in this list.</p>
@@ -10355,13 +10372,14 @@ pub struct FilterLogEventsInput {
 }
 impl FilterLogEventsInput {
     /// <p>The name of the log group to search.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     pub fn log_group_identifier(&self) -> std::option::Option<&str> {
         self.log_group_identifier.as_deref()
     }
@@ -10604,12 +10622,13 @@ impl DescribeMetricFiltersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLogStreamsInput {
     /// <p>The name of the log group.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     #[doc(hidden)]
     pub log_group_identifier: std::option::Option<std::string::String>,
     /// <p>The prefix to match.</p>
@@ -10633,13 +10652,14 @@ pub struct DescribeLogStreamsInput {
 }
 impl DescribeLogStreamsInput {
     /// <p>The name of the log group.</p> <note>
-    /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-    /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+    /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+    /// </note>
     pub fn log_group_identifier(&self) -> std::option::Option<&str> {
         self.log_group_identifier.as_deref()
     }

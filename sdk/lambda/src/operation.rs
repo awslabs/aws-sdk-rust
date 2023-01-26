@@ -1069,6 +1069,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProvisionedConcurrenc
     }
 }
 
+/// Operation shape for `GetRuntimeManagementConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_runtime_management_config`](crate::client::Client::get_runtime_management_config).
+///
+/// See [`crate::client::fluent_builders::GetRuntimeManagementConfig`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetRuntimeManagementConfig {
+    _private: (),
+}
+impl GetRuntimeManagementConfig {
+    /// Creates a new builder-style object to manufacture [`GetRuntimeManagementConfigInput`](crate::input::GetRuntimeManagementConfigInput).
+    pub fn builder() -> crate::input::get_runtime_management_config_input::Builder {
+        crate::input::get_runtime_management_config_input::Builder::default()
+    }
+    /// Creates a new `GetRuntimeManagementConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRuntimeManagementConfig {
+    type Output = std::result::Result<
+        crate::output::GetRuntimeManagementConfigOutput,
+        crate::error::GetRuntimeManagementConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_runtime_management_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_runtime_management_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `Invoke`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1729,6 +1763,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProvisionedConcurrenc
             crate::operation_deser::parse_put_provisioned_concurrency_config_error(response)
         } else {
             crate::operation_deser::parse_put_provisioned_concurrency_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutRuntimeManagementConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_runtime_management_config`](crate::client::Client::put_runtime_management_config).
+///
+/// See [`crate::client::fluent_builders::PutRuntimeManagementConfig`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct PutRuntimeManagementConfig {
+    _private: (),
+}
+impl PutRuntimeManagementConfig {
+    /// Creates a new builder-style object to manufacture [`PutRuntimeManagementConfigInput`](crate::input::PutRuntimeManagementConfigInput).
+    pub fn builder() -> crate::input::put_runtime_management_config_input::Builder {
+        crate::input::put_runtime_management_config_input::Builder::default()
+    }
+    /// Creates a new `PutRuntimeManagementConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutRuntimeManagementConfig {
+    type Output = std::result::Result<
+        crate::output::PutRuntimeManagementConfigOutput,
+        crate::error::PutRuntimeManagementConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_runtime_management_config_error(response)
+        } else {
+            crate::operation_deser::parse_put_runtime_management_config_response(response)
         }
     }
 }

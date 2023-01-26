@@ -1413,7 +1413,7 @@ pub struct DescribeSecretOutput {
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     #[doc(hidden)]
     pub next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
@@ -1496,7 +1496,7 @@ impl DescribeSecretOutput {
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
@@ -1704,12 +1704,12 @@ pub mod describe_secret_output {
             self.deleted_date = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
         pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.next_rotation_date = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
         pub fn set_next_rotation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

@@ -27,6 +27,14 @@ impl ListComponentBuildVersionsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `component_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListComponentBuildVersionsPaginatorItems {
+        crate::paginator::ListComponentBuildVersionsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -135,6 +143,14 @@ impl ListComponentsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `component_version_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListComponentsPaginatorItems {
+        crate::paginator::ListComponentsPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -247,6 +263,14 @@ impl ListContainerRecipesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `container_recipe_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListContainerRecipesPaginatorItems {
+        crate::paginator::ListContainerRecipesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -355,6 +379,14 @@ impl ListDistributionConfigurationsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `distribution_configuration_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListDistributionConfigurationsPaginatorItems {
+        crate::paginator::ListDistributionConfigurationsPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -467,6 +499,14 @@ impl ListImageBuildVersionsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImageBuildVersionsPaginatorItems {
+        crate::paginator::ListImageBuildVersionsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -575,6 +615,14 @@ impl ListImagePackagesPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_package_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImagePackagesPaginatorItems {
+        crate::paginator::ListImagePackagesPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -687,6 +735,14 @@ impl ListImagePipelineImagesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImagePipelineImagesPaginatorItems {
+        crate::paginator::ListImagePipelineImagesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -795,6 +851,14 @@ impl ListImagePipelinesPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_pipeline_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImagePipelinesPaginatorItems {
+        crate::paginator::ListImagePipelinesPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -907,6 +971,14 @@ impl ListImageRecipesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_recipe_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImageRecipesPaginatorItems {
+        crate::paginator::ListImageRecipesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -1015,6 +1087,14 @@ impl ListImagesPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `image_version_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListImagesPaginatorItems {
+        crate::paginator::ListImagesPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -1127,6 +1207,14 @@ impl ListInfrastructureConfigurationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `infrastructure_configuration_summary_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListInfrastructureConfigurationsPaginatorItems {
+        crate::paginator::ListInfrastructureConfigurationsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -1206,5 +1294,276 @@ impl ListInfrastructureConfigurationsPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `ListComponentBuildVersionsPaginator`
+///
+/// This is created with [`.items()`](ListComponentBuildVersionsPaginator::items)
+pub struct ListComponentBuildVersionsPaginatorItems(ListComponentBuildVersionsPaginator);
+
+impl ListComponentBuildVersionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ComponentSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_component_build_versions_output_component_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListComponentsPaginator`
+///
+/// This is created with [`.items()`](ListComponentsPaginator::items)
+pub struct ListComponentsPaginatorItems(ListComponentsPaginator);
+
+impl ListComponentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ComponentVersion,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_components_output_component_version_list(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListContainerRecipesPaginator`
+///
+/// This is created with [`.items()`](ListContainerRecipesPaginator::items)
+pub struct ListContainerRecipesPaginatorItems(ListContainerRecipesPaginator);
+
+impl ListContainerRecipesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ContainerRecipeSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListContainerRecipesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_container_recipes_output_container_recipe_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListDistributionConfigurationsPaginator`
+///
+/// This is created with [`.items()`](ListDistributionConfigurationsPaginator::items)
+pub struct ListDistributionConfigurationsPaginatorItems(ListDistributionConfigurationsPaginator);
+
+impl ListDistributionConfigurationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::DistributionConfigurationSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListDistributionConfigurationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_distribution_configurations_output_distribution_configuration_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListImageBuildVersionsPaginator`
+///
+/// This is created with [`.items()`](ListImageBuildVersionsPaginator::items)
+pub struct ListImageBuildVersionsPaginatorItems(ListImageBuildVersionsPaginator);
+
+impl ListImageBuildVersionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImageSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_image_build_versions_output_image_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListImagePackagesPaginator`
+///
+/// This is created with [`.items()`](ListImagePackagesPaginator::items)
+pub struct ListImagePackagesPaginatorItems(ListImagePackagesPaginator);
+
+impl ListImagePackagesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImagePackage,
+            aws_smithy_http::result::SdkError<crate::error::ListImagePackagesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_image_packages_output_image_package_list(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListImagePipelineImagesPaginator`
+///
+/// This is created with [`.items()`](ListImagePipelineImagesPaginator::items)
+pub struct ListImagePipelineImagesPaginatorItems(ListImagePipelineImagesPaginator);
+
+impl ListImagePipelineImagesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImageSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_image_pipeline_images_output_image_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListImagePipelinesPaginator`
+///
+/// This is created with [`.items()`](ListImagePipelinesPaginator::items)
+pub struct ListImagePipelinesPaginatorItems(ListImagePipelinesPaginator);
+
+impl ListImagePipelinesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImagePipeline,
+            aws_smithy_http::result::SdkError<crate::error::ListImagePipelinesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_image_pipelines_output_image_pipeline_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListImageRecipesPaginator`
+///
+/// This is created with [`.items()`](ListImageRecipesPaginator::items)
+pub struct ListImageRecipesPaginatorItems(ListImageRecipesPaginator);
+
+impl ListImageRecipesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImageRecipeSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListImageRecipesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_image_recipes_output_image_recipe_summary_list(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListImagesPaginator`
+///
+/// This is created with [`.items()`](ListImagesPaginator::items)
+pub struct ListImagesPaginatorItems(ListImagesPaginator);
+
+impl ListImagesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ImageVersion,
+            aws_smithy_http::result::SdkError<crate::error::ListImagesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_images_output_image_version_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListInfrastructureConfigurationsPaginator`
+///
+/// This is created with [`.items()`](ListInfrastructureConfigurationsPaginator::items)
+pub struct ListInfrastructureConfigurationsPaginatorItems(
+    ListInfrastructureConfigurationsPaginator,
+);
+
+impl ListInfrastructureConfigurationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::InfrastructureConfigurationSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListInfrastructureConfigurationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_infrastructure_configurations_output_infrastructure_configuration_summary_list(page).unwrap_or_default().into_iter())
     }
 }

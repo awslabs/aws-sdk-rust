@@ -100,6 +100,26 @@ pub(super) fn resolve_endpoint(
                 "DualStack is enabled but this partition does not support DualStack".to_string(),
             ));
         }
+        if (region) == ("ap-northeast-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.iotdeviceadvisor.ap-northeast-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("eu-west-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.iotdeviceadvisor.eu-west-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-east-1") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.iotdeviceadvisor.us-east-1.amazonaws.com".to_string())
+                .build());
+        }
+        if (region) == ("us-west-2") {
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.iotdeviceadvisor.us-west-2.amazonaws.com".to_string())
+                .build());
+        }
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url({
                 let mut out = String::new();

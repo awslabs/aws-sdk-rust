@@ -5041,12 +5041,12 @@ pub mod get_sampled_requests_input {
             self.web_acl_arn = input;
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
         pub fn rule_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_metric_name = Some(input.into());
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
         pub fn set_rule_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11258,7 +11258,7 @@ pub struct GetSampledRequestsInput {
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     #[doc(hidden)]
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     #[doc(hidden)]
     pub rule_metric_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
@@ -11281,7 +11281,7 @@ impl GetSampledRequestsInput {
     pub fn web_acl_arn(&self) -> std::option::Option<&str> {
         self.web_acl_arn.as_deref()
     }
-    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     pub fn rule_metric_name(&self) -> std::option::Option<&str> {
         self.rule_metric_name.as_deref()
     }

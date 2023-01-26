@@ -1565,6 +1565,9 @@ pub struct StartChatContactOutput {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     #[doc(hidden)]
     pub participant_token: std::option::Option<std::string::String>,
+    /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
+    #[doc(hidden)]
+    pub continued_from_contact_id: std::option::Option<std::string::String>,
 }
 impl StartChatContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance. </p>
@@ -1579,6 +1582,10 @@ impl StartChatContactOutput {
     pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
+    /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
+    pub fn continued_from_contact_id(&self) -> std::option::Option<&str> {
+        self.continued_from_contact_id.as_deref()
+    }
 }
 /// See [`StartChatContactOutput`](crate::output::StartChatContactOutput).
 pub mod start_chat_contact_output {
@@ -1589,6 +1596,7 @@ pub mod start_chat_contact_output {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) participant_id: std::option::Option<std::string::String>,
         pub(crate) participant_token: std::option::Option<std::string::String>,
+        pub(crate) continued_from_contact_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of this contact within the Amazon Connect instance. </p>
@@ -1627,12 +1635,26 @@ pub mod start_chat_contact_output {
             self.participant_token = input;
             self
         }
+        /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
+        pub fn continued_from_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continued_from_contact_id = Some(input.into());
+            self
+        }
+        /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
+        pub fn set_continued_from_contact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.continued_from_contact_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartChatContactOutput`](crate::output::StartChatContactOutput).
         pub fn build(self) -> crate::output::StartChatContactOutput {
             crate::output::StartChatContactOutput {
                 contact_id: self.contact_id,
                 participant_id: self.participant_id,
                 participant_token: self.participant_token,
+                continued_from_contact_id: self.continued_from_contact_id,
             }
         }
     }

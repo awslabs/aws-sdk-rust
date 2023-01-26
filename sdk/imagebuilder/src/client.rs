@@ -109,14 +109,14 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_name): <p>The name of the component.</p>
     ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_semantic_version): <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_description): <p>The description of the component. Describes the contents of the component.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_description): <p>Describes the contents of the component.</p>
     ///   - [`change_description(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::change_description) / [`set_change_description(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_change_description): <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
-    ///   - [`platform(Platform)`](crate::client::fluent_builders::CreateComponent::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::CreateComponent::set_platform): <p>The platform of the component.</p>
+    ///   - [`platform(Platform)`](crate::client::fluent_builders::CreateComponent::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::CreateComponent::set_platform): <p>The operating system platform of the component.</p>
     ///   - [`supported_os_versions(Vec<String>)`](crate::client::fluent_builders::CreateComponent::supported_os_versions) / [`set_supported_os_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateComponent::set_supported_os_versions): <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     ///   - [`data(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::data) / [`set_data(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_data): <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
     ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_uri): <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and the requester must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>  <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_kms_key_id): <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateComponent::set_tags): <p>The tags of the component.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_kms_key_id): <p>The ID of the KMS key that is used to encrypt this component.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateComponent::set_tags): <p>The tags that apply to the component.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_client_token): <p>The idempotency token of the component.</p>
     /// - On success, responds with [`CreateComponentOutput`](crate::output::CreateComponentOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::CreateComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
@@ -133,7 +133,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerRecipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContainerRecipe::set_name): <p>The name of the container recipe.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContainerRecipe::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContainerRecipe::set_description): <p>The description of the container recipe.</p>
     ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateContainerRecipe::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateContainerRecipe::set_semantic_version): <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
-    ///   - [`components(Vec<ComponentConfiguration>)`](crate::client::fluent_builders::CreateContainerRecipe::components) / [`set_components(Option<Vec<ComponentConfiguration>>)`](crate::client::fluent_builders::CreateContainerRecipe::set_components): <p>Components for build and test that are included in the container recipe.</p>
+    ///   - [`components(Vec<ComponentConfiguration>)`](crate::client::fluent_builders::CreateContainerRecipe::components) / [`set_components(Option<Vec<ComponentConfiguration>>)`](crate::client::fluent_builders::CreateContainerRecipe::set_components): <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::CreateContainerRecipe::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::CreateContainerRecipe::set_instance_configuration): <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     ///   - [`dockerfile_template_data(impl Into<String>)`](crate::client::fluent_builders::CreateContainerRecipe::dockerfile_template_data) / [`set_dockerfile_template_data(Option<String>)`](crate::client::fluent_builders::CreateContainerRecipe::set_dockerfile_template_data): <p>The Dockerfile template used to build your image as an inline data blob.</p>
     ///   - [`dockerfile_template_uri(impl Into<String>)`](crate::client::fluent_builders::CreateContainerRecipe::dockerfile_template_uri) / [`set_dockerfile_template_uri(Option<String>)`](crate::client::fluent_builders::CreateContainerRecipe::set_dockerfile_template_uri): <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
@@ -219,7 +219,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateImageRecipe::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateImageRecipe::set_name): <p> The name of the image recipe.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateImageRecipe::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateImageRecipe::set_description): <p> The description of the image recipe.</p>
     ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateImageRecipe::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateImageRecipe::set_semantic_version): <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
-    ///   - [`components(Vec<ComponentConfiguration>)`](crate::client::fluent_builders::CreateImageRecipe::components) / [`set_components(Option<Vec<ComponentConfiguration>>)`](crate::client::fluent_builders::CreateImageRecipe::set_components): <p>The components of the image recipe.</p>
+    ///   - [`components(Vec<ComponentConfiguration>)`](crate::client::fluent_builders::CreateImageRecipe::components) / [`set_components(Option<Vec<ComponentConfiguration>>)`](crate::client::fluent_builders::CreateImageRecipe::set_components): <p>The components included in the image recipe.</p>
     ///   - [`parent_image(impl Into<String>)`](crate::client::fluent_builders::CreateImageRecipe::parent_image) / [`set_parent_image(Option<String>)`](crate::client::fluent_builders::CreateImageRecipe::set_parent_image): <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
     ///   - [`block_device_mappings(Vec<InstanceBlockDeviceMapping>)`](crate::client::fluent_builders::CreateImageRecipe::block_device_mappings) / [`set_block_device_mappings(Option<Vec<InstanceBlockDeviceMapping>>)`](crate::client::fluent_builders::CreateImageRecipe::set_block_device_mappings): <p>The block device mappings of the image recipe.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateImageRecipe::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateImageRecipe::set_tags): <p> The tags of the image recipe.</p>
@@ -526,9 +526,9 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`owner(Ownership)`](crate::client::fluent_builders::ListComponents::owner) / [`set_owner(Option<Ownership>)`](crate::client::fluent_builders::ListComponents::set_owner): <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+    ///   - [`owner(Ownership)`](crate::client::fluent_builders::ListComponents::owner) / [`set_owner(Option<Ownership>)`](crate::client::fluent_builders::ListComponents::set_owner): <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListComponents::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListComponents::set_filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>description</code> </p> </li>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>   <li> <p> <code>supportedOsVersion</code> </p> </li>   <li> <p> <code>type</code> </p> </li>   <li> <p> <code>version</code> </p> </li>  </ul>
-    ///   - [`by_name(bool)`](crate::client::fluent_builders::ListComponents::by_name) / [`set_by_name(bool)`](crate::client::fluent_builders::ListComponents::set_by_name): <p>Returns the list of component build versions for the specified name.</p>
+    ///   - [`by_name(bool)`](crate::client::fluent_builders::ListComponents::by_name) / [`set_by_name(bool)`](crate::client::fluent_builders::ListComponents::set_by_name): <p>Returns the list of components for the specified name.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponents::set_max_results): <p>The maximum items to return in a request.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponents::set_next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
@@ -1056,12 +1056,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>The description of the component. Describes the contents of the component.</p>
+        /// <p>Describes the contents of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the component. Describes the contents of the component.</p>
+        /// <p>Describes the contents of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1079,12 +1079,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_description(input);
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.inner = self.inner.platform(input);
             self
         }
-        /// <p>The platform of the component.</p>
+        /// <p>The operating system platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
@@ -1128,12 +1128,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_uri(input);
             self
         }
-        /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+        /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+        /// <p>The ID of the KMS key that is used to encrypt this component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -1142,7 +1142,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1151,7 +1151,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags of the component.</p>
+        /// <p>The tags that apply to the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1314,12 +1314,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             self.inner = self.inner.components(input);
             self
         }
-        /// <p>Components for build and test that are included in the container recipe.</p>
+        /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -2146,12 +2146,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components included in the image recipe.</p>
         pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             self.inner = self.inner.components(input);
             self
         }
-        /// <p>The components of the image recipe.</p>
+        /// <p>The components included in the image recipe.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -4446,7 +4446,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComponents`.
     ///
-    /// <p>Returns the list of component build versions for the specified semantic version.</p> <note>
+    /// <p>Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to streamline results. Newly created components can take up to two minutes to appear in the ListComponents API Results.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -4526,12 +4526,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListComponentsPaginator {
             crate::paginator::ListComponentsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+        /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+        /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -4569,12 +4569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Returns the list of component build versions for the specified name.</p>
+        /// <p>Returns the list of components for the specified name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
             self.inner = self.inner.by_name(input);
             self
         }
-        /// <p>Returns the list of component build versions for the specified name.</p>
+        /// <p>Returns the list of components for the specified name.</p>
         pub fn set_by_name(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_by_name(input);
             self
@@ -5071,7 +5071,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListImagePipelineImages`.
     ///
-    /// <p> Returns a list of images created by the specified pipeline.</p>
+    /// <p>Returns a list of images created by the specified pipeline.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePipelineImages {
         handle: std::sync::Arc<super::Handle>,
@@ -5446,7 +5446,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListImages`.
     ///
-    /// <p> Returns the list of images that you have access to.</p>
+    /// <p>Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages {
         handle: std::sync::Arc<super::Handle>,

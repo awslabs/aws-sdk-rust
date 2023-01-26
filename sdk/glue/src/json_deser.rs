@@ -25477,6 +25477,33 @@ where
                                     crate::json_deser::deser_structure_crate_model_evaluate_data_quality(tokens)?
                                 );
                             }
+                            "S3CatalogHudiSource" => {
+                                builder = builder.set_s3_catalog_hudi_source(
+                                    crate::json_deser::deser_structure_crate_model_s3_catalog_hudi_source(tokens)?
+                                );
+                            }
+                            "CatalogHudiSource" => {
+                                builder = builder.set_catalog_hudi_source(
+                                    crate::json_deser::deser_structure_crate_model_catalog_hudi_source(tokens)?
+                                );
+                            }
+                            "S3HudiSource" => {
+                                builder = builder.set_s3_hudi_source(
+                                    crate::json_deser::deser_structure_crate_model_s3_hudi_source(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "S3HudiCatalogTarget" => {
+                                builder = builder.set_s3_hudi_catalog_target(
+                                    crate::json_deser::deser_structure_crate_model_s3_hudi_catalog_target(tokens)?
+                                );
+                            }
+                            "S3HudiDirectTarget" => {
+                                builder = builder.set_s3_hudi_direct_target(
+                                    crate::json_deser::deser_structure_crate_model_s3_hudi_direct_target(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -32515,6 +32542,463 @@ where
                             "StopJobOnFailureOptions" => {
                                 builder = builder.set_stop_job_on_failure_options(
                                     crate::json_deser::deser_structure_crate_model_dq_stop_job_on_failure_options(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_s3_catalog_hudi_source<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::S3CatalogHudiSource>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::s3_catalog_hudi_source::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Database" => {
+                                builder = builder.set_database(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Table" => {
+                                builder = builder.set_table(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AdditionalHudiOptions" => {
+                                builder = builder.set_additional_hudi_options(
+                                    crate::json_deser::deser_map_com_amazonaws_glue_additional_options(tokens)?
+                                );
+                            }
+                            "OutputSchemas" => {
+                                builder = builder.set_output_schemas(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_glue_schemas(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_catalog_hudi_source<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::CatalogHudiSource>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::catalog_hudi_source::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Database" => {
+                                builder = builder.set_database(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Table" => {
+                                builder = builder.set_table(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AdditionalHudiOptions" => {
+                                builder = builder.set_additional_hudi_options(
+                                    crate::json_deser::deser_map_com_amazonaws_glue_additional_options(tokens)?
+                                );
+                            }
+                            "OutputSchemas" => {
+                                builder = builder.set_output_schemas(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_glue_schemas(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_s3_hudi_source<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::S3HudiSource>, aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::s3_hudi_source::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Paths" => {
+                                builder = builder.set_paths(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_enclosed_in_string_properties(tokens)?
+                                );
+                            }
+                            "AdditionalHudiOptions" => {
+                                builder = builder.set_additional_hudi_options(
+                                    crate::json_deser::deser_map_com_amazonaws_glue_additional_options(tokens)?
+                                );
+                            }
+                            "AdditionalOptions" => {
+                                builder = builder.set_additional_options(
+                                    crate::json_deser::deser_structure_crate_model_s3_direct_source_additional_options(tokens)?
+                                );
+                            }
+                            "OutputSchemas" => {
+                                builder = builder.set_output_schemas(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_glue_schemas(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_s3_hudi_catalog_target<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::S3HudiCatalogTarget>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::s3_hudi_catalog_target::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Inputs" => {
+                                builder = builder.set_inputs(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_one_input(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "PartitionKeys" => {
+                                builder = builder.set_partition_keys(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_glue_studio_path_list(tokens)?
+                                );
+                            }
+                            "Table" => {
+                                builder = builder.set_table(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Database" => {
+                                builder = builder.set_database(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AdditionalOptions" => {
+                                builder = builder.set_additional_options(
+                                    crate::json_deser::deser_map_com_amazonaws_glue_additional_options(tokens)?
+                                );
+                            }
+                            "SchemaChangePolicy" => {
+                                builder = builder.set_schema_change_policy(
+                                    crate::json_deser::deser_structure_crate_model_catalog_schema_change_policy(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+pub(crate) fn deser_structure_crate_model_s3_hudi_direct_target<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::S3HudiDirectTarget>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::s3_hudi_direct_target::Builder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Name" => {
+                                builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Inputs" => {
+                                builder = builder.set_inputs(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_one_input(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "Path" => {
+                                builder = builder.set_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Compression" => {
+                                builder = builder.set_compression(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HudiTargetCompressionType::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "PartitionKeys" => {
+                                builder = builder.set_partition_keys(
+                                    crate::json_deser::deser_list_com_amazonaws_glue_glue_studio_path_list(tokens)?
+                                );
+                            }
+                            "Format" => {
+                                builder = builder.set_format(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::TargetFormat::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "AdditionalOptions" => {
+                                builder = builder.set_additional_options(
+                                    crate::json_deser::deser_map_com_amazonaws_glue_additional_options(tokens)?
+                                );
+                            }
+                            "SchemaChangePolicy" => {
+                                builder = builder.set_schema_change_policy(
+                                    crate::json_deser::deser_structure_crate_model_direct_schema_change_policy(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

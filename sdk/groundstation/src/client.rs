@@ -120,6 +120,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`endpoint_details(Vec<EndpointDetails>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::endpoint_details) / [`set_endpoint_details(Option<Vec<EndpointDetails>>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_endpoint_details): <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_tags): <p>Tags of a dataflow endpoint group.</p>
+    ///   - [`contact_pre_pass_duration_seconds(i32)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::contact_pre_pass_duration_seconds) / [`set_contact_pre_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_contact_pre_pass_duration_seconds): <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+    ///   - [`contact_post_pass_duration_seconds(i32)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::contact_post_pass_duration_seconds) / [`set_contact_post_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_contact_post_pass_duration_seconds): <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
     /// - On success, responds with [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::output::CreateDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<CreateDataflowEndpointGroupError>`](crate::error::CreateDataflowEndpointGroupError)
@@ -269,6 +271,8 @@ impl Client {
     ///   - [`dataflow_endpoint_group_arn(Option<String>)`](crate::output::GetDataflowEndpointGroupOutput::dataflow_endpoint_group_arn): <p>ARN of a dataflow endpoint group.</p>
     ///   - [`endpoints_details(Option<Vec<EndpointDetails>>)`](crate::output::GetDataflowEndpointGroupOutput::endpoints_details): <p>Details of a dataflow endpoint.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDataflowEndpointGroupOutput::tags): <p>Tags assigned to a dataflow endpoint group.</p>
+    ///   - [`contact_pre_pass_duration_seconds(Option<i32>)`](crate::output::GetDataflowEndpointGroupOutput::contact_pre_pass_duration_seconds): <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+    ///   - [`contact_post_pass_duration_seconds(Option<i32>)`](crate::output::GetDataflowEndpointGroupOutput::contact_post_pass_duration_seconds): <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
     /// - On failure, responds with [`SdkError<GetDataflowEndpointGroupError>`](crate::error::GetDataflowEndpointGroupError)
     pub fn get_dataflow_endpoint_group(&self) -> fluent_builders::GetDataflowEndpointGroup {
         fluent_builders::GetDataflowEndpointGroup::new(self.handle.clone())
@@ -807,6 +811,32 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+        pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_pre_pass_duration_seconds(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+        pub fn set_contact_pre_pass_duration_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_pre_pass_duration_seconds(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+        pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_post_pass_duration_seconds(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+        pub fn set_contact_post_pass_duration_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_post_pass_duration_seconds(input);
             self
         }
     }

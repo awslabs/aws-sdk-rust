@@ -22267,6 +22267,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_hyper_parameter_tuning_resource_config(tokens)?
                                 );
                             }
+                            "Environment" => {
+                                builder = builder.set_environment(
+                                    crate::json_deser::deser_map_com_amazonaws_sagemaker_hyper_parameter_training_job_environment_map(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -37350,6 +37355,62 @@ where
                 }
             }
             Ok(Some(builder.build()))
+        }
+        _ => Err(
+            aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ),
+        ),
+    }
+}
+
+#[allow(non_snake_case)]
+pub(crate) fn deser_map_com_amazonaws_sagemaker_hyper_parameter_training_job_environment_map<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<
+        Item = Result<
+            aws_smithy_json::deserialize::Token<'a>,
+            aws_smithy_json::deserialize::error::DeserializeError,
+        >,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(
+                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                                "expected object key or end object, found: {:?}",
+                                other
+                            )),
+                        )
+                    }
+                }
+            }
+            Ok(Some(map))
         }
         _ => Err(
             aws_smithy_json::deserialize::error::DeserializeError::custom(

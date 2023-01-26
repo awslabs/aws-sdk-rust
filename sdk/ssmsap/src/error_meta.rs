@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p></p>
+    /// <p>A conflict has occurred.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p></p>
+    /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p></p>
+    /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p></p>
+    /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::error::ValidationException),
     ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -333,6 +333,34 @@ impl From<crate::error::ListDatabasesError> for Error {
                 Error::ValidationException(inner)
             }
             crate::error::ListDatabasesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOperationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOperationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListOperationsError> for Error {
+    fn from(err: crate::error::ListOperationsError) -> Self {
+        match err.kind {
+            crate::error::ListOperationsErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::ListOperationsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListOperationsErrorKind::Unhandled(inner) => {
                 Error::Unhandled(crate::error::Unhandled::new(inner.into()))
             }
         }

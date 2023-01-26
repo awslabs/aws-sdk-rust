@@ -1139,6 +1139,213 @@ impl PackageSource {
     }
 }
 
+/// <p>Information about the progress of a pre-upgrade dry run analysis.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DryRunProgressStatus {
+    /// <p>The unique identifier of the dry run.</p>
+    #[doc(hidden)]
+    pub dry_run_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the dry run.</p>
+    #[doc(hidden)]
+    pub dry_run_status: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the dry run was initiated.</p>
+    #[doc(hidden)]
+    pub creation_date: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the dry run was last updated.</p>
+    #[doc(hidden)]
+    pub update_date: std::option::Option<std::string::String>,
+    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    #[doc(hidden)]
+    pub validation_failures: std::option::Option<std::vec::Vec<crate::model::ValidationFailure>>,
+}
+impl DryRunProgressStatus {
+    /// <p>The unique identifier of the dry run.</p>
+    pub fn dry_run_id(&self) -> std::option::Option<&str> {
+        self.dry_run_id.as_deref()
+    }
+    /// <p>The current status of the dry run.</p>
+    pub fn dry_run_status(&self) -> std::option::Option<&str> {
+        self.dry_run_status.as_deref()
+    }
+    /// <p>The timestamp when the dry run was initiated.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The timestamp when the dry run was last updated.</p>
+    pub fn update_date(&self) -> std::option::Option<&str> {
+        self.update_date.as_deref()
+    }
+    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    pub fn validation_failures(&self) -> std::option::Option<&[crate::model::ValidationFailure]> {
+        self.validation_failures.as_deref()
+    }
+}
+/// See [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
+pub mod dry_run_progress_status {
+
+    /// A builder for [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dry_run_id: std::option::Option<std::string::String>,
+        pub(crate) dry_run_status: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<std::string::String>,
+        pub(crate) update_date: std::option::Option<std::string::String>,
+        pub(crate) validation_failures:
+            std::option::Option<std::vec::Vec<crate::model::ValidationFailure>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the dry run.</p>
+        pub fn dry_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dry_run_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the dry run.</p>
+        pub fn set_dry_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dry_run_id = input;
+            self
+        }
+        /// <p>The current status of the dry run.</p>
+        pub fn dry_run_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dry_run_status = Some(input.into());
+            self
+        }
+        /// <p>The current status of the dry run.</p>
+        pub fn set_dry_run_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dry_run_status = input;
+            self
+        }
+        /// <p>The timestamp when the dry run was initiated.</p>
+        pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_date = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when the dry run was initiated.</p>
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>The timestamp when the dry run was last updated.</p>
+        pub fn update_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.update_date = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when the dry run was last updated.</p>
+        pub fn set_update_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.update_date = input;
+            self
+        }
+        /// Appends an item to `validation_failures`.
+        ///
+        /// To override the contents of this collection use [`set_validation_failures`](Self::set_validation_failures).
+        ///
+        /// <p>Any validation failures that occurred as a result of the dry run.</p>
+        pub fn validation_failures(mut self, input: crate::model::ValidationFailure) -> Self {
+            let mut v = self.validation_failures.unwrap_or_default();
+            v.push(input);
+            self.validation_failures = Some(v);
+            self
+        }
+        /// <p>Any validation failures that occurred as a result of the dry run.</p>
+        pub fn set_validation_failures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationFailure>>,
+        ) -> Self {
+            self.validation_failures = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
+        pub fn build(self) -> crate::model::DryRunProgressStatus {
+            crate::model::DryRunProgressStatus {
+                dry_run_id: self.dry_run_id,
+                dry_run_status: self.dry_run_status,
+                creation_date: self.creation_date,
+                update_date: self.update_date,
+                validation_failures: self.validation_failures,
+            }
+        }
+    }
+}
+impl DryRunProgressStatus {
+    /// Creates a new builder-style object to manufacture [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
+    pub fn builder() -> crate::model::dry_run_progress_status::Builder {
+        crate::model::dry_run_progress_status::Builder::default()
+    }
+}
+
+/// <p>A validation failure that occurred as the result of a pre-update validation check (verbose dry run) on a domain.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ValidationFailure {
+    /// <p>The error code of the failure.</p>
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A message corresponding to the failure.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl ValidationFailure {
+    /// <p>The error code of the failure.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message corresponding to the failure.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+/// See [`ValidationFailure`](crate::model::ValidationFailure).
+pub mod validation_failure {
+
+    /// A builder for [`ValidationFailure`](crate::model::ValidationFailure).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code of the failure.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>The error code of the failure.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A message corresponding to the failure.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message corresponding to the failure.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationFailure`](crate::model::ValidationFailure).
+        pub fn build(self) -> crate::model::ValidationFailure {
+            crate::model::ValidationFailure {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationFailure {
+    /// Creates a new builder-style object to manufacture [`ValidationFailure`](crate::model::ValidationFailure).
+    pub fn builder() -> crate::model::validation_failure::Builder {
+        crate::model::validation_failure::Builder::default()
+    }
+}
+
 /// <p>Results of a dry run performed in an update domain request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6160,6 +6367,96 @@ impl VersionStatus {
     /// Creates a new builder-style object to manufacture [`VersionStatus`](crate::model::VersionStatus).
     pub fn builder() -> crate::model::version_status::Builder {
         crate::model::version_status::Builder::default()
+    }
+}
+
+/// When writing a match expression against `DryRunMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dryrunmode = unimplemented!();
+/// match dryrunmode {
+///     DryRunMode::Basic => { /* ... */ },
+///     DryRunMode::Verbose => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dryrunmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DryRunMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DryRunMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DryRunMode::NewFeature` is defined.
+/// Specifically, when `dryrunmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DryRunMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DryRunMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Basic,
+    #[allow(missing_docs)] // documentation missing in model
+    Verbose,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for DryRunMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "Basic" => DryRunMode::Basic,
+            "Verbose" => DryRunMode::Verbose,
+            other => DryRunMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for DryRunMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DryRunMode::from(s))
+    }
+}
+impl DryRunMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DryRunMode::Basic => "Basic",
+            DryRunMode::Verbose => "Verbose",
+            DryRunMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Basic", "Verbose"]
+    }
+}
+impl AsRef<str> for DryRunMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

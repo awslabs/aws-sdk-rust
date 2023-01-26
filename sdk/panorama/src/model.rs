@@ -7014,11 +7014,18 @@ pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
     #[doc(hidden)]
     pub image_version: std::option::Option<std::string::String>,
+    /// <p>Whether to apply the update if it is a major version change.</p>
+    #[doc(hidden)]
+    pub allow_major_version_update: bool,
 }
 impl OtaJobConfig {
     /// <p>The target version of the device software.</p>
     pub fn image_version(&self) -> std::option::Option<&str> {
         self.image_version.as_deref()
+    }
+    /// <p>Whether to apply the update if it is a major version change.</p>
+    pub fn allow_major_version_update(&self) -> bool {
+        self.allow_major_version_update
     }
 }
 /// See [`OtaJobConfig`](crate::model::OtaJobConfig).
@@ -7028,6 +7035,7 @@ pub mod ota_job_config {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_version: std::option::Option<std::string::String>,
+        pub(crate) allow_major_version_update: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The target version of the device software.</p>
@@ -7043,10 +7051,21 @@ pub mod ota_job_config {
             self.image_version = input;
             self
         }
+        /// <p>Whether to apply the update if it is a major version change.</p>
+        pub fn allow_major_version_update(mut self, input: bool) -> Self {
+            self.allow_major_version_update = Some(input);
+            self
+        }
+        /// <p>Whether to apply the update if it is a major version change.</p>
+        pub fn set_allow_major_version_update(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_update = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OtaJobConfig`](crate::model::OtaJobConfig).
         pub fn build(self) -> crate::model::OtaJobConfig {
             crate::model::OtaJobConfig {
                 image_version: self.image_version,
+                allow_major_version_update: self.allow_major_version_update.unwrap_or_default(),
             }
         }
     }

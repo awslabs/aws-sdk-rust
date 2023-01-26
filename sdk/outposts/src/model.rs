@@ -1507,6 +1507,7 @@ impl AsRef<str> for PowerPhase {
 /// match powerdrawkva {
 ///     PowerDrawKva::Power10Kva => { /* ... */ },
 ///     PowerDrawKva::Power15Kva => { /* ... */ },
+///     PowerDrawKva::Power30Kva => { /* ... */ },
 ///     PowerDrawKva::Power5Kva => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -1546,6 +1547,8 @@ pub enum PowerDrawKva {
     #[allow(missing_docs)] // documentation missing in model
     Power15Kva,
     #[allow(missing_docs)] // documentation missing in model
+    Power30Kva,
+    #[allow(missing_docs)] // documentation missing in model
     Power5Kva,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::types::UnknownVariantValue),
@@ -1555,6 +1558,7 @@ impl std::convert::From<&str> for PowerDrawKva {
         match s {
             "POWER_10_KVA" => PowerDrawKva::Power10Kva,
             "POWER_15_KVA" => PowerDrawKva::Power15Kva,
+            "POWER_30_KVA" => PowerDrawKva::Power30Kva,
             "POWER_5_KVA" => PowerDrawKva::Power5Kva,
             other => PowerDrawKva::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
@@ -1573,13 +1577,19 @@ impl PowerDrawKva {
         match self {
             PowerDrawKva::Power10Kva => "POWER_10_KVA",
             PowerDrawKva::Power15Kva => "POWER_15_KVA",
+            PowerDrawKva::Power30Kva => "POWER_30_KVA",
             PowerDrawKva::Power5Kva => "POWER_5_KVA",
             PowerDrawKva::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["POWER_10_KVA", "POWER_15_KVA", "POWER_5_KVA"]
+        &[
+            "POWER_10_KVA",
+            "POWER_15_KVA",
+            "POWER_30_KVA",
+            "POWER_5_KVA",
+        ]
     }
 }
 impl AsRef<str> for PowerDrawKva {

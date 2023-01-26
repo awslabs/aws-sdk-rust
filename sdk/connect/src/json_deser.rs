@@ -5767,6 +5767,15 @@ pub(crate) fn deser_operation_crate_operation_start_chat_contact(
                             .transpose()?,
                         );
                     }
+                    "ContinuedFromContactId" => {
+                        builder = builder.set_continued_from_contact_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "ParticipantId" => {
                         builder = builder.set_participant_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -6720,6 +6729,15 @@ where
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "RelatedContactId" => {
+                                builder = builder.set_related_contact_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

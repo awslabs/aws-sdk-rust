@@ -67,11 +67,11 @@ pub enum Error {
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The runtime restore hook encountered an error. For more information, check the Amazon CloudWatch logs.</p>
+    /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::error::SnapStartException),
     /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
     SnapStartNotReadyException(crate::error::SnapStartNotReadyException),
-    /// <p>The runtime restore hook failed to complete within the timeout limit (2 seconds).</p>
+    /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
     SnapStartTimeoutException(crate::error::SnapStartTimeoutException),
     /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
     SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
@@ -1300,6 +1300,43 @@ impl From<crate::error::GetProvisionedConcurrencyConfigError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRuntimeManagementConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetRuntimeManagementConfigError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRuntimeManagementConfigError> for Error {
+    fn from(err: crate::error::GetRuntimeManagementConfigError) -> Self {
+        match err.kind {
+            crate::error::GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::GetRuntimeManagementConfigErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetRuntimeManagementConfigErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::GetRuntimeManagementConfigErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::GetRuntimeManagementConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::InvokeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2064,6 +2101,46 @@ impl From<crate::error::PutProvisionedConcurrencyConfigError> for Error {
             crate::error::PutProvisionedConcurrencyConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
             crate::error::PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::error::PutProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRuntimeManagementConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutRuntimeManagementConfigError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutRuntimeManagementConfigError> for Error {
+    fn from(err: crate::error::PutRuntimeManagementConfigError) -> Self {
+        match err.kind {
+            crate::error::PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::error::PutRuntimeManagementConfigErrorKind::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::error::PutRuntimeManagementConfigErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::PutRuntimeManagementConfigErrorKind::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::error::PutRuntimeManagementConfigErrorKind::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::PutRuntimeManagementConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

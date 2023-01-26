@@ -303,14 +303,14 @@ pub mod create_job_for_devices_input {
         ///
         /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
         ///
-        /// <p>IDs of target devices.</p>
+        /// <p>ID of target device.</p>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
             v.push(input.into());
             self.device_ids = Some(v);
             self
         }
-        /// <p>IDs of target devices.</p>
+        /// <p>ID of target device.</p>
         pub fn set_device_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7859,7 +7859,7 @@ impl CreateNodeFromTemplateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobForDevicesInput {
-    /// <p>IDs of target devices.</p>
+    /// <p>ID of target device.</p>
     #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Configuration settings for a software update job.</p>
@@ -7870,7 +7870,7 @@ pub struct CreateJobForDevicesInput {
     pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl CreateJobForDevicesInput {
-    /// <p>IDs of target devices.</p>
+    /// <p>ID of target device.</p>
     pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.device_ids.as_deref()
     }

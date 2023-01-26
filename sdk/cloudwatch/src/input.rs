@@ -7163,6 +7163,7 @@ pub mod put_metric_stream_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) statistics_configurations:
             std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+        pub(crate) include_linked_accounts_metrics: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
@@ -7311,6 +7312,19 @@ pub mod put_metric_stream_input {
             self.statistics_configurations = input;
             self
         }
+        /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+        pub fn include_linked_accounts_metrics(mut self, input: bool) -> Self {
+            self.include_linked_accounts_metrics = Some(input);
+            self
+        }
+        /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+        pub fn set_include_linked_accounts_metrics(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.include_linked_accounts_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutMetricStreamInput`](crate::input::PutMetricStreamInput).
         pub fn build(
             self,
@@ -7325,6 +7339,7 @@ pub mod put_metric_stream_input {
                 output_format: self.output_format,
                 tags: self.tags,
                 statistics_configurations: self.statistics_configurations,
+                include_linked_accounts_metrics: self.include_linked_accounts_metrics,
             })
         }
     }
@@ -8529,6 +8544,9 @@ pub struct PutMetricStreamInput {
     #[doc(hidden)]
     pub statistics_configurations:
         std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+    /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+    #[doc(hidden)]
+    pub include_linked_accounts_metrics: std::option::Option<bool>,
 }
 impl PutMetricStreamInput {
     /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
@@ -8575,6 +8593,10 @@ impl PutMetricStreamInput {
         &self,
     ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
         self.statistics_configurations.as_deref()
+    }
+    /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+    pub fn include_linked_accounts_metrics(&self) -> std::option::Option<bool> {
+        self.include_linked_accounts_metrics
     }
 }
 

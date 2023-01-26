@@ -376,6 +376,8 @@ pub mod create_dataflow_endpoint_group_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) contact_pre_pass_duration_seconds: std::option::Option<i32>,
+        pub(crate) contact_post_pass_duration_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// Appends an item to `endpoint_details`.
@@ -422,6 +424,32 @@ pub mod create_dataflow_endpoint_group_input {
             self.tags = input;
             self
         }
+        /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+        pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.contact_pre_pass_duration_seconds = Some(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+        pub fn set_contact_pre_pass_duration_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.contact_pre_pass_duration_seconds = input;
+            self
+        }
+        /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+        pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.contact_post_pass_duration_seconds = Some(input);
+            self
+        }
+        /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+        pub fn set_contact_post_pass_duration_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.contact_post_pass_duration_seconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDataflowEndpointGroupInput`](crate::input::CreateDataflowEndpointGroupInput).
         pub fn build(
             self,
@@ -432,6 +460,8 @@ pub mod create_dataflow_endpoint_group_input {
             Ok(crate::input::CreateDataflowEndpointGroupInput {
                 endpoint_details: self.endpoint_details,
                 tags: self.tags,
+                contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
+                contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,
             })
         }
     }
@@ -6487,6 +6517,12 @@ pub struct CreateDataflowEndpointGroupInput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+    #[doc(hidden)]
+    pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
+    /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+    #[doc(hidden)]
+    pub contact_post_pass_duration_seconds: std::option::Option<i32>,
 }
 impl CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
@@ -6499,6 +6535,14 @@ impl CreateDataflowEndpointGroupInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
+    pub fn contact_pre_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_pre_pass_duration_seconds
+    }
+    /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
+    pub fn contact_post_pass_duration_seconds(&self) -> std::option::Option<i32> {
+        self.contact_post_pass_duration_seconds
     }
 }
 

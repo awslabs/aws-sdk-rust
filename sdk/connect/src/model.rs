@@ -6367,6 +6367,189 @@ impl AsRef<str> for VoiceRecordingTrack {
     }
 }
 
+/// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PersistentChat {
+    /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
+    /// <ul>
+    /// <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines the most recent chat contact on the specified chat session that has ended, and uses it to start a persistent chat. </p> </li>
+    /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
+    /// </ul>
+    /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
+    #[doc(hidden)]
+    pub rehydration_type: std::option::Option<crate::model::RehydrationType>,
+    /// <p>The contactId from which a persistent chat session must be started.</p>
+    #[doc(hidden)]
+    pub source_contact_id: std::option::Option<std::string::String>,
+}
+impl PersistentChat {
+    /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
+    /// <ul>
+    /// <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines the most recent chat contact on the specified chat session that has ended, and uses it to start a persistent chat. </p> </li>
+    /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
+    /// </ul>
+    /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
+    pub fn rehydration_type(&self) -> std::option::Option<&crate::model::RehydrationType> {
+        self.rehydration_type.as_ref()
+    }
+    /// <p>The contactId from which a persistent chat session must be started.</p>
+    pub fn source_contact_id(&self) -> std::option::Option<&str> {
+        self.source_contact_id.as_deref()
+    }
+}
+/// See [`PersistentChat`](crate::model::PersistentChat).
+pub mod persistent_chat {
+
+    /// A builder for [`PersistentChat`](crate::model::PersistentChat).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rehydration_type: std::option::Option<crate::model::RehydrationType>,
+        pub(crate) source_contact_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
+        /// <ul>
+        /// <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines the most recent chat contact on the specified chat session that has ended, and uses it to start a persistent chat. </p> </li>
+        /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
+        /// </ul>
+        /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
+        pub fn rehydration_type(mut self, input: crate::model::RehydrationType) -> Self {
+            self.rehydration_type = Some(input);
+            self
+        }
+        /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
+        /// <ul>
+        /// <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines the most recent chat contact on the specified chat session that has ended, and uses it to start a persistent chat. </p> </li>
+        /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
+        /// </ul>
+        /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
+        pub fn set_rehydration_type(
+            mut self,
+            input: std::option::Option<crate::model::RehydrationType>,
+        ) -> Self {
+            self.rehydration_type = input;
+            self
+        }
+        /// <p>The contactId from which a persistent chat session must be started.</p>
+        pub fn source_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_contact_id = Some(input.into());
+            self
+        }
+        /// <p>The contactId from which a persistent chat session must be started.</p>
+        pub fn set_source_contact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_contact_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PersistentChat`](crate::model::PersistentChat).
+        pub fn build(self) -> crate::model::PersistentChat {
+            crate::model::PersistentChat {
+                rehydration_type: self.rehydration_type,
+                source_contact_id: self.source_contact_id,
+            }
+        }
+    }
+}
+impl PersistentChat {
+    /// Creates a new builder-style object to manufacture [`PersistentChat`](crate::model::PersistentChat).
+    pub fn builder() -> crate::model::persistent_chat::Builder {
+        crate::model::persistent_chat::Builder::default()
+    }
+}
+
+/// When writing a match expression against `RehydrationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rehydrationtype = unimplemented!();
+/// match rehydrationtype {
+///     RehydrationType::EntirePastSession => { /* ... */ },
+///     RehydrationType::FromSegment => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rehydrationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RehydrationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RehydrationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RehydrationType::NewFeature` is defined.
+/// Specifically, when `rehydrationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RehydrationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RehydrationType {
+    #[allow(missing_docs)] // documentation missing in model
+    EntirePastSession,
+    #[allow(missing_docs)] // documentation missing in model
+    FromSegment,
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
+}
+impl std::convert::From<&str> for RehydrationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENTIRE_PAST_SESSION" => RehydrationType::EntirePastSession,
+            "FROM_SEGMENT" => RehydrationType::FromSegment,
+            other => RehydrationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+        }
+    }
+}
+impl std::str::FromStr for RehydrationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RehydrationType::from(s))
+    }
+}
+impl RehydrationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RehydrationType::EntirePastSession => "ENTIRE_PAST_SESSION",
+            RehydrationType::FromSegment => "FROM_SEGMENT",
+            RehydrationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ENTIRE_PAST_SESSION", "FROM_SEGMENT"]
+    }
+}
+impl AsRef<str> for RehydrationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A chat message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -22589,6 +22772,9 @@ pub struct Contact {
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
     #[doc(hidden)]
     pub scheduled_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
+    #[doc(hidden)]
+    pub related_contact_id: std::option::Option<std::string::String>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -22647,6 +22833,10 @@ impl Contact {
     pub fn scheduled_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
+    pub fn related_contact_id(&self) -> std::option::Option<&str> {
+        self.related_contact_id.as_deref()
+    }
 }
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
@@ -22668,6 +22858,7 @@ pub mod contact {
         pub(crate) disconnect_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) scheduled_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) related_contact_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -22837,6 +23028,19 @@ pub mod contact {
             self.scheduled_timestamp = input;
             self
         }
+        /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
+        pub fn related_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.related_contact_id = Some(input.into());
+            self
+        }
+        /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
+        pub fn set_related_contact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.related_contact_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Contact`](crate::model::Contact).
         pub fn build(self) -> crate::model::Contact {
             crate::model::Contact {
@@ -22854,6 +23058,7 @@ pub mod contact {
                 disconnect_timestamp: self.disconnect_timestamp,
                 last_update_timestamp: self.last_update_timestamp,
                 scheduled_timestamp: self.scheduled_timestamp,
+                related_contact_id: self.related_contact_id,
             }
         }
     }

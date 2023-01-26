@@ -2133,11 +2133,26 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Path-style addressing cannot be used with FIPS [ForcePathStyle, aws-global region with fips is invalid]");
+        let endpoint = endpoint
+            .expect("Expected valid endpoint: https://s3-fips.us-east-1.amazonaws.com/bucket-name");
         assert_eq!(
-            format!("{}", error),
-            "Path-style addressing cannot be used with FIPS"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-fips.us-east-1.amazonaws.com/bucket-name")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// ForcePathStyle, aws-global region with dualstack uses regional dualstack endpoint
@@ -3124,26 +3139,44 @@ mod test {
         );
     }
 
-    /// path style + fips@us-west-2
+    /// fips@us-gov-west-2, bucket is not S3-dns-compatible (subdomains)
     #[test]
     fn test_99() {
         use aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .accelerate(false)
-            .bucket("bucket-name".to_string())
-            .force_path_style(true)
-            .region("us-west-2".to_string())
+            .bucket("bucket.with.dots".to_string())
+            .region("us-gov-west-1".to_string())
             .use_dual_stack(false)
             .use_fips(true)
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Path-style addressing cannot be used with FIPS [path style + fips@us-west-2]");
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://s3-fips.us-gov-west-1.amazonaws.com/bucket.with.dots",
+        );
         assert_eq!(
-            format!("{}", error),
-            "Path-style addressing cannot be used with FIPS"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-fips.us-gov-west-1.amazonaws.com/bucket.with.dots")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert(
+                            "signingRegion".to_string(),
+                            "us-gov-west-1".to_string().into(),
+                        );
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// path style + accelerate = error@us-west-2
@@ -3352,11 +3385,27 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Path-style addressing cannot be used with FIPS [path style + fips@cn-north-1]");
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name",
+        );
         assert_eq!(
-            format!("{}", error),
-            "Path-style addressing cannot be used with FIPS"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// path style + accelerate = error@cn-north-1
@@ -3565,11 +3614,27 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Path-style addressing cannot be used with FIPS [path style + fips@af-south-1]");
+        let endpoint = endpoint.expect(
+            "Expected valid endpoint: https://s3-fips.af-south-1.amazonaws.com/bucket-name",
+        );
         assert_eq!(
-            format!("{}", error),
-            "Path-style addressing cannot be used with FIPS"
-        )
+            endpoint,
+            aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-fips.af-south-1.amazonaws.com/bucket-name")
+                .property(
+                    "authSchemes",
+                    vec![aws_smithy_types::Document::from({
+                        let mut out =
+                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// path style + accelerate = error@af-south-1
@@ -5869,233 +5934,6 @@ mod test {
                 )
                 .build()
         );
-    }
-
-    /// S3 Outposts Abba Real Outpost Prod us-west-1
-    #[test]
-    fn test_195() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-west-1".to_string())
-            .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.op-0b1d075431d83bebd.s3-outposts.us-west-1.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.op-0b1d075431d83bebd.s3-outposts.us-west-1.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "us-west-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba Real Outpost Prod ap-east-1
-    #[test]
-    fn test_196() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("ap-east-1".to_string())
-            .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.op-0b1d075431d83bebd.s3-outposts.ap-east-1.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.op-0b1d075431d83bebd.s3-outposts.ap-east-1.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "ap-east-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba Ec2 Outpost Prod us-east-1
-    #[test]
-    fn test_197() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.ec2.s3-outposts.us-east-1.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.ec2.s3-outposts.us-east-1.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba Ec2 Outpost Prod me-south-1
-    #[test]
-    fn test_198() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("me-south-1".to_string())
-            .bucket("test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.ec2.s3-outposts.me-south-1.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3.ec2.s3-outposts.me-south-1.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "me-south-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba Real Outpost Beta
-    #[test]
-    fn test_199() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3".to_string())
-            .endpoint("https://example.amazonaws.com".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3.op-0b1d075431d83bebd.example.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3.op-0b1d075431d83bebd.example.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba Ec2 Outpost Beta
-    #[test]
-    fn test_200() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("161743052723-e00000136899934034jeahy1t8gpzpbwjj8kb7beta0--op-s3".to_string())
-            .endpoint("https://example.amazonaws.com".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://161743052723-e00000136899934034jeahy1t8gpzpbwjj8kb7beta0--op-s3.ec2.example.amazonaws.com");
-        assert_eq!(endpoint, aws_smithy_types::endpoint::Endpoint::builder().url("https://161743052723-e00000136899934034jeahy1t8gpzpbwjj8kb7beta0--op-s3.ec2.example.amazonaws.com")
-    .property("authSchemes", vec![aws_smithy_types::Document::from( {
-        let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-        out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("name".to_string(), "sigv4".to_string().into());
-        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-        out
-    })])
-    .build());
-    }
-
-    /// S3 Outposts Abba - No endpoint set for beta
-    #[test]
-    fn test_201() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Expected a endpoint to be specified but no endpoint was found [S3 Outposts Abba - No endpoint set for beta]");
-        assert_eq!(
-            format!("{}", error),
-            "Expected a endpoint to be specified but no endpoint was found"
-        )
-    }
-
-    /// S3 Outposts Abba Invalid hardware type
-    #[test]
-    fn test_202() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("test-accessp-h0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Unrecognized hardware type: \"Expected hardware type o or e but got h\" [S3 Outposts Abba Invalid hardware type]");
-        assert_eq!(
-            format!("{}", error),
-            "Unrecognized hardware type: \"Expected hardware type o or e but got h\""
-        )
-    }
-
-    /// S3 Outposts Abba Special character in Outpost Arn
-    #[test]
-    fn test_203() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .bucket("test-accessp-o00000754%1d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .accelerate(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`. [S3 Outposts Abba Special character in Outpost Arn]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`."
-        )
     }
 }
 

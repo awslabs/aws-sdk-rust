@@ -1108,15 +1108,16 @@ pub mod create_event_source_mapping_input {
             std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
         pub(crate) self_managed_kafka_event_source_config:
             std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
@@ -1124,11 +1125,11 @@ pub mod create_event_source_mapping_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -1140,10 +1141,10 @@ pub mod create_event_source_mapping_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1153,10 +1154,10 @@ pub mod create_event_source_mapping_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -1180,12 +1181,12 @@ pub mod create_event_source_mapping_input {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
@@ -1193,12 +1194,12 @@ pub mod create_event_source_mapping_input {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
@@ -1459,6 +1460,19 @@ pub mod create_event_source_mapping_input {
             self.self_managed_kafka_event_source_config = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput).
         pub fn build(
             self,
@@ -1489,6 +1503,7 @@ pub mod create_event_source_mapping_input {
                 amazon_managed_kafka_event_source_config: self
                     .amazon_managed_kafka_event_source_config,
                 self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                scaling_config: self.scaling_config,
             })
         }
     }
@@ -7241,6 +7256,217 @@ impl GetProvisionedConcurrencyConfigInput {
     }
 }
 
+/// See [`GetRuntimeManagementConfigInput`](crate::input::GetRuntimeManagementConfigInput).
+pub mod get_runtime_management_config_input {
+
+    /// A builder for [`GetRuntimeManagementConfigInput`](crate::input::GetRuntimeManagementConfigInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRuntimeManagementConfigInput`](crate::input::GetRuntimeManagementConfigInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetRuntimeManagementConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::GetRuntimeManagementConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+            })
+        }
+    }
+}
+impl GetRuntimeManagementConfigInput {
+    /// Consumes the builder and constructs an Operation<[`GetRuntimeManagementConfig`](crate::operation::GetRuntimeManagementConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRuntimeManagementConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetRuntimeManagementConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_48 = &_input.function_name;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if function_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2021-07-20/functions/{FunctionName}/runtime-management-config",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetRuntimeManagementConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_49) = &_input.qualifier {
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRuntimeManagementConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRuntimeManagementConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRuntimeManagementConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetRuntimeManagementConfigInput`](crate::input::GetRuntimeManagementConfigInput).
+    pub fn builder() -> crate::input::get_runtime_management_config_input::Builder {
+        crate::input::get_runtime_management_config_input::Builder::default()
+    }
+}
+
 /// See [`InvokeInput`](crate::input::InvokeInput).
 pub mod invoke_input {
 
@@ -7417,15 +7643,15 @@ impl InvokeInput {
                 _input: &crate::input::InvokeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_48 = &_input.function_name;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
+                let input_50 = &_input.function_name;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_48,
+                    input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -7449,9 +7675,9 @@ impl InvokeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.qualifier {
+                if let Some(inner_51) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_51));
                     }
                 }
                 Ok(())
@@ -7641,15 +7867,15 @@ impl InvokeAsyncInput {
                 _input: &crate::input::InvokeAsyncInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_50 = &_input.function_name;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
+                let input_52 = &_input.function_name;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_50,
+                    input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -7879,15 +8105,15 @@ impl ListAliasesInput {
                 _input: &crate::input::ListAliasesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.function_name;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
+                let input_53 = &_input.function_name;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_51,
+                    input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -7911,24 +8137,24 @@ impl ListAliasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.function_version {
+                if let Some(inner_54) = &_input.function_version {
                     {
                         query.push_kv(
                             "FunctionVersion",
-                            &aws_smithy_http::query::fmt_string(&inner_52),
+                            &aws_smithy_http::query::fmt_string(&inner_54),
                         );
                     }
                 }
-                if let Some(inner_53) = &_input.marker {
+                if let Some(inner_55) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
                     }
                 }
-                if let Some(inner_54) = &_input.max_items {
-                    if *inner_54 != 0 {
+                if let Some(inner_56) = &_input.max_items {
+                    if *inner_56 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
                         );
                     }
                 }
@@ -8098,16 +8324,16 @@ impl ListCodeSigningConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_55) = &_input.marker {
+                if let Some(inner_57) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
-                if let Some(inner_56) = &_input.max_items {
-                    if *inner_56 != 0 {
+                if let Some(inner_58) = &_input.max_items {
+                    if *inner_58 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
                         );
                     }
                 }
@@ -8199,11 +8425,11 @@ pub mod list_event_source_mappings_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
@@ -8211,11 +8437,11 @@ pub mod list_event_source_mappings_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-        /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+        /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -8227,10 +8453,10 @@ pub mod list_event_source_mappings_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8240,10 +8466,10 @@ pub mod list_event_source_mappings_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -8337,32 +8563,32 @@ impl ListEventSourceMappingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_57) = &_input.event_source_arn {
+                if let Some(inner_59) = &_input.event_source_arn {
                     {
                         query.push_kv(
                             "EventSourceArn",
-                            &aws_smithy_http::query::fmt_string(&inner_57),
+                            &aws_smithy_http::query::fmt_string(&inner_59),
                         );
                     }
                 }
-                if let Some(inner_58) = &_input.function_name {
+                if let Some(inner_60) = &_input.function_name {
                     {
                         query.push_kv(
                             "FunctionName",
-                            &aws_smithy_http::query::fmt_string(&inner_58),
+                            &aws_smithy_http::query::fmt_string(&inner_60),
                         );
                     }
                 }
-                if let Some(inner_59) = &_input.marker {
+                if let Some(inner_61) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_61));
                     }
                 }
-                if let Some(inner_60) = &_input.max_items {
-                    if *inner_60 != 0 {
+                if let Some(inner_62) = &_input.max_items {
+                    if *inner_62 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_62).encode(),
                         );
                     }
                 }
@@ -8552,15 +8778,15 @@ impl ListFunctionEventInvokeConfigsInput {
                 _input: &crate::input::ListFunctionEventInvokeConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_61 = &_input.function_name;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
+                let input_63 = &_input.function_name;
+                let input_63 = input_63.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_61,
+                    input_63,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -8584,16 +8810,16 @@ impl ListFunctionEventInvokeConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_62) = &_input.marker {
+                if let Some(inner_64) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_64));
                     }
                 }
-                if let Some(inner_63) = &_input.max_items {
-                    if *inner_63 != 0 {
+                if let Some(inner_65) = &_input.max_items {
+                    if *inner_65 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
                         );
                     }
                 }
@@ -8790,32 +9016,32 @@ impl ListFunctionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.master_region {
+                if let Some(inner_66) = &_input.master_region {
                     {
                         query.push_kv(
                             "MasterRegion",
-                            &aws_smithy_http::query::fmt_string(&inner_64),
+                            &aws_smithy_http::query::fmt_string(&inner_66),
                         );
                     }
                 }
-                if let Some(inner_65) = &_input.function_version {
+                if let Some(inner_67) = &_input.function_version {
                     {
                         query.push_kv(
                             "FunctionVersion",
-                            &aws_smithy_http::query::fmt_string(&inner_65),
+                            &aws_smithy_http::query::fmt_string(&inner_67),
                         );
                     }
                 }
-                if let Some(inner_66) = &_input.marker {
+                if let Some(inner_68) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
-                if let Some(inner_67) = &_input.max_items {
-                    if *inner_67 != 0 {
+                if let Some(inner_69) = &_input.max_items {
+                    if *inner_69 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
                         );
                     }
                 }
@@ -8991,15 +9217,15 @@ impl ListFunctionsByCodeSigningConfigInput {
                 _input: &crate::input::ListFunctionsByCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_68 = &_input.code_signing_config_arn;
-                let input_68 = input_68.as_ref().ok_or_else(|| {
+                let input_70 = &_input.code_signing_config_arn;
+                let input_70 = input_70.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "code_signing_config_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let code_signing_config_arn = aws_smithy_http::label::fmt_string(
-                    input_68,
+                    input_70,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if code_signing_config_arn.is_empty() {
@@ -9023,16 +9249,16 @@ impl ListFunctionsByCodeSigningConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.marker {
+                if let Some(inner_71) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
-                if let Some(inner_70) = &_input.max_items {
-                    if *inner_70 != 0 {
+                if let Some(inner_72) = &_input.max_items {
+                    if *inner_72 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                         );
                     }
                 }
@@ -9222,15 +9448,15 @@ impl ListFunctionUrlConfigsInput {
                 _input: &crate::input::ListFunctionUrlConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_71 = &_input.function_name;
-                let input_71 = input_71.as_ref().ok_or_else(|| {
+                let input_73 = &_input.function_name;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_71,
+                    input_73,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -9254,16 +9480,16 @@ impl ListFunctionUrlConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.marker {
+                if let Some(inner_74) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_74));
                     }
                 }
-                if let Some(inner_73) = &_input.max_items {
-                    if *inner_73 != 0 {
+                if let Some(inner_75) = &_input.max_items {
+                    if *inner_75 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
                         );
                     }
                 }
@@ -9460,32 +9686,32 @@ impl ListLayersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_74) = &_input.compatible_runtime {
+                if let Some(inner_76) = &_input.compatible_runtime {
                     {
                         query.push_kv(
                             "CompatibleRuntime",
-                            &aws_smithy_http::query::fmt_string(&inner_74),
+                            &aws_smithy_http::query::fmt_string(&inner_76),
                         );
                     }
                 }
-                if let Some(inner_75) = &_input.marker {
+                if let Some(inner_77) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_77));
                     }
                 }
-                if let Some(inner_76) = &_input.max_items {
-                    if *inner_76 != 0 {
+                if let Some(inner_78) = &_input.max_items {
+                    if *inner_78 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
                         );
                     }
                 }
-                if let Some(inner_77) = &_input.compatible_architecture {
+                if let Some(inner_79) = &_input.compatible_architecture {
                     {
                         query.push_kv(
                             "CompatibleArchitecture",
-                            &aws_smithy_http::query::fmt_string(&inner_77),
+                            &aws_smithy_http::query::fmt_string(&inner_79),
                         );
                     }
                 }
@@ -9688,15 +9914,15 @@ impl ListLayerVersionsInput {
                 _input: &crate::input::ListLayerVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_78 = &_input.layer_name;
-                let input_78 = input_78.as_ref().ok_or_else(|| {
+                let input_80 = &_input.layer_name;
+                let input_80 = input_80.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "layer_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let layer_name = aws_smithy_http::label::fmt_string(
-                    input_78,
+                    input_80,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if layer_name.is_empty() {
@@ -9720,32 +9946,32 @@ impl ListLayerVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_79) = &_input.compatible_runtime {
+                if let Some(inner_81) = &_input.compatible_runtime {
                     {
                         query.push_kv(
                             "CompatibleRuntime",
-                            &aws_smithy_http::query::fmt_string(&inner_79),
+                            &aws_smithy_http::query::fmt_string(&inner_81),
                         );
                     }
                 }
-                if let Some(inner_80) = &_input.marker {
+                if let Some(inner_82) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_82));
                     }
                 }
-                if let Some(inner_81) = &_input.max_items {
-                    if *inner_81 != 0 {
+                if let Some(inner_83) = &_input.max_items {
+                    if *inner_83 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
                         );
                     }
                 }
-                if let Some(inner_82) = &_input.compatible_architecture {
+                if let Some(inner_84) = &_input.compatible_architecture {
                     {
                         query.push_kv(
                             "CompatibleArchitecture",
-                            &aws_smithy_http::query::fmt_string(&inner_82),
+                            &aws_smithy_http::query::fmt_string(&inner_84),
                         );
                     }
                 }
@@ -9935,15 +10161,15 @@ impl ListProvisionedConcurrencyConfigsInput {
                 _input: &crate::input::ListProvisionedConcurrencyConfigsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_83 = &_input.function_name;
-                let input_83 = input_83.as_ref().ok_or_else(|| {
+                let input_85 = &_input.function_name;
+                let input_85 = input_85.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_83,
+                    input_85,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -9968,16 +10194,16 @@ impl ListProvisionedConcurrencyConfigsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("List", "ALL");
-                if let Some(inner_84) = &_input.marker {
+                if let Some(inner_86) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_86));
                     }
                 }
-                if let Some(inner_85) = &_input.max_items {
-                    if *inner_85 != 0 {
+                if let Some(inner_87) = &_input.max_items {
+                    if *inner_87 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
                         );
                     }
                 }
@@ -10124,15 +10350,15 @@ impl ListTagsInput {
                 _input: &crate::input::ListTagsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_86 = &_input.resource;
-                let input_86 = input_86.as_ref().ok_or_else(|| {
+                let input_88 = &_input.resource;
+                let input_88 = input_88.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource = aws_smithy_http::label::fmt_string(
-                    input_86,
+                    input_88,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource.is_empty() {
@@ -10327,15 +10553,15 @@ impl ListVersionsByFunctionInput {
                 _input: &crate::input::ListVersionsByFunctionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_87 = &_input.function_name;
-                let input_87 = input_87.as_ref().ok_or_else(|| {
+                let input_89 = &_input.function_name;
+                let input_89 = input_89.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_87,
+                    input_89,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -10359,16 +10585,16 @@ impl ListVersionsByFunctionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_88) = &_input.marker {
+                if let Some(inner_90) = &_input.marker {
                     {
-                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_90));
                     }
                 }
-                if let Some(inner_89) = &_input.max_items {
-                    if *inner_89 != 0 {
+                if let Some(inner_91) = &_input.max_items {
+                    if *inner_91 != 0 {
                         query.push_kv(
                             "MaxItems",
-                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
                         );
                     }
                 }
@@ -10609,15 +10835,15 @@ impl PublishLayerVersionInput {
                 _input: &crate::input::PublishLayerVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_90 = &_input.layer_name;
-                let input_90 = input_90.as_ref().ok_or_else(|| {
+                let input_92 = &_input.layer_name;
+                let input_92 = input_92.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "layer_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let layer_name = aws_smithy_http::label::fmt_string(
-                    input_90,
+                    input_92,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if layer_name.is_empty() {
@@ -10843,15 +11069,15 @@ impl PublishVersionInput {
                 _input: &crate::input::PublishVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_91 = &_input.function_name;
-                let input_91 = input_91.as_ref().ok_or_else(|| {
+                let input_93 = &_input.function_name;
+                let input_93 = input_93.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_91,
+                    input_93,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -11058,15 +11284,15 @@ impl PutFunctionCodeSigningConfigInput {
                 _input: &crate::input::PutFunctionCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_92 = &_input.function_name;
-                let input_92 = input_92.as_ref().ok_or_else(|| {
+                let input_94 = &_input.function_name;
+                let input_94 = input_94.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_92,
+                    input_94,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -11273,15 +11499,15 @@ impl PutFunctionConcurrencyInput {
                 _input: &crate::input::PutFunctionConcurrencyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_93 = &_input.function_name;
-                let input_93 = input_93.as_ref().ok_or_else(|| {
+                let input_95 = &_input.function_name;
+                let input_95 = input_95.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_93,
+                    input_95,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -11540,15 +11766,15 @@ impl PutFunctionEventInvokeConfigInput {
                 _input: &crate::input::PutFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_94 = &_input.function_name;
-                let input_94 = input_94.as_ref().ok_or_else(|| {
+                let input_96 = &_input.function_name;
+                let input_96 = input_96.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_94,
+                    input_96,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -11572,9 +11798,9 @@ impl PutFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_95) = &_input.qualifier {
+                if let Some(inner_97) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
                     }
                 }
                 Ok(())
@@ -11780,15 +12006,15 @@ impl PutProvisionedConcurrencyConfigInput {
                 _input: &crate::input::PutProvisionedConcurrencyConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_96 = &_input.function_name;
-                let input_96 = input_96.as_ref().ok_or_else(|| {
+                let input_98 = &_input.function_name;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_96,
+                    input_98,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -11812,14 +12038,14 @@ impl PutProvisionedConcurrencyConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_97 = &_input.qualifier;
-                let inner_97 = inner_97.as_ref().ok_or_else(|| {
+                let inner_99 = &_input.qualifier;
+                let inner_99 = inner_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "qualifier",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_97.is_empty() {
+                if inner_99.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "qualifier",
@@ -11827,7 +12053,7 @@ impl PutProvisionedConcurrencyConfigInput {
                         ),
                     );
                 }
-                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_99));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -11913,6 +12139,275 @@ impl PutProvisionedConcurrencyConfigInput {
     /// Creates a new builder-style object to manufacture [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput).
     pub fn builder() -> crate::input::put_provisioned_concurrency_config_input::Builder {
         crate::input::put_provisioned_concurrency_config_input::Builder::default()
+    }
+}
+
+/// See [`PutRuntimeManagementConfigInput`](crate::input::PutRuntimeManagementConfigInput).
+pub mod put_runtime_management_config_input {
+
+    /// A builder for [`PutRuntimeManagementConfigInput`](crate::input::PutRuntimeManagementConfigInput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) function_name: std::option::Option<std::string::String>,
+        pub(crate) qualifier: std::option::Option<std::string::String>,
+        pub(crate) update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+        pub(crate) runtime_version_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.function_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Lambda function.</p>
+        /// <p class="title"> <b>Name formats</b> </p>
+        /// <ul>
+        /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+        /// </ul>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+        pub fn set_function_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.function_name = input;
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.qualifier = Some(input.into());
+            self
+        }
+        /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+        pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.qualifier = input;
+            self
+        }
+        /// <p>Specify the runtime update mode.</p>
+        /// <ul>
+        /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+        /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+        /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+        /// </ul>
+        pub fn update_runtime_on(mut self, input: crate::model::UpdateRuntimeOn) -> Self {
+            self.update_runtime_on = Some(input);
+            self
+        }
+        /// <p>Specify the runtime update mode.</p>
+        /// <ul>
+        /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+        /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+        /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+        /// </ul>
+        pub fn set_update_runtime_on(
+            mut self,
+            input: std::option::Option<crate::model::UpdateRuntimeOn>,
+        ) -> Self {
+            self.update_runtime_on = input;
+            self
+        }
+        /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+        /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+        /// </note>
+        pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+        /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+        /// </note>
+        pub fn set_runtime_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_version_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutRuntimeManagementConfigInput`](crate::input::PutRuntimeManagementConfigInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutRuntimeManagementConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
+            Ok(crate::input::PutRuntimeManagementConfigInput {
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+                update_runtime_on: self.update_runtime_on,
+                runtime_version_arn: self.runtime_version_arn,
+            })
+        }
+    }
+}
+impl PutRuntimeManagementConfigInput {
+    /// Consumes the builder and constructs an Operation<[`PutRuntimeManagementConfig`](crate::operation::PutRuntimeManagementConfig)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutRuntimeManagementConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutRuntimeManagementConfigInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_100 = &_input.function_name;
+                let input_100 = input_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_100,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if function_name.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(
+                    output,
+                    "/2021-07-20/functions/{FunctionName}/runtime-management-config",
+                    FunctionName = function_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::PutRuntimeManagementConfigInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_101) = &_input.qualifier {
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_101));
+                    }
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutRuntimeManagementConfigInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_runtime_management_config(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutRuntimeManagementConfig::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutRuntimeManagementConfig",
+            "lambda",
+        ));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutRuntimeManagementConfigInput`](crate::input::PutRuntimeManagementConfigInput).
+    pub fn builder() -> crate::input::put_runtime_management_config_input::Builder {
+        crate::input::put_runtime_management_config_input::Builder::default()
     }
 }
 
@@ -12023,15 +12518,15 @@ impl RemoveLayerVersionPermissionInput {
                 _input: &crate::input::RemoveLayerVersionPermissionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_98 = &_input.layer_name;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
+                let input_102 = &_input.layer_name;
+                let input_102 = input_102.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "layer_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let layer_name = aws_smithy_http::label::fmt_string(
-                    input_98,
+                    input_102,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if layer_name.is_empty() {
@@ -12042,9 +12537,9 @@ impl RemoveLayerVersionPermissionInput {
                         ),
                     );
                 }
-                let input_99 = &_input.version_number;
+                let input_103 = &_input.version_number;
                 let mut version_number_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_99);
+                    aws_smithy_types::primitive::Encoder::from(*input_103);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
                     return Err(
@@ -12054,15 +12549,15 @@ impl RemoveLayerVersionPermissionInput {
                         ),
                     );
                 }
-                let input_100 = &_input.statement_id;
-                let input_100 = input_100.as_ref().ok_or_else(|| {
+                let input_104 = &_input.statement_id;
+                let input_104 = input_104.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "statement_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let statement_id = aws_smithy_http::label::fmt_string(
-                    input_100,
+                    input_104,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if statement_id.is_empty() {
@@ -12088,11 +12583,11 @@ impl RemoveLayerVersionPermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_101) = &_input.revision_id {
+                if let Some(inner_105) = &_input.revision_id {
                     {
                         query.push_kv(
                             "RevisionId",
-                            &aws_smithy_http::query::fmt_string(&inner_101),
+                            &aws_smithy_http::query::fmt_string(&inner_105),
                         );
                     }
                 }
@@ -12294,15 +12789,15 @@ impl RemovePermissionInput {
                 _input: &crate::input::RemovePermissionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_102 = &_input.function_name;
-                let input_102 = input_102.as_ref().ok_or_else(|| {
+                let input_106 = &_input.function_name;
+                let input_106 = input_106.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_102,
+                    input_106,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -12313,15 +12808,15 @@ impl RemovePermissionInput {
                         ),
                     );
                 }
-                let input_103 = &_input.statement_id;
-                let input_103 = input_103.as_ref().ok_or_else(|| {
+                let input_107 = &_input.statement_id;
+                let input_107 = input_107.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "statement_id",
                         "cannot be empty or unset",
                     )
                 })?;
                 let statement_id = aws_smithy_http::label::fmt_string(
-                    input_103,
+                    input_107,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if statement_id.is_empty() {
@@ -12346,16 +12841,16 @@ impl RemovePermissionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_104) = &_input.qualifier {
+                if let Some(inner_108) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_108));
                     }
                 }
-                if let Some(inner_105) = &_input.revision_id {
+                if let Some(inner_109) = &_input.revision_id {
                     {
                         query.push_kv(
                             "RevisionId",
-                            &aws_smithy_http::query::fmt_string(&inner_105),
+                            &aws_smithy_http::query::fmt_string(&inner_109),
                         );
                     }
                 }
@@ -12531,15 +13026,15 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_106 = &_input.resource;
-                let input_106 = input_106.as_ref().ok_or_else(|| {
+                let input_110 = &_input.resource;
+                let input_110 = input_110.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource = aws_smithy_http::label::fmt_string(
-                    input_106,
+                    input_110,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource.is_empty() {
@@ -12729,15 +13224,15 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_107 = &_input.resource;
-                let input_107 = input_107.as_ref().ok_or_else(|| {
+                let input_111 = &_input.resource;
+                let input_111 = input_111.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource",
                         "cannot be empty or unset",
                     )
                 })?;
                 let resource = aws_smithy_http::label::fmt_string(
-                    input_107,
+                    input_111,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource.is_empty() {
@@ -12757,15 +13252,15 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                let inner_108 = &_input.tag_keys;
-                let inner_108 = inner_108.as_ref().ok_or_else(|| {
+                let inner_112 = &_input.tag_keys;
+                let inner_112 = inner_112.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "tag_keys",
                         "cannot be empty or unset",
                     )
                 })?;
-                for inner_109 in inner_108 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
+                for inner_113 in inner_112 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_113));
                 }
                 Ok(())
             }
@@ -12993,15 +13488,15 @@ impl UpdateAliasInput {
                 _input: &crate::input::UpdateAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_110 = &_input.function_name;
-                let input_110 = input_110.as_ref().ok_or_else(|| {
+                let input_114 = &_input.function_name;
+                let input_114 = input_114.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_110,
+                    input_114,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -13012,15 +13507,15 @@ impl UpdateAliasInput {
                         ),
                     );
                 }
-                let input_111 = &_input.name;
-                let input_111 = input_111.as_ref().ok_or_else(|| {
+                let input_115 = &_input.name;
+                let input_115 = input_115.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let name = aws_smithy_http::label::fmt_string(
-                    input_111,
+                    input_115,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
@@ -13241,15 +13736,15 @@ impl UpdateCodeSigningConfigInput {
                 _input: &crate::input::UpdateCodeSigningConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_112 = &_input.code_signing_config_arn;
-                let input_112 = input_112.as_ref().ok_or_else(|| {
+                let input_116 = &_input.code_signing_config_arn;
+                let input_116 = input_116.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "code_signing_config_arn",
                         "cannot be empty or unset",
                     )
                 })?;
                 let code_signing_config_arn = aws_smithy_http::label::fmt_string(
-                    input_112,
+                    input_116,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if code_signing_config_arn.is_empty() {
@@ -13377,6 +13872,7 @@ pub mod update_event_source_mapping_input {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -13392,10 +13888,10 @@ pub mod update_event_source_mapping_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13405,10 +13901,10 @@ pub mod update_event_source_mapping_input {
         /// <p>The name of the Lambda function.</p>
         /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
@@ -13432,12 +13928,12 @@ pub mod update_event_source_mapping_input {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
@@ -13445,12 +13941,12 @@ pub mod update_event_source_mapping_input {
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
@@ -13599,6 +14095,19 @@ pub mod update_event_source_mapping_input {
             self.function_response_types = input;
             self
         }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
+            self.scaling_config = Some(input);
+            self
+        }
+        /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+        pub fn set_scaling_config(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfig>,
+        ) -> Self {
+            self.scaling_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput).
         pub fn build(
             self,
@@ -13621,6 +14130,7 @@ pub mod update_event_source_mapping_input {
                 source_access_configurations: self.source_access_configurations,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                scaling_config: self.scaling_config,
             })
         }
     }
@@ -13664,15 +14174,15 @@ impl UpdateEventSourceMappingInput {
                 _input: &crate::input::UpdateEventSourceMappingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_113 = &_input.uuid;
-                let input_113 = input_113.as_ref().ok_or_else(|| {
+                let input_117 = &_input.uuid;
+                let input_117 = input_117.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "uuid",
                         "cannot be empty or unset",
                     )
                 })?;
                 let uuid = aws_smithy_http::label::fmt_string(
-                    input_113,
+                    input_117,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if uuid.is_empty() {
@@ -14002,15 +14512,15 @@ impl UpdateFunctionCodeInput {
                 _input: &crate::input::UpdateFunctionCodeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_114 = &_input.function_name;
-                let input_114 = input_114.as_ref().ok_or_else(|| {
+                let input_118 = &_input.function_name;
+                let input_118 = input_118.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_114,
+                    input_118,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -14446,15 +14956,15 @@ impl UpdateFunctionConfigurationInput {
                 _input: &crate::input::UpdateFunctionConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_115 = &_input.function_name;
-                let input_115 = input_115.as_ref().ok_or_else(|| {
+                let input_119 = &_input.function_name;
+                let input_119 = input_119.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_115,
+                    input_119,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -14711,15 +15221,15 @@ impl UpdateFunctionEventInvokeConfigInput {
                 _input: &crate::input::UpdateFunctionEventInvokeConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_116 = &_input.function_name;
-                let input_116 = input_116.as_ref().ok_or_else(|| {
+                let input_120 = &_input.function_name;
+                let input_120 = input_120.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_116,
+                    input_120,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -14743,9 +15253,9 @@ impl UpdateFunctionEventInvokeConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_117) = &_input.qualifier {
+                if let Some(inner_121) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_121));
                     }
                 }
                 Ok(())
@@ -14963,15 +15473,15 @@ impl UpdateFunctionUrlConfigInput {
                 _input: &crate::input::UpdateFunctionUrlConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_118 = &_input.function_name;
-                let input_118 = input_118.as_ref().ok_or_else(|| {
+                let input_122 = &_input.function_name;
+                let input_122 = input_122.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "function_name",
                         "cannot be empty or unset",
                     )
                 })?;
                 let function_name = aws_smithy_http::label::fmt_string(
-                    input_118,
+                    input_122,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if function_name.is_empty() {
@@ -14995,9 +15505,9 @@ impl UpdateFunctionUrlConfigInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_119) = &_input.qualifier {
+                if let Some(inner_123) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_123));
                     }
                 }
                 Ok(())
@@ -15477,10 +15987,10 @@ pub struct UpdateEventSourceMappingInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     #[doc(hidden)]
@@ -15491,12 +16001,12 @@ pub struct UpdateEventSourceMappingInput {
     pub enabled: std::option::Option<bool>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -15534,6 +16044,9 @@ pub struct UpdateEventSourceMappingInput {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
@@ -15543,10 +16056,10 @@ impl UpdateEventSourceMappingInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
@@ -15559,12 +16072,12 @@ impl UpdateEventSourceMappingInput {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
@@ -15614,6 +16127,10 @@ impl UpdateEventSourceMappingInput {
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
     }
 }
 
@@ -15848,6 +16365,70 @@ impl RemoveLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PutRuntimeManagementConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    #[doc(hidden)]
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    #[doc(hidden)]
+    pub qualifier: std::option::Option<std::string::String>,
+    /// <p>Specify the runtime update mode.</p>
+    /// <ul>
+    /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+    /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+    /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub update_runtime_on: std::option::Option<crate::model::UpdateRuntimeOn>,
+    /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+    /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub runtime_version_arn: std::option::Option<std::string::String>,
+}
+impl PutRuntimeManagementConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>Specify the runtime update mode.</p>
+    /// <ul>
+    /// <li> <p> <b>Auto (default)</b> - Automatically update to the most recent and secure runtime version using a <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase">Two-phase runtime version rollout</a>. This is the best choice for most customers to ensure they always benefit from runtime updates.</p> </li>
+    /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
+    /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
+    /// </ul>
+    pub fn update_runtime_on(&self) -> std::option::Option<&crate::model::UpdateRuntimeOn> {
+        self.update_runtime_on.as_ref()
+    }
+    /// <p>The ARN of the runtime version you want the function to use.</p> <note>
+    /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
+    /// </note>
+    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
+        self.runtime_version_arn.as_deref()
     }
 }
 
@@ -16484,21 +17065,21 @@ impl ListFunctionEventInvokeConfigsInput {
 pub struct ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-    /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     #[doc(hidden)]
@@ -16513,11 +17094,11 @@ pub struct ListEventSourceMappingsInput {
 impl ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-    /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
@@ -16525,10 +17106,10 @@ impl ListEventSourceMappingsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
@@ -16737,6 +17318,42 @@ impl std::fmt::Debug for InvokeInput {
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("qualifier", &self.qualifier);
         formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GetRuntimeManagementConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    #[doc(hidden)]
+    pub function_name: std::option::Option<std::string::String>,
+    /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    #[doc(hidden)]
+    pub qualifier: std::option::Option<std::string::String>,
+}
+impl GetRuntimeManagementConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
     }
 }
 
@@ -17677,21 +18294,21 @@ impl CreateFunctionInput {
 pub struct CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-    /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     #[doc(hidden)]
@@ -17702,12 +18319,12 @@ pub struct CreateEventSourceMappingInput {
     pub enabled: std::option::Option<bool>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -17768,15 +18385,18 @@ pub struct CreateEventSourceMappingInput {
     #[doc(hidden)]
     pub self_managed_kafka_event_source_config:
         std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    #[doc(hidden)]
+    pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
-    /// <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
@@ -17784,10 +18404,10 @@ impl CreateEventSourceMappingInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
@@ -17800,12 +18420,12 @@ impl CreateEventSourceMappingInput {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
-    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
@@ -17889,6 +18509,10 @@ impl CreateEventSourceMappingInput {
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+        self.scaling_config.as_ref()
     }
 }
 

@@ -25,26 +25,20 @@ pub(super) fn resolve_endpoint(
     {
         #[allow(unused)]
         if let Some(endpoint) = endpoint {
-            #[allow(unused)]
-            if let Some(url) =
-                crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-            {
-                if (*use_fips) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: FIPS and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                if (*use_dual_stack) == (true) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "Invalid Configuration: Dualstack and custom endpoint are not supported"
-                            .to_string(),
-                    ));
-                }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                    .url(endpoint.to_owned())
-                    .build());
+            if (*use_fips) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                ));
             }
+            if (*use_dual_stack) == (true) {
+                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                        .to_string(),
+                ));
+            }
+            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                .url(endpoint.to_owned())
+                .build());
         }
         if (partition_result.name()) == ("aws") {
             if (*use_fips) == (true) {
@@ -60,26 +54,6 @@ pub(super) fn resolve_endpoint(
                                     out.push_str(".api.aws");
                                     out
                                 })
-                                .property(
-                                    "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
-                                            String,
-                                            aws_smithy_types::Document,
-                                        >::new(
-                                        );
-                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                        out.insert(
-                                            "signingName".to_string(),
-                                            "iam".to_string().into(),
-                                        );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "us-east-1".to_string().into(),
-                                        );
-                                        out
-                                    })],
-                                )
                                 .build());
                         }
                     }
@@ -124,22 +98,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".api.aws");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -176,26 +134,6 @@ pub(super) fn resolve_endpoint(
                                     out.push_str(".api.amazonwebservices.com.cn");
                                     out
                                 })
-                                .property(
-                                    "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
-                                            String,
-                                            aws_smithy_types::Document,
-                                        >::new(
-                                        );
-                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                        out.insert(
-                                            "signingName".to_string(),
-                                            "iam".to_string().into(),
-                                        );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "cn-north-1".to_string().into(),
-                                        );
-                                        out
-                                    })],
-                                )
                                 .build());
                         }
                     }
@@ -214,22 +152,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".amazonaws.com.cn");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "cn-north-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -247,22 +169,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".api.amazonwebservices.com.cn");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "cn-north-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -299,26 +205,6 @@ pub(super) fn resolve_endpoint(
                                     out.push_str(".api.aws");
                                     out
                                 })
-                                .property(
-                                    "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
-                                            String,
-                                            aws_smithy_types::Document,
-                                        >::new(
-                                        );
-                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                        out.insert(
-                                            "signingName".to_string(),
-                                            "iam".to_string().into(),
-                                        );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "us-gov-west-1".to_string().into(),
-                                        );
-                                        out
-                                    })],
-                                )
                                 .build());
                         }
                     }
@@ -363,22 +249,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".api.aws");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-gov-west-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -416,22 +286,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".c2s.ic.gov");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-iso-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -468,22 +322,6 @@ pub(super) fn resolve_endpoint(
                             out.push_str(".sc2s.sgov.gov");
                             out
                         })
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-isob-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
                         .build());
                 }
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -532,27 +370,6 @@ pub(super) fn resolve_endpoint(
         }
         if (*use_fips) == (true) {
             if (true) == (partition_result.supports_fips()) {
-                if (region) == ("iam") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://iam-fips.amazonaws.com".to_string())
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
-                        .build());
-                }
                 if (region) == ("aws-global") {
                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                         .url("https://iam-fips.amazonaws.com".to_string())
@@ -568,27 +385,6 @@ pub(super) fn resolve_endpoint(
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-east-1".to_string().into(),
-                                );
-                                out
-                            })],
-                        )
-                        .build());
-                }
-                if (region) == ("iam-govcloud") {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                        .url("https://iam.us-gov.amazonaws.com".to_string())
-                        .property(
-                            "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
-                                    String,
-                                    aws_smithy_types::Document,
-                                >::new();
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
-                                out.insert(
-                                    "signingRegion".to_string(),
-                                    "us-gov-west-1".to_string().into(),
                                 );
                                 out
                             })],

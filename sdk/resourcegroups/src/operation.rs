@@ -63,6 +63,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
     }
 }
 
+/// Operation shape for `GetAccountSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_account_settings`](crate::client::Client::get_account_settings).
+///
+/// See [`crate::client::fluent_builders::GetAccountSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct GetAccountSettings {
+    _private: (),
+}
+impl GetAccountSettings {
+    /// Creates a new builder-style object to manufacture [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
+    pub fn builder() -> crate::input::get_account_settings_input::Builder {
+        crate::input::get_account_settings_input::Builder::default()
+    }
+    /// Creates a new `GetAccountSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
+    type Output = std::result::Result<
+        crate::output::GetAccountSettingsOutput,
+        crate::error::GetAccountSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_account_settings_error(response)
+        } else {
+            crate::operation_deser::parse_get_account_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -449,6 +483,40 @@ impl aws_smithy_http::response::ParseStrictResponse for Untag {
             crate::operation_deser::parse_untag_error(response)
         } else {
             crate::operation_deser::parse_untag_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAccountSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_account_settings`](crate::client::Client::update_account_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateAccountSettings`] for more details about the operation.
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+pub struct UpdateAccountSettings {
+    _private: (),
+}
+impl UpdateAccountSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
+    pub fn builder() -> crate::input::update_account_settings_input::Builder {
+        crate::input::update_account_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateAccountSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
+    type Output = std::result::Result<
+        crate::output::UpdateAccountSettingsOutput,
+        crate::error::UpdateAccountSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_account_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_account_settings_response(response)
         }
     }
 }

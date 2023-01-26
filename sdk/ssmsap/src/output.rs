@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateApplicationSettingsOutput {
-    /// <p></p>
+    /// <p>The update message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The IDs of the operations.</p>
     #[doc(hidden)]
     pub operation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateApplicationSettingsOutput {
-    /// <p></p>
+    /// <p>The update message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p></p>
+    /// <p>The IDs of the operations.</p>
     pub fn operation_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.operation_ids.as_deref()
     }
@@ -30,12 +30,12 @@ pub mod update_application_settings_output {
         pub(crate) operation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The update message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The update message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -44,14 +44,14 @@ pub mod update_application_settings_output {
         ///
         /// To override the contents of this collection use [`set_operation_ids`](Self::set_operation_ids).
         ///
-        /// <p></p>
+        /// <p>The IDs of the operations.</p>
         pub fn operation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operation_ids.unwrap_or_default();
             v.push(input.into());
             self.operation_ids = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The IDs of the operations.</p>
         pub fn set_operation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -127,19 +127,19 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterApplicationOutput {
-    /// <p></p>
+    /// <p>The application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
-    /// <p></p>
+    /// <p>The ID of the operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RegisterApplicationOutput {
-    /// <p></p>
+    /// <p>The application registered with AWS Systems Manager for SAP.</p>
     pub fn application(&self) -> std::option::Option<&crate::model::Application> {
         self.application.as_ref()
     }
-    /// <p></p>
+    /// <p>The ID of the operation.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -154,12 +154,12 @@ pub mod register_application_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The application registered with AWS Systems Manager for SAP.</p>
         pub fn application(mut self, input: crate::model::Application) -> Self {
             self.application = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The application registered with AWS Systems Manager for SAP.</p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::Application>,
@@ -167,12 +167,12 @@ pub mod register_application_output {
             self.application = input;
             self
         }
-        /// <p></p>
+        /// <p>The ID of the operation.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The ID of the operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -311,20 +311,96 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ListOperationsOutput {
+    /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
+    #[doc(hidden)]
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOperationsOutput {
+    /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+/// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+pub mod list_operations_output {
+
+    /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input);
+            self.operations = Some(v);
+            self
+        }
+        /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+        pub fn build(self) -> crate::output::ListOperationsOutput {
+            crate::output::ListOperationsOutput {
+                operations: self.operations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    pub fn builder() -> crate::output::list_operations_output::Builder {
+        crate::output::list_operations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatabasesOutput {
-    /// <p></p>
+    /// <p>The SAP HANA databases of an application.</p>
     #[doc(hidden)]
     pub databases: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>,
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatabasesOutput {
-    /// <p></p>
+    /// <p>The SAP HANA databases of an application.</p>
     pub fn databases(&self) -> std::option::Option<&[crate::model::DatabaseSummary]> {
         self.databases.as_deref()
     }
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -343,14 +419,14 @@ pub mod list_databases_output {
         ///
         /// To override the contents of this collection use [`set_databases`](Self::set_databases).
         ///
-        /// <p></p>
+        /// <p>The SAP HANA databases of an application.</p>
         pub fn databases(mut self, input: crate::model::DatabaseSummary) -> Self {
             let mut v = self.databases.unwrap_or_default();
             v.push(input);
             self.databases = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The SAP HANA databases of an application.</p>
         pub fn set_databases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>,
@@ -358,12 +434,12 @@ pub mod list_databases_output {
             self.databases = input;
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -388,19 +464,19 @@ impl ListDatabasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListComponentsOutput {
-    /// <p></p>
+    /// <p>List of components registered with AWS System Manager for SAP.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
-    /// <p></p>
+    /// <p>List of components registered with AWS System Manager for SAP.</p>
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentSummary]> {
         self.components.as_deref()
     }
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -419,14 +495,14 @@ pub mod list_components_output {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p></p>
+        /// <p>List of components registered with AWS System Manager for SAP.</p>
         pub fn components(mut self, input: crate::model::ComponentSummary) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input);
             self.components = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>List of components registered with AWS System Manager for SAP.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
@@ -434,12 +510,12 @@ pub mod list_components_output {
             self.components = input;
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -464,19 +540,19 @@ impl ListComponentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p></p>
+    /// <p>The applications registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
-    /// <p></p>
+    /// <p>The applications registered with AWS Systems Manager for SAP.</p>
     pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
-    /// <p></p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -496,14 +572,14 @@ pub mod list_applications_output {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p></p>
+        /// <p>The applications registered with AWS Systems Manager for SAP.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input);
             self.applications = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>The applications registered with AWS Systems Manager for SAP.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -511,12 +587,12 @@ pub mod list_applications_output {
             self.applications = input;
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -589,12 +665,12 @@ impl GetResourcePermissionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOperationOutput {
-    /// <p></p>
+    /// <p>Returns the details of an operation.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
-    /// <p></p>
+    /// <p>Returns the details of an operation.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -608,12 +684,12 @@ pub mod get_operation_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Returns the details of an operation.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Returns the details of an operation.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -640,20 +716,20 @@ impl GetOperationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDatabaseOutput {
-    /// <p></p>
+    /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub database: std::option::Option<crate::model::Database>,
-    /// <p></p>
+    /// <p>The tags of a database.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDatabaseOutput {
-    /// <p></p>
+    /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
     pub fn database(&self) -> std::option::Option<&crate::model::Database> {
         self.database.as_ref()
     }
-    /// <p></p>
+    /// <p>The tags of a database.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -673,12 +749,12 @@ pub mod get_database_output {
         >,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
         pub fn database(mut self, input: crate::model::Database) -> Self {
             self.database = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
         pub fn set_database(mut self, input: std::option::Option<crate::model::Database>) -> Self {
             self.database = input;
             self
@@ -687,7 +763,7 @@ pub mod get_database_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p></p>
+        /// <p>The tags of a database.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -698,7 +774,7 @@ pub mod get_database_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p></p>
+        /// <p>The tags of a database.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -728,12 +804,12 @@ impl GetDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComponentOutput {
-    /// <p></p>
+    /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
-    /// <p></p>
+    /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     pub fn component(&self) -> std::option::Option<&crate::model::Component> {
         self.component.as_ref()
     }
@@ -747,12 +823,12 @@ pub mod get_component_output {
         pub(crate) component: std::option::Option<crate::model::Component>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
         pub fn component(mut self, input: crate::model::Component) -> Self {
             self.component = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
         pub fn set_component(
             mut self,
             input: std::option::Option<crate::model::Component>,
@@ -779,20 +855,20 @@ impl GetComponentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationOutput {
-    /// <p></p>
+    /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
-    /// <p></p>
+    /// <p>The tags of a registered application.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetApplicationOutput {
-    /// <p></p>
+    /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
     pub fn application(&self) -> std::option::Option<&crate::model::Application> {
         self.application.as_ref()
     }
-    /// <p></p>
+    /// <p>The tags of a registered application.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -812,12 +888,12 @@ pub mod get_application_output {
         >,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
         pub fn application(mut self, input: crate::model::Application) -> Self {
             self.application = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::Application>,
@@ -829,7 +905,7 @@ pub mod get_application_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p></p>
+        /// <p>The tags of a registered application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -840,7 +916,7 @@ pub mod get_application_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p></p>
+        /// <p>The tags of a registered application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -894,12 +970,12 @@ impl DeregisterApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePermissionOutput {
-    /// <p></p>
+    /// <p>The policy that removes permissions on the target database.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePermissionOutput {
-    /// <p></p>
+    /// <p>The policy that removes permissions on the target database.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -913,12 +989,12 @@ pub mod delete_resource_permission_output {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The policy that removes permissions on the target database.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The policy that removes permissions on the target database.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self

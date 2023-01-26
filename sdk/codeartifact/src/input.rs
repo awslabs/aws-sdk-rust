@@ -46,6 +46,7 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -59,6 +60,7 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -4878,12 +4880,16 @@ pub mod get_package_version_readme_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -5847,7 +5853,8 @@ pub mod list_packages_input {
             self.format = input;
             self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+        /// <p>Each package format uses namespace as follows:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
@@ -5857,7 +5864,8 @@ pub mod list_packages_input {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+        /// <p>Each package format uses namespace as follows:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
@@ -10471,7 +10479,8 @@ pub struct ListPackagesInput {
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
@@ -10512,7 +10521,8 @@ impl ListPackagesInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
@@ -10643,7 +10653,9 @@ pub struct GetPackageVersionReadmeInput {
     /// <p> The repository that contains the package with the requested readme file. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+    /// </note>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -10674,7 +10686,9 @@ impl GetPackageVersionReadmeInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+    /// </note>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -11524,6 +11538,7 @@ pub struct AssociateExternalConnectionInput {
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -11549,6 +11564,7 @@ impl AssociateExternalConnectionInput {
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>

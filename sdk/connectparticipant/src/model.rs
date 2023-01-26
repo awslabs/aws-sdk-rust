@@ -142,6 +142,12 @@ pub struct Item {
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
     #[doc(hidden)]
     pub message_metadata: std::option::Option<crate::model::MessageMetadata>,
+    /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+    #[doc(hidden)]
+    pub related_contact_id: std::option::Option<std::string::String>,
+    /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
+    #[doc(hidden)]
+    pub contact_id: std::option::Option<std::string::String>,
 }
 impl Item {
     /// <p>The time when the message or event was sent.</p>
@@ -185,6 +191,14 @@ impl Item {
     pub fn message_metadata(&self) -> std::option::Option<&crate::model::MessageMetadata> {
         self.message_metadata.as_ref()
     }
+    /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+    pub fn related_contact_id(&self) -> std::option::Option<&str> {
+        self.related_contact_id.as_deref()
+    }
+    /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
 }
 /// See [`Item`](crate::model::Item).
 pub mod item {
@@ -202,6 +216,8 @@ pub mod item {
         pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
         pub(crate) message_metadata: std::option::Option<crate::model::MessageMetadata>,
+        pub(crate) related_contact_id: std::option::Option<std::string::String>,
+        pub(crate) contact_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time when the message or event was sent.</p>
@@ -327,6 +343,29 @@ pub mod item {
             self.message_metadata = input;
             self
         }
+        /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn related_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.related_contact_id = Some(input.into());
+            self
+        }
+        /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+        pub fn set_related_contact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.related_contact_id = input;
+            self
+        }
+        /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
@@ -340,6 +379,8 @@ pub mod item {
                 participant_role: self.participant_role,
                 attachments: self.attachments,
                 message_metadata: self.message_metadata,
+                related_contact_id: self.related_contact_id,
+                contact_id: self.contact_id,
             }
         }
     }

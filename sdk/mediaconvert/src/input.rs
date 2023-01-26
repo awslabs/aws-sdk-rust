@@ -370,12 +370,12 @@ pub mod create_job_input {
             self.billing_tags_source = input;
             self
         }
-        /// Optional. Idempotency token for CreateJob operation.
+        /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// Optional. Idempotency token for CreateJob operation.
+        /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6259,7 +6259,7 @@ pub struct CreateJobInput {
     /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
     #[doc(hidden)]
     pub billing_tags_source: std::option::Option<crate::model::BillingTagsSource>,
-    /// Optional. Idempotency token for CreateJob operation.
+    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
@@ -6306,7 +6306,7 @@ impl CreateJobInput {
     pub fn billing_tags_source(&self) -> std::option::Option<&crate::model::BillingTagsSource> {
         self.billing_tags_source.as_ref()
     }
-    /// Optional. Idempotency token for CreateJob operation.
+    /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

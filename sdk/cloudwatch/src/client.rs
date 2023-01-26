@@ -359,6 +359,7 @@ impl Client {
     ///   - [`last_update_date(Option<DateTime>)`](crate::output::GetMetricStreamOutput::last_update_date): <p>The date of the most recent update to the metric stream's configuration.</p>
     ///   - [`output_format(Option<MetricStreamOutputFormat>)`](crate::output::GetMetricStreamOutput::output_format): <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     ///   - [`statistics_configurations(Option<Vec<MetricStreamStatisticsConfiguration>>)`](crate::output::GetMetricStreamOutput::statistics_configurations): <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
+    ///   - [`include_linked_accounts_metrics(Option<bool>)`](crate::output::GetMetricStreamOutput::include_linked_accounts_metrics): <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     /// - On failure, responds with [`SdkError<GetMetricStreamError>`](crate::error::GetMetricStreamError)
     pub fn get_metric_stream(&self) -> fluent_builders::GetMetricStream {
         fluent_builders::GetMetricStream::new(self.handle.clone())
@@ -566,6 +567,7 @@ impl Client {
     ///   - [`output_format(MetricStreamOutputFormat)`](crate::client::fluent_builders::PutMetricStream::output_format) / [`set_output_format(Option<MetricStreamOutputFormat>)`](crate::client::fluent_builders::PutMetricStream::set_output_format): <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutMetricStream::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutMetricStream::set_tags): <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     ///   - [`statistics_configurations(Vec<MetricStreamStatisticsConfiguration>)`](crate::client::fluent_builders::PutMetricStream::statistics_configurations) / [`set_statistics_configurations(Option<Vec<MetricStreamStatisticsConfiguration>>)`](crate::client::fluent_builders::PutMetricStream::set_statistics_configurations): <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>  <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
+    ///   - [`include_linked_accounts_metrics(bool)`](crate::client::fluent_builders::PutMetricStream::include_linked_accounts_metrics) / [`set_include_linked_accounts_metrics(Option<bool>)`](crate::client::fluent_builders::PutMetricStream::set_include_linked_accounts_metrics): <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
     /// - On success, responds with [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::PutMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
     /// - On failure, responds with [`SdkError<PutMetricStreamError>`](crate::error::PutMetricStreamError)
@@ -4924,6 +4926,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the stream. Streaming additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>. </p>
     /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.</p>
+    /// <p>If you are using CloudWatch cross-account observability and you create a metric stream in a monitoring account, you can choose whether to include metrics from source accounts in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricStream {
         handle: std::sync::Arc<super::Handle>,
@@ -5119,6 +5122,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_statistics_configurations(input);
+            self
+        }
+        /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+        pub fn include_linked_accounts_metrics(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_linked_accounts_metrics(input);
+            self
+        }
+        /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
+        pub fn set_include_linked_accounts_metrics(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_include_linked_accounts_metrics(input);
             self
         }
     }

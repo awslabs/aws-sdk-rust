@@ -14967,11 +14967,11 @@ impl DescribeVpcPeeringConnectionsOutput {
     }
 }
 
-/// <p>Contains the output of DescribeVpcEndpointServices.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesOutput {
-    /// <p>A list of supported services.</p>
+    /// <p>The supported services.</p>
     #[doc(hidden)]
     pub service_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the service.</p>
@@ -14982,7 +14982,7 @@ pub struct DescribeVpcEndpointServicesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServicesOutput {
-    /// <p>A list of supported services.</p>
+    /// <p>The supported services.</p>
     pub fn service_names(&self) -> std::option::Option<&[std::string::String]> {
         self.service_names.as_deref()
     }
@@ -15010,14 +15010,14 @@ pub mod describe_vpc_endpoint_services_output {
         ///
         /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
         ///
-        /// <p>A list of supported services.</p>
+        /// <p>The supported services.</p>
         pub fn service_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_names.unwrap_or_default();
             v.push(input.into());
             self.service_names = Some(v);
             self
         }
-        /// <p>A list of supported services.</p>
+        /// <p>The supported services.</p>
         pub fn set_service_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15075,7 +15075,7 @@ impl DescribeVpcEndpointServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicePermissionsOutput {
-    /// <p>Information about one or more allowed principals.</p>
+    /// <p>Information about the allowed principals.</p>
     #[doc(hidden)]
     pub allowed_principals: std::option::Option<std::vec::Vec<crate::model::AllowedPrincipal>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -15083,7 +15083,7 @@ pub struct DescribeVpcEndpointServicePermissionsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServicePermissionsOutput {
-    /// <p>Information about one or more allowed principals.</p>
+    /// <p>Information about the allowed principals.</p>
     pub fn allowed_principals(&self) -> std::option::Option<&[crate::model::AllowedPrincipal]> {
         self.allowed_principals.as_deref()
     }
@@ -15107,14 +15107,14 @@ pub mod describe_vpc_endpoint_service_permissions_output {
         ///
         /// To override the contents of this collection use [`set_allowed_principals`](Self::set_allowed_principals).
         ///
-        /// <p>Information about one or more allowed principals.</p>
+        /// <p>Information about the allowed principals.</p>
         pub fn allowed_principals(mut self, input: crate::model::AllowedPrincipal) -> Self {
             let mut v = self.allowed_principals.unwrap_or_default();
             v.push(input);
             self.allowed_principals = Some(v);
             self
         }
-        /// <p>Information about one or more allowed principals.</p>
+        /// <p>Information about the allowed principals.</p>
         pub fn set_allowed_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AllowedPrincipal>>,
@@ -15152,7 +15152,7 @@ impl DescribeVpcEndpointServicePermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about one or more services.</p>
+    /// <p>Information about the services.</p>
     #[doc(hidden)]
     pub service_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
@@ -15161,7 +15161,7 @@ pub struct DescribeVpcEndpointServiceConfigurationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about one or more services.</p>
+    /// <p>Information about the services.</p>
     pub fn service_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::ServiceConfiguration]> {
@@ -15187,14 +15187,14 @@ pub mod describe_vpc_endpoint_service_configurations_output {
         ///
         /// To override the contents of this collection use [`set_service_configurations`](Self::set_service_configurations).
         ///
-        /// <p>Information about one or more services.</p>
+        /// <p>Information about the services.</p>
         pub fn service_configurations(mut self, input: crate::model::ServiceConfiguration) -> Self {
             let mut v = self.service_configurations.unwrap_or_default();
             v.push(input);
             self.service_configurations = Some(v);
             self
         }
-        /// <p>Information about one or more services.</p>
+        /// <p>Information about the services.</p>
         pub fn set_service_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
@@ -15229,7 +15229,7 @@ impl DescribeVpcEndpointServiceConfigurationsOutput {
     }
 }
 
-/// <p>Contains the output of DescribeVpcEndpoints.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutput {
@@ -15309,7 +15309,7 @@ impl DescribeVpcEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionsOutput {
-    /// <p>Information about one or more VPC endpoint connections.</p>
+    /// <p>Information about the VPC endpoint connections.</p>
     #[doc(hidden)]
     pub vpc_endpoint_connections:
         std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
@@ -15318,7 +15318,7 @@ pub struct DescribeVpcEndpointConnectionsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionsOutput {
-    /// <p>Information about one or more VPC endpoint connections.</p>
+    /// <p>Information about the VPC endpoint connections.</p>
     pub fn vpc_endpoint_connections(
         &self,
     ) -> std::option::Option<&[crate::model::VpcEndpointConnection]> {
@@ -15344,7 +15344,7 @@ pub mod describe_vpc_endpoint_connections_output {
         ///
         /// To override the contents of this collection use [`set_vpc_endpoint_connections`](Self::set_vpc_endpoint_connections).
         ///
-        /// <p>Information about one or more VPC endpoint connections.</p>
+        /// <p>Information about the VPC endpoint connections.</p>
         pub fn vpc_endpoint_connections(
             mut self,
             input: crate::model::VpcEndpointConnection,
@@ -15354,7 +15354,7 @@ pub mod describe_vpc_endpoint_connections_output {
             self.vpc_endpoint_connections = Some(v);
             self
         }
-        /// <p>Information about one or more VPC endpoint connections.</p>
+        /// <p>Information about the VPC endpoint connections.</p>
         pub fn set_vpc_endpoint_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
@@ -15392,7 +15392,7 @@ impl DescribeVpcEndpointConnectionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionNotificationsOutput {
-    /// <p>One or more notifications.</p>
+    /// <p>The notifications.</p>
     #[doc(hidden)]
     pub connection_notification_set:
         std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
@@ -15401,7 +15401,7 @@ pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
-    /// <p>One or more notifications.</p>
+    /// <p>The notifications.</p>
     pub fn connection_notification_set(
         &self,
     ) -> std::option::Option<&[crate::model::ConnectionNotification]> {
@@ -15427,7 +15427,7 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
         ///
         /// To override the contents of this collection use [`set_connection_notification_set`](Self::set_connection_notification_set).
         ///
-        /// <p>One or more notifications.</p>
+        /// <p>The notifications.</p>
         pub fn connection_notification_set(
             mut self,
             input: crate::model::ConnectionNotification,
@@ -15437,7 +15437,7 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
             self.connection_notification_set = Some(v);
             self
         }
-        /// <p>One or more notifications.</p>
+        /// <p>The notifications.</p>
         pub fn set_connection_notification_set(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
@@ -27106,7 +27106,7 @@ impl DeleteVpcEndpointServiceConfigurationsOutput {
     }
 }
 
-/// <p>Contains the output of DeleteVpcEndpoints.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcEndpointsOutput {
@@ -30685,7 +30685,7 @@ impl CreateVpcEndpointConnectionNotificationOutput {
     }
 }
 
-/// <p>Contains the output of CreateVpcEndpoint.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcEndpointOutput {

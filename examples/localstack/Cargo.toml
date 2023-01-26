@@ -14,11 +14,11 @@ version = "0.53.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.23.0"
+version = "0.24.0"
 
 [dependencies.aws-sdk-sqs]
 path = "../../sdk/sqs"
-version = "0.23.0"
+version = "0.24.0"
 
 [dependencies.tokio]
 version = "1.20.1"

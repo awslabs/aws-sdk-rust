@@ -2194,6 +2194,15 @@ pub(crate) fn deser_operation_crate_operation_update_pricing_rule(
                             .transpose()?,
                         );
                     }
+                    "Operation" => {
+                        builder = builder.set_operation(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "Scope" => {
                         builder = builder.set_scope(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -2231,6 +2240,15 @@ pub(crate) fn deser_operation_crate_operation_update_pricing_rule(
                                 s.to_unescaped()
                                     .map(|u| crate::model::PricingRuleType::from(u.as_ref()))
                             })
+                            .transpose()?,
+                        );
+                    }
+                    "UsageType" => {
+                        builder = builder.set_usage_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                         );
                     }

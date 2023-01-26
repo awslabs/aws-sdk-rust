@@ -16,12 +16,10 @@
 //! public and CodeArtifact repositories. You can also create an upstream relationship between a CodeArtifact
 //! repository and another repository, which effectively merges their contents from the point of
 //! view of a package manager client. </p>
-//!
 //! <p>
 //! <b>CodeArtifact Components</b>
 //! </p>
 //! <p>Use the information in this guide to help you work with the following CodeArtifact components:</p>
-//!
 //! <ul>
 //! <li>
 //! <p>
@@ -57,7 +55,7 @@
 //! <li>
 //! <p>
 //! <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required to
-//! resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.</p>        
+//! resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.</p>
 //! <p>In CodeArtifact, a package consists of:</p>
 //! <ul>
 //! <li>
@@ -97,7 +95,6 @@
 //! <code>.tgz</code> file or Maven POM and JAR files.</p>
 //! </li>
 //! </ul>
-//!
 //! <p>CodeArtifact supports these operations:</p>
 //! <ul>
 //! <li>

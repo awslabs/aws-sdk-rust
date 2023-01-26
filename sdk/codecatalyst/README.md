@@ -44,7 +44,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.53.0"
-aws-sdk-codecatalyst = "0.1.0"
+aws-sdk-codecatalyst = "0.2.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

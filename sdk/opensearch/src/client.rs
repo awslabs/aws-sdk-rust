@@ -201,7 +201,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateVpcEndpoint`](crate::client::fluent_builders::CreateVpcEndpoint) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_arn(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::domain_arn) / [`set_domain_arn(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_domain_arn): <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    ///   - [`domain_arn(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::domain_arn) / [`set_domain_arn(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_domain_arn): <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
     ///   - [`vpc_options(VpcOptions)`](crate::client::fluent_builders::CreateVpcEndpoint::vpc_options) / [`set_vpc_options(Option<VpcOptions>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_vpc_options): <p>Options to specify the subnets and security groups for the endpoint.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     /// - On success, responds with [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput) with field(s):
@@ -314,6 +314,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeDomainsError>`](crate::error::DescribeDomainsError)
     pub fn describe_domains(&self) -> fluent_builders::DescribeDomains {
         fluent_builders::DescribeDomains::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeDryRunProgress`](crate::client::fluent_builders::DescribeDryRunProgress) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDryRunProgress::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDryRunProgress::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`dry_run_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDryRunProgress::dry_run_id) / [`set_dry_run_id(Option<String>)`](crate::client::fluent_builders::DescribeDryRunProgress::set_dry_run_id): <p>The unique identifier of the dry run.</p>
+    ///   - [`load_dry_run_config(bool)`](crate::client::fluent_builders::DescribeDryRunProgress::load_dry_run_config) / [`set_load_dry_run_config(Option<bool>)`](crate::client::fluent_builders::DescribeDryRunProgress::set_load_dry_run_config): <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+    /// - On success, responds with [`DescribeDryRunProgressOutput`](crate::output::DescribeDryRunProgressOutput) with field(s):
+    ///   - [`dry_run_progress_status(Option<DryRunProgressStatus>)`](crate::output::DescribeDryRunProgressOutput::dry_run_progress_status): <p>The current status of the dry run, including any validation errors.</p>
+    ///   - [`dry_run_config(Option<DomainStatus>)`](crate::output::DescribeDryRunProgressOutput::dry_run_config): <p>Details about the changes you're planning to make on the domain.</p>
+    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::DescribeDryRunProgressOutput::dry_run_results): <p>The results of the dry run. </p>
+    /// - On failure, responds with [`SdkError<DescribeDryRunProgressError>`](crate::error::DescribeDryRunProgressError)
+    pub fn describe_dry_run_progress(&self) -> fluent_builders::DescribeDryRunProgress {
+        fluent_builders::DescribeDryRunProgress::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeInboundConnections`](crate::client::fluent_builders::DescribeInboundConnections) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeInboundConnections::into_paginator).
@@ -657,10 +671,12 @@ impl Client {
     ///   - [`node_to_node_encryption_options(NodeToNodeEncryptionOptions)`](crate::client::fluent_builders::UpdateDomainConfig::node_to_node_encryption_options) / [`set_node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_node_to_node_encryption_options): <p>Node-To-Node Encryption options for the domain.</p>
     ///   - [`advanced_security_options(AdvancedSecurityOptionsInput)`](crate::client::fluent_builders::UpdateDomainConfig::advanced_security_options) / [`set_advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::client::fluent_builders::UpdateDomainConfig::set_advanced_security_options): <p>Options for fine-grained access control.</p>
     ///   - [`auto_tune_options(AutoTuneOptions)`](crate::client::fluent_builders::UpdateDomainConfig::auto_tune_options) / [`set_auto_tune_options(Option<AutoTuneOptions>)`](crate::client::fluent_builders::UpdateDomainConfig::set_auto_tune_options): <p>Options for Auto-Tune.</p>
-    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateDomainConfig::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::UpdateDomainConfig::set_dry_run): <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateDomainConfig::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::UpdateDomainConfig::set_dry_run): <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
+    ///   - [`dry_run_mode(DryRunMode)`](crate::client::fluent_builders::UpdateDomainConfig::dry_run_mode) / [`set_dry_run_mode(Option<DryRunMode>)`](crate::client::fluent_builders::UpdateDomainConfig::set_dry_run_mode): <p>The type of dry run to perform.</p>  <ul>   <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>   <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>  </ul>
     /// - On success, responds with [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput) with field(s):
     ///   - [`domain_config(Option<DomainConfig>)`](crate::output::UpdateDomainConfigOutput::domain_config): <p>The status of the updated domain.</p>
-    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::UpdateDomainConfigOutput::dry_run_results): <p>Results of a dry run performed in an update domain request.</p>
+    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::UpdateDomainConfigOutput::dry_run_results): <p>Results of the dry run performed in the update domain request.</p>
+    ///   - [`dry_run_progress_status(Option<DryRunProgressStatus>)`](crate::output::UpdateDomainConfigOutput::dry_run_progress_status): <p>The status of the dry run being performed on the domain, if any.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainConfigError>`](crate::error::UpdateDomainConfigError)
     pub fn update_domain_config(&self) -> fluent_builders::UpdateDomainConfig {
         fluent_builders::UpdateDomainConfig::new(self.handle.clone())
@@ -793,7 +809,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs. An domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"> Tagging Amazon OpenSearch Service domains</a>.</p>
+    /// <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs. A domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags {
         handle: std::sync::Arc<super::Handle>,
@@ -1720,12 +1736,12 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
         pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
         pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_arn(input);
             self
@@ -2533,6 +2549,99 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_domain_names(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeDryRunProgress`.
+    ///
+    /// <p>Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining whether a change will cause a blue/green deployment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeDryRunProgress {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_dry_run_progress_input::Builder,
+    }
+    impl DescribeDryRunProgress {
+        /// Creates a new `DescribeDryRunProgress`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Consume this builder, creating a customizable operation that can be modified before being
+        /// sent. The operation's inner [http::Request] can be modified as well.
+        pub async fn customize(
+            self,
+        ) -> std::result::Result<
+            crate::operation::customize::CustomizableOperation<
+                crate::operation::DescribeDryRunProgress,
+                aws_http::retry::AwsResponseRetryClassifier,
+            >,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDryRunProgressError>,
+        > {
+            let handle = self.handle.clone();
+            let operation = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDryRunProgressOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDryRunProgressError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The unique identifier of the dry run.</p>
+        pub fn dry_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dry_run_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the dry run.</p>
+        pub fn set_dry_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dry_run_id(input);
+            self
+        }
+        /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+        pub fn load_dry_run_config(mut self, input: bool) -> Self {
+            self.inner = self.inner.load_dry_run_config(input);
+            self
+        }
+        /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+        pub fn set_load_dry_run_config(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_load_dry_run_config(input);
             self
         }
     }
@@ -5173,14 +5282,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_tune_options(input);
             self
         }
-        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation check without actually applying the change.</p>
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The type of dry run to perform.</p>
+        /// <ul>
+        /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+        /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
+        /// </ul>
+        pub fn dry_run_mode(mut self, input: crate::model::DryRunMode) -> Self {
+            self.inner = self.inner.dry_run_mode(input);
+            self
+        }
+        /// <p>The type of dry run to perform.</p>
+        /// <ul>
+        /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
+        /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
+        /// </ul>
+        pub fn set_dry_run_mode(
+            mut self,
+            input: std::option::Option<crate::model::DryRunMode>,
+        ) -> Self {
+            self.inner = self.inner.set_dry_run_mode(input);
             self
         }
     }

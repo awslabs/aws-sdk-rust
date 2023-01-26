@@ -22900,6 +22900,9 @@ pub struct M2tsSettings {
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
     pub video_pid: std::option::Option<std::string::String>,
+    /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
+    #[doc(hidden)]
+    pub scte35_preroll_pullup_milliseconds: f64,
 }
 impl M2tsSettings {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
@@ -23100,6 +23103,10 @@ impl M2tsSettings {
     pub fn video_pid(&self) -> std::option::Option<&str> {
         self.video_pid.as_deref()
     }
+    /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
+    pub fn scte35_preroll_pullup_milliseconds(&self) -> f64 {
+        self.scte35_preroll_pullup_milliseconds
+    }
 }
 /// See [`M2tsSettings`](crate::model::M2tsSettings).
 pub mod m2ts_settings {
@@ -23157,6 +23164,7 @@ pub mod m2ts_settings {
         pub(crate) timed_metadata_pid: std::option::Option<std::string::String>,
         pub(crate) transport_stream_id: std::option::Option<i32>,
         pub(crate) video_pid: std::option::Option<std::string::String>,
+        pub(crate) scte35_preroll_pullup_milliseconds: std::option::Option<f64>,
     }
     impl Builder {
         /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
@@ -23719,6 +23727,19 @@ pub mod m2ts_settings {
             self.video_pid = input;
             self
         }
+        /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
+        pub fn scte35_preroll_pullup_milliseconds(mut self, input: f64) -> Self {
+            self.scte35_preroll_pullup_milliseconds = Some(input);
+            self
+        }
+        /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
+        pub fn set_scte35_preroll_pullup_milliseconds(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.scte35_preroll_pullup_milliseconds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`M2tsSettings`](crate::model::M2tsSettings).
         pub fn build(self) -> crate::model::M2tsSettings {
             crate::model::M2tsSettings {
@@ -23769,6 +23790,9 @@ pub mod m2ts_settings {
                 timed_metadata_pid: self.timed_metadata_pid,
                 transport_stream_id: self.transport_stream_id.unwrap_or_default(),
                 video_pid: self.video_pid,
+                scte35_preroll_pullup_milliseconds: self
+                    .scte35_preroll_pullup_milliseconds
+                    .unwrap_or_default(),
             }
         }
     }

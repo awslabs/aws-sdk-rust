@@ -293,8 +293,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLogStreams::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_name): <p>The name of the log group.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_name): <p>The name of the log group.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_stream_name_prefix): <p>The prefix to match.</p>  <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
     ///   - [`order_by(OrderBy)`](crate::client::fluent_builders::DescribeLogStreams::order_by) / [`set_order_by(Option<OrderBy>)`](crate::client::fluent_builders::DescribeLogStreams::set_order_by): <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>  <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>  <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     ///   - [`descending(bool)`](crate::client::fluent_builders::DescribeLogStreams::descending) / [`set_descending(Option<bool>)`](crate::client::fluent_builders::DescribeLogStreams::set_descending): <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
@@ -392,8 +392,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::FilterLogEvents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_name): <p>The name of the log group to search.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_name): <p>The name of the log group to search.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
     ///   - [`log_stream_names(Vec<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_names) / [`set_log_stream_names(Option<Vec<String>>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_names): <p>Filters the results to only logs from the log streams in this list.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_name_prefix): <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     ///   - [`start_time(i64)`](crate::client::fluent_builders::FilterLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
@@ -427,8 +427,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetLogEvents::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_name): <p>The name of the log group.</p> <note>   <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>  </note>
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_name): <p>The name of the log group.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
     ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_stream_name): <p>The name of the log stream.</p>
     ///   - [`start_time(i64)`](crate::client::fluent_builders::GetLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
     ///   - [`end_time(i64)`](crate::client::fluent_builders::GetLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
@@ -447,9 +447,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLogGroupFields`](crate::client::fluent_builders::GetLogGroupFields) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_name): <p>The name of the log group to search.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_name): <p>The name of the log group to search.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
     ///   - [`time(i64)`](crate::client::fluent_builders::GetLogGroupFields::time) / [`set_time(Option<i64>)`](crate::client::fluent_builders::GetLogGroupFields::set_time): <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>  <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>  <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_identifier): <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>   <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>  </note>
     /// - On success, responds with [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput) with field(s):
     ///   - [`log_group_fields(Option<Vec<LogGroupField>>)`](crate::output::GetLogGroupFieldsOutput::log_group_fields): <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     /// - On failure, responds with [`SdkError<GetLogGroupFieldsError>`](crate::error::GetLogGroupFieldsError)
@@ -2323,6 +2323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLogStreams`.
     ///
     /// <p>Lists the log streams for the specified log group. You can list all the log streams or filter the results by prefix. You can also control how the results are ordered.</p>
+    /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include one of these two parameters, but you can't include both. </p>
     /// <p>This operation has a limit of five transactions per second, after which transactions are throttled.</p>
     /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2391,14 +2392,14 @@ pub mod fluent_builders {
             crate::paginator::DescribeLogStreamsPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -2407,14 +2408,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_identifier(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3106,6 +3109,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists log events from the specified log group. You can list all the log events or filter the results using a filter pattern, a time range, and the name of the log stream.</p>
     /// <p>You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.</p>
+    /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include one of these two parameters, but you can't include both. </p>
     /// <p>By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the events found within the specified time range. If the results include a token, that means there are more log events available. You can get additional results by specifying the token in a subsequent call. This operation can return empty results while there are more log events available through the token.</p>
     /// <p>The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.</p>
     /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
@@ -3175,14 +3179,14 @@ pub mod fluent_builders {
             crate::paginator::FilterLogEventsPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the log group to search.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
         /// <p>The name of the log group to search.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -3191,14 +3195,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_identifier(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3407,6 +3413,7 @@ pub mod fluent_builders {
     /// <p>Lists log events from the specified log stream. You can list all of the log events or filter using a time range.</p>
     /// <p>By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation can return empty results while there are more log events available through the token.</p>
     /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
+    /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include one of these two parameters, but you can't include both. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogEvents {
         handle: std::sync::Arc<super::Handle>,
@@ -3473,14 +3480,14 @@ pub mod fluent_builders {
             crate::paginator::GetLogEventsPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
         /// <p>The name of the log group.</p> <note>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error. </p>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
         /// </note>
         pub fn set_log_group_name(
             mut self,
@@ -3489,14 +3496,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_group_name(input);
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_identifier(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p>
-        /// <p> If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3585,6 +3594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLogGroupFields`.
     ///
     /// <p>Returns a list of the fields that are included in log events in the specified log group. Includes the percentage of log events that contain each field. The search is limited to a time period that you specify.</p>
+    /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must specify one of these parameters, but you can't specify both. </p>
     /// <p>In the results, fields that start with <code>@</code> are fields generated by CloudWatch Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
     /// <p>The response results are sorted by the frequency percentage, starting with the highest percentage.</p>
     /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
@@ -3647,14 +3657,16 @@ pub mod fluent_builders {
                 .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the log group to search.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_name(input.into());
             self
         }
-        /// <p>The name of the log group to search.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>The name of the log group to search.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3674,14 +3686,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time(input);
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_group_identifier(input.into());
             self
         }
-        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p>
-        /// <p>If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p> <note>
+        /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
+        /// </note>
         pub fn set_log_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
