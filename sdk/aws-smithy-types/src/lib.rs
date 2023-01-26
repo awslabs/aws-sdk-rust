@@ -30,7 +30,7 @@ pub use error::Error;
 /// Binary Blob Type
 ///
 /// Blobs represent protocol-agnostic binary content.
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Eq, Hash, Clone)]
 pub struct Blob {
     inner: Vec<u8>,
 }
