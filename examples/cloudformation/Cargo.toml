@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.0"
+version = "0.53.1"
 
 [dependencies.aws-sdk-cloudformation]
 path = "../../sdk/cloudformation"

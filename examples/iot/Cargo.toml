@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.53.0"
+version = "0.53.1"
 
 [dependencies.aws-sdk-iot]
 path = "../../sdk/iot"
@@ -14,7 +14,7 @@ version = "0.24.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.53.0"
+version = "0.53.1"
 
 [dependencies.tokio]
 version = "1.20.1"
