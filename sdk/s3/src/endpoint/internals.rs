@@ -11,35 +11,35 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let bucket = &_params.bucket;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let force_path_style = &_params.force_path_style;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let accelerate = &_params.accelerate;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_global_endpoint = &_params.use_global_endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_object_lambda_endpoint = &_params.use_object_lambda_endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let disable_access_points = &_params.disable_access_points;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let disable_multi_region_access_points = &_params.disable_multi_region_access_points;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_arn_region = &_params.use_arn_region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(region) = region {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(bucket) = bucket {
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(endpoint) = endpoint {
                 if !(crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
                     .is_some())
@@ -54,10 +54,10 @@ pub(super) fn resolve_endpoint(
                     }));
                 }
             }
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(force_path_style) = force_path_style {
                 if (*force_path_style) == (true) {
-                    #[allow(unused)]
+                    #[allow(unused_variables)]
                     if let Some(_) =
                         crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector)
                     {
@@ -68,7 +68,7 @@ pub(super) fn resolve_endpoint(
                     let uri_encoded_bucket =
                         crate::endpoint_lib::uri_encode::uri_encode(bucket, _diagnostic_collector);
                     if (*use_dual_stack) == (true) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
                             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
                                 "Cannot set dual-stack in combination with a custom endpoint."
@@ -76,7 +76,7 @@ pub(super) fn resolve_endpoint(
                             ));
                         }
                     }
-                    #[allow(unused)]
+                    #[allow(unused_variables)]
                     if let Some(partition_result) =
                         partition_resolver.resolve_partition(region, _diagnostic_collector)
                     {
@@ -202,9 +202,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -240,9 +240,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -278,9 +278,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -317,9 +317,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -596,9 +596,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -634,9 +634,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -672,9 +672,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -735,9 +735,9 @@ out })
                                 }
                             }
                             if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(endpoint) = endpoint {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                         endpoint,
                                         _diagnostic_collector,
@@ -936,7 +936,7 @@ out })
                 false,
                 _diagnostic_collector,
             ) {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(partition_result) =
                     partition_resolver.resolve_partition(region, _diagnostic_collector)
                 {
@@ -972,21 +972,21 @@ out })
                                 );
                             }
                         }
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
                             if (*use_dual_stack) == (true) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"
 .to_string()));
                             }
                         }
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
                             if (*use_fips) == (true) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"
 .to_string()));
                             }
                         }
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
                             if (*accelerate) == (true) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"
@@ -1502,9 +1502,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1544,9 +1544,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1587,9 +1587,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1629,9 +1629,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1672,9 +1672,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1739,9 +1739,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1808,9 +1808,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -1851,9 +1851,9 @@ out })
                         if (*use_dual_stack) == (false) {
                             if (*use_fips) == (false) {
                                 if (*accelerate) == (false) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                             endpoint,
                                             _diagnostic_collector,
@@ -2200,9 +2200,9 @@ out })
                     "A valid partition could not be determined".to_string(),
                 ));
             }
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(endpoint) = endpoint {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(url) =
                     crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
                 {
@@ -2215,7 +2215,7 @@ out })
                             if (*use_fips) == (false) {
                                 if (*use_dual_stack) == (false) {
                                     if (*accelerate) == (false) {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(partition_result) = partition_resolver
                                             .resolve_partition(region, _diagnostic_collector)
                                         {
@@ -2260,16 +2260,16 @@ out })
                     }
                 }
             }
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(bucket_arn) =
                 crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector)
             {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(arn_type) = bucket_arn.resource_id().get(0).cloned() {
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-object-lambda") {
                             if (arn_type) == ("accesspoint") {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(access_point_name) =
                                     bucket_arn.resource_id().get(1).cloned()
                                 {
@@ -2283,7 +2283,7 @@ out })
 .to_string()));
                                         }
                                         if !((bucket_arn.region()) == ("")) {
-                                            #[allow(unused)]
+                                            #[allow(unused_variables)]
                                             if let Some(disable_access_points) =
                                                 disable_access_points
                                             {
@@ -2294,7 +2294,7 @@ out })
                                             }
                                             if !(bucket_arn.resource_id().get(2).cloned().is_some())
                                             {
-                                                #[allow(unused)]
+                                                #[allow(unused_variables)]
                                                 if let Some(use_arn_region) = use_arn_region {
                                                     if (*use_arn_region) == (false) {
                                                         if !((bucket_arn.region()) == (region)) {
@@ -2310,14 +2310,14 @@ out }));
                                                         }
                                                     }
                                                 }
-                                                #[allow(unused)]
+                                                #[allow(unused_variables)]
                                                 if let Some(bucket_partition) = partition_resolver
                                                     .resolve_partition(
                                                         bucket_arn.region(),
                                                         _diagnostic_collector,
                                                     )
                                                 {
-                                                    #[allow(unused)]
+                                                    #[allow(unused_variables)]
                                                     if let Some(partition_result) =
                                                         partition_resolver.resolve_partition(
                                                             region,
@@ -2343,8 +2343,8 @@ if crate::endpoint_lib::host::is_valid_host_label(bucket_arn.account_id()
 .to_string()));
                             }
                             }
-#[allow(unused)]
-if let Some(endpoint) = endpoint { #[allow(unused)]
+#[allow(unused_variables)]
+if let Some(endpoint) = endpoint { #[allow(unused_variables)]
 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
@@ -2493,7 +2493,7 @@ out }));
                             ));
                         }
                         if (arn_type) == ("accesspoint") {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(access_point_name) =
                                 bucket_arn.resource_id().get(1).cloned()
                             {
@@ -2501,7 +2501,7 @@ out }));
                                     if !((bucket_arn.region()) == ("")) {
                                         if (arn_type) == ("accesspoint") {
                                             if !((bucket_arn.region()) == ("")) {
-                                                #[allow(unused)]
+                                                #[allow(unused_variables)]
                                                 if let Some(disable_access_points) =
                                                     disable_access_points
                                                 {
@@ -2516,7 +2516,7 @@ out }));
                                                     .cloned()
                                                     .is_some())
                                                 {
-                                                    #[allow(unused)]
+                                                    #[allow(unused_variables)]
                                                     if let Some(use_arn_region) = use_arn_region {
                                                         if (*use_arn_region) == (false) {
                                                             if !((bucket_arn.region()) == (region))
@@ -2533,14 +2533,14 @@ out }));
                                                             }
                                                         }
                                                     }
-                                                    #[allow(unused)]
+                                                    #[allow(unused_variables)]
                                                     if let Some(bucket_partition) =
                                                         partition_resolver.resolve_partition(
                                                             bucket_arn.region(),
                                                             _diagnostic_collector,
                                                         )
                                                     {
-                                                        #[allow(unused)]
+                                                        #[allow(unused_variables)]
                                                         if let Some(partition_result) =
                                                             partition_resolver.resolve_partition(
                                                                 region,
@@ -2568,7 +2568,7 @@ if (*use_fips) == (true) {
                             }
                             }
 if (*use_dual_stack) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
 if let Some(endpoint) = endpoint { return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack cannot be combined with a Host override (PrivateLink)"
 .to_string())); }
                             }
@@ -2664,8 +2664,8 @@ out })
                             }
 if (*use_fips) == (false) {
                                 if (*use_dual_stack) == (false) {
-                                #[allow(unused)]
-if let Some(endpoint) = endpoint { #[allow(unused)]
+                                #[allow(unused_variables)]
+if let Some(endpoint) = endpoint { #[allow(unused_variables)]
 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
@@ -2808,7 +2808,7 @@ return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No 
                                             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Multi-Region Access Point ARNs are disabled."
 .to_string()));
                                         }
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(mrap_partition) = partition_resolver
                                             .resolve_partition(region, _diagnostic_collector)
                                         {
@@ -2882,19 +2882,19 @@ out }));
                                     ),
                                 );
                             }
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(_) = bucket_arn.resource_id().get(4).cloned() {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Arn: Outpost Access Point ARN contains sub resources"
 .to_string()));
                             }
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(outpost_id) = bucket_arn.resource_id().get(1).cloned() {
                                 if crate::endpoint_lib::host::is_valid_host_label(
                                     outpost_id,
                                     false,
                                     _diagnostic_collector,
                                 ) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
                                             if !((bucket_arn.region()) == (region)) {
@@ -2910,14 +2910,14 @@ out }));
                                             }
                                         }
                                     }
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(bucket_partition) = partition_resolver
                                         .resolve_partition(
                                             bucket_arn.region(),
                                             _diagnostic_collector,
                                         )
                                     {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(partition_result) = partition_resolver
                                             .resolve_partition(region, _diagnostic_collector)
                                         {
@@ -2931,13 +2931,13 @@ out }));
                                                 ) {
                                                     if crate::endpoint_lib::host::is_valid_host_label(bucket_arn.account_id()
 ,false, _diagnostic_collector) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
 if let Some(outpost_type) = bucket_arn.resource_id()
-.get(2).cloned() { #[allow(unused)]
+.get(2).cloned() { #[allow(unused_variables)]
 if let Some(access_point_name) = bucket_arn.resource_id()
 .get(3).cloned() { if (outpost_type) == ("accesspoint") {
-                                #[allow(unused)]
-if let Some(endpoint) = endpoint { #[allow(unused)]
+                                #[allow(unused_variables)]
+if let Some(endpoint) = endpoint { #[allow(unused_variables)]
 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://");
 #[allow(clippy::needless_borrow)]
@@ -3078,7 +3078,7 @@ out }));
                     "Invalid ARN: No ARN type specified".to_string(),
                 ));
             }
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(arn_prefix) = crate::endpoint_lib::substring::substring(
                 bucket,
                 0,
@@ -3104,14 +3104,14 @@ out }));
             let uri_encoded_bucket =
                 crate::endpoint_lib::uri_encode::uri_encode(bucket, _diagnostic_collector);
             if (*use_dual_stack) == (true) {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(endpoint) = endpoint {
                     return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "Cannot set dual-stack in combination with a custom endpoint.".to_string(),
                     ));
                 }
             }
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(partition_result) =
                 partition_resolver.resolve_partition(region, _diagnostic_collector)
             {
@@ -3315,9 +3315,9 @@ out }));
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -3372,9 +3372,9 @@ out }));
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -3429,9 +3429,9 @@ out }));
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -3468,9 +3468,9 @@ out })
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -3903,9 +3903,9 @@ out })
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -3960,9 +3960,9 @@ out })
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -4017,9 +4017,9 @@ out })
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -4080,9 +4080,9 @@ out })
                         }
                     }
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -4353,10 +4353,10 @@ out })
                 "A valid partition could not be determined".to_string(),
             ));
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(use_object_lambda_endpoint) = use_object_lambda_endpoint {
             if (*use_object_lambda_endpoint) == (true) {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(partition_result) =
                     partition_resolver.resolve_partition(region, _diagnostic_collector)
                 {
@@ -4384,9 +4384,9 @@ out })
                                 );
                             }
                         }
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(endpoint) = endpoint {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                 endpoint,
                                 _diagnostic_collector,
@@ -4514,7 +4514,7 @@ out })
             }
         }
         if !(bucket.is_some()) {
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(partition_result) =
                 partition_resolver.resolve_partition(region, _diagnostic_collector)
             {
@@ -4532,9 +4532,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -4587,9 +4587,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -4642,9 +4642,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -4679,9 +4679,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -4902,9 +4902,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -4957,9 +4957,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5012,9 +5012,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5049,9 +5049,9 @@ out })
                     }
                     if (*use_fips) == (true) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5272,9 +5272,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5327,9 +5327,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5382,9 +5382,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5419,9 +5419,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (true) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5642,9 +5642,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5697,9 +5697,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5752,9 +5752,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,
@@ -5811,9 +5811,9 @@ out })
                     }
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(endpoint) = endpoint {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                                     endpoint,
                                     _diagnostic_collector,

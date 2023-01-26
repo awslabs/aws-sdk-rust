@@ -11,21 +11,21 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint_id = &_params.endpoint_id;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(partition_result) =
         partition_resolver.resolve_partition(region, _diagnostic_collector)
     {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(endpoint_id) = endpoint_id {
             if crate::endpoint_lib::host::is_valid_host_label(
                 endpoint_id,
@@ -33,7 +33,7 @@ pub(super) fn resolve_endpoint(
                 _diagnostic_collector,
             ) {
                 if (*use_fips) == (false) {
-                    #[allow(unused)]
+                    #[allow(unused_variables)]
                     if let Some(endpoint) = endpoint {
                         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                             .url(endpoint.to_owned())
@@ -136,7 +136,7 @@ pub(super) fn resolve_endpoint(
                 "EndpointId must be a valid host label.".to_string(),
             ));
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(endpoint) = endpoint {
             if (*use_fips) == (true) {
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(

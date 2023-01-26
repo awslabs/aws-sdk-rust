@@ -11,30 +11,30 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let stream_arn = &_params.stream_arn;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let operation_type = &_params.operation_type;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let consumer_arn = &_params.consumer_arn;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(partition_result) =
         partition_resolver.resolve_partition(region, _diagnostic_collector)
     {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(stream_arn) = stream_arn {
             if !(endpoint.is_some()) {
                 if !((partition_result.name()) == ("aws-iso")) {
                     if !((partition_result.name()) == ("aws-iso-b")) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(arn) =
                             crate::endpoint_lib::arn::parse_arn(stream_arn, _diagnostic_collector)
                         {
@@ -49,14 +49,14 @@ pub(super) fn resolve_endpoint(
                                     _diagnostic_collector,
                                 ) {
                                     if (arn.service()) == ("kinesis") {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(arn_type) = arn.resource_id().get(0).cloned() {
                                             if !((arn_type) == ("")) {
                                                 if (arn_type) == ("stream") {
                                                     if (partition_result.name())
                                                         == (arn.partition())
                                                     {
-                                                        #[allow(unused)]
+                                                        #[allow(unused_variables)]
                                                         if let Some(operation_type) = operation_type
                                                         {
                                                             if (*use_fips) == (true) {
@@ -208,12 +208,12 @@ out }));
                 }
             }
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(consumer_arn) = consumer_arn {
             if !(endpoint.is_some()) {
                 if !((partition_result.name()) == ("aws-iso")) {
                     if !((partition_result.name()) == ("aws-iso-b")) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(arn) =
                             crate::endpoint_lib::arn::parse_arn(consumer_arn, _diagnostic_collector)
                         {
@@ -228,14 +228,14 @@ out }));
                                     _diagnostic_collector,
                                 ) {
                                     if (arn.service()) == ("kinesis") {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(arn_type) = arn.resource_id().get(0).cloned() {
                                             if !((arn_type) == ("")) {
                                                 if (arn_type) == ("stream") {
                                                     if (partition_result.name())
                                                         == (arn.partition())
                                                     {
-                                                        #[allow(unused)]
+                                                        #[allow(unused_variables)]
                                                         if let Some(operation_type) = operation_type
                                                         {
                                                             if (*use_fips) == (true) {
@@ -387,7 +387,7 @@ out }));
                 }
             }
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(endpoint) = endpoint {
             if (*use_fips) == (true) {
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(

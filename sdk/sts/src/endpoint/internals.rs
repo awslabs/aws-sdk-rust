@@ -11,17 +11,17 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_global_endpoint = &_params.use_global_endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(partition_result) =
         partition_resolver.resolve_partition(region, _diagnostic_collector)
     {
@@ -461,7 +461,7 @@ pub(super) fn resolve_endpoint(
                 }
             }
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(endpoint) = endpoint {
             if (*use_fips) == (true) {
                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(

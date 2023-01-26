@@ -11,20 +11,20 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
         return Ok(aws_smithy_types::endpoint::Endpoint::builder()
             .url(endpoint.to_owned())
             .build());
     }
     if !(region.is_some()) {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(partition_result) =
             partition_resolver.resolve_partition("us-west-2", _diagnostic_collector)
         {
@@ -55,9 +55,9 @@ pub(super) fn resolve_endpoint(
                 .build());
         }
     }
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(region) = region {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(partition_result) =
             partition_resolver.resolve_partition(region, _diagnostic_collector)
         {

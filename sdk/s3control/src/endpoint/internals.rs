@@ -11,31 +11,31 @@ pub(super) fn resolve_endpoint(
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> aws_smithy_http::endpoint::Result {
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let region = &_params.region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let account_id = &_params.account_id;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let requires_account_id = &_params.requires_account_id;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let outpost_id = &_params.outpost_id;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let bucket = &_params.bucket;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let access_point_name = &_params.access_point_name;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     let use_arn_region = &_params.use_arn_region;
-    #[allow(unused)]
+    #[allow(unused_variables)]
     if let Some(region) = region {
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(outpost_id) = outpost_id {
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(partition_result) =
                 partition_resolver.resolve_partition(region, _diagnostic_collector)
             {
@@ -46,7 +46,7 @@ pub(super) fn resolve_endpoint(
                         ));
                     }
                 }
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {
                         if !(account_id.is_some()) {
@@ -56,7 +56,7 @@ pub(super) fn resolve_endpoint(
                         }
                     }
                 }
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(account_id) = account_id {
                     if !(crate::endpoint_lib::host::is_valid_host_label(
                         account_id,
@@ -87,9 +87,9 @@ pub(super) fn resolve_endpoint(
                             "Invalid configuration: Outposts do not support dual-stack".to_string(),
                         ));
                     }
-                    #[allow(unused)]
+                    #[allow(unused_variables)]
                     if let Some(endpoint) = endpoint {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
                             endpoint,
                             _diagnostic_collector,
@@ -205,13 +205,13 @@ pub(super) fn resolve_endpoint(
                 "A valid partition could not be determined".to_string(),
             ));
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(access_point_name) = access_point_name {
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(access_point_arn) =
                 crate::endpoint_lib::arn::parse_arn(access_point_name, _diagnostic_collector)
             {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(arn_type) = access_point_arn.resource_id().get(0).cloned() {
                     if !((arn_type) == ("")) {
                         if (access_point_arn.service()) == ("s3-outposts") {
@@ -219,7 +219,7 @@ pub(super) fn resolve_endpoint(
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost Access Points do not support dual-stack"
 .to_string()));
                             }
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(outpost_id) = access_point_arn.resource_id().get(1).cloned()
                             {
                                 if crate::endpoint_lib::host::is_valid_host_label(
@@ -227,7 +227,7 @@ pub(super) fn resolve_endpoint(
                                     false,
                                     _diagnostic_collector,
                                 ) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
                                             if !((access_point_arn.region()) == (region)) {
@@ -243,11 +243,11 @@ out }));
                                             }
                                         }
                                     }
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(partition_result) = partition_resolver
                                         .resolve_partition(region, _diagnostic_collector)
                                     {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(arn_partition) = partition_resolver
                                             .resolve_partition(
                                                 access_point_arn.region(),
@@ -263,7 +263,7 @@ out }));
                                                     if !((access_point_arn.account_id()) == ("")) {
                                                         if crate::endpoint_lib::host::is_valid_host_label(access_point_arn.account_id()
 ,false, _diagnostic_collector) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
 if let Some(account_id) = account_id { if !((account_id) == (access_point_arn.account_id())) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: the accountId specified in the ARN (`");
@@ -275,9 +275,9 @@ out.push_str(&account_id);
 out.push_str("`)");
 out }));
                             } }
-#[allow(unused)]
+#[allow(unused_variables)]
 if let Some(outpost_type) = access_point_arn.resource_id()
-.get(2).cloned() { #[allow(unused)]
+.get(2).cloned() { #[allow(unused_variables)]
 if let Some(access_point_name) = access_point_arn.resource_id()
 .get(3).cloned() { if (outpost_type) == ("accesspoint") {
                                 if (*use_fips) == (true) {
@@ -305,8 +305,8 @@ out })
 }),])
 .build());
                             }
-#[allow(unused)]
-if let Some(endpoint) = endpoint { #[allow(unused)]
+#[allow(unused_variables)]
+if let Some(endpoint) = endpoint { #[allow(unused_variables)]
 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
@@ -435,13 +435,13 @@ out }));
                 ));
             }
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(bucket) = bucket {
-            #[allow(unused)]
+            #[allow(unused_variables)]
             if let Some(bucket_arn) =
                 crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector)
             {
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(arn_type) = bucket_arn.resource_id().get(0).cloned() {
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-outposts") {
@@ -449,14 +449,14 @@ out }));
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost buckets do not support dual-stack"
 .to_string()));
                             }
-                            #[allow(unused)]
+                            #[allow(unused_variables)]
                             if let Some(outpost_id) = bucket_arn.resource_id().get(1).cloned() {
                                 if crate::endpoint_lib::host::is_valid_host_label(
                                     outpost_id,
                                     false,
                                     _diagnostic_collector,
                                 ) {
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
                                             if !((bucket_arn.region()) == (region)) {
@@ -472,14 +472,14 @@ out }));
                                             }
                                         }
                                     }
-                                    #[allow(unused)]
+                                    #[allow(unused_variables)]
                                     if let Some(arn_partition) = partition_resolver
                                         .resolve_partition(
                                             bucket_arn.region(),
                                             _diagnostic_collector,
                                         )
                                     {
-                                        #[allow(unused)]
+                                        #[allow(unused_variables)]
                                         if let Some(partition_result) = partition_resolver
                                             .resolve_partition(region, _diagnostic_collector)
                                         {
@@ -492,7 +492,7 @@ out }));
                                                     if !((bucket_arn.account_id()) == ("")) {
                                                         if crate::endpoint_lib::host::is_valid_host_label(bucket_arn.account_id()
 ,false, _diagnostic_collector) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
 if let Some(account_id) = account_id { if !((account_id) == (bucket_arn.account_id())) {
                                 return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: the accountId specified in the ARN (`");
@@ -504,9 +504,9 @@ out.push_str(&account_id);
 out.push_str("`)");
 out }));
                             } }
-#[allow(unused)]
+#[allow(unused_variables)]
 if let Some(outpost_type) = bucket_arn.resource_id()
-.get(2).cloned() { #[allow(unused)]
+.get(2).cloned() { #[allow(unused_variables)]
 if let Some(bucket_name) = bucket_arn.resource_id()
 .get(3).cloned() { if (outpost_type) == ("bucket") {
                                 if (*use_fips) == (true) {
@@ -534,8 +534,8 @@ out })
 }),])
 .build());
                             }
-#[allow(unused)]
-if let Some(endpoint) = endpoint { #[allow(unused)]
+#[allow(unused_variables)]
+if let Some(endpoint) = endpoint { #[allow(unused_variables)]
 if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
@@ -667,7 +667,7 @@ out }));
                 ));
             }
         }
-        #[allow(unused)]
+        #[allow(unused_variables)]
         if let Some(partition_result) =
             partition_resolver.resolve_partition(region, _diagnostic_collector)
         {
@@ -679,7 +679,7 @@ out }));
                         ));
                     }
                 }
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {
                         if !(account_id.is_some()) {
@@ -689,7 +689,7 @@ out }));
                         }
                     }
                 }
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(account_id) = account_id {
                     if !(crate::endpoint_lib::host::is_valid_host_label(
                         account_id,
@@ -701,9 +701,9 @@ out }));
                         ));
                     }
                 }
-                #[allow(unused)]
+                #[allow(unused_variables)]
                 if let Some(endpoint) = endpoint {
-                    #[allow(unused)]
+                    #[allow(unused_variables)]
                     if let Some(url) =
                         crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
                     {
@@ -711,10 +711,10 @@ out }));
                             return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Dualstack and custom endpoint are not supported"
 .to_string()));
                         }
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(requires_account_id) = requires_account_id {
                             if (*requires_account_id) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -796,10 +796,10 @@ out }));
                 }
                 if (*use_fips) == (true) {
                     if (*use_dual_stack) == (true) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(requires_account_id) = requires_account_id {
                             if (*requires_account_id) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -883,10 +883,10 @@ out }));
                 }
                 if (*use_fips) == (true) {
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(requires_account_id) = requires_account_id {
                             if (*requires_account_id) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -970,10 +970,10 @@ out }));
                 }
                 if (*use_fips) == (false) {
                     if (*use_dual_stack) == (true) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(requires_account_id) = requires_account_id {
                             if (*requires_account_id) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
@@ -1057,10 +1057,10 @@ out }));
                 }
                 if (*use_fips) == (false) {
                     if (*use_dual_stack) == (false) {
-                        #[allow(unused)]
+                        #[allow(unused_variables)]
                         if let Some(requires_account_id) = requires_account_id {
                             if (*requires_account_id) == (true) {
-                                #[allow(unused)]
+                                #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
                                     return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
