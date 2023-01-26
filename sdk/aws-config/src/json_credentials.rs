@@ -137,7 +137,7 @@ pub(crate) fn parse_json_credentials(
              "SecretAccessKey" : "secret",
              "Token" : "token",
              "Expiration" : "....",
-             "LastUpdated" : "2009-11-23T0:00:00Z"
+             "LastUpdated" : "2009-11-23T00:00:00Z"
             */
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Code") => {
                 code = Some(value.to_unescaped()?);
