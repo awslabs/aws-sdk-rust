@@ -4,6 +4,7 @@
  */
 
 use aws_config::retry::RetryConfig;
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::model::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
@@ -127,7 +128,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
     let conf = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-2"))
         .http_connector(conn.clone())
-        .credentials_provider(Arc::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .retry_config(RetryConfig::standard())
         .timeout_config(
             TimeoutConfig::builder()

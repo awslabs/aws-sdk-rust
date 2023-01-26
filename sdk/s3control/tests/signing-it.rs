@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3control::{Client, Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
 use aws_types::SdkConfig;
 use std::convert::Infallible;
-use std::sync::Arc;
 use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
@@ -26,7 +26,7 @@ async fn test_signer() {
         http::Response::builder().status(200).body("").unwrap(),
     )]);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(Arc::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .http_connector(conn.clone())
         .region(Region::new("us-east-1"))
         .build();

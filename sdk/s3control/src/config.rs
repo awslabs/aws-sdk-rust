@@ -124,8 +124,7 @@ pub struct Builder {
     use_fips: std::option::Option<std::primitive::bool>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     region: Option<aws_types::region::Region>,
-    credentials_provider:
-        Option<std::sync::Arc<dyn aws_credential_types::provider::ProvideCredentials>>,
+    credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
     credentials_cache: Option<aws_credential_types::cache::CredentialsCache>,
 }
 impl Builder {
@@ -567,16 +566,16 @@ impl Builder {
         mut self,
         credentials_provider: impl aws_credential_types::provider::ProvideCredentials + 'static,
     ) -> Self {
-        self.set_credentials_provider(Some(std::sync::Arc::new(credentials_provider)));
+        self.set_credentials_provider(Some(
+            aws_credential_types::provider::SharedCredentialsProvider::new(credentials_provider),
+        ));
         self
     }
 
     /// Sets the credentials provider for this service
     pub fn set_credentials_provider(
         &mut self,
-        credentials_provider: Option<
-            std::sync::Arc<dyn aws_credential_types::provider::ProvideCredentials>,
-        >,
+        credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
     ) -> &mut Self {
         self.credentials_provider = credentials_provider;
         self
@@ -603,9 +602,11 @@ impl Builder {
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
         self.set_make_token(Some("00000000-0000-4000-8000-000000000000".into()));
-        self.set_credentials_provider(Some(std::sync::Arc::new(
-            aws_credential_types::Credentials::for_tests(),
-        )));
+        self.set_credentials_provider(Some(
+            aws_credential_types::provider::SharedCredentialsProvider::new(
+                aws_credential_types::Credentials::for_tests(),
+            ),
+        ));
         self
     }
     #[cfg(any(feature = "test-util", test))]
@@ -647,11 +648,11 @@ impl Builder {
                         None => aws_credential_types::cache::CredentialsCache::lazy(),
                     }
                 })
-                .create_cache(
-                    self.credentials_provider.unwrap_or_else(|| {
-                        std::sync::Arc::new(crate::no_credentials::NoCredentials)
-                    }),
-                ),
+                .create_cache(self.credentials_provider.unwrap_or_else(|| {
+                    aws_credential_types::provider::SharedCredentialsProvider::new(
+                        crate::no_credentials::NoCredentials,
+                    )
+                })),
         }
     }
 }
@@ -661,7 +662,7 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
         let mut builder = Builder::default();
         builder.set_credentials_cache(input.credentials_cache().cloned());
 
-        builder.set_credentials_provider(input.credentials_provider().clone());
+        builder.set_credentials_provider(input.credentials_provider().cloned());
 
         builder = builder.region(input.region().cloned());
 

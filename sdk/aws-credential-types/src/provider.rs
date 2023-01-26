@@ -299,3 +299,41 @@ impl ProvideCredentials for Arc<dyn ProvideCredentials> {
         self.as_ref().provide_credentials()
     }
 }
+
+/// Credentials Provider wrapper that may be shared
+///
+/// Newtype wrapper around ProvideCredentials that implements Clone using an internal
+/// Arc.
+#[derive(Clone, Debug)]
+pub struct SharedCredentialsProvider(Arc<dyn ProvideCredentials>);
+
+impl SharedCredentialsProvider {
+    /// Create a new SharedCredentials provider from `ProvideCredentials`
+    ///
+    /// The given provider will be wrapped in an internal `Arc`. If your
+    /// provider is already in an `Arc`, use `SharedCredentialsProvider::from(provider)` instead.
+    pub fn new(provider: impl ProvideCredentials + 'static) -> Self {
+        Self(Arc::new(provider))
+    }
+}
+
+impl AsRef<dyn ProvideCredentials> for SharedCredentialsProvider {
+    fn as_ref(&self) -> &(dyn ProvideCredentials + 'static) {
+        self.0.as_ref()
+    }
+}
+
+impl From<Arc<dyn ProvideCredentials>> for SharedCredentialsProvider {
+    fn from(provider: Arc<dyn ProvideCredentials>) -> Self {
+        SharedCredentialsProvider(provider)
+    }
+}
+
+impl ProvideCredentials for SharedCredentialsProvider {
+    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
+    where
+        Self: 'a,
+    {
+        self.0.provide_credentials()
+    }
+}

@@ -4,6 +4,7 @@
  */
 
 use aws_config::SdkConfig;
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3::{model::ChecksumAlgorithm, output::GetObjectOutput, Client, Credentials, Region};
 use aws_smithy_client::test_connection::{capture_request, TestConnection};
@@ -12,7 +13,6 @@ use http::header::AUTHORIZATION;
 use http::{HeaderValue, Uri};
 use std::{
     convert::Infallible,
-    sync::Arc,
     time::{Duration, UNIX_EPOCH},
 };
 
@@ -58,7 +58,7 @@ async fn test_checksum_on_streaming_response(
         checksum_header_value,
     );
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(Arc::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
         .build();
@@ -157,7 +157,7 @@ async fn test_checksum_on_streaming_request<'a>(
 ) {
     let (conn, rcvr) = capture_request(None);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(Arc::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
         .build();

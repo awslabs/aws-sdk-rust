@@ -151,7 +151,7 @@ mod loader {
     use std::sync::Arc;
 
     use aws_credential_types::cache::CredentialsCache;
-    use aws_credential_types::provider::ProvideCredentials;
+    use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
     use aws_smithy_client::http_connector::{ConnectorSettings, HttpConnector};
     use aws_smithy_types::retry::RetryConfig;
@@ -179,7 +179,7 @@ mod loader {
     pub struct ConfigLoader {
         app_name: Option<AppName>,
         credentials_cache: Option<CredentialsCache>,
-        credentials_provider: Option<Arc<dyn ProvideCredentials>>,
+        credentials_provider: Option<SharedCredentialsProvider>,
         endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
@@ -326,22 +326,21 @@ mod loader {
         /// Override the credentials provider but load the default value for region:
         /// ```no_run
         /// # use aws_credential_types::Credentials;
-        /// # use std::sync::Arc;
         /// # fn create_my_credential_provider() -> Credentials {
         /// #     Credentials::new("example", "example", None, None, "example")
         /// # }
         /// # async fn create_config() {
         /// let config = aws_config::from_env()
-        ///     .credentials_provider(Arc::new(create_my_credential_provider()))
+        ///     .credentials_provider(create_my_credential_provider())
         ///     .load()
         ///     .await;
         /// # }
         /// ```
         pub fn credentials_provider(
             mut self,
-            credentials_provider: Arc<dyn ProvideCredentials>,
+            credentials_provider: impl ProvideCredentials + 'static,
         ) -> Self {
-            self.credentials_provider = Some(credentials_provider);
+            self.credentials_provider = Some(SharedCredentialsProvider::new(credentials_provider));
             self
         }
 
@@ -600,7 +599,7 @@ mod loader {
             } else {
                 let mut builder = credentials::DefaultCredentialsChain::builder().configure(conf);
                 builder.set_region(region.clone());
-                Arc::new(builder.build().await)
+                SharedCredentialsProvider::new(builder.build().await)
             };
 
             let endpoint_resolver = self.endpoint_resolver;

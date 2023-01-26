@@ -4,12 +4,12 @@
  */
 
 use aws_config::SdkConfig;
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::{Client, Credentials, Region};
 use aws_smithy_types::error::display::DisplayErrorContext;
 use bytes::BytesMut;
 use std::future::Future;
 use std::net::SocketAddr;
-use std::sync::Arc;
 use std::time::Duration;
 use tracing::debug;
 
@@ -22,7 +22,7 @@ async fn test_streaming_response_fails_when_eof_comes_before_content_length_reac
     let _ = tokio::spawn(server);
 
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(Arc::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
         .build();

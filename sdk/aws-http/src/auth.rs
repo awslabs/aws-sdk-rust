@@ -116,12 +116,12 @@ mod tests {
         CredentialsCache, ProvideCachedCredentials, SharedCredentialsCache,
     };
     use aws_credential_types::credential_fn::provide_credentials_fn;
+    use aws_credential_types::provider::SharedCredentialsProvider;
     use aws_credential_types::provider::{error::CredentialsError, future};
     use aws_credential_types::Credentials;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::middleware::AsyncMapRequest;
     use aws_smithy_http::operation;
-    use std::sync::Arc;
 
     #[derive(Debug)]
     struct Unhandled;
@@ -185,9 +185,9 @@ mod tests {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         let credentials_cache = CredentialsCache::lazy_builder()
             .into_credentials_cache()
-            .create_cache(Arc::new(provide_credentials_fn(|| async {
-                Ok(Credentials::for_tests())
-            })));
+            .create_cache(SharedCredentialsProvider::new(provide_credentials_fn(
+                || async { Ok(Credentials::for_tests()) },
+            )));
         set_credentials_cache(
             &mut req.properties_mut(),
             SharedCredentialsCache::from(credentials_cache),
