@@ -73,9 +73,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -271,9 +271,9 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -582,9 +582,9 @@ impl BatchDescribeMergeConflictsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -779,9 +779,9 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -971,9 +971,9 @@ impl BatchGetCommitsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1148,9 +1148,9 @@ impl BatchGetRepositoriesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1378,9 +1378,9 @@ impl CreateApprovalRuleTemplateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1567,9 +1567,9 @@ impl CreateBranchInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1874,9 +1874,9 @@ impl CreateCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2090,9 +2090,9 @@ impl CreatePullRequestInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2312,9 +2312,9 @@ impl CreatePullRequestApprovalRuleInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2531,9 +2531,9 @@ impl CreateRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2850,9 +2850,9 @@ impl CreateUnreferencedMergeCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3020,9 +3020,9 @@ impl DeleteApprovalRuleTemplateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3197,9 +3197,9 @@ impl DeleteBranchInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3361,9 +3361,9 @@ impl DeleteCommentContentInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3618,9 +3618,9 @@ impl DeleteFileInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3800,9 +3800,9 @@ impl DeletePullRequestApprovalRuleInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3967,9 +3967,9 @@ impl DeleteRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4256,9 +4256,9 @@ impl DescribeMergeConflictsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4479,9 +4479,9 @@ impl DescribePullRequestEventsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4668,9 +4668,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4848,9 +4848,9 @@ impl EvaluatePullRequestApprovalRulesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5018,9 +5018,9 @@ impl GetApprovalRuleTemplateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5197,9 +5197,9 @@ impl GetBlobInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5372,9 +5372,9 @@ impl GetBranchInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5532,9 +5532,9 @@ impl GetCommentInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5735,9 +5735,9 @@ impl GetCommentReactionsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5956,9 +5956,9 @@ impl GetCommentsForComparedCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6192,9 +6192,9 @@ impl GetCommentsForPullRequestInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6369,9 +6369,9 @@ impl GetCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6610,9 +6610,9 @@ impl GetDifferencesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6802,9 +6802,9 @@ impl GetFileInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6992,9 +6992,9 @@ impl GetFolderInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -7226,9 +7226,9 @@ impl GetMergeCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -7503,9 +7503,9 @@ impl GetMergeConflictsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -7739,9 +7739,9 @@ impl GetMergeOptionsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -7904,9 +7904,9 @@ impl GetPullRequestInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8083,9 +8083,9 @@ impl GetPullRequestApprovalStatesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8262,9 +8262,9 @@ impl GetPullRequestOverrideStateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8427,9 +8427,9 @@ impl GetRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8594,9 +8594,9 @@ impl GetRepositoryTriggersInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8772,9 +8772,9 @@ impl ListApprovalRuleTemplatesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -8967,9 +8967,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9146,9 +9146,9 @@ impl ListBranchesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9364,9 +9364,9 @@ impl ListPullRequestsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9552,9 +9552,9 @@ impl ListRepositoriesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9746,9 +9746,9 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9922,9 +9922,9 @@ impl ListTagsForResourceInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10139,9 +10139,9 @@ impl MergeBranchesByFastForwardInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10458,9 +10458,9 @@ impl MergeBranchesBySquashInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10779,9 +10779,9 @@ impl MergeBranchesByThreeWayInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10978,9 +10978,9 @@ impl MergePullRequestByFastForwardInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -11279,9 +11279,9 @@ impl MergePullRequestBySquashInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -11582,9 +11582,9 @@ impl MergePullRequestByThreeWayInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -11776,9 +11776,9 @@ impl OverridePullRequestApprovalRulesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -12012,9 +12012,9 @@ impl PostCommentForComparedCommitInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -12266,9 +12266,9 @@ impl PostCommentForPullRequestInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -12460,9 +12460,9 @@ impl PostCommentReplyInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -12642,9 +12642,9 @@ impl PutCommentReactionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -12921,9 +12921,9 @@ impl PutFileInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -13107,9 +13107,9 @@ impl PutRepositoryTriggersInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -13300,9 +13300,9 @@ impl TagResourceInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -13488,9 +13488,9 @@ impl TestRepositoryTriggersInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -13673,9 +13673,9 @@ impl UntagResourceInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -13876,9 +13876,9 @@ impl UpdateApprovalRuleTemplateContentInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14064,9 +14064,9 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14252,9 +14252,9 @@ impl UpdateApprovalRuleTemplateNameInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14426,9 +14426,9 @@ impl UpdateCommentInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14608,9 +14608,9 @@ impl UpdateDefaultBranchInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -14845,9 +14845,9 @@ impl UpdatePullRequestApprovalRuleContentInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15039,9 +15039,9 @@ impl UpdatePullRequestApprovalStateInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15218,9 +15218,9 @@ impl UpdatePullRequestDescriptionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15400,9 +15400,9 @@ impl UpdatePullRequestStatusInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15581,9 +15581,9 @@ impl UpdatePullRequestTitleInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15765,9 +15765,9 @@ impl UpdateRepositoryDescriptionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -15941,9 +15941,9 @@ impl UpdateRepositoryNameInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(

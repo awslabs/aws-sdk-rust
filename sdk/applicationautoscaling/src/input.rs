@@ -172,9 +172,9 @@ impl DeleteScalingPolicyInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -461,9 +461,9 @@ impl DeleteScheduledActionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -737,9 +737,9 @@ impl DeregisterScalableTargetInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1048,9 +1048,9 @@ impl DescribeScalableTargetsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1365,9 +1365,9 @@ impl DescribeScalingActivitiesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1688,9 +1688,9 @@ impl DescribeScalingPoliciesInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2011,9 +2011,9 @@ impl DescribeScheduledActionsInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2367,9 +2367,9 @@ impl PutScalingPolicyInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2747,9 +2747,9 @@ impl PutScheduledActionInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3116,9 +3116,9 @@ impl RegisterScalableTargetInput {
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
-            .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(

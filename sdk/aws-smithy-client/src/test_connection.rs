@@ -40,8 +40,24 @@ pub struct CaptureRequestReceiver {
 }
 
 impl CaptureRequestReceiver {
+    /// Expect that a request was sent. Returns the captured request.
+    ///
+    /// # Panics
+    /// If no request was received
+    #[track_caller]
     pub fn expect_request(mut self) -> http::Request<SdkBody> {
         self.receiver.try_recv().expect("no request was received")
+    }
+
+    /// Expect that no request was captured. Panics if a request was received.
+    ///
+    /// # Panics
+    /// If a request was received
+    #[track_caller]
+    pub fn expect_no_request(mut self) {
+        self.receiver
+            .try_recv()
+            .expect_err("expected no request to be received!");
     }
 }
 

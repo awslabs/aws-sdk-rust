@@ -71,7 +71,9 @@ mod change_message_visibility_request_test {
     /// Test ID: SqsSetVisibilityZero
     #[tokio::test]
     async fn sqs_set_visibility_zero_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
 
         let config = builder.build();
         let input = crate::input::ChangeMessageVisibilityInput::builder()

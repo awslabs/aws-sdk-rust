@@ -18,14 +18,16 @@
 ///
 pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
-    pub(crate) use_fips: std::option::Option<bool>,
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
-    endpoint_url: Option<String>,
     app_name: Option<aws_types::app_name::AppName>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub(crate) endpoint_url: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub(crate) use_fips: std::option::Option<std::primitive::bool>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_cache: aws_credential_types::cache::SharedCredentialsCache,
@@ -70,10 +72,6 @@ impl Config {
     pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
-    #[allow(dead_code)]
-    pub(crate) fn endpoint_url(&self) -> Option<&str> {
-        self.endpoint_url.as_deref()
-    }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -109,15 +107,15 @@ impl Config {
 #[derive(Default)]
 pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
-    use_fips: std::option::Option<bool>,
     endpoint_resolver: Option<
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     >,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
-    endpoint_url: Option<String>,
     app_name: Option<aws_types::app_name::AppName>,
+    endpoint_url: std::option::Option<std::string::String>,
+    use_fips: std::option::Option<std::primitive::bool>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     region: Option<aws_types::region::Region>,
     credentials_provider:
@@ -134,17 +132,16 @@ impl Builder {
         mut self,
         make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
     ) -> Self {
-        self.make_token = Some(make_token.into());
+        self.set_make_token(Some(make_token.into()));
         self
     }
-    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
-    pub fn use_fips(mut self, use_fips: impl Into<bool>) -> Self {
-        self.use_fips = Some(use_fips.into());
-        self
-    }
-    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
-    pub fn set_use_fips(&mut self, use_fips: Option<bool>) -> &mut Self {
-        self.use_fips = use_fips;
+
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_make_token(
+        &mut self,
+        make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.make_token = make_token;
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -392,25 +389,6 @@ impl Builder {
             .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
         self
     }
-    /// Sets the endpoint url used to communicate with this service
-    ///
-    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
-    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
-    /// [`Builder::endpoint_resolver`].
-    pub fn endpoint_url(mut self, endpoint_url: impl Into<String>) -> Self {
-        self.endpoint_url = Some(endpoint_url.into());
-        self
-    }
-
-    /// Sets the endpoint url used to communicate with this service
-    ///
-    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
-    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
-    /// [`Builder::endpoint_resolver`].
-    pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
-        self.endpoint_url = endpoint_url;
-        self
-    }
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -426,6 +404,34 @@ impl Builder {
     /// gets sent along with requests.
     pub fn set_app_name(&mut self, app_name: Option<aws_types::app_name::AppName>) -> &mut Self {
         self.app_name = app_name;
+        self
+    }
+    /// Sets the endpoint url used to communicate with this service
+
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn endpoint_url(mut self, endpoint_url: impl Into<std::string::String>) -> Self {
+        self.endpoint_url = Some(endpoint_url.into());
+        self
+    }
+    /// Sets the endpoint url used to communicate with this service
+
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn set_endpoint_url(&mut self, endpoint_url: Option<std::string::String>) -> &mut Self {
+        self.endpoint_url = endpoint_url;
+        self
+    }
+    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
+    pub fn use_fips(mut self, use_fips: impl Into<std::primitive::bool>) -> Self {
+        self.use_fips = Some(use_fips.into());
+        self
+    }
+    /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
+    pub fn set_use_fips(&mut self, use_fips: Option<std::primitive::bool>) -> &mut Self {
+        self.use_fips = use_fips;
         self
     }
     /// Sets the HTTP connector to use when making requests.
@@ -563,21 +569,38 @@ impl Builder {
         self.credentials_cache = credentials_cache;
         self
     }
+    #[cfg(any(feature = "test-util", test))]
+    #[allow(unused_mut)]
+    /// Apply test defaults to the builder
+    pub fn set_test_defaults(&mut self) -> &mut Self {
+        self.set_make_token(Some("00000000-0000-4000-8000-000000000000".into()));
+        self.set_credentials_provider(Some(std::sync::Arc::new(
+            aws_credential_types::Credentials::for_tests(),
+        )));
+        self
+    }
+    #[cfg(any(feature = "test-util", test))]
+    #[allow(unused_mut)]
+    /// Apply test defaults to the builder
+    pub fn with_test_defaults(mut self) -> Self {
+        self.set_test_defaults();
+        self
+    }
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
             make_token: self
                 .make_token
                 .unwrap_or_else(crate::idempotency_token::default_provider),
-            use_fips: self.use_fips,
             endpoint_resolver: self
                 .endpoint_resolver
                 .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,
-            endpoint_url: self.endpoint_url,
             app_name: self.app_name,
+            endpoint_url: self.endpoint_url,
+            use_fips: self.use_fips,
             http_connector: self.http_connector,
             region: self.region,
             credentials_cache: self
@@ -613,6 +636,8 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
 
         builder.set_use_fips(input.use_fips());
 
+        builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
+
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
@@ -623,7 +648,6 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_app_name(input.app_name().cloned());
 
         builder.set_aws_endpoint_resolver(input.endpoint_resolver().clone());
-        builder.set_endpoint_url(input.endpoint_url().map(|url| url.to_string()));
 
         builder
     }

@@ -44,6 +44,7 @@ version = "0.54.0"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
+features = ["test-util"]
 version = "0.54.0"
 
 [dependencies.aws-smithy-eventstream]
@@ -117,6 +118,11 @@ version = "1.12.0"
 path = "../aws-config"
 version = "0.54.0"
 
+[dev-dependencies.aws-credential-types]
+path = "../aws-credential-types"
+features = ["test-util"]
+version = "0.54.0"
+
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 features = ["test-util"]
@@ -159,4 +165,5 @@ features = ["env-filter", "json"]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-http/rt-tokio"]
+test-util = ["aws-credential-types/test-util"]
 default = ["rustls", "rt-tokio"]

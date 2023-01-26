@@ -1022,7 +1022,9 @@ mod get_change_request_test {
     /// Test ID: GetChangeTrimChangeId
     #[tokio::test]
     async fn get_change_trim_change_id_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::GetChangeInput::builder()
@@ -1443,7 +1445,9 @@ mod get_reusable_delegation_set_request_test {
     /// Test ID: GetReusableDelegationSetTrimDelegationSetId
     #[tokio::test]
     async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::GetReusableDelegationSetInput::builder()
@@ -1942,7 +1946,9 @@ mod list_resource_record_sets_request_test {
     /// Test ID: ListResourceRecordSetsTrimHostedZone
     #[tokio::test]
     async fn list_resource_record_sets_trim_hosted_zone_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::ListResourceRecordSetsInput::builder()

@@ -171,7 +171,9 @@ mod create_multipart_upload_request_test {
     /// Test ID: CreateMultipartUploadUriConstruction
     #[tokio::test]
     async fn create_multipart_upload_uri_construction_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::CreateMultipartUploadInput::builder()
@@ -1910,7 +1912,9 @@ mod head_object_request_test {
     /// Test ID: HeadObjectUriEncoding
     #[tokio::test]
     async fn head_object_uri_encoding_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::HeadObjectInput::builder()
@@ -2683,7 +2687,9 @@ mod put_bucket_lifecycle_configuration_request_test {
     /// Test ID: PutBucketLifecycleConfiguration
     #[tokio::test]
     async fn put_bucket_lifecycle_configuration_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutBucketLifecycleConfigurationInput::builder()
@@ -3098,7 +3104,9 @@ mod put_object_request_test {
     /// Test ID: DontSendDuplicateContentType
     #[tokio::test]
     async fn dont_send_duplicate_content_type_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutObjectInput::builder()
@@ -3123,7 +3131,9 @@ mod put_object_request_test {
     /// Test ID: DontSendDuplicateContentLength
     #[tokio::test]
     async fn dont_send_duplicate_content_length_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::PutObjectInput::builder()

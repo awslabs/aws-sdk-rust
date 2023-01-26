@@ -79,6 +79,11 @@ version = "0.4"
 path = "../aws-config"
 version = "0.54.0"
 
+[dev-dependencies.aws-credential-types]
+path = "../aws-credential-types"
+features = ["test-util"]
+version = "0.54.0"
+
 [dev-dependencies.pretty_assertions]
 version = "1.3.0"
 
@@ -90,4 +95,5 @@ features = ["macros", "test-util", "rt-multi-thread"]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-http/rt-tokio"]
+test-util = ["aws-credential-types/test-util"]
 default = ["rustls", "rt-tokio"]

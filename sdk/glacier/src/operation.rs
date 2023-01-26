@@ -1070,7 +1070,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierVersionHeader
     #[tokio::test]
     async fn glacier_version_header_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
@@ -1097,7 +1099,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierChecksums
     #[tokio::test]
     async fn glacier_checksums_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
@@ -1142,7 +1146,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierAccountIdEmpty
     #[tokio::test]
     async fn glacier_account_id_empty_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
@@ -1171,7 +1177,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierAccountIdUnset
     #[tokio::test]
     async fn glacier_account_id_unset_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
@@ -1236,7 +1244,9 @@ mod upload_multipart_part_request_test {
     /// Test ID: GlacierMultipartChecksums
     #[tokio::test]
     async fn glacier_multipart_checksums_request() {
-        let builder = crate::config::Config::builder().endpoint_resolver("https://example.com");
+        let builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_resolver("https://example.com");
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         let config = builder.build();
         let input = crate::input::UploadMultipartPartInput::builder()

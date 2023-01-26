@@ -64,9 +64,9 @@ impl CreateAccessTokenInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -342,9 +342,9 @@ impl CreateDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -556,9 +556,9 @@ impl CreateProjectInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -780,9 +780,9 @@ impl CreateSourceRepositoryBranchInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1000,9 +1000,9 @@ impl DeleteAccessTokenInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1176,9 +1176,9 @@ impl DeleteDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1396,9 +1396,9 @@ impl GetDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1602,9 +1602,9 @@ impl GetProjectInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1805,9 +1805,9 @@ impl GetSourceRepositoryCloneUrlsInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1990,9 +1990,9 @@ impl GetSpaceInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2138,9 +2138,9 @@ impl GetSubscriptionInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2304,9 +2304,9 @@ impl GetUserDetailsInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2466,9 +2466,9 @@ impl ListAccessTokensInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2669,9 +2669,9 @@ impl ListDevEnvironmentsInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2923,9 +2923,9 @@ impl ListEventLogsInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3136,9 +3136,9 @@ impl ListProjectsInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3342,9 +3342,9 @@ impl ListSourceRepositoriesInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3585,9 +3585,9 @@ impl ListSourceRepositoryBranchesInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3786,9 +3786,9 @@ impl ListSpacesInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4004,9 +4004,9 @@ impl StartDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4257,9 +4257,9 @@ impl StartDevEnvironmentSessionInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4491,9 +4491,9 @@ impl StopDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4791,9 +4791,9 @@ impl UpdateDevEnvironmentInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4987,9 +4987,9 @@ impl VerifySessionInput {
         aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
             .set_use_fips(_config.use_fips)
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
