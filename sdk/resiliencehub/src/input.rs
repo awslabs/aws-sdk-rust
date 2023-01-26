@@ -162,9 +162,9 @@ impl AddDraftAppVersionResourceMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -418,9 +418,9 @@ impl CreateAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApp::new())
@@ -790,9 +790,9 @@ impl CreateRecommendationTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1089,9 +1089,9 @@ impl CreateResiliencyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1273,9 +1273,9 @@ impl DeleteAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteApp::new())
@@ -1448,9 +1448,9 @@ impl DeleteAppAssessmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1629,9 +1629,9 @@ impl DeleteRecommendationTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1805,9 +1805,9 @@ impl DeleteResiliencyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1962,9 +1962,9 @@ impl DescribeAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2126,9 +2126,9 @@ impl DescribeAppAssessmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2315,9 +2315,9 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2488,9 +2488,9 @@ impl DescribeAppVersionTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2653,9 +2653,9 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2815,9 +2815,9 @@ impl DescribeResiliencyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3018,9 +3018,9 @@ impl ImportResourcesToDraftAppVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3206,9 +3206,9 @@ impl ListAlarmRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3519,9 +3519,9 @@ impl ListAppAssessmentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3706,9 +3706,9 @@ impl ListAppComponentCompliancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3893,9 +3893,9 @@ impl ListAppComponentRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4103,9 +4103,9 @@ impl ListAppsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::ListApps::new())
@@ -4297,9 +4297,9 @@ impl ListAppVersionResourceMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4509,9 +4509,9 @@ impl ListAppVersionResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4690,9 +4690,9 @@ impl ListAppVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4995,9 +4995,9 @@ impl ListRecommendationTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5190,9 +5190,9 @@ impl ListResiliencyPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5378,9 +5378,9 @@ impl ListSopRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5557,9 +5557,9 @@ impl ListSuggestedResiliencyPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5722,9 +5722,9 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5910,9 +5910,9 @@ impl ListTestRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6121,9 +6121,9 @@ impl ListUnsupportedAppVersionResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6280,9 +6280,9 @@ impl PublishAppVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6455,9 +6455,9 @@ impl PutDraftAppVersionTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6720,9 +6720,9 @@ impl RemoveDraftAppVersionResourceMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6892,9 +6892,9 @@ impl ResolveAppVersionResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7133,9 +7133,9 @@ impl StartAppAssessmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7347,9 +7347,9 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7557,9 +7557,9 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7769,9 +7769,9 @@ impl UpdateAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateApp::new())
@@ -8021,9 +8021,9 @@ impl UpdateResiliencyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,

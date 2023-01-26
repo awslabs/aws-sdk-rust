@@ -169,9 +169,9 @@ impl CloneReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -333,9 +333,9 @@ impl CreateConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -510,9 +510,9 @@ impl CreateConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -689,9 +689,9 @@ impl CreateConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -926,9 +926,9 @@ impl CreateCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1088,9 +1088,9 @@ impl CreateReceiptFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1274,9 +1274,9 @@ impl CreateReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1448,9 +1448,9 @@ impl CreateReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1605,9 +1605,9 @@ impl CreateTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1769,9 +1769,9 @@ impl DeleteConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1946,9 +1946,9 @@ impl DeleteConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2108,9 +2108,9 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2270,9 +2270,9 @@ impl DeleteCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2427,9 +2427,9 @@ impl DeleteIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2602,9 +2602,9 @@ impl DeleteIdentityPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2761,9 +2761,9 @@ impl DeleteReceiptFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2935,9 +2935,9 @@ impl DeleteReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3099,9 +3099,9 @@ impl DeleteReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3259,9 +3259,9 @@ impl DeleteTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3421,9 +3421,9 @@ impl DeleteVerifiedEmailAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3559,9 +3559,9 @@ impl DescribeActiveReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3748,9 +3748,9 @@ impl DescribeConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3922,9 +3922,9 @@ impl DescribeReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4086,9 +4086,9 @@ impl DescribeReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4226,9 +4226,9 @@ impl GetAccountSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4388,9 +4388,9 @@ impl GetCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4558,9 +4558,9 @@ impl GetIdentityDkimAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4726,9 +4726,9 @@ impl GetIdentityMailFromDomainAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4894,9 +4894,9 @@ impl GetIdentityNotificationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5076,9 +5076,9 @@ impl GetIdentityPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5244,9 +5244,9 @@ impl GetIdentityVerificationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5380,9 +5380,9 @@ impl GetSendQuotaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5518,9 +5518,9 @@ impl GetSendStatisticsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5678,9 +5678,9 @@ impl GetTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5851,9 +5851,9 @@ impl ListConfigurationSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6022,9 +6022,9 @@ impl ListCustomVerificationEmailTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6206,9 +6206,9 @@ impl ListIdentitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6369,9 +6369,9 @@ impl ListIdentityPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6507,9 +6507,9 @@ impl ListReceiptFiltersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6668,9 +6668,9 @@ impl ListReceiptRuleSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6837,9 +6837,9 @@ impl ListTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -6975,9 +6975,9 @@ impl ListVerifiedEmailAddressesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7152,9 +7152,9 @@ impl PutConfigurationSetDeliveryOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7341,9 +7341,9 @@ impl PutIdentityPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7526,9 +7526,9 @@ impl ReorderReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -7768,9 +7768,9 @@ impl SendBounceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -8102,9 +8102,9 @@ impl SendBulkTemplatedEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -8294,9 +8294,9 @@ impl SendCustomVerificationEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -8588,9 +8588,9 @@ impl SendEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::SendEmail::new())
@@ -8904,9 +8904,9 @@ impl SendRawEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -9227,9 +9227,9 @@ impl SendTemplatedEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -9391,9 +9391,9 @@ impl SetActiveReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -9564,9 +9564,9 @@ impl SetIdentityDkimEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -9735,9 +9735,9 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -9925,9 +9925,9 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -10116,9 +10116,9 @@ impl SetIdentityMailFromDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -10308,9 +10308,9 @@ impl SetIdentityNotificationTopicInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -10496,9 +10496,9 @@ impl SetReceiptRulePositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -10673,9 +10673,9 @@ impl TestRenderTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -10832,9 +10832,9 @@ impl UpdateAccountSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11009,9 +11009,9 @@ impl UpdateConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11185,9 +11185,9 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11360,9 +11360,9 @@ impl UpdateConfigurationSetSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11539,9 +11539,9 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11776,9 +11776,9 @@ impl UpdateCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -11950,9 +11950,9 @@ impl UpdateReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -12107,9 +12107,9 @@ impl UpdateTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -12266,9 +12266,9 @@ impl VerifyDomainDkimInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -12427,9 +12427,9 @@ impl VerifyDomainIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -12589,9 +12589,9 @@ impl VerifyEmailAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -12751,9 +12751,9 @@ impl VerifyEmailIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,

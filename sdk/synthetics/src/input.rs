@@ -178,9 +178,9 @@ impl AssociateResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -540,9 +540,9 @@ impl CreateCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -730,9 +730,9 @@ impl CreateGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -920,9 +920,9 @@ impl DeleteCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1090,9 +1090,9 @@ impl DeleteGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1286,9 +1286,9 @@ impl DescribeCanariesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1484,9 +1484,9 @@ impl DescribeCanariesLastRunInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1657,9 +1657,9 @@ impl DescribeRuntimeVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1855,9 +1855,9 @@ impl DisassociateResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2015,9 +2015,9 @@ impl GetCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetCanary::new())
@@ -2214,9 +2214,9 @@ impl GetCanaryRunsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2384,9 +2384,9 @@ impl GetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetGroup::new())
@@ -2591,9 +2591,9 @@ impl ListAssociatedGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2801,9 +2801,9 @@ impl ListGroupResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2970,9 +2970,9 @@ impl ListGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3139,9 +3139,9 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3300,9 +3300,9 @@ impl StartCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3461,9 +3461,9 @@ impl StopCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3671,9 +3671,9 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3877,9 +3877,9 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4244,9 +4244,9 @@ impl UpdateCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,

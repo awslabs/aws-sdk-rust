@@ -236,9 +236,9 @@ impl CreateAwsLogSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -453,9 +453,9 @@ impl CreateCustomLogSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -681,9 +681,9 @@ impl CreateDatalakeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -857,9 +857,9 @@ impl CreateDatalakeAutoEnableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1016,9 +1016,9 @@ impl CreateDatalakeDelegatedAdminInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1198,9 +1198,9 @@ impl CreateDatalakeExceptionsSubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1441,9 +1441,9 @@ impl CreateSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1713,9 +1713,9 @@ impl CreateSubscriptionNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -1971,9 +1971,9 @@ impl DeleteAwsLogSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2146,9 +2146,9 @@ impl DeleteCustomLogSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2275,9 +2275,9 @@ impl DeleteDatalakeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2455,9 +2455,9 @@ impl DeleteDatalakeAutoEnableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2620,9 +2620,9 @@ impl DeleteDatalakeDelegatedAdminInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2752,9 +2752,9 @@ impl DeleteDatalakeExceptionsSubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -2919,9 +2919,9 @@ impl DeleteSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3093,9 +3093,9 @@ impl DeleteSubscriptionNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3223,9 +3223,9 @@ impl GetDatalakeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3354,9 +3354,9 @@ impl GetDatalakeAutoEnableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3486,9 +3486,9 @@ impl GetDatalakeExceptionsExpiryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3618,9 +3618,9 @@ impl GetDatalakeExceptionsSubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3812,9 +3812,9 @@ impl GetDatalakeStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -3972,9 +3972,9 @@ impl GetSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4168,9 +4168,9 @@ impl ListDatalakeExceptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4446,9 +4446,9 @@ impl ListLogSourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4622,9 +4622,9 @@ impl ListSubscribersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4799,9 +4799,9 @@ impl UpdateDatalakeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -4959,9 +4959,9 @@ impl UpdateDatalakeExceptionsExpiryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5141,9 +5141,9 @@ impl UpdateDatalakeExceptionsSubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5382,9 +5382,9 @@ impl UpdateSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,
@@ -5654,9 +5654,9 @@ impl UpdateSubscriptionNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_provider(
+        aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
-            _config.credentials_provider.clone(),
+            _config.credentials_cache.clone(),
         );
         let op = aws_smithy_http::operation::Operation::new(
             request,

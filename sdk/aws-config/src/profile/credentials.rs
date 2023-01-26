@@ -62,7 +62,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// ```
 ///
 /// _Note: Profile providers to not implement any caching. They will reload and reparse the profile
-/// from the file system when called. See [lazy_caching](aws_credential_types::lazy_caching::LazyCachingCredentialsProvider) for
+/// from the file system when called. See [CredentialsCache](aws_credential_types::cache::CredentialsCache) for
 /// more information about caching._
 ///
 /// This provider supports several different credentials formats:

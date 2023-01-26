@@ -32,7 +32,7 @@ pub struct Config {
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: Option<aws_types::region::Region>,
-    pub(crate) credentials_provider: aws_credential_types::provider::SharedCredentialsProvider,
+    pub(crate) credentials_cache: aws_credential_types::cache::SharedCredentialsCache,
 }
 impl std::fmt::Debug for Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -105,11 +105,9 @@ impl Config {
     pub fn region(&self) -> Option<&aws_types::region::Region> {
         self.region.as_ref()
     }
-    /// Returns the credentials provider.
-    pub fn credentials_provider(
-        &self,
-    ) -> aws_credential_types::provider::SharedCredentialsProvider {
-        self.credentials_provider.clone()
+    /// Returns the credentials cache.
+    pub fn credentials_cache(&self) -> aws_credential_types::cache::SharedCredentialsCache {
+        self.credentials_cache.clone()
     }
 }
 /// Builder for creating a `Config`.
@@ -131,7 +129,9 @@ pub struct Builder {
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     region: Option<aws_types::region::Region>,
-    credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
+    credentials_provider:
+        Option<std::sync::Arc<dyn aws_credential_types::provider::ProvideCredentials>>,
+    credentials_cache: Option<aws_credential_types::cache::CredentialsCache>,
 }
 impl Builder {
     /// Constructs a config builder.
@@ -589,18 +589,35 @@ impl Builder {
         mut self,
         credentials_provider: impl aws_credential_types::provider::ProvideCredentials + 'static,
     ) -> Self {
-        self.credentials_provider = Some(
-            aws_credential_types::provider::SharedCredentialsProvider::new(credentials_provider),
-        );
+        self.set_credentials_provider(Some(std::sync::Arc::new(credentials_provider)));
         self
     }
 
     /// Sets the credentials provider for this service
     pub fn set_credentials_provider(
         &mut self,
-        credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
+        credentials_provider: Option<
+            std::sync::Arc<dyn aws_credential_types::provider::ProvideCredentials>,
+        >,
     ) -> &mut Self {
         self.credentials_provider = credentials_provider;
+        self
+    }
+    /// Sets the credentials cache for this service
+    pub fn credentials_cache(
+        mut self,
+        credentials_cache: aws_credential_types::cache::CredentialsCache,
+    ) -> Self {
+        self.set_credentials_cache(Some(credentials_cache));
+        self
+    }
+
+    /// Sets the credentials cache for this service
+    pub fn set_credentials_cache(
+        &mut self,
+        credentials_cache: Option<aws_credential_types::cache::CredentialsCache>,
+    ) -> &mut Self {
+        self.credentials_cache = credentials_cache;
         self
     }
     /// Builds a [`Config`].
@@ -616,17 +633,30 @@ impl Builder {
                 .endpoint_resolver
                 .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
             retry_config: self.retry_config,
-            sleep_impl: self.sleep_impl,
+            sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,
             endpoint_url: self.endpoint_url,
             app_name: self.app_name,
             http_connector: self.http_connector,
             region: self.region,
-            credentials_provider: self.credentials_provider.unwrap_or_else(|| {
-                aws_credential_types::provider::SharedCredentialsProvider::new(
-                    crate::no_credentials::NoCredentials,
-                )
-            }),
+            credentials_cache: self
+                .credentials_cache
+                .unwrap_or_else({
+                    let sleep = self.sleep_impl.clone();
+                    || match sleep {
+                        Some(sleep) => {
+                            aws_credential_types::cache::CredentialsCache::lazy_builder()
+                                .sleep(sleep)
+                                .into_credentials_cache()
+                        }
+                        None => aws_credential_types::cache::CredentialsCache::lazy(),
+                    }
+                })
+                .create_cache(
+                    self.credentials_provider.unwrap_or_else(|| {
+                        std::sync::Arc::new(crate::no_credentials::NoCredentials)
+                    }),
+                ),
         }
     }
 }
@@ -634,7 +664,9 @@ impl Builder {
 impl From<&aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
-        builder.set_credentials_provider(input.credentials_provider().cloned());
+        builder.set_credentials_cache(input.credentials_cache().cloned());
+
+        builder.set_credentials_provider(input.credentials_provider().clone());
 
         builder = builder.region(input.region().cloned());
 

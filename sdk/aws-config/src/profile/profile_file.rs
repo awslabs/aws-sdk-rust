@@ -23,6 +23,7 @@ use std::path::PathBuf;
 /// ```
 /// use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
 /// use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
+/// use std::sync::Arc;
 ///
 /// # async fn example() {
 /// let profile_files = ProfileFiles::builder()

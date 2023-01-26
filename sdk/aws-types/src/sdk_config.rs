@@ -11,7 +11,8 @@
 
 use std::sync::Arc;
 
-use aws_credential_types::provider::SharedCredentialsProvider;
+use aws_credential_types::cache::CredentialsCache;
+use aws_credential_types::provider::ProvideCredentials;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_types::retry::RetryConfig;
@@ -47,7 +48,8 @@ these services, this setting has no effect"
 #[derive(Debug, Clone)]
 pub struct SdkConfig {
     app_name: Option<AppName>,
-    credentials_provider: Option<SharedCredentialsProvider>,
+    credentials_cache: Option<CredentialsCache>,
+    credentials_provider: Option<Arc<dyn ProvideCredentials>>,
     region: Option<Region>,
     endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     endpoint_url: Option<String>,
@@ -67,7 +69,8 @@ pub struct SdkConfig {
 #[derive(Debug, Default)]
 pub struct Builder {
     app_name: Option<AppName>,
-    credentials_provider: Option<SharedCredentialsProvider>,
+    credentials_cache: Option<CredentialsCache>,
+    credentials_provider: Option<Arc<dyn ProvideCredentials>>,
     region: Option<Region>,
     endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     endpoint_url: Option<String>,
@@ -338,12 +341,50 @@ impl Builder {
         self
     }
 
+    /// Set the [`CredentialsCache`] for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_credential_types::cache::CredentialsCache;
+    /// use aws_types::SdkConfig;
+    /// let config = SdkConfig::builder()
+    ///     .credentials_cache(CredentialsCache::lazy())
+    ///     .build();
+    /// ```
+    pub fn credentials_cache(mut self, cache: CredentialsCache) -> Self {
+        self.set_credentials_cache(Some(cache));
+        self
+    }
+
+    /// Set the [`CredentialsCache`] for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_credential_types::cache::CredentialsCache;
+    /// use aws_types::SdkConfig;
+    /// fn override_credentials_cache() -> bool {
+    ///   // ...
+    ///   # true
+    /// }
+    ///
+    /// let mut builder = SdkConfig::builder();
+    /// if override_credentials_cache() {
+    ///     builder.set_credentials_cache(Some(CredentialsCache::lazy()));
+    /// }
+    /// let config = builder.build();
+    /// ```
+    pub fn set_credentials_cache(&mut self, cache: Option<CredentialsCache>) -> &mut Self {
+        self.credentials_cache = cache;
+        self
+    }
+
     /// Set the credentials provider for the builder
     ///
     /// # Examples
     /// ```rust
-    /// use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
+    /// use aws_credential_types::provider::ProvideCredentials;
     /// use aws_types::SdkConfig;
+    /// use std::sync::Arc;
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
     ///   # use aws_credential_types::Credentials;
@@ -351,10 +392,10 @@ impl Builder {
     /// }
     ///
     /// let config = SdkConfig::builder()
-    ///     .credentials_provider(SharedCredentialsProvider::new(make_provider()))
+    ///     .credentials_provider(Arc::new(make_provider()))
     ///     .build();
     /// ```
-    pub fn credentials_provider(mut self, provider: SharedCredentialsProvider) -> Self {
+    pub fn credentials_provider(mut self, provider: Arc<dyn ProvideCredentials>) -> Self {
         self.set_credentials_provider(Some(provider));
         self
     }
@@ -363,8 +404,9 @@ impl Builder {
     ///
     /// # Examples
     /// ```rust
-    /// use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
+    /// use aws_credential_types::provider::ProvideCredentials;
     /// use aws_types::SdkConfig;
+    /// use std::sync::Arc;
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
     ///   # use aws_credential_types::Credentials;
@@ -378,13 +420,13 @@ impl Builder {
     ///
     /// let mut builder = SdkConfig::builder();
     /// if override_provider() {
-    ///     builder.set_credentials_provider(Some(SharedCredentialsProvider::new(make_provider())));
+    ///     builder.set_credentials_provider(Some(Arc::new(make_provider())));
     /// }
     /// let config = builder.build();
     /// ```
     pub fn set_credentials_provider(
         &mut self,
-        provider: Option<SharedCredentialsProvider>,
+        provider: Option<Arc<dyn ProvideCredentials>>,
     ) -> &mut Self {
         self.credentials_provider = provider;
         self
@@ -514,6 +556,7 @@ impl Builder {
     pub fn build(self) -> SdkConfig {
         SdkConfig {
             app_name: self.app_name,
+            credentials_cache: self.credentials_cache,
             credentials_provider: self.credentials_provider,
             region: self.region,
             endpoint_resolver: self.endpoint_resolver,
@@ -560,9 +603,14 @@ impl SdkConfig {
         self.sleep_impl.clone()
     }
 
+    /// Configured credentials cache
+    pub fn credentials_cache(&self) -> Option<&CredentialsCache> {
+        self.credentials_cache.as_ref()
+    }
+
     /// Configured credentials provider
-    pub fn credentials_provider(&self) -> Option<&SharedCredentialsProvider> {
-        self.credentials_provider.as_ref()
+    pub fn credentials_provider(&self) -> Option<Arc<dyn ProvideCredentials>> {
+        self.credentials_provider.clone()
     }
 
     /// Configured app name
