@@ -1,4 +1,198 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+January 26th, 2023
+==================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#2122](https://github.com/awslabs/smithy-rs/issues/2122), [smithy-rs#2227](https://github.com/awslabs/smithy-rs/issues/2227)) Improve SDK credentials caching through type safety. `LazyCachingCredentialsProvider` has been renamed to `LazyCredentialsCache` and is no longer treated as a credentials provider. Furthermore, you do not create a `LazyCredentialsCache` directly, and instead you interact with `CredentialsCache`. This introduces the following breaking changes.
+
+    If you previously used `LazyCachingCredentialsProvider`, you can replace it with `CredentialsCache`.
+    <details>
+    <summary>Example</summary>
+
+    Before:
+    ```rust
+    use aws_config::meta::credentials::lazy_caching::LazyCachingCredentialsProvider;
+    use aws_types::provider::ProvideCredentials;
+
+    fn make_provider() -> impl ProvideCredentials {
+        // --snip--
+    }
+
+    let credentials_provider =
+        LazyCachingCredentialsProvider::builder()
+            .load(make_provider())
+            .build();
+
+    let sdk_config = aws_config::from_env()
+        .credentials_provider(credentials_provider)
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    After:
+    ```rust
+    use aws_credential_types::cache::CredentialsCache;
+    use aws_types::provider::ProvideCredentials;
+
+    fn make_provider() -> impl ProvideCredentials {
+        // --snip--
+    }
+
+    // Wrapping a result of `make_provider` in `LazyCredentialsCache` is done automatically.
+    let sdk_config = aws_config::from_env()
+        .credentials_cache(CredentialsCache::lazy()) // This line can be omitted because it is on by default.
+        .credentials_provider(make_provider())
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    If you previously configured a `LazyCachingCredentialsProvider`, you can use the builder for `LazyCredentialsCache` instead.
+
+    Before:
+    ```rust
+    use aws_config::meta::credentials::lazy_caching::LazyCachingCredentialsProvider;
+    use aws_types::provider::ProvideCredentials;
+    use std::time::Duration;
+
+    fn make_provider() -> impl ProvideCredentials {
+        // --snip--
+    }
+
+    let credentials_provider =
+        LazyCachingCredentialsProvider::builder()
+            .load(make_provider())
+            .load_timeout(Duration::from_secs(60)) // Configures timeout.
+            .build();
+
+    let sdk_config = aws_config::from_env()
+        .credentials_provider(credentials_provider)
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    After:
+    ```rust
+    use aws_credential_types::cache::CredentialsCache;
+    use aws_types::provider::ProvideCredentials;
+    use std::time::Duration;
+
+    fn make_provider() -> impl ProvideCredentials {
+        // --snip--
+    }
+
+    let sdk_config = aws_config::from_env()
+        .credentials_cache(
+            CredentialsCache::lazy_builder()
+                .load_timeout(Duration::from_secs(60)) // Configures timeout.
+                .into_credentials_cache(),
+        )
+        .credentials_provider(make_provider())
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    The examples above only demonstrate how to use `credentials_cache` and `credentials_provider` methods on `aws_config::ConfigLoader` but the same code update can be applied when you interact with `aws_types::sdk_config::Builder` or the builder for a service-specific config, e.g. `aws_sdk_s3::config::Builder`.
+
+    </details>
+
+
+    If you previously configured a `DefaultCredentialsChain` by calling `load_timeout`, `buffer_time`, or `default_credential_expiration` on its builder, you need to call the same set of methods on the builder for `LazyCredentialsCache` instead.
+    <details>
+    <summary>Example</summary>
+
+    Before:
+    ```rust
+    use aws_config::default_provider::credentials::DefaultCredentialsChain;
+    use std::time::Duration;
+
+    let credentials_provider = DefaultCredentialsChain::builder()
+        .buffer_time(Duration::from_secs(30))
+        .default_credential_expiration(Duration::from_secs(20 * 60))
+        .build()
+        .await;
+
+    let sdk_config = aws_config::from_env()
+        .credentials_provider(credentials_provider)
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    After:
+    ```rust
+    use aws_config::default_provider::credentials::default_provider;
+    use aws_credential_types::cache::CredentialsCache;
+    use std::time::Duration;
+
+    // Previously used methods no longer exist on the builder for `DefaultCredentialsChain`.
+    let credentials_provider = default_provider().await;
+
+    let sdk_config = aws_config::from_env()
+        .credentials_cache(
+            CredentialsCache::lazy_builder()
+                .buffer_time(Duration::from_secs(30))
+                .default_credential_expiration(Duration::from_secs(20 * 60))
+                .into_credentials_cache(),
+        )
+        .credentials_provider(credentials_provider)
+        .load()
+        .await;
+
+    let client = aws_sdk_s3::Client::new(&sdk_config);
+    ```
+
+    </details>
+- ⚠ ([smithy-rs#2122](https://github.com/awslabs/smithy-rs/issues/2122), [smithy-rs#2227](https://github.com/awslabs/smithy-rs/issues/2227)) The introduction of `CredentialsCache` comes with an accompanying type `SharedCredentialsCache`, which we will store in the property bag instead of a `SharedCredentialsProvider`. As a result, `aws_http::auth:set_provider` has been updated to `aws_http::auth::set_credentials_cache`.
+
+    Before:
+    ```rust
+    use aws_credential_types::Credentials;
+    use aws_credential_types::provider::SharedCredentialsProvider;
+    use aws_http::auth::set_provider;
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::operation;
+
+    let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
+    let credentials = Credentials::new("example", "example", None, None, "my_provider_name");
+    set_provider(
+        &mut req.properties_mut(),
+        SharedCredentialsProvider::new(credentials),
+    );
+    ```
+
+    After:
+    ```rust
+    use aws_credential_types::Credentials;
+    use aws_credential_types::cache::{CredentialsCache, SharedCredentialsCache};
+    use aws_credential_types::provider::SharedCredentialsProvider;
+    use aws_http::auth::set_credentials_cache;
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::operation;
+
+    let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
+    let credentials = Credentials::new("example", "example", None, None, "my_provider_name");
+    let credentials_cache = CredentialsCache::lazy_builder()
+        .into_credentials_cache()
+        .create_cache(SharedCredentialsProvider::new(credentials));
+    set_credentials_cache(
+        &mut req.properties_mut(),
+        SharedCredentialsCache::new(credentials_cache),
+    );
+    ```
+
+**New this release:**
+- 🐛 ([smithy-rs#2204](https://github.com/awslabs/smithy-rs/issues/2204)) Fix endpoint for s3.write_get_object_response(). This bug was introduced in 0.53.
+- ([smithy-rs#2204](https://github.com/awslabs/smithy-rs/issues/2204)) Add `with_test_defaults()` and `set_test_defaults()` to `<service>::Config`. These methods fill in defaults for configuration that is mandatory to successfully send a request.
+
+
 January 13th, 2023
 ==================
 **Breaking Changes:**
