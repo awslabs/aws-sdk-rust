@@ -10,7 +10,7 @@ thiserror = "1.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-sdk-iotsitewise]
 path = "../../sdk/iotsitewise"
@@ -19,7 +19,7 @@ version = "0.24.0"
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.structopt]
 version = "0.3"

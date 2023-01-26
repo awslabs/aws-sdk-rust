@@ -21,7 +21,7 @@ tracing-bunyan-formatter = "0.3.4"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-sdk-glue]
 path = "../../sdk/glue"
@@ -33,25 +33,25 @@ version = "0.24.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-smithy-client]
 features = ["client-hyper", "rustls", "rt-tokio"]
 path = "../../sdk/aws-smithy-client"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-smithy-http]
 features = ["rt-tokio"]
 path = "../../sdk/aws-smithy-http"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.54.0"
+version = "0.54.1"
 
 [dependencies.tokio]
 version = "1.20.1"

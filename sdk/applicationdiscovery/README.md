@@ -39,7 +39,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.54.0"
+aws-config = "0.54.1"
 aws-sdk-applicationdiscovery = "0.24.0"
 tokio = { version = "1", features = ["full"] }
 ```
