@@ -15651,20 +15651,6 @@
                                     "url": "https://s3-fips.us-gov-west-1.amazonaws.com/bucket.with.dots"
                                 }
                             },
-                            "operationInputs": [
-                                {
-                                    "builtInParams": {
-                                        "AWS::Region": "us-west-2",
-                                        "AWS::UseFIPS": true,
-                                        "AWS::S3::ForcePathStyle": true
-                                    },
-                                    "operationName": "GetObject",
-                                    "operationParams": {
-                                        "Bucket": "bucket-name",
-                                        "Key": "key"
-                                    }
-                                }
-                            ],
                             "params": {
                                 "Accelerate": false,
                                 "Bucket": "bucket.with.dots",
