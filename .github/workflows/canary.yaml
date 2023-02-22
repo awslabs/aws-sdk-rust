@@ -35,7 +35,7 @@ jobs:
   canary:
     needs: generate-canary-matrix
     name: Canary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04:20230206.1
     env:
       AWS_DEFAULT_REGION: us-west-2
       CARGO_INCREMENTAL: "0"
