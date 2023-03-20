@@ -135,5 +135,5 @@ jobs:
         with:
           shared-key: check-manifests
       - name: check manifests
-        working-directory: smithy-rs/tools/publisher
-        run: cargo run fix-manifests --check --location ../../../sdk
+        working-directory: smithy-rs/tools/ci-build/publisher
+        run: cargo run fix-manifests --check --location ../../../../sdk
