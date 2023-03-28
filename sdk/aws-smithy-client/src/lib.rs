@@ -72,13 +72,27 @@ pub mod conns {
     }
 
     #[cfg(feature = "rustls")]
+    /// Return a default HTTPS connector backed by the `rustls` crate.
+    ///
+    /// It requires a minimum TLS version of 1.2.
+    /// It allows you to connect to both `http` and `https` URLs.
     pub fn https() -> Https {
         HTTPS_NATIVE_ROOTS.clone()
     }
 
     #[cfg(feature = "native-tls")]
+    /// Return a default HTTPS connector backed by the `hyper_tls` crate.
+    ///
+    /// It requires a minimum TLS version of 1.2.
+    /// It allows you to connect to both `http` and `https` URLs.
     pub fn native_tls() -> NativeTls {
-        hyper_tls::HttpsConnector::new()
+        let mut tls = hyper_tls::native_tls::TlsConnector::builder();
+        let tls = tls
+            .min_protocol_version(Some(hyper_tls::native_tls::Protocol::Tlsv12))
+            .build()
+            .unwrap_or_else(|e| panic!("Error while creating TLS connector: {}", e));
+        let http = hyper::client::HttpConnector::new();
+        hyper_tls::HttpsConnector::from((http, tls.into()))
     }
 
     #[cfg(feature = "native-tls")]
