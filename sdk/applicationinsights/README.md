@@ -19,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-applicationinsights = "0.56.0"
+aws-sdk-applicationinsights = "0.57.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

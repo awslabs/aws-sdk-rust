@@ -10,7 +10,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-greengrassv2]
 path = "../../sdk/greengrassv2"
-version = "0.56.0"
+version = "0.57.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"

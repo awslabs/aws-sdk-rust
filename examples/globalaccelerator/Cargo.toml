@@ -14,7 +14,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-globalaccelerator]
 path = "../../sdk/globalaccelerator"
-version = "0.56.0"
+version = "0.57.0"
 
 [dependencies.tokio]
 version = "1.20.1"
