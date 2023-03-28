@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+mod test_operation;
 use crate::test_operation::{TestOperationParser, TestRetryClassifier};
 use aws_smithy_async::rt::sleep::TokioSleep;
 use aws_smithy_client::test_connection::TestConnection;
@@ -14,78 +15,6 @@ use aws_smithy_http::result::SdkError;
 use std::sync::Arc;
 use std::time::Duration;
 use tower::layer::util::Identity;
-
-mod test_operation {
-    use aws_smithy_http::operation;
-    use aws_smithy_http::response::ParseHttpResponse;
-    use aws_smithy_http::result::SdkError;
-    use aws_smithy_http::retry::ClassifyRetry;
-    use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind, RetryKind};
-    use bytes::Bytes;
-    use std::error::Error;
-    use std::fmt::{self, Debug, Display, Formatter};
-
-    #[derive(Clone)]
-    pub(super) struct TestOperationParser;
-
-    #[derive(Debug)]
-    pub(super) struct OperationError;
-
-    impl Display for OperationError {
-        fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-            write!(f, "{:?}", self)
-        }
-    }
-
-    impl Error for OperationError {}
-
-    impl ProvideErrorKind for OperationError {
-        fn retryable_error_kind(&self) -> Option<ErrorKind> {
-            Some(ErrorKind::ThrottlingError)
-        }
-
-        fn code(&self) -> Option<&str> {
-            None
-        }
-    }
-
-    impl ParseHttpResponse for TestOperationParser {
-        type Output = Result<String, OperationError>;
-
-        fn parse_unloaded(&self, response: &mut operation::Response) -> Option<Self::Output> {
-            if response.http().status().is_success() {
-                Some(Ok("Hello!".to_string()))
-            } else {
-                Some(Err(OperationError))
-            }
-        }
-
-        fn parse_loaded(&self, _response: &http::Response<Bytes>) -> Self::Output {
-            Ok("Hello!".to_string())
-        }
-    }
-
-    #[derive(Clone)]
-    pub(super) struct TestRetryClassifier;
-
-    impl<T, E> ClassifyRetry<T, SdkError<E>> for TestRetryClassifier
-    where
-        E: ProvideErrorKind + Debug,
-        T: Debug,
-    {
-        fn classify_retry(&self, err: Result<&T, &SdkError<E>>) -> RetryKind {
-            let kind = match err {
-                Err(SdkError::ServiceError(context)) => context.err().retryable_error_kind(),
-                Ok(_) => return RetryKind::Unnecessary,
-                _ => panic!("test handler only handles modeled errors got: {:?}", err),
-            };
-            match kind {
-                Some(kind) => RetryKind::Error(kind),
-                None => RetryKind::UnretryableFailure,
-            }
-        }
-    }
-}
 
 fn test_operation() -> Operation<TestOperationParser, TestRetryClassifier> {
     let req = operation::Request::new(
@@ -108,14 +37,14 @@ async fn end_to_end_retry_test() {
     fn ok() -> http::Response<&'static str> {
         http::Response::builder()
             .status(200)
-            .body("response body")
+            .body("Hello!")
             .unwrap()
     }
 
     fn err() -> http::Response<&'static str> {
         http::Response::builder()
             .status(500)
-            .body("response body")
+            .body("This was an error")
             .unwrap()
     }
     // 1 failing response followed by 1 successful response

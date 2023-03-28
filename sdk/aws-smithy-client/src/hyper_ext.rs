@@ -92,13 +92,22 @@ use crate::never::stream::EmptyStream;
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
+
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
-use http::Uri;
-use hyper::client::connect::{Connected, Connection};
+use http::{Extensions, Uri};
+use hyper::client::connect::{
+    capture_connection, CaptureConnection, Connected, Connection, HttpInfo,
+};
+
 use std::error::Error;
+use std::fmt::Debug;
+
 use std::sync::Arc;
+
+use crate::erase::boxclone::BoxFuture;
+use aws_smithy_http::connection::{CaptureSmithyConnection, ConnectionMetadata};
 use tokio::io::{AsyncRead, AsyncWrite};
 use tower::{BoxError, Service};
 
@@ -107,8 +116,30 @@ use tower::{BoxError, Service};
 /// This adapter also enables TCP `CONNECT` and HTTP `READ` timeouts via [`Adapter::builder`]. For examples
 /// see [the module documentation](crate::hyper_ext).
 #[derive(Clone, Debug)]
-#[non_exhaustive]
-pub struct Adapter<C>(HttpReadTimeout<hyper::Client<ConnectTimeout<C>, SdkBody>>);
+pub struct Adapter<C> {
+    client: HttpReadTimeout<hyper::Client<ConnectTimeout<C>, SdkBody>>,
+}
+
+/// Extract a smithy connection from a hyper CaptureConnection
+fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<ConnectionMetadata> {
+    let capture_conn = capture_conn.clone();
+    if let Some(conn) = capture_conn.clone().connection_metadata().as_ref() {
+        let mut extensions = Extensions::new();
+        conn.get_extras(&mut extensions);
+        let http_info = extensions.get::<HttpInfo>();
+        let smithy_connection = ConnectionMetadata::new(
+            conn.is_proxied(),
+            http_info.map(|info| info.remote_addr()),
+            move || match capture_conn.connection_metadata().as_ref() {
+                Some(conn) => conn.poison(),
+                None => tracing::trace!("no connection existed to poison"),
+            },
+        );
+        Some(smithy_connection)
+    } else {
+        None
+    }
+}
 
 impl<C> Service<http::Request<SdkBody>> for Adapter<C>
 where
@@ -121,20 +152,22 @@ where
     type Response = http::Response<SdkBody>;
     type Error = ConnectorError;
 
-    #[allow(clippy::type_complexity)]
-    type Future = std::pin::Pin<
-        Box<dyn std::future::Future<Output = Result<Self::Response, Self::Error>> + Send + 'static>,
-    >;
+    type Future = BoxFuture<Self::Response, Self::Error>;
 
     fn poll_ready(
         &mut self,
         cx: &mut std::task::Context<'_>,
     ) -> std::task::Poll<Result<(), Self::Error>> {
-        self.0.poll_ready(cx).map_err(downcast_error)
+        self.client.poll_ready(cx).map_err(downcast_error)
     }
 
-    fn call(&mut self, req: http::Request<SdkBody>) -> Self::Future {
-        let fut = self.0.call(req);
+    fn call(&mut self, mut req: http::Request<SdkBody>) -> Self::Future {
+        let capture_connection = capture_connection(&mut req);
+        if let Some(capture_smithy_connection) = req.extensions().get::<CaptureSmithyConnection>() {
+            capture_smithy_connection
+                .set_connection_retriever(move || extract_smithy_connection(&capture_connection));
+        }
+        let fut = self.client.call(req);
         Box::pin(async move { Ok(fut.await.map_err(downcast_error)?.map(SdkBody::from)) })
     }
 }
@@ -271,7 +304,9 @@ impl Builder {
             ),
             None => HttpReadTimeout::no_timeout(base),
         };
-        Adapter(read_timeout)
+        Adapter {
+            client: read_timeout,
+        }
     }
 
     /// Set the async sleep implementation used for timeouts
@@ -343,7 +378,6 @@ mod timeout_middleware {
     use pin_project_lite::pin_project;
     use tower::BoxError;
 
-    use aws_smithy_async::future;
     use aws_smithy_async::future::timeout::{TimedOutError, Timeout};
     use aws_smithy_async::rt::sleep::AsyncSleep;
     use aws_smithy_async::rt::sleep::Sleep;
@@ -493,7 +527,7 @@ mod timeout_middleware {
                 Some((sleep, duration)) => {
                     let sleep = sleep.sleep(*duration);
                     MaybeTimeoutFuture::Timeout {
-                        timeout: future::timeout::Timeout::new(self.inner.call(req), sleep),
+                        timeout: Timeout::new(self.inner.call(req), sleep),
                         error_type: "HTTP connect",
                         duration: *duration,
                     }
@@ -522,7 +556,7 @@ mod timeout_middleware {
                 Some((sleep, duration)) => {
                     let sleep = sleep.sleep(*duration);
                     MaybeTimeoutFuture::Timeout {
-                        timeout: future::timeout::Timeout::new(self.inner.call(req), sleep),
+                        timeout: Timeout::new(self.inner.call(req), sleep),
                         error_type: "HTTP read",
                         duration: *duration,
                     }

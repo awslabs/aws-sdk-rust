@@ -90,7 +90,7 @@ impl tower::Service<http::Request<SdkBody>> for CaptureRequestHandler {
 /// If response is `None`, it will reply with a 200 response with an empty body
 ///
 /// Example:
-/// ```rust,compile_fail
+/// ```compile_fail
 /// let (server, request) = capture_request(None);
 /// let conf = aws_sdk_sts::Config::builder()
 ///     .http_connector(server)
@@ -268,6 +268,347 @@ where
             .middleware(tower::layer::util::Identity::new())
             .connector(tc)
             .build()
+    }
+}
+
+/// [`wire_mock`] contains utilities for mocking at the socket level
+///
+/// Other tools in this module actually operate at the `http::Request` / `http::Response` level. This
+/// is useful, but it shortcuts the HTTP implementation (e.g. Hyper). [`wire_mock::WireLevelTestConnection`] binds
+/// to an actual socket on the host
+///
+/// # Examples
+/// ```
+/// use tower::layer::util::Identity;
+/// use aws_smithy_client::http_connector::ConnectorSettings;
+/// use aws_smithy_client::{match_events, ev};
+/// use aws_smithy_client::test_connection::wire_mock::check_matches;
+/// # async fn example() {
+/// use aws_smithy_client::test_connection::wire_mock::{ReplayedEvent, WireLevelTestConnection};
+/// // This connection binds to a local address
+/// let mock = WireLevelTestConnection::spinup(vec![
+///     ReplayedEvent::status(503),
+///     ReplayedEvent::status(200)
+/// ]).await;
+/// let client = aws_smithy_client::Client::builder()
+///     .connector(mock.http_connector().connector(&ConnectorSettings::default(), None).unwrap())
+///     .middleware(Identity::new())
+///     .build();
+/// /* do something with <client> */
+/// // assert that you got the events you expected
+/// match_events!(ev!(dns), ev!(connect), ev!(http(200)))(&mock.events());
+/// # }
+/// ```
+pub mod wire_mock {
+    use bytes::Bytes;
+    use http::{Request, Response};
+    use hyper::client::connect::dns::Name;
+    use hyper::server::conn::AddrStream;
+    use hyper::service::{make_service_fn, service_fn};
+    use hyper::{Body, Server};
+    use std::collections::HashSet;
+    use std::convert::Infallible;
+    use std::error::Error;
+
+    use hyper::client::HttpConnector as HyperHttpConnector;
+    use std::iter;
+    use std::iter::Once;
+    use std::net::{SocketAddr, TcpListener};
+    use std::sync::{Arc, Mutex};
+    use std::task::{Context, Poll};
+
+    use tokio::spawn;
+    use tower::Service;
+
+    /// An event recorded by [`WireLevelTestConnection`]
+    #[derive(Debug, Clone)]
+    pub enum RecordedEvent {
+        DnsLookup(String),
+        NewConnection,
+        Response(ReplayedEvent),
+    }
+
+    type Matcher = (
+        Box<dyn Fn(&RecordedEvent) -> Result<(), Box<dyn Error>>>,
+        &'static str,
+    );
+
+    /// This method should only be used by the macro
+    #[doc(hidden)]
+    pub fn check_matches(events: &[RecordedEvent], matchers: &[Matcher]) {
+        let mut events_iter = events.iter();
+        let mut matcher_iter = matchers.iter();
+        let mut idx = -1;
+        loop {
+            idx += 1;
+            let bail = |err: Box<dyn Error>| panic!("failed on event {}:\n  {}", idx, err);
+            match (events_iter.next(), matcher_iter.next()) {
+                (Some(event), Some((matcher, _msg))) => matcher(event).unwrap_or_else(bail),
+                (None, None) => return,
+                (Some(event), None) => {
+                    bail(format!("got {:?} but no more events were expected", event).into())
+                }
+                (None, Some((_expect, msg))) => {
+                    bail(format!("expected {:?} but no more events were expected", msg).into())
+                }
+            }
+        }
+    }
+
+    #[macro_export]
+    macro_rules! matcher {
+        ($expect:tt) => {
+            (
+                Box::new(
+                    |event: &::aws_smithy_client::test_connection::wire_mock::RecordedEvent| {
+                        if !matches!(event, $expect) {
+                            return Err(format!(
+                                "expected `{}` but got {:?}",
+                                stringify!($expect),
+                                event
+                            )
+                            .into());
+                        }
+                        Ok(())
+                    },
+                ),
+                stringify!($expect),
+            )
+        };
+    }
+
+    /// Helper macro to generate a series of test expectations
+    #[macro_export]
+    macro_rules! match_events {
+        ($( $expect:pat),*) => {
+                |events| {
+                    check_matches(events, &[$( ::aws_smithy_client::matcher!($expect) ),*]);
+                }
+        };
+    }
+
+    /// Helper to generate match expressions for events
+    #[macro_export]
+    macro_rules! ev {
+        (http($status:expr)) => {
+            ::aws_smithy_client::test_connection::wire_mock::RecordedEvent::Response(
+                ReplayedEvent::HttpResponse {
+                    status: $status,
+                    ..
+                },
+            )
+        };
+        (dns) => {
+            ::aws_smithy_client::test_connection::wire_mock::RecordedEvent::DnsLookup(_)
+        };
+        (connect) => {
+            ::aws_smithy_client::test_connection::wire_mock::RecordedEvent::NewConnection
+        };
+        (timeout) => {
+            ::aws_smithy_client::test_connection::wire_mock::RecordedEvent::Response(
+                ReplayedEvent::Timeout,
+            )
+        };
+    }
+
+    pub use {ev, match_events, matcher};
+
+    #[derive(Clone, Debug, PartialEq, Eq)]
+    pub enum ReplayedEvent {
+        Timeout,
+        HttpResponse { status: u16, body: Bytes },
+    }
+
+    impl ReplayedEvent {
+        pub fn ok() -> Self {
+            Self::HttpResponse {
+                status: 200,
+                body: Bytes::new(),
+            }
+        }
+
+        pub fn with_body(body: &str) -> Self {
+            Self::HttpResponse {
+                status: 200,
+                body: Bytes::copy_from_slice(body.as_ref()),
+            }
+        }
+
+        pub fn status(status: u16) -> Self {
+            Self::HttpResponse {
+                status,
+                body: Bytes::new(),
+            }
+        }
+    }
+
+    use crate::erase::boxclone::BoxFuture;
+    use crate::http_connector::HttpConnector;
+    use crate::hyper_ext;
+    use aws_smithy_async::future::never::Never;
+    use tokio::sync::oneshot;
+
+    /// Test connection that starts a server bound to 0.0.0.0
+    ///
+    /// See the [module docs](crate::test_connection::wire_mock) for a usage example.
+    ///
+    /// Usage:
+    /// - Call [`WireLevelTestConnection::spinup`] to start the server
+    /// - Use [`WireLevelTestConnection::http_connector`] or [`dns_resolver`](WireLevelTestConnection::dns_resolver) to configure your client.
+    /// - Make requests to [`endpoint_url`](WireLevelTestConnection::endpoint_url).
+    /// - Once the test is complete, retrieve a list of events from [`WireLevelTestConnection::events`]
+    #[derive(Debug)]
+    pub struct WireLevelTestConnection {
+        event_log: Arc<Mutex<Vec<RecordedEvent>>>,
+        bind_addr: SocketAddr,
+        // when the sender is dropped, that stops the server
+        shutdown_hook: oneshot::Sender<()>,
+    }
+
+    impl WireLevelTestConnection {
+        pub async fn spinup(mut response_events: Vec<ReplayedEvent>) -> Self {
+            let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+            let (tx, rx) = oneshot::channel();
+            let listener_addr = listener.local_addr().unwrap();
+            response_events.reverse();
+            let response_events = Arc::new(Mutex::new(response_events));
+            let handler_events = response_events;
+            let wire_events = Arc::new(Mutex::new(vec![]));
+            let wire_log_for_service = wire_events.clone();
+            let poisoned_conns: Arc<Mutex<HashSet<SocketAddr>>> = Default::default();
+            let make_service = make_service_fn(move |connection: &AddrStream| {
+                let poisoned_conns = poisoned_conns.clone();
+                let events = handler_events.clone();
+                let wire_log = wire_log_for_service.clone();
+                let remote_addr = connection.remote_addr();
+                tracing::info!("established connection: {:?}", connection);
+                wire_log.lock().unwrap().push(RecordedEvent::NewConnection);
+                async move {
+                    Ok::<_, Infallible>(service_fn(move |_: Request<hyper::Body>| {
+                        if poisoned_conns.lock().unwrap().contains(&remote_addr) {
+                            tracing::error!("poisoned connection {:?} was reused!", &remote_addr);
+                            panic!("poisoned connection was reused!");
+                        }
+                        let next_event = events.clone().lock().unwrap().pop();
+                        let wire_log = wire_log.clone();
+                        let poisoned_conns = poisoned_conns.clone();
+                        async move {
+                            let next_event = next_event
+                                .unwrap_or_else(|| panic!("no more events! Log: {:?}", wire_log));
+                            wire_log
+                                .lock()
+                                .unwrap()
+                                .push(RecordedEvent::Response(next_event.clone()));
+                            if next_event == ReplayedEvent::Timeout {
+                                tracing::info!("{} is poisoned", remote_addr);
+                                poisoned_conns.lock().unwrap().insert(remote_addr);
+                            }
+                            tracing::debug!("replying with {:?}", next_event);
+                            let event = generate_response_event(next_event).await;
+                            dbg!(event)
+                        }
+                    }))
+                }
+            });
+            let server = Server::from_tcp(listener)
+                .unwrap()
+                .serve(make_service)
+                .with_graceful_shutdown(async {
+                    rx.await.ok();
+                    tracing::info!("server shutdown!");
+                });
+            spawn(async move { server.await });
+            Self {
+                event_log: wire_events,
+                bind_addr: listener_addr,
+                shutdown_hook: tx,
+            }
+        }
+
+        /// Retrieve the events recorded by this connection
+        pub fn events(&self) -> Vec<RecordedEvent> {
+            self.event_log.lock().unwrap().clone()
+        }
+
+        fn bind_addr(&self) -> SocketAddr {
+            self.bind_addr
+        }
+
+        pub fn dns_resolver(&self) -> LoggingDnsResolver {
+            let event_log = self.event_log.clone();
+            let bind_addr = self.bind_addr;
+            LoggingDnsResolver {
+                log: event_log,
+                socket_addr: bind_addr,
+            }
+        }
+
+        /// Prebuilt HTTP connector with correctly wired DNS resolver
+        ///
+        /// **Note**: This must be used in tandem with [`Self::dns_resolver`]
+        pub fn http_connector(&self) -> HttpConnector {
+            let http_connector = HyperHttpConnector::new_with_resolver(self.dns_resolver());
+            hyper_ext::Adapter::builder().build(http_connector).into()
+        }
+
+        /// Endpoint to use when connecting
+        ///
+        /// This works in tandem with the [`Self::dns_resolver`] to bind to the correct local IP Address
+        pub fn endpoint_url(&self) -> String {
+            format!(
+                "http://this-url-is-converted-to-localhost.com:{}",
+                self.bind_addr().port()
+            )
+        }
+
+        pub fn shutdown(self) {
+            let _ = self.shutdown_hook.send(());
+        }
+    }
+
+    async fn generate_response_event(event: ReplayedEvent) -> Result<Response<Body>, Infallible> {
+        let resp = match event {
+            ReplayedEvent::HttpResponse { status, body } => http::Response::builder()
+                .status(status)
+                .body(hyper::Body::from(body))
+                .unwrap(),
+            ReplayedEvent::Timeout => {
+                Never::new().await;
+                unreachable!()
+            }
+        };
+        Ok::<_, Infallible>(resp)
+    }
+
+    /// DNS resolver that keeps a log of all lookups
+    ///
+    /// Regardless of what hostname is requested, it will always return the same socket address.
+    #[derive(Clone, Debug)]
+    pub struct LoggingDnsResolver {
+        log: Arc<Mutex<Vec<RecordedEvent>>>,
+        socket_addr: SocketAddr,
+    }
+
+    impl Service<Name> for LoggingDnsResolver {
+        type Response = Once<SocketAddr>;
+        type Error = Infallible;
+        type Future = BoxFuture<Self::Response, Self::Error>;
+
+        fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+            Poll::Ready(Ok(()))
+        }
+
+        fn call(&mut self, req: Name) -> Self::Future {
+            let sock_addr = self.socket_addr;
+            let log = self.log.clone();
+            Box::pin(async move {
+                println!("looking up {:?}, replying with {:?}", req, sock_addr);
+                log.lock()
+                    .unwrap()
+                    .push(RecordedEvent::DnsLookup(req.to_string()));
+                Ok(iter::once(sock_addr))
+            })
+        }
     }
 }
 

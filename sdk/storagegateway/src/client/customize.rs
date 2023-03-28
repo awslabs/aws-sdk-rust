@@ -74,7 +74,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
             + 'static,
         Retry: aws_smithy_http::retry::ClassifyRetry<
                 aws_smithy_http::result::SdkSuccess<T>,
-                SdkError<E>,
+                aws_smithy_http::result::SdkError<E>,
             > + Send
             + Sync
             + Clone,

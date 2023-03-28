@@ -39,4 +39,5 @@ pub mod event_stream;
 
 pub mod byte_stream;
 
+pub mod connection;
 mod urlencode;

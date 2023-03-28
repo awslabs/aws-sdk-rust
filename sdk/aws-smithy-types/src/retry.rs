@@ -143,6 +143,7 @@ pub struct RetryConfigBuilder {
     mode: Option<RetryMode>,
     max_attempts: Option<u32>,
     initial_backoff: Option<Duration>,
+    reconnect_mode: Option<ReconnectMode>,
 }
 
 impl RetryConfigBuilder {
@@ -160,6 +161,30 @@ impl RetryConfigBuilder {
     /// Sets the retry mode.
     pub fn mode(mut self, mode: RetryMode) -> Self {
         self.set_mode(Some(mode));
+        self
+    }
+
+    /// Set the [`ReconnectMode`] for the retry strategy
+    ///
+    /// By default, when a transient error is encountered, the connection in use will be poisoned.
+    /// This prevents reusing a connection to a potentially bad host but may increase the load on
+    /// the server.
+    ///
+    /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    pub fn reconnect_mode(mut self, reconnect_mode: ReconnectMode) -> Self {
+        self.set_reconnect_mode(Some(reconnect_mode));
+        self
+    }
+
+    /// Set the [`ReconnectMode`] for the retry strategy
+    ///
+    /// By default, when a transient error is encountered, the connection in use will be poisoned.
+    /// This prevents reusing a connection to a potentially bad host but may increase the load on
+    /// the server.
+    ///
+    /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    pub fn set_reconnect_mode(&mut self, reconnect_mode: Option<ReconnectMode>) -> &mut Self {
+        self.reconnect_mode = reconnect_mode;
         self
     }
 
@@ -208,6 +233,7 @@ impl RetryConfigBuilder {
             mode: self.mode.or(other.mode),
             max_attempts: self.max_attempts.or(other.max_attempts),
             initial_backoff: self.initial_backoff.or(other.initial_backoff),
+            reconnect_mode: self.reconnect_mode.or(other.reconnect_mode),
         }
     }
 
@@ -219,6 +245,9 @@ impl RetryConfigBuilder {
             initial_backoff: self
                 .initial_backoff
                 .unwrap_or_else(|| Duration::from_secs(1)),
+            reconnect_mode: self
+                .reconnect_mode
+                .unwrap_or(ReconnectMode::ReconnectOnTransientError),
         }
     }
 }
@@ -230,6 +259,23 @@ pub struct RetryConfig {
     mode: RetryMode,
     max_attempts: u32,
     initial_backoff: Duration,
+    reconnect_mode: ReconnectMode,
+}
+
+/// Mode for connection re-establishment
+///
+/// By default, when a transient error is encountered, the connection in use will be poisoned. This
+/// behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+#[derive(Debug, Clone, PartialEq, Copy)]
+pub enum ReconnectMode {
+    /// Reconnect on [`ErrorKind::TransientError`]
+    ReconnectOnTransientError,
+
+    /// Disable reconnect on error
+    ///
+    /// When this setting is applied, 503s, timeouts, and other transient errors will _not_
+    /// lead to a new connection being established unless the connection is closed by the remote.
+    ReuseAllConnections,
 }
 
 impl RetryConfig {
@@ -239,6 +285,7 @@ impl RetryConfig {
             mode: RetryMode::Standard,
             max_attempts: 3,
             initial_backoff: Duration::from_secs(1),
+            reconnect_mode: ReconnectMode::ReconnectOnTransientError,
         }
     }
 
@@ -257,6 +304,18 @@ impl RetryConfig {
     /// This value must be greater than zero.
     pub fn with_max_attempts(mut self, max_attempts: u32) -> Self {
         self.max_attempts = max_attempts;
+        self
+    }
+
+    /// Set the [`ReconnectMode`] for the retry strategy
+    ///
+    /// By default, when a transient error is encountered, the connection in use will be poisoned.
+    /// This prevents reusing a connection to a potentially bad host but may increase the load on
+    /// the server.
+    ///
+    /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    pub fn with_reconnect_mode(mut self, reconnect_mode: ReconnectMode) -> Self {
+        self.reconnect_mode = reconnect_mode;
         self
     }
 
@@ -285,6 +344,11 @@ impl RetryConfig {
     /// Returns the retry mode.
     pub fn mode(&self) -> RetryMode {
         self.mode
+    }
+
+    /// Returns the [`ReconnectMode`]
+    pub fn reconnect_mode(&self) -> ReconnectMode {
+        self.reconnect_mode
     }
 
     /// Returns the max attempts.
