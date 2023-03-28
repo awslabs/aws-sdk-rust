@@ -45,7 +45,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-eventstream]
@@ -79,12 +78,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.bytes]
 version = "1.0.0"
-
-[dependencies.bytes-utils]
-version = "0.1.0"
-
-[dependencies.fastrand]
-version = "1.8.0"
 
 [dependencies.http]
 version = "0.2.0"
@@ -129,9 +122,19 @@ path = "../aws-smithy-client"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.aws-smithy-http]
+path = "../aws-smithy-http"
+version = "0.0.0-smithy-rs-head"
+
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.bytes-utils]
+version = "0.1.0"
+
+[dev-dependencies.fastrand]
+version = "1.8.0"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"

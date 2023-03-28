@@ -36,7 +36,6 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-http]
@@ -84,9 +83,6 @@ version = "0.1.7"
 [dependencies.tower]
 version = "0.4"
 
-[dependencies.tracing]
-version = "0.1"
-
 [dependencies.url]
 version = "2.3.1"
 [dev-dependencies.aws-config]
@@ -116,6 +112,9 @@ version = "1.0.0"
 [dev-dependencies.tokio]
 version = "1.8.4"
 features = ["macros", "test-util", "rt-multi-thread"]
+
+[dev-dependencies.tracing]
+version = "0.1"
 
 [dev-dependencies.tracing-subscriber]
 version = "0.3.16"

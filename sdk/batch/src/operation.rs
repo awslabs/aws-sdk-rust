@@ -297,8 +297,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComputeEnvironme
         }
     }
 }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod describe_compute_environments_request_test {
     /// This test case validates a bug where unboxed primitives were incorrectly marked as required
     /// Test ID: DeserializeDescribeCompute

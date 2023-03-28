@@ -1063,8 +1063,8 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadArchive {
         }
     }
 }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod upload_archive_request_test {
     /// Glacier requires that a version header be set on all requests.
     /// Test ID: GlacierVersionHeader
@@ -1237,8 +1237,8 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadMultipartPart {
         }
     }
 }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod upload_multipart_part_request_test {
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierMultipartChecksums

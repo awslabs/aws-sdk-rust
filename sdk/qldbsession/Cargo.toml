@@ -69,9 +69,6 @@ version = "1.5.5"
 
 [dependencies.tower]
 version = "0.4"
-
-[dependencies.tracing]
-version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.0.0-smithy-rs-head"
@@ -99,6 +96,9 @@ version = "1.0.0"
 [dev-dependencies.tokio]
 version = "1.8.4"
 features = ["macros", "test-util", "rt-multi-thread"]
+
+[dev-dependencies.tracing]
+version = "0.1"
 
 [dev-dependencies.tracing-subscriber]
 version = "0.3.16"
