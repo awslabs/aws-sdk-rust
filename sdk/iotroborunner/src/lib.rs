@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-iotroborunner = "0.40.0"
+//! aws-sdk-iotroborunner = "0.41.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

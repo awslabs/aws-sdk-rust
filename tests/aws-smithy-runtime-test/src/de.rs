@@ -5,14 +5,22 @@
 
 use aws_sdk_s3::operation::get_object::GetObjectOutput;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_runtime::{BoxError, ConfigBag, ResponseDeserializer};
+use aws_smithy_runtime::{BoxError, ResponseDeserializer};
+use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_runtime_api::runtime_plugin::RuntimePlugin;
 
 #[derive(Debug)]
 pub struct GetObjectResponseDeserializer {}
 
 impl GetObjectResponseDeserializer {
-    pub fn _new() -> Self {
+    pub fn new() -> Self {
         Self {}
+    }
+}
+
+impl RuntimePlugin for GetObjectResponseDeserializer {
+    fn configure(&self, _cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        todo!()
     }
 }
 

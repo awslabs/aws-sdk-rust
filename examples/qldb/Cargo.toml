@@ -8,10 +8,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-qldb= { version = "0.62.0", path = "../../sdk/qldb" }
-aws-sdk-qldbsession= { version = "0.62.0", path = "../../sdk/qldbsession" }
-
-[workspace]
+aws-sdk-qldb= { version = "0.63.0", path = "../../sdk/qldb" }
+aws-sdk-qldbsession= { version = "0.63.0", path = "../../sdk/qldbsession" }
 
 [dependencies.tokio]
 version = "1.20.1"
@@ -28,3 +26,5 @@ default-features = false
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
+
+[workspace]

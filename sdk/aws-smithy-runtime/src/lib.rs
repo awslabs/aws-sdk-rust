@@ -10,11 +10,9 @@
     rust_2018_idioms
 )]
 
-pub mod config_bag;
-
-pub use crate::config_bag::ConfigBag;
-use aws_smithy_http::body::SdkBody;
+use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_smithy_runtime_api::interceptors::{InterceptorContext, Interceptors};
+use aws_smithy_runtime_api::runtime_plugin::RuntimePlugins;
 use std::fmt::Debug;
 use std::future::Future;
 use std::pin::Pin;
@@ -48,6 +46,8 @@ pub trait AuthOrchestrator<Req>: Send + Sync + Debug {
 
 pub trait EndpointOrchestrator<Req>: Send + Sync + Debug {
     fn resolve_and_apply_endpoint(&self, req: &mut Req, cfg: &ConfigBag) -> Result<(), BoxError>;
+    // TODO(jdisanti) The EP Orc and Auth Orc need to share info on auth schemes but I'm not sure how that should happen
+    fn resolve_auth_schemes(&self) -> Result<Vec<String>, BoxError>;
 }
 
 /// `In`: The input message e.g. `ListObjectsRequest`
@@ -59,6 +59,7 @@ pub trait EndpointOrchestrator<Req>: Send + Sync + Debug {
 pub async fn invoke<In, Req, Res, T>(
     input: In,
     interceptors: &mut Interceptors<In, Req, Res, Result<T, BoxError>>,
+    runtime_plugins: &RuntimePlugins,
     cfg: &mut ConfigBag,
 ) -> Result<T, BoxError>
 where
@@ -70,13 +71,15 @@ where
 {
     let mut ctx: InterceptorContext<In, Req, Res, Result<T, BoxError>> =
         InterceptorContext::new(input);
-    // 1
-    // // TODO(runtime-plugins) initialize runtime plugins (see section 3.11 "Runtime Plugins and Their Configuration" of SRA)
-    // let cfg = cfg.clone().apply_plugins();
 
-    interceptors.read_before_execution(&ctx)?;
-    interceptors.modify_before_serialization(&mut ctx)?;
-    interceptors.read_before_serialization(&ctx)?;
+    runtime_plugins.apply_client_configuration(cfg)?;
+    interceptors.client_read_before_execution(&ctx, cfg)?;
+
+    runtime_plugins.apply_operation_configuration(cfg)?;
+    interceptors.operation_read_before_execution(&ctx, cfg)?;
+
+    interceptors.read_before_serialization(&ctx, cfg)?;
+    interceptors.modify_before_serialization(&mut ctx, cfg)?;
 
     let request_serializer = cfg
         .get::<Box<dyn RequestSerializer<In, Req>>>()
@@ -84,13 +87,13 @@ where
     let req = request_serializer.serialize_request(ctx.modeled_request_mut(), cfg)?;
     ctx.set_tx_request(req);
 
-    interceptors.read_after_serialization(&ctx)?;
-    interceptors.modify_before_retry_loop(&mut ctx)?;
+    interceptors.read_after_serialization(&ctx, cfg)?;
+    interceptors.modify_before_retry_loop(&mut ctx, cfg)?;
 
     loop {
         make_an_attempt(&mut ctx, cfg, interceptors).await?;
-        interceptors.read_after_attempt(&ctx)?;
-        interceptors.modify_before_attempt_completion(&mut ctx)?;
+        interceptors.read_after_attempt(&ctx, cfg)?;
+        interceptors.modify_before_attempt_completion(&mut ctx, cfg)?;
 
         let retry_strategy = cfg
             .get::<Box<dyn RetryStrategy<Result<T, BoxError>>>>()
@@ -102,48 +105,18 @@ where
             continue;
         }
 
-        interceptors.modify_before_completion(&mut ctx)?;
+        interceptors.modify_before_completion(&mut ctx, cfg)?;
         let trace_probe = cfg
             .get::<Box<dyn TraceProbe>>()
             .ok_or("missing trace probes")?;
         trace_probe.dispatch_events(cfg);
-        interceptors.read_after_execution(&ctx)?;
+        interceptors.read_after_execution(&ctx, cfg)?;
 
         break;
     }
 
     let (modeled_response, _) = ctx.into_responses()?;
     modeled_response
-}
-
-pub fn try_clone_http_request(req: &http::Request<SdkBody>) -> Option<http::Request<SdkBody>> {
-    let cloned_body = req.body().try_clone()?;
-    let mut cloned_request = http::Request::builder()
-        .uri(req.uri().clone())
-        .method(req.method());
-    *cloned_request
-        .headers_mut()
-        .expect("builder has not been modified, headers must be valid") = req.headers().clone();
-    let req = cloned_request
-        .body(cloned_body)
-        .expect("a clone of a valid request should be a valid request");
-
-    Some(req)
-}
-
-pub fn try_clone_http_response(res: &http::Response<SdkBody>) -> Option<http::Response<SdkBody>> {
-    let cloned_body = res.body().try_clone()?;
-    let mut cloned_response = http::Response::builder()
-        .version(res.version())
-        .status(res.status());
-    *cloned_response
-        .headers_mut()
-        .expect("builder has not been modified, headers must be valid") = res.headers().clone();
-    let res = cloned_response
-        .body(cloned_body)
-        .expect("a clone of a valid response should be a valid request");
-
-    Some(res)
 }
 
 // Making an HTTP request can fail for several reasons, but we still need to
@@ -160,7 +133,7 @@ where
     Res: 'static,
     T: 'static,
 {
-    interceptors.read_before_attempt(ctx)?;
+    interceptors.read_before_attempt(ctx, cfg)?;
 
     let tx_req_mut = ctx.tx_request_mut().expect("tx_request has been set");
     let endpoint_orchestrator = cfg
@@ -168,8 +141,8 @@ where
         .ok_or("missing endpoint orchestrator")?;
     endpoint_orchestrator.resolve_and_apply_endpoint(tx_req_mut, cfg)?;
 
-    interceptors.modify_before_signing(ctx)?;
-    interceptors.read_before_signing(ctx)?;
+    interceptors.modify_before_signing(ctx, cfg)?;
+    interceptors.read_before_signing(ctx, cfg)?;
 
     let tx_req_mut = ctx.tx_request_mut().expect("tx_request has been set");
     let auth_orchestrator = cfg
@@ -177,13 +150,12 @@ where
         .ok_or("missing auth orchestrator")?;
     auth_orchestrator.auth_request(tx_req_mut, cfg)?;
 
-    interceptors.read_after_signing(ctx)?;
-    interceptors.modify_before_transmit(ctx)?;
-    interceptors.read_before_transmit(ctx)?;
+    interceptors.read_after_signing(ctx, cfg)?;
+    interceptors.modify_before_transmit(ctx, cfg)?;
+    interceptors.read_before_transmit(ctx, cfg)?;
 
     // The connection consumes the request but we need to keep a copy of it
     // within the interceptor context, so we clone it here.
-
     let res = {
         let tx_req = ctx.tx_request_mut().expect("tx_request has been set");
         let connection = cfg
@@ -193,9 +165,9 @@ where
     };
     ctx.set_tx_response(res);
 
-    interceptors.read_after_transmit(ctx)?;
-    interceptors.modify_before_deserialization(ctx)?;
-    interceptors.read_before_deserialization(ctx)?;
+    interceptors.read_after_transmit(ctx, cfg)?;
+    interceptors.modify_before_deserialization(ctx, cfg)?;
+    interceptors.read_before_deserialization(ctx, cfg)?;
     let tx_res = ctx.tx_response_mut().expect("tx_response has been set");
     let response_deserializer = cfg
         .get::<Box<dyn ResponseDeserializer<Res, Result<T, BoxError>>>>()
@@ -203,7 +175,7 @@ where
     let res = response_deserializer.deserialize_response(tx_res, cfg)?;
     ctx.set_modeled_response(res);
 
-    interceptors.read_after_deserialization(ctx)?;
+    interceptors.read_after_deserialization(ctx, cfg)?;
 
     Ok(())
 }

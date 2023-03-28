@@ -34,7 +34,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-workdocs = "0.62.0"
+//! aws-sdk-workdocs = "0.63.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

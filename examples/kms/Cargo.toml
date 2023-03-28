@@ -12,7 +12,7 @@ publish = false
 [dependencies]
 base64 = "0.13.0"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-kms= { version = "0.62.0", path = "../../sdk/kms" }
+aws-sdk-kms= { version = "0.63.0", path = "../../sdk/kms" }
 aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
 
 [dependencies.tokio]

@@ -13,9 +13,9 @@ lambda_runtime = "0.4"
 log = "0.4"
 time = "0.3"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-ec2= { version = "0.62.0", path = "../../sdk/ec2" }
-aws-sdk-lambda= { version = "0.62.0", path = "../../sdk/lambda" }
-aws-sdk-s3= { version = "0.62.0", path = "../../sdk/s3" }
+aws-sdk-ec2= { version = "0.63.0", path = "../../sdk/ec2" }
+aws-sdk-lambda= { version = "0.63.0", path = "../../sdk/lambda" }
+aws-sdk-s3= { version = "0.63.0", path = "../../sdk/s3" }
 
 [dependencies.serde]
 version = "1"
