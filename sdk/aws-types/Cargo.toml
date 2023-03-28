@@ -46,9 +46,12 @@ optional = true
 features = ["rustls-native-certs", "http2", "webpki-roots"]
 
 [dev-dependencies]
-futures-util = "0.3.16"
 http = "0.2.4"
 tracing-test = "0.2.1"
+
+[dev-dependencies.futures-util]
+version = "0.3.16"
+default-features = false
 
 [build-dependencies]
 rustc_version = "0.4.0"

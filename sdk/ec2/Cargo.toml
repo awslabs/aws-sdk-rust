@@ -106,6 +106,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"
+default-features = false
 
 [dev-dependencies.serde_json]
 version = "1.0.0"
