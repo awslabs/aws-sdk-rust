@@ -62,7 +62,7 @@ impl CodeSigningConfigNotFoundException {
 pub struct CodeSigningConfigNotFoundExceptionBuilder {
     pub(crate) r#type: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl CodeSigningConfigNotFoundExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -92,7 +92,10 @@ impl CodeSigningConfigNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

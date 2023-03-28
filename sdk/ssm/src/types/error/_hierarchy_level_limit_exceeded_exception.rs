@@ -52,7 +52,7 @@ impl HierarchyLevelLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HierarchyLevelLimitExceededExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl HierarchyLevelLimitExceededExceptionBuilder {
     /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
@@ -72,7 +72,10 @@ impl HierarchyLevelLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

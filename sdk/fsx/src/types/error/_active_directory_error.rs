@@ -68,7 +68,7 @@ pub struct ActiveDirectoryErrorBuilder {
     pub(crate) active_directory_id: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::ActiveDirectoryErrorType>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ActiveDirectoryErrorBuilder {
     /// <p>The directory ID of the directory that an error pertains to.</p>
@@ -114,7 +114,10 @@ impl ActiveDirectoryErrorBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

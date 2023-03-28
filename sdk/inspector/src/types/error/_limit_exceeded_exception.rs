@@ -68,7 +68,7 @@ pub struct LimitExceededExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) error_code: std::option::Option<crate::types::LimitExceededErrorCode>,
     pub(crate) can_retry: std::option::Option<bool>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl LimitExceededExceptionBuilder {
     /// <p>Details of the exception error.</p>
@@ -111,7 +111,10 @@ impl LimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

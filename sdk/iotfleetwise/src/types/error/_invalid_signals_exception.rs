@@ -60,7 +60,7 @@ impl InvalidSignalsException {
 pub struct InvalidSignalsExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) invalid_signals: std::option::Option<std::vec::Vec<crate::types::InvalidSignal>>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidSignalsExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,7 +99,10 @@ impl InvalidSignalsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -53,7 +53,7 @@ impl DbParameterGroupNotFoundFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DbParameterGroupNotFoundFaultBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl DbParameterGroupNotFoundFaultBuilder {
     /// <p>A message describing the details of the problem.</p>
@@ -73,7 +73,10 @@ impl DbParameterGroupNotFoundFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -60,7 +60,7 @@ impl ThrottlingException {
 pub struct ThrottlingExceptionBuilder {
     pub(crate) error_code: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
@@ -90,7 +90,10 @@ impl ThrottlingExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

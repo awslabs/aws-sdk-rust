@@ -277,7 +277,7 @@ mod create_option_group;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 ///
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_rds::Error> {
 /// # let client: aws_sdk_rds::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

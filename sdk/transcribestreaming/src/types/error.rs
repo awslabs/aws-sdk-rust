@@ -36,7 +36,7 @@ pub enum TranscriptResultStreamError {
 impl aws_smithy_http::result::CreateUnhandledError for TranscriptResultStreamError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -87,10 +87,10 @@ impl aws_http::request_id::RequestId for crate::types::error::TranscriptResultSt
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for TranscriptResultStreamError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -150,7 +150,7 @@ impl TranscriptResultStreamError {
     }
 }
 impl std::error::Error for TranscriptResultStreamError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),
@@ -179,7 +179,7 @@ pub enum AudioStreamError {
 impl aws_smithy_http::result::CreateUnhandledError for AudioStreamError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -210,10 +210,10 @@ impl aws_http::request_id::RequestId for crate::types::error::AudioStreamError {
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for AudioStreamError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -248,7 +248,7 @@ impl AudioStreamError {
     }
 }
 impl std::error::Error for AudioStreamError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::Unhandled(_inner) => Some(_inner),
         }
@@ -282,7 +282,7 @@ pub enum MedicalTranscriptResultStreamError {
 impl aws_smithy_http::result::CreateUnhandledError for MedicalTranscriptResultStreamError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -335,10 +335,10 @@ impl aws_http::request_id::RequestId for crate::types::error::MedicalTranscriptR
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for MedicalTranscriptResultStreamError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -398,7 +398,7 @@ impl MedicalTranscriptResultStreamError {
     }
 }
 impl std::error::Error for MedicalTranscriptResultStreamError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),
@@ -437,7 +437,7 @@ pub enum CallAnalyticsTranscriptResultStreamError {
 impl aws_smithy_http::result::CreateUnhandledError for CallAnalyticsTranscriptResultStreamError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -492,10 +492,10 @@ impl aws_http::request_id::RequestId
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for CallAnalyticsTranscriptResultStreamError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -555,7 +555,7 @@ impl CallAnalyticsTranscriptResultStreamError {
     }
 }
 impl std::error::Error for CallAnalyticsTranscriptResultStreamError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),

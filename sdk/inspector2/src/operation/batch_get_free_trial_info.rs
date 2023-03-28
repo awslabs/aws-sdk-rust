@@ -39,7 +39,8 @@ impl BatchGetFreeTrialInfoInput {
             fn uri_base(
                 _input: &crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/freetrialinfo/batchget").expect("formatting should succeed");
                 Ok(())
             }
@@ -174,7 +175,7 @@ pub enum BatchGetFreeTrialInfoError {
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetFreeTrialInfoError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -223,10 +224,10 @@ impl aws_http::request_id::RequestId
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for BatchGetFreeTrialInfoError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         match self {
             Self::InternalServerException(inner) => Some(inner.retryable_error_kind()),
             Self::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
@@ -285,7 +286,7 @@ impl BatchGetFreeTrialInfoError {
     }
 }
 impl std::error::Error for BatchGetFreeTrialInfoError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => Some(_inner),
             Self::InternalServerException(_inner) => Some(_inner),

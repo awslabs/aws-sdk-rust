@@ -233,7 +233,7 @@ mod batch_update_detector;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 ///
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_ioteventsdata::Error> {
 /// # let client: aws_sdk_ioteventsdata::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

@@ -28,7 +28,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-migrationhuborchestrator = "0.40.0"
+//! aws-sdk-migrationhuborchestrator = "0.41.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

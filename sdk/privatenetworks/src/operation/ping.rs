@@ -39,7 +39,8 @@ impl PingInput {
             fn uri_base(
                 _input: &crate::operation::ping::PingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/ping").expect("formatting should succeed");
                 Ok(())
             }
@@ -152,7 +153,7 @@ pub enum PingError {
 impl aws_smithy_http::result::CreateUnhandledError for PingError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -187,10 +188,10 @@ impl aws_http::request_id::RequestId for crate::operation::ping::PingError {
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for PingError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         match self {
             Self::InternalServerException(inner) => Some(inner.retryable_error_kind()),
             _ => None,
@@ -233,7 +234,7 @@ impl PingError {
     }
 }
 impl std::error::Error for PingError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InternalServerException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),

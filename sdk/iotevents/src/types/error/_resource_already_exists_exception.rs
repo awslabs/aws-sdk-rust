@@ -68,7 +68,7 @@ pub struct ResourceAlreadyExistsExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceAlreadyExistsExceptionBuilder {
     /// <p>The message for the exception.</p>
@@ -108,7 +108,10 @@ impl ResourceAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

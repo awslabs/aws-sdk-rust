@@ -60,7 +60,7 @@ impl AccessDeniedException {
 pub struct AccessDeniedExceptionBuilder {
     pub(crate) exception_message: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl AccessDeniedExceptionBuilder {
     /// <p>User does not have sufficient access to perform this action.</p>
@@ -93,7 +93,10 @@ impl AccessDeniedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

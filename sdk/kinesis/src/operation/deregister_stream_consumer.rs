@@ -22,8 +22,8 @@ impl DeregisterStreamConsumerInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .set_operation_type(Some("control".to_string()))
-            .set_consumer_arn(self.consumer_arn.clone())
             .set_stream_arn(self.stream_arn.clone())
+            .set_consumer_arn(self.consumer_arn.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -42,7 +42,8 @@ impl DeregisterStreamConsumerInput {
             fn uri_base(
                 _input: &crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -180,7 +181,7 @@ pub enum DeregisterStreamConsumerError {
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterStreamConsumerError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -225,10 +226,10 @@ impl aws_http::request_id::RequestId
     }
 }
 impl aws_smithy_types::retry::ProvideErrorKind for DeregisterStreamConsumerError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -278,7 +279,7 @@ impl DeregisterStreamConsumerError {
     }
 }
 impl std::error::Error for DeregisterStreamConsumerError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InvalidArgumentException(_inner) => Some(_inner),
             Self::LimitExceededException(_inner) => Some(_inner),

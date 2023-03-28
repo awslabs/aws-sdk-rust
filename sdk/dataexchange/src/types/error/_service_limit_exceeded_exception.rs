@@ -68,7 +68,7 @@ pub struct ServiceLimitExceededExceptionBuilder {
     pub(crate) limit_name: std::option::Option<crate::types::LimitName>,
     pub(crate) limit_value: std::option::Option<f64>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceLimitExceededExceptionBuilder {
     /// <p>The name of the limit that was reached.</p>
@@ -108,7 +108,10 @@ impl ServiceLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

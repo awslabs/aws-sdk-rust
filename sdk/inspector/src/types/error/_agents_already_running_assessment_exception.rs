@@ -82,7 +82,7 @@ pub struct AgentsAlreadyRunningAssessmentExceptionBuilder {
         std::option::Option<std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
     pub(crate) agents_truncated: std::option::Option<bool>,
     pub(crate) can_retry: std::option::Option<bool>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     /// <p>Details of the exception error.</p>
@@ -141,7 +141,10 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

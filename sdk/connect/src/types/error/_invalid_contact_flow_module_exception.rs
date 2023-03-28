@@ -60,7 +60,7 @@ impl InvalidContactFlowModuleException {
 pub struct InvalidContactFlowModuleExceptionBuilder {
     pub(crate) problems: std::option::Option<std::vec::Vec<crate::types::ProblemDetail>>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidContactFlowModuleExceptionBuilder {
     /// Appends an item to `problems`.
@@ -98,7 +98,10 @@ impl InvalidContactFlowModuleExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

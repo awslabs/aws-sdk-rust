@@ -30,7 +30,8 @@ impl DeleteProvisioningTemplateVersionInput {
             fn uri_base(
                 _input: &crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 let input_1 = &_input.template_name;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
@@ -190,7 +191,7 @@ pub enum DeleteProvisioningTemplateVersionError {
 impl aws_smithy_http::result::CreateUnhandledError for DeleteProvisioningTemplateVersionError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -251,10 +252,10 @@ impl aws_http::request_id::RequestId for crate::operation::delete_provisioning_t
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for DeleteProvisioningTemplateVersionError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -324,7 +325,7 @@ impl DeleteProvisioningTemplateVersionError {
     }
 }
 impl std::error::Error for DeleteProvisioningTemplateVersionError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::ConflictingResourceUpdateException(_inner) => Some(_inner),
             Self::DeleteConflictException(_inner) => Some(_inner),

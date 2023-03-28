@@ -30,7 +30,8 @@ impl DescribeTransitGatewayRouteTablesInput {
             fn uri_base(
                 _input: &crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -148,7 +149,7 @@ pub enum DescribeTransitGatewayRouteTablesError {
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTransitGatewayRouteTablesError {
     fn create_unhandled_error(
         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
             let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
@@ -181,10 +182,10 @@ impl aws_http::request_id::RequestId for crate::operation::describe_transit_gate
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for DescribeTransitGatewayRouteTablesError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -219,7 +220,7 @@ impl DescribeTransitGatewayRouteTablesError {
     }
 }
 impl std::error::Error for DescribeTransitGatewayRouteTablesError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::Unhandled(_inner) => Some(_inner),
         }

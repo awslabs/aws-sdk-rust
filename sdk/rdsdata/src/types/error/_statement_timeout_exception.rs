@@ -60,7 +60,7 @@ impl StatementTimeoutException {
 pub struct StatementTimeoutExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) db_connection_id: std::option::Option<i64>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl StatementTimeoutExceptionBuilder {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
@@ -90,7 +90,10 @@ impl StatementTimeoutExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

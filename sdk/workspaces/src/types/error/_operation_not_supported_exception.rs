@@ -60,7 +60,7 @@ impl OperationNotSupportedException {
 pub struct OperationNotSupportedExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) reason: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl OperationNotSupportedExceptionBuilder {
     /// <p>The exception error message.</p>
@@ -90,7 +90,10 @@ impl OperationNotSupportedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }

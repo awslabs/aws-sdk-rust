@@ -20,7 +20,7 @@ version = "0.0.0-smithy-rs-head"
 [dependencies.aws-sdk-s3]
 default-features = false
 path = "../../sdk/s3"
-version = "0.59.0"
+version = "0.60.0"
 
 [dependencies.tokio]
 version = "1.21.2"

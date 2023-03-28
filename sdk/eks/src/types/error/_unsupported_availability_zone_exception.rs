@@ -78,7 +78,7 @@ pub struct UnsupportedAvailabilityZoneExceptionBuilder {
     pub(crate) cluster_name: std::option::Option<std::string::String>,
     pub(crate) nodegroup_name: std::option::Option<std::string::String>,
     pub(crate) valid_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnsupportedAvailabilityZoneExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -137,7 +137,10 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
         self.meta = meta;
         self
     }
