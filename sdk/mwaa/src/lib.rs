@@ -50,7 +50,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-mwaa = "0.60.0"
+//! aws-sdk-mwaa = "0.61.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

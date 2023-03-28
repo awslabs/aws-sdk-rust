@@ -11,6 +11,7 @@
 use std::any::{Any, TypeId};
 use std::collections::HashMap;
 use std::fmt;
+use std::fmt::Debug;
 use std::hash::{BuildHasherDefault, Hasher};
 use std::ops::{Deref, DerefMut};
 use std::sync::{Arc, Mutex};
