@@ -21,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-iotjobsdataplane = "0.64.0"
+aws-sdk-iotjobsdataplane = "0.65.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

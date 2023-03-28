@@ -27,7 +27,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-mturk = "0.64.0"
+//! aws-sdk-mturk = "0.65.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -45,7 +45,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-globalaccelerator = "0.64.0"
+//! aws-sdk-globalaccelerator = "0.65.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
