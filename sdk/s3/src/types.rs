@@ -3,6 +3,8 @@ pub use aws_http::request_id::RequestId;
 
 pub use crate::s3_request_id::RequestIdExt;
 
+pub use aws_smithy_http::body::SdkBody;
+pub use aws_smithy_http::byte_stream::error::Error as ByteStreamError;
 pub use aws_smithy_http::byte_stream::AggregatedBytes;
 pub use aws_smithy_http::byte_stream::ByteStream;
 pub use aws_smithy_http::result::SdkError;
