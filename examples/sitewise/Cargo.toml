@@ -14,7 +14,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-iotsitewise]
 path = "../../sdk/iotsitewise"
-version = "0.30.0"
+version = "0.31.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
