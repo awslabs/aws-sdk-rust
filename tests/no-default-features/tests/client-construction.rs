@@ -13,12 +13,22 @@ async fn test_clients_from_sdk_config() {
 }
 
 // This will fail due to lack of a connector when constructing the service client
-#[test]
+#[tokio::test]
 #[should_panic(
     expected = "No HTTP connector was available. Enable the `rustls` or `native-tls` crate feature or set a connector to fix this."
 )]
-fn test_clients_from_service_config() {
-    let config = aws_sdk_s3::Config::builder().build();
+async fn test_clients_from_service_config() {
+    #[derive(Clone, Debug)]
+    struct StubSleep;
+    impl aws_smithy_async::rt::sleep::AsyncSleep for StubSleep {
+        fn sleep(&self, _duration: std::time::Duration) -> aws_sdk_s3::config::Sleep {
+            todo!()
+        }
+    }
+
+    let config = aws_sdk_s3::Config::builder()
+        .sleep_impl(std::sync::Arc::new(StubSleep {}))
+        .build();
     // This will panic due to the lack of an HTTP connector
     aws_sdk_s3::Client::from_conf(config);
 }
