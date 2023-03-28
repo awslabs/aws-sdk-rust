@@ -127,7 +127,7 @@ impl ContentType {
             ContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["application/json", "application/xml"]
     }
@@ -1143,7 +1143,7 @@ impl QueryParser {
             QueryParser::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["dismax", "lucene", "simple", "structured"]
     }

@@ -81,7 +81,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE"]
     }
@@ -168,7 +168,7 @@ impl ResourceNotFoundExceptionReason {
             ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RULE_NOT_FOUND"]
     }
@@ -255,7 +255,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INVALID_RULE_STATE"]
     }
@@ -350,7 +350,7 @@ impl LockState {
             LockState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["locked", "pending_unlock", "unlocked"]
     }
@@ -440,7 +440,7 @@ impl RuleStatus {
             RuleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["available", "pending"]
     }
@@ -603,7 +603,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EBS_SNAPSHOT", "EC2_IMAGE"]
     }
@@ -760,7 +760,7 @@ impl RetentionPeriodUnit {
             RetentionPeriodUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
@@ -966,7 +966,7 @@ impl UnlockDelayUnit {
             UnlockDelayUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
@@ -1053,7 +1053,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SERVICE_QUOTA_EXCEEDED"]
     }

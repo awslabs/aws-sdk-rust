@@ -14,11 +14,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.40.0"
+version = "0.41.0"
 
 [dependencies.aws-sdk-sqs]
 path = "../../sdk/sqs"
-version = "0.40.0"
+version = "0.41.0"
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -79,7 +79,7 @@ impl Type {
             Type::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSONSchemaDraft4", "OpenApi3"]
     }
@@ -169,7 +169,7 @@ impl DiscovererState {
             DiscovererState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
@@ -479,7 +479,7 @@ impl CodeGenerationStatus {
             CodeGenerationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS"]
     }

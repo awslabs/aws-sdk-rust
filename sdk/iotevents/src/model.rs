@@ -241,7 +241,7 @@ impl InputStatus {
             InputStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
@@ -711,7 +711,7 @@ impl EvaluationMethod {
             EvaluationMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BATCH", "SERIAL"]
     }
@@ -828,7 +828,7 @@ impl DetectorModelVersionStatus {
             DetectorModelVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -2206,7 +2206,7 @@ impl PayloadType {
             PayloadType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON", "STRING"]
     }
@@ -3640,7 +3640,7 @@ impl AlarmModelVersionStatus {
             AlarmModelVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "FAILED", "INACTIVE"]
     }
@@ -5160,7 +5160,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EQUAL",
@@ -5517,7 +5517,7 @@ impl LoggingLevel {
             LoggingLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "INFO"]
     }
@@ -6938,7 +6938,7 @@ impl AnalysisResultLevel {
             AnalysisResultLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARNING"]
     }
@@ -7106,7 +7106,7 @@ impl AnalysisStatus {
             AnalysisStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "RUNNING"]
     }

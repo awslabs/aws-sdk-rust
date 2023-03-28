@@ -91,7 +91,7 @@ impl TableDataImportJobStatus {
             TableDataImportJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"]
     }
@@ -396,7 +396,7 @@ impl ImportDataCharacterEncoding {
             ImportDataCharacterEncoding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ISO-8859-1",
@@ -615,7 +615,7 @@ impl ImportSourceDataFormat {
             ImportSourceDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELIMITED_TEXT"]
     }
@@ -1141,7 +1141,7 @@ impl Format {
             Format::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNTING",
@@ -1969,7 +1969,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -2423,7 +2423,7 @@ impl UpsertAction {
             UpsertAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPENDED", "UPDATED"]
     }

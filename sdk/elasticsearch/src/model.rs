@@ -338,7 +338,7 @@ impl VpcEndpointStatus {
             VpcEndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -974,7 +974,7 @@ impl PackageStatus {
             PackageStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1068,7 +1068,7 @@ impl PackageType {
             PackageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TXT-DICTIONARY"]
     }
@@ -1971,7 +1971,7 @@ impl AutoTuneState {
             AutoTuneState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -2336,7 +2336,7 @@ impl TimeUnit {
             TimeUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
@@ -2428,7 +2428,7 @@ impl RollbackOnDisable {
             RollbackOnDisable::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ROLLBACK", "NO_ROLLBACK"]
     }
@@ -2520,7 +2520,7 @@ impl AutoTuneDesiredState {
             AutoTuneDesiredState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2822,7 +2822,7 @@ impl OptionState {
             OptionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Processing", "RequiresIndexDocuments"]
     }
@@ -3470,7 +3470,7 @@ impl TlsSecurityPolicy {
             TlsSecurityPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
@@ -3748,7 +3748,7 @@ impl LogType {
             LogType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AUDIT_LOGS",
@@ -4855,7 +4855,7 @@ impl VolumeType {
             VolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "standard"]
     }
@@ -5335,7 +5335,7 @@ impl EsWarmPartitionInstanceType {
             EsWarmPartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ultrawarm1.large.elasticsearch",
@@ -5718,7 +5718,7 @@ impl EsPartitionInstanceType {
             EsPartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "c4.2xlarge.elasticsearch",
@@ -6630,7 +6630,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -6988,7 +6988,7 @@ impl InboundCrossClusterSearchConnectionStatusCode {
             InboundCrossClusterSearchConnectionStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVED",
@@ -7360,7 +7360,7 @@ impl PrincipalType {
             PrincipalType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_ACCOUNT", "AWS_SERVICE"]
     }
@@ -7752,7 +7752,7 @@ impl DomainPackageStatus {
             DomainPackageStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -7918,7 +7918,7 @@ impl EngineType {
             EngineType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Elasticsearch", "OpenSearch"]
     }
@@ -8018,7 +8018,7 @@ impl UpgradeStatus {
             UpgradeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -8118,7 +8118,7 @@ impl UpgradeStep {
             UpgradeStep::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRE_UPGRADE_CHECK", "SNAPSHOT", "UPGRADE"]
     }
@@ -8804,7 +8804,7 @@ impl VpcEndpointErrorCode {
             VpcEndpointErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENDPOINT_NOT_FOUND", "SERVER_ERROR"]
     }
@@ -9299,7 +9299,7 @@ impl ReservedElasticsearchInstancePaymentOption {
             ReservedElasticsearchInstancePaymentOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
@@ -9696,7 +9696,7 @@ impl DescribePackagesFilterName {
             DescribePackagesFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PackageID", "PackageName", "PackageStatus"]
     }
@@ -10090,7 +10090,7 @@ impl OutboundCrossClusterSearchConnectionStatusCode {
             OutboundCrossClusterSearchConnectionStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -11895,7 +11895,7 @@ impl OverallChangeStatus {
             OverallChangeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "PENDING", "PROCESSING"]
     }
@@ -12233,7 +12233,7 @@ impl ScheduledAutoTuneSeverityType {
             ScheduledAutoTuneSeverityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -12325,7 +12325,7 @@ impl ScheduledAutoTuneActionType {
             ScheduledAutoTuneActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JVM_HEAP_SIZE_TUNING", "JVM_YOUNG_GEN_TUNING"]
     }
@@ -12410,7 +12410,7 @@ impl AutoTuneType {
             AutoTuneType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SCHEDULED_ACTION"]
     }

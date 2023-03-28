@@ -306,7 +306,7 @@ impl ConfirmationState {
             ConfirmationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Confirmed", "Denied", "None"]
     }
@@ -416,7 +416,7 @@ impl IntentState {
             IntentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -652,7 +652,7 @@ impl Shape {
             Shape::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Composite", "List", "Scalar"]
     }
@@ -1032,7 +1032,7 @@ impl SentimentType {
             SentimentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
@@ -2022,7 +2022,7 @@ impl StyleType {
             StyleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Default", "SpellByLetter", "SpellByWord"]
     }
@@ -2132,7 +2132,7 @@ impl DialogActionType {
             DialogActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Close",
@@ -2537,7 +2537,7 @@ impl MessageContentType {
             MessageContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CustomPayload", "ImageResponseCard", "PlainText", "SSML"]
     }

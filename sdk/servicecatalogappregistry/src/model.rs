@@ -457,7 +457,7 @@ impl SyncAction {
             SyncAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NO_ACTION", "START_SYNC"]
     }
@@ -547,7 +547,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CFN_STACK", "RESOURCE_TAG_VALUE"]
     }
@@ -1609,7 +1609,7 @@ impl ResourceGroupState {
             ResourceGroupState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",

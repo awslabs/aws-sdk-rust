@@ -148,7 +148,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "OTHER"]
     }
@@ -238,7 +238,7 @@ impl AutoRenew {
             AutoRenew::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -350,7 +350,7 @@ impl ProtectedResourceType {
             ProtectedResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPLICATION_LOAD_BALANCER",
@@ -454,7 +454,7 @@ impl ProtectionGroupPattern {
             ProtectionGroupPattern::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "ARBITRARY", "BY_RESOURCE_TYPE"]
     }
@@ -551,7 +551,7 @@ impl ProtectionGroupAggregation {
             ProtectionGroupAggregation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAX", "MEAN", "SUM"]
     }
@@ -1177,7 +1177,7 @@ impl ApplicationLayerAutomaticResponseStatus {
             ApplicationLayerAutomaticResponseStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2055,7 +2055,7 @@ impl SubscriptionState {
             SubscriptionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -2764,7 +2764,7 @@ impl ProactiveEngagementStatus {
             ProactiveEngagementStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "PENDING"]
     }
@@ -3509,7 +3509,7 @@ impl Unit {
             Unit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BITS", "BYTES", "PACKETS", "REQUESTS"]
     }
@@ -3698,7 +3698,7 @@ impl AttackPropertyIdentifier {
             AttackPropertyIdentifier::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DESTINATION_URL",
@@ -3797,7 +3797,7 @@ impl AttackLayer {
             AttackLayer::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLICATION", "NETWORK"]
     }
@@ -4234,7 +4234,7 @@ impl SubResourceType {
             SubResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IP", "URL"]
     }

@@ -1294,7 +1294,7 @@ impl RegistryAliasStatus {
             RegistryAliasStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "REJECTED"]
     }
@@ -1955,7 +1955,7 @@ impl ImageFailureCode {
             ImageFailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ImageNotFound",
@@ -2145,7 +2145,7 @@ impl LayerFailureCode {
             LayerFailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InvalidLayerDigest", "MissingLayerDigest"]
     }
@@ -2345,7 +2345,7 @@ impl LayerAvailability {
             LayerAvailability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }

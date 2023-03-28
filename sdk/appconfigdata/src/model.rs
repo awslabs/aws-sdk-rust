@@ -94,7 +94,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Application",
@@ -292,7 +292,7 @@ impl InvalidParameterProblem {
             InvalidParameterProblem::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Corrupted", "Expired", "PollIntervalNotSatisfied"]
     }
@@ -378,7 +378,7 @@ impl BadRequestReason {
             BadRequestReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InvalidParameters"]
     }

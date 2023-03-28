@@ -189,7 +189,7 @@ impl QueueAttributeName {
             QueueAttributeName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "All",
@@ -1094,7 +1094,7 @@ impl MessageSystemAttributeNameForSends {
             MessageSystemAttributeNameForSends::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWSTraceHeader"]
     }
@@ -1630,7 +1630,7 @@ impl MessageSystemAttributeName {
             MessageSystemAttributeName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWSTraceHeader",

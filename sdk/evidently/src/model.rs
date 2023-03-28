@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -420,7 +420,7 @@ impl SegmentReferenceResourceType {
             SegmentReferenceResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXPERIMENT", "LAUNCH"]
     }
@@ -1358,7 +1358,7 @@ impl ProjectStatus {
             ProjectStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UPDATING"]
     }
@@ -1815,7 +1815,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.custom", "aws.evidently.evaluation"]
     }
@@ -2608,7 +2608,7 @@ impl LaunchStopDesiredState {
             LaunchStopDesiredState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED"]
     }
@@ -3350,7 +3350,7 @@ impl LaunchType {
             LaunchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.splits"]
     }
@@ -3820,7 +3820,7 @@ impl LaunchStatus {
             LaunchStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "CREATED", "RUNNING", "UPDATING"]
     }
@@ -4718,7 +4718,7 @@ impl FeatureEvaluationStrategy {
             FeatureEvaluationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_RULES", "DEFAULT_VARIATION"]
     }
@@ -4808,7 +4808,7 @@ impl FeatureStatus {
             FeatureStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UPDATING"]
     }
@@ -5372,7 +5372,7 @@ impl VariationValueType {
             VariationValueType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "DOUBLE", "LONG", "STRING"]
     }
@@ -5534,7 +5534,7 @@ impl ExperimentStopDesiredState {
             ExperimentStopDesiredState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED"]
     }
@@ -5732,7 +5732,7 @@ impl ExperimentReportName {
             ExperimentReportName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BayesianInference"]
     }
@@ -5964,7 +5964,7 @@ impl ExperimentResultResponseType {
             ExperimentResultResponseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ConfidenceIntervalLowerBound",
@@ -6072,7 +6072,7 @@ impl ExperimentResultRequestType {
             ExperimentResultRequestType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BaseStat",
@@ -6164,7 +6164,7 @@ impl ExperimentBaseStat {
             ExperimentBaseStat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Mean"]
     }
@@ -6772,7 +6772,7 @@ impl ExperimentType {
             ExperimentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.onlineab"]
     }
@@ -6941,7 +6941,7 @@ impl ChangeDirectionEnum {
             ChangeDirectionEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DECREASE", "INCREASE"]
     }
@@ -7277,7 +7277,7 @@ impl ExperimentStatus {
             ExperimentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "CREATED", "RUNNING", "UPDATING"]
     }

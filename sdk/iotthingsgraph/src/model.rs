@@ -146,7 +146,7 @@ impl DefinitionLanguage {
             DefinitionLanguage::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GRAPHQL"]
     }
@@ -676,7 +676,7 @@ impl DeploymentTarget {
             DeploymentTarget::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "GREENGRASS"]
     }
@@ -798,7 +798,7 @@ impl SystemInstanceDeploymentStatus {
             SystemInstanceDeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAP",
@@ -1107,7 +1107,7 @@ impl SystemTemplateFilterName {
             SystemTemplateFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FLOW_TEMPLATE_ID"]
     }
@@ -1283,7 +1283,7 @@ impl SystemInstanceFilterName {
             SystemInstanceFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GREENGRASS_GROUP_NAME", "STATUS", "SYSTEM_TEMPLATE_ID"]
     }
@@ -1449,7 +1449,7 @@ impl FlowTemplateFilterName {
             FlowTemplateFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEVICE_MODEL_ID"]
     }
@@ -1712,7 +1712,7 @@ impl FlowExecutionStatus {
             FlowExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
@@ -1972,7 +1972,7 @@ impl EntityType {
             EntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION",
@@ -2162,7 +2162,7 @@ impl EntityFilterName {
             EntityFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NAME",
@@ -2445,7 +2445,7 @@ impl FlowExecutionEventType {
             FlowExecutionEventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGE_TASK_MESSAGE",
@@ -2558,7 +2558,7 @@ impl UploadStatus {
             UploadStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -3069,7 +3069,7 @@ impl NamespaceDeletionStatusErrorCodes {
             NamespaceDeletionStatusErrorCodes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["VALIDATION_FAILED"]
     }
@@ -3166,7 +3166,7 @@ impl NamespaceDeletionStatus {
             NamespaceDeletionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }

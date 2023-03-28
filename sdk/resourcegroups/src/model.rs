@@ -305,7 +305,7 @@ impl QueryType {
             QueryType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
     }
@@ -609,7 +609,7 @@ impl GroupLifecycleEventsStatus {
             GroupLifecycleEventsStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ERROR", "INACTIVE", "IN_PROGRESS"]
     }
@@ -701,7 +701,7 @@ impl GroupLifecycleEventsDesiredStatus {
             GroupLifecycleEventsDesiredStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -1007,7 +1007,7 @@ impl QueryErrorCode {
             QueryErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUDFORMATION_STACK_INACTIVE",
@@ -1470,7 +1470,7 @@ impl GroupFilterName {
             GroupFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["configuration-type", "resource-type"]
     }
@@ -1687,7 +1687,7 @@ impl ResourceStatusValue {
             ResourceStatusValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PENDING"]
     }
@@ -1853,7 +1853,7 @@ impl ResourceFilterName {
             ResourceFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["resource-type"]
     }
@@ -2087,7 +2087,7 @@ impl GroupConfigurationStatus {
             GroupConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
     }

@@ -182,7 +182,7 @@ impl SanitizationWarningReason {
             SanitizationWarningReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISALLOWED_ATTRIBUTE_REMOVED",
@@ -479,7 +479,7 @@ impl DayOfWeek {
             DayOfWeek::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
@@ -955,7 +955,7 @@ impl AuthenticationStrategy {
             AuthenticationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LDAP", "SIMPLE"]
     }
@@ -1384,7 +1384,7 @@ impl ChangeType {
             ChangeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
@@ -1735,7 +1735,7 @@ impl EngineType {
             EngineType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVEMQ", "RABBITMQ"]
     }
@@ -2026,7 +2026,7 @@ impl DeploymentMode {
             DeploymentMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_STANDBY_MULTI_AZ",
@@ -2140,7 +2140,7 @@ impl BrokerState {
             BrokerState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATION_FAILED",
@@ -2522,7 +2522,7 @@ impl BrokerStorageType {
             BrokerStorageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EBS", "EFS"]
     }

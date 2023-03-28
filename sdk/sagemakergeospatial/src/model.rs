@@ -204,7 +204,7 @@ impl VectorEnrichmentJobExportStatus {
             VectorEnrichmentJobExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -518,7 +518,7 @@ impl VectorEnrichmentJobStatus {
             VectorEnrichmentJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -619,7 +619,7 @@ impl VectorEnrichmentJobType {
             VectorEnrichmentJobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAP_MATCHING", "REVERSE_GEOCODING"]
     }
@@ -709,7 +709,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -1166,7 +1166,7 @@ impl VectorEnrichmentJobDocumentType {
             VectorEnrichmentJobDocumentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV"]
     }
@@ -1328,7 +1328,7 @@ impl VectorEnrichmentJobExportErrorType {
             VectorEnrichmentJobExportErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_ERROR"]
     }
@@ -1493,7 +1493,7 @@ impl VectorEnrichmentJobErrorType {
             VectorEnrichmentJobErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_ERROR"]
     }
@@ -2219,7 +2219,7 @@ impl LogicalOperator {
             LogicalOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AND"]
     }
@@ -2622,7 +2622,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "NOT_EQUALS", "STARTS_WITH"]
     }
@@ -3597,7 +3597,7 @@ impl DataCollectionType {
             DataCollectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PREMIUM", "PUBLIC", "USER"]
     }
@@ -3702,7 +3702,7 @@ impl OutputType {
             OutputType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FLOAT32", "FLOAT64", "INT16", "INT32", "UINT16"]
     }
@@ -3792,7 +3792,7 @@ impl TargetOptions {
             TargetOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INPUT", "OUTPUT"]
     }
@@ -4007,7 +4007,7 @@ impl EarthObservationJobExportStatus {
             EarthObservationJobExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -4321,7 +4321,7 @@ impl EarthObservationJobStatus {
             EarthObservationJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -4859,7 +4859,7 @@ impl Unit {
             Unit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["METERS"]
     }
@@ -4956,7 +4956,7 @@ impl PredefinedResolution {
             PredefinedResolution::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVERAGE", "HIGHEST", "LOWEST"]
     }
@@ -5187,7 +5187,7 @@ impl AlgorithmNameGeoMosaic {
             AlgorithmNameGeoMosaic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVERAGE",
@@ -5416,7 +5416,7 @@ impl ZonalStatistics {
             ZonalStatistics::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAX", "MEAN", "MEDIAN", "MIN", "STANDARD_DEVIATION", "SUM"]
     }
@@ -5604,7 +5604,7 @@ impl AlgorithmNameCloudRemoval {
             AlgorithmNameCloudRemoval::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERPOLATION"]
     }
@@ -5805,7 +5805,7 @@ impl TemporalStatistics {
             TemporalStatistics::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MEAN", "MEDIAN", "STANDARD_DEVIATION"]
     }
@@ -5895,7 +5895,7 @@ impl GroupBy {
             GroupBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "YEARLY"]
     }
@@ -6154,7 +6154,7 @@ impl AlgorithmNameResampling {
             AlgorithmNameResampling::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVERAGE",
@@ -6939,7 +6939,7 @@ impl MetadataProvider {
             MetadataProvider::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PLANET_ORDER"]
     }
@@ -7428,7 +7428,7 @@ impl ExportErrorType {
             ExportErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_ERROR"]
     }
@@ -7590,7 +7590,7 @@ impl EarthObservationJobErrorType {
             EarthObservationJobErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_ERROR"]
     }

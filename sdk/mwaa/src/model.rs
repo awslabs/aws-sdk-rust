@@ -81,7 +81,7 @@ impl WebserverAccessMode {
             WebserverAccessMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE_ONLY", "PUBLIC_ONLY"]
     }
@@ -415,7 +415,7 @@ impl LoggingLevel {
             LoggingLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"]
     }
@@ -950,7 +950,7 @@ impl Unit {
             Unit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -2073,7 +2073,7 @@ impl UpdateStatus {
             UpdateStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCESS"]
     }
@@ -2517,7 +2517,7 @@ impl EnvironmentStatus {
             EnvironmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",

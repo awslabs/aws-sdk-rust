@@ -84,7 +84,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
@@ -180,7 +180,7 @@ impl DatasourcePackage {
             DatasourcePackage::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DETECTIVE_CORE", "EKS_AUDIT"]
     }
@@ -915,7 +915,7 @@ impl DatasourcePackageIngestState {
             DatasourcePackageIngestState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "STARTED", "STOPPED"]
     }
@@ -1075,7 +1075,7 @@ impl InvitationType {
             InvitationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INVITATION", "ORGANIZATION"]
     }
@@ -1167,7 +1167,7 @@ impl MemberDisabledReason {
             MemberDisabledReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["VOLUME_TOO_HIGH", "VOLUME_UNKNOWN"]
     }
@@ -1272,7 +1272,7 @@ impl MemberStatus {
             MemberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED_BUT_DISABLED",

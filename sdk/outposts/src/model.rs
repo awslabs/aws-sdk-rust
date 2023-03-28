@@ -79,7 +79,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ORDER", "OUTPOST"]
     }
@@ -704,7 +704,7 @@ impl MaximumSupportedWeightLbs {
             MaximumSupportedWeightLbs::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "MAX_1400_LBS",
@@ -855,7 +855,7 @@ impl OpticalStandard {
             OpticalStandard::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "OPTIC_1000BASE_LX",
@@ -961,7 +961,7 @@ impl FiberOpticCableType {
             FiberOpticCableType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_MODE", "SINGLE_MODE"]
     }
@@ -1091,7 +1091,7 @@ impl UplinkCount {
             UplinkCount::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "UPLINK_COUNT_1",
@@ -1202,7 +1202,7 @@ impl UplinkGbps {
             UplinkGbps::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UPLINK_100G", "UPLINK_10G", "UPLINK_1G", "UPLINK_40G"]
     }
@@ -1292,7 +1292,7 @@ impl PowerFeedDrop {
             PowerFeedDrop::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABOVE_RACK", "BELOW_RACK"]
     }
@@ -1392,7 +1392,7 @@ impl PowerConnector {
             PowerConnector::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AH530P7W", "AH532P6W", "IEC309", "L6_30P"]
     }
@@ -1482,7 +1482,7 @@ impl PowerPhase {
             PowerPhase::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SINGLE_PHASE", "THREE_PHASE"]
     }
@@ -1582,7 +1582,7 @@ impl PowerDrawKva {
             PowerDrawKva::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "POWER_10_KVA",
@@ -1933,7 +1933,7 @@ impl AddressType {
             AddressType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATING_ADDRESS", "SHIPPING_ADDRESS"]
     }
@@ -2321,7 +2321,7 @@ impl SupportedHardwareType {
             SupportedHardwareType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RACK", "SERVER"]
     }
@@ -2667,7 +2667,7 @@ impl LineItemStatus {
             LineItemStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BUILDING",
@@ -2806,7 +2806,7 @@ impl OrderStatus {
             OrderStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -2907,7 +2907,7 @@ impl OrderType {
             OrderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OUTPOST", "REPLACEMENT"]
     }
@@ -3195,7 +3195,7 @@ impl SupportedStorageEnum {
             SupportedStorageEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EBS", "S3"]
     }
@@ -3373,7 +3373,7 @@ impl CatalogItemStatus {
             CatalogItemStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DISCONTINUED"]
     }
@@ -3463,7 +3463,7 @@ impl CatalogItemClass {
             CatalogItemClass::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RACK", "SERVER"]
     }
@@ -3831,7 +3831,7 @@ impl ComputeAssetState {
             ComputeAssetState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ISOLATED", "RETIRING"]
     }
@@ -3916,7 +3916,7 @@ impl AssetType {
             AssetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPUTE"]
     }
@@ -4006,7 +4006,7 @@ impl AssetState {
             AssetState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "RETIRING"]
     }
@@ -4368,7 +4368,7 @@ impl PaymentOption {
             PaymentOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
@@ -4785,7 +4785,7 @@ impl ShipmentCarrier {
             ShipmentCarrier::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DBS", "DHL", "FEDEX", "UPS"]
     }
@@ -5042,7 +5042,7 @@ impl PaymentTerm {
             PaymentTerm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ONE_YEAR", "THREE_YEARS"]
     }

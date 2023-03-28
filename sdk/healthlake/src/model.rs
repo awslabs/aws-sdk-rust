@@ -161,7 +161,7 @@ impl JobStatus {
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -1122,7 +1122,7 @@ impl PreloadDataType {
             PreloadDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SYNTHEA"]
     }
@@ -1330,7 +1330,7 @@ impl CmkType {
             CmkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
     }
@@ -1415,7 +1415,7 @@ impl FhirVersion {
             FhirVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["R4"]
     }
@@ -1515,7 +1515,7 @@ impl DatastoreStatus {
             DatastoreStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }

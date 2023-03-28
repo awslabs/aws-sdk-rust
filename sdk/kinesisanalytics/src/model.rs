@@ -943,7 +943,7 @@ impl RecordFormatType {
             RecordFormatType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
@@ -2446,7 +2446,7 @@ impl InputStartingPosition {
             InputStartingPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
     }
@@ -2656,7 +2656,7 @@ impl ApplicationStatus {
             ApplicationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING", "READY", "RUNNING", "STARTING", "STOPPING", "UPDATING",

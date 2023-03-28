@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -491,7 +491,7 @@ impl WorkspaceStatusCode {
             WorkspaceStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1047,7 +1047,7 @@ impl RuleGroupsNamespaceStatusCode {
             RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1433,7 +1433,7 @@ impl LoggingConfigurationStatusCode {
             LoggingConfigurationStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1766,7 +1766,7 @@ impl AlertManagerDefinitionStatusCode {
             AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",

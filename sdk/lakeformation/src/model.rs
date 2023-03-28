@@ -84,7 +84,7 @@ impl OptimizerType {
             OptimizerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "COMPACTION", "GARBAGE_COLLECTION"]
     }
@@ -460,7 +460,7 @@ impl TransactionType {
             TransactionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["READ_AND_WRITE", "READ_ONLY"]
     }
@@ -1422,7 +1422,7 @@ impl Permission {
             Permission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -1830,7 +1830,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATABASE", "TABLE"]
     }
@@ -3138,7 +3138,7 @@ impl TransactionStatus {
             TransactionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "ACTIVE", "COMMITTED", "COMMIT_IN_PROGRESS"]
     }
@@ -3245,7 +3245,7 @@ impl TransactionStatusFilter {
             TransactionStatusFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "ACTIVE", "ALL", "COMMITTED", "COMPLETED"]
     }
@@ -3734,7 +3734,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BEGINS_WITH",
@@ -3841,7 +3841,7 @@ impl FieldNameString {
             FieldNameString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAST_MODIFIED", "RESOURCE_ARN", "ROLE_ARN"]
     }
@@ -4172,7 +4172,7 @@ impl DataLakeResourceType {
             DataLakeResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CATALOG",
@@ -4273,7 +4273,7 @@ impl ResourceShareType {
             ResourceShareType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "FOREIGN"]
     }
@@ -4736,7 +4736,7 @@ impl PermissionType {
             PermissionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"]
     }
@@ -5316,7 +5316,7 @@ impl QueryStateString {
             QueryStateString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ERROR",

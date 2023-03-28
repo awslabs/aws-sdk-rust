@@ -146,7 +146,7 @@ impl ClientVersion {
             ClientVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["5.1", "5.3"]
     }
@@ -243,7 +243,7 @@ impl SubscriptionType {
             SubscriptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCTION"]
     }
@@ -358,7 +358,7 @@ impl HsmStatus {
             HsmStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEGRADED",
@@ -463,7 +463,7 @@ impl CloudHsmObjectState {
             CloudHsmObjectState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEGRADED", "READY", "UPDATING"]
     }

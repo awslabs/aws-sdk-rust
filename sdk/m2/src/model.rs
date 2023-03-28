@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -455,7 +455,7 @@ impl EngineType {
             EngineType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["bluage", "microfocus"]
     }
@@ -562,7 +562,7 @@ impl EnvironmentLifecycle {
             EnvironmentLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Deleting", "Failed", "Updating"]
     }
@@ -1394,7 +1394,7 @@ impl DeploymentLifecycle {
             DeploymentLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Deploying", "Failed", "Succeeded"]
     }
@@ -1862,7 +1862,7 @@ impl DataSetTaskLifecycle {
             DataSetTaskLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Completed", "Creating", "Running"]
     }
@@ -2185,7 +2185,7 @@ impl BatchJobExecutionStatus {
             BatchJobExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -2290,7 +2290,7 @@ impl BatchJobType {
             BatchJobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JES2", "JES3", "VSE"]
     }
@@ -2671,7 +2671,7 @@ impl ApplicationVersionLifecycle {
             ApplicationVersionLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Failed"]
     }
@@ -4142,7 +4142,7 @@ impl ApplicationDeploymentLifecycle {
             ApplicationDeploymentLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Deployed", "Deploying"]
     }
@@ -4279,7 +4279,7 @@ impl ApplicationLifecycle {
             ApplicationLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Available",

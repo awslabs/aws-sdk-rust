@@ -250,7 +250,7 @@ impl ChildPolicy {
             ChildPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABANDON", "REQUEST_CANCEL", "TERMINATE"]
     }
@@ -2830,7 +2830,7 @@ impl DecisionType {
             DecisionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CancelTimer",
@@ -4852,7 +4852,7 @@ impl StartLambdaFunctionFailedCause {
             StartLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASSUME_ROLE_FAILED"]
     }
@@ -5087,7 +5087,7 @@ impl ScheduleLambdaFunctionFailedCause {
             ScheduleLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ID_ALREADY_IN_USE",
@@ -5268,7 +5268,7 @@ impl LambdaFunctionTimeoutType {
             LambdaFunctionTimeoutType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -5975,21 +5975,21 @@ impl StartChildWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => "CHILD_CREATION_RATE_EXCEEDED",
-            StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
-            StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-            StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => "OPEN_CHILDREN_LIMIT_EXCEEDED",
-            StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => "OPEN_WORKFLOWS_LIMIT_EXCEEDED",
-            StartChildWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => "WORKFLOW_ALREADY_RUNNING",
-            StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
-            StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-            StartChildWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-        }
+    StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => "CHILD_CREATION_RATE_EXCEEDED",
+    StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
+    StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+    StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+    StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+    StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => "OPEN_CHILDREN_LIMIT_EXCEEDED",
+    StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => "OPEN_WORKFLOWS_LIMIT_EXCEEDED",
+    StartChildWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => "WORKFLOW_ALREADY_RUNNING",
+    StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
+    StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
+    StartChildWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_CREATION_RATE_EXCEEDED",
@@ -6195,7 +6195,7 @@ impl CancelTimerFailedCause {
             CancelTimerFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "TIMER_ID_UNKNOWN"]
     }
@@ -6399,7 +6399,7 @@ impl StartTimerFailedCause {
             StartTimerFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "OPEN_TIMERS_LIMIT_EXCEEDED",
@@ -6605,7 +6605,7 @@ impl RequestCancelActivityTaskFailedCause {
             RequestCancelActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVITY_ID_UNKNOWN", "OPERATION_NOT_PERMITTED"]
     }
@@ -6898,7 +6898,7 @@ impl ScheduleActivityTaskFailedCause {
             ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVITY_CREATION_RATE_EXCEEDED",
@@ -7152,11 +7152,11 @@ pub enum RequestCancelExternalWorkflowExecutionFailedCause {
 impl std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
-            "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded,
-            "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-            other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
+"REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded,
+"UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
+other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for RequestCancelExternalWorkflowExecutionFailedCause {
@@ -7170,13 +7170,13 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-            RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-        }
+    RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
+    RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
+    RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
@@ -7671,11 +7671,11 @@ pub enum SignalExternalWorkflowExecutionFailedCause {
 impl std::convert::From<&str> for SignalExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "OPERATION_NOT_PERMITTED" => SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted,
-            "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded,
-            "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-            other => SignalExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "OPERATION_NOT_PERMITTED" => SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted,
+"SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded,
+"UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
+other => SignalExternalWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for SignalExternalWorkflowExecutionFailedCause {
@@ -7689,13 +7689,13 @@ impl SignalExternalWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-            SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-        }
+    SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
+    SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
+    SignalExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
@@ -8383,7 +8383,7 @@ impl WorkflowExecutionTimeoutType {
             WorkflowExecutionTimeoutType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -9547,7 +9547,7 @@ impl RecordMarkerFailedCause {
             RecordMarkerFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED"]
     }
@@ -10144,7 +10144,7 @@ impl ActivityTaskTimeoutType {
             ActivityTaskTimeoutType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "HEARTBEAT",
@@ -10852,7 +10852,7 @@ impl DecisionTaskTimeoutType {
             DecisionTaskTimeoutType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -11296,7 +11296,7 @@ impl WorkflowExecutionCancelRequestedCause {
             WorkflowExecutionCancelRequestedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CHILD_POLICY_APPLIED"]
     }
@@ -11528,7 +11528,7 @@ impl WorkflowExecutionTerminatedCause {
             WorkflowExecutionTerminatedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_POLICY_APPLIED",
@@ -11711,17 +11711,17 @@ pub enum ContinueAsNewWorkflowExecutionFailedCause {
 impl std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED" => ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded,
-            "DEFAULT_CHILD_POLICY_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined,
-            "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined,
-            "DEFAULT_TASK_LIST_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined,
-            "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined,
-            "OPERATION_NOT_PERMITTED" => ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted,
-            "UNHANDLED_DECISION" => ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision,
-            "WORKFLOW_TYPE_DEPRECATED" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
-            "WORKFLOW_TYPE_DOES_NOT_EXIST" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
-            other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED" => ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded,
+"DEFAULT_CHILD_POLICY_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined,
+"DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined,
+"DEFAULT_TASK_LIST_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined,
+"DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined,
+"OPERATION_NOT_PERMITTED" => ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted,
+"UNHANDLED_DECISION" => ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision,
+"WORKFLOW_TYPE_DEPRECATED" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
+"WORKFLOW_TYPE_DOES_NOT_EXIST" => ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
+other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for ContinueAsNewWorkflowExecutionFailedCause {
@@ -11735,19 +11735,19 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-            ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
-            ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
-            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-        }
+    ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
+    ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
+    ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+    ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+    ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+    ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
+    ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
+    ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
+    ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -12241,7 +12241,7 @@ impl CancelWorkflowExecutionFailedCause {
             CancelWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -12585,7 +12585,7 @@ impl FailWorkflowExecutionFailedCause {
             FailWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -12857,7 +12857,7 @@ impl CompleteWorkflowExecutionFailedCause {
             CompleteWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -13634,7 +13634,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ActivityTaskCancelRequested",
@@ -13917,7 +13917,7 @@ impl RegistrationStatus {
             RegistrationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED", "REGISTERED"]
     }
@@ -14289,7 +14289,7 @@ impl CloseStatus {
             CloseStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -14386,7 +14386,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }

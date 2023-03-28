@@ -79,7 +79,7 @@ impl IdentityType {
             IdentityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
@@ -328,7 +328,7 @@ impl ExecutionEngineType {
             ExecutionEngineType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EMR"]
     }
@@ -560,7 +560,7 @@ impl PlacementGroupStrategy {
             PlacementGroupStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLUSTER", "NONE", "PARTITION", "SPREAD"]
     }
@@ -655,7 +655,7 @@ impl InstanceRoleType {
             InstanceRoleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
@@ -933,7 +933,7 @@ impl ComputeLimitsUnitType {
             ComputeLimitsUnitType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InstanceFleetUnits", "Instances", "VCPU"]
     }
@@ -1164,7 +1164,7 @@ impl RepoUpgradeOnBoot {
             RepoUpgradeOnBoot::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "SECURITY"]
     }
@@ -1256,7 +1256,7 @@ impl ScaleDownBehavior {
             ScaleDownBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TERMINATE_AT_INSTANCE_HOUR", "TERMINATE_AT_TASK_COMPLETION"]
     }
@@ -2156,7 +2156,7 @@ impl ActionOnFailure {
             ActionOnFailure::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCEL_AND_WAIT",
@@ -3313,7 +3313,7 @@ impl OnDemandCapacityReservationPreference {
             OnDemandCapacityReservationPreference::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["none", "open"]
     }
@@ -3404,7 +3404,7 @@ impl OnDemandCapacityReservationUsageStrategy {
             OnDemandCapacityReservationUsageStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["use-capacity-reservations-first"]
     }
@@ -3491,7 +3491,7 @@ impl OnDemandProvisioningAllocationStrategy {
             OnDemandProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["lowest-price"]
     }
@@ -3712,7 +3712,7 @@ impl SpotProvisioningAllocationStrategy {
             SpotProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["capacity-optimized"]
     }
@@ -3804,7 +3804,7 @@ impl SpotProvisioningTimeoutAction {
             SpotProvisioningTimeoutAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SWITCH_TO_ON_DEMAND", "TERMINATE_CLUSTER"]
     }
@@ -4345,7 +4345,7 @@ impl InstanceFleetType {
             InstanceFleetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
@@ -5344,7 +5344,7 @@ impl Unit {
             Unit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BITS",
@@ -5477,7 +5477,7 @@ impl Statistic {
             Statistic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVERAGE", "MAXIMUM", "MINIMUM", "SAMPLE_COUNT", "SUM"]
     }
@@ -5579,7 +5579,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "GREATER_THAN",
@@ -5845,7 +5845,7 @@ impl AdjustmentType {
             AdjustmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CHANGE_IN_CAPACITY",
@@ -5939,7 +5939,7 @@ impl MarketType {
             MarketType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
@@ -6607,7 +6607,7 @@ impl AutoScalingPolicyStateChangeReasonCode {
             AutoScalingPolicyStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLEANUP_FAILURE", "PROVISION_FAILURE", "USER_REQUEST"]
     }
@@ -6719,7 +6719,7 @@ impl AutoScalingPolicyState {
             AutoScalingPolicyState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHED",
@@ -6992,7 +6992,7 @@ impl ReconfigurationType {
             ReconfigurationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MERGE", "OVERWRITE"]
     }
@@ -7669,7 +7669,7 @@ impl AuthMode {
             AuthMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IAM", "SSO"]
     }
@@ -8251,7 +8251,7 @@ impl StepStateChangeReasonCode {
             StepStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE"]
     }
@@ -8366,7 +8366,7 @@ impl StepState {
             StepState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -8984,7 +8984,7 @@ impl NotebookExecutionStatus {
             NotebookExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -9728,7 +9728,7 @@ impl InstanceStateChangeReasonCode {
             InstanceStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAP_FAILURE",
@@ -9839,7 +9839,7 @@ impl InstanceState {
             InstanceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_FULFILLMENT",
@@ -9942,7 +9942,7 @@ impl InstanceGroupType {
             InstanceGroupType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
@@ -10830,7 +10830,7 @@ impl InstanceGroupStateChangeReasonCode {
             InstanceGroupStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_TERMINATED",
@@ -10972,7 +10972,7 @@ impl InstanceGroupState {
             InstanceGroupState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARRESTED",
@@ -11878,7 +11878,7 @@ impl InstanceFleetStateChangeReasonCode {
             InstanceFleetStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_TERMINATED",
@@ -12000,7 +12000,7 @@ impl InstanceFleetState {
             InstanceFleetState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
@@ -12538,7 +12538,7 @@ impl ClusterStateChangeReasonCode {
             ClusterStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL_STEPS_COMPLETED",
@@ -12662,7 +12662,7 @@ impl ClusterState {
             ClusterState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
@@ -14943,7 +14943,7 @@ impl StepExecutionState {
             StepExecutionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -15890,7 +15890,7 @@ impl JobFlowExecutionState {
             JobFlowExecutionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
@@ -16719,7 +16719,7 @@ impl InstanceCollectionType {
             InstanceCollectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSTANCE_FLEET", "INSTANCE_GROUP"]
     }
@@ -17214,7 +17214,7 @@ impl CancelStepsRequestStatus {
             CancelStepsRequestStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUBMITTED"]
     }
@@ -17306,7 +17306,7 @@ impl StepCancellationOption {
             StepCancellationOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SEND_INTERRUPT", "TERMINATE_PROCESS"]
     }

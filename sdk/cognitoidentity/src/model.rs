@@ -466,7 +466,7 @@ impl MappingRuleMatchType {
             MappingRuleMatchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Contains", "Equals", "NotEqual", "StartsWith"]
     }
@@ -558,7 +558,7 @@ impl AmbiguousRoleResolutionType {
             AmbiguousRoleResolutionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AuthenticatedRole", "Deny"]
     }
@@ -648,7 +648,7 @@ impl RoleMappingType {
             RoleMappingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Rules", "Token"]
     }
@@ -1115,7 +1115,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AccessDenied", "InternalServerError"]
     }

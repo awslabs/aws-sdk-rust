@@ -210,7 +210,7 @@ impl TaskState {
             TaskState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELED", "COMPLETED", "IN_PROGRESS"]
     }
@@ -535,7 +535,7 @@ impl ExecutionState {
             ExecutionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -1443,7 +1443,7 @@ impl AttachmentStatus {
             AttachmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ATTACHED", "ATTACHING", "DETACHED", "DETACHING"]
     }
@@ -1673,7 +1673,7 @@ impl InstanceStateName {
             InstanceStateName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PENDING",
@@ -2309,7 +2309,7 @@ impl IpAddressAssignment {
             IpAddressAssignment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC"]
     }
@@ -2416,7 +2416,7 @@ impl PhysicalConnectorType {
             PhysicalConnectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
     }
@@ -2511,7 +2511,7 @@ impl UnlockState {
             UnlockState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOCKED", "UNLOCKED", "UNLOCKING"]
     }

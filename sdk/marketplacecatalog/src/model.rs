@@ -566,7 +566,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -981,7 +981,7 @@ impl FailureCode {
             FailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_FAULT"]
     }
@@ -1086,7 +1086,7 @@ impl ChangeStatus {
             ChangeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
     }

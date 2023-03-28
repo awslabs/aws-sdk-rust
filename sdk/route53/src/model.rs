@@ -423,7 +423,7 @@ impl RrType {
             RrType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV",
@@ -1392,7 +1392,7 @@ impl Statistic {
             Statistic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -1494,7 +1494,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
@@ -2328,7 +2328,7 @@ impl InsufficientDataHealthStatus {
             InsufficientDataHealthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Healthy", "LastKnownStatus", "Unhealthy"]
     }
@@ -2676,7 +2676,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
@@ -2833,7 +2833,7 @@ impl HealthCheckRegion {
             HealthCheckRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
@@ -2962,7 +2962,7 @@ impl HealthCheckType {
             HealthCheckType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CALCULATED",
@@ -3073,7 +3073,7 @@ impl ResettableElementName {
             ResettableElementName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ChildHealthChecks",
@@ -3394,7 +3394,7 @@ impl VpcRegion {
             VpcRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
@@ -3863,7 +3863,7 @@ impl TagResourceType {
             TagResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["healthcheck", "hostedzone"]
     }
@@ -5953,7 +5953,7 @@ impl ResourceRecordSetFailover {
             ResourceRecordSetFailover::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIMARY", "SECONDARY"]
     }
@@ -6324,7 +6324,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
@@ -7156,7 +7156,7 @@ impl ReusableDelegationSetLimitType {
             ReusableDelegationSetLimitType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
     }
@@ -7334,7 +7334,7 @@ impl HostedZoneLimitType {
             HostedZoneLimitType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
     }
@@ -8533,7 +8533,7 @@ impl ChangeStatus {
             ChangeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSYNC", "PENDING"]
     }
@@ -8744,7 +8744,7 @@ impl AccountLimitType {
             AccountLimitType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "MAX_HEALTH_CHECKS_BY_OWNER",
@@ -9127,7 +9127,7 @@ impl ChangeAction {
             ChangeAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPSERT"]
     }
@@ -9320,7 +9320,7 @@ impl CidrCollectionChangeAction {
             CidrCollectionChangeAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_IF_EXISTS", "PUT"]
     }

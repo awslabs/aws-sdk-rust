@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -1056,7 +1056,7 @@ impl ReceiptType {
             ReceiptType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELIVERED", "ERROR", "READ", "SENT", "STOP"]
     }
@@ -1476,7 +1476,7 @@ impl ContactType {
             ContactType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ESCALATION", "PERSONAL"]
     }
@@ -1738,7 +1738,7 @@ impl ActivationStatus {
             ActivationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "NOT_ACTIVATED"]
     }
@@ -1833,7 +1833,7 @@ impl ChannelType {
             ChannelType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS", "VOICE"]
     }
@@ -1925,7 +1925,7 @@ impl AcceptCodeValidation {
             AcceptCodeValidation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENFORCE", "IGNORE"]
     }
@@ -2015,7 +2015,7 @@ impl AcceptType {
             AcceptType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELIVERED", "READ"]
     }

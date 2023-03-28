@@ -79,7 +79,7 @@ impl PermissionsMode {
             PermissionsMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW_ALL", "STANDARD"]
     }
@@ -293,7 +293,7 @@ impl EncryptionStatus {
             EncryptionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"]
     }
@@ -393,7 +393,7 @@ impl LedgerState {
             LedgerState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }
@@ -888,7 +888,7 @@ impl OutputFormat {
             OutputFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ION_BINARY", "ION_TEXT", "JSON"]
     }
@@ -1200,7 +1200,7 @@ impl S3ObjectEncryptionType {
             S3ObjectEncryptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NO_ENCRYPTION", "SSE_KMS", "SSE_S3"]
     }
@@ -1295,7 +1295,7 @@ impl ExportStatus {
             ExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "IN_PROGRESS"]
     }
@@ -1643,7 +1643,7 @@ impl ErrorCause {
             ErrorCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
     }
@@ -1748,7 +1748,7 @@ impl StreamStatus {
             StreamStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"]
     }

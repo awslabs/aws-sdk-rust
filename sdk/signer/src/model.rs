@@ -408,7 +408,7 @@ impl ImageFormat {
             ImageFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON", "JSONDetached", "JSONEmbedded"]
     }
@@ -571,7 +571,7 @@ impl HashAlgorithm {
             HashAlgorithm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SHA1", "SHA256"]
     }
@@ -663,7 +663,7 @@ impl EncryptionAlgorithm {
             EncryptionAlgorithm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ECDSA", "RSA"]
     }
@@ -825,7 +825,7 @@ impl ValidityType {
             ValidityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "YEARS"]
     }
@@ -1277,7 +1277,7 @@ impl SigningProfileStatus {
             SigningProfileStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Canceled", "Revoked"]
     }
@@ -1889,7 +1889,7 @@ impl Category {
             Category::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWSIoT"]
     }
@@ -2300,7 +2300,7 @@ impl SigningStatus {
             SigningStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded"]
     }

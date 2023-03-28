@@ -358,7 +358,7 @@ impl MediaCapabilities {
             MediaCapabilities::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["None", "Receive", "Send", "SendReceive"]
     }
@@ -768,7 +768,7 @@ impl TranscribeMedicalContentIdentificationType {
             TranscribeMedicalContentIdentificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PHI"]
     }
@@ -885,7 +885,7 @@ impl TranscribeMedicalRegion {
             TranscribeMedicalRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ap-southeast-2",
@@ -985,7 +985,7 @@ impl TranscribeMedicalType {
             TranscribeMedicalType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONVERSATION", "DICTATION"]
     }
@@ -1097,7 +1097,7 @@ impl TranscribeMedicalSpecialty {
             TranscribeMedicalSpecialty::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CARDIOLOGY",
@@ -1191,7 +1191,7 @@ impl TranscribeMedicalLanguageCode {
             TranscribeMedicalLanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["en-US"]
     }
@@ -1708,7 +1708,7 @@ impl TranscribeLanguageCode {
             TranscribeLanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
@@ -1798,7 +1798,7 @@ impl TranscribeContentRedactionType {
             TranscribeContentRedactionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
@@ -1885,7 +1885,7 @@ impl TranscribeContentIdentificationType {
             TranscribeContentIdentificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
@@ -1982,7 +1982,7 @@ impl TranscribePartialResultsStability {
             TranscribePartialResultsStability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["high", "low", "medium"]
     }
@@ -2127,7 +2127,7 @@ impl TranscribeRegion {
             TranscribeRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
@@ -2238,7 +2238,7 @@ impl TranscribeVocabularyFilterMethod {
             TranscribeVocabularyFilterMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["mask", "remove", "tag"]
     }
@@ -2694,7 +2694,7 @@ impl MeetingFeatureStatus {
             MeetingFeatureStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }

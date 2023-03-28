@@ -153,7 +153,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -1197,7 +1197,7 @@ impl VoiceConnectorAwsRegion {
             VoiceConnectorAwsRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
@@ -1597,7 +1597,7 @@ impl SipRuleTriggerType {
             SipRuleTriggerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RequestUriHostname", "ToPhoneNumber"]
     }
@@ -2353,7 +2353,7 @@ impl GeoMatchLevel {
             GeoMatchLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AreaCode", "Country"]
     }
@@ -2445,7 +2445,7 @@ impl NumberSelectionBehavior {
             NumberSelectionBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AvoidSticky", "PreferSticky"]
     }
@@ -2621,7 +2621,7 @@ impl Capability {
             Capability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SMS", "Voice"]
     }
@@ -2718,7 +2718,7 @@ impl ProxySessionStatus {
             ProxySessionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Closed", "InProgress", "Open"]
     }
@@ -3194,7 +3194,7 @@ impl CallingNameStatus {
             CallingNameStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Unassigned",
@@ -3388,7 +3388,7 @@ impl PhoneNumberAssociationName {
             PhoneNumberAssociationName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SipRuleId", "VoiceConnectorGroupId", "VoiceConnectorId"]
     }
@@ -3668,7 +3668,7 @@ impl PhoneNumberStatus {
             PhoneNumberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AcquireFailed",
@@ -3772,7 +3772,7 @@ impl PhoneNumberProductType {
             PhoneNumberProductType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SipMediaApplicationDialIn", "VoiceConnector"]
     }
@@ -3862,7 +3862,7 @@ impl PhoneNumberType {
             PhoneNumberType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Local", "TollFree"]
     }
@@ -4407,7 +4407,7 @@ impl NotificationTarget {
             NotificationTarget::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EventBridge", "SNS", "SQS"]
     }
@@ -4846,7 +4846,7 @@ impl OriginationRouteProtocol {
             OriginationRouteProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -5284,7 +5284,7 @@ impl AlexaSkillStatus {
             AlexaSkillStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -5743,7 +5743,7 @@ impl OrderedPhoneNumberStatus {
             OrderedPhoneNumberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Acquired", "Failed", "Processing"]
     }
@@ -5835,7 +5835,7 @@ impl PhoneNumberOrderType {
             PhoneNumberOrderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["New", "Porting"]
     }
@@ -5972,7 +5972,7 @@ impl PhoneNumberOrderStatus {
             PhoneNumberOrderStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CancelRequested",

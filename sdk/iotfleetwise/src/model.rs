@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -478,7 +478,7 @@ impl VehicleAssociationBehavior {
             VehicleAssociationBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CreateIotThing", "ValidateIotThingExists"]
     }
@@ -568,7 +568,7 @@ impl UpdateMode {
             UpdateMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Merge", "Overwrite"]
     }
@@ -1097,7 +1097,7 @@ impl NodeDataType {
             NodeDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BOOLEAN",
@@ -2182,7 +2182,7 @@ impl ManifestStatus {
             ManifestStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAFT"]
     }
@@ -2944,7 +2944,7 @@ impl SignalDecoderType {
             SignalDecoderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAN_SIGNAL", "OBD_SIGNAL"]
     }
@@ -3405,7 +3405,7 @@ impl NetworkInterfaceType {
             NetworkInterfaceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAN_INTERFACE", "OBD_INTERFACE"]
     }
@@ -3607,7 +3607,7 @@ impl NetworkInterfaceFailureReason {
             NetworkInterfaceFailureReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
@@ -3823,7 +3823,7 @@ impl SignalDecoderFailureReason {
             SignalDecoderFailureReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CAN_SIGNAL_INFO_IS_NULL",
@@ -4481,7 +4481,7 @@ impl CampaignStatus {
             CampaignStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATING", "RUNNING", "SUSPENDED", "WAITING_FOR_APPROVAL"]
     }
@@ -4742,7 +4742,7 @@ impl TriggerMode {
             TriggerMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "RISING_EDGE"]
     }
@@ -4974,7 +4974,7 @@ impl Compression {
             Compression::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OFF", "SNAPPY"]
     }
@@ -5064,7 +5064,7 @@ impl SpoolingMode {
             SpoolingMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OFF", "TO_DISK"]
     }
@@ -5154,7 +5154,7 @@ impl DiagnosticsMode {
             DiagnosticsMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OFF", "SEND_ACTIVE_DTCS"]
     }
@@ -5256,7 +5256,7 @@ impl UpdateCampaignAction {
             UpdateCampaignAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPROVE", "RESUME", "SUSPEND", "UPDATE"]
     }
@@ -5475,7 +5475,7 @@ impl RegistrationStatus {
             RegistrationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "REGISTRATION_FAILURE",
@@ -5639,7 +5639,7 @@ impl LogType {
             LogType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "OFF"]
     }
@@ -5864,7 +5864,7 @@ impl VehicleState {
             VehicleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED", "DELETING", "HEALTHY", "READY", "SUSPENDED"]
     }

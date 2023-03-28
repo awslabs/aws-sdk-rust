@@ -146,7 +146,7 @@ impl EvaluationMode {
             EvaluationMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DETECTIVE", "PROACTIVE"]
     }
@@ -408,7 +408,7 @@ impl ResourceConfigurationSchemaType {
             ResourceConfigurationSchemaType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CFN_RESOURCE_SCHEMA"]
     }
@@ -1402,7 +1402,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS::ACM::Certificate",
@@ -2936,7 +2936,7 @@ impl ResourceValueType {
             ResourceValueType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESOURCE_ID"]
     }
@@ -3023,7 +3023,7 @@ impl RemediationTargetType {
             RemediationTargetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SSM_DOCUMENT"]
     }
@@ -3523,7 +3523,7 @@ impl MaximumExecutionFrequency {
             MaximumExecutionFrequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "One_Hour",
@@ -3629,7 +3629,7 @@ impl OrganizationConfigRuleTriggerTypeNoSn {
             OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
@@ -4018,7 +4018,7 @@ impl OrganizationConfigRuleTriggerType {
             OrganizationConfigRuleTriggerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
@@ -4480,7 +4480,7 @@ impl ComplianceType {
             ComplianceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLIANT",
@@ -6080,7 +6080,7 @@ impl ConfigRuleState {
             ConfigRuleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING", "DELETING_RESULTS", "EVALUATING"]
     }
@@ -6562,7 +6562,7 @@ impl MessageType {
             MessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
@@ -6652,7 +6652,7 @@ impl EventSource {
             EventSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["aws.config"]
     }
@@ -6747,7 +6747,7 @@ impl Owner {
             Owner::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOM_LAMBDA", "CUSTOM_POLICY"]
     }
@@ -7647,7 +7647,7 @@ impl SortBy {
             SortBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SCORE"]
     }
@@ -7737,7 +7737,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -8208,7 +8208,7 @@ impl ResourceEvaluationStatus {
             ResourceEvaluationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -8949,7 +8949,7 @@ impl ConfigurationItemStatus {
             ConfigurationItemStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "OK",
@@ -9047,7 +9047,7 @@ impl ChronologicalOrder {
             ChronologicalOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Forward", "Reverse"]
     }
@@ -9377,7 +9377,7 @@ impl OrganizationResourceDetailedStatus {
             OrganizationResourceDetailedStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -9841,7 +9841,7 @@ impl MemberAccountRuleStatus {
             MemberAccountRuleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -10222,7 +10222,7 @@ impl ConformancePackComplianceType {
             ConformancePackComplianceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT"]
     }
@@ -11308,7 +11308,7 @@ impl ResourceCountGroupKey {
             ResourceCountGroupKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION", "RESOURCE_TYPE"]
     }
@@ -11643,7 +11643,7 @@ impl AggregateConformancePackComplianceSummaryGroupKey {
             AggregateConformancePackComplianceSummaryGroupKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
@@ -11873,7 +11873,7 @@ impl ConfigRuleComplianceSummaryGroupKey {
             ConfigRuleComplianceSummaryGroupKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
@@ -12503,7 +12503,7 @@ impl RemediationExecutionStepState {
             RemediationExecutionStepState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
@@ -12605,7 +12605,7 @@ impl RemediationExecutionState {
             RemediationExecutionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
     }
@@ -12992,7 +12992,7 @@ impl OrganizationResourceStatus {
             OrganizationResourceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -13546,7 +13546,7 @@ impl OrganizationRuleStatus {
             OrganizationRuleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -14423,7 +14423,7 @@ impl DeliveryStatus {
             DeliveryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failure", "Not_Applicable", "Success"]
     }
@@ -14930,7 +14930,7 @@ impl ConformancePackState {
             ConformancePackState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
@@ -15690,7 +15690,7 @@ impl RecorderStatus {
             RecorderStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failure", "Pending", "Success"]
     }
@@ -15990,7 +15990,7 @@ impl AggregatedSourceStatusType {
             AggregatedSourceStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "OUTDATED", "SUCCEEDED"]
     }
@@ -16082,7 +16082,7 @@ impl AggregatedSourceType {
             AggregatedSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION"]
     }

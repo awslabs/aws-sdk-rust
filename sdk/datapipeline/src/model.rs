@@ -627,7 +627,7 @@ impl TaskStatus {
             TaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "FALSE", "FINISHED"]
     }
@@ -1016,7 +1016,7 @@ impl OperatorType {
             OperatorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
     }

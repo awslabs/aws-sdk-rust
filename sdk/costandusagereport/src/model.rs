@@ -373,7 +373,7 @@ impl ReportVersioning {
             ReportVersioning::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_NEW_REPORT", "OVERWRITE_REPORT"]
     }
@@ -470,7 +470,7 @@ impl AdditionalArtifact {
             AdditionalArtifact::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
     }
@@ -680,7 +680,7 @@ impl AwsRegion {
             AwsRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
@@ -792,7 +792,7 @@ impl SchemaElement {
             SchemaElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESOURCES"]
     }
@@ -889,7 +889,7 @@ impl CompressionFormat {
             CompressionFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "Parquet", "ZIP"]
     }
@@ -979,7 +979,7 @@ impl ReportFormat {
             ReportFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Parquet", "textORcsv"]
     }
@@ -1074,7 +1074,7 @@ impl TimeUnit {
             TimeUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAILY", "HOURLY", "MONTHLY"]
     }

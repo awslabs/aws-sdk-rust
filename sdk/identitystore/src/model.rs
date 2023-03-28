@@ -89,7 +89,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"]
     }
@@ -1369,7 +1369,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"]
     }

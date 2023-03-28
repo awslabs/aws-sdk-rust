@@ -79,7 +79,7 @@ impl DetailType {
             DetailType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC", "FULL"]
     }
@@ -273,7 +273,7 @@ impl NotificationRuleStatus {
             NotificationRuleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -504,7 +504,7 @@ impl TargetStatus {
             TargetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -677,7 +677,7 @@ impl ListTargetsFilterName {
             ListTargetsFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"]
     }
@@ -916,7 +916,7 @@ impl ListNotificationRulesFilterName {
             ListNotificationRulesFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"]
     }
@@ -1192,7 +1192,7 @@ impl ListEventTypesFilterName {
             ListEventTypesFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESOURCE_TYPE", "SERVICE_NAME"]
     }

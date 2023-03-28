@@ -1014,7 +1014,7 @@ impl FlexMatchMode {
             FlexMatchMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STANDALONE", "WITH_QUEUE"]
     }
@@ -1104,7 +1104,7 @@ impl BackfillMode {
             BackfillMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "MANUAL"]
     }
@@ -1646,7 +1646,7 @@ impl PriorityType {
             PriorityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COST", "DESTINATION", "LATENCY", "LOCATION"]
     }
@@ -2434,7 +2434,7 @@ impl PlayerSessionCreationPolicy {
             PlayerSessionCreationPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPT_ALL", "DENY_ALL"]
     }
@@ -2521,7 +2521,7 @@ impl GameSessionStatusReason {
             GameSessionStatusReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERRUPTED"]
     }
@@ -2628,7 +2628,7 @@ impl GameSessionStatus {
             GameSessionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "ERROR", "TERMINATED", "TERMINATING"]
     }
@@ -2718,7 +2718,7 @@ impl ProtectionPolicy {
             ProtectionPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FullProtection", "NoProtection"]
     }
@@ -3174,7 +3174,7 @@ impl GameServerGroupAction {
             GameServerGroupAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REPLACE_INSTANCE_TYPES"]
     }
@@ -3291,7 +3291,7 @@ impl GameServerGroupStatus {
             GameServerGroupStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -3391,7 +3391,7 @@ impl GameServerProtectionPolicy {
             GameServerProtectionPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL_PROTECTION", "NO_PROTECTION"]
     }
@@ -3488,7 +3488,7 @@ impl BalancingStrategy {
             BalancingStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND_ONLY", "SPOT_ONLY", "SPOT_PREFERRED"]
     }
@@ -4084,7 +4084,7 @@ impl GameServerGroupInstanceType {
             GameServerGroupInstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "c4.2xlarge",
@@ -4557,7 +4557,7 @@ impl GameServerUtilizationStatus {
             GameServerUtilizationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UTILIZED"]
     }
@@ -4644,7 +4644,7 @@ impl GameServerClaimStatus {
             GameServerClaimStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLAIMED"]
     }
@@ -4731,7 +4731,7 @@ impl GameServerHealthCheck {
             GameServerHealthCheck::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY"]
     }
@@ -4937,7 +4937,7 @@ impl IpProtocol {
             IpProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -5399,7 +5399,7 @@ impl OperatingSystem {
             OperatingSystem::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AMAZON_LINUX", "AMAZON_LINUX_2", "WINDOWS_2012"]
     }
@@ -5494,7 +5494,7 @@ impl BuildStatus {
             BuildStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIALIZED", "READY"]
     }
@@ -5882,7 +5882,7 @@ impl RoutingStrategyType {
             RoutingStrategyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SIMPLE", "TERMINAL"]
     }
@@ -6737,7 +6737,7 @@ impl GameSessionPlacementState {
             GameSessionPlacementState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "FULFILLED", "PENDING", "TIMED_OUT"]
     }
@@ -6822,7 +6822,7 @@ impl FleetAction {
             FleetAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO_SCALING"]
     }
@@ -7810,7 +7810,7 @@ impl MatchmakingConfigurationStatus {
             MatchmakingConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -8924,7 +8924,7 @@ impl Ec2InstanceType {
             Ec2InstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "c3.2xlarge",
@@ -9134,7 +9134,7 @@ impl ComputeStatus {
             ComputeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "TERMINATING"]
     }
@@ -9272,7 +9272,7 @@ impl PolicyType {
             PolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RuleBased", "TargetBased"]
     }
@@ -9412,7 +9412,7 @@ impl MetricName {
             MetricName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ActivatingGameSessions",
@@ -9531,7 +9531,7 @@ impl ComparisonOperatorType {
             ComparisonOperatorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
@@ -9633,7 +9633,7 @@ impl ScalingAdjustmentType {
             ScalingAdjustmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ChangeInCapacity",
@@ -9809,7 +9809,7 @@ impl LocationFilter {
             LocationFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOM"]
     }
@@ -9899,7 +9899,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -11046,7 +11046,7 @@ impl LocationUpdateStatus {
             LocationUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PENDING_UPDATE"]
     }
@@ -11163,7 +11163,7 @@ impl ScalingStatusType {
             ScalingStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -11631,7 +11631,7 @@ impl PlayerSessionStatus {
             PlayerSessionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"]
     }
@@ -12183,7 +12183,7 @@ impl InstanceStatus {
             InstanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "TERMINATING"]
     }
@@ -12485,7 +12485,7 @@ impl GameServerInstanceStatus {
             GameServerInstanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAINING", "SPOT_TERMINATING"]
     }
@@ -13273,7 +13273,7 @@ impl FleetStatus {
             FleetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -13922,7 +13922,7 @@ impl EventCode {
             EventCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FLEET_ACTIVATION_FAILED",
@@ -14706,7 +14706,7 @@ impl ComputeType {
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANYWHERE", "EC2"]
     }
@@ -14867,7 +14867,7 @@ impl CertificateType {
             CertificateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "GENERATED"]
     }
@@ -14957,7 +14957,7 @@ impl FleetType {
             FleetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
@@ -15162,7 +15162,7 @@ impl GameServerGroupDeleteOption {
             GameServerGroupDeleteOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FORCE_DELETE", "RETAIN", "SAFE_DELETE"]
     }
@@ -15520,7 +15520,7 @@ impl AcceptanceType {
             AcceptanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "REJECT"]
     }

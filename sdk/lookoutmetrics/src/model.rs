@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -397,7 +397,7 @@ impl FilterOperation {
             FilterOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -1774,7 +1774,7 @@ impl JsonFileCompression {
             JsonFileCompression::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -2021,7 +2021,7 @@ impl CsvFileCompression {
             CsvFileCompression::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -2121,7 +2121,7 @@ impl Frequency {
             Frequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["P1D", "PT10M", "PT1H", "PT5M"]
     }
@@ -2372,7 +2372,7 @@ impl AggregationFunction {
             AggregationFunction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVG", "SUM"]
     }
@@ -2935,7 +2935,7 @@ impl SnsFormat {
             SnsFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON", "LONG_TEXT", "SHORT_TEXT"]
     }
@@ -3913,7 +3913,7 @@ impl RelationshipType {
             RelationshipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CAUSE_OF_INPUT_ANOMALY_GROUP",
@@ -4257,7 +4257,7 @@ impl AnomalyDetectorStatus {
             AnomalyDetectorStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -4595,7 +4595,7 @@ impl AlertStatus {
             AlertStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -4685,7 +4685,7 @@ impl AlertType {
             AlertType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAMBDA", "SNS"]
     }
@@ -5388,7 +5388,7 @@ impl DataQualityMetricType {
             DataQualityMetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
@@ -6418,7 +6418,7 @@ impl Confidence {
             Confidence::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "NONE"]
     }
@@ -6993,7 +6993,7 @@ impl AnomalyDetectorFailureType {
             AnomalyDetectorFailureType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATION_FAILURE",
@@ -7248,7 +7248,7 @@ impl AnomalyDetectionTaskStatus {
             AnomalyDetectionTaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",

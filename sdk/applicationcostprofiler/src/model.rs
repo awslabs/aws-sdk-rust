@@ -146,7 +146,7 @@ impl Format {
             Format::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "PARQUET"]
     }
@@ -241,7 +241,7 @@ impl ReportFrequency {
             ReportFrequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "DAILY", "MONTHLY"]
     }
@@ -607,7 +607,7 @@ impl S3BucketRegion {
             S3BucketRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
     }

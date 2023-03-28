@@ -403,7 +403,7 @@ impl S3ContinuousClassificationType {
             S3ContinuousClassificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL"]
     }
@@ -495,7 +495,7 @@ impl S3OneTimeClassificationType {
             S3OneTimeClassificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL", "NONE"]
     }

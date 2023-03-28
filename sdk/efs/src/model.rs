@@ -151,7 +151,7 @@ impl ThroughputMode {
             ThroughputMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["bursting", "elastic", "provisioned"]
     }
@@ -241,7 +241,7 @@ impl PerformanceMode {
             PerformanceMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["generalPurpose", "maxIO"]
     }
@@ -459,7 +459,7 @@ impl LifeCycleState {
             LifeCycleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -635,7 +635,7 @@ impl TransitionToPrimaryStorageClassRules {
             TransitionToPrimaryStorageClassRules::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AFTER_1_ACCESS"]
     }
@@ -747,7 +747,7 @@ impl TransitionToIaRules {
             TransitionToIaRules::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_14_DAYS",
@@ -926,7 +926,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
@@ -1095,7 +1095,7 @@ impl Resource {
             Resource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE_SYSTEM", "MOUNT_TARGET"]
     }
@@ -1185,7 +1185,7 @@ impl ResourceIdType {
             ResourceIdType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LONG_ID", "SHORT_ID"]
     }
@@ -1571,7 +1571,7 @@ impl ReplicationStatus {
             ReplicationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETING", "ENABLED", "ENABLING", "ERROR"]
     }

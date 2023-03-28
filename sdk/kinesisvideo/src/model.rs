@@ -254,7 +254,7 @@ impl ConfigurationStatus {
             ConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -416,7 +416,7 @@ impl MediaStorageConfigurationStatus {
             MediaStorageConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -720,7 +720,7 @@ impl FormatConfigKey {
             FormatConfigKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JPEGQuality"]
     }
@@ -810,7 +810,7 @@ impl Format {
             Format::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JPEG", "PNG"]
     }
@@ -972,7 +972,7 @@ impl ImageSelectorType {
             ImageSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
@@ -1064,7 +1064,7 @@ impl UpdateDataRetentionOperation {
             UpdateDataRetentionOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DECREASE_DATA_RETENTION", "INCREASE_DATA_RETENTION"]
     }
@@ -1503,7 +1503,7 @@ impl StrategyOnFullSize {
             StrategyOnFullSize::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_OLDEST_MEDIA", "DENY_NEW_MEDIA"]
     }
@@ -1889,7 +1889,7 @@ impl MediaUriType {
             MediaUriType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE_URI", "RTSP_URI"]
     }
@@ -1999,7 +1999,7 @@ impl SyncStatus {
             SyncStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGED",
@@ -2309,7 +2309,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
@@ -2469,7 +2469,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH"]
     }
@@ -2739,7 +2739,7 @@ impl ChannelType {
             ChannelType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL_MESH", "SINGLE_MASTER"]
     }
@@ -2980,7 +2980,7 @@ impl ChannelProtocol {
             ChannelProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTPS", "WEBRTC", "WSS"]
     }
@@ -3146,7 +3146,7 @@ impl ChannelRole {
             ChannelRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MASTER", "VIEWER"]
     }
@@ -3266,7 +3266,7 @@ impl ApiName {
             ApiName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "GET_CLIP",

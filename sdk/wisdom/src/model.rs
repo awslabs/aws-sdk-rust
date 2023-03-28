@@ -653,7 +653,7 @@ impl KnowledgeBaseStatus {
             KnowledgeBaseStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -752,7 +752,7 @@ impl KnowledgeBaseType {
             KnowledgeBaseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "EXTERNAL"]
     }
@@ -1156,7 +1156,7 @@ impl ContentStatus {
             ContentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1395,7 +1395,7 @@ impl FilterOperator {
             FilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -1480,7 +1480,7 @@ impl FilterField {
             FilterField::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NAME"]
     }
@@ -3123,7 +3123,7 @@ impl RecommendationSourceType {
             RecommendationSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ISSUE_DETECTION", "OTHER", "RULE_EVALUATION"]
     }
@@ -3210,7 +3210,7 @@ impl RecommendationTriggerType {
             RecommendationTriggerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["QUERY"]
     }
@@ -3430,7 +3430,7 @@ impl RecommendationType {
             RecommendationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KNOWLEDGE_CONTENT"]
     }
@@ -3525,7 +3525,7 @@ impl RelevanceLevel {
             RelevanceLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -3853,7 +3853,7 @@ impl AssistantStatus {
             AssistantStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -3945,7 +3945,7 @@ impl AssistantType {
             AssistantType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
@@ -4709,7 +4709,7 @@ impl AssociationType {
             AssociationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KNOWLEDGE_BASE"]
     }

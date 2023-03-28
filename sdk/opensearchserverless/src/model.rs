@@ -180,7 +180,7 @@ impl VpcEndpointStatus {
             VpcEndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING", "FAILED", "PENDING"]
     }
@@ -650,7 +650,7 @@ impl SecurityPolicyType {
             SecurityPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["encryption", "network"]
     }
@@ -1057,7 +1057,7 @@ impl SecurityConfigType {
             SecurityConfigType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["saml"]
     }
@@ -1547,7 +1547,7 @@ impl CollectionStatus {
             CollectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
@@ -1913,7 +1913,7 @@ impl CollectionType {
             CollectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SEARCH", "TIMESERIES"]
     }
@@ -2490,7 +2490,7 @@ impl AccessPolicyType {
             AccessPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["data"]
     }

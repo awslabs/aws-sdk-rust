@@ -187,7 +187,7 @@ impl TemplateStatus {
             TemplateStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -1240,7 +1240,7 @@ impl FieldNamespace {
             FieldNamespace::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Custom", "System"]
     }
@@ -1345,7 +1345,7 @@ impl FieldType {
             FieldType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Boolean", "DateTime", "Number", "SingleSelect", "Text"]
     }
@@ -1953,7 +1953,7 @@ impl DomainStatus {
             DomainStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "CreationFailed", "CreationInProgress"]
     }
@@ -2389,7 +2389,7 @@ impl Order {
             Order::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Asc", "Desc"]
     }
@@ -3012,7 +3012,7 @@ impl CommentBodyTextType {
             CommentBodyTextType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Text/Plain"]
     }
@@ -3191,7 +3191,7 @@ impl RelatedItemType {
             RelatedItemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Comment", "Contact"]
     }

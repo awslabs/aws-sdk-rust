@@ -237,7 +237,7 @@ impl BadRequestReason {
             BadRequestReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InvalidConfiguration"]
     }
@@ -537,7 +537,7 @@ impl ActionPoint {
             ActionPoint::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ON_DEPLOYMENT_BAKING",
@@ -715,7 +715,7 @@ impl EnvironmentState {
             EnvironmentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYING",
@@ -810,7 +810,7 @@ impl ReplicateTo {
             ReplicateTo::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "SSM_DOCUMENT"]
     }
@@ -900,7 +900,7 @@ impl GrowthType {
             GrowthType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXPONENTIAL", "LINEAR"]
     }
@@ -1073,7 +1073,7 @@ impl ValidatorType {
             ValidatorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON_SCHEMA", "LAMBDA"]
     }
@@ -1616,7 +1616,7 @@ impl TriggeredBy {
             TriggeredBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPCONFIG", "CLOUDWATCH_ALARM", "INTERNAL_ERROR", "USER"]
     }
@@ -1728,7 +1728,7 @@ impl DeploymentEventType {
             DeploymentEventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BAKE_TIME_STARTED",
@@ -1845,7 +1845,7 @@ impl DeploymentState {
             DeploymentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BAKING",
@@ -3140,7 +3140,7 @@ impl BytesMeasure {
             BytesMeasure::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KILOBYTES"]
     }

@@ -203,7 +203,7 @@ impl Telemetry {
             Telemetry::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Off", "On"]
     }
@@ -1116,7 +1116,7 @@ impl DeploymentType {
             DeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ForceResetDeployment",
@@ -1646,7 +1646,7 @@ impl ConfigurationSyncStatus {
             ConfigurationSyncStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InSync", "OutOfSync"]
     }
@@ -2477,7 +2477,7 @@ impl Permission {
             Permission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
@@ -3074,7 +3074,7 @@ impl LoggerType {
             LoggerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWSCloudWatch", "FileSystem"]
     }
@@ -3179,7 +3179,7 @@ impl LoggerLevel {
             LoggerLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "FATAL", "INFO", "WARN"]
     }
@@ -3269,7 +3269,7 @@ impl LoggerComponent {
             LoggerComponent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GreengrassSystem", "Lambda"]
     }
@@ -4288,7 +4288,7 @@ impl FunctionIsolationMode {
             FunctionIsolationMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
@@ -4378,7 +4378,7 @@ impl EncodingType {
             EncodingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
@@ -5109,7 +5109,7 @@ impl BulkDeploymentStatus {
             BulkDeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Completed",
@@ -5304,7 +5304,7 @@ impl UpdateTargetsOperatingSystem {
             UpdateTargetsOperatingSystem::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["amazon_linux", "openwrt", "raspbian", "ubuntu"]
     }
@@ -5406,7 +5406,7 @@ impl UpdateTargetsArchitecture {
             UpdateTargetsArchitecture::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["aarch64", "armv6l", "armv7l", "x86_64"]
     }
@@ -5528,7 +5528,7 @@ impl UpdateAgentLogLevel {
             UpdateAgentLogLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN",
@@ -5620,7 +5620,7 @@ impl SoftwareToUpdate {
             SoftwareToUpdate::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["core", "ota_agent"]
     }

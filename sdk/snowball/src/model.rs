@@ -79,7 +79,7 @@ impl ShipmentState {
             ShipmentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RECEIVED", "RETURNED"]
     }
@@ -204,7 +204,7 @@ impl SnowballCapacity {
             SnowballCapacity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NoPreference",
@@ -314,7 +314,7 @@ impl ShippingOption {
             ShippingOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
     }
@@ -554,7 +554,7 @@ impl StorageUnit {
             StorageUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TB"]
     }
@@ -1211,7 +1211,7 @@ impl TransferOption {
             TransferOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXPORT", "IMPORT", "LOCAL_USE"]
     }
@@ -1303,7 +1303,7 @@ impl DeviceServiceName {
             DeviceServiceName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"]
     }
@@ -1618,7 +1618,7 @@ impl JobState {
             JobState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -2009,7 +2009,7 @@ impl SnowballType {
             SnowballType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C",
@@ -2103,7 +2103,7 @@ impl LongTermPricingType {
             LongTermPricingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OneYear", "ThreeYear"]
     }
@@ -2366,7 +2366,7 @@ impl JobType {
             JobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXPORT", "IMPORT", "LOCAL_USE"]
     }
@@ -2649,7 +2649,7 @@ impl ClusterState {
             ClusterState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AwaitingQuorum",
@@ -2757,7 +2757,7 @@ impl ShippingLabelStatus {
             ShippingLabelStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded", "TimedOut"]
     }
@@ -3353,7 +3353,7 @@ impl RemoteManagement {
             RemoteManagement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSTALLED_AUTOSTART", "INSTALLED_ONLY"]
     }

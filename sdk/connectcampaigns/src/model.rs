@@ -296,7 +296,7 @@ impl CampaignState {
             CampaignState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failed", "Initialized", "Paused", "Running", "Stopped"]
     }
@@ -517,7 +517,7 @@ impl InstanceOnboardingJobFailureCode {
             InstanceOnboardingJobFailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EVENT_BRIDGE_ACCESS_DENIED",
@@ -621,7 +621,7 @@ impl InstanceOnboardingJobStatusCode {
             InstanceOnboardingJobStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -795,7 +795,7 @@ impl EncryptionType {
             EncryptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KMS"]
     }
@@ -979,7 +979,7 @@ impl FailureCode {
             FailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InvalidInput", "RequestThrottled", "UnknownError"]
     }
@@ -1511,7 +1511,7 @@ impl InstanceIdFilterOperator {
             InstanceIdFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Eq"]
     }
@@ -1774,7 +1774,7 @@ impl GetCampaignStateBatchFailureCode {
             GetCampaignStateBatchFailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ResourceNotFound", "UnknownError"]
     }

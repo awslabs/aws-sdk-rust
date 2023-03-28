@@ -496,7 +496,7 @@ impl PreferredProtocol {
             PreferredProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -653,7 +653,7 @@ impl AccessEndpointType {
             AccessEndpointType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STREAMING"]
     }
@@ -905,7 +905,7 @@ impl Permission {
             Permission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1020,7 +1020,7 @@ impl Action {
             Action::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
@@ -1191,7 +1191,7 @@ impl StackErrorCode {
             StackErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
     }
@@ -1389,7 +1389,7 @@ impl StorageConnectorType {
             StorageConnectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GOOGLE_DRIVE", "HOMEFOLDERS", "ONE_DRIVE"]
     }
@@ -1599,7 +1599,7 @@ impl StackAttribute {
             StackAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_ENDPOINTS",
@@ -2616,7 +2616,7 @@ impl PlatformType {
             PlatformType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_LINUX2",
@@ -2711,7 +2711,7 @@ impl StreamView {
             StreamView::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APP", "DESKTOP"]
     }
@@ -3134,7 +3134,7 @@ impl FleetErrorCode {
             FleetErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
@@ -3350,7 +3350,7 @@ impl FleetState {
             FleetState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STARTING", "STOPPED", "STOPPING"]
     }
@@ -3550,7 +3550,7 @@ impl FleetType {
             FleetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS_ON", "ELASTIC", "ON_DEMAND"]
     }
@@ -3664,7 +3664,7 @@ impl FleetAttribute {
             FleetAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_INFO",
@@ -4101,7 +4101,7 @@ impl AppVisibility {
             AppVisibility::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "ASSOCIATED"]
     }
@@ -4443,7 +4443,7 @@ impl CertificateBasedAuthStatus {
             CertificateBasedAuthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"]
     }
@@ -4989,7 +4989,7 @@ impl ApplicationAttribute {
             ApplicationAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAUNCH_PARAMETERS", "WORKING_DIRECTORY"]
     }
@@ -5893,7 +5893,7 @@ impl ImageBuilderStateChangeReasonCode {
             ImageBuilderStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IMAGE_UNAVAILABLE", "INTERNAL_ERROR"]
     }
@@ -6030,7 +6030,7 @@ impl ImageBuilderState {
             ImageBuilderState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -6195,7 +6195,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["API", "AWS_AD", "SAML", "USERPOOL"]
     }
@@ -6888,7 +6888,7 @@ impl UsageReportExecutionErrorCode {
             UsageReportExecutionErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -6979,7 +6979,7 @@ impl UsageReportSchedule {
             UsageReportSchedule::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAILY"]
     }
@@ -7311,7 +7311,7 @@ impl SessionConnectionState {
             SessionConnectionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "NOT_CONNECTED"]
     }
@@ -7406,7 +7406,7 @@ impl SessionState {
             SessionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "EXPIRED", "PENDING"]
     }
@@ -7977,7 +7977,7 @@ impl ImageStateChangeReasonCode {
             ImageStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "IMAGE_BUILDER_NOT_AVAILABLE",
@@ -8076,7 +8076,7 @@ impl VisibilityType {
             VisibilityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC", "SHARED"]
     }
@@ -8191,7 +8191,7 @@ impl ImageState {
             ImageState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -8719,7 +8719,7 @@ impl MessageAction {
             MessageAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESEND", "SUPPRESS"]
     }
@@ -8918,7 +8918,7 @@ impl UserStackAssociationErrorCode {
             UserStackAssociationErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIRECTORY_NOT_FOUND",

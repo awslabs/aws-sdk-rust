@@ -331,7 +331,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["no-password", "password"]
     }
@@ -497,7 +497,7 @@ impl InputAuthenticationType {
             InputAuthenticationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["password"]
     }
@@ -1602,7 +1602,7 @@ impl DataTieringStatus {
             DataTieringStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["false", "true"]
     }
@@ -1829,7 +1829,7 @@ impl AzStatus {
             AzStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["multiaz", "singleaz"]
     }
@@ -2375,7 +2375,7 @@ impl ServiceUpdateStatus {
             ServiceUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["available", "complete", "in-progress", "scheduled"]
     }
@@ -4315,7 +4315,7 @@ impl ServiceUpdateType {
             ServiceUpdateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["security-update"]
     }
@@ -4841,7 +4841,7 @@ impl SourceType {
             SourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "acl",

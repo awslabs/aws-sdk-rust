@@ -376,7 +376,7 @@ impl Type {
             Type::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DASH", "HLS"]
     }
@@ -1081,7 +1081,7 @@ impl AccessType {
             AccessType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
     }
@@ -1622,7 +1622,7 @@ impl Operator {
             Operator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -2588,7 +2588,7 @@ impl OriginManifestType {
             OriginManifestType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_PERIOD", "SINGLE_PERIOD"]
     }
@@ -2885,7 +2885,7 @@ impl Mode {
             Mode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BEHIND_LIVE_EDGE", "OFF"]
     }
@@ -3502,7 +3502,7 @@ impl ScheduleEntryType {
             ScheduleEntryType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILLER_SLATE", "PROGRAM"]
     }
@@ -4072,7 +4072,7 @@ impl ChannelState {
             ChannelState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STOPPED"]
     }
@@ -4162,7 +4162,7 @@ impl Tier {
             Tier::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
@@ -4252,7 +4252,7 @@ impl PlaybackMode {
             PlaybackMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINEAR", "LOOP"]
     }
@@ -5228,7 +5228,7 @@ impl MessageType {
             MessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SPLICE_INSERT", "TIME_SIGNAL"]
     }
@@ -5519,7 +5519,7 @@ impl RelativePosition {
             RelativePosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AFTER_PROGRAM", "BEFORE_PROGRAM"]
     }

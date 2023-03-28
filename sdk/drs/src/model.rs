@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -387,7 +387,7 @@ impl PitPolicyRuleUnits {
             PitPolicyRuleUnits::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAY", "HOUR", "MINUTE"]
     }
@@ -479,7 +479,7 @@ impl ReplicationConfigurationDataPlaneRouting {
             ReplicationConfigurationDataPlaneRouting::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE_IP", "PUBLIC_IP"]
     }
@@ -571,7 +571,7 @@ impl ReplicationConfigurationEbsEncryption {
             ReplicationConfigurationEbsEncryption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
@@ -861,7 +861,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "GP3", "IO1", "SC1", "ST1", "STANDARD"]
     }
@@ -963,7 +963,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
             ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "GP3", "ST1"]
     }
@@ -1103,7 +1103,7 @@ impl TargetInstanceTypeRightSizingMethod {
             TargetInstanceTypeRightSizingMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC", "NONE"]
     }
@@ -1195,7 +1195,7 @@ impl LaunchDisposition {
             LaunchDisposition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
@@ -1648,7 +1648,7 @@ impl ReplicationDirection {
             ReplicationDirection::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILBACK", "FAILOVER"]
     }
@@ -1955,7 +1955,7 @@ impl ExtensionStatus {
             ExtensionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXTENDED", "EXTENSION_ERROR", "NOT_EXTENDED"]
     }
@@ -2936,7 +2936,7 @@ impl LastLaunchType {
             LastLaunchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DRILL", "RECOVERY"]
     }
@@ -3381,7 +3381,7 @@ impl DataReplicationErrorString {
             DataReplicationErrorString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
@@ -3680,7 +3680,7 @@ impl DataReplicationInitiationStepStatus {
             DataReplicationInitiationStepStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -3843,7 +3843,7 @@ impl DataReplicationInitiationStepName {
             DataReplicationInitiationStepName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACH_STAGING_DISKS",
@@ -3987,7 +3987,7 @@ impl DataReplicationState {
             DataReplicationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
@@ -4222,7 +4222,7 @@ impl LastLaunchResult {
             LastLaunchResult::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "NOT_STARTED", "PENDING", "SUCCEEDED"]
     }
@@ -4453,7 +4453,7 @@ impl RecoverySnapshotsOrder {
             RecoverySnapshotsOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -4996,7 +4996,7 @@ impl LaunchStatus {
             LaunchStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"]
     }
@@ -5091,7 +5091,7 @@ impl JobStatus {
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "PENDING", "STARTED"]
     }
@@ -5201,7 +5201,7 @@ impl InitiatedBy {
             InitiatedBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIAGNOSTIC",
@@ -5303,7 +5303,7 @@ impl JobType {
             JobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_CONVERTED_SNAPSHOT", "LAUNCH", "TERMINATE"]
     }
@@ -6501,7 +6501,7 @@ impl OriginEnvironment {
             OriginEnvironment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "ON_PREMISES"]
     }
@@ -7303,7 +7303,7 @@ impl FailbackReplicationError {
             FailbackReplicationError::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
@@ -7613,7 +7613,7 @@ impl RecoveryInstanceDataReplicationInitiationStepStatus {
             RecoveryInstanceDataReplicationInitiationStepStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -7735,26 +7735,26 @@ pub enum RecoveryInstanceDataReplicationInitiationStepName {
 impl std::convert::From<&str> for RecoveryInstanceDataReplicationInitiationStepName {
     fn from(s: &str) -> Self {
         match s {
-            "ATTACH_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks,
-            "AUTHENTICATE_WITH_SERVICE" => RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService,
-            "BOOT_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer,
-            "COMPLETE_VOLUME_MAPPING" => RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping,
-            "CONFIGURE_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware,
-            "CONNECT_AGENT_TO_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer,
-            "CREATE_SECURITY_GROUP" => RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup,
-            "CREATE_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks,
-            "DOWNLOAD_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware,
-            "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient,
-            "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication,
-            "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication,
-            "LAUNCH_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer,
-            "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE" => RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance,
-            "PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware,
-            "PAIR_REPLICATION_SERVER_WITH_AGENT" => RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent,
-            "START_DATA_TRANSFER" => RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer,
-            "WAIT" => RecoveryInstanceDataReplicationInitiationStepName::Wait,
-            other => RecoveryInstanceDataReplicationInitiationStepName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "ATTACH_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks,
+"AUTHENTICATE_WITH_SERVICE" => RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService,
+"BOOT_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer,
+"COMPLETE_VOLUME_MAPPING" => RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping,
+"CONFIGURE_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware,
+"CONNECT_AGENT_TO_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer,
+"CREATE_SECURITY_GROUP" => RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup,
+"CREATE_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks,
+"DOWNLOAD_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware,
+"DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient,
+"ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication,
+"ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication,
+"LAUNCH_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer,
+"LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE" => RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance,
+"PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware,
+"PAIR_REPLICATION_SERVER_WITH_AGENT" => RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent,
+"START_DATA_TRANSFER" => RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer,
+"WAIT" => RecoveryInstanceDataReplicationInitiationStepName::Wait,
+other => RecoveryInstanceDataReplicationInitiationStepName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for RecoveryInstanceDataReplicationInitiationStepName {
@@ -7768,28 +7768,28 @@ impl RecoveryInstanceDataReplicationInitiationStepName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
-            RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
-            RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
-            RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => "COMPLETE_VOLUME_MAPPING",
-            RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => "CONFIGURE_REPLICATION_SOFTWARE",
-            RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
-            RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
-            RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
-            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
-            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
-            RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
-            RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
-            RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
-            RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE",
-            RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
-            RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
-            RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
-            RecoveryInstanceDataReplicationInitiationStepName::Wait => "WAIT",
-            RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => value.as_str()
-        }
+    RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
+    RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
+    RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
+    RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => "COMPLETE_VOLUME_MAPPING",
+    RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => "CONFIGURE_REPLICATION_SOFTWARE",
+    RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
+    RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
+    RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
+    RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
+    RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
+    RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
+    RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+    RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
+    RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE",
+    RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+    RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
+    RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
+    RecoveryInstanceDataReplicationInitiationStepName::Wait => "WAIT",
+    RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACH_STAGING_DISKS",
@@ -7954,7 +7954,7 @@ impl RecoveryInstanceDataReplicationState {
             RecoveryInstanceDataReplicationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
@@ -8442,7 +8442,7 @@ impl FailbackLaunchType {
             FailbackLaunchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DRILL", "RECOVERY"]
     }
@@ -8557,7 +8557,7 @@ impl FailbackState {
             FailbackState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILBACK_COMPLETED",
@@ -8680,7 +8680,7 @@ impl Ec2InstanceState {
             Ec2InstanceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_FOUND",
@@ -9346,7 +9346,7 @@ impl JobLogEvent {
             JobLogEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLEANUP_END",

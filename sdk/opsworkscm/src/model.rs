@@ -726,7 +726,7 @@ impl ServerStatus {
             ServerStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BACKING_UP",
@@ -832,7 +832,7 @@ impl MaintenanceStatus {
             MaintenanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCESS"]
     }
@@ -1100,7 +1100,7 @@ impl NodeAssociationStatus {
             NodeAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -1855,7 +1855,7 @@ impl BackupStatus {
             BackupStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETING", "FAILED", "IN_PROGRESS", "OK"]
     }
@@ -1945,7 +1945,7 @@ impl BackupType {
             BackupType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATED", "MANUAL"]
     }

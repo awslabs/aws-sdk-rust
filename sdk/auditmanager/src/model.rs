@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -518,7 +518,7 @@ impl DeleteResources {
             DeleteResources::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "DEFAULT"]
     }
@@ -788,7 +788,7 @@ impl EvidenceFinderBackfillStatus {
             EvidenceFinderBackfillStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "IN_PROGRESS", "NOT_STARTED"]
     }
@@ -890,7 +890,7 @@ impl EvidenceFinderEnablementStatus {
             EvidenceFinderEnablementStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -1068,7 +1068,7 @@ impl RoleType {
             RoleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PROCESS_OWNER", "RESOURCE_OWNER"]
     }
@@ -1231,7 +1231,7 @@ impl AssessmentReportDestinationType {
             AssessmentReportDestinationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
@@ -1925,7 +1925,7 @@ impl SourceFrequency {
             SourceFrequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAILY", "MONTHLY", "WEEKLY"]
     }
@@ -2154,7 +2154,7 @@ impl KeywordInputType {
             KeywordInputType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SELECT_FROM_LIST"]
     }
@@ -2259,7 +2259,7 @@ impl SourceType {
             SourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_API_Call",
@@ -2357,7 +2357,7 @@ impl SourceSetUpOption {
             SourceSetUpOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Procedural_Controls_Mapping", "System_Controls_Mapping"]
     }
@@ -2447,7 +2447,7 @@ impl ControlType {
             ControlType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Custom", "Standard"]
     }
@@ -3297,7 +3297,7 @@ impl DelegationStatus {
             DelegationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "IN_PROGRESS", "UNDER_REVIEW"]
     }
@@ -3715,7 +3715,7 @@ impl ControlResponse {
             ControlResponse::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATE", "DEFER", "IGNORE", "MANUAL"]
     }
@@ -3810,7 +3810,7 @@ impl ControlStatus {
             ControlStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INACTIVE", "REVIEWED", "UNDER_REVIEW"]
     }
@@ -3905,7 +3905,7 @@ impl ControlSetStatus {
             ControlSetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "REVIEWED", "UNDER_REVIEW"]
     }
@@ -4603,7 +4603,7 @@ impl AssessmentStatus {
             AssessmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -5069,7 +5069,7 @@ impl ShareRequestStatus {
             ShareRequestStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -5175,7 +5175,7 @@ impl ShareRequestAction {
             ShareRequestAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "DECLINE", "REVOKE"]
     }
@@ -5265,7 +5265,7 @@ impl ShareRequestType {
             ShareRequestType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RECEIVED", "SENT"]
     }
@@ -5790,7 +5790,7 @@ impl FrameworkType {
             FrameworkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Custom", "Standard"]
     }
@@ -6032,7 +6032,7 @@ impl AccountStatus {
             AccountStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "PENDING_ACTIVATION"]
     }
@@ -7241,7 +7241,7 @@ impl AssessmentReportStatus {
             AssessmentReportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
@@ -7741,7 +7741,7 @@ impl SettingAttribute {
             SettingAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -9552,7 +9552,7 @@ impl ActionEnum {
             ActionEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -9666,7 +9666,7 @@ impl ObjectTypeEnum {
             ObjectTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT",

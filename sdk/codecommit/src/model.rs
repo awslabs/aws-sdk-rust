@@ -937,7 +937,7 @@ impl MergeOptionTypeEnum {
             MergeOptionTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
     }
@@ -1029,7 +1029,7 @@ impl PullRequestStatusEnum {
             PullRequestStatusEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
@@ -1119,7 +1119,7 @@ impl ApprovalState {
             ApprovalState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPROVE", "REVOKE"]
     }
@@ -1916,7 +1916,7 @@ impl RepositoryTriggerEventEnum {
             RepositoryTriggerEventEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "all",
@@ -2016,7 +2016,7 @@ impl FileModeTypeEnum {
             FileModeTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXECUTABLE", "NORMAL", "SYMLINK"]
     }
@@ -2203,7 +2203,7 @@ impl RelativeFileVersionEnum {
             RelativeFileVersionEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AFTER", "BEFORE"]
     }
@@ -2293,7 +2293,7 @@ impl OverrideStatus {
             OverrideStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OVERRIDE", "REVOKE"]
     }
@@ -2739,7 +2739,7 @@ impl ReplacementTypeEnum {
             ReplacementTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "KEEP_BASE",
@@ -2846,7 +2846,7 @@ impl ConflictResolutionStrategyTypeEnum {
             ConflictResolutionStrategyTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"]
     }
@@ -2938,7 +2938,7 @@ impl ConflictDetailLevelTypeEnum {
             ConflictDetailLevelTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE_LEVEL", "LINE_LEVEL"]
     }
@@ -3101,7 +3101,7 @@ impl OrderEnum {
             OrderEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
@@ -3191,7 +3191,7 @@ impl SortByEnum {
             SortByEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["lastModifiedDate", "repositoryName"]
     }
@@ -3906,7 +3906,7 @@ impl ChangeTypeEnum {
             ChangeTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["A", "D", "M"]
     }
@@ -4187,7 +4187,7 @@ impl ObjectTypeEnum {
             ObjectTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"]
     }
@@ -7119,7 +7119,7 @@ impl PullRequestEventType {
             PullRequestEventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PULL_REQUEST_APPROVAL_RULE_CREATED",

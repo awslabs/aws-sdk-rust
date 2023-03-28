@@ -338,7 +338,7 @@ impl EphemerisSource {
             EphemerisSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_PROVIDED", "SPACE_TRACK"]
     }
@@ -916,7 +916,7 @@ impl EphemerisStatus {
             EphemerisStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -1386,7 +1386,7 @@ impl EphemerisInvalidReason {
             EphemerisInvalidReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "KMS_KEY_INVALID",
@@ -1881,7 +1881,7 @@ impl EndpointStatus {
             EndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["created", "creating", "deleted", "deleting", "failed"]
     }
@@ -2536,7 +2536,7 @@ impl AngleUnits {
             AngleUnits::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEGREE_ANGLE", "RADIAN"]
     }
@@ -2681,7 +2681,7 @@ impl ContactStatus {
             ContactStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -3208,7 +3208,7 @@ impl ConfigCapabilityType {
             ConfigCapabilityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "antenna-downlink",
@@ -3976,7 +3976,7 @@ impl EirpUnits {
             EirpUnits::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["dBW"]
     }
@@ -4144,7 +4144,7 @@ impl Polarization {
             Polarization::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LEFT_HAND", "NONE", "RIGHT_HAND"]
     }
@@ -4309,7 +4309,7 @@ impl FrequencyUnits {
             FrequencyUnits::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
@@ -4806,7 +4806,7 @@ impl BandwidthUnits {
             BandwidthUnits::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
@@ -5025,7 +5025,7 @@ impl Criticality {
             Criticality::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PREFERRED", "REMOVED", "REQUIRED"]
     }

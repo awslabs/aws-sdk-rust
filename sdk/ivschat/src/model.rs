@@ -153,7 +153,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"]
     }
@@ -238,7 +238,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ROOM"]
     }
@@ -398,7 +398,7 @@ impl FallbackResult {
             FallbackResult::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -485,7 +485,7 @@ impl UpdateLoggingConfigurationState {
             UpdateLoggingConfigurationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE"]
     }
@@ -1268,7 +1268,7 @@ impl LoggingConfigurationState {
             LoggingConfigurationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1363,7 +1363,7 @@ impl CreateLoggingConfigurationState {
             CreateLoggingConfigurationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE"]
     }
@@ -1460,7 +1460,7 @@ impl ChatTokenCapability {
             ChatTokenCapability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_MESSAGE", "DISCONNECT_USER", "SEND_MESSAGE"]
     }

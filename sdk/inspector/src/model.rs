@@ -119,7 +119,7 @@ impl NoSuchEntityErrorCode {
             NoSuchEntityErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_DOES_NOT_EXIST",
@@ -568,7 +568,7 @@ impl InvalidInputErrorCode {
             InvalidInputErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
@@ -753,7 +753,7 @@ impl AccessDeniedErrorCode {
             AccessDeniedErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED_TO_ASSESSMENT_RUN",
@@ -867,7 +867,7 @@ impl InspectorEvent {
             InspectorEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_COMPLETED",
@@ -992,7 +992,7 @@ impl LimitExceededErrorCode {
             LimitExceededErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_LIMIT_EXCEEDED",
@@ -1088,7 +1088,7 @@ impl StopAction {
             StopAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SKIP_EVALUATION", "START_EVALUATION"]
     }
@@ -1188,7 +1188,7 @@ impl InvalidCrossAccountRoleErrorCode {
             InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
@@ -1510,7 +1510,7 @@ impl FailedItemErrorCode {
             FailedItemErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -1808,7 +1808,7 @@ impl AgentHealth {
             AgentHealth::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
@@ -2300,7 +2300,7 @@ impl Severity {
             Severity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["High", "Informational", "Low", "Medium", "Undefined"]
     }
@@ -3031,7 +3031,7 @@ impl AssessmentRunState {
             AssessmentRunState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -3428,7 +3428,7 @@ impl AgentHealthCode {
             AgentHealthCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "IDLE",
@@ -3823,7 +3823,7 @@ impl ScopeType {
             ScopeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSTANCE_ID", "RULES_PACKAGE_ARN"]
     }
@@ -3913,7 +3913,7 @@ impl PreviewStatus {
             PreviewStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "WORK_IN_PROGRESS"]
     }
@@ -3998,7 +3998,7 @@ impl Locale {
             Locale::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EN_US"]
     }
@@ -4093,7 +4093,7 @@ impl ReportStatus {
             ReportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "WORK_IN_PROGRESS"]
     }
@@ -4183,7 +4183,7 @@ impl ReportType {
             ReportType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FINDING", "FULL"]
     }
@@ -4273,7 +4273,7 @@ impl ReportFileFormat {
             ReportFileFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTML", "PDF"]
     }
@@ -5671,7 +5671,7 @@ impl AssetType {
             AssetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ec2-instance"]
     }
@@ -6933,7 +6933,7 @@ impl AssessmentRunNotificationSnsStatusCode {
             AssessmentRunNotificationSnsStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",

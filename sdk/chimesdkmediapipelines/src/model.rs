@@ -104,7 +104,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BadRequest",
@@ -737,7 +737,7 @@ impl MediaPipelineStatus {
             MediaPipelineStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -971,7 +971,7 @@ impl ConcatenationSinkType {
             ConcatenationSinkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["S3Bucket"]
     }
@@ -1564,7 +1564,7 @@ impl ArtifactsConcatenationState {
             ArtifactsConcatenationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -1945,7 +1945,7 @@ impl AudioArtifactsConcatenationState {
             AudioArtifactsConcatenationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Enabled"]
     }
@@ -2032,7 +2032,7 @@ impl ConcatenationSourceType {
             ConcatenationSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MediaCapturePipeline"]
     }
@@ -2514,7 +2514,7 @@ impl AudioChannelsOption {
             AudioChannelsOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Mono", "Stereo"]
     }
@@ -2601,7 +2601,7 @@ impl LiveConnectorSinkType {
             LiveConnectorSinkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RTMP"]
     }
@@ -3299,7 +3299,7 @@ impl PresenterPosition {
             PresenterPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BottomLeft", "BottomRight", "TopLeft", "TopRight"]
     }
@@ -3396,7 +3396,7 @@ impl ContentShareLayoutOption {
             ContentShareLayoutOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Horizontal", "PresenterOnly", "Vertical"]
     }
@@ -3486,7 +3486,7 @@ impl ResolutionOption {
             ResolutionOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FHD", "HD"]
     }
@@ -3571,7 +3571,7 @@ impl LayoutOption {
             LayoutOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GridView"]
     }
@@ -3663,7 +3663,7 @@ impl LiveConnectorMuxType {
             LiveConnectorMuxType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AudioWithActiveSpeakerVideo", "AudioWithCompositedVideo"]
     }
@@ -3750,7 +3750,7 @@ impl LiveConnectorSourceType {
             LiveConnectorSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ChimeSdkMeeting"]
     }
@@ -4398,7 +4398,7 @@ impl ContentMuxType {
             ContentMuxType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ContentOnly"]
     }
@@ -4488,7 +4488,7 @@ impl ArtifactsState {
             ArtifactsState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -4646,7 +4646,7 @@ impl VideoMuxType {
             VideoMuxType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["VideoOnly"]
     }
@@ -4792,7 +4792,7 @@ impl AudioMuxType {
             AudioMuxType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AudioOnly",
@@ -4883,7 +4883,7 @@ impl MediaPipelineSinkType {
             MediaPipelineSinkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["S3Bucket"]
     }
@@ -4970,7 +4970,7 @@ impl MediaPipelineSourceType {
             MediaPipelineSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ChimeSdkMeeting"]
     }

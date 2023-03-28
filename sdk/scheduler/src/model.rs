@@ -214,7 +214,7 @@ impl ScheduleGroupState {
             ScheduleGroupState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
@@ -591,7 +591,7 @@ impl ScheduleState {
             ScheduleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -753,7 +753,7 @@ impl FlexibleTimeWindowMode {
             FlexibleTimeWindowMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FLEXIBLE", "OFF"]
     }
@@ -1763,7 +1763,7 @@ impl PropagateTags {
             PropagateTags::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TASK_DEFINITION"]
     }
@@ -1930,7 +1930,7 @@ impl PlacementStrategyType {
             PlacementStrategyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["binpack", "random", "spread"]
     }
@@ -2092,7 +2092,7 @@ impl PlacementConstraintType {
             PlacementConstraintType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["distinctInstance", "memberOf"]
     }
@@ -2429,7 +2429,7 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2524,7 +2524,7 @@ impl LaunchType {
             LaunchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }

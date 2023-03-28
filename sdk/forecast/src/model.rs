@@ -500,7 +500,7 @@ impl FilterConditionString {
             FilterConditionString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IS", "IS_NOT"]
     }
@@ -1584,7 +1584,7 @@ impl State {
             State::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Deleted"]
     }
@@ -3692,7 +3692,7 @@ impl TimePointGranularity {
             TimePointGranularity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "SPECIFIC"]
     }
@@ -3784,7 +3784,7 @@ impl TimeSeriesGranularity {
             TimeSeriesGranularity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "SPECIFIC"]
     }
@@ -4051,7 +4051,7 @@ impl Domain {
             Domain::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CUSTOM",
@@ -4154,7 +4154,7 @@ impl DatasetType {
             DatasetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ITEM_METADATA", "RELATED_TIME_SERIES", "TARGET_TIME_SERIES"]
     }
@@ -4659,7 +4659,7 @@ impl OptimizationMetric {
             OptimizationMetric::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AverageWeightedQuantileLoss",
@@ -4757,7 +4757,7 @@ impl AutoMlOverrideStrategy {
             AutoMlOverrideStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AccuracyOptimized", "LatencyOptimized"]
     }
@@ -5415,7 +5415,7 @@ impl EvaluationType {
             EvaluationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPUTED", "SUMMARY"]
     }
@@ -5762,7 +5762,7 @@ impl AttributeType {
             AttributeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["float", "geolocation", "integer", "string", "timestamp"]
     }
@@ -6037,7 +6037,7 @@ impl Condition {
             Condition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "GREATER_THAN", "LESS_THAN", "NOT_EQUALS"]
     }
@@ -6253,7 +6253,7 @@ impl Operation {
             Operation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADD", "DIVIDE", "MULTIPLY", "SUBTRACT"]
     }
@@ -7216,7 +7216,7 @@ impl FeaturizationMethodName {
             FeaturizationMethodName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["filling"]
     }
@@ -8171,7 +8171,7 @@ impl ScalingType {
             ScalingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Auto", "Linear", "Logarithmic", "ReverseLogarithmic"]
     }
@@ -9199,7 +9199,7 @@ impl DayOfWeek {
             DayOfWeek::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
@@ -9347,7 +9347,7 @@ impl Month {
             Month::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APRIL",

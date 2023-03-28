@@ -148,7 +148,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -336,7 +336,7 @@ impl ChannelMessageStatus {
             ChannelMessageStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DENIED", "FAILED", "PENDING", "SENT"]
     }
@@ -557,7 +557,7 @@ impl FallbackAction {
             FallbackAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABORT", "CONTINUE"]
     }
@@ -763,7 +763,7 @@ impl InvocationType {
             InvocationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASYNC"]
     }
@@ -853,7 +853,7 @@ impl ChannelMode {
             ChannelMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESTRICTED", "UNRESTRICTED"]
     }
@@ -1192,7 +1192,7 @@ impl PushNotificationType {
             PushNotificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "VOIP"]
     }
@@ -1284,7 +1284,7 @@ impl ChannelMessagePersistenceType {
             ChannelMessagePersistenceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NON_PERSISTENT", "PERSISTENT"]
     }
@@ -1376,7 +1376,7 @@ impl ChannelMessageType {
             ChannelMessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONTROL", "STANDARD"]
     }
@@ -1639,7 +1639,7 @@ impl ChannelPrivacy {
             ChannelPrivacy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
@@ -1837,7 +1837,7 @@ impl SearchFieldOperator {
             SearchFieldOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "INCLUDES"]
     }
@@ -1922,7 +1922,7 @@ impl SearchFieldKey {
             SearchFieldKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MEMBERS"]
     }
@@ -2162,7 +2162,7 @@ impl AllowNotifications {
             AllowNotifications::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "FILTERED", "NONE"]
     }
@@ -2963,7 +2963,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -3230,7 +3230,7 @@ impl ChannelMembershipType {
             ChannelMembershipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "HIDDEN"]
     }

@@ -319,7 +319,7 @@ impl OptionState {
             OptionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
@@ -671,7 +671,7 @@ impl PartitionInstanceType {
             PartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "search.2xlarge",
@@ -924,7 +924,7 @@ impl TlsSecurityPolicy {
             TlsSecurityPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
@@ -1332,7 +1332,7 @@ impl SuggesterFuzzyMatching {
             SuggesterFuzzyMatching::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["high", "low", "none"]
     }
@@ -3412,7 +3412,7 @@ impl IndexFieldType {
             IndexFieldType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "date",
@@ -4379,7 +4379,7 @@ impl AlgorithmicStemming {
             AlgorithmicStemming::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["full", "light", "minimal", "none"]
     }
@@ -4636,7 +4636,7 @@ impl AnalysisSchemeLanguage {
             AnalysisSchemeLanguage::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",

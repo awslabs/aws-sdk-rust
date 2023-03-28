@@ -99,7 +99,7 @@ impl DialogState {
             DialogState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ConfirmIntent",
@@ -208,7 +208,7 @@ impl MessageFormatType {
             MessageFormatType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Composite", "CustomPayload", "PlainText", "SSML"]
     }
@@ -772,7 +772,7 @@ impl FulfillmentState {
             FulfillmentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Failed", "Fulfilled", "ReadyForFulfillment"]
     }
@@ -877,7 +877,7 @@ impl DialogActionType {
             DialogActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Close",
@@ -980,7 +980,7 @@ impl ConfirmationStatus {
             ConfirmationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Confirmed", "Denied", "None"]
     }
@@ -1656,7 +1656,7 @@ impl ContentType {
             ContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["application/vnd.amazonaws.card.generic"]
     }

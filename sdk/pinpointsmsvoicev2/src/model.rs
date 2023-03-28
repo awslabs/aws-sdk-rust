@@ -286,7 +286,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_ADD_OPTED_OUT_NUMBER",
@@ -441,7 +441,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "account",
@@ -657,7 +657,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETION_PROTECTION_ENABLED",
@@ -773,7 +773,7 @@ impl AccessDeniedExceptionReason {
             AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_DISABLED", "INSUFFICIENT_ACCOUNT_REPUTATION"]
     }
@@ -863,7 +863,7 @@ impl MessageType {
             MessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PROMOTIONAL", "TRANSACTIONAL"]
     }
@@ -958,7 +958,7 @@ impl PoolStatus {
             PoolStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
@@ -1058,7 +1058,7 @@ impl NumberType {
             NumberType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LONG_CODE", "SHORT_CODE", "TEN_DLC", "TOLL_FREE"]
     }
@@ -1148,7 +1148,7 @@ impl NumberCapability {
             NumberCapability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SMS", "VOICE"]
     }
@@ -1253,7 +1253,7 @@ impl NumberStatus {
             NumberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1831,7 +1831,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -2044,7 +2044,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_SETS_PER_ACCOUNT",
@@ -2500,7 +2500,7 @@ impl VoiceId {
             VoiceId::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMY",
@@ -2652,7 +2652,7 @@ impl VoiceMessageBodyTextType {
             VoiceMessageBodyTextType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SSML", "TEXT"]
     }
@@ -2744,7 +2744,7 @@ impl DestinationCountryParameterKey {
             DestinationCountryParameterKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IN_ENTITY_ID", "IN_TEMPLATE_ID"]
     }
@@ -2841,7 +2841,7 @@ impl RequestableNumberType {
             RequestableNumberType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LONG_CODE", "TEN_DLC", "TOLL_FREE"]
     }
@@ -2936,7 +2936,7 @@ impl KeywordAction {
             KeywordAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC_RESPONSE", "OPT_IN", "OPT_OUT"]
     }
@@ -3231,7 +3231,7 @@ impl PoolOriginationIdentitiesFilterName {
             PoolOriginationIdentitiesFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["iso-country-code", "number-capability"]
     }
@@ -3429,7 +3429,7 @@ impl SpendLimitName {
             SpendLimitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
@@ -3750,7 +3750,7 @@ impl SenderIdFilterName {
             SenderIdFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["iso-country-code", "message-type", "sender-id"]
     }
@@ -4273,7 +4273,7 @@ impl PoolFilterName {
             PoolFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "deletion-protection-enabled",
@@ -4865,7 +4865,7 @@ impl PhoneNumberFilterName {
             PhoneNumberFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "deletion-protection-enabled",
@@ -5228,7 +5228,7 @@ impl OptedOutFilterName {
             OptedOutFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["end-user-opted-out"]
     }
@@ -5486,7 +5486,7 @@ impl KeywordFilterName {
             KeywordFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["keyword-action"]
     }
@@ -5835,7 +5835,7 @@ impl ConfigurationSetFilterName {
             ConfigurationSetFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "default-message-type",
@@ -6029,7 +6029,7 @@ impl AccountLimitName {
             AccountLimitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_SETS",
@@ -6191,7 +6191,7 @@ impl AccountAttributeName {
             AccountAttributeName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_TIER"]
     }

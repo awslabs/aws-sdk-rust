@@ -1080,7 +1080,7 @@ impl EventDataStoreStatus {
             EventDataStoreStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED", "ENABLED", "PENDING_DELETION"]
     }
@@ -1309,7 +1309,7 @@ impl ImportStatus {
             ImportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -1664,7 +1664,7 @@ impl InsightType {
             InsightType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ApiCallRateInsight", "ApiErrorRateInsight"]
     }
@@ -2119,7 +2119,7 @@ impl ReadWriteType {
             ReadWriteType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["All", "ReadOnly", "WriteOnly"]
     }
@@ -2495,7 +2495,7 @@ impl EventCategory {
             EventCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["insight"]
     }
@@ -2690,7 +2690,7 @@ impl LookupAttributeKey {
             LookupAttributeKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessKeyId",
@@ -3063,7 +3063,7 @@ impl QueryStatus {
             QueryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -3553,7 +3553,7 @@ impl ImportFailureStatus {
             ImportFailureStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "RETRY", "SUCCEEDED"]
     }
@@ -4529,7 +4529,7 @@ impl DestinationType {
             DestinationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_SERVICE", "EVENT_DATA_STORE"]
     }
@@ -4737,7 +4737,7 @@ impl DeliveryStatus {
             DeliveryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",

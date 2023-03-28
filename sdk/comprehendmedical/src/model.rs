@@ -74,7 +74,7 @@ impl LanguageCode {
             LanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["en"]
     }
@@ -652,7 +652,7 @@ impl JobStatus {
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -1444,7 +1444,7 @@ impl SnomedctTraitName {
             SnomedctTraitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIAGNOSIS",
@@ -1834,7 +1834,7 @@ impl SnomedctRelationshipType {
             SnomedctRelationshipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
@@ -1953,7 +1953,7 @@ impl SnomedctAttributeType {
             SnomedctAttributeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
@@ -2057,7 +2057,7 @@ impl SnomedctEntityCategory {
             SnomedctEntityCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANATOMY", "MEDICAL_CONDITION", "TEST_TREATMENT_PROCEDURE"]
     }
@@ -2159,7 +2159,7 @@ impl SnomedctEntityType {
             SnomedctEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DX_NAME", "PROCEDURE_NAME", "TEST_NAME", "TREATMENT_NAME"]
     }
@@ -2653,7 +2653,7 @@ impl RxNormTraitName {
             RxNormTraitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NEGATION"]
     }
@@ -2963,7 +2963,7 @@ impl RxNormAttributeType {
             RxNormAttributeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOSAGE",
@@ -3061,7 +3061,7 @@ impl RxNormEntityType {
             RxNormEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BRAND_NAME", "GENERIC_NAME"]
     }
@@ -3148,7 +3148,7 @@ impl RxNormEntityCategory {
             RxNormEntityCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MEDICATION"]
     }
@@ -3672,7 +3672,7 @@ impl Icd10CmTraitName {
             Icd10CmTraitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIAGNOSIS",
@@ -4009,7 +4009,7 @@ impl Icd10CmRelationshipType {
             Icd10CmRelationshipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OVERLAP", "SYSTEM_ORGAN_SITE"]
     }
@@ -4101,7 +4101,7 @@ impl Icd10CmEntityType {
             Icd10CmEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DX_NAME", "TIME_EXPRESSION"]
     }
@@ -4218,7 +4218,7 @@ impl Icd10CmAttributeType {
             Icd10CmAttributeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
@@ -4313,7 +4313,7 @@ impl Icd10CmEntityCategory {
             Icd10CmEntityCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MEDICAL_CONDITION"]
     }
@@ -4960,7 +4960,7 @@ impl AttributeName {
             AttributeName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIAGNOSIS",
@@ -5085,7 +5085,7 @@ impl EntityType {
             EntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANATOMY",
@@ -5273,7 +5273,7 @@ impl RelationshipType {
             RelationshipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
@@ -5599,7 +5599,7 @@ impl EntitySubType {
             EntitySubType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",

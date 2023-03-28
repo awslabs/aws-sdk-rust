@@ -148,7 +148,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "INVALID_CONFIGURATION"]
     }
@@ -248,7 +248,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COLLABORATION",
@@ -350,7 +350,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALREADY_EXISTS", "INVALID_STATE", "SUBRESOURCES_EXIST"]
     }
@@ -437,7 +437,7 @@ impl AccessDeniedExceptionReason {
             AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSUFFICIENT_PERMISSIONS"]
     }
@@ -1249,7 +1249,7 @@ impl ResultFormat {
             ResultFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "PARQUET"]
     }
@@ -1366,7 +1366,7 @@ impl ProtectedQueryStatus {
             ProtectedQueryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -1523,7 +1523,7 @@ impl TargetProtectedQueryStatus {
             TargetProtectedQueryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED"]
     }
@@ -1610,7 +1610,7 @@ impl ProtectedQueryType {
             ProtectedQueryType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SQL"]
     }
@@ -2114,7 +2114,7 @@ impl MemberAbility {
             MemberAbility::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAN_QUERY", "CAN_RECEIVE_RESULTS"]
     }
@@ -2209,7 +2209,7 @@ impl MembershipStatus {
             MembershipStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "COLLABORATION_DELETED", "REMOVED"]
     }
@@ -2601,7 +2601,7 @@ impl MembershipQueryLogStatus {
             MembershipQueryLogStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2854,7 +2854,7 @@ impl ConfiguredTableAnalysisRuleType {
             ConfiguredTableAnalysisRuleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGGREGATION", "LIST"]
     }
@@ -3316,7 +3316,7 @@ impl AggregationType {
             AggregationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COUNT_DISTINCT"]
     }
@@ -3461,7 +3461,7 @@ impl ScalarFunctions {
             ScalarFunctions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ABS", "CAST", "CEILING", "COALESCE", "FLOOR", "LN", "LOG", "LOWER", "ROUND", "RTRIM",
@@ -3551,7 +3551,7 @@ impl JoinRequiredOption {
             JoinRequiredOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["QUERY_RUNNER"]
     }
@@ -3737,7 +3737,7 @@ impl AggregateFunctionName {
             AggregateFunctionName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVG", "COUNT", "COUNT_DISTINCT", "SUM", "SUM_DISTINCT"]
     }
@@ -4096,7 +4096,7 @@ impl AnalysisMethod {
             AnalysisMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIRECT_QUERY"]
     }
@@ -5231,7 +5231,7 @@ impl AnalysisRuleType {
             AnalysisRuleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGGREGATION", "LIST"]
     }
@@ -5316,7 +5316,7 @@ impl SchemaType {
             SchemaType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TABLE"]
     }
@@ -5621,7 +5621,7 @@ impl MemberStatus {
             MemberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INVITED", "LEFT", "REMOVED"]
     }
@@ -6657,7 +6657,7 @@ impl FilterableMemberStatus {
             FilterableMemberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INVITED"]
     }
@@ -7063,7 +7063,7 @@ impl CollaborationQueryLogStatus {
             CollaborationQueryLogStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }

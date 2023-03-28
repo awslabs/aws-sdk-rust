@@ -148,7 +148,7 @@ impl InvalidRequestDetailReason {
             InvalidRequestDetailReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOCUMENT_SIZE_EXCEEDED",
@@ -240,7 +240,7 @@ impl InvalidRequestReason {
             InvalidRequestReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INVALID_DOCUMENT"]
     }
@@ -417,7 +417,7 @@ impl JobStatus {
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -984,7 +984,7 @@ impl DocumentReadFeatureTypes {
             DocumentReadFeatureTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FORMS", "TABLES"]
     }
@@ -1074,7 +1074,7 @@ impl DocumentReadMode {
             DocumentReadMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FORCE_DOCUMENT_READ_ACTION", "SERVICE_DEFAULT"]
     }
@@ -1166,7 +1166,7 @@ impl DocumentReadAction {
             DocumentReadAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TEXTRACT_ANALYZE_DOCUMENT", "TEXTRACT_DETECT_DOCUMENT_TEXT"]
     }
@@ -1256,7 +1256,7 @@ impl InputFormat {
             InputFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ONE_DOC_PER_FILE", "ONE_DOC_PER_LINE"]
     }
@@ -1396,7 +1396,7 @@ impl LanguageCode {
             LanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ar", "de", "en", "es", "fr", "hi", "it", "ja", "ko", "pt", "zh", "zh-TW",
@@ -1596,7 +1596,7 @@ impl PiiEntitiesDetectionMaskMode {
             PiiEntitiesDetectionMaskMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MASK", "REPLACE_WITH_PII_ENTITY_TYPE"]
     }
@@ -1865,7 +1865,7 @@ impl PiiEntityType {
             PiiEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
@@ -1995,7 +1995,7 @@ impl PiiEntitiesDetectionMode {
             PiiEntitiesDetectionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ONLY_OFFSETS", "ONLY_REDACTION"]
     }
@@ -5184,7 +5184,7 @@ impl ModelStatus {
             ModelStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -6592,7 +6592,7 @@ impl AugmentedManifestsDocumentTypeFormat {
             AugmentedManifestsDocumentTypeFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PLAIN_TEXT_DOCUMENT", "SEMI_STRUCTURED_DOCUMENT"]
     }
@@ -6682,7 +6682,7 @@ impl Split {
             Split::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TEST", "TRAIN"]
     }
@@ -7030,7 +7030,7 @@ impl EntityRecognizerDataFormat {
             EntityRecognizerDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
@@ -8015,7 +8015,7 @@ impl EndpointStatus {
             EndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "IN_SERVICE", "UPDATING"]
     }
@@ -9328,7 +9328,7 @@ impl DocumentClassifierMode {
             DocumentClassifierMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_CLASS", "MULTI_LABEL"]
     }
@@ -10021,7 +10021,7 @@ impl DocumentClassifierDataFormat {
             DocumentClassifierDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
@@ -11155,7 +11155,7 @@ impl SentimentType {
             SentimentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
@@ -11322,7 +11322,7 @@ impl TargetedSentimentEntityType {
             TargetedSentimentEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTRIBUTE",
@@ -11709,7 +11709,7 @@ impl PartOfSpeechTagType {
             PartOfSpeechTagType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
@@ -11824,7 +11824,7 @@ impl SyntaxLanguageCode {
             SyntaxLanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["de", "en", "es", "fr", "it", "pt"]
     }
@@ -12245,7 +12245,7 @@ impl PageBasedErrorCode {
             PageBasedErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_SERVER_ERROR",
@@ -12588,7 +12588,7 @@ impl RelationshipType {
             RelationshipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CHILD"]
     }
@@ -12932,7 +12932,7 @@ impl BlockType {
             BlockType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINE", "WORD"]
     }
@@ -13114,7 +13114,7 @@ impl DocumentType {
             DocumentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "IMAGE",
@@ -13766,7 +13766,7 @@ impl EntityType {
             EntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMMERCIAL_ITEM",

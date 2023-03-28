@@ -372,7 +372,7 @@ impl QualificationTypeStatus {
             QualificationTypeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -649,7 +649,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AssignmentAbandoned",
@@ -759,7 +759,7 @@ impl NotificationTransport {
             NotificationTransport::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Email", "SNS", "SQS"]
     }
@@ -952,7 +952,7 @@ impl NotifyWorkersFailureCode {
             NotifyWorkersFailureCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HardFailure", "SoftFailure"]
     }
@@ -1199,7 +1199,7 @@ impl QualificationStatus {
             QualificationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Granted", "Revoked"]
     }
@@ -1709,7 +1709,7 @@ impl ReviewActionStatus {
             ReviewActionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Cancelled", "Failed", "Intended", "Succeeded"]
     }
@@ -2200,7 +2200,7 @@ impl ReviewPolicyLevel {
             ReviewPolicyLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Assignment", "HIT"]
     }
@@ -2777,7 +2777,7 @@ impl HitReviewStatus {
             HitReviewStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "MarkedForReview",
@@ -3051,7 +3051,7 @@ impl HitAccessActions {
             HitAccessActions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Accept", "DiscoverPreviewAndAccept", "PreviewAndAccept"]
     }
@@ -3181,7 +3181,7 @@ impl Comparator {
             Comparator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DoesNotExist",
@@ -3297,7 +3297,7 @@ impl HitStatus {
             HitStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Assignable",
@@ -3395,7 +3395,7 @@ impl ReviewableHitStatus {
             ReviewableHitStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Reviewable", "Reviewing"]
     }
@@ -4056,7 +4056,7 @@ impl AssignmentStatus {
             AssignmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Approved", "Rejected", "Submitted"]
     }

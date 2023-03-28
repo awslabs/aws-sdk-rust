@@ -328,7 +328,7 @@ impl ChannelType {
             ChannelType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
@@ -420,7 +420,7 @@ impl ChannelLatencyMode {
             ChannelLatencyMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOW", "NORMAL"]
     }
@@ -775,7 +775,7 @@ impl StreamHealth {
             StreamHealth::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "STARVING", "UNKNOWN"]
     }
@@ -865,7 +865,7 @@ impl StreamState {
             StreamState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LIVE", "OFFLINE"]
     }
@@ -1277,7 +1277,7 @@ impl RecordingConfigurationState {
             RecordingConfigurationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATE_FAILED", "CREATING"]
     }
@@ -2431,7 +2431,7 @@ impl RecordingMode {
             RecordingMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "INTERVAL"]
     }

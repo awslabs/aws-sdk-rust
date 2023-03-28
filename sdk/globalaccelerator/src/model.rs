@@ -306,7 +306,7 @@ impl ByoipCidrState {
             ByoipCidrState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADVERTISING",
@@ -537,7 +537,7 @@ impl ClientAffinity {
             ClientAffinity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "SOURCE_IP"]
     }
@@ -627,7 +627,7 @@ impl Protocol {
             Protocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -1127,7 +1127,7 @@ impl HealthCheckProtocol {
             HealthCheckProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
@@ -1371,7 +1371,7 @@ impl HealthState {
             HealthState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
@@ -1992,7 +1992,7 @@ impl CustomRoutingAcceleratorStatus {
             CustomRoutingAcceleratorStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
@@ -2184,7 +2184,7 @@ impl IpAddressFamily {
             IpAddressFamily::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IPv4", "IPv6"]
     }
@@ -2274,7 +2274,7 @@ impl IpAddressType {
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DUAL_STACK", "IPV4"]
     }
@@ -2842,7 +2842,7 @@ impl AcceleratorStatus {
             AcceleratorStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
@@ -3366,7 +3366,7 @@ impl CustomRoutingDestinationTrafficState {
             CustomRoutingDestinationTrafficState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -3694,7 +3694,7 @@ impl CustomRoutingProtocol {
             CustomRoutingProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }

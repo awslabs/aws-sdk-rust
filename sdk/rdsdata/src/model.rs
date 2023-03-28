@@ -602,7 +602,7 @@ impl RecordsFormatType {
             RecordsFormatType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON", "NONE"]
     }
@@ -773,7 +773,7 @@ impl LongReturnType {
             LongReturnType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LONG", "STRING"]
     }
@@ -865,7 +865,7 @@ impl DecimalReturnType {
             DecimalReturnType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DOUBLE_OR_LONG", "STRING"]
     }
@@ -1093,7 +1093,7 @@ impl TypeHint {
             TypeHint::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
     }

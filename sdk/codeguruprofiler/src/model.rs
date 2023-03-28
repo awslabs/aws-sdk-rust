@@ -79,7 +79,7 @@ impl FeedbackType {
             FeedbackType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Negative", "Positive"]
     }
@@ -164,7 +164,7 @@ impl ActionGroup {
             ActionGroup::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["agentPermissions"]
     }
@@ -402,7 +402,7 @@ impl EventPublisher {
             EventPublisher::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AnomalyDetection"]
     }
@@ -538,7 +538,7 @@ impl OrderBy {
             OrderBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TimestampAscending", "TimestampDescending"]
     }
@@ -635,7 +635,7 @@ impl AggregationPeriod {
             AggregationPeriod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["P1D", "PT1H", "PT5M"]
     }
@@ -1205,7 +1205,7 @@ impl MetricType {
             MetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AggregatedRelativeTotalTime"]
     }
@@ -1888,7 +1888,7 @@ impl AgentParameterField {
             AgentParameterField::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "MaxStackDepth",
@@ -2027,7 +2027,7 @@ impl MetadataField {
             MetadataField::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AgentId",
@@ -2567,7 +2567,7 @@ impl ComputePlatform {
             ComputePlatform::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWSLambda", "Default"]
     }

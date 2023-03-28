@@ -597,7 +597,7 @@ impl StudioEncryptionConfigurationKeyType {
             StudioEncryptionConfigurationKeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KEY", "CUSTOMER_MANAGED_KEY"]
     }
@@ -788,7 +788,7 @@ impl StudioStatusCode {
             StudioStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_SSO_ACCESS_DENIED",
@@ -928,7 +928,7 @@ impl StudioState {
             StudioState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -1092,7 +1092,7 @@ impl StudioPersona {
             StudioPersona::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADMINISTRATOR"]
     }
@@ -1880,7 +1880,7 @@ impl StudioComponentType {
             StudioComponentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY",
@@ -1988,7 +1988,7 @@ impl StudioComponentSubtype {
             StudioComponentSubtype::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_FSX_FOR_LUSTRE",
@@ -2146,7 +2146,7 @@ impl StudioComponentStatusCode {
             StudioComponentStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_ALREADY_EXISTS",
@@ -2301,7 +2301,7 @@ impl StudioComponentState {
             StudioComponentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -2627,7 +2627,7 @@ impl StudioComponentInitializationScriptRunContext {
             StudioComponentInitializationScriptRunContext::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SYSTEM_INITIALIZATION", "USER_INITIALIZATION"]
     }
@@ -2719,7 +2719,7 @@ impl LaunchProfilePlatform {
             LaunchProfilePlatform::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
@@ -4057,7 +4057,7 @@ impl AutomaticTerminationMode {
             AutomaticTerminationMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "DEACTIVATED"]
     }
@@ -4236,7 +4236,7 @@ impl SessionPersistenceMode {
             SessionPersistenceMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "DEACTIVATED"]
     }
@@ -4328,7 +4328,7 @@ impl VolumeRetentionMode {
             VolumeRetentionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE", "RETAIN"]
     }
@@ -4420,7 +4420,7 @@ impl SessionBackupMode {
             SessionBackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "DEACTIVATED"]
     }
@@ -4606,7 +4606,7 @@ impl StreamingSessionStatusCode {
             StreamingSessionStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
@@ -4760,7 +4760,7 @@ impl StreamingSessionState {
             StreamingSessionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -5110,7 +5110,7 @@ impl StreamingSessionStreamStatusCode {
             StreamingSessionStreamStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
@@ -5229,7 +5229,7 @@ impl StreamingSessionStreamState {
             StreamingSessionStreamState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -5383,7 +5383,7 @@ impl StreamingInstanceType {
             StreamingInstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "g3.4xlarge",
@@ -6150,7 +6150,7 @@ impl StreamingImageStatusCode {
             StreamingImageStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -6280,7 +6280,7 @@ impl StreamingImageState {
             StreamingImageState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -6456,7 +6456,7 @@ impl StreamingImageEncryptionConfigurationKeyType {
             StreamingImageEncryptionConfigurationKeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED_KEY"]
     }
@@ -6663,7 +6663,7 @@ impl LaunchProfilePersona {
             LaunchProfilePersona::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["USER"]
     }
@@ -8400,17 +8400,17 @@ pub enum LaunchProfileValidationStatusCode {
 impl std::convert::From<&str> for LaunchProfileValidationStatusCode {
     fn from(s: &str) -> Self {
         match s {
-            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
-            "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
-            "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
-            "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
-            "VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
-            "VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
-            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
-            "VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
-            "VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
-            other => LaunchProfileValidationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
+"VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
+"VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
+"VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
+"VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
+"VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
+"VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
+"VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
+"VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
+other => LaunchProfileValidationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for LaunchProfileValidationStatusCode {
@@ -8424,19 +8424,19 @@ impl LaunchProfileValidationStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
-            LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
-            LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
-            LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
-            LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
-            LaunchProfileValidationStatusCode::Unknown(value) => value.as_str()
-        }
+    LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
+    LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
+    LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
+    LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+    LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+    LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
+    LaunchProfileValidationStatusCode::Unknown(value) => value.as_str()
+}
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
@@ -8557,7 +8557,7 @@ impl LaunchProfileValidationState {
             LaunchProfileValidationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATION_FAILED",
@@ -8677,7 +8677,7 @@ impl LaunchProfileValidationType {
             LaunchProfileValidationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
@@ -9249,7 +9249,7 @@ impl StreamingSessionStorageMode {
             StreamingSessionStorageMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UPLOAD"]
     }
@@ -9424,7 +9424,7 @@ impl StreamingClipboardMode {
             StreamingClipboardMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -9601,7 +9601,7 @@ impl LaunchProfileStatusCode {
             LaunchProfileStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ENCRYPTION_KEY_ACCESS_DENIED",
@@ -9739,7 +9739,7 @@ impl LaunchProfileState {
             LaunchProfileState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",

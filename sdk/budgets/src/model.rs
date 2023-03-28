@@ -174,7 +174,7 @@ impl SubscriptionType {
             SubscriptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SNS"]
     }
@@ -410,7 +410,7 @@ impl NotificationState {
             NotificationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALARM", "OK"]
     }
@@ -500,7 +500,7 @@ impl ThresholdType {
             ThresholdType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABSOLUTE_VALUE", "PERCENTAGE"]
     }
@@ -601,7 +601,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQUAL_TO", "GREATER_THAN", "LESS_THAN"]
     }
@@ -691,7 +691,7 @@ impl NotificationType {
             NotificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTUAL", "FORECASTED"]
     }
@@ -1070,7 +1070,7 @@ impl ActionStatus {
             ActionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EXECUTION_FAILURE",
@@ -1171,7 +1171,7 @@ impl ApprovalModel {
             ApprovalModel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "MANUAL"]
     }
@@ -1454,7 +1454,7 @@ impl ActionSubType {
             ActionSubType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STOP_EC2_INSTANCES", "STOP_RDS_INSTANCES"]
     }
@@ -1827,7 +1827,7 @@ impl ActionType {
             ActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLY_IAM_POLICY", "APPLY_SCP_POLICY", "RUN_SSM_DOCUMENTS"]
     }
@@ -2493,7 +2493,7 @@ impl AutoAdjustType {
             AutoAdjustType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FORECAST", "HISTORICAL"]
     }
@@ -2605,7 +2605,7 @@ impl BudgetType {
             BudgetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COST",
@@ -2930,7 +2930,7 @@ impl TimeUnit {
             TimeUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANNUALLY", "DAILY", "MONTHLY", "QUARTERLY"]
     }
@@ -3313,7 +3313,7 @@ impl ExecutionType {
             ExecutionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVE_BUDGET_ACTION",
@@ -3972,7 +3972,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_ACTION",

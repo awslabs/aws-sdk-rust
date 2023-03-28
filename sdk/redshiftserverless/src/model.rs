@@ -735,7 +735,7 @@ impl WorkgroupStatus {
             WorkgroupStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "MODIFYING"]
     }
@@ -1149,7 +1149,7 @@ impl UsageLimitBreachAction {
             UsageLimitBreachAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["deactivate", "emit-metric", "log"]
     }
@@ -1244,7 +1244,7 @@ impl UsageLimitPeriod {
             UsageLimitPeriod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["daily", "monthly", "weekly"]
     }
@@ -1336,7 +1336,7 @@ impl UsageLimitUsageType {
             UsageLimitUsageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["cross-region-datasharing", "serverless-compute"]
     }
@@ -1930,7 +1930,7 @@ impl SnapshotStatus {
             SnapshotStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2687,7 +2687,7 @@ impl NamespaceStatus {
             NamespaceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "MODIFYING"]
     }
@@ -2782,7 +2782,7 @@ impl LogExport {
             LogExport::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["connectionlog", "useractivitylog", "userlog"]
     }

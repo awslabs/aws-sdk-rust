@@ -89,7 +89,7 @@ impl MacAlgorithmSpec {
             MacAlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "HMAC_SHA_224",
@@ -226,7 +226,7 @@ impl SigningAlgorithmSpec {
             SigningAlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ECDSA_SHA_256",
@@ -327,7 +327,7 @@ impl MessageType {
             MessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIGEST", "RAW"]
     }
@@ -419,7 +419,7 @@ impl XksProxyConnectivityType {
             XksProxyConnectivityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"]
     }
@@ -697,7 +697,7 @@ impl KeyState {
             KeyState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Creating",
@@ -1658,7 +1658,7 @@ impl MultiRegionKeyType {
             MultiRegionKeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIMARY", "REPLICA"]
     }
@@ -1760,7 +1760,7 @@ impl EncryptionAlgorithmSpec {
             EncryptionAlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "RSAES_OAEP_SHA_1",
@@ -1910,7 +1910,7 @@ impl KeySpec {
             KeySpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
@@ -2072,7 +2072,7 @@ impl CustomerMasterKeySpec {
             CustomerMasterKeySpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
@@ -2176,7 +2176,7 @@ impl KeyManagerType {
             KeyManagerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOMER"]
     }
@@ -2268,7 +2268,7 @@ impl ExpirationModelType {
             ExpirationModelType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
     }
@@ -2368,7 +2368,7 @@ impl OriginType {
             OriginType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"]
     }
@@ -2463,7 +2463,7 @@ impl KeyUsageType {
             KeyUsageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
     }
@@ -2969,7 +2969,7 @@ impl GrantOperation {
             GrantOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CreateGrant",
@@ -3271,7 +3271,7 @@ impl WrappingKeySpec {
             WrappingKeySpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RSA_2048"]
     }
@@ -3366,7 +3366,7 @@ impl AlgorithmSpec {
             AlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
     }
@@ -3456,7 +3456,7 @@ impl DataKeySpec {
             DataKeySpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AES_128", "AES_256"]
     }
@@ -3576,7 +3576,7 @@ impl DataKeyPairSpec {
             DataKeyPairSpec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
@@ -4263,7 +4263,7 @@ impl CustomKeyStoreType {
             CustomKeyStoreType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"]
     }
@@ -4455,7 +4455,7 @@ impl ConnectionErrorCodeType {
             ConnectionErrorCodeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_NOT_FOUND",
@@ -4581,7 +4581,7 @@ impl ConnectionStateType {
             ConnectionStateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECTED",

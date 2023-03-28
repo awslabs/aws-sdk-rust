@@ -176,7 +176,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -405,7 +405,7 @@ impl OptInStatus {
             OptInStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -818,7 +818,7 @@ impl UpdateResourceCollectionAction {
             UpdateResourceCollectionAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE"]
     }
@@ -1019,7 +1019,7 @@ impl EventSourceOptInStatus {
             EventSourceOptInStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1771,7 +1771,7 @@ impl ServiceName {
             ServiceName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
@@ -2232,7 +2232,7 @@ impl InsightStatus {
             InsightStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
@@ -2327,7 +2327,7 @@ impl InsightSeverity {
             InsightSeverity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -2718,7 +2718,7 @@ impl InsightType {
             InsightType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PROACTIVE", "REACTIVE"]
     }
@@ -3226,7 +3226,7 @@ impl InsightFeedbackOption {
             InsightFeedbackOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALERT_TOO_SENSITIVE",
@@ -4037,7 +4037,7 @@ impl Locale {
             Locale::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
@@ -5205,7 +5205,7 @@ impl NotificationMessageType {
             NotificationMessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOSED_INSIGHT",
@@ -5490,7 +5490,7 @@ impl ResourcePermission {
             ResourcePermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL_PERMISSION", "MISSING_PERMISSION"]
     }
@@ -5801,7 +5801,7 @@ impl ResourceTypeFilter {
             ResourceTypeFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUDFRONT_DISTRIBUTION",
@@ -6219,7 +6219,7 @@ impl EventClass {
             EventClass::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIG_CHANGE",
@@ -6315,7 +6315,7 @@ impl EventDataSource {
             EventDataSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_TRAIL", "AWS_CODE_DEPLOY"]
     }
@@ -7045,7 +7045,7 @@ impl LogAnomalyType {
             LogAnomalyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BLOCK_FORMAT",
@@ -7543,7 +7543,7 @@ impl AnomalyType {
             AnomalyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAUSAL", "CONTEXTUAL"]
     }
@@ -8924,7 +8924,7 @@ impl CloudWatchMetricDataStatusCode {
             CloudWatchMetricDataStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Complete", "InternalError", "PartialData"]
     }
@@ -9116,7 +9116,7 @@ impl CloudWatchMetricsStat {
             CloudWatchMetricsStat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Average",
@@ -9428,7 +9428,7 @@ impl AnomalyStatus {
             AnomalyStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
@@ -9523,7 +9523,7 @@ impl AnomalySeverity {
             AnomalySeverity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -10303,7 +10303,7 @@ impl ResourceCollectionType {
             ResourceCollectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_FORMATION", "AWS_SERVICE", "AWS_TAGS"]
     }
@@ -10595,7 +10595,7 @@ impl CostEstimationServiceResourceState {
             CostEstimationServiceResourceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -10687,7 +10687,7 @@ impl CostEstimationStatus {
             CostEstimationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "ONGOING"]
     }
@@ -11567,7 +11567,7 @@ impl OrganizationResourceCollectionType {
             OrganizationResourceCollectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_ACCOUNT",

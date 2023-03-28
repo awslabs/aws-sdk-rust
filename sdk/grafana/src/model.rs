@@ -491,7 +491,7 @@ impl SamlConfigurationStatus {
             SamlConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONFIGURED", "NOT_CONFIGURED"]
     }
@@ -583,7 +583,7 @@ impl AuthenticationProviderTypes {
             AuthenticationProviderTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_SSO", "SAML"]
     }
@@ -718,7 +718,7 @@ impl WorkspaceStatus {
             WorkspaceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -817,7 +817,7 @@ impl NotificationDestinationType {
             NotificationDestinationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SNS"]
     }
@@ -986,7 +986,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -1795,7 +1795,7 @@ impl LicenseType {
             LicenseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENTERPRISE", "ENTERPRISE_FREE_TRIAL"]
     }
@@ -1885,7 +1885,7 @@ impl PermissionType {
             PermissionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED", "SERVICE_MANAGED"]
     }
@@ -2010,7 +2010,7 @@ impl DataSourceType {
             DataSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_OPENSEARCH_SERVICE",
@@ -2112,7 +2112,7 @@ impl AccountAccessType {
             AccountAccessType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CURRENT_ACCOUNT", "ORGANIZATION"]
     }
@@ -2460,7 +2460,7 @@ impl UserType {
             UserType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SSO_GROUP", "SSO_USER"]
     }
@@ -2555,7 +2555,7 @@ impl Role {
             Role::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADMIN", "EDITOR", "VIEWER"]
     }
@@ -2645,7 +2645,7 @@ impl UpdateAction {
             UpdateAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADD", "REVOKE"]
     }

@@ -163,7 +163,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_ASSUME_ROLE",
@@ -783,7 +783,7 @@ impl NetworkResourceDefinitionType {
             NetworkResourceDefinitionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEVICE_IDENTIFIER", "RADIO_UNIT"]
     }
@@ -890,7 +890,7 @@ impl NetworkSiteStatus {
             NetworkSiteStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1181,7 +1181,7 @@ impl AcknowledgmentStatus {
             AcknowledgmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACKNOWLEDGED", "ACKNOWLEDGING", "UNACKNOWLEDGED"]
     }
@@ -1576,7 +1576,7 @@ impl OrderFilterKeys {
             OrderFilterKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NETWORK_SITE", "STATUS"]
     }
@@ -1663,7 +1663,7 @@ impl NetworkSiteFilterKeys {
             NetworkSiteFilterKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STATUS"]
     }
@@ -1920,7 +1920,7 @@ impl NetworkStatus {
             NetworkStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2013,7 +2013,7 @@ impl NetworkFilterKeys {
             NetworkFilterKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STATUS"]
     }
@@ -2582,7 +2582,7 @@ impl ElevationReference {
             ElevationReference::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGL", "AMSL"]
     }
@@ -2667,7 +2667,7 @@ impl ElevationUnit {
             ElevationUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FEET"]
     }
@@ -2762,7 +2762,7 @@ impl HealthStatus {
             HealthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
@@ -2884,7 +2884,7 @@ impl NetworkResourceStatus {
             NetworkResourceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2980,7 +2980,7 @@ impl NetworkResourceType {
             NetworkResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RADIO_UNIT"]
     }
@@ -3072,7 +3072,7 @@ impl NetworkResourceFilterKeys {
             NetworkResourceFilterKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ORDER", "STATUS"]
     }
@@ -3406,7 +3406,7 @@ impl DeviceIdentifierStatus {
             DeviceIdentifierStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -3503,7 +3503,7 @@ impl DeviceIdentifierFilterKeys {
             DeviceIdentifierFilterKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ORDER", "STATUS", "TRAFFIC_GROUP"]
     }

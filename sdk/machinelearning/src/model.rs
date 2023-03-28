@@ -240,7 +240,7 @@ impl DetailsAttributes {
             DetailsAttributes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Algorithm", "PredictiveModelType"]
     }
@@ -335,7 +335,7 @@ impl MlModelType {
             MlModelType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BINARY", "MULTICLASS", "REGRESSION"]
     }
@@ -572,7 +572,7 @@ impl RealtimeEndpointStatus {
             RealtimeEndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "NONE", "READY", "UPDATING"]
     }
@@ -704,7 +704,7 @@ impl EntityStatus {
             EntityStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
     }
@@ -1346,7 +1346,7 @@ impl TaggableResourceType {
             TaggableResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BatchPrediction", "DataSource", "Evaluation", "MLModel"]
     }
@@ -1986,7 +1986,7 @@ impl Algorithm {
             Algorithm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["sgd"]
     }
@@ -2086,7 +2086,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["asc", "dsc"]
     }
@@ -2218,7 +2218,7 @@ impl MlModelFilterVariable {
             MlModelFilterVariable::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Algorithm",
@@ -2761,7 +2761,7 @@ impl EvaluationFilterVariable {
             EvaluationFilterVariable::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",
@@ -3342,7 +3342,7 @@ impl DataSourceFilterVariable {
             DataSourceFilterVariable::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",
@@ -3895,7 +3895,7 @@ impl BatchPredictionFilterVariable {
             BatchPredictionFilterVariable::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",

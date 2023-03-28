@@ -81,7 +81,7 @@ impl PositioningConfigStatus {
             PositioningConfigStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -479,7 +479,7 @@ impl ApplicationConfigType {
             ApplicationConfigType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SemtechGeolocation"]
     }
@@ -753,7 +753,7 @@ impl PositionResourceType {
             PositionResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["WirelessDevice", "WirelessGateway"]
     }
@@ -931,7 +931,7 @@ impl EventNotificationTopicStatus {
             EventNotificationTopicStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -1539,7 +1539,7 @@ impl EventNotificationPartnerType {
             EventNotificationPartnerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Sidewalk"]
     }
@@ -1644,7 +1644,7 @@ impl IdentifierType {
             IdentifierType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DevEui",
@@ -1735,7 +1735,7 @@ impl PartnerType {
             PartnerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Sidewalk"]
     }
@@ -1972,7 +1972,7 @@ impl LogLevel {
             LogLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ERROR", "INFO"]
     }
@@ -2066,7 +2066,7 @@ impl WirelessDeviceFrameInfo {
             WirelessDeviceFrameInfo::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2226,7 +2226,7 @@ impl DlClass {
             DlClass::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ClassB", "ClassC"]
     }
@@ -2328,7 +2328,7 @@ impl SupportedRfRegion {
             SupportedRfRegion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AS923-1", "AU915", "EU868", "US915"]
     }
@@ -2590,7 +2590,7 @@ impl WirelessGatewayEvent {
             WirelessGatewayEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUPS_Request", "Certificate"]
     }
@@ -2677,7 +2677,7 @@ impl WirelessGatewayType {
             WirelessGatewayType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LoRaWAN"]
     }
@@ -2954,7 +2954,7 @@ impl WirelessDeviceEvent {
             WirelessDeviceEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Downlink_Data",
@@ -3052,7 +3052,7 @@ impl WirelessDeviceType {
             WirelessDeviceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LoRaWAN", "Sidewalk"]
     }
@@ -3661,7 +3661,7 @@ impl ExpressionType {
             ExpressionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MqttTopic", "RuleName"]
     }
@@ -4149,7 +4149,7 @@ impl MessageType {
             MessageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CUSTOM_COMMAND_ID_GET",
@@ -4489,7 +4489,7 @@ impl DownlinkMode {
             DownlinkMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONCURRENT", "SEQUENTIAL", "USING_UPLINK_GATEWAY"]
     }
@@ -4804,7 +4804,7 @@ impl PositionConfigurationFec {
             PositionConfigurationFec::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "ROSE"]
     }
@@ -4896,7 +4896,7 @@ impl PositionConfigurationStatus {
             PositionConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -5234,7 +5234,7 @@ impl WirelessGatewayTaskDefinitionType {
             WirelessGatewayTaskDefinitionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UPDATE"]
     }
@@ -6023,7 +6023,7 @@ impl FuotaDeviceStatus {
             FuotaDeviceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FragAlgo_unsupported",
@@ -6313,7 +6313,7 @@ impl SigningAlg {
             SigningAlg::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Ed25519", "P256r1"]
     }
@@ -6924,7 +6924,7 @@ impl PositionSolverType {
             PositionSolverType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GNSS"]
     }
@@ -7011,7 +7011,7 @@ impl PositionSolverProvider {
             PositionSolverProvider::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Semtech"]
     }
@@ -7772,7 +7772,7 @@ impl EventNotificationResourceType {
             EventNotificationResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SidewalkAccount", "WirelessDevice", "WirelessGateway"]
     }
@@ -8325,7 +8325,7 @@ impl WirelessGatewayTaskStatus {
             WirelessGatewayTaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -8422,7 +8422,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Connected", "Disconnected"]
     }
@@ -8570,7 +8570,7 @@ impl WirelessGatewayIdType {
             WirelessGatewayIdType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GatewayEui", "ThingName", "WirelessGatewayId"]
     }
@@ -8781,7 +8781,7 @@ impl DeviceState {
             DeviceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Provisioned",
@@ -8891,7 +8891,7 @@ impl Event {
             Event::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ack", "discovered", "lost", "nack", "passthrough"]
     }
@@ -8986,7 +8986,7 @@ impl BatteryLevel {
             BatteryLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["critical", "low", "normal"]
     }
@@ -10303,7 +10303,7 @@ impl WirelessDeviceIdType {
             WirelessDeviceIdType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DevEui",
@@ -10796,7 +10796,7 @@ impl WirelessGatewayServiceType {
             WirelessGatewayServiceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CUPS", "LNS"]
     }
@@ -13610,7 +13610,7 @@ impl FuotaTaskStatus {
             FuotaTaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Delete_Waiting",

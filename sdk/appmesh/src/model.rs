@@ -414,7 +414,7 @@ impl MeshStatusCode {
             MeshStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -809,7 +809,7 @@ impl IpPreference {
             IpPreference::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IPv4_ONLY", "IPv4_PREFERRED", "IPv6_ONLY", "IPv6_PREFERRED"]
     }
@@ -950,7 +950,7 @@ impl EgressFilterType {
             EgressFilterType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW_ALL", "DROP_ALL"]
     }
@@ -1494,7 +1494,7 @@ impl VirtualServiceStatusCode {
             VirtualServiceStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -2179,7 +2179,7 @@ impl VirtualRouterStatusCode {
             VirtualRouterStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -2458,7 +2458,7 @@ impl PortProtocol {
             PortProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["grpc", "http", "http2", "tcp"]
     }
@@ -2965,7 +2965,7 @@ impl RouteStatusCode {
             RouteStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -3442,7 +3442,7 @@ impl DurationUnit {
             DurationUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ms", "s"]
     }
@@ -3729,7 +3729,7 @@ impl GrpcRetryPolicyEvent {
             GrpcRetryPolicyEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "cancelled",
@@ -3822,7 +3822,7 @@ impl TcpRetryPolicyEvent {
             TcpRetryPolicyEvent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["connection-error"]
     }
@@ -5184,7 +5184,7 @@ impl HttpScheme {
             HttpScheme::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["http", "https"]
     }
@@ -5309,7 +5309,7 @@ impl HttpMethod {
             HttpMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECT", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT", "TRACE",
@@ -6213,7 +6213,7 @@ impl VirtualNodeStatusCode {
             VirtualNodeStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -8835,7 +8835,7 @@ impl ListenerTlsMode {
             ListenerTlsMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "PERMISSIVE", "STRICT"]
     }
@@ -9262,7 +9262,7 @@ impl DnsResponseType {
             DnsResponseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENDPOINTS", "LOADBALANCER"]
     }
@@ -9739,7 +9739,7 @@ impl VirtualGatewayStatusCode {
             VirtualGatewayStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -11078,7 +11078,7 @@ impl VirtualGatewayListenerTlsMode {
             VirtualGatewayListenerTlsMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "PERMISSIVE", "STRICT"]
     }
@@ -11245,7 +11245,7 @@ impl VirtualGatewayPortProtocol {
             VirtualGatewayPortProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["grpc", "http", "http2"]
     }
@@ -12431,7 +12431,7 @@ impl GatewayRouteStatusCode {
             GatewayRouteStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "INACTIVE"]
     }
@@ -12891,7 +12891,7 @@ impl DefaultGatewayRouteRewrite {
             DefaultGatewayRouteRewrite::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }

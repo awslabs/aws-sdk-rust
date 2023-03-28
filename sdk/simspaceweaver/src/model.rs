@@ -273,7 +273,7 @@ impl SimulationAppTargetStatus {
             SimulationAppTargetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED", "UNKNOWN"]
     }
@@ -385,7 +385,7 @@ impl SimulationAppStatus {
             SimulationAppStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ERROR", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN",
@@ -772,7 +772,7 @@ impl SimulationTargetStatus {
             SimulationTargetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETED", "STARTED", "STOPPED", "UNKNOWN"]
     }
@@ -892,7 +892,7 @@ impl SimulationStatus {
             SimulationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING",
@@ -1222,7 +1222,7 @@ impl ClockTargetStatus {
             ClockTargetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED", "UNKNOWN"]
     }
@@ -1327,7 +1327,7 @@ impl ClockStatus {
             ClockStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"]
     }
@@ -1532,7 +1532,7 @@ impl LifecycleManagementStrategy {
             LifecycleManagementStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ByRequest", "BySpatialSubdivision", "PerWorker", "Unknown"]
     }

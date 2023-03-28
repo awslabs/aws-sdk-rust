@@ -14,7 +14,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-cognitoidentityprovider]
 path = "../../sdk/cognitoidentityprovider"
-version = "0.40.0"
+version = "0.41.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]

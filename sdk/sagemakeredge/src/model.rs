@@ -443,7 +443,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAIL", "SUCCESS"]
     }
@@ -533,7 +533,7 @@ impl ModelState {
             ModelState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPLOY", "UNDEPLOY"]
     }
@@ -1169,7 +1169,7 @@ impl ChecksumType {
             ChecksumType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SHA1"]
     }
@@ -1261,7 +1261,7 @@ impl FailureHandlingPolicy {
             FailureHandlingPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DO_NOTHING", "ROLLBACK_ON_FAILURE"]
     }
@@ -1346,7 +1346,7 @@ impl DeploymentType {
             DeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Model"]
     }

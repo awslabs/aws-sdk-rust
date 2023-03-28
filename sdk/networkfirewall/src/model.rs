@@ -562,7 +562,7 @@ impl EncryptionType {
             EncryptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_KMS"]
     }
@@ -719,7 +719,7 @@ impl ResourceStatus {
             ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
@@ -809,7 +809,7 @@ impl RuleGroupType {
             RuleGroupType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STATEFUL", "STATELESS"]
     }
@@ -1069,7 +1069,7 @@ impl RuleOrder {
             RuleOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
@@ -2145,7 +2145,7 @@ impl TcpFlag {
             TcpFlag::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACK", "CWR", "ECE", "FIN", "PSH", "RST", "SYN", "URG"]
     }
@@ -2813,7 +2813,7 @@ impl StatefulRuleDirection {
             StatefulRuleDirection::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANY", "FORWARD"]
     }
@@ -2990,7 +2990,7 @@ impl StatefulRuleProtocol {
             StatefulRuleProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN",
@@ -3093,7 +3093,7 @@ impl StatefulAction {
             StatefulAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALERT", "DROP", "PASS", "REJECT"]
     }
@@ -3310,7 +3310,7 @@ impl GeneratedRulesType {
             GeneratedRulesType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOWLIST", "DENYLIST"]
     }
@@ -3400,7 +3400,7 @@ impl TargetType {
             TargetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP_HOST", "TLS_SNI"]
     }
@@ -4038,7 +4038,7 @@ impl LogDestinationType {
             LogDestinationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CloudWatchLogs", "KinesisDataFirehose", "S3"]
     }
@@ -4128,7 +4128,7 @@ impl LogType {
             LogType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALERT", "FLOW"]
     }
@@ -4897,7 +4897,7 @@ impl StreamExceptionPolicy {
             StreamExceptionPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONTINUE", "DROP"]
     }
@@ -5130,7 +5130,7 @@ impl OverrideAction {
             OverrideAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DROP_TO_ALERT"]
     }
@@ -5356,7 +5356,7 @@ impl ResourceManagedType {
             ResourceManagedType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
     }
@@ -5448,7 +5448,7 @@ impl ResourceManagedStatus {
             ResourceManagedStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "MANAGED"]
     }
@@ -5745,7 +5745,7 @@ impl IpAddressType {
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DUALSTACK", "IPV4"]
     }
@@ -6368,7 +6368,7 @@ impl PerObjectSyncStatus {
             PerObjectSyncStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
@@ -6579,7 +6579,7 @@ impl AttachmentStatus {
             AttachmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "READY", "SCALING"]
     }
@@ -6676,7 +6676,7 @@ impl ConfigurationSyncState {
             ConfigurationSyncState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
@@ -6773,7 +6773,7 @@ impl FirewallStatusValue {
             FirewallStatusValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETING", "PROVISIONING", "READY"]
     }

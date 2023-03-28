@@ -518,7 +518,7 @@ impl ImportStatus {
             ImportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETE_COMPLETE",
@@ -715,7 +715,7 @@ impl ExportDataFormat {
             ExportDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "GRAPHML"]
     }
@@ -800,7 +800,7 @@ impl DataSource {
             DataSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
@@ -1093,7 +1093,7 @@ impl OrderString {
             OrderString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -1291,7 +1291,7 @@ impl ConfigurationItemType {
             ConfigurationItemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLICATION", "CONNECTION", "PROCESS", "SERVER"]
     }
@@ -2341,7 +2341,7 @@ impl ImportTaskFilterName {
             ImportTaskFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IMPORT_TASK_ID", "NAME", "STATUS"]
     }
@@ -2638,7 +2638,7 @@ impl ExportStatus {
             ExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -3092,7 +3092,7 @@ impl ContinuousExportStatus {
             ContinuousExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -3450,7 +3450,7 @@ impl AgentStatus {
             AgentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BLACKLISTED",
@@ -3785,7 +3785,7 @@ impl BatchDeleteImportDataErrorCode {
             BatchDeleteImportDataErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVER_ERROR", "NOT_FOUND", "OVER_LIMIT"]
     }

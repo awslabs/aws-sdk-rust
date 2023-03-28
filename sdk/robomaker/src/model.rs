@@ -259,7 +259,7 @@ impl RenderingEngineType {
             RenderingEngineType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OGRE"]
     }
@@ -434,7 +434,7 @@ impl RobotSoftwareSuiteVersionType {
             RobotSoftwareSuiteVersionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Dashing", "Foxy", "Kinetic", "Melodic"]
     }
@@ -531,7 +531,7 @@ impl RobotSoftwareSuiteType {
             RobotSoftwareSuiteType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["General", "ROS", "ROS2"]
     }
@@ -698,7 +698,7 @@ impl SimulationSoftwareSuiteType {
             SimulationSoftwareSuiteType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Gazebo", "RosbagPlay", "SimulationRuntime"]
     }
@@ -901,7 +901,7 @@ impl Architecture {
             Architecture::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ARM64", "ARMHF", "X86_64"]
     }
@@ -1204,7 +1204,7 @@ impl DeploymentJobErrorCode {
             DeploymentJobErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BadLambdaAssociated",
@@ -1782,7 +1782,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
@@ -2100,7 +2100,7 @@ impl ComputeType {
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CPU", "GPU_AND_CPU"]
     }
@@ -2232,7 +2232,7 @@ impl SimulationJobStatus {
             SimulationJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
@@ -3075,7 +3075,7 @@ impl DataSourceType {
             DataSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Archive", "File", "Prefix"]
     }
@@ -3560,7 +3560,7 @@ impl ExitBehavior {
             ExitBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAIL", "RESTART"]
     }
@@ -3873,7 +3873,7 @@ impl UploadBehavior {
             UploadBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"]
     }
@@ -4525,7 +4525,7 @@ impl FailureBehavior {
             FailureBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Continue", "Fail"]
     }
@@ -5054,7 +5054,7 @@ impl SimulationJobErrorCode {
             SimulationJobErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BadPermissionsCloudwatchLogs",
@@ -5173,7 +5173,7 @@ impl SimulationJobBatchErrorCode {
             SimulationJobBatchErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InternalServiceError"]
     }
@@ -5375,7 +5375,7 @@ impl SimulationJobBatchStatus {
             SimulationJobBatchStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
@@ -6234,7 +6234,7 @@ impl WorldGenerationJobStatus {
             WorldGenerationJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
@@ -6648,7 +6648,7 @@ impl WorldExportJobStatus {
             WorldExportJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
@@ -7542,7 +7542,7 @@ impl RobotStatus {
             RobotStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
@@ -8553,7 +8553,7 @@ impl WorldGenerationJobErrorCode {
             WorldGenerationJobErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AllWorldGenerationFailed",
@@ -8672,7 +8672,7 @@ impl WorldExportJobErrorCode {
             WorldExportJobErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -9765,7 +9765,7 @@ impl RobotDeploymentStep {
             RobotDeploymentStep::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DownloadingExtracting",

@@ -191,7 +191,7 @@ impl PipeState {
             PipeState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -295,7 +295,7 @@ impl RequestedPipeState {
             RequestedPipeState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STOPPED"]
     }
@@ -2118,7 +2118,7 @@ impl BatchJobDependencyType {
             BatchJobDependencyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["N_TO_N", "SEQUENTIAL"]
     }
@@ -3072,7 +3072,7 @@ impl BatchResourceRequirementType {
             BatchResourceRequirementType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GPU", "MEMORY", "VCPU"]
     }
@@ -4500,7 +4500,7 @@ impl EcsResourceRequirementType {
             EcsResourceRequirementType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GPU", "InferenceAccelerator"]
     }
@@ -4663,7 +4663,7 @@ impl EcsEnvironmentFileType {
             EcsEnvironmentFileType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["s3"]
     }
@@ -4815,7 +4815,7 @@ impl PropagateTags {
             PropagateTags::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TASK_DEFINITION"]
     }
@@ -4998,7 +4998,7 @@ impl PlacementStrategyType {
             PlacementStrategyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["binpack", "random", "spread"]
     }
@@ -5176,7 +5176,7 @@ impl PlacementConstraintType {
             PlacementConstraintType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["distinctInstance", "memberOf"]
     }
@@ -5531,7 +5531,7 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -5626,7 +5626,7 @@ impl LaunchType {
             LaunchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
@@ -5834,7 +5834,7 @@ impl PipeTargetInvocationType {
             PipeTargetInvocationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIRE_AND_FORGET", "REQUEST_RESPONSE"]
     }
@@ -6950,7 +6950,7 @@ impl SelfManagedKafkaStartPosition {
             SelfManagedKafkaStartPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LATEST", "TRIM_HORIZON"]
     }
@@ -7278,7 +7278,7 @@ impl MskStartPosition {
             MskStartPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LATEST", "TRIM_HORIZON"]
     }
@@ -7981,7 +7981,7 @@ impl DynamoDbStreamStartPosition {
             DynamoDbStreamStartPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LATEST", "TRIM_HORIZON"]
     }
@@ -8068,7 +8068,7 @@ impl OnPartialBatchItemFailureStreams {
             OnPartialBatchItemFailureStreams::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC_BISECT"]
     }
@@ -8441,7 +8441,7 @@ impl KinesisStreamStartPosition {
             KinesisStreamStartPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
     }
@@ -8657,7 +8657,7 @@ impl RequestedPipeStateDescribeResponse {
             RequestedPipeStateDescribeResponse::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETED", "RUNNING", "STOPPED"]
     }

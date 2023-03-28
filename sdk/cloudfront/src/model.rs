@@ -473,7 +473,7 @@ impl PriceClass {
             PriceClass::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PriceClass_100", "PriceClass_200", "PriceClass_All"]
     }
@@ -2428,7 +2428,7 @@ impl ReferrerPolicyList {
             ReferrerPolicyList::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "no-referrer",
@@ -2602,7 +2602,7 @@ impl FrameOptionsList {
             FrameOptionsList::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DENY", "SAMEORIGIN"]
     }
@@ -3298,7 +3298,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT",
@@ -4480,7 +4480,7 @@ impl OriginRequestPolicyQueryStringBehavior {
             OriginRequestPolicyQueryStringBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -4752,7 +4752,7 @@ impl OriginRequestPolicyCookieBehavior {
             OriginRequestPolicyCookieBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -5034,7 +5034,7 @@ impl OriginRequestPolicyHeaderBehavior {
             OriginRequestPolicyHeaderBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "allViewer",
@@ -5378,7 +5378,7 @@ impl OriginAccessControlOriginTypes {
             OriginAccessControlOriginTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["s3"]
     }
@@ -5475,7 +5475,7 @@ impl OriginAccessControlSigningBehaviors {
             OriginAccessControlSigningBehaviors::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["always", "never", "no-override"]
     }
@@ -5562,7 +5562,7 @@ impl OriginAccessControlSigningProtocols {
             OriginAccessControlSigningProtocols::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["sigv4"]
     }
@@ -6074,7 +6074,7 @@ impl FunctionStage {
             FunctionStage::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEVELOPMENT", "LIVE"]
     }
@@ -6229,7 +6229,7 @@ impl FunctionRuntime {
             FunctionRuntime::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["cloudfront-js-1.0"]
     }
@@ -7228,7 +7228,7 @@ impl Format {
             Format::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["URLEncoded"]
     }
@@ -7905,7 +7905,7 @@ impl IcpRecordalStatus {
             IcpRecordalStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPROVED", "PENDING", "SUSPENDED"]
     }
@@ -8598,7 +8598,7 @@ impl HttpVersion {
             HttpVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["http1.1", "http2", "http2and3", "http3"]
     }
@@ -8872,7 +8872,7 @@ impl GeoRestrictionType {
             GeoRestrictionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["blacklist", "none", "whitelist"]
     }
@@ -9312,7 +9312,7 @@ impl CertificateSource {
             CertificateSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["acm", "cloudfront", "iam"]
     }
@@ -9429,7 +9429,7 @@ impl MinimumProtocolVersion {
             MinimumProtocolVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "SSLv3",
@@ -9532,7 +9532,7 @@ impl SslSupportMethod {
             SslSupportMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["sni-only", "static-ip", "vip"]
     }
@@ -11024,7 +11024,7 @@ impl ItemSelection {
             ItemSelection::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -11270,7 +11270,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "origin-request",
@@ -11790,7 +11790,7 @@ impl Method {
             Method::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
@@ -11887,7 +11887,7 @@ impl ViewerProtocolPolicy {
             ViewerProtocolPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["allow-all", "https-only", "redirect-to-https"]
     }
@@ -13753,7 +13753,7 @@ impl SslProtocol {
             SslProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
     }
@@ -13850,7 +13850,7 @@ impl OriginProtocolPolicy {
             OriginProtocolPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["http-only", "https-only", "match-viewer"]
     }
@@ -14648,7 +14648,7 @@ impl ContinuousDeploymentPolicyType {
             ContinuousDeploymentPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SingleHeader", "SingleWeight"]
     }
@@ -15811,7 +15811,7 @@ impl CachePolicyQueryStringBehavior {
             CachePolicyQueryStringBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
@@ -16010,7 +16010,7 @@ impl CachePolicyCookieBehavior {
             CachePolicyCookieBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
@@ -16188,7 +16188,7 @@ impl CachePolicyHeaderBehavior {
             CachePolicyHeaderBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["none", "whitelist"]
     }
@@ -17236,7 +17236,7 @@ impl ResponseHeadersPolicyType {
             ResponseHeadersPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
@@ -17890,7 +17890,7 @@ impl OriginRequestPolicyType {
             OriginRequestPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
@@ -20938,7 +20938,7 @@ impl CachePolicyType {
             CachePolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
@@ -21146,7 +21146,7 @@ impl RealtimeMetricsSubscriptionStatus {
             RealtimeMetricsSubscriptionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }

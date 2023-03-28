@@ -345,7 +345,7 @@ impl QuantumTaskStatus {
             QuantumTaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -563,7 +563,7 @@ impl SearchQuantumTasksFilterOperator {
             SearchQuantumTasksFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
     }
@@ -655,7 +655,7 @@ impl CancellationStatus {
             CancellationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "CANCELLING"]
     }
@@ -979,7 +979,7 @@ impl JobPrimaryStatus {
             JobPrimaryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -1201,7 +1201,7 @@ impl SearchJobsFilterOperator {
             SearchJobsFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "CONTAINS", "EQUAL", "GT", "GTE", "LT", "LTE"]
     }
@@ -1613,7 +1613,7 @@ impl InstanceType {
             InstanceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ml.c4.2xlarge",
@@ -2321,7 +2321,7 @@ impl CompressionType {
             CompressionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -2548,7 +2548,7 @@ impl JobEventType {
             JobEventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -2788,7 +2788,7 @@ impl DeviceStatus {
             DeviceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OFFLINE", "ONLINE", "RETIRED"]
     }
@@ -2878,7 +2878,7 @@ impl DeviceType {
             DeviceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["QPU", "SIMULATOR"]
     }

@@ -287,7 +287,7 @@ impl PipelineStatus {
             PipelineStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -486,7 +486,7 @@ impl PipelineExecutionStartCondition {
             PipelineExecutionStartCondition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
@@ -1307,7 +1307,7 @@ impl DiskImageFormat {
             DiskImageFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RAW", "VHD", "VMDK"]
     }
@@ -1656,7 +1656,7 @@ impl ContainerRepositoryService {
             ContainerRepositoryService::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ECR"]
     }
@@ -2771,7 +2771,7 @@ impl ImageSource {
             ImageSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AMAZON_MANAGED", "AWS_MARKETPLACE", "CUSTOM", "IMPORTED"]
     }
@@ -2866,7 +2866,7 @@ impl BuildType {
             BuildType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IMPORT", "SCHEDULED", "USER_INITIATED"]
     }
@@ -2956,7 +2956,7 @@ impl Platform {
             Platform::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Linux", "Windows"]
     }
@@ -3046,7 +3046,7 @@ impl ImageType {
             ImageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AMI", "DOCKER"]
     }
@@ -3146,7 +3146,7 @@ impl Ownership {
             Ownership::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Amazon", "Self", "Shared", "ThirdParty"]
     }
@@ -4573,7 +4573,7 @@ impl ImageStatus {
             ImageStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5137,7 +5137,7 @@ impl ContainerType {
             ContainerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DOCKER"]
     }
@@ -5552,7 +5552,7 @@ impl ComponentType {
             ComponentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BUILD", "TEST"]
     }
@@ -6038,7 +6038,7 @@ impl ComponentStatus {
             ComponentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED"]
     }
@@ -6123,7 +6123,7 @@ impl ComponentFormat {
             ComponentFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SHELL"]
     }
@@ -7450,7 +7450,7 @@ impl EbsVolumeType {
             EbsVolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
     }

@@ -375,7 +375,7 @@ impl FragmentSelectorType {
             FragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
@@ -581,7 +581,7 @@ impl ImageError {
             ImageError::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MEDIA_ERROR", "NO_MEDIA"]
     }
@@ -666,7 +666,7 @@ impl FormatConfigKey {
             FormatConfigKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JPEGQuality"]
     }
@@ -756,7 +756,7 @@ impl Format {
             Format::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JPEG", "PNG"]
     }
@@ -848,7 +848,7 @@ impl ImageSelectorType {
             ImageSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
@@ -940,7 +940,7 @@ impl HlsDisplayFragmentTimestamp {
             HlsDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
@@ -1037,7 +1037,7 @@ impl HlsDiscontinuityMode {
             HlsDiscontinuityMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER", "ON_DISCONTINUITY"]
     }
@@ -1127,7 +1127,7 @@ impl ContainerFormat {
             ContainerFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FRAGMENTED_MP4", "MPEG_TS"]
     }
@@ -1416,7 +1416,7 @@ impl HlsFragmentSelectorType {
             HlsFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
@@ -1511,7 +1511,7 @@ impl HlsPlaybackMode {
             HlsPlaybackMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
@@ -1801,7 +1801,7 @@ impl DashFragmentSelectorType {
             DashFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
@@ -1893,7 +1893,7 @@ impl DashDisplayFragmentNumber {
             DashDisplayFragmentNumber::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
@@ -1985,7 +1985,7 @@ impl DashDisplayFragmentTimestamp {
             DashDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
@@ -2080,7 +2080,7 @@ impl DashPlaybackMode {
             DashPlaybackMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
@@ -2337,7 +2337,7 @@ impl ClipFragmentSelectorType {
             ClipFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }

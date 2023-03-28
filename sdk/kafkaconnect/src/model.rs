@@ -94,7 +94,7 @@ impl ConnectorState {
             ConnectorState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
     }
@@ -1310,7 +1310,7 @@ impl CustomPluginContentType {
             CustomPluginContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JAR", "ZIP"]
     }
@@ -1422,7 +1422,7 @@ impl CustomPluginState {
             CustomPluginState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2535,7 +2535,7 @@ impl KafkaClusterEncryptionInTransitType {
             KafkaClusterEncryptionInTransitType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS"]
     }
@@ -2685,7 +2685,7 @@ impl KafkaClusterClientAuthenticationType {
             KafkaClusterClientAuthenticationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IAM", "NONE"]
     }

@@ -227,7 +227,7 @@ impl Language {
             Language::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DETECTORPL"]
     }
@@ -324,7 +324,7 @@ impl ModelVersionStatus {
             ModelVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "TRAINING_CANCELLED"]
     }
@@ -419,7 +419,7 @@ impl ModelTypeEnum {
             ModelTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_TAKEOVER_INSIGHTS",
@@ -717,7 +717,7 @@ impl DetectorVersionStatus {
             DetectorVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAFT", "INACTIVE"]
     }
@@ -809,7 +809,7 @@ impl RuleExecutionMode {
             RuleExecutionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_MATCHED", "FIRST_MATCHED"]
     }
@@ -1095,7 +1095,7 @@ impl ModelEndpointStatus {
             ModelEndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISSOCIATED"]
     }
@@ -1318,7 +1318,7 @@ impl ModelOutputDataFormat {
             ModelOutputDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLICATION_JSONLINES", "TEXT_CSV"]
     }
@@ -1546,7 +1546,7 @@ impl ModelInputDataFormat {
             ModelInputDataFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APPLICATION_JSON", "TEXT_CSV"]
     }
@@ -1631,7 +1631,7 @@ impl ModelSource {
             ModelSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SAGEMAKER"]
     }
@@ -1721,7 +1721,7 @@ impl EventIngestion {
             EventIngestion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2300,7 +2300,7 @@ impl DataSource {
             DataSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EVENT", "EXTERNAL_MODEL_SCORE", "MODEL_SCORE"]
     }
@@ -2400,7 +2400,7 @@ impl DataType {
             DataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "FLOAT", "INTEGER", "STRING"]
     }
@@ -3065,7 +3065,7 @@ impl UnlabeledEventsTreatment {
             UnlabeledEventsTreatment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FRAUD", "IGNORE", "LEGIT"]
     }
@@ -3157,7 +3157,7 @@ impl TrainingDataSourceEnum {
             TrainingDataSourceEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXTERNAL_EVENTS", "INGESTED_EVENTS"]
     }
@@ -6179,7 +6179,7 @@ impl AsyncJobStatus {
             AsyncJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",

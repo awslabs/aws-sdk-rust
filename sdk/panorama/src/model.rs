@@ -225,7 +225,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -460,7 +460,7 @@ impl NodeSignalValue {
             NodeSignalValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PAUSE", "RESUME"]
     }
@@ -570,7 +570,7 @@ impl DeviceStatus {
             DeviceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_PROVISIONING",
@@ -1012,7 +1012,7 @@ impl ConnectionType {
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC_IP"]
     }
@@ -1415,7 +1415,7 @@ impl PackageImportJobStatus {
             PackageImportJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
@@ -1511,7 +1511,7 @@ impl PackageImportJobType {
             PackageImportJobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MARKETPLACE_NODE_PACKAGE_VERSION", "NODE_PACKAGE_VERSION"]
     }
@@ -1864,7 +1864,7 @@ impl NodeCategory {
             NodeCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BUSINESS_LOGIC", "MEDIA_SINK", "MEDIA_SOURCE", "ML_MODEL"]
     }
@@ -2116,7 +2116,7 @@ impl NodeFromTemplateJobStatus {
             NodeFromTemplateJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
@@ -2201,7 +2201,7 @@ impl TemplateType {
             TemplateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RTSP_CAMERA_STREAM"]
     }
@@ -2418,7 +2418,7 @@ impl JobType {
             JobType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OTA", "REBOOT"]
     }
@@ -2874,7 +2874,7 @@ impl DeviceAggregatedStatus {
             DeviceAggregatedStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_PROVISIONING",
@@ -3092,7 +3092,7 @@ impl UpdateProgress {
             UpdateProgress::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -3190,7 +3190,7 @@ impl DeviceType {
             DeviceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PANORAMA_APPLIANCE", "PANORAMA_APPLIANCE_DEVELOPER_KIT"]
     }
@@ -3280,7 +3280,7 @@ impl DeviceBrand {
             DeviceBrand::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_PANORAMA", "LENOVO"]
     }
@@ -3370,7 +3370,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -3472,7 +3472,7 @@ impl ListDevicesSortBy {
             ListDevicesSortBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED_TIME",
@@ -4060,7 +4060,7 @@ impl DeviceReportedStatus {
             DeviceReportedStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "INSTALL_ERROR",
@@ -4167,7 +4167,7 @@ impl DesiredState {
             DesiredState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REMOVED", "RUNNING", "STOPPED"]
     }
@@ -4264,7 +4264,7 @@ impl ApplicationInstanceHealthStatus {
             ApplicationInstanceHealthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "NOT_AVAILABLE", "RUNNING"]
     }
@@ -4401,7 +4401,7 @@ impl ApplicationInstanceStatus {
             ApplicationInstanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
@@ -4528,7 +4528,7 @@ impl StatusFilter {
             StatusFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
@@ -4812,7 +4812,7 @@ impl NodeInstanceStatus {
             NodeInstanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "NOT_AVAILABLE", "PAUSED", "RUNNING"]
     }
@@ -5006,7 +5006,7 @@ impl PackageVersionStatus {
             PackageVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -5187,7 +5187,7 @@ impl JobResourceType {
             JobResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PACKAGE"]
     }
@@ -6121,7 +6121,7 @@ impl PortType {
             PortType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "FLOAT32", "INT32", "MEDIA", "STRING"]
     }
@@ -6602,7 +6602,7 @@ impl NetworkConnectionStatus {
             NetworkConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "CONNECTING", "NOT_CONNECTED"]
     }
@@ -6798,7 +6798,7 @@ impl DeviceConnectionStatus {
             DeviceConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_CREDENTIALS",

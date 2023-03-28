@@ -662,7 +662,7 @@ impl UploadCategory {
             UploadCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -762,7 +762,7 @@ impl UploadStatus {
             UploadStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIALIZED", "PROCESSING", "SUCCEEDED"]
     }
@@ -1002,7 +1002,7 @@ impl UploadType {
             UploadType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANDROID_APP",
@@ -1855,7 +1855,7 @@ impl NetworkProfileType {
             NetworkProfileType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -2786,7 +2786,7 @@ impl RuleOperator {
             RuleOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
@@ -2940,7 +2940,7 @@ impl DeviceAttribute {
             DeviceAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_VERSION",
@@ -3044,7 +3044,7 @@ impl DevicePoolType {
             DevicePoolType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -3302,7 +3302,7 @@ impl InstanceStatus {
             InstanceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "IN_USE", "NOT_AVAILABLE", "PREPARING"]
     }
@@ -5017,7 +5017,7 @@ impl DeviceFilterAttribute {
             DeviceFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARN",
@@ -5410,7 +5410,7 @@ impl ExecutionResultCode {
             ExecutionResultCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PARSING_FAILED", "VPC_ENDPOINT_SETUP_FAILED"]
     }
@@ -5586,7 +5586,7 @@ impl BillingMethod {
             BillingMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["METERED", "UNMETERED"]
     }
@@ -5863,7 +5863,7 @@ impl ExecutionResult {
             ExecutionResult::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED",
@@ -5990,7 +5990,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -6090,7 +6090,7 @@ impl DevicePlatform {
             DevicePlatform::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANDROID", "IOS"]
     }
@@ -6275,7 +6275,7 @@ impl TestType {
             TestType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_JUNIT",
@@ -6989,7 +6989,7 @@ impl InteractionMode {
             InteractionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "NO_VIDEO", "VIDEO_ONLY"]
     }
@@ -7584,7 +7584,7 @@ impl DeviceAvailability {
             DeviceAvailability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -7832,7 +7832,7 @@ impl DeviceFormFactor {
             DeviceFormFactor::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PHONE", "TABLET"]
     }
@@ -9684,7 +9684,7 @@ impl CurrencyCode {
             CurrencyCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["USD"]
     }
@@ -10092,7 +10092,7 @@ impl RecurringChargeFrequency {
             RecurringChargeFrequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MONTHLY"]
     }
@@ -10177,7 +10177,7 @@ impl OfferingType {
             OfferingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RECURRING"]
     }
@@ -10274,7 +10274,7 @@ impl OfferingTransactionType {
             OfferingTransactionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PURCHASE", "RENEW", "SYSTEM"]
     }
@@ -11310,7 +11310,7 @@ impl TestGridSessionStatus {
             TestGridSessionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED", "ERRORED"]
     }
@@ -11516,7 +11516,7 @@ impl TestGridSessionArtifactType {
             TestGridSessionArtifactType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SELENIUM_LOG", "UNKNOWN", "VIDEO"]
     }
@@ -11608,7 +11608,7 @@ impl TestGridSessionArtifactCategory {
             TestGridSessionArtifactCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOG", "VIDEO"]
     }
@@ -12505,7 +12505,7 @@ impl SampleType {
             SampleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CPU",
@@ -13058,7 +13058,7 @@ impl ArtifactType {
             ArtifactType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_OUTPUT",
@@ -13182,7 +13182,7 @@ impl ArtifactCategory {
             ArtifactCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE", "LOG", "SCREENSHOT"]
     }

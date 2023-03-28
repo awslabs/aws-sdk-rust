@@ -341,7 +341,7 @@ impl JqState {
             JqState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1230,7 +1230,7 @@ impl CrType {
             CrType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EC2", "FARGATE", "FARGATE_SPOT", "SPOT"]
     }
@@ -1727,7 +1727,7 @@ impl CrUpdateAllocationStrategy {
             CrUpdateAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED"]
     }
@@ -1817,7 +1817,7 @@ impl CeState {
             CeState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2780,7 +2780,7 @@ impl RetryAction {
             RetryAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXIT", "RETRY"]
     }
@@ -3946,7 +3946,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GPU", "MEMORY", "VCPU"]
     }
@@ -4175,7 +4175,7 @@ impl ArrayJobDependency {
             ArrayJobDependency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["N_TO_N", "SEQUENTIAL"]
     }
@@ -5342,7 +5342,7 @@ impl PlatformCapability {
             PlatformCapability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EC2", "FARGATE"]
     }
@@ -6333,7 +6333,7 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -6847,7 +6847,7 @@ impl LogDriver {
             LogDriver::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "awslogs",
@@ -7394,7 +7394,7 @@ impl DeviceCgroupPermission {
             DeviceCgroupPermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MKNOD", "READ", "WRITE"]
     }
@@ -7988,7 +7988,7 @@ impl EfsAuthorizationConfigIam {
             EfsAuthorizationConfigIam::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -8080,7 +8080,7 @@ impl EfsTransitEncryption {
             EfsTransitEncryption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -8228,7 +8228,7 @@ impl JobDefinitionType {
             JobDefinitionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["container", "multinode"]
     }
@@ -8889,7 +8889,7 @@ impl JobStatus {
             JobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -12137,7 +12137,7 @@ impl JqStatus {
             JqStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
@@ -12653,7 +12653,7 @@ impl OrchestrationType {
             OrchestrationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ECS", "EKS"]
     }
@@ -13887,7 +13887,7 @@ impl CrAllocationStrategy {
             CrAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BEST_FIT",
@@ -14001,7 +14001,7 @@ impl CeStatus {
             CeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
@@ -14093,7 +14093,7 @@ impl CeType {
             CeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MANAGED", "UNMANAGED"]
     }

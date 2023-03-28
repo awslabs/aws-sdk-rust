@@ -997,7 +997,7 @@ impl CustomerPolicyScopeIdType {
             CustomerPolicyScopeIdType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORG_UNIT"]
     }
@@ -1473,7 +1473,7 @@ impl FirewallDeploymentModel {
             FirewallDeploymentModel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CENTRALIZED", "DISTRIBUTED"]
     }
@@ -1662,7 +1662,7 @@ impl SecurityServiceType {
             SecurityServiceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DNS_FIREWALL",
@@ -2127,7 +2127,7 @@ impl ThirdPartyFirewall {
             ThirdPartyFirewall::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FORTIGATE_CLOUD_NATIVE_FIREWALL",
@@ -3008,7 +3008,7 @@ impl DependentServiceName {
             DependentServiceName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"]
     }
@@ -3194,7 +3194,7 @@ impl PolicyComplianceStatusType {
             PolicyComplianceStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLIANT", "NON_COMPLIANT"]
     }
@@ -5270,7 +5270,7 @@ impl TargetType {
             TargetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CARRIER_GATEWAY",
@@ -5376,7 +5376,7 @@ impl DestinationType {
             DestinationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6", "PREFIX_LIST"]
     }
@@ -9356,7 +9356,7 @@ impl RuleOrder {
             RuleOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
@@ -9619,7 +9619,7 @@ impl NetworkFirewallOverrideAction {
             NetworkFirewallOverrideAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DROP_TO_ALERT"]
     }
@@ -10745,7 +10745,7 @@ impl RemediationActionType {
             RemediationActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MODIFY", "REMOVE"]
     }
@@ -10919,7 +10919,7 @@ impl MarketplaceSubscriptionOnboardingStatus {
             MarketplaceSubscriptionOnboardingStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
     }
@@ -11026,7 +11026,7 @@ impl ThirdPartyFirewallAssociationStatus {
             ThirdPartyFirewallAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_EXIST",
@@ -11616,7 +11616,7 @@ impl ViolationReason {
             ViolationReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BLACK_HOLE_ROUTE_DETECTED",
@@ -11752,7 +11752,7 @@ impl AccountRoleStatus {
             AccountRoleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING",
@@ -11938,7 +11938,7 @@ impl FailedItemReason {
             FailedItemReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_VALID_ACCOUNT_ID",

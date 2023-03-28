@@ -131,7 +131,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONFLICTING_BLOCK_UPDATE",
@@ -235,7 +235,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_SERVICE_QUOTA_EXCEEDED"]
     }
@@ -331,7 +331,7 @@ impl ResourceNotFoundExceptionReason {
             ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_RESOURCE_NOT_FOUND", "SNAPSHOT_NOT_FOUND"]
     }
@@ -432,7 +432,7 @@ impl RequestThrottledExceptionReason {
             RequestThrottledExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_THROTTLED",
@@ -528,7 +528,7 @@ impl AccessDeniedExceptionReason {
             AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_ACCESS_DENIED", "UNAUTHORIZED_ACCOUNT"]
     }
@@ -690,7 +690,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["completed", "error", "pending"]
     }
@@ -777,7 +777,7 @@ impl ChecksumAlgorithm {
             ChecksumAlgorithm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SHA256"]
     }
@@ -1041,7 +1041,7 @@ impl ChecksumAggregationMethod {
             ChecksumAggregationMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINEAR"]
     }

@@ -1832,7 +1832,7 @@ impl AcceleratorName {
             AcceleratorName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "a100",
@@ -1942,7 +1942,7 @@ impl AcceleratorManufacturer {
             AcceleratorManufacturer::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["amazon-web-services", "amd", "nvidia", "xilinx"]
     }
@@ -2104,7 +2104,7 @@ impl AcceleratorType {
             AcceleratorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["fpga", "gpu", "inference"]
     }
@@ -2328,7 +2328,7 @@ impl LocalStorageType {
             LocalStorageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["hdd", "ssd"]
     }
@@ -2423,7 +2423,7 @@ impl LocalStorage {
             LocalStorage::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
@@ -2587,7 +2587,7 @@ impl BurstablePerformance {
             BurstablePerformance::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
@@ -2682,7 +2682,7 @@ impl BareMetal {
             BareMetal::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["excluded", "included", "required"]
     }
@@ -2774,7 +2774,7 @@ impl InstanceGeneration {
             InstanceGeneration::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["current", "previous"]
     }
@@ -2936,7 +2936,7 @@ impl CpuManufacturer {
             CpuManufacturer::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["amazon-web-services", "amd", "intel"]
     }
@@ -3598,7 +3598,7 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -3931,7 +3931,7 @@ impl RefreshStrategy {
             RefreshStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Rolling"]
     }
@@ -4075,7 +4075,7 @@ impl WarmPoolState {
             WarmPoolState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Hibernated", "Running", "Stopped"]
     }
@@ -4429,7 +4429,7 @@ impl PredictiveScalingMaxCapacityBreachBehavior {
             PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HonorMaxCapacity", "IncreaseMaxCapacity"]
     }
@@ -4521,7 +4521,7 @@ impl PredictiveScalingMode {
             PredictiveScalingMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
@@ -5593,7 +5593,7 @@ impl PredefinedLoadMetricType {
             PredefinedLoadMetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
@@ -5852,7 +5852,7 @@ impl PredefinedScalingMetricType {
             PredefinedScalingMetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -6110,7 +6110,7 @@ impl PredefinedMetricPairType {
             PredefinedMetricPairType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCount",
@@ -6764,7 +6764,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -7033,7 +7033,7 @@ impl MetricType {
             MetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -7809,7 +7809,7 @@ impl LifecycleState {
             LifecycleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Detached",
@@ -8051,7 +8051,7 @@ impl WarmPoolStatus {
             WarmPoolStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PendingDelete"]
     }
@@ -10604,7 +10604,7 @@ impl InstanceMetadataEndpointState {
             InstanceMetadataEndpointState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
@@ -10696,7 +10696,7 @@ impl InstanceMetadataHttpTokensState {
             InstanceMetadataHttpTokensState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["optional", "required"]
     }
@@ -11739,7 +11739,7 @@ impl InstanceRefreshStatus {
             InstanceRefreshStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",

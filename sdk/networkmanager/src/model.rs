@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CannotParse",
@@ -969,7 +969,7 @@ impl AttachmentState {
             AttachmentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1079,7 +1079,7 @@ impl AttachmentType {
             AttachmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECT",
@@ -1408,7 +1408,7 @@ impl SiteState {
             SiteState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -1868,7 +1868,7 @@ impl LinkState {
             LinkState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -2201,7 +2201,7 @@ impl GlobalNetworkState {
             GlobalNetworkState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -2657,7 +2657,7 @@ impl DeviceState {
             DeviceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -3268,7 +3268,7 @@ impl CoreNetworkState {
             CoreNetworkState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "UPDATING"]
     }
@@ -3636,7 +3636,7 @@ impl ConnectionState {
             ConnectionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -4555,7 +4555,7 @@ impl RouteAnalysisCompletionReasonCode {
             RouteAnalysisCompletionReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND",
@@ -4659,7 +4659,7 @@ impl RouteAnalysisCompletionResultCode {
             RouteAnalysisCompletionResultCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "NOT_CONNECTED"]
     }
@@ -4851,7 +4851,7 @@ impl RouteAnalysisStatus {
             RouteAnalysisStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "RUNNING"]
     }
@@ -5523,7 +5523,7 @@ impl ChangeSetState {
             ChangeSetState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EXECUTING",
@@ -5622,7 +5622,7 @@ impl CoreNetworkPolicyAlias {
             CoreNetworkPolicyAlias::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LATEST", "LIVE"]
     }
@@ -5896,7 +5896,7 @@ impl TransitGatewayRegistrationState {
             TransitGatewayRegistrationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
@@ -6242,7 +6242,7 @@ impl PeeringState {
             PeeringState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED"]
     }
@@ -6327,7 +6327,7 @@ impl PeeringType {
             PeeringType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TRANSIT_GATEWAY"]
     }
@@ -6957,7 +6957,7 @@ impl ConnectPeerState {
             ConnectPeerState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED"]
     }
@@ -7391,7 +7391,7 @@ impl TransitGatewayConnectPeerAssociationState {
             TransitGatewayConnectPeerAssociationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -7861,7 +7861,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DOWN", "UP"]
     }
@@ -7951,7 +7951,7 @@ impl ConnectionType {
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BGP", "IPSEC"]
     }
@@ -8181,7 +8181,7 @@ impl RouteType {
             RouteType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PROPAGATED", "STATIC"]
     }
@@ -8271,7 +8271,7 @@ impl RouteState {
             RouteState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "BLACKHOLE"]
     }
@@ -8519,7 +8519,7 @@ impl RouteTableType {
             RouteTableType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CORE_NETWORK_SEGMENT", "TRANSIT_GATEWAY_ROUTE_TABLE"]
     }
@@ -9414,7 +9414,7 @@ impl LinkAssociationState {
             LinkAssociationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -9649,7 +9649,7 @@ impl CustomerGatewayAssociationState {
             CustomerGatewayAssociationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -10091,7 +10091,7 @@ impl ChangeAction {
             ChangeAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADD", "MODIFY", "REMOVE"]
     }
@@ -10216,7 +10216,7 @@ impl ChangeType {
             ChangeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENT_MAPPING",
@@ -10595,7 +10595,7 @@ impl ChangeStatus {
             ChangeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS", "NOT_STARTED"]
     }
@@ -10830,7 +10830,7 @@ impl ConnectPeerAssociationState {
             ConnectPeerAssociationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -11389,7 +11389,7 @@ impl TunnelProtocol {
             TunnelProtocol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GRE"]
     }

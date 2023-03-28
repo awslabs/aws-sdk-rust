@@ -587,7 +587,7 @@ impl ScalingPolicyUpdateBehavior {
             ScalingPolicyUpdateBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KeepExternalPolicies", "ReplaceExternalPolicies"]
     }
@@ -679,7 +679,7 @@ impl PredictiveScalingMode {
             PredictiveScalingMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
@@ -788,7 +788,7 @@ impl PredictiveScalingMaxCapacityBehavior {
             PredictiveScalingMaxCapacityBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "SetForecastCapacityToMaxCapacity",
@@ -1042,7 +1042,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -1397,7 +1397,7 @@ impl LoadMetricType {
             LoadMetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
@@ -2106,7 +2106,7 @@ impl ScalingMetricType {
             ScalingMetricType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -2258,7 +2258,7 @@ impl ScalableDimension {
             ScalableDimension::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "autoscaling:autoScalingGroup:DesiredCapacity",
@@ -2372,7 +2372,7 @@ impl ServiceNamespace {
             ServiceNamespace::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["autoscaling", "dynamodb", "ec2", "ecs", "rds"]
     }
@@ -2697,7 +2697,7 @@ impl ForecastDataType {
             ForecastDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CapacityForecast",
@@ -3073,7 +3073,7 @@ impl ScalingPlanStatusCode {
             ScalingPlanStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
@@ -3477,7 +3477,7 @@ impl ScalingStatusCode {
             ScalingStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive", "PartiallyActive"]
     }
@@ -3661,7 +3661,7 @@ impl PolicyType {
             PolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TargetTrackingScaling"]
     }

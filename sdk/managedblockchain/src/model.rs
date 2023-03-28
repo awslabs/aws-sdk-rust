@@ -79,7 +79,7 @@ impl VoteValue {
             VoteValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NO", "YES"]
     }
@@ -829,7 +829,7 @@ impl ProposalStatus {
             ProposalStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION_FAILED",
@@ -1112,7 +1112,7 @@ impl NodeStatus {
             NodeStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1420,7 +1420,7 @@ impl NetworkStatus {
             NetworkStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1516,7 +1516,7 @@ impl Framework {
             Framework::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ETHEREUM", "HYPERLEDGER_FABRIC"]
     }
@@ -1836,7 +1836,7 @@ impl MemberStatus {
             MemberStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2136,7 +2136,7 @@ impl InvitationStatus {
             InvitationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPTED", "ACCEPTING", "EXPIRED", "PENDING", "REJECTED"]
     }
@@ -2372,7 +2372,7 @@ impl AccessorStatus {
             AccessorStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "PENDING_DELETION"]
     }
@@ -2457,7 +2457,7 @@ impl AccessorType {
             AccessorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BILLING_TOKEN"]
     }
@@ -3489,7 +3489,7 @@ impl StateDbType {
             StateDbType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CouchDB", "LevelDB"]
     }
@@ -4257,7 +4257,7 @@ impl ThresholdComparator {
             ThresholdComparator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO"]
     }
@@ -4562,7 +4562,7 @@ impl Edition {
             Edition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["STANDARD", "STARTER"]
     }

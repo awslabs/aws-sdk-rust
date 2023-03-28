@@ -116,7 +116,7 @@ impl ExceptionResourceType {
             ExceptionResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_SETTINGS",
@@ -521,7 +521,7 @@ impl IdentityType {
             IdentityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IAM", "QUICKSIGHT"]
     }
@@ -626,7 +626,7 @@ impl UserRole {
             UserRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADMIN",
@@ -929,7 +929,7 @@ impl ResourceStatus {
             ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATION_FAILED",
@@ -2539,7 +2539,7 @@ impl SheetContentType {
             SheetContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "PAGINATED"]
     }
@@ -3017,7 +3017,7 @@ impl PaperOrientation {
             PaperOrientation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LANDSCAPE", "PORTRAIT"]
     }
@@ -3152,7 +3152,7 @@ impl PaperSize {
             PaperSize::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "A0",
@@ -3702,7 +3702,7 @@ impl ResizeOption {
             ResizeOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIXED", "RESPONSIVE"]
     }
@@ -3884,7 +3884,7 @@ impl ColumnRole {
             ColumnRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIMENSION", "MEASURE"]
     }
@@ -4651,7 +4651,7 @@ impl NegativeValueDisplayMode {
             NegativeValueDisplayMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NEGATIVE", "POSITIVE"]
     }
@@ -4940,7 +4940,7 @@ impl Visibility {
             Visibility::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIDDEN", "VISIBLE"]
     }
@@ -5037,7 +5037,7 @@ impl NumericSeparatorSymbol {
             NumericSeparatorSymbol::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMMA", "DOT", "SPACE"]
     }
@@ -5414,7 +5414,7 @@ impl NumberScale {
             NumberScale::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AUTO",
@@ -6143,7 +6143,7 @@ impl CrossDatasetTypes {
             CrossDatasetTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_DATASETS", "SINGLE_DATASET"]
     }
@@ -6233,7 +6233,7 @@ impl WidgetStatus {
             WidgetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -6564,7 +6564,7 @@ impl FilterVisualScope {
             FilterVisualScope::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_VISUALS", "SELECTED_VISUALS"]
     }
@@ -7051,7 +7051,7 @@ impl TimeGranularity {
             TimeGranularity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DAY",
@@ -7430,7 +7430,7 @@ impl DateAggregationFunction {
             DateAggregationFunction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COUNT", "DISTINCT_COUNT", "MAX", "MIN"]
     }
@@ -7522,7 +7522,7 @@ impl CategoricalAggregationFunction {
             CategoricalAggregationFunction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COUNT", "DISTINCT_COUNT"]
     }
@@ -7844,7 +7844,7 @@ impl SimpleNumericalAggregationFunction {
             SimpleNumericalAggregationFunction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVERAGE",
@@ -7946,7 +7946,7 @@ impl SortDirection {
             SortDirection::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -8452,7 +8452,7 @@ impl FilterNullOption {
             FilterNullOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_VALUES", "NON_NULLS_ONLY", "NULLS_ONLY"]
     }
@@ -8557,7 +8557,7 @@ impl RelativeDateType {
             RelativeDateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAST", "NEXT", "NOW", "PREVIOUS", "THIS"]
     }
@@ -8727,7 +8727,7 @@ impl AnchorOption {
             AnchorOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NOW"]
     }
@@ -9622,7 +9622,7 @@ impl NumericEqualityMatchOperator {
             NumericEqualityMatchOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DOES_NOT_EQUAL", "EQUALS"]
     }
@@ -9709,7 +9709,7 @@ impl NumericFilterSelectAllOptions {
             NumericFilterSelectAllOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILTER_ALL_VALUES"]
     }
@@ -10514,7 +10514,7 @@ impl CategoryFilterSelectAllOptions {
             CategoryFilterSelectAllOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILTER_ALL_VALUES"]
     }
@@ -10626,7 +10626,7 @@ impl CategoryFilterMatchOperator {
             CategoryFilterMatchOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
@@ -11385,7 +11385,7 @@ impl ValueWhenUnsetOption {
             ValueWhenUnsetOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NULL", "RECOMMENDED_VALUE"]
     }
@@ -11977,7 +11977,7 @@ impl ParameterValueType {
             ParameterValueType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_VALUED", "SINGLE_VALUED"]
     }
@@ -13462,7 +13462,7 @@ impl LayoutElementType {
             LayoutElementType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILTER_CONTROL", "PARAMETER_CONTROL", "TEXT_BOX", "VISUAL"]
     }
@@ -15033,7 +15033,7 @@ impl SectionPageBreakStatus {
             SectionPageBreakStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -16606,7 +16606,7 @@ impl SelectAllValueOptions {
             SelectAllValueOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_VALUES"]
     }
@@ -17013,7 +17013,7 @@ impl UrlTargetConfiguration {
             UrlTargetConfiguration::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NEW_TAB", "NEW_WINDOW", "SAME_TAB"]
     }
@@ -17452,7 +17452,7 @@ impl TargetVisualOptions {
             TargetVisualOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_VISUALS"]
     }
@@ -17637,7 +17637,7 @@ impl SelectedFieldOptions {
             SelectedFieldOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL_FIELDS"]
     }
@@ -17729,7 +17729,7 @@ impl VisualCustomActionTrigger {
             VisualCustomActionTrigger::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATA_POINT_CLICK", "DATA_POINT_MENU"]
     }
@@ -18100,7 +18100,7 @@ impl CustomContentImageScalingConfiguration {
             CustomContentImageScalingConfiguration::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DO_NOT_SCALE",
@@ -18197,7 +18197,7 @@ impl CustomContentType {
             CustomContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IMAGE", "OTHER_EMBEDDED_CONTENT"]
     }
@@ -19052,7 +19052,7 @@ impl DataLabelOverlap {
             DataLabelOverlap::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLE_OVERLAP", "ENABLE_OVERLAP"]
     }
@@ -19275,7 +19275,7 @@ impl FontStyle {
             FontStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ITALIC", "NORMAL"]
     }
@@ -19414,7 +19414,7 @@ impl FontWeightName {
             FontWeightName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOLD", "NORMAL"]
     }
@@ -19504,7 +19504,7 @@ impl FontDecoration {
             FontDecoration::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "UNDERLINE"]
     }
@@ -19660,7 +19660,7 @@ impl RelativeFontSize {
             RelativeFontSize::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXTRA_LARGE", "EXTRA_SMALL", "LARGE", "MEDIUM", "SMALL"]
     }
@@ -19755,7 +19755,7 @@ impl DataLabelContent {
             DataLabelContent::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PERCENT", "VALUE", "VALUE_AND_PERCENT"]
     }
@@ -19867,7 +19867,7 @@ impl DataLabelPosition {
             DataLabelPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOTTOM", "INSIDE", "LEFT", "OUTSIDE", "RIGHT", "TOP"]
     }
@@ -20622,7 +20622,7 @@ impl OtherCategories {
             OtherCategories::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -23095,7 +23095,7 @@ impl ForecastComputationSeasonality {
             ForecastComputationSeasonality::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "CUSTOM"]
     }
@@ -23954,7 +23954,7 @@ impl MaximumMinimumComputationType {
             MaximumMinimumComputationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MAXIMUM", "MINIMUM"]
     }
@@ -24347,7 +24347,7 @@ impl TopBottomComputationType {
             TopBottomComputationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOTTOM", "TOP"]
     }
@@ -24439,7 +24439,7 @@ impl TopBottomSortOrder {
             TopBottomSortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABSOLUTE_DIFFERENCE", "PERCENT_DIFFERENCE"]
     }
@@ -25925,7 +25925,7 @@ impl WordCloudWordPadding {
             WordCloudWordPadding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LARGE", "MEDIUM", "NONE", "SMALL"]
     }
@@ -26017,7 +26017,7 @@ impl WordCloudWordCasing {
             WordCloudWordCasing::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXISTING_CASE", "LOWER_CASE"]
     }
@@ -26109,7 +26109,7 @@ impl WordCloudCloudLayout {
             WordCloudCloudLayout::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FLUID", "NORMAL"]
     }
@@ -26201,7 +26201,7 @@ impl WordCloudWordScaling {
             WordCloudWordScaling::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EMPHASIZE", "NORMAL"]
     }
@@ -26293,7 +26293,7 @@ impl WordCloudWordOrientation {
             WordCloudWordOrientation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HORIZONTAL", "HORIZONTAL_AND_VERTICAL"]
     }
@@ -28000,7 +28000,7 @@ impl TooltipTitleType {
             TooltipTitleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "PRIMARY_VALUE"]
     }
@@ -28092,7 +28092,7 @@ impl SelectedTooltipType {
             SelectedTooltipType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC", "DETAILED"]
     }
@@ -28409,7 +28409,7 @@ impl HistogramBinType {
             HistogramBinType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BIN_COUNT", "BIN_WIDTH"]
     }
@@ -30300,7 +30300,7 @@ impl LegendPosition {
             LegendPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO", "BOTTOM", "RIGHT", "TOP"]
     }
@@ -31546,7 +31546,7 @@ impl ReferenceLineLabelVerticalPosition {
             ReferenceLineLabelVerticalPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ABOVE", "BELOW"]
     }
@@ -31643,7 +31643,7 @@ impl ReferenceLineLabelHorizontalPosition {
             ReferenceLineLabelHorizontalPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CENTER", "LEFT", "RIGHT"]
     }
@@ -31885,7 +31885,7 @@ impl ReferenceLineValueLabelRelativePosition {
             ReferenceLineValueLabelRelativePosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AFTER_CUSTOM_LABEL", "BEFORE_CUSTOM_LABEL"]
     }
@@ -32072,7 +32072,7 @@ impl ReferenceLinePatternType {
             ReferenceLinePatternType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DASHED", "DOTTED", "SOLID"]
     }
@@ -32287,7 +32287,7 @@ impl AxisBinding {
             AxisBinding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIMARY_YAXIS", "SECONDARY_YAXIS"]
     }
@@ -32686,7 +32686,7 @@ impl BoxPlotFillStyle {
             BoxPlotFillStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SOLID", "TRANSPARENT"]
     }
@@ -33703,7 +33703,7 @@ impl BarsArrangement {
             BarsArrangement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLUSTERED", "STACKED", "STACKED_PERCENT"]
     }
@@ -35495,7 +35495,7 @@ impl FunnelChartMeasureDataLabelStyle {
             FunnelChartMeasureDataLabelStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PERCENTAGE_BY_FIRST_STAGE",
@@ -36875,7 +36875,7 @@ impl BaseMapStyleType {
             BaseMapStyleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DARK_GRAY", "IMAGERY", "LIGHT_GRAY", "STREET"]
     }
@@ -37038,7 +37038,7 @@ impl MapZoomMode {
             MapZoomMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO", "MANUAL"]
     }
@@ -38039,7 +38039,7 @@ impl GeospatialSelectedPointStyle {
             GeospatialSelectedPointStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLUSTER", "POINT"]
     }
@@ -38870,7 +38870,7 @@ impl ColorFillType {
             ColorFillType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISCRETE", "GRADIENT"]
     }
@@ -41149,7 +41149,7 @@ impl LineChartMarkerShape {
             LineChartMarkerShape::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CIRCLE", "DIAMOND", "ROUNDED_SQUARE", "SQUARE", "TRIANGLE"]
     }
@@ -41400,7 +41400,7 @@ impl LineChartLineStyle {
             LineChartLineStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DASHED", "DOTTED", "SOLID"]
     }
@@ -41497,7 +41497,7 @@ impl LineInterpolation {
             LineInterpolation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINEAR", "SMOOTH", "STEPPED"]
     }
@@ -41952,7 +41952,7 @@ impl MissingDataTreatmentOption {
             MissingDataTreatmentOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERPOLATE", "SHOW_AS_BLANK", "SHOW_AS_ZERO"]
     }
@@ -42368,7 +42368,7 @@ impl PanelBorderStyle {
             PanelBorderStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DASHED", "DOTTED", "SOLID"]
     }
@@ -42571,7 +42571,7 @@ impl HorizontalTextAlignment {
             HorizontalTextAlignment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTO", "CENTER", "LEFT", "RIGHT"]
     }
@@ -42666,7 +42666,7 @@ impl LineChartType {
             LineChartType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AREA", "LINE", "STACKED_AREA"]
     }
@@ -44327,7 +44327,7 @@ impl ConditionalFormattingIconDisplayOption {
             ConditionalFormattingIconDisplayOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ICON_ONLY"]
     }
@@ -44604,7 +44604,7 @@ impl Icon {
             Icon::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARROW_DOWN",
@@ -44860,7 +44860,7 @@ impl ConditionalFormattingIconSetType {
             ConditionalFormattingIconSetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BARS",
@@ -45329,7 +45329,7 @@ impl ArcThicknessOptions {
             ArcThicknessOptions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LARGE", "MEDIUM", "SMALL"]
     }
@@ -45749,7 +45749,7 @@ impl ComparisonMethod {
             ComparisonMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIFFERENCE", "PERCENT", "PERCENT_DIFFERENCE"]
     }
@@ -45846,7 +45846,7 @@ impl PrimaryValueDisplayType {
             PrimaryValueDisplayType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTUAL", "COMPARISON", "HIDDEN"]
     }
@@ -46709,7 +46709,7 @@ impl ArcThickness {
             ArcThickness::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LARGE", "MEDIUM", "SMALL", "WHOLE"]
     }
@@ -48825,7 +48825,7 @@ impl BarChartOrientation {
             BarChartOrientation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HORIZONTAL", "VERTICAL"]
     }
@@ -49753,7 +49753,7 @@ impl PivotTableConditionalFormattingScopeRole {
             PivotTableConditionalFormattingScopeRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FIELD", "FIELD_TOTAL", "GRAND_TOTAL"]
     }
@@ -51286,7 +51286,7 @@ impl TableBorderStyle {
             TableBorderStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "SOLID"]
     }
@@ -51383,7 +51383,7 @@ impl VerticalTextAlignment {
             VerticalTextAlignment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BOTTOM", "MIDDLE", "TOP"]
     }
@@ -51473,7 +51473,7 @@ impl TextWrap {
             TextWrap::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "WRAP"]
     }
@@ -51565,7 +51565,7 @@ impl TableTotalsScrollStatus {
             TableTotalsScrollStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PINNED", "SCROLLED"]
     }
@@ -51657,7 +51657,7 @@ impl TableTotalsPlacement {
             TableTotalsPlacement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["END", "START"]
     }
@@ -51995,7 +51995,7 @@ impl PivotTableSubtotalLevel {
             PivotTableSubtotalLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "CUSTOM", "LAST"]
     }
@@ -52401,7 +52401,7 @@ impl PivotTableMetricPlacement {
             PivotTableMetricPlacement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COLUMN", "ROW"]
     }
@@ -54262,7 +54262,7 @@ impl TableCellImageScalingConfiguration {
             TableCellImageScalingConfiguration::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DO_NOT_SCALE", "FIT_TO_CELL_HEIGHT", "FIT_TO_CELL_WIDTH"]
     }
@@ -54558,7 +54558,7 @@ impl TableFieldIconSetType {
             TableFieldIconSetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINK"]
     }
@@ -54977,7 +54977,7 @@ impl TableOrientation {
             TableOrientation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HORIZONTAL", "VERTICAL"]
     }
@@ -56074,7 +56074,7 @@ impl SheetControlSliderType {
             SheetControlSliderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RANGE", "SINGLE_POINT"]
     }
@@ -57082,7 +57082,7 @@ impl SheetControlListType {
             SheetControlListType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_SELECT", "SINGLE_SELECT"]
     }
@@ -57817,7 +57817,7 @@ impl SheetControlDateTimePickerType {
             SheetControlDateTimePickerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATE_RANGE", "SINGLE_VALUED"]
     }
@@ -59812,7 +59812,7 @@ impl AssignmentStatus {
             AssignmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DRAFT", "ENABLED"]
     }
@@ -62852,7 +62852,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -63087,7 +63087,7 @@ impl RowLevelPermissionFormatVersion {
             RowLevelPermissionFormatVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["VERSION_1", "VERSION_2"]
     }
@@ -63179,7 +63179,7 @@ impl RowLevelPermissionPolicy {
             RowLevelPermissionPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DENY_ACCESS", "GRANT_ACCESS"]
     }
@@ -63497,7 +63497,7 @@ impl GeoSpatialCountryCode {
             GeoSpatialCountryCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["US"]
     }
@@ -63589,7 +63589,7 @@ impl DataSetImportMode {
             DataSetImportMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DIRECT_QUERY", "SPICE"]
     }
@@ -64036,7 +64036,7 @@ impl JoinType {
             JoinType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INNER", "LEFT", "OUTER", "RIGHT"]
     }
@@ -64390,7 +64390,7 @@ impl ColumnTagName {
             ColumnTagName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COLUMN_DESCRIPTION", "COLUMN_GEOGRAPHIC_ROLE"]
     }
@@ -64710,7 +64710,7 @@ impl GeoSpatialDataRole {
             GeoSpatialDataRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CITY",
@@ -64907,7 +64907,7 @@ impl ColumnDataType {
             ColumnDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATETIME", "DECIMAL", "INTEGER", "STRING"]
     }
@@ -65624,7 +65624,7 @@ impl InputColumnDataType {
             InputColumnDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BIT", "BOOLEAN", "DATETIME", "DECIMAL", "INTEGER", "JSON", "STRING",
@@ -65843,7 +65843,7 @@ impl TextQualifier {
             TextQualifier::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DOUBLE_QUOTE", "SINGLE_QUOTE"]
     }
@@ -65953,7 +65953,7 @@ impl FileFormat {
             FileFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLF", "CSV", "ELF", "JSON", "TSV", "XLSX"]
     }
@@ -66902,7 +66902,7 @@ impl DashboardBehavior {
             DashboardBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -67043,7 +67043,7 @@ impl DashboardUiState {
             DashboardUiState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COLLAPSED", "EXPANDED"]
     }
@@ -68413,7 +68413,7 @@ impl GroupFilterAttribute {
             GroupFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP_NAME"]
     }
@@ -68500,7 +68500,7 @@ impl GroupFilterOperator {
             GroupFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["StartsWith"]
     }
@@ -68737,7 +68737,7 @@ impl FolderType {
             FolderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SHARED"]
     }
@@ -68998,7 +68998,7 @@ impl FolderFilterAttribute {
             FolderFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DIRECT_QUICKSIGHT_OWNER",
@@ -69096,7 +69096,7 @@ impl FilterOperator {
             FilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["StringEquals", "StringLike"]
     }
@@ -69461,7 +69461,7 @@ impl DataSourceType {
             DataSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADOBE_ANALYTICS",
@@ -69722,7 +69722,7 @@ impl DataSourceFilterAttribute {
             DataSourceFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DATASOURCE_NAME",
@@ -70207,7 +70207,7 @@ impl DataSetFilterAttribute {
             DataSetFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DATASET_NAME",
@@ -70642,7 +70642,7 @@ impl DashboardFilterAttribute {
             DashboardFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DASHBOARD_NAME",
@@ -71059,7 +71059,7 @@ impl AnalysisFilterAttribute {
             AnalysisFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANALYSIS_NAME",
@@ -71441,7 +71441,7 @@ impl ThemeType {
             ThemeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "CUSTOM", "QUICKSIGHT"]
     }
@@ -72037,7 +72037,7 @@ impl NamespaceErrorType {
             NamespaceErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVICE_ERROR", "PERMISSION_DENIED"]
     }
@@ -72122,7 +72122,7 @@ impl IdentityStore {
             IdentityStore::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["QUICKSIGHT"]
     }
@@ -72227,7 +72227,7 @@ impl NamespaceStatus {
             NamespaceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -72591,7 +72591,7 @@ impl IngestionRequestType {
             IngestionRequestType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EDIT",
@@ -72688,7 +72688,7 @@ impl IngestionRequestSource {
             IngestionRequestSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MANUAL", "SCHEDULED"]
     }
@@ -73227,7 +73227,7 @@ impl IngestionErrorType {
             IngestionErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_CAPACITY_LIMIT_EXCEEDED",
@@ -73382,7 +73382,7 @@ impl IngestionStatus {
             IngestionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -74185,7 +74185,7 @@ impl DataSourceErrorInfoType {
             DataSourceErrorInfoType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -74443,7 +74443,7 @@ impl EmbeddingIdentityType {
             EmbeddingIdentityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANONYMOUS", "IAM", "QUICKSIGHT"]
     }
@@ -75878,7 +75878,7 @@ impl ThemeErrorType {
             ThemeErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE"]
     }
@@ -76124,7 +76124,7 @@ impl TemplateErrorType {
             TemplateErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -77783,7 +77783,7 @@ impl DashboardErrorType {
             DashboardErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -78453,7 +78453,7 @@ impl AnalysisErrorType {
             AnalysisErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -78957,7 +78957,7 @@ impl Edition {
             Edition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENTERPRISE", "ENTERPRISE_AND_Q", "STANDARD"]
     }
@@ -79206,7 +79206,7 @@ impl MemberType {
             MemberType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANALYSIS", "DASHBOARD", "DATASET"]
     }
@@ -79296,7 +79296,7 @@ impl IngestionType {
             IngestionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL_REFRESH", "INCREMENTAL_REFRESH"]
     }
@@ -79574,7 +79574,7 @@ impl AuthenticationMethodOption {
             AuthenticationMethodOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE_DIRECTORY", "IAM_AND_QUICKSIGHT", "IAM_ONLY"]
     }

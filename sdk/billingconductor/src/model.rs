@@ -439,7 +439,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNTS_ALREADY_ASSOCIATED",
@@ -1000,7 +1000,7 @@ impl PricingRuleType {
             PricingRuleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISCOUNT", "MARKUP", "TIERING"]
     }
@@ -1095,7 +1095,7 @@ impl PricingRuleScope {
             PricingRuleScope::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BILLING_ENTITY", "GLOBAL", "SERVICE"]
     }
@@ -1269,7 +1269,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
@@ -1880,7 +1880,7 @@ impl CustomLineItemRelationship {
             CustomLineItemRelationship::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CHILD", "PARENT"]
     }
@@ -2315,7 +2315,7 @@ impl CurrencyCode {
             CurrencyCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
@@ -2508,7 +2508,7 @@ impl CustomLineItemType {
             CustomLineItemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREDIT", "FEE"]
     }
@@ -2990,7 +2990,7 @@ impl AssociateResourceErrorReason {
             AssociateResourceErrorReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ILLEGAL_CUSTOMLINEITEM",
@@ -4286,7 +4286,7 @@ impl BillingGroupStatus {
             BillingGroupStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PRIMARY_ACCOUNT_MISSING"]
     }

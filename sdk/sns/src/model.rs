@@ -1017,7 +1017,7 @@ impl SmsSandboxPhoneNumberVerificationStatus {
             SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Pending", "Verified"]
     }
@@ -1365,7 +1365,7 @@ impl NumberCapability {
             NumberCapability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MMS", "SMS", "VOICE"]
     }
@@ -1463,7 +1463,7 @@ impl RouteType {
             RouteType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Premium", "Promotional", "Transactional"]
     }
@@ -1698,7 +1698,7 @@ impl LanguageCodeString {
             LanguageCodeString::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP",

@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -535,7 +535,7 @@ impl VendorGuidance {
             VendorGuidance::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DISCONTINUED"]
     }
@@ -1118,7 +1118,7 @@ impl InstalledComponentLifecycleState {
             InstalledComponentLifecycleState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BROKEN",
@@ -1219,7 +1219,7 @@ impl InstalledComponentTopologyFilter {
             InstalledComponentTopologyFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "ROOT"]
     }
@@ -1692,7 +1692,7 @@ impl EffectiveDeploymentExecutionStatus {
             EffectiveDeploymentExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -2001,7 +2001,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "INACTIVE"]
     }
@@ -2093,7 +2093,7 @@ impl DeploymentHistoryFilter {
             DeploymentHistoryFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "LATEST_ONLY"]
     }
@@ -2294,7 +2294,7 @@ impl CoreDeviceStatus {
             CoreDeviceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
@@ -2728,7 +2728,7 @@ impl ComponentVisibilityScope {
             ComponentVisibilityScope::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
@@ -3225,7 +3225,7 @@ impl IoTJobAbortAction {
             IoTJobAbortAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANCEL"]
     }
@@ -3327,7 +3327,7 @@ impl IoTJobExecutionFailureType {
             IoTJobExecutionFailureType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "FAILED", "REJECTED", "TIMED_OUT"]
     }
@@ -3931,7 +3931,7 @@ impl DeploymentComponentUpdatePolicyAction {
             DeploymentComponentUpdatePolicyAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NOTIFY_COMPONENTS", "SKIP_NOTIFY_COMPONENTS"]
     }
@@ -4023,7 +4023,7 @@ impl DeploymentFailureHandlingPolicy {
             DeploymentFailureHandlingPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DO_NOTHING", "ROLLBACK"]
     }
@@ -4462,7 +4462,7 @@ impl RecipeOutputFormat {
             RecipeOutputFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JSON", "YAML"]
     }
@@ -4743,7 +4743,7 @@ impl CloudComponentState {
             CloudComponentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYABLE",
@@ -5678,7 +5678,7 @@ impl LambdaFilesystemPermission {
             LambdaFilesystemPermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
@@ -5889,7 +5889,7 @@ impl LambdaIsolationMode {
             LambdaIsolationMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
@@ -5981,7 +5981,7 @@ impl LambdaInputPayloadEncodingType {
             LambdaInputPayloadEncodingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
@@ -6159,7 +6159,7 @@ impl LambdaEventSourceType {
             LambdaEventSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IOT_CORE", "PUB_SUB"]
     }
@@ -6348,7 +6348,7 @@ impl ComponentDependencyType {
             ComponentDependencyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HARD", "SOFT"]
     }

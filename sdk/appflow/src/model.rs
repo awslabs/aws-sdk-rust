@@ -99,7 +99,7 @@ impl FlowStatus {
             FlowStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
@@ -592,7 +592,7 @@ impl OperatorPropertiesKeys {
             OperatorPropertiesKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONCAT_FORMAT",
@@ -740,7 +740,7 @@ impl TaskType {
             TaskType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Arithmetic",
@@ -1312,7 +1312,7 @@ impl PardotConnectorOperator {
             PardotConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -1512,7 +1512,7 @@ impl Operator {
             Operator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -1721,7 +1721,7 @@ impl SapoDataConnectorOperator {
             SapoDataConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -1895,7 +1895,7 @@ impl ZendeskConnectorOperator {
             ZendeskConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2097,7 +2097,7 @@ impl VeevaConnectorOperator {
             VeevaConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2271,7 +2271,7 @@ impl TrendmicroConnectorOperator {
             TrendmicroConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2463,7 +2463,7 @@ impl SlackConnectorOperator {
             SlackConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2635,7 +2635,7 @@ impl SingularConnectorOperator {
             SingularConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2837,7 +2837,7 @@ impl ServiceNowConnectorOperator {
             ServiceNowConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -3046,7 +3046,7 @@ impl SalesforceConnectorOperator {
             SalesforceConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -3250,7 +3250,7 @@ impl S3ConnectorOperator {
             S3ConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -3433,7 +3433,7 @@ impl MarketoConnectorOperator {
             MarketoConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -3607,7 +3607,7 @@ impl InforNexusConnectorOperator {
             InforNexusConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -3715,7 +3715,7 @@ impl GoogleAnalyticsConnectorOperator {
             GoogleAnalyticsConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "PROJECTION"]
     }
@@ -3872,7 +3872,7 @@ impl DynatraceConnectorOperator {
             DynatraceConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -4045,7 +4045,7 @@ impl DatadogConnectorOperator {
             DatadogConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -4148,7 +4148,7 @@ impl AmplitudeConnectorOperator {
             AmplitudeConnectorOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BETWEEN"]
     }
@@ -4866,7 +4866,7 @@ impl WriteOperationType {
             WriteOperationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE", "INSERT", "UPDATE", "UPSERT"]
     }
@@ -5871,7 +5871,7 @@ impl AggregationType {
             AggregationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["None", "SingleFile"]
     }
@@ -6139,7 +6139,7 @@ impl PathPrefix {
             PathPrefix::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXECUTION_ID", "SCHEMA_VERSION"]
     }
@@ -6244,7 +6244,7 @@ impl PrefixFormat {
             PrefixFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAY", "HOUR", "MINUTE", "MONTH", "YEAR"]
     }
@@ -6339,7 +6339,7 @@ impl PrefixType {
             PrefixType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILENAME", "PATH", "PATH_AND_FILENAME"]
     }
@@ -6434,7 +6434,7 @@ impl FileType {
             FileType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON", "PARQUET"]
     }
@@ -6975,7 +6975,7 @@ impl SalesforceDataTransferApi {
             SalesforceDataTransferApi::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "BULKV2", "REST_SYNC"]
     }
@@ -7513,7 +7513,7 @@ impl ConnectorType {
             ConnectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Amplitude",
@@ -9140,7 +9140,7 @@ impl S3InputFileType {
             S3InputFileType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
@@ -9845,7 +9845,7 @@ impl DataPullMode {
             DataPullMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Complete", "Incremental"]
     }
@@ -9940,7 +9940,7 @@ impl TriggerType {
             TriggerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Event", "OnDemand", "Scheduled"]
     }
@@ -11512,7 +11512,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["APIKEY", "BASIC", "CUSTOM", "OAUTH2"]
     }
@@ -14238,7 +14238,7 @@ impl OAuth2GrantType {
             OAuth2GrantType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"]
     }
@@ -15568,7 +15568,7 @@ impl ConnectionMode {
             ConnectionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Private", "Public"]
     }
@@ -15655,7 +15655,7 @@ impl ConnectorProvisioningType {
             ConnectorProvisioningType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LAMBDA"]
     }
@@ -16223,7 +16223,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Error", "InProgress", "Successful"]
     }
@@ -17139,7 +17139,7 @@ impl CatalogType {
             CatalogType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GLUE"]
     }
@@ -18185,7 +18185,7 @@ impl Operators {
             Operators::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -19220,7 +19220,7 @@ impl OAuth2CustomPropType {
             OAuth2CustomPropType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTH_URL", "TOKEN_URL"]
     }
@@ -20605,7 +20605,7 @@ impl ScheduleFrequencyType {
             ScheduleFrequencyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BYMINUTE", "DAILY", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"]
     }
@@ -21081,7 +21081,7 @@ impl PrivateConnectionProvisioningFailureCause {
             PrivateConnectionProvisioningFailureCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -21184,7 +21184,7 @@ impl PrivateConnectionProvisioningStatus {
             PrivateConnectionProvisioningStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "PENDING"]
     }

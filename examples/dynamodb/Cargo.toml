@@ -22,7 +22,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
-version = "0.40.0"
+version = "0.41.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"

@@ -355,7 +355,7 @@ impl ResourceShareFeatureSet {
             ResourceShareFeatureSet::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
     }
@@ -530,7 +530,7 @@ impl ResourceShareStatus {
             ResourceShareStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
@@ -1155,7 +1155,7 @@ impl ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED",
@@ -1253,7 +1253,7 @@ impl ResourceShareAssociationType {
             ResourceShareAssociationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRINCIPAL", "RESOURCE"]
     }
@@ -1355,7 +1355,7 @@ impl ResourceShareInvitationStatus {
             ResourceShareInvitationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
     }
@@ -1555,7 +1555,7 @@ impl ResourceRegionScope {
             ResourceRegionScope::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GLOBAL", "REGIONAL"]
     }
@@ -1652,7 +1652,7 @@ impl ResourceRegionScopeFilter {
             ResourceRegionScopeFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "GLOBAL", "REGIONAL"]
     }
@@ -2203,7 +2203,7 @@ impl ResourceStatus {
             ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2299,7 +2299,7 @@ impl ResourceOwner {
             ResourceOwner::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OTHER-ACCOUNTS", "SELF"]
     }

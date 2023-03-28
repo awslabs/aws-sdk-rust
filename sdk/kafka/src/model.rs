@@ -79,7 +79,7 @@ impl StorageMode {
             StorageMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "TIERED"]
     }
@@ -404,7 +404,7 @@ impl ClientBroker {
             ClientBroker::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS", "TLS_PLAINTEXT"]
     }
@@ -1520,7 +1520,7 @@ impl EnhancedMonitoring {
             EnhancedMonitoring::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
@@ -2259,7 +2259,7 @@ impl NodeType {
             NodeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BROKER"]
     }
@@ -2683,7 +2683,7 @@ impl KafkaVersionStatus {
             KafkaVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DEPRECATED"]
     }
@@ -2960,7 +2960,7 @@ impl ConfigurationState {
             ConfigurationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETE_FAILED", "DELETING"]
     }
@@ -4179,7 +4179,7 @@ impl BrokerAzDistribution {
             BrokerAzDistribution::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
@@ -4366,7 +4366,7 @@ impl ClusterState {
             ClusterState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4465,7 +4465,7 @@ impl ClusterType {
             ClusterType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PROVISIONED", "SERVERLESS"]
     }

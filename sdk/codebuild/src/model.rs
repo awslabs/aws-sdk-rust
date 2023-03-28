@@ -283,7 +283,7 @@ impl WebhookBuildType {
             WebhookBuildType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BUILD", "BUILD_BATCH"]
     }
@@ -676,7 +676,7 @@ impl WebhookFilterType {
             WebhookFilterType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTOR_ACCOUNT_ID",
@@ -1097,7 +1097,7 @@ impl ReportGroupStatusType {
             ReportGroupStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
@@ -1511,7 +1511,7 @@ impl ReportPackagingType {
             ReportPackagingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
@@ -1603,7 +1603,7 @@ impl ReportExportConfigType {
             ReportExportConfigType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NO_EXPORT", "S3"]
     }
@@ -1693,7 +1693,7 @@ impl ReportType {
             ReportType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CODE_COVERAGE", "TEST"]
     }
@@ -1796,7 +1796,7 @@ impl ProjectVisibilityType {
             ProjectVisibilityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC_READ"]
     }
@@ -2849,7 +2849,7 @@ impl BatchReportModeType {
             BatchReportModeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REPORT_AGGREGATED_BATCH", "REPORT_INDIVIDUAL_BUILDS"]
     }
@@ -3148,7 +3148,7 @@ impl FileSystemType {
             FileSystemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EFS"]
     }
@@ -3598,7 +3598,7 @@ impl BucketOwnerAccess {
             BucketOwnerAccess::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL", "NONE", "READ_ONLY"]
     }
@@ -3690,7 +3690,7 @@ impl LogsConfigStatusType {
             LogsConfigStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -4509,7 +4509,7 @@ impl ImagePullCredentialsType {
             ImagePullCredentialsType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CODEBUILD", "SERVICE_ROLE"]
     }
@@ -4681,7 +4681,7 @@ impl CredentialProviderType {
             CredentialProviderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SECRETS_MANAGER"]
     }
@@ -4895,7 +4895,7 @@ impl EnvironmentVariableType {
             EnvironmentVariableType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PARAMETER_STORE", "PLAINTEXT", "SECRETS_MANAGER"]
     }
@@ -4995,7 +4995,7 @@ impl ComputeType {
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BUILD_GENERAL1_2XLARGE",
@@ -5105,7 +5105,7 @@ impl EnvironmentType {
             EnvironmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARM_CONTAINER",
@@ -5465,7 +5465,7 @@ impl CacheMode {
             CacheMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "LOCAL_CUSTOM_CACHE",
@@ -5564,7 +5564,7 @@ impl CacheType {
             CacheType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "NO_CACHE", "S3"]
     }
@@ -6219,7 +6219,7 @@ impl ArtifactPackaging {
             ArtifactPackaging::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
@@ -6311,7 +6311,7 @@ impl ArtifactNamespace {
             ArtifactNamespace::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BUILD_ID", "NONE"]
     }
@@ -6406,7 +6406,7 @@ impl ArtifactsType {
             ArtifactsType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CODEPIPELINE", "NO_ARTIFACTS", "S3"]
     }
@@ -7274,7 +7274,7 @@ impl SourceAuthType {
             SourceAuthType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OAUTH"]
     }
@@ -7437,7 +7437,7 @@ impl SourceType {
             SourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BITBUCKET",
@@ -8872,7 +8872,7 @@ impl StatusType {
             StatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -9859,7 +9859,7 @@ impl BuildBatchPhaseType {
             BuildBatchPhaseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMBINE_ARTIFACTS",
@@ -11875,7 +11875,7 @@ impl BuildPhaseType {
             BuildPhaseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BUILD",
@@ -11979,7 +11979,7 @@ impl RetryBuildBatchType {
             RetryBuildBatchType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RETRY_ALL_BUILDS", "RETRY_FAILED_BUILDS"]
     }
@@ -12163,7 +12163,7 @@ impl AuthType {
             AuthType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BASIC_AUTH", "OAUTH", "PERSONAL_ACCESS_TOKEN"]
     }
@@ -12258,7 +12258,7 @@ impl ServerType {
             ServerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
     }
@@ -12350,7 +12350,7 @@ impl SharedResourceSortByType {
             SharedResourceSortByType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ARN", "MODIFIED_TIME"]
     }
@@ -12440,7 +12440,7 @@ impl SortOrderType {
             SortOrderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -12596,7 +12596,7 @@ impl ReportStatusType {
             ReportStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -12699,7 +12699,7 @@ impl ReportGroupSortByType {
             ReportGroupSortByType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
@@ -12796,7 +12796,7 @@ impl ProjectSortByType {
             ProjectSortByType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
@@ -13179,7 +13179,7 @@ impl LanguageType {
             LanguageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANDROID", "BASE", "DOCKER", "DOTNET", "GOLANG", "JAVA", "NODE_JS", "PHP", "PYTHON",
@@ -13282,7 +13282,7 @@ impl PlatformType {
             PlatformType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AMAZON_LINUX", "DEBIAN", "UBUNTU", "WINDOWS_SERVER"]
     }
@@ -13610,7 +13610,7 @@ impl ReportGroupTrendFieldType {
             ReportGroupTrendFieldType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BRANCHES_COVERED",
@@ -14218,7 +14218,7 @@ impl ReportCodeCoverageSortByType {
             ReportCodeCoverageSortByType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE_PATH", "LINE_COVERAGE_PERCENTAGE"]
     }

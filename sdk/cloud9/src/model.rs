@@ -237,7 +237,7 @@ impl Permissions {
             Permissions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["owner", "read-only", "read-write"]
     }
@@ -329,7 +329,7 @@ impl MemberPermissions {
             MemberPermissions::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["read-only", "read-write"]
     }
@@ -421,7 +421,7 @@ impl ManagedCredentialsAction {
             ManagedCredentialsAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
@@ -621,7 +621,7 @@ impl EnvironmentStatus {
             EnvironmentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "connecting",
@@ -1100,7 +1100,7 @@ impl ManagedCredentialsStatus {
             ManagedCredentialsStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED_BY_COLLABORATOR",
@@ -1339,7 +1339,7 @@ impl EnvironmentLifecycleStatus {
             EnvironmentLifecycleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -1435,7 +1435,7 @@ impl ConnectionType {
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONNECT_SSH", "CONNECT_SSM"]
     }
@@ -1525,7 +1525,7 @@ impl EnvironmentType {
             EnvironmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ec2", "ssh"]
     }

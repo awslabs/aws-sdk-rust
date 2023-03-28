@@ -94,7 +94,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATASET", "MODEL", "MODEL_PACKAGE_JOB", "PROJECT", "TRIAL"]
     }
@@ -224,7 +224,7 @@ impl DatasetStatus {
             DatasetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
@@ -409,7 +409,7 @@ impl ModelHostingStatus {
             ModelHostingStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "HOSTED",
@@ -948,7 +948,7 @@ impl TargetPlatformAccelerator {
             TargetPlatformAccelerator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NVIDIA"]
     }
@@ -1040,7 +1040,7 @@ impl TargetPlatformArch {
             TargetPlatformArch::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ARM64", "X86_64"]
     }
@@ -1125,7 +1125,7 @@ impl TargetPlatformOs {
             TargetPlatformOs::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LINUX"]
     }
@@ -1210,7 +1210,7 @@ impl TargetDevice {
             TargetDevice::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["jetson_xavier"]
     }
@@ -1684,7 +1684,7 @@ impl ModelStatus {
             ModelStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -2020,7 +2020,7 @@ impl ModelPackagingJobStatus {
             ModelPackagingJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "RUNNING", "SUCCEEDED"]
     }

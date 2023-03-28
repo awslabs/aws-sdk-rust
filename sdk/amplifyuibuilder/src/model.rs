@@ -1439,7 +1439,7 @@ impl FixedPosition {
             FixedPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["first"]
     }
@@ -1536,7 +1536,7 @@ impl FormButtonsPosition {
             FormButtonsPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["bottom", "top", "top_and_bottom"]
     }
@@ -2595,7 +2595,7 @@ impl FormDataSourceType {
             FormDataSourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Custom", "DataStore"]
     }
@@ -2831,7 +2831,7 @@ impl FormActionType {
             FormActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["create", "update"]
     }
@@ -7302,7 +7302,7 @@ impl TokenProviders {
             TokenProviders::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["figma"]
     }

@@ -594,7 +594,7 @@ impl RetentionIntervalUnitValues {
             RetentionIntervalUnitValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "WEEKS", "YEARS"]
     }
@@ -924,7 +924,7 @@ impl EventTypeValues {
             EventTypeValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["shareSnapshot"]
     }
@@ -1011,7 +1011,7 @@ impl EventSourceValues {
             EventSourceValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MANAGED_CWE"]
     }
@@ -2591,7 +2591,7 @@ impl IntervalUnitValues {
             IntervalUnitValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
@@ -2681,7 +2681,7 @@ impl LocationValues {
             LocationValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST_LOCAL"]
     }
@@ -2773,7 +2773,7 @@ impl ResourceLocationValues {
             ResourceLocationValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST"]
     }
@@ -2865,7 +2865,7 @@ impl ResourceTypeValues {
             ResourceTypeValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSTANCE", "VOLUME"]
     }
@@ -2960,7 +2960,7 @@ impl PolicyTypeValues {
             PolicyTypeValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EBS_SNAPSHOT_MANAGEMENT",
@@ -3056,7 +3056,7 @@ impl SettablePolicyStateValues {
             SettablePolicyStateValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -3411,7 +3411,7 @@ impl GettablePolicyStateValues {
             GettablePolicyStateValues::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ERROR"]
     }

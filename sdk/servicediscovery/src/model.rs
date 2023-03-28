@@ -362,7 +362,7 @@ impl HealthCheckType {
             HealthCheckType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
@@ -826,7 +826,7 @@ impl RecordType {
             RecordType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["A", "AAAA", "CNAME", "SRV"]
     }
@@ -1322,7 +1322,7 @@ impl CustomHealthStatus {
             CustomHealthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
@@ -2167,7 +2167,7 @@ impl RoutingPolicy {
             RoutingPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTIVALUE", "WEIGHTED"]
     }
@@ -2262,7 +2262,7 @@ impl ServiceType {
             ServiceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DNS", "DNS_HTTP", "HTTP"]
     }
@@ -2475,7 +2475,7 @@ impl FilterCondition {
             FilterCondition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH", "BETWEEN", "EQ", "IN"]
     }
@@ -2562,7 +2562,7 @@ impl ServiceFilterName {
             ServiceFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NAMESPACE_ID"]
     }
@@ -2756,7 +2756,7 @@ impl OperationStatus {
             OperationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAIL", "PENDING", "SUBMITTED", "SUCCESS"]
     }
@@ -3040,7 +3040,7 @@ impl OperationFilterName {
             OperationFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NAMESPACE_ID",
@@ -3565,7 +3565,7 @@ impl NamespaceType {
             NamespaceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DNS_PRIVATE", "DNS_PUBLIC", "HTTP"]
     }
@@ -3819,7 +3819,7 @@ impl NamespaceFilterName {
             NamespaceFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP_NAME", "NAME", "TYPE"]
     }
@@ -5014,7 +5014,7 @@ impl OperationTargetType {
             OperationTargetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSTANCE", "NAMESPACE", "SERVICE"]
     }
@@ -5124,7 +5124,7 @@ impl OperationType {
             OperationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_NAMESPACE",
@@ -5515,7 +5515,7 @@ impl HealthStatus {
             HealthStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
@@ -6170,7 +6170,7 @@ impl HealthStatusFilter {
             HealthStatusFilter::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "HEALTHY", "HEALTHY_OR_ELSE_ALL", "UNHEALTHY"]
     }
@@ -6257,7 +6257,7 @@ impl ServiceTypeOption {
             ServiceTypeOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP"]
     }

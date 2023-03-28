@@ -394,7 +394,7 @@ impl PersistentAppUi {
             PersistentAppUi::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1270,7 +1270,7 @@ impl ContainerProviderType {
             ContainerProviderType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EKS"]
     }
@@ -1372,7 +1372,7 @@ impl VirtualClusterState {
             VirtualClusterState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ARRESTED", "RUNNING", "TERMINATED", "TERMINATING"]
     }
@@ -1924,7 +1924,7 @@ impl FailureReason {
             FailureReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_UNAVAILABLE",
@@ -2107,7 +2107,7 @@ impl EndpointState {
             EndpointState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2726,7 +2726,7 @@ impl TemplateParameterDataType {
             TemplateParameterDataType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NUMBER", "STRING"]
     }
@@ -3545,7 +3545,7 @@ impl JobRunState {
             JobRunState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",

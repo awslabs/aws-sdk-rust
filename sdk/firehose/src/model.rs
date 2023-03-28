@@ -657,7 +657,7 @@ impl ProcessorParameterName {
             ProcessorParameterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BufferIntervalInSeconds",
@@ -767,7 +767,7 @@ impl ProcessorType {
             ProcessorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AppendDelimiterToRecord",
@@ -1195,7 +1195,7 @@ impl NoEncryptionConfig {
             NoEncryptionConfig::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NoEncryption"]
     }
@@ -1302,7 +1302,7 @@ impl CompressionFormat {
             CompressionFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "HADOOP_SNAPPY", "Snappy", "UNCOMPRESSED", "ZIP"]
     }
@@ -1834,7 +1834,7 @@ impl HttpEndpointS3BackupMode {
             HttpEndpointS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AllData", "FailedDataOnly"]
     }
@@ -2147,7 +2147,7 @@ impl ContentEncoding {
             ContentEncoding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -2659,7 +2659,7 @@ impl SplunkS3BackupMode {
             SplunkS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AllEvents", "FailedEventsOnly"]
     }
@@ -2797,7 +2797,7 @@ impl HecEndpointType {
             HecEndpointType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Event", "Raw"]
     }
@@ -3317,7 +3317,7 @@ impl AmazonopensearchserviceIndexRotationPeriod {
             AmazonopensearchserviceIndexRotationPeriod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
@@ -3830,7 +3830,7 @@ impl ElasticsearchIndexRotationPeriod {
             ElasticsearchIndexRotationPeriod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
@@ -4240,7 +4240,7 @@ impl RedshiftS3BackupMode {
             RedshiftS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -5446,7 +5446,7 @@ impl OrcFormatVersion {
             OrcFormatVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["V0_11", "V0_12"]
     }
@@ -5541,7 +5541,7 @@ impl OrcCompression {
             OrcCompression::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "SNAPPY", "ZLIB"]
     }
@@ -5785,7 +5785,7 @@ impl ParquetWriterVersion {
             ParquetWriterVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["V1", "V2"]
     }
@@ -5882,7 +5882,7 @@ impl ParquetCompression {
             ParquetCompression::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GZIP", "SNAPPY", "UNCOMPRESSED"]
     }
@@ -6438,7 +6438,7 @@ impl S3BackupMode {
             S3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -6678,7 +6678,7 @@ impl KeyType {
             KeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"]
     }
@@ -6905,7 +6905,7 @@ impl DeliveryStreamType {
             DeliveryStreamType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DirectPut", "KinesisStreamAsSource"]
     }
@@ -8272,7 +8272,7 @@ impl AmazonOpenSearchServerlessS3BackupMode {
             AmazonOpenSearchServerlessS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
@@ -9295,7 +9295,7 @@ impl AmazonopensearchserviceS3BackupMode {
             AmazonopensearchserviceS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
@@ -9727,7 +9727,7 @@ impl ElasticsearchS3BackupMode {
             ElasticsearchS3BackupMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
@@ -10870,7 +10870,7 @@ impl DeliveryStreamFailureType {
             DeliveryStreamFailureType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_ENI_FAILED",
@@ -10998,7 +10998,7 @@ impl DeliveryStreamEncryptionStatus {
             DeliveryStreamEncryptionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -11112,7 +11112,7 @@ impl DeliveryStreamStatus {
             DeliveryStreamStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",

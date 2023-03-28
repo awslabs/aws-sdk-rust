@@ -439,7 +439,7 @@ impl BgpStatus {
             BgpStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["down", "unknown", "up"]
     }
@@ -544,7 +544,7 @@ impl BgpPeerState {
             BgpPeerState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending", "verifying"]
     }
@@ -634,7 +634,7 @@ impl AddressFamily {
             AddressFamily::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
@@ -807,7 +807,7 @@ impl VirtualInterfaceState {
             VirtualInterfaceState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -1047,7 +1047,7 @@ impl HasLogicalRedundancy {
             HasLogicalRedundancy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["no", "unknown", "yes"]
     }
@@ -1724,7 +1724,7 @@ impl ConnectionState {
             ConnectionState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -1849,7 +1849,7 @@ impl LagState {
             LagState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -2356,7 +2356,7 @@ impl GatewayType {
             GatewayType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["transitGateway", "virtualPrivateGateway"]
     }
@@ -2463,7 +2463,7 @@ impl DirectConnectGatewayAssociationState {
             DirectConnectGatewayAssociationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "associated",
@@ -2762,7 +2762,7 @@ impl DirectConnectGatewayState {
             DirectConnectGatewayState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending"]
     }
@@ -4204,7 +4204,7 @@ impl LoaContentType {
             LoaContentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["application/pdf"]
     }
@@ -5224,7 +5224,7 @@ impl InterconnectState {
             InterconnectState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -5627,7 +5627,7 @@ impl DirectConnectGatewayAttachmentType {
             DirectConnectGatewayAttachmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PrivateVirtualInterface", "TransitVirtualInterface"]
     }
@@ -5729,7 +5729,7 @@ impl DirectConnectGatewayAttachmentState {
             DirectConnectGatewayAttachmentState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["attached", "attaching", "detached", "detaching"]
     }
@@ -6070,7 +6070,7 @@ impl DirectConnectGatewayAssociationProposalState {
             DirectConnectGatewayAssociationProposalState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["accepted", "deleted", "requested"]
     }
@@ -6165,7 +6165,7 @@ impl NniPartnerType {
             NniPartnerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["nonPartner", "v1", "v2"]
     }

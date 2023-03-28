@@ -91,7 +91,7 @@ impl ParameterExceptionReason {
             ParameterExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ILLEGAL_ARGUMENT",
@@ -280,7 +280,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BYTE_MATCH_FIELD_TYPE",
@@ -713,7 +713,7 @@ impl TextTransformation {
             TextTransformation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CMD_LINE",
@@ -953,7 +953,7 @@ impl MatchFieldType {
             MatchFieldType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL_QUERY_ARGS",
@@ -1051,7 +1051,7 @@ impl ChangeAction {
             ChangeAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE", "INSERT"]
     }
@@ -1218,7 +1218,7 @@ impl WafActionType {
             WafActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK", "COUNT"]
     }
@@ -1682,7 +1682,7 @@ impl WafRuleType {
             WafRuleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP", "RATE_BASED", "REGULAR"]
     }
@@ -1829,7 +1829,7 @@ impl WafOverrideActionType {
             WafOverrideActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COUNT", "NONE"]
     }
@@ -2628,7 +2628,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EQ", "GE", "GT", "LE", "LT", "NE"]
     }
@@ -2991,7 +2991,7 @@ impl PredicateType {
             PredicateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ByteMatch",
@@ -3692,7 +3692,7 @@ impl IpSetDescriptorType {
             IpSetDescriptorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6"]
     }
@@ -5173,7 +5173,7 @@ impl GeoMatchConstraintValue {
             GeoMatchConstraintValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW",
@@ -5279,7 +5279,7 @@ impl GeoMatchConstraintType {
             GeoMatchConstraintType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Country"]
     }
@@ -5862,7 +5862,7 @@ impl PositionalConstraint {
             PositionalConstraint::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
@@ -8723,7 +8723,7 @@ impl RateKey {
             RateKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IP"]
     }
@@ -9034,7 +9034,7 @@ impl ChangeTokenStatus {
             ChangeTokenStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INSYNC", "PENDING", "PROVISIONED"]
     }
@@ -9259,7 +9259,7 @@ impl MigrationErrorType {
             MigrationErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ENTITY_NOT_FOUND",

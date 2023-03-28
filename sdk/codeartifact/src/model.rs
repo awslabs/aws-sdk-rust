@@ -96,7 +96,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -207,7 +207,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "asset",
@@ -631,7 +631,7 @@ impl ExternalConnectionStatus {
             ExternalConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Available"]
     }
@@ -731,7 +731,7 @@ impl PackageFormat {
             PackageFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["maven", "npm", "nuget", "pypi"]
     }
@@ -1050,7 +1050,7 @@ impl PackageVersionErrorCode {
             PackageVersionErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALREADY_EXISTS",
@@ -1239,7 +1239,7 @@ impl PackageVersionStatus {
             PackageVersionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Archived",
@@ -1613,7 +1613,7 @@ impl AllowUpstream {
             AllowUpstream::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK"]
     }
@@ -1703,7 +1703,7 @@ impl AllowPublish {
             AllowPublish::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK"]
     }
@@ -2130,7 +2130,7 @@ impl PackageVersionOriginType {
             PackageVersionOriginType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EXTERNAL", "INTERNAL", "UNKNOWN"]
     }
@@ -2290,7 +2290,7 @@ impl PackageVersionSortType {
             PackageVersionSortType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PUBLISHED_TIME"]
     }
@@ -2666,7 +2666,7 @@ impl HashAlgorithm {
             HashAlgorithm::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MD5", "SHA-1", "SHA-256", "SHA-512"]
     }
@@ -3045,7 +3045,7 @@ impl DomainStatus {
             DomainStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Deleted"]
     }

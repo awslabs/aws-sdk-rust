@@ -490,7 +490,7 @@ impl DataUploadFrequency {
             DataUploadFrequency::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PT10M", "PT15M", "PT1H", "PT30M", "PT5M"]
     }
@@ -659,7 +659,7 @@ impl InferenceSchedulerStatus {
             InferenceSchedulerStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PENDING", "RUNNING", "STOPPED", "STOPPING"]
     }
@@ -756,7 +756,7 @@ impl IngestionJobStatus {
             IngestionJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -1382,7 +1382,7 @@ impl Monotonicity {
             Monotonicity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DECREASING", "INCREASING", "STATIC"]
     }
@@ -1474,7 +1474,7 @@ impl StatisticalIssueStatus {
             StatisticalIssueStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NO_ISSUE_DETECTED", "POTENTIAL_ISSUE_DETECTED"]
     }
@@ -1995,7 +1995,7 @@ impl ModelStatus {
             ModelStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -2309,7 +2309,7 @@ impl LabelRating {
             LabelRating::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANOMALY", "NEUTRAL", "NO_ANOMALY"]
     }
@@ -2720,7 +2720,7 @@ impl LatestInferenceResult {
             LatestInferenceResult::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ANOMALOUS", "NORMAL"]
     }
@@ -3116,7 +3116,7 @@ impl InferenceExecutionStatus {
             InferenceExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -3544,7 +3544,7 @@ impl DatasetStatus {
             DatasetStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"]
     }
@@ -3874,7 +3874,7 @@ impl TargetSamplingRate {
             TargetSamplingRate::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PT10M", "PT10S", "PT15M", "PT15S", "PT1H", "PT1M", "PT1S", "PT30M", "PT30S", "PT5M",

@@ -79,7 +79,7 @@ impl ExceptionCause {
             ExceptionCause::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["InsufficientS3BucketPolicy", "S3AccessDenied"]
     }
@@ -184,7 +184,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
     }
@@ -649,7 +649,7 @@ impl ServerSideEncryptionTypes {
             ServerSideEncryptionTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AES256", "aws:kms"]
     }
@@ -787,7 +787,7 @@ impl Origin {
             Origin::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENTITLED", "OWNED"]
     }
@@ -892,7 +892,7 @@ impl AssetType {
             AssetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY_API",
@@ -1274,7 +1274,7 @@ impl LfPermission {
             LfPermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DESCRIBE", "SELECT"]
     }
@@ -1361,7 +1361,7 @@ impl LakeFormationDataPermissionType {
             LakeFormationDataPermissionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LFTagPolicy"]
     }
@@ -1857,7 +1857,7 @@ impl LfResourceType {
             LfResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DATABASE", "TABLE"]
     }
@@ -2312,7 +2312,7 @@ impl ProtocolType {
             ProtocolType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REST"]
     }
@@ -2965,7 +2965,7 @@ impl Type {
             Type::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
@@ -3085,7 +3085,7 @@ impl State {
             State::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -3357,7 +3357,7 @@ impl JobErrorResourceTypes {
             JobErrorResourceTypes::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASSET", "DATA_SET", "REVISION"]
     }
@@ -3476,7 +3476,7 @@ impl JobErrorLimitName {
             JobErrorLimitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS Lake Formation data permission assets per revision",
@@ -3809,7 +3809,7 @@ impl Code {
             Code::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED_EXCEPTION",
@@ -4443,7 +4443,7 @@ impl TableTagPolicyLfPermission {
             TableTagPolicyLfPermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DESCRIBE", "SELECT"]
     }
@@ -4619,7 +4619,7 @@ impl DatabaseLfTagPolicyPermission {
             DatabaseLfTagPolicyPermission::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DESCRIBE"]
     }
@@ -8160,36 +8160,36 @@ pub enum LimitName {
 impl std::convert::From<&str> for LimitName {
     fn from(s: &str) -> Self {
         match s {
-            "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
-            "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
-            "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
-            "Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
-            "Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
-            "Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
-            "Asset size in GB" => LimitName::AssetSizeInGb,
-            "Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
-            "Assets per revision" => LimitName::AssetsPerRevision,
-            "Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
-            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
-            "Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
-            "Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
-            "Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
-            "Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
-            "Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
-            "Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
-            "Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
-            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
-            "Data sets per account" => LimitName::DataSetsPerAccount,
-            "Data sets per product" => LimitName::DataSetsPerProduct,
-            "Event actions per account" => LimitName::EventActionsPerAccount,
-            "Products per account" => LimitName::ProductsPerAccount,
-            "Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
-            "Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
-            "Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
-            "Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
-            "Revisions per data set" => LimitName::RevisionsPerDataSet,
-            other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
+                        "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+"Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
+"Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
+"Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
+"Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
+"Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
+"Asset size in GB" => LimitName::AssetSizeInGb,
+"Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
+"Assets per revision" => LimitName::AssetsPerRevision,
+"Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
+"Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
+"Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
+"Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
+"Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
+"Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
+"Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
+"Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
+"Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
+"Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
+"Data sets per account" => LimitName::DataSetsPerAccount,
+"Data sets per product" => LimitName::DataSetsPerProduct,
+"Event actions per account" => LimitName::EventActionsPerAccount,
+"Products per account" => LimitName::ProductsPerAccount,
+"Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
+"Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
+"Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
+"Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
+"Revisions per data set" => LimitName::RevisionsPerDataSet,
+other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
     }
 }
 impl std::str::FromStr for LimitName {
@@ -8270,7 +8270,7 @@ impl LimitName {
             LimitName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS Lake Formation data permission assets per revision",

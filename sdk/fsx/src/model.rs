@@ -891,7 +891,7 @@ impl OpenZfsQuotaType {
             OpenZfsQuotaType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
@@ -1225,7 +1225,7 @@ impl OpenZfsCopyStrategy {
             OpenZfsCopyStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CLONE", "FULL_COPY"]
     }
@@ -1322,7 +1322,7 @@ impl OpenZfsDataCompressionType {
             OpenZfsDataCompressionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LZ4", "NONE", "ZSTD"]
     }
@@ -2095,7 +2095,7 @@ impl SnapshotLifecycle {
             SnapshotLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "PENDING"]
     }
@@ -3140,7 +3140,7 @@ impl DiskIopsConfigurationMode {
             DiskIopsConfigurationMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "USER_PROVISIONED"]
     }
@@ -3232,7 +3232,7 @@ impl OpenZfsDeploymentType {
             OpenZfsDeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
@@ -3777,7 +3777,7 @@ impl OntapDeploymentType {
             OntapDeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1", "SINGLE_AZ_1"]
     }
@@ -4461,7 +4461,7 @@ impl LustreAccessAuditLogLevel {
             LustreAccessAuditLogLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ERROR_ONLY", "WARN_ERROR", "WARN_ONLY"]
     }
@@ -4553,7 +4553,7 @@ impl DataCompressionType {
             DataCompressionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LZ4", "NONE"]
     }
@@ -4643,7 +4643,7 @@ impl DriveCacheType {
             DriveCacheType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "READ"]
     }
@@ -4745,7 +4745,7 @@ impl LustreDeploymentType {
             LustreDeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PERSISTENT_1", "PERSISTENT_2", "SCRATCH_1", "SCRATCH_2"]
     }
@@ -5109,7 +5109,7 @@ impl AutoImportPolicyType {
             AutoImportPolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NEW", "NEW_CHANGED", "NEW_CHANGED_DELETED", "NONE"]
     }
@@ -5221,7 +5221,7 @@ impl DataRepositoryLifecycle {
             DataRepositoryLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5907,7 +5907,7 @@ impl WindowsAccessAuditLogLevel {
             WindowsAccessAuditLogLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -6143,7 +6143,7 @@ impl AliasLifecycle {
             AliasLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -6241,7 +6241,7 @@ impl FileSystemMaintenanceOperation {
             FileSystemMaintenanceOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BACKING_UP", "PATCHING"]
     }
@@ -6338,7 +6338,7 @@ impl WindowsDeploymentType {
             WindowsDeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
@@ -6573,7 +6573,7 @@ impl StorageType {
             StorageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HDD", "SSD"]
     }
@@ -6738,7 +6738,7 @@ impl FileSystemLifecycle {
             FileSystemLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -6846,7 +6846,7 @@ impl FileSystemType {
             FileSystemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LUSTRE", "ONTAP", "OPENZFS", "WINDOWS"]
     }
@@ -6951,7 +6951,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -7155,7 +7155,7 @@ impl AdministrativeActionType {
             AdministrativeActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FILE_SYSTEM_ALIAS_ASSOCIATION",
@@ -7254,7 +7254,7 @@ impl VolumeType {
             VolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ONTAP", "OPENZFS"]
     }
@@ -7708,7 +7708,7 @@ impl OntapVolumeType {
             OntapVolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DP", "LS", "RW"]
     }
@@ -7917,7 +7917,7 @@ impl TieringPolicyName {
             TieringPolicyName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "AUTO", "NONE", "SNAPSHOT_ONLY"]
     }
@@ -8012,7 +8012,7 @@ impl SecurityStyle {
             SecurityStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
@@ -8109,7 +8109,7 @@ impl FlexCacheEndpointType {
             FlexCacheEndpointType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CACHE", "NONE", "ORIGIN"]
     }
@@ -8224,7 +8224,7 @@ impl VolumeLifecycle {
             VolumeLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -9114,7 +9114,7 @@ impl StorageVirtualMachineRootVolumeSecurityStyle {
             StorageVirtualMachineRootVolumeSecurityStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
@@ -9216,7 +9216,7 @@ impl StorageVirtualMachineSubtype {
             StorageVirtualMachineSubtype::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
@@ -9333,7 +9333,7 @@ impl StorageVirtualMachineLifecycle {
             StorageVirtualMachineLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -9916,7 +9916,7 @@ impl ServiceLimit {
             ServiceLimit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "FILE_CACHE_COUNT",
@@ -11911,7 +11911,7 @@ impl FileCacheLustreDeploymentType {
             FileCacheLustreDeploymentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CACHE_1"]
     }
@@ -12066,7 +12066,7 @@ impl FileCacheLifecycle {
             FileCacheLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
@@ -12151,7 +12151,7 @@ impl FileCacheType {
             FileCacheType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LUSTRE"]
     }
@@ -13002,7 +13002,7 @@ impl EventType {
             EventType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CHANGED", "DELETED", "NEW"]
     }
@@ -13087,7 +13087,7 @@ impl NfsVersion {
             NfsVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NFS3"]
     }
@@ -13340,7 +13340,7 @@ impl RestoreOpenZfsVolumeOption {
             RestoreOpenZfsVolumeOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_CLONED_VOLUMES", "DELETE_INTERMEDIATE_SNAPSHOTS"]
     }
@@ -13509,7 +13509,7 @@ impl VolumeFilterName {
             VolumeFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["file-system-id", "storage-virtual-machine-id"]
     }
@@ -13675,7 +13675,7 @@ impl StorageVirtualMachineFilterName {
             StorageVirtualMachineFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["file-system-id"]
     }
@@ -13846,7 +13846,7 @@ impl SnapshotFilterName {
             SnapshotFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["file-system-id", "volume-id"]
     }
@@ -14471,7 +14471,7 @@ impl ReportScope {
             ReportScope::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED_FILES_ONLY"]
     }
@@ -14556,7 +14556,7 @@ impl ReportFormat {
             ReportFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REPORT_CSV_20191124"]
     }
@@ -14833,7 +14833,7 @@ impl DataRepositoryTaskType {
             DataRepositoryTaskType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AUTO_RELEASE_DATA",
@@ -14950,7 +14950,7 @@ impl DataRepositoryTaskLifecycle {
             DataRepositoryTaskLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -15154,7 +15154,7 @@ impl DataRepositoryTaskFilterName {
             DataRepositoryTaskFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "data-repository-association-id",
@@ -15350,7 +15350,7 @@ impl FilterName {
             FilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "backup-type",
@@ -15856,7 +15856,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FILE_SYSTEM", "VOLUME"]
     }
@@ -16040,7 +16040,7 @@ impl BackupType {
             BackupType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "AWS_BACKUP", "USER_INITIATED"]
     }
@@ -16235,7 +16235,7 @@ impl BackupLifecycle {
             BackupLifecycle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -16471,7 +16471,7 @@ impl DeleteOpenZfsVolumeOption {
             DeleteOpenZfsVolumeOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
     }
@@ -16980,7 +16980,7 @@ impl DeleteFileSystemOpenZfsOption {
             DeleteFileSystemOpenZfsOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
     }
@@ -17570,7 +17570,7 @@ impl InputOntapVolumeType {
             InputOntapVolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DP", "RW"]
     }
@@ -18059,7 +18059,7 @@ impl ActiveDirectoryErrorType {
             ActiveDirectoryErrorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_NOT_FOUND",

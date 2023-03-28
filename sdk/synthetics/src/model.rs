@@ -205,7 +205,7 @@ impl EncryptionMode {
             EncryptionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SSE_KMS", "SSE_S3"]
     }
@@ -1459,7 +1459,7 @@ impl CanaryRunStateReasonCode {
             CanaryRunStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CANARY_FAILURE", "EXECUTION_FAILURE"]
     }
@@ -1554,7 +1554,7 @@ impl CanaryRunState {
             CanaryRunState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PASSED", "RUNNING"]
     }
@@ -2550,7 +2550,7 @@ impl CanaryStateReasonCode {
             CanaryStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -2688,7 +2688,7 @@ impl CanaryState {
             CanaryState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING",

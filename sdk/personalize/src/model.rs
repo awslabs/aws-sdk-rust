@@ -980,7 +980,7 @@ impl Domain {
             Domain::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ECOMMERCE", "VIDEO_ON_DEMAND"]
     }
@@ -1430,7 +1430,7 @@ impl RecipeProvider {
             RecipeProvider::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SERVICE"]
     }
@@ -2388,7 +2388,7 @@ impl ImportMode {
             ImportMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL", "INCREMENTAL"]
     }
@@ -3887,7 +3887,7 @@ impl TrainingMode {
             TrainingMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FULL", "UPDATE"]
     }
@@ -4266,7 +4266,7 @@ impl ObjectiveSensitivity {
             ObjectiveSensitivity::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM", "OFF"]
     }
@@ -8015,7 +8015,7 @@ impl IngestionMode {
             IngestionMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "BULK", "PUT"]
     }

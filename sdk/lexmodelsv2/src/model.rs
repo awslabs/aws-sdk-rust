@@ -589,7 +589,7 @@ impl AudioRecognitionStrategy {
             AudioRecognitionStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["UseSlotValuesAsCustomVocabulary"]
     }
@@ -790,7 +790,7 @@ impl SlotValueResolutionStrategy {
             SlotValueResolutionStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Concatenation", "OriginalValue", "TopResolution"]
     }
@@ -2893,7 +2893,7 @@ impl PromptAttempt {
             PromptAttempt::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Initial", "Retry1", "Retry2", "Retry3", "Retry4", "Retry5"]
     }
@@ -2985,7 +2985,7 @@ impl MessageSelectionStrategy {
             MessageSelectionStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Ordered", "Random"]
     }
@@ -3299,7 +3299,7 @@ impl ObfuscationSettingType {
             ObfuscationSettingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DefaultObfuscation", "None"]
     }
@@ -4744,7 +4744,7 @@ impl SlotShape {
             SlotShape::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["List", "Scalar"]
     }
@@ -4961,7 +4961,7 @@ impl DialogActionType {
             DialogActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CloseIntent",
@@ -5226,7 +5226,7 @@ impl SlotConstraint {
             SlotConstraint::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Optional", "Required"]
     }
@@ -6921,7 +6921,7 @@ impl ExportStatus {
             ExportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Completed", "Deleting", "Failed", "InProgress"]
     }
@@ -7013,7 +7013,7 @@ impl ImportExportFileFormat {
             ImportExportFileFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LexJson", "TSV"]
     }
@@ -7945,7 +7945,7 @@ impl TranscriptFormat {
             TranscriptFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Lex"]
     }
@@ -8129,7 +8129,7 @@ impl BotRecommendationStatus {
             BotRecommendationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
@@ -8264,7 +8264,7 @@ impl BotLocaleStatus {
             BotLocaleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Building",
@@ -8435,7 +8435,7 @@ impl VoiceEngine {
             VoiceEngine::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["neural", "standard"]
     }
@@ -8535,7 +8535,7 @@ impl BotAliasStatus {
             BotAliasStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Deleting", "Failed"]
     }
@@ -9391,7 +9391,7 @@ impl BotStatus {
             BotStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
@@ -9547,7 +9547,7 @@ impl ImportStatus {
             ImportStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Completed", "Deleting", "Failed", "InProgress"]
     }
@@ -9642,7 +9642,7 @@ impl MergeStrategy {
             MergeStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Append", "FailOnConflict", "Overwrite"]
     }
@@ -10416,7 +10416,7 @@ impl AssociatedTranscriptFilterName {
             AssociatedTranscriptFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IntentId", "SlotTypeId"]
     }
@@ -10506,7 +10506,7 @@ impl SearchOrder {
             SearchOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
@@ -10781,7 +10781,7 @@ impl SlotTypeCategory {
             SlotTypeCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Composite", "Custom", "Extended", "ExternalGrammar"]
     }
@@ -10974,7 +10974,7 @@ impl SlotTypeFilterOperator {
             SlotTypeFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -11066,7 +11066,7 @@ impl SlotTypeFilterName {
             SlotTypeFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ExternalSourceType", "SlotTypeName"]
     }
@@ -11226,7 +11226,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
@@ -11318,7 +11318,7 @@ impl SlotTypeSortAttribute {
             SlotTypeSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime", "SlotTypeName"]
     }
@@ -11689,7 +11689,7 @@ impl SlotFilterOperator {
             SlotFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -11774,7 +11774,7 @@ impl SlotFilterName {
             SlotFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SlotName"]
     }
@@ -11936,7 +11936,7 @@ impl SlotSortAttribute {
             SlotSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime", "SlotName"]
     }
@@ -12401,7 +12401,7 @@ impl IntentFilterOperator {
             IntentFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -12486,7 +12486,7 @@ impl IntentFilterName {
             IntentFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IntentName"]
     }
@@ -12648,7 +12648,7 @@ impl IntentSortAttribute {
             IntentSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IntentName", "LastUpdatedDateTime"]
     }
@@ -12947,7 +12947,7 @@ impl ImportResourceType {
             ImportResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Bot", "BotLocale", "CustomVocabulary"]
     }
@@ -13140,7 +13140,7 @@ impl ImportFilterOperator {
             ImportFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -13225,7 +13225,7 @@ impl ImportFilterName {
             ImportFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ImportResourceType"]
     }
@@ -13382,7 +13382,7 @@ impl ImportSortAttribute {
             ImportSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime"]
     }
@@ -13739,7 +13739,7 @@ impl ExportFilterOperator {
             ExportFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -13824,7 +13824,7 @@ impl ExportFilterName {
             ExportFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ExportResourceType"]
     }
@@ -13981,7 +13981,7 @@ impl ExportSortAttribute {
             ExportSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime"]
     }
@@ -14313,7 +14313,7 @@ impl BuiltInSlotTypeSortAttribute {
             BuiltInSlotTypeSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SlotTypeSignature"]
     }
@@ -14540,7 +14540,7 @@ impl BuiltInIntentSortAttribute {
             BuiltInIntentSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IntentSignature"]
     }
@@ -14827,7 +14827,7 @@ impl BotVersionSortAttribute {
             BotVersionSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BotVersion"]
     }
@@ -15169,7 +15169,7 @@ impl BotFilterOperator {
             BotFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -15254,7 +15254,7 @@ impl BotFilterName {
             BotFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BotName"]
     }
@@ -15409,7 +15409,7 @@ impl BotSortAttribute {
             BotSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BotName"]
     }
@@ -15883,7 +15883,7 @@ impl BotLocaleFilterOperator {
             BotLocaleFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -15970,7 +15970,7 @@ impl BotLocaleFilterName {
             BotLocaleFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BotLocaleName"]
     }
@@ -16127,7 +16127,7 @@ impl BotLocaleSortAttribute {
             BotLocaleSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BotLocaleName"]
     }
@@ -16720,7 +16720,7 @@ impl TimeDimension {
             TimeDimension::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Days", "Hours", "Weeks"]
     }
@@ -16915,7 +16915,7 @@ impl AggregatedUtterancesFilterOperator {
             AggregatedUtterancesFilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
@@ -17002,7 +17002,7 @@ impl AggregatedUtterancesFilterName {
             AggregatedUtterancesFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Utterance"]
     }
@@ -17166,7 +17166,7 @@ impl AggregatedUtterancesSortAttribute {
             AggregatedUtterancesSortAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HitCount", "MissedCount"]
     }
@@ -17273,7 +17273,7 @@ impl CustomVocabularyStatus {
             CustomVocabularyStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Creating", "Deleting", "Exporting", "Importing", "Ready"]
     }
@@ -17861,7 +17861,7 @@ impl Effect {
             Effect::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Allow", "Deny"]
     }
@@ -18104,7 +18104,7 @@ impl ErrorCode {
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE_INPUT",

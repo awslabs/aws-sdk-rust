@@ -85,7 +85,7 @@ impl SupportDataSetType {
             SupportDataSetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "customer_support_contacts_data",
@@ -353,7 +353,7 @@ impl DataSetType {
             DataSetType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "customer_profile_by_geography",

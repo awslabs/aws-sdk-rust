@@ -182,7 +182,7 @@ impl EventTypeCategory {
             EventTypeCategory::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "accountNotification",
@@ -664,7 +664,7 @@ impl EventStatusCode {
             EventStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["closed", "open", "upcoming"]
     }
@@ -759,7 +759,7 @@ impl EventScopeCode {
             EventScopeCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
     }
@@ -2651,7 +2651,7 @@ impl EventAggregateField {
             EventAggregateField::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["eventTypeCategory"]
     }
@@ -3167,7 +3167,7 @@ impl EntityStatusCode {
             EntityStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
     }

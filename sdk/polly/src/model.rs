@@ -464,7 +464,7 @@ impl VoiceId {
             VoiceId::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Aditi",
@@ -634,7 +634,7 @@ impl TextType {
             TextType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ssml", "text"]
     }
@@ -734,7 +734,7 @@ impl SpeechMarkType {
             SpeechMarkType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["sentence", "ssml", "viseme", "word"]
     }
@@ -834,7 +834,7 @@ impl OutputFormat {
             OutputFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["json", "mp3", "ogg_vorbis", "pcm"]
     }
@@ -1094,7 +1094,7 @@ impl LanguageCode {
             LanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ar-AE",
@@ -1221,7 +1221,7 @@ impl Engine {
             Engine::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["neural", "standard"]
     }
@@ -1684,7 +1684,7 @@ impl TaskStatus {
             TaskStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["completed", "failed", "inProgress", "scheduled"]
     }
@@ -2267,7 +2267,7 @@ impl Gender {
             Gender::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Female", "Male"]
     }

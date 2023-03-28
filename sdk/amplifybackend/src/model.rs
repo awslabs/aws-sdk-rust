@@ -147,7 +147,7 @@ impl ServiceName {
             ServiceName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
@@ -331,7 +331,7 @@ impl UnAuthenticatedElement {
             UnAuthenticatedElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
@@ -428,7 +428,7 @@ impl AuthenticatedElement {
             AuthenticatedElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
@@ -1142,7 +1142,7 @@ impl DeliveryMethod {
             DeliveryMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS"]
     }
@@ -1327,7 +1327,7 @@ impl AdditionalConstraintsElement {
             AdditionalConstraintsElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "REQUIRE_DIGIT",
@@ -1929,7 +1929,7 @@ impl OAuthScopesElement {
             OAuthScopesElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_COGNITO_SIGNIN_USER_ADMIN",
@@ -2025,7 +2025,7 @@ impl OAuthGrantType {
             OAuthGrantType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CODE", "IMPLICIT"]
     }
@@ -2258,7 +2258,7 @@ impl MfaTypesElement {
             MfaTypesElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SMS", "TOTP"]
     }
@@ -2353,7 +2353,7 @@ impl MfaMode {
             MfaMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OFF", "ON", "OPTIONAL"]
     }
@@ -2533,7 +2533,7 @@ impl Service {
             Service::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COGNITO"]
     }
@@ -2671,7 +2671,7 @@ impl AuthResources {
             AuthResources::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"]
     }
@@ -3210,7 +3210,7 @@ impl Mode {
             Mode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_COGNITO_USER_POOLS",
@@ -3368,7 +3368,7 @@ impl ResolutionStrategy {
             ResolutionStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
@@ -4294,7 +4294,7 @@ impl SignInMethod {
             SignInMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EMAIL",
@@ -4466,7 +4466,7 @@ impl RequiredSignUpAttributesElement {
             RequiredSignUpAttributesElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
@@ -5075,7 +5075,7 @@ impl Status {
             Status::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LATEST", "STALE"]
     }

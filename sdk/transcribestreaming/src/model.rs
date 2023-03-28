@@ -139,7 +139,7 @@ impl LanguageCode {
             LanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
@@ -229,7 +229,7 @@ impl ContentRedactionType {
             ContentRedactionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
@@ -316,7 +316,7 @@ impl ContentIdentificationType {
             ContentIdentificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
@@ -413,7 +413,7 @@ impl PartialResultsStability {
             PartialResultsStability::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["high", "low", "medium"]
     }
@@ -510,7 +510,7 @@ impl VocabularyFilterMethod {
             VocabularyFilterMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["mask", "remove", "tag"]
     }
@@ -1470,7 +1470,7 @@ impl ItemType {
             ItemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["pronunciation", "punctuation"]
     }
@@ -1565,7 +1565,7 @@ impl MediaEncoding {
             MediaEncoding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["flac", "ogg-opus", "pcm"]
     }
@@ -2005,7 +2005,7 @@ impl ContentRedactionOutput {
             ContentRedactionOutput::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["redacted", "redacted_and_unredacted"]
     }
@@ -2165,7 +2165,7 @@ impl ParticipantRole {
             ParticipantRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AGENT", "CUSTOMER"]
     }
@@ -2304,7 +2304,7 @@ impl MedicalContentIdentificationType {
             MedicalContentIdentificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PHI"]
     }
@@ -3081,7 +3081,7 @@ impl Type {
             Type::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONVERSATION", "DICTATION"]
     }
@@ -3191,7 +3191,7 @@ impl Specialty {
             Specialty::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CARDIOLOGY",
@@ -3943,7 +3943,7 @@ impl Sentiment {
             Sentiment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
@@ -4383,7 +4383,7 @@ impl CallAnalyticsLanguageCode {
             CallAnalyticsLanguageCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "pt-BR",

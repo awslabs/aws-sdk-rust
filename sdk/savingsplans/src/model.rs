@@ -418,7 +418,7 @@ impl SavingsPlanOfferingPropertyKey {
             SavingsPlanOfferingPropertyKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
@@ -508,7 +508,7 @@ impl CurrencyCode {
             CurrencyCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
@@ -605,7 +605,7 @@ impl SavingsPlanPaymentOption {
             SavingsPlanPaymentOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["All Upfront", "No Upfront", "Partial Upfront"]
     }
@@ -700,7 +700,7 @@ impl SavingsPlanType {
             SavingsPlanType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Compute", "EC2Instance", "SageMaker"]
     }
@@ -802,7 +802,7 @@ impl SavingsPlanProductType {
             SavingsPlanProductType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EC2", "Fargate", "Lambda", "SageMaker"]
     }
@@ -973,7 +973,7 @@ impl SavingsPlanOfferingFilterAttribute {
             SavingsPlanOfferingFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
@@ -1361,7 +1361,7 @@ impl SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWSLambda",
@@ -1464,7 +1464,7 @@ impl SavingsPlanRateUnit {
             SavingsPlanRateUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Hrs", "Lambda-GB-Second", "Request"]
     }
@@ -1810,7 +1810,7 @@ impl SavingsPlanRateFilterAttribute {
             SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
@@ -2356,7 +2356,7 @@ impl SavingsPlanState {
             SavingsPlanState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "active",
@@ -2569,7 +2569,7 @@ impl SavingsPlansFilterName {
             SavingsPlansFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "commitment",
@@ -2959,7 +2959,7 @@ impl SavingsPlanRatePropertyKey {
             SavingsPlanRatePropertyKey::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
@@ -3166,7 +3166,7 @@ impl SavingsPlanRateFilterName {
             SavingsPlanRateFilterName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "instanceType",

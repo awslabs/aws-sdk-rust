@@ -874,7 +874,7 @@ impl StreamOrder {
             StreamOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ORIGINAL",
@@ -1258,7 +1258,7 @@ impl PresetSpeke20Video {
             PresetSpeke20Video::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PRESET-VIDEO-1",
@@ -1376,7 +1376,7 @@ impl PresetSpeke20Audio {
             PresetSpeke20Audio::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "PRESET-AUDIO-1",
@@ -1770,7 +1770,7 @@ impl AdMarkers {
             AdMarkers::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
     }
@@ -1958,7 +1958,7 @@ impl EncryptionMethod {
             EncryptionMethod::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AES_128", "SAMPLE_AES"]
     }
@@ -2253,7 +2253,7 @@ impl SegmentTemplateFormat {
             SegmentTemplateFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "NUMBER_WITH_DURATION",
@@ -2344,7 +2344,7 @@ impl PeriodTriggersElement {
             PeriodTriggersElement::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADS"]
     }
@@ -2642,7 +2642,7 @@ impl ScteMarkersSource {
             ScteMarkersSource::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["MANIFEST", "SEGMENTS"]
     }
@@ -2732,7 +2732,7 @@ impl Profile {
             Profile::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HBBTV_1_5", "NONE"]
     }
@@ -2822,7 +2822,7 @@ impl ManifestLayout {
             ManifestLayout::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPACT", "FULL"]
     }

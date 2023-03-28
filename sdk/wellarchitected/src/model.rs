@@ -158,7 +158,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -455,7 +455,7 @@ impl ShareStatus {
             ShareStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED",
@@ -554,7 +554,7 @@ impl PermissionType {
             PermissionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONTRIBUTOR", "READONLY"]
     }
@@ -1460,7 +1460,7 @@ impl TrustedAdvisorIntegrationStatus {
             TrustedAdvisorIntegrationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1565,7 +1565,7 @@ impl Risk {
             Risk::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH", "MEDIUM", "NONE", "NOT_APPLICABLE", "UNANSWERED"]
     }
@@ -1672,7 +1672,7 @@ impl WorkloadImprovementStatus {
             WorkloadImprovementStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETE",
@@ -1770,7 +1770,7 @@ impl WorkloadEnvironment {
             WorkloadEnvironment::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PREPRODUCTION", "PRODUCTION"]
     }
@@ -2004,7 +2004,7 @@ impl ShareResourceType {
             ShareResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LENS", "WORKLOAD"]
     }
@@ -2096,7 +2096,7 @@ impl ShareInvitationAction {
             ShareInvitationAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "REJECT"]
     }
@@ -2584,7 +2584,7 @@ impl LensStatus {
             LensStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CURRENT",
@@ -2682,7 +2682,7 @@ impl OrganizationSharingStatus {
             OrganizationSharingStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -3142,7 +3142,7 @@ impl AnswerReason {
             AnswerReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
@@ -3364,7 +3364,7 @@ impl ChoiceReason {
             ChoiceReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
@@ -3465,7 +3465,7 @@ impl ChoiceStatus {
             ChoiceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NOT_APPLICABLE", "SELECTED", "UNSELECTED"]
     }
@@ -3864,7 +3864,7 @@ impl AdditionalResourceType {
             AdditionalResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HELPFUL_RESOURCE", "IMPROVEMENT_PLAN"]
     }
@@ -4853,7 +4853,7 @@ impl NotificationType {
             NotificationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LENS_VERSION_DEPRECATED", "LENS_VERSION_UPGRADED"]
     }
@@ -5870,7 +5870,7 @@ impl LensType {
             LensType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_OFFICIAL", "CUSTOM_SELF", "CUSTOM_SHARED"]
     }
@@ -5965,7 +5965,7 @@ impl LensStatusType {
             LensStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALL", "DRAFT", "PUBLISHED"]
     }
@@ -6331,7 +6331,7 @@ impl CheckStatus {
             CheckStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "FETCH_FAILED", "NOT_AVAILABLE", "OKAY", "WARNING"]
     }
@@ -6416,7 +6416,7 @@ impl CheckProvider {
             CheckProvider::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TRUSTED_ADVISOR"]
     }
@@ -6807,7 +6807,7 @@ impl CheckFailureReason {
             CheckFailureReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -7244,7 +7244,7 @@ impl ImportLensStatus {
             ImportLensStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "ERROR", "IN_PROGRESS"]
     }
@@ -7730,7 +7730,7 @@ impl DifferenceStatus {
             DifferenceStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETED", "NEW", "UPDATED"]
     }

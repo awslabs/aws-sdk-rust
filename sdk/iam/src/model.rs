@@ -232,7 +232,7 @@ impl StatusType {
             StatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -1113,7 +1113,7 @@ impl PermissionsBoundaryAttachmentType {
             PermissionsBoundaryAttachmentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PermissionsBoundaryPolicy"]
     }
@@ -1783,7 +1783,7 @@ impl PolicyEvaluationDecisionType {
             PolicyEvaluationDecisionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["allowed", "explicitDeny", "implicitDeny"]
     }
@@ -2084,7 +2084,7 @@ impl PolicySourceType {
             PolicySourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "aws-managed",
@@ -2384,7 +2384,7 @@ impl ContextKeyTypeEnum {
             ContextKeyTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "binary",
@@ -2489,7 +2489,7 @@ impl GlobalEndpointTokenVersion {
             GlobalEndpointTokenVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["v1Token", "v2Token"]
     }
@@ -3222,7 +3222,7 @@ impl AssignmentStatusType {
             AssignmentStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Any", "Assigned", "Unassigned"]
     }
@@ -4028,7 +4028,7 @@ impl PolicyOwnerEntityType {
             PolicyOwnerEntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GROUP", "ROLE", "USER"]
     }
@@ -4118,7 +4118,7 @@ impl PolicyType {
             PolicyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INLINE", "MANAGED"]
     }
@@ -4515,7 +4515,7 @@ impl PolicyUsageType {
             PolicyUsageType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PermissionsBoundary", "PermissionsPolicy"]
     }
@@ -4610,7 +4610,7 @@ impl PolicyScopeType {
             PolicyScopeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "All", "Local"]
     }
@@ -5394,7 +5394,7 @@ impl EntityType {
             EntityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWSManagedPolicy",
@@ -5675,7 +5675,7 @@ impl EncodingType {
             EncodingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PEM", "SSH"]
     }
@@ -5931,7 +5931,7 @@ impl DeletionTaskStatusType {
             DeletionTaskStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
@@ -6304,7 +6304,7 @@ impl JobStatusType {
             JobStatusType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
@@ -6738,7 +6738,7 @@ impl AccessAdvisorUsageGranularityType {
             AccessAdvisorUsageGranularityType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTION_LEVEL", "SERVICE_LEVEL"]
     }
@@ -7134,7 +7134,7 @@ impl SortKeyType {
             SortKeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "LAST_AUTHENTICATED_TIME_ASCENDING",
@@ -7314,7 +7314,7 @@ impl ReportFormatType {
             ReportFormatType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["text/csv"]
     }
@@ -7528,7 +7528,7 @@ impl SummaryKeyType {
             SummaryKeyType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessKeysPerUserQuota",
@@ -9213,7 +9213,7 @@ impl ReportStateType {
             ReportStateType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "INPROGRESS", "STARTED"]
     }

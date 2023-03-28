@@ -152,7 +152,7 @@ impl UpdateActionType {
             UpdateActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATE_OR_UPDATE", "DELETE"]
     }
@@ -414,7 +414,7 @@ impl RequiredAttributeBehavior {
             RequiredAttributeBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NOT_REQUIRED", "REQUIRED_ALWAYS"]
     }
@@ -602,7 +602,7 @@ impl RuleType {
             RuleType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY_LENGTH",
@@ -815,7 +815,7 @@ impl FacetAttributeType {
             FacetAttributeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT",
@@ -1661,7 +1661,7 @@ impl ObjectType {
             ObjectType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INDEX", "LEAF_NODE", "NODE", "POLICY"]
     }
@@ -2447,7 +2447,7 @@ impl ConsistencyLevel {
             ConsistencyLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EVENTUAL", "SERIALIZABLE"]
     }
@@ -2739,7 +2739,7 @@ impl RangeMode {
             RangeMode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "EXCLUSIVE",
@@ -3323,7 +3323,7 @@ impl DirectoryState {
             DirectoryState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DELETED", "DISABLED", "ENABLED"]
     }
@@ -3505,7 +3505,7 @@ impl FacetStyle {
             FacetStyle::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
@@ -3799,7 +3799,7 @@ impl BatchWriteExceptionType {
             BatchWriteExceptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
@@ -6817,7 +6817,7 @@ impl BatchReadExceptionType {
             BatchReadExceptionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",

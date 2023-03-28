@@ -327,7 +327,7 @@ impl Distribution {
             Distribution::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ByLogStream", "Random"]
     }
@@ -814,7 +814,7 @@ impl StandardUnit {
             StandardUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -1262,7 +1262,7 @@ impl QueryStatus {
             QueryStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -2655,7 +2655,7 @@ impl OrderBy {
             OrderBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LastEventTime", "LogStreamName"]
     }
@@ -2950,7 +2950,7 @@ impl DataProtectionStatus {
             DataProtectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "ARCHIVED", "DELETED", "DISABLED"]
     }
@@ -3411,7 +3411,7 @@ impl ExportTaskStatusCode {
             ExportTaskStatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",

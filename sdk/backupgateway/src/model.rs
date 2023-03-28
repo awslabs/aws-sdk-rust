@@ -642,7 +642,7 @@ impl HypervisorState {
             HypervisorState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
     }
@@ -1053,7 +1053,7 @@ impl SyncMetadataStatus {
             SyncMetadataStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -1394,7 +1394,7 @@ impl GatewayType {
             GatewayType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["BACKUP_VM"]
     }

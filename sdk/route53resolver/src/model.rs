@@ -424,7 +424,7 @@ impl ShareStatus {
             ShareStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NOT_SHARED", "SHARED_BY_ME", "SHARED_WITH_ME"]
     }
@@ -586,7 +586,7 @@ impl RuleTypeOption {
             RuleTypeOption::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FORWARD", "RECURSIVE", "SYSTEM"]
     }
@@ -688,7 +688,7 @@ impl ResolverRuleStatus {
             ResolverRuleStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "FAILED", "UPDATING"]
     }
@@ -1246,7 +1246,7 @@ impl ResolverEndpointStatus {
             ResolverEndpointStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION_NEEDED",
@@ -1345,7 +1345,7 @@ impl ResolverEndpointDirection {
             ResolverEndpointDirection::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INBOUND", "OUTBOUND"]
     }
@@ -1585,7 +1585,7 @@ impl ResolverDnssecValidationStatus {
             ResolverDnssecValidationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
@@ -1675,7 +1675,7 @@ impl Validation {
             Validation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
@@ -1919,7 +1919,7 @@ impl ResolverAutodefinedReverseStatus {
             ResolverAutodefinedReverseStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
@@ -2011,7 +2011,7 @@ impl AutodefinedReverseFlag {
             AutodefinedReverseFlag::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
@@ -2413,7 +2413,7 @@ impl FirewallRuleGroupAssociationStatus {
             FirewallRuleGroupAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "UPDATING"]
     }
@@ -2505,7 +2505,7 @@ impl MutationProtectionStatus {
             MutationProtectionStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2918,7 +2918,7 @@ impl BlockOverrideDnsType {
             BlockOverrideDnsType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CNAME"]
     }
@@ -3013,7 +3013,7 @@ impl BlockResponse {
             BlockResponse::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NODATA", "NXDOMAIN", "OVERRIDE"]
     }
@@ -3108,7 +3108,7 @@ impl Action {
             Action::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALERT", "ALLOW", "BLOCK"]
     }
@@ -3215,7 +3215,7 @@ impl FirewallDomainListStatus {
             FirewallDomainListStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETE",
@@ -3318,7 +3318,7 @@ impl FirewallDomainUpdateOperation {
             FirewallDomainUpdateOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE", "REPLACE"]
     }
@@ -3538,7 +3538,7 @@ impl FirewallFailOpenStatus {
             FirewallFailOpenStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -4197,7 +4197,7 @@ impl ResolverRuleAssociationStatus {
             ResolverRuleAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "CREATING", "DELETING", "FAILED", "OVERRIDDEN"]
     }
@@ -4573,7 +4573,7 @@ impl ResolverQueryLogConfigStatus {
             ResolverQueryLogConfigStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CREATED", "CREATING", "DELETING", "FAILED"]
     }
@@ -4663,7 +4663,7 @@ impl SortOrder {
             SortOrder::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -5004,7 +5004,7 @@ impl ResolverQueryLogConfigAssociationError {
             ResolverQueryLogConfigAssociationError::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -5116,7 +5116,7 @@ impl ResolverQueryLogConfigAssociationStatus {
             ResolverQueryLogConfigAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTION_NEEDED", "ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
@@ -5420,7 +5420,7 @@ impl IpAddressStatus {
             IpAddressStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHED",
@@ -5799,7 +5799,7 @@ impl FirewallDomainImportOperation {
             FirewallDomainImportOperation::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REPLACE"]
     }
@@ -6152,7 +6152,7 @@ impl FirewallRuleGroupStatus {
             FirewallRuleGroupStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "UPDATING"]
     }

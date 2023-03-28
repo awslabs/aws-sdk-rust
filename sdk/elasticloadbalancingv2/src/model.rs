@@ -79,7 +79,7 @@ impl IpAddressType {
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["dualstack", "ipv4"]
     }
@@ -1351,7 +1351,7 @@ impl RedirectActionStatusCodeEnum {
             RedirectActionStatusCodeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP_301", "HTTP_302"]
     }
@@ -1698,7 +1698,7 @@ impl AuthenticateCognitoActionConditionalBehaviorEnum {
             AuthenticateCognitoActionConditionalBehaviorEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["allow", "authenticate", "deny"]
     }
@@ -2122,7 +2122,7 @@ impl AuthenticateOidcActionConditionalBehaviorEnum {
             AuthenticateOidcActionConditionalBehaviorEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["allow", "authenticate", "deny"]
     }
@@ -2227,7 +2227,7 @@ impl ActionTypeEnum {
             ActionTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "authenticate-cognito",
@@ -4019,7 +4019,7 @@ impl TargetGroupIpAddressTypeEnum {
             TargetGroupIpAddressTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
@@ -4119,7 +4119,7 @@ impl TargetTypeEnum {
             TargetTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["alb", "instance", "ip", "lambda"]
     }
@@ -4313,7 +4313,7 @@ impl ProtocolEnum {
             ProtocolEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
     }
@@ -5155,7 +5155,7 @@ impl TargetHealthReasonEnum {
             TargetHealthReasonEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Elb.InitialHealthChecking",
@@ -5280,7 +5280,7 @@ impl TargetHealthStateEnum {
             TargetHealthStateEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "draining",
@@ -5730,7 +5730,7 @@ impl LoadBalancerTypeEnum {
             LoadBalancerTypeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["application", "gateway", "network"]
     }
@@ -6228,7 +6228,7 @@ impl LoadBalancerStateEnum {
             LoadBalancerStateEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["active", "active_impaired", "failed", "provisioning"]
     }
@@ -6320,7 +6320,7 @@ impl LoadBalancerSchemeEnum {
             LoadBalancerSchemeEnum::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["internal", "internet-facing"]
     }

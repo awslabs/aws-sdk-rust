@@ -74,7 +74,7 @@ impl VpcLinkVersion {
             VpcLinkVersion::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["V2"]
     }
@@ -179,7 +179,7 @@ impl VpcLinkStatus {
             VpcLinkStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "FAILED", "INACTIVE", "PENDING"]
     }
@@ -401,7 +401,7 @@ impl LoggingLevel {
             LoggingLevel::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "OFF"]
     }
@@ -621,7 +621,7 @@ impl AuthorizationType {
             AuthorizationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS_IAM", "CUSTOM", "JWT", "NONE"]
     }
@@ -713,7 +713,7 @@ impl ContentHandlingStrategy {
             ContentHandlingStrategy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
     }
@@ -861,7 +861,7 @@ impl PassthroughBehavior {
             PassthroughBehavior::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["NEVER", "WHEN_NO_MATCH", "WHEN_NO_TEMPLATES"]
     }
@@ -966,7 +966,7 @@ impl IntegrationType {
             IntegrationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
@@ -1056,7 +1056,7 @@ impl ConnectionType {
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["INTERNET", "VPC_LINK"]
     }
@@ -1566,7 +1566,7 @@ impl SecurityPolicy {
             SecurityPolicy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TLS_1_0", "TLS_1_2"]
     }
@@ -1656,7 +1656,7 @@ impl EndpointType {
             EndpointType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["EDGE", "REGIONAL"]
     }
@@ -1756,7 +1756,7 @@ impl DomainNameStatus {
             DomainNameStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1945,7 +1945,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "FAILED", "PENDING"]
     }
@@ -2127,7 +2127,7 @@ impl AuthorizerType {
             AuthorizerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["JWT", "REQUEST"]
     }
@@ -2217,7 +2217,7 @@ impl ProtocolType {
             ProtocolType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HTTP", "WEBSOCKET"]
     }

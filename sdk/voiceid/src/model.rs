@@ -455,7 +455,7 @@ impl ServerSideEncryptionUpdateStatus {
             ServerSideEncryptionUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
@@ -598,7 +598,7 @@ impl DomainStatus {
             DomainStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "SUSPENDED"]
     }
@@ -708,7 +708,7 @@ impl ResourceType {
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BATCH_JOB",
@@ -843,7 +843,7 @@ impl ConflictType {
             ConflictType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANOTHER_ACTIVE_STREAM",
@@ -2006,7 +2006,7 @@ impl FraudDetectionAction {
             FraudDetectionAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["FAIL", "IGNORE"]
     }
@@ -2098,7 +2098,7 @@ impl ExistingEnrollmentAction {
             ExistingEnrollmentAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["OVERWRITE", "SKIP"]
     }
@@ -2205,7 +2205,7 @@ impl SpeakerEnrollmentJobStatus {
             SpeakerEnrollmentJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -2703,7 +2703,7 @@ impl DuplicateRegistrationAction {
             DuplicateRegistrationAction::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["REGISTER_AS_NEW", "SKIP"]
     }
@@ -2810,7 +2810,7 @@ impl FraudsterRegistrationJobStatus {
             FraudsterRegistrationJobStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -3122,7 +3122,7 @@ impl SpeakerStatus {
             SpeakerStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENROLLED", "EXPIRED", "OPTED_OUT", "PENDING"]
     }
@@ -4248,7 +4248,7 @@ impl FraudDetectionReason {
             FraudDetectionReason::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["KNOWN_FRAUDSTER", "VOICE_SPOOFING"]
     }
@@ -4345,7 +4345,7 @@ impl FraudDetectionDecision {
             FraudDetectionDecision::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HIGH_RISK", "LOW_RISK", "NOT_ENOUGH_SPEECH"]
     }
@@ -4800,7 +4800,7 @@ impl AuthenticationDecision {
             AuthenticationDecision::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPT",
@@ -4903,7 +4903,7 @@ impl StreamingStatus {
             StreamingStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ENDED", "ONGOING", "PENDING_CONFIGURATION"]
     }

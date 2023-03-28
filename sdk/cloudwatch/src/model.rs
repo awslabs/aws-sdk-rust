@@ -151,7 +151,7 @@ impl StateValue {
             StateValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ALARM", "INSUFFICIENT_DATA", "OK"]
     }
@@ -414,7 +414,7 @@ impl MetricStreamOutputFormat {
             MetricStreamOutputFormat::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["json", "opentelemetry0.7"]
     }
@@ -924,7 +924,7 @@ impl StandardUnit {
             StandardUnit::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -1671,7 +1671,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
@@ -1784,7 +1784,7 @@ impl Statistic {
             Statistic::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -2647,7 +2647,7 @@ impl RecentlyActive {
             RecentlyActive::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PT3H"]
     }
@@ -3522,7 +3522,7 @@ impl StatusCode {
             StatusCode::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Complete", "Forbidden", "InternalError", "PartialData"]
     }
@@ -3661,7 +3661,7 @@ impl ScanBy {
             ScanBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["TimestampAscending", "TimestampDescending"]
     }
@@ -4511,7 +4511,7 @@ impl AnomalyDetectorStateValue {
             AnomalyDetectorStateValue::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PENDING_TRAINING", "TRAINED", "TRAINED_INSUFFICIENT_DATA"]
     }
@@ -4603,7 +4603,7 @@ impl AnomalyDetectorType {
             AnomalyDetectorType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["METRIC_MATH", "SINGLE_METRIC"]
     }
@@ -5366,7 +5366,7 @@ impl EvaluationState {
             EvaluationState::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["PARTIAL_DATA"]
     }
@@ -5936,7 +5936,7 @@ impl ActionsSuppressedBy {
             ActionsSuppressedBy::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Alarm", "ExtensionPeriod", "WaitPeriod"]
     }
@@ -6026,7 +6026,7 @@ impl AlarmType {
             AlarmType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["CompositeAlarm", "MetricAlarm"]
     }
@@ -6276,7 +6276,7 @@ impl HistoryItemType {
             HistoryItemType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Action", "ConfigurationUpdate", "StateUpdate"]
     }

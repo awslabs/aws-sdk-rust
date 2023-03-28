@@ -79,7 +79,7 @@ impl RootDeviceType {
             RootDeviceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ebs", "instance-store"]
     }
@@ -366,7 +366,7 @@ impl SourceType {
             SourceType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["archive", "git", "s3", "svn"]
     }
@@ -590,7 +590,7 @@ impl StackAttributesKeys {
             StackAttributesKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Color"]
     }
@@ -1963,7 +1963,7 @@ impl CloudWatchLogsEncoding {
             CloudWatchLogsEncoding::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ascii",
@@ -2148,7 +2148,7 @@ impl CloudWatchLogsInitialPosition {
             CloudWatchLogsInitialPosition::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["end_of_file", "start_of_file"]
     }
@@ -2240,7 +2240,7 @@ impl CloudWatchLogsTimeZone {
             CloudWatchLogsTimeZone::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "UTC"]
     }
@@ -2447,7 +2447,7 @@ impl LayerAttributesKeys {
             LayerAttributesKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "BundlerVersion",
@@ -2563,7 +2563,7 @@ impl Architecture {
             Architecture::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["i386", "x86_64"]
     }
@@ -2653,7 +2653,7 @@ impl AutoScalingType {
             AutoScalingType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["load", "timer"]
     }
@@ -2841,7 +2841,7 @@ impl AppAttributesKeys {
             AppAttributesKeys::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "AutoBundleOnDeploy",
@@ -3047,7 +3047,7 @@ impl AppType {
             AppType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "aws-flow-ruby",
@@ -7412,7 +7412,7 @@ impl LayerType {
             LayerType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "aws-flow-ruby",
@@ -8494,7 +8494,7 @@ impl VirtualizationType {
             VirtualizationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["hvm", "paravirtual"]
     }
@@ -8911,7 +8911,7 @@ impl VolumeType {
             VolumeType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["gp2", "io1", "standard"]
     }
@@ -10018,7 +10018,7 @@ impl DeploymentCommandName {
             DeploymentCommandName::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "configure",

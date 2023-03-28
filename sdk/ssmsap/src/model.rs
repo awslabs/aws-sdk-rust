@@ -184,7 +184,7 @@ impl CredentialType {
             CredentialType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ADMIN"]
     }
@@ -511,7 +511,7 @@ impl ApplicationStatus {
             ApplicationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATED",
@@ -605,7 +605,7 @@ impl ApplicationType {
             ApplicationType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HANA"]
     }
@@ -692,7 +692,7 @@ impl PermissionActionType {
             PermissionActionType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RESTORE"]
     }
@@ -1072,7 +1072,7 @@ impl OperationStatus {
             OperationStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INPROGRESS", "SUCCESS"]
     }
@@ -1256,7 +1256,7 @@ impl FilterOperator {
             FilterOperator::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["Equals", "GreaterThanOrEquals", "LessThanOrEquals"]
     }
@@ -1516,7 +1516,7 @@ impl DatabaseType {
             DatabaseType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["SYSTEM", "TENANT"]
     }
@@ -1733,7 +1733,7 @@ impl ComponentType {
             ComponentType::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["HANA"]
     }
@@ -2230,7 +2230,7 @@ impl DatabaseStatus {
             DatabaseStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
     }
@@ -2646,7 +2646,7 @@ impl HostRole {
             HostRole::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["LEADER", "STANDBY", "UNKNOWN", "WORKER"]
     }
@@ -2731,7 +2731,7 @@ impl ComponentStatus {
             ComponentStatus::Unknown(value) => value.as_str(),
         }
     }
-    /// Returns all the `&str` values of the enum members.
+    /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED"]
     }
