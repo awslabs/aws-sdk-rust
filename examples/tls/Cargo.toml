@@ -27,7 +27,7 @@ version = "0.0.0-smithy-rs-head"
 [dependencies.aws-sdk-kms]
 default-features = false
 path = "../../sdk/kms"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.tokio]
 version = "1.20.1"

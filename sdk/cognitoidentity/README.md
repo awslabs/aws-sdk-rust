@@ -23,7 +23,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-cognitoidentity = "0.51.0"
+aws-sdk-cognitoidentity = "0.52.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
