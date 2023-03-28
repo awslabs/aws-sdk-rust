@@ -31,6 +31,12 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
+pub use aws_credential_types::Credentials;
+
+pub use aws_types::region::Region;
+
+pub use aws_smithy_http::endpoint::Endpoint;
+
 /// Client and fluent builders for calling the service.
 pub mod client;
 
@@ -87,11 +93,8 @@ mod json_errors;
 
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use aws_smithy_http::endpoint::Endpoint;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("lexmodelsv2", PKG_VERSION);
-pub use aws_credential_types::Credentials;
 pub use aws_types::app_name::AppName;
-pub use aws_types::region::Region;
 #[doc(inline)]
 pub use client::Client;
