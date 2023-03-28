@@ -6,6 +6,7 @@
 use std::borrow::Cow;
 
 use aws_credential_types::provider::{self, future, ProvideCredentials};
+use aws_credential_types::Credentials;
 use tracing::Instrument;
 
 use crate::environment::credentials::EnvironmentVariableCredentialsProvider;
@@ -82,6 +83,10 @@ impl ProvideCredentials for DefaultCredentialsChain {
         Self: 'a,
     {
         future::ProvideCredentials::new(self.credentials())
+    }
+
+    fn fallback_on_interrupt(&self) -> Option<Credentials> {
+        self.provider_chain.fallback_on_interrupt()
     }
 }
 
