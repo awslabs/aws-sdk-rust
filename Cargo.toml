@@ -98,6 +98,7 @@ members = [
     "sdk/aws-smithy-client",
     "sdk/aws-smithy-eventstream",
     "sdk/aws-smithy-http",
+    "sdk/aws-smithy-http-auth",
     "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
     "sdk/aws-smithy-protocol-test",
