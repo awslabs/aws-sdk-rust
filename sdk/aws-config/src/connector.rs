@@ -35,6 +35,7 @@ pub fn default_connector(
     settings: &ConnectorSettings,
     sleep: Option<Arc<dyn AsyncSleep>>,
 ) -> Option<DynConnector> {
+    tracing::trace!(settings = ?settings, sleep = ?sleep, "creating a new connector");
     let hyper = base(settings, sleep).build(aws_smithy_client::conns::https());
     Some(DynConnector::new(hyper))
 }

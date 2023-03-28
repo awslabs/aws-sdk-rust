@@ -154,7 +154,7 @@ mod loader {
     use aws_credential_types::cache::CredentialsCache;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
-    use aws_smithy_client::http_connector::{ConnectorSettings, HttpConnector};
+    use aws_smithy_client::http_connector::HttpConnector;
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
@@ -570,12 +570,9 @@ mod loader {
                     .await
             };
 
-            let http_connector = self.http_connector.unwrap_or_else(|| {
-                HttpConnector::Prebuilt(default_connector(
-                    &ConnectorSettings::from_timeout_config(&timeout_config),
-                    sleep_impl.clone(),
-                ))
-            });
+            let http_connector = self
+                .http_connector
+                .unwrap_or_else(|| HttpConnector::ConnectorFn(Arc::new(default_connector)));
 
             let credentials_cache = self.credentials_cache.unwrap_or_else(|| {
                 let mut builder = CredentialsCache::lazy_builder().time_source(conf.time_source());
