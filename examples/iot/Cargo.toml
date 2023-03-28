@@ -10,7 +10,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-iot]
 path = "../../sdk/iot"
-version = "0.28.0"
+version = "0.29.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
