@@ -14,7 +14,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-sagemaker]
 path = "../../sdk/sagemaker"
-version = "0.55.0"
+version = "0.56.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]

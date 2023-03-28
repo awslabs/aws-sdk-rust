@@ -1,6 +1,7 @@
 [workspace]
 exclude = [
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/using-native-tls-instead-of-rustls"
 ]
 members = [
     "examples/apigateway",
