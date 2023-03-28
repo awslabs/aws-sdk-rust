@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-licensemanagerusersubscriptions = "0.45.0"
+//! aws-sdk-licensemanagerusersubscriptions = "0.46.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

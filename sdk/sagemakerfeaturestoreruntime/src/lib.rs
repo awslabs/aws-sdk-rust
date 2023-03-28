@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-sagemakerfeaturestoreruntime = "0.61.0"
+//! aws-sdk-sagemakerfeaturestoreruntime = "0.62.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
