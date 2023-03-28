@@ -13,7 +13,7 @@ use crate::http_request::url_escape::percent_encode_path;
 use crate::http_request::PercentEncodingMode;
 use crate::http_request::{PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
 use crate::sign::sha256_hex_string;
-use http::header::{HeaderName, HOST};
+use http::header::{AsHeaderName, HeaderName, HOST};
 use http::{HeaderMap, HeaderValue, Method, Uri};
 use std::borrow::Cow;
 use std::cmp::Ordering;
@@ -225,7 +225,7 @@ impl<'a> CanonicalRequest<'a> {
         }
 
         let mut signed_headers = Vec::with_capacity(canonical_headers.len());
-        for (name, _) in &canonical_headers {
+        for name in canonical_headers.keys() {
             if let Some(excluded_headers) = params.settings.excluded_headers.as_ref() {
                 if excluded_headers.contains(name) {
                     continue;
@@ -328,6 +328,19 @@ impl<'a> CanonicalRequest<'a> {
         canonical_headers.insert(x_amz_date, date_header.clone());
         date_header
     }
+
+    fn header_values_for(&self, key: impl AsHeaderName) -> String {
+        let values: Vec<&str> = self
+            .headers
+            .get_all(key)
+            .into_iter()
+            .map(|value| {
+                std::str::from_utf8(value.as_bytes())
+                    .expect("SDK request header values are valid UTF-8")
+            })
+            .collect();
+        values.join(",")
+    }
 }
 
 impl<'a> fmt::Display for CanonicalRequest<'a> {
@@ -337,15 +350,8 @@ impl<'a> fmt::Display for CanonicalRequest<'a> {
         writeln!(f, "{}", self.params.as_deref().unwrap_or(""))?;
         // write out _all_ the headers
         for header in &self.values.signed_headers().headers {
-            // a missing header is a bug, so we should panic.
-            let value = &self.headers[&header.0];
             write!(f, "{}:", header.0.as_str())?;
-            writeln!(
-                f,
-                "{}",
-                std::str::from_utf8(value.as_bytes())
-                    .expect("SDK request header values are valid UTF-8")
-            )?;
+            writeln!(f, "{}", self.header_values_for(&header.0))?;
         }
         writeln!(f)?;
         // write out the signed headers
@@ -536,6 +542,35 @@ mod tests {
             time: parse_date_time("20210511T154045Z").unwrap(),
             settings,
         }
+    }
+
+    #[test]
+    fn test_repeated_header() {
+        let mut req = test_request("get-vanilla-query-order-key-case");
+        req.headers_mut().append(
+            "x-amz-object-attributes",
+            HeaderValue::from_static("Checksum"),
+        );
+        req.headers_mut().append(
+            "x-amz-object-attributes",
+            HeaderValue::from_static("ObjectSize"),
+        );
+        let req = SignableRequest::from(&req);
+        let settings = SigningSettings {
+            payload_checksum_kind: PayloadChecksumKind::XAmzSha256,
+            ..Default::default()
+        };
+        let signing_params = signing_params(settings);
+        let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
+
+        assert_eq!(
+            creq.values.signed_headers().to_string(),
+            "host;x-amz-content-sha256;x-amz-date;x-amz-object-attributes"
+        );
+        assert_eq!(
+            creq.header_values_for("x-amz-object-attributes"),
+            "Checksum,ObjectSize",
+        );
     }
 
     #[test]
