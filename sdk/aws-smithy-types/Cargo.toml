@@ -21,7 +21,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 itoa = "1.0.0"
 num-integer = "0.1.44"
 ryu = "1.0.5"
-base64-simd = "0.7"
+base64-simd = "0.8"
 
 [dependencies.time]
 version = "0.3.4"
