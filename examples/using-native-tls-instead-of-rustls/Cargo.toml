@@ -14,13 +14,13 @@ version = "0.0.0-smithy-rs-head"
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/s3"
-version = "0.41.0"
+version = "0.42.0"
 
 [dependencies.aws-sdk-sts]
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/sts"
-version = "0.41.0"
+version = "0.42.0"
 
 [dependencies.tokio]
 version = "1.20.1"
