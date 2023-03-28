@@ -142,3 +142,18 @@ async fn test_presigning_object_lambda() -> Result<(), Box<dyn Error>> {
     assert_eq!(presigned.uri().to_string(), "https://my-banner-ap-name-123456789012.s3-object-lambda.us-west-2.amazonaws.com/test2.txt?x-id=GetObject&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-west-2%2Fs3-object-lambda%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=027976453050b6f9cca7af80a59c05ee572b462e0fc1ef564c59412b903fcdf2&X-Amz-Security-Token=notarealsessiontoken");
     Ok(())
 }
+
+#[tokio::test]
+async fn test_presigned_head_object() -> Result<(), Box<dyn Error>> {
+    let presigned = presign_input!(s3::input::HeadObjectInput::builder()
+        .bucket("bucket")
+        .key("key")
+        .build()?);
+
+    assert_eq!("HEAD", presigned.method().as_str());
+    assert_eq!(
+        presigned.uri().to_string(),
+        "https://bucket.s3.us-east-1.amazonaws.com/key?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=6b97012e70d5ee3528b5591e0e90c0f45e0fa303506f854eff50ff922751a193&X-Amz-Security-Token=notarealsessiontoken",
+    );
+    Ok(())
+}

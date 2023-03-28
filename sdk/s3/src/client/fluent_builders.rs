@@ -7245,6 +7245,28 @@ impl HeadObject {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    ///
+    /// Creates a presigned request for this operation.
+    ///
+    /// The `presigning_config` provides additional presigning-specific config values, such as the
+    /// amount of time the request should be valid for after creation.
+    ///
+    /// Presigned requests can be given to other users or applications to access a resource or perform
+    /// an operation without having access to the AWS security credentials.
+    ///
+    pub async fn presigned(
+        self,
+        presigning_config: crate::presigning::config::PresigningConfig,
+    ) -> Result<
+        crate::presigning::request::PresignedRequest,
+        aws_smithy_http::result::SdkError<crate::error::HeadObjectError>,
+    > {
+        let input = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        input.presigned(&self.handle.conf, presigning_config).await
+    }
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
